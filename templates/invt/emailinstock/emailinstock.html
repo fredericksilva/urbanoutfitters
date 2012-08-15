@@ -1,48 +1,70 @@
-<script language="JavaScript">
-<!--
-function validate(){
-
-	if (document.emailmeback.email.value == '') {
-		alert("Please enter your email address");
-		document.emailmeback.email.focus();
-		return false;
-		}
-	var checkUserEmail = document.emailmeback.email.value;
-	if (checkUserEmail != '') {
-		if ((checkUserEmail.indexOf('@') < 0) || ((checkUserEmail.charAt(checkUserEmail.length-4) != '.') && (checkUserEmail.charAt(checkUserEmail.length-3) != '.'))) {
-			alert("Please enter a valid email address.");
-			document.emailmeback.email.focus();
-			return false;
-		}
-	}
-}
-//-->
-</script>
-
-<form action="<venda_codehttp>" method="get" name="emailmeback" onsubmit="return validate();">
+<form action="<venda_codehttp>" method="get" id="emailmebackform" name="emailmebackform">
 <input type="hidden" name="ex" value="tl_emlinstock-emailme">
 <input type="hidden" name="bsref" value="<venda_bsref>">
-<input type="hidden" name="invtref" value="<venda_invtref>">
+<input type="hidden" name="invtref" value="<venda_invtref>"><input type="hidden" name="dispviewref" value="<venda_invtref>">
 <input type="hidden" name="invt" value="<venda_invtref>">
-<input type="hidden" name="layout" value="default">
+<input type="hidden" name="layout" value="">
 <input type="hidden" name="temp" value="thankyou">
-
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,foo=emailinstock>">
+<input type="hidden" name="page" value="">
 <div id="emailmeback">
-	<h1>Email me when this item is back in stock</h1>
-	
-	<div><label for="email">Your email address:</label> <input name="email" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" id="email" maxlength="150"></div>
-	
-	<input type="image" value="Submit" alt="Submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" id="CONTINUE">
-	
-	<p><a href="<venda_dispview invt=<venda_invtref>>">Back</a></p>
+	<h1><venda_text id=site.email_when_in_stock.heading></h1>
+	<div><label for="bisemail"><venda_text id=site.email_when_in_stock.label.email_address></label> <input name="bisemail" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" id="bisemail" maxlength="150"></div>
+	<div class="buttonEMWBIS">
+	<a href="<venda_dispview invt=<venda_invtref>>" id="back_link" class="button left"><venda_text id=site.button.cancel></a>
+	<input type="submit" alt="<venda_text id=site.button.continue>" id="<venda_text id=site.button.continue>" value="<venda_text id=site.button.continue>" class="button buttonArrow right submit submitEMWBIS" data-track="submit-emwbis">
+	</div>
 </div>
-
 </form>
-<script language="JavaScript" type="text/javascript">
-<!--
+<script type="text/javascript">
+isPopup = document.getElementById('dialogContent');
+var attributeSku =  Venda.Ebiz.initialDialog.clickedElement.getAttribute('data-invtref') || Venda.Attributes.Get('atrsku') || "<venda_invtref>";
+var productName = "<venda_invtname>";
+
 // blank email if it contains user
-if ((document.emailmeback.email.value.substring(0,1)=='<') || (document.emailmeback.email.value.substring(0,4)=='user')) {
-	document.emailmeback.email.value='';
+if(typeof document.emailmebackform.bisemail != 'undefined'){
+	if ((document.emailmebackform.bisemail.value.substring(0,1)=='<') || (document.emailmebackform.bisemail.value.substring(0,4)=='user')) {
+		document.emailmebackform.bisemail.value='';
+	}
 }
-// -->
+// treat this template like an external .js file
+jQuery(document).ready(function(){ 
+	jQuery(".submitEMWBIS").click(function() {return doValidate();});
+	jQuery("#bisemail").keypress(function(event) {
+		if (event.keyCode == "13") {
+			return doValidate();
+		}
+	});
+});
+
+var doValidate = function(){
+	// check email address
+	if (document.emailmebackform.bisemail.value == '') {
+		alert('<venda_text id=site.email_when_in_stock.js_validation.email_address>');
+		document.emailmebackform.bisemail.focus();
+		return false;
+	}
+	var checkEmail = document.emailmebackform.bisemail.value;
+	if (!Venda.Ebiz.checkemail(checkEmail)) {
+		alert("<venda_text id=site.email_when_in_stock.js_validation.valid_email_address>");
+		document.emailmebackform.bisemail.focus();
+		return false;
+	}
+	<venda_tpcomment>// must check first that we are still on the product detail</venda_tpcomment>
+	if(attributeSku != ""){
+		document.emailmebackform.invtref.value = attributeSku;
+	}
+	if(isPopup){ <venda_tpcomment>// there is an id called popupcontent so we can proceed with the ajax function</venda_tpcomment>
+		document.emailmebackform.layout.value = 'noheaders';
+		jQuery("#emailmebackform").submitForm("#back_link");
+	} else { <venda_tpcomment>// there is no id called popupcontent so we must be viewing the emwbis area in its own screen</venda_tpcomment>
+		document.emailmebackform.submit();
+	}
+	return;
+};
 </script>
+<venda_tpcomment><!-- The script has moved into its own template so that it is compatible with use of ajax script --></venda_tpcomment>
+
+<!-- tpxt used for crumbtrail -->
+<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+<venda_tpxt mode=set,name=track,value=emailinstock>

@@ -4,19 +4,18 @@ Venda.Search = function(options) {
     this._searchLifo = [];
     jQuery.extend(this, {
         maxPagesCached: 5,
-        priceWidget:    Venda.Search.PriceSlider,
-        showViewAll:    true,
-        viewAllLimit:   10
-        // XXX Accept selectors too?
+        showViewAll:    false,
+        viewAllLimit:   10,
+        features:       []
     }, options);
+
+    // showing all options
+    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch');
 };
 
 // Utility method.
-Venda.Search.start = function() {
-   new Venda.Search({
-       showViewAll:  1 == jQuery('#tag-showviewall').text(),
-       viewAllLimit: Number(jQuery('#tag-viewallcount').text())
-   }).initialise();
+Venda.Search.start = function(options) {
+   new Venda.Search(options).initialise();
 };
 
 Venda.Search._decodeURI = function(u) {
@@ -46,7 +45,16 @@ Venda.Search.prototype = {
         this.setupDomHandlers();
         jQuery(window).bind('statechange', jQuery.proxy(this, 'stateChangeHandler'));
 
-        jQuery('#content-search').trigger('search-loading-end', [{ url: History.getState().url }]);
+        var state = History.getState();
+        // This is a workaround for IE for the case where the user has
+        // navigated through the results, gone to another page then come back
+        // again. It will forceably load the last known set of results.
+        if(History.getHash().match(/&_suid=/)) {
+            var newState = jQuery.extend(state.data, {forceLoad: new Date});
+            History.replaceState(newState, this.getDocumentTitle(), state.url);
+        } else {
+            jQuery('#content-search').trigger('search-loading-end', [{ url: state.url }]);
+        }
     },
 
     setupSearchHandlers: function() {
@@ -54,16 +62,8 @@ Venda.Search.prototype = {
         jQuery('#content-search').bind('search-navigate', jQuery.proxy(this, 'updateHistoryHandler'));
         // Move view to the top of the results if necessary
         jQuery('#content-search').bind('search-navigate', jQuery.proxy(this, 'moveResultsIntoViewHandler'));
-        // Indicate loading status.
-        jQuery('#content-search').bind('search-loading-start', jQuery.proxy(this, 'indicateLoadingHandler'));
-        // Hide loading status.
-        jQuery('#content-search').bind('search-loading-end',   jQuery.proxy(this, 'hideLoadingHandler'));
         // Recreate the price slider.
-        jQuery('#content-search').bind('search-loading-end', jQuery.proxy(this, 'showPriceWidgetHandler'));
-        // Setup multi-refine checkboxes.
-        jQuery('#content-search').bind('search-loading-end', jQuery.proxy(this, 'multiRefineHandler'));
-        // Add View All facet links.
-        jQuery('#content-search').bind('search-loading-end', jQuery.proxy(this, 'viewAllRefineLoadHandler'));
+        jQuery('#content-search').bind('search-loading-end', jQuery.proxy(this, 'showFeaturesHandler'));
     },
 
     setupDomHandlers: function() {
@@ -76,12 +76,10 @@ Venda.Search.prototype = {
         jQuery('#content-search').delegate('#collate a.updatesearch, #term a.removesearch', 'click',  refine);
         jQuery('#content-search').delegate('#collate input:checkbox', 'change', refine);
 
-        // Link to toggle large numbers of refinements.
-        jQuery('#content-search').delegate('#collate p.toggleviewall a', 'click', jQuery.proxy(this, 'viewAllRefineClickHandler'));
-
         // Pagination links & dropdown
         var pagination = this.getNavHandler({ pagination: true });
-        jQuery('#content-search').delegate('.pagn a',      'click',  pagination);
+        var pagnlinks = jQuery('#content-search .pagn a').not(".viewproduct");
+        jQuery('#content-search').delegate(pagnlinks, 'click',  pagination);
         jQuery('#content-search').delegate('.pagn select', 'change', pagination);
     },
 
@@ -96,7 +94,7 @@ Venda.Search.prototype = {
             var href = this.href || jQuery(this).val();
             if(!self.validSearchUrl(href))
                 return;
-            jQuery('#content-search').trigger('search-navigate', [jQuery.extend({ url: href }, params || {})]);
+            jQuery('#content-search').trigger('search-navigate', [jQuery.extend(params || {}, { url: href })]);
             return false;
         };
     },
@@ -109,7 +107,7 @@ Venda.Search.prototype = {
     updateHistoryHandler: function(evt, params) {
         var uri = new Uri(params.url);
         // Ensure the protocol always reflects the requested page.
-        uri.setProtocol(window.location.prototcol);
+        uri.setProtocol(window.location.protocol);
         if(!params.pagination)
             uri.deleteQueryParam('setpagenum');
         if(params.resetPrice) {
@@ -125,61 +123,17 @@ Venda.Search.prototype = {
         jQuery('html, body').animate({ scrollTop : jQuery("#searchResults").offset().top });
     },
 
-    indicateLoadingHandler: function(evt, params) {
-        jQuery('#loadingsearch').show();
-    },
-
-    hideLoadingHandler: function(evt, params) {
-        jQuery('#loadingsearch').hide();
-    },
-
-    showPriceWidgetHandler: function() {
-        new this.priceWidget().display();
-    },
-
-    multiRefineHandler: function() {
-        var self = this;
-        jQuery('.multirefine .termtext').each(function(idx, refine) {
-            var multi = jQuery('#multirefine-tmpl label').clone(true),
-               single = jQuery(refine),
-               chosen = single.hasClass('chosen'),
-                   cb = multi.find('input:checkbox');
-            if(chosen)
-                cb.get(0).checked = true;
-            cb.val(Venda.Search.fixRefinementUri(single.data(), chosen));
-            multi.find('.facet').html( single.find('.facet').html() );
-            single.html(multi);
+    showFeaturesHandler: function() {
+        jQuery.each(this.features, function(idx, f) {
+            var feature = typeof f === 'string' ? Venda.Search.Feature[f] : f;
+            if(!feature) return; // XXX Warn here somehow?
+            var featureObj = new feature();
+            if(featureObj.display) featureObj.display();
         });
-    },
-
-    viewAllRefineLoadHandler: function() {
-        if(!this.showViewAll)
-            return false;
-        var limit = this.viewAllLimit;
-        jQuery('#content-search .showviewall').each(function() {
-            var facet = jQuery(this);
-            // Don't show the link if a refinement has been chosen.
-            if(facet.find('div.termtext').length <= limit
-            || facet.find('.chosen').length > 0)
-                return;
-            facet.find('p.toggleviewall').show();
-            facet.find('div:nth-child('+ limit +') ~ div').toggle();
-        });
-        return false;
-    },
-
-    viewAllRefineClickHandler: function(evt) {
-        // The currentTarget is the link and two parents up is the facet container.
-        var facet = jQuery(evt.currentTarget).parent().parent();
-        // Only switch more/less if the link is there e.g on click.
-        facet.find('p.toggleviewall .viewmorerefinements').toggle();
-        facet.find('p.toggleviewall .viewlessrefinements').toggle();
-        facet.find('div:nth-child('+ this.viewAllLimit +') ~ div').toggle();
-        return false;
     },
 
     stateChangeHandler: function(evt) {
-        var state = History.getState()
+        var state = History.getState(),
               // History.js helpfully "unescapes" URLs, this workaround will handle
               // params containing ampersands.
               url = state.data.realUri || state.url; 
@@ -208,7 +162,7 @@ Venda.Search.prototype = {
                 .html(seenOnStack.content)
                 .trigger('search-loading-end', [{ url: url }]);
         } else {
-            jQuery('#content-search').load(url + ' #content-search',
+            jQuery('#content-search').load(url + ' #content-search-body',
                 jQuery.proxy(function(html, status, xhr) {
                     this._addToStack(jQuery('#content-search').html(), url);
                     jQuery('#content-search').trigger('search-loading-end', [{ url: url }]);
@@ -217,9 +171,9 @@ Venda.Search.prototype = {
     }
 };
 
-Venda.namespace('Venda.Search.PriceSlider');
+Venda.namespace('Venda.Search.Feature');
 
-Venda.Search.PriceSlider = function() {
+Venda.Search.Feature.priceSlider = function() {
     var state = History.getState(),
           uri = new Uri(state.data.realUri || state.url),
      minprice = uri.getQueryParamValue('minprice'),
@@ -228,7 +182,7 @@ Venda.Search.PriceSlider = function() {
     jQuery.extend(this, {
         currency: jQuery("#tag-currsym").text(),
         minprice: minprice !== undefined ? Number(minprice) : Math.floor(this._getPrice('minprice')),
-        maxprice: maxprice !== undefined ? Number(maxprice) : Math.floor(this._getPrice('maxprice')),
+        maxprice: maxprice !== undefined ? Number(maxprice) : Math.ceil( this._getPrice('maxprice')),
         from:     Math.floor(this._getPrice('pricefrom')),
         to:       Math.ceil( this._getPrice('priceto'))
     });
@@ -241,7 +195,7 @@ Venda.Search.PriceSlider = function() {
     };
 };
 
-Venda.Search.PriceSlider.prototype = {
+Venda.Search.Feature.priceSlider.prototype = {
     setText: function(from, to) {
         jQuery("#pricerangevalues").text(this.currency + from + ' - ' + this.currency + to);
     },
@@ -276,5 +230,160 @@ Venda.Search.PriceSlider.prototype = {
             })
         );
         this.setText(this.from, this.to);
+    }
+};
+
+Venda.Search.Feature.viewMoreLess = function() {
+    this.showViewAll  = 1 == jQuery('#tag-showviewall').text();
+    this.viewAllLimit = Number(jQuery('#tag-viewallcount').text());
+
+    // Take off one as this is used by :eq - http://api.jquery.com/eq-selector/
+    if(this.viewAllLimit)
+        this.viewAllLimit -= 1;
+};
+
+Venda.Search.Feature.viewMoreLess.prototype = {
+    clickHandler: function(evt) {
+        var facet = jQuery(evt.currentTarget).parent().parent();
+        // Only switch more/less if the link is there e.g on click.
+        facet.find('p.toggleviewall .viewmorerefinements').toggle();
+        facet.find('p.toggleviewall .viewlessrefinements').toggle();
+        facet.find('div:nth-child('+ this.viewAllLimit +') ~ div').toggle();
+        return false;
+    },
+    display: function() {
+        if(!this.showViewAll)
+            return false;
+
+        // Link to toggle large numbers of refinements.
+        jQuery('#content-search').delegate('#collate p.toggleviewall a', 'click', jQuery.proxy(this, 'clickHandler'));
+
+        var limit = this.viewAllLimit;
+        jQuery('#content-search .showviewall').each(function() {
+            var facet = jQuery(this);
+            // Don't show the link if a refinement has been chosen.
+            if(facet.find('div.termtext').length <= limit
+            || facet.find('.chosen').length > 0)
+                return;
+            facet.find('p.toggleviewall').show();
+            facet.find('div:nth-child('+ limit +') ~ div').toggle();
+        });
+        return false;
+    }
+};
+
+Venda.Search.Feature.multiRefine = function() {};
+Venda.Search.Feature.multiRefine.prototype = {
+    clickHandler: function(evt) {
+        return false;
+    },
+    display: function() {
+
+        jQuery('#content-search').bind('search-loading-end', jQuery.proxy(this, 'clickHandler'));
+
+        var self = this;
+        jQuery('.multirefine .termtext').each(function(idx, refine) {
+            var multi = jQuery('#multirefine-tmpl label').clone(true),
+               single = jQuery(refine),
+               chosen = single.hasClass('chosen'),
+                   cb = multi.find('input:checkbox');
+            if(chosen)
+                cb.get(0).checked = true;
+            cb.val(Venda.Search.fixRefinementUri(single.data(), chosen));
+            multi.find('.facet').html( single.find('.facet').html() );
+            single.html(multi);
+        });
+        return false;
+    }
+};
+
+Venda.Search.Feature.indicateLoading = function() {};
+Venda.Search.Feature.indicateLoading.prototype = {
+    clickHandler: function(evt) {
+        jQuery('#loadingsearch').show();
+        jQuery('#content-search-body ul.prods li').hide();
+        return false;
+    },
+    display: function() {
+        jQuery('#content-search').bind('search-loading-start', jQuery.proxy(this, 'clickHandler'));
+        return false;
+    }
+};
+
+Venda.Search.Feature.hideLoading = function() {};
+Venda.Search.Feature.hideLoading.prototype = {
+    clickHandler: function(evt) {
+        jQuery('#loadingsearch').hide();
+        return false;
+    },
+    display: function() {
+        jQuery('#content-search').bind('search-loading-end',   jQuery.proxy(this, 'clickHandler'));
+        return false;
+    }
+};
+
+Venda.Search.Feature.filterRefinements = function() {};
+Venda.Search.Feature.filterRefinements.prototype = {
+    clickHandler: function(evt) {
+
+        var $this = jQuery(evt.target);
+
+        jQuery(".refine_" + $this.data('areaToRefine') + " div.termtext").each(function () {
+
+            var $termtextThis = jQuery(this);
+
+            if ($termtextThis.text().search(new RegExp($this.val(), "i")) < 0) {
+                $termtextThis.addClass("hide");
+            } 
+            else {
+                $termtextThis.removeClass("hide");
+            }
+        });
+        return false;
+    },
+    display: function() {
+
+	var input = jQuery('<input type="text" class="filterinput"/>').attr({ name: 'filtertype' });	
+
+        jQuery('.collateheading:not(#price)').after(input);
+
+        jQuery(".filterinput").each(function () {
+           jQuery(this).data('areaToRefine',jQuery(this).prev('.collateheading').attr('id'));     
+        });
+
+        jQuery(".filterinput").bind('keyup', jQuery.proxy(this, 'clickHandler'));
+        return false;
+    } 
+};
+
+Venda.Search.Feature.popListItems = function() {};
+Venda.Search.Feature.popListItems.prototype = {
+    display: function() {
+        // pops in the list elements
+        jQuery('#content-search-body ul.prods li').hide();
+        jQuery(".prods li").each(function(index) {
+            jQuery(this).delay(200*index).fadeIn(300);
+        })
+        return false;
+    }
+};
+
+Venda.Search.Feature.viewStyleSwitcher = function() {};
+Venda.Search.Feature.viewStyleSwitcher.prototype = {
+    display: function() {
+        // ViewStyle - Grid switcher
+        Venda.Widget.ViewStyle.setCookieForViewStyle();
+        Venda.Widget.ViewStyle.addClassForViewStyle(viewStyleCookieName);
+        return false;
+    }
+};
+
+Venda.Search.Feature.colorSwatch = function() {};
+Venda.Search.Feature.colorSwatch.prototype = {
+    display: function() {
+        // colorSwatch - Colour swatch image switcher
+        var colorSwatch = new Venda.Ebiz.colorSwatch();
+        colorSwatch.init();
+        return false;
     }
 };

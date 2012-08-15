@@ -1,0 +1,76 @@
+<div class="box Lmyacccontactdetails">
+<h2 class="header"><venda_text id=site.contactdetails.header></h2>
+<div class="boxContent">
+	<venda_userinfo>
+	<ul>
+		<li class="first"><span class="addrName"><venda_sestitle> <venda_sesfname> <venda_seslname></span></li>
+        <venda_block label=1000,mode=value,<venda_setting type=ebiz,name=showcompany>=1>
+        <venda_block label=1001,sescompany=notnull><li><venda_sescompany></li></venda_block label=1001>
+        </venda_block label=1000>
+		<li><venda_sesnum> <venda_sesaddr1></li>
+		<venda_block sesaddr2=notnull><li><venda_sesaddr2></li></venda_block>
+		
+		<!-- if country is US or US entities display this formatting -->
+		<venda_block label=999,mode=value,<venda_sescntry>=United States,<venda_sescntry>=United States Non-48,<venda_sescntry>=United States Armed Forces,operator=or>
+		<li><venda_sescity>, <venda_sesstate> <venda_seszipc></li>
+		</venda_block label=999>
+
+		<!-- if country is NOT US or US entities display this formatting -->
+		<venda_block label=9991,mode=value,<venda_sescntry>!=United States,<venda_sescntry>!=United States Non-48,<venda_sescntry>!=United States Armed Forces,operator=and>
+		<li><venda_sescity></li>
+		<venda_block label=751,sesstate=notnull,seszipc=notnull,operator=or><li><venda_sesstate> <venda_seszipc></li></venda_block label=751>
+		</venda_block label=9991>
+
+		<li><venda_sescntry></li>
+        <venda_block label=10,sesarea=notnull,sesphone=notnull,operator=or><li><span class="addrPhone"><venda_block label=100,mode=value,<venda_setting type=ebiz,name=hidearea>!=1><venda_block label=11,sesarea=notnull><venda_sesarea>&nbsp;</venda_block label=11></venda_block label=100><venda_block label=12,sesphone=notnull><venda_sesphone></venda_block label=12></span></li></venda_block label=10>
+		<li class="last"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>"><venda_text id=site.contactdetails.edit.link></a></li>
+	</ul>
+	</venda_userinfo>
+</div></div>
+
+<div class="box Lmyaccorderhistory">
+<h2 class="header"><venda_text id=site.orderhistory.header></h2>
+<div class="boxContent">
+	<ul>
+		<li class="first"><a href="<venda_codehttps>?ex=co_wizr-ordlookup&bsref=<venda_bsref>&template=wz_orpo-screen&layout=myaccount"><venda_text id=site.orderhistory.vieworder.link></a></li>
+		<li class="last"><a href="<venda_codehttps>?ex=co_wizr-ordlookup&bsref=<venda_bsref>&template=wz_orpo-screen&layout=myaccount"><venda_text id=site.orderhistory.viewstorecredit.link></a></li>
+	</ul>
+</div></div>
+
+<div class="box Lmyaccaccountdetails">
+<h2 class="header"><venda_text id=site.accountdetails.header></h2>
+<div class="boxContent">
+	<ul>
+		<li class="first"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,pass=change>"><venda_text id=site.accountdetails.emailpass.link></a></li>
+		<li><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,comm=change>"><venda_text id=site.accountdetails.commoptions.link></a></li>
+		<li class="last"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=survey"><venda_text id=site.accountdetails.profile.link></a></li>
+		<!-- <li><a href="<venda_dispview page=giftlist>">Set Up/Manage Gift List</a></li> -->
+	</ul>
+</div></div>
+
+<div class="box Lmyaccdeliverydetails">
+<h2 class="header"><venda_text id=site.deliverydetails.header></h2>
+<div class="boxContent">
+	<ul>
+		<li class="first"><a href="<venda_codehttps>?ex=co_wizr-manageaddresses&bsref=<venda_bsref>"><venda_text id=site.deliverydetails.addbook.link></a></li>
+	</ul>
+</div></div>
+
+<div class="box Lmyaccreminders">
+<h2 class="header"><venda_text id=site.reminders.header></h2>
+<div class="boxContent">
+	<ul>
+		<li class="first"><a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&step=addusext"><venda_text id=site.reminders.addrem.link></a></li>
+		<li class="last"><a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&step=usext&order1=remmonth&order2=remday&subgroup=4"><venda_text id=site.reminders.viewrem.link></a></li>
+	</ul>
+</div></div>
+
+<div class="box Lmyaccreferfriend">
+<h2 class="header"><venda_text id=site.referfriend.header></h2>
+<div class="boxContent">
+        <ul>
+        <li class="first"><a href="<venda_codehttps>?ex=co_wizr-referafriend&bsref=<venda_bsref>&layout=myaccount"><venda_text id=site.referfriend.refer.link></a></li>
+        <li><a href="<venda_codehttp>?ex=co_disp-refer&bsref=<venda_bsref>&page=referlist&layout=myaccount"><venda_text id=site.referfriend.viewrefer.link></a></li>
+        <li class="last"><a href="<venda_dispview page=terms>" class="doDialog" rel="550,450,terms" target="_blank"  title="<venda_text id=site.referfriend.referterms.link.title> <venda_text id=site.title.open_in_a_new_window>"><venda_text id=site.referfriend.referterms.link></a></li>
+        </ul>
+</div></div>

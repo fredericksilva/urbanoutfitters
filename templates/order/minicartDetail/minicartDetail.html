@@ -1,0 +1,99 @@
+<venda_detblock_item>
+<li class="li_<venda_invtref>" id="li_<venda_invtref>">
+<div class="minicartDetailHighlight" id="minicartDetailHighlight_<venda_invtref>"></div>
+
+<div class="minicartDetailContent">
+<venda_block label=45,invtpublish=1>
+<venda_block label=119,invtref!=giftcert>
+<venda_tpcomment><!-- product --></venda_tpcomment>
+	<div class="image">
+	<venda_block label=20,invtatt1=notnull>
+		<venda_tpcomment><!--product has attributes--></venda_tpcomment>
+		<venda_block label=21,med-set<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+			<venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,img=no,medatr=yes>=notnull>
+				<venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,medatr=yes></a>
+			</venda_block label=22>
+			<venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,img=no,medatr=yes>=null>
+				<venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
+				<venda_block label=231,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+					<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+					<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+				</venda_block label=231>
+				<venda_block label=232,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+					<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+					<a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a>
+				</venda_block label=232>
+			</venda_block label=23>
+		</venda_block label=21>
+		<venda_block label=24,med-set<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+			<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+			<venda_block label=25,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+				<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+			</venda_block label=25>
+			<venda_block label=26,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+				<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a>
+			</venda_block label=26>
+		</venda_block label=24>
+	</venda_block label=20>
+	<venda_block label=30,invtatt1=null>
+		<venda_tpcomment><!--product doesn't has attributes--></venda_tpcomment>
+		<venda_block label=31,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality --></venda_tpcomment>
+		<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+		</venda_block label=31>
+		<venda_block label=32,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<venda_tpcomment><!--without key=xsmall--></venda_tpcomment>
+		<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a>
+		</venda_block label=32>
+	</venda_block label=30>
+	</div>
+	<div class="details">
+		<venda_block label=80,invtatrtot&lt;1><span class="item"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></span></venda_block label=80>
+		<venda_block label=81,invtatrtot&gt;0><span class="item"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_invtname></a></span> <span class="invtatt"><venda_text id=site.basket.product_name.attribute_start><venda_invtatt1><venda_block label=7,invtatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt2></venda_block label=7><venda_block label=8,invtatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt3></venda_block label=8><venda_block label=9,invtatt4=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt4></venda_block label=9><venda_text id=site.basket.product_name.attribute_end></span></venda_block label=81>
+		<span class="quantity"><venda_text id=site.quantity>&nbsp;<venda_oiqty></span>
+		<span class="price"><venda_currsym><venda_invtsell><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=site.minicart_detail.each></venda_block label=10></span>
+	</div>
+</venda_block label=119>
+
+<venda_block label=229,invtref=giftcert>
+	<venda_tpcomment><!-- giftcert --></venda_tpcomment>
+	<div class="image">
+		<venda_block label=412,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+		</venda_block label=412>
+		<venda_block label=422,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a>
+		</venda_block label=422>
+	</div>
+	<div class="details">
+		<span class="item"><a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_invtname></a></span>
+		<span class="quantity"><venda_text id=site.quantity>&nbsp;<venda_oiqty></span>
+		<span class="price"><venda_currsym><venda_oiextprice></span>
+	</div>
+</venda_block label=229>
+</venda_block label=45>
+<venda_block label=46,invtpublish!=1>
+<venda_tpcomment><!-- unpublished --></venda_tpcomment>
+	
+	<venda_block label=43,invtref!=giftcert>
+	<div class="image">
+		<venda_block label=41,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>>
+		</venda_block label=41>
+		<venda_block label=42,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>">
+		</venda_block label=42>
+	</div>
+	</venda_block label=43>
+	<div class="details">
+		<span class="item"><venda_invtname></span>
+		<p class="unpublished"><venda_text id=site.unpublished></p>
+	</div>
+</venda_block label=46>
+</li>
+</venda_detblock_item>
+
+<ul id="minicart_products" class="prods prodsList prodsMinicartCheckout"><venda_detail_item></ul>

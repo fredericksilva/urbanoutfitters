@@ -1,0 +1,449 @@
+<div id="tag-redirect" style="display:none;"><venda_dispview page=installflash></div>
+<div id="tag-lightboxloadmessage" style="display:none;"><venda_text id=site.lightboxloadmessage></div>
+<div id="tempLightbox" style="display:none;"><venda_tpcomment><!-- NEEDED for temporary storage of lightbox content --></venda_tpcomment></div>
+<venda_tpcomment><!-- tag values used for tell a friend, emwbis, write and read a review popups --></venda_tpcomment>
+<div id="tag-loadmessage" style="display:none;"><venda_text id=site.loadmessage></div>
+<div id="tag-qtymsg" style="display:none;"><venda_text id=site.productdetail.validate.qty></div>
+<div id="tag-ebizref" style="display:none;"><venda_setting type=ebiz,name=ref></div>
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-invtref" style="display:none;"><venda_invtref></div>
+<div id="tag-invtname" style="display:none;"><venda_invtname></div>
+<div id="tag-currsym" style="display:none;"><venda_currsym></div>
+
+<venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
+<div id="attributes-stockNA" style="display:none;"><venda_text id=site.attributes.product_detail.selection_not_available></div>
+<div id="attributes-stockOut" style="display:none;"><venda_text id=site.attributes.product_detail.selection_out_of_stock></div>
+<div id="attributes-productselected" style="display:none;"><venda_text id=site.attributes.product_detail.you_have_selected></div>
+<div id="attributes-productstatus" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_colon></div>
+<div id="attributes-only" style="display:none;"><venda_text id=site.attributes.product_detail.only></div>
+<div id="attributes-left" style="display:none;"><venda_text id=site.attributes.product_detail.left></div>
+<div id="attributes-optionDefault" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>
+<div id="attributes-tooltip" style="display:none;"><venda_text id=site.attributes.product_detail.is_out_of_stock></div>
+<div id="attributes-backorder" style="display:none;"><venda_text id=site.attributes.product_detail.backorder.text></div>
+<div id="attributes-preorder" style="display:none;"><venda_text id=site.attributes.product_detail.preorder.text></div>
+<div id="attributes-quantity" style="display:none;"><venda_text id=site.attributes.product_detail.enter_quantity></div>
+<div id="attributes-chooseVariant" style="display:none;"><venda_text id=site.attributes.product_detail.choose_variant></div>
+<div id="attributes-addThisProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_this_product></div>
+<div id="attributes-addAllProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_all_product></div>
+<div id="attributes-noneChecked" style="display:none;"><venda_text id=site.attributes.product_detail.none_checked></div>
+
+<venda_tpcomment><!-- VCP switch settings required for attributes JS --></venda_tpcomment>
+<div id="OutOfStockThreshold" style="display: none;"><venda_setting type=ebiz,name=emailmebackthreshold></div><venda_tpcomment><!-- Out of Stock Threshold --></venda_tpcomment>
+<div id="DoNotBackorder" style="display: none;"><venda_setting type=ebiz,name=nobackorderedinclude></div><venda_tpcomment><!-- Do not dispatch backordered items (checked == no backorder)--></venda_tpcomment>
+<div id="emwbisType" style="display: none;"><venda_setting type=ebiz,name=emailmebackcriteria></div><venda_tpcomment><!-- Email me when back in stock criteria (ETA / Release Dates): 4 options: none, eta, release, eta and etarelease --></venda_tpcomment>
+
+<venda_block label=50,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+<venda_tpcomment><!-- Required for PowerReviews --></venda_tpcomment>
+<script type="text/javascript">
+<venda_inctemplate type=includes,name=powerreviewscripts>
+var pr_page_id = '<venda_invtref>'; 
+var pr_write_review='<venda_dispview invt=<venda_invtref>>&temp=submitpowerreview&pageId=<venda_invtref>&layout=2column';
+var pr_read_review='javascript:readReview()';
+function readReview(){
+	jQuery("#readreviewdisplay").toggle();
+	location.hash = '#readreview';
+}
+</script>
+</venda_block label=50>
+
+<script type="text/javascript">
+<venda_tpcomment>// START - javascript for tell a friend, emwbis, write and read a review. Please remove if not needed </venda_tpcomment>
+jQuery(function(){
+	Venda.Ebiz.initialDialog( {
+		createDialogList:'.emwbisLink, #tellafriend_link, #writereview_link, #readreview_link', 
+		closeDialogList:'#back_link',
+		settings: {'width': '500' ,'modal': true}
+	});
+});
+<venda_tpcomment>// END - javascript for tell a friend, emwbis, write and read a review</venda_tpcomment>
+</script>
+
+<div itemscope itemtype="http://schema.org/Product">
+	<div class="grid_12 push_12 alpha multiDetail">
+	<h1 id="comp-name<venda_invtref>" itemprop="name"><venda_invtname></h1>
+	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+	<venda_block label=320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=320>
+	
+	<span class="sku" itemprop="productID"><span><venda_text id=site.product_detail.product_sku.label></span> <venda_invtref></span>
+
+	<form name="form" action="<venda_codehttp>" method="get" name="addproductform" id="addproductform">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="log" value="22">
+		<input type="hidden" name="mode" value="addmul">
+		<input type="hidden" name="curpage" value="">
+		<input type="hidden" name="next" value="">
+		<input type="hidden" name="layout">
+
+		<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+		<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+		<input type="hidden" name="ex" value="co_disp-shopc">
+
+		<!-- "buy" defines sku to add if "ex" is "co_disp-shopc" -->
+		<input type="hidden" name="buy" value="<venda_invtref>">
+		<!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
+		<input type="hidden" name="invt" value="<venda_invtref>">
+
+		<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
+		<input type="hidden" name="ivref" value="<venda_invtref>">
+
+		<!-- htxt for VBM tracking to track with buy now function -->
+		<venda_block label=vbmtrack,mode=value,<venda_htxt mode=get,name=vbm>=true>     
+		<input type="hidden" name="htxt" id="htxt" value="<venda_htxt mode=make,vbm=true>">
+		</venda_block label=vbmtrack>
+		<venda_block label=21,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>
+		<div style="display:none;" id="tag-vbmref"><venda_invtref></div>
+		</venda_block label=21>		
+		<input type="hidden" name="param1" value="bulk">
+		<input type="hidden" name="param2" value="invt">	
+		
+			<venda_tpcomment><!-- ONE PRODUCT --></venda_tpcomment>
+			<div class="oneProduct" id="oneProduct_<venda_invtuuid>">		
+				<div class="oneProductContent hide">
+				<venda_block label=16,chkatt=null>
+				<div class="priceDetails" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				  <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span>
+				  <venda_block label=16a,invtsell&lt;invtrmsrp1><p class="pricemsrp"><venda_text id=site.msrp><venda_currsym><venda_invtmsrp1></p></venda_block label=16a>
+				  <venda_block label=17,invtwas=notnull><p class="was"><venda_text id=site.was><span><venda_currsym><venda_invtwas></span></p></venda_block label=17>
+				  <venda_block label=18,invtsavingonwas=notnull><p class="save"><venda_text id=site.save><span><venda_currsym><venda_invtsavingonwas></span></p></venda_block label=18>
+				</div>
+				</venda_block label=16>
+			
+				<venda_tpcomment><!-- start: attributes dropdown --></venda_tpcomment>
+				<div id="attributeInputs" class="attributeInputs">
+					<venda_block label=21,selatt1=notnull>
+					<div>
+						<label for="att1"><venda_att1><venda_text id=site.product_detail.attribute.label_colon></label> 
+						<select name="att1" id="att1_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select>
+					</div>
+					</venda_block label=21>
+					<venda_block label=22,selatt2=notnull>
+					<div style="display: none;">
+						<label for="att2"><venda_att2><venda_text id=site.product_detail.attribute.label_colon></label>
+						<select name="att2" id="att2_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select>
+					</div>
+					</venda_block label=22>
+					<venda_block label=23,selatt3=notnull>
+					<div style="display: none;">
+						<label for="att3"><venda_att3><venda_text id=site.product_detail.attribute.label_colon></label>
+						<select name="att3" id="att3_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att3></option><venda_selatt3></select>
+					</div>
+					</venda_block label=23>
+					<venda_block label=24,selatt4=notnull>
+					<div style="display: none;">
+						<label for="att4"><venda_att4><venda_text id=site.product_detail.attribute.label_colon></label>
+						<select name="att4" id="att4_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att4></option><venda_selatt4></select>
+					</div>
+					
+					</venda_block label=24>
+				</div>
+				<venda_tpcomment><!-- end: attributes dropdown --></venda_tpcomment>
+
+				<venda_block label=52,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+				<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
+				<!-- power reviews snippet for product reviews -->
+				<script type="text/javascript">snippet(document);</script>
+				</venda_block label=52>
+			
+				<venda_tpcomment><!-- start: buyControl div --></venda_tpcomment>
+				<venda_block label=703,chkatt=null>
+				<div class="box productDetailGradientBox buyControls">
+				<venda_block label=25,invtavail&gt;0>
+					<!-- if in stock -->
+					<venda_extflds exfldtype=orderitem,group=1,template=oixtSet,type=exfields/orderItem,ref=<venda_invtref>>
+					<venda_extflds exfldtype=orderitem,group=2,template=oixtSet,type=exfields/orderItem,ref=<venda_invtref>>
+
+					<venda_tpcomment><!-- start: button link image --></venda_tpcomment>
+					<venda_block label=700,chkatt=null>
+					<div class="qtybox"><label for="qty"><venda_text id=site.quantity></label><input name="qty" id="qty" type="text" value="1" class="qty textInput" size="3" maxlength="3"></div>
+					<!-- if product doesn't have attributes -->
+					<venda_block label=34,invtpreorder!=1>
+					<label class="addToCheckBoxLabel">Add to basket<input type="checkbox" id="<venda_atrsku>" class="addToCheckBox" /></label>
+					<!-- <input type="submit" class="button buttonAlt buttonArrow add submit addproduct" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket" onClick="document.form.ex.value='co_disp-shopc';">
+					<input type="submit" class="button buttonAlt buttonArrow buy submit buynow" value="<venda_text id=site.button.buy_now>" data-track="buynow"> -->
+					</venda_block label=34>
+					<venda_block label=35,invtpreorder=1>
+					<!-- pre-order with add to basket functionality (stay on the same page) -->
+					<label class="addToCheckBoxLabel">Add to basket<input type="checkbox" id="<venda_atrsku>" class="addToCheckBox" /></label>
+					<!-- <input type="submit" value="<venda_text id=site.button.preorder>" class="button buttonAlt buttonArrow preorder submit" data-track="addtobasket" onClick="document.form.ex.value='co_disp-shopc';"> -->
+					<!-- use this instead if you want pre-order with buy now functionality (go to basket page)
+					<input type="submit" value="<venda_text id=site.button.preorder>" class="preorder submit"> -->
+					</venda_block label=35>
+					</venda_block label=700>
+				</venda_block label=25>
+		
+				<venda_block label=567,mode=value,<venda_setting type=ebiz,name=powerreviews>!=1>
+				<div class="box productDetailGradientBox reviews">
+					<p class="writereview" style="margin:0;"><a href="<venda_dispview invt=<venda_invtref>>&temp=writereview" id="writereview_link"><venda_text id=site.product_detail.write_review></a></p>
+					<venda_category temp=reviewlink,ref=<venda_invtref>,rec=scat>
+				</div>
+				</venda_block label=567>
+				
+				<venda_block label=41,mode=value,<venda_setting type=ebiz,name=showcomparebutton>=1,<venda_setting type=ebiz,name=showcompareproductdetail>=1>	
+					<!-- tpxt used for compare product -->
+					<venda_block label=501,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>!=1><venda_tpxt mode=set,name=comparecatref,value=<venda_invtcatref0>></venda_block label=501>
+					<venda_block label=502,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=502>
+					<p id="compbutton"><a href="#" onclick="AddtoCompare('<venda_invtivtype>','<venda_invtref>','comp-name<venda_invtref>','image_<venda_invtuuid>'); return false;"><venda_text id=site.button.title.compare.invt></a></p>
+				</venda_block label=41>
+
+				<venda_block label=30,invtpreorder=notnull>
+				<!-- if future release date -->
+				<p class="release"><venda_text id=site.product_detail.not_yet_released></p>
+				<p class="release"><venda_text id=site.product_detail.release_date></p>
+				</venda_block label=30>
+
+				<venda_block label=26,invtavail&lt;1>
+				<!-- if out of stock -->
+				<div class="defaultstockindicator">
+						<span class="nostock"><venda_text id=site.out_of_stock></span>
+						<venda_block label=167,etadyleft&gt;0><span class="eta"><venda_text id=site.eta_date_invt></span></venda_block label=167>
+						<a class="emwbisLink button" href="<venda_dispview invt=<venda_invtref>>&temp=emailinstock" title="<venda_text id=site.link.title.email_when_in_stock.invt>" id="emwbis_link"><venda_text id=site.link.email_when_in_stock></a>
+				</div>
+				</venda_block label=26>
+				</div>
+				</venda_block label=703>
+			
+			
+				<venda_tpcomment><!-- end: buyControl div --></venda_tpcomment>
+				<venda_block label=701,chkatt=notnull>
+				<div class="multiList"><venda_detail_attribute></div>
+				<div id="addedmsg"><venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=site.addedmsg>></p><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=32></div>
+				<div class="box productDetailGradientBox buyControlsMulti">
+					<venda_block label=25,invtavail&gt;0>
+					<input type="submit" class="button buttonAlt buttonArrow add submitM addproduct" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket" onClick="document.form.ex.value='co_disp-shopc';">
+					<input type="submit" class="buy submitM button buttonAlt buttonArrow buynow" value="<venda_text id=site.button.buy_now>" data-track="buynow" onClick="document.form.ex.value='co_wizr-shopcart';">
+					</venda_block label=25>
+					<venda_block label=26,invtavail&lt;1>
+					<!-- if out of stock -->
+					<span class="nostock"><venda_text id=site.out_of_stock></span>
+					<venda_block label=167,etadyleft&gt;0><p class="eta"><venda_text id=site.eta_date_invt></p></venda_block label=167>
+					<a href="<venda_dispview invt=<venda_invtref>>&temp=emailinstock" title="<venda_text id=site.link.title.email_when_in_stock.invt>" id="emwbis_link" class="emwbisLink button" data-track="open-emwbis"><venda_text id=site.link.email_when_in_stock></a>
+					</venda_block label=26>
+				</div>
+				</venda_block label=701>
+		
+			</div>
+		</div>
+		<venda_tpcomment><!-- eo ONE PRODUCT --></venda_tpcomment>
+		
+	</form>
+
+	<venda_detblock_attribute>
+	<script>
+		Venda.Attributes.StoreJSON(<venda_atts>,<venda_data>);
+	</script>
+	
+	<venda_mediagrid template=alternateviewGrid> <venda_tpcomment><!-- Used to load attribute media image and image data --></venda_tpcomment>
+
+	<div class="prodMulti prodMulti<venda_atrsku>" data-atr1="<venda_atr1>" data-atr2="<venda_atr2>"  data-atr3="<venda_atr3>"  data-atr4="<venda_atr4>">
+	<div class="attributeImage"><img class="setxsmall_<venda_atr1>" src="" alt="<venda_invtname> - <venda_atr1>"></div>
+	
+	<div class="attributeDetail">
+	
+	<p><strong><venda_invtname> - <venda_atr1> - <venda_atr2></strong></p>
+	<p><span><venda_text id=site.product_detail.product_sku.label> <venda_atrsku></span> <span class="price"><venda_currsym><venda_atrsell></span></p>
+	
+	<venda_block label=130,mode=value,<venda_invtavail>&gt;0>
+	<venda_block label=131,atronhand&gt;0>
+	<input type="hidden" name="itemlist" class="itemlist" value="<venda_atrsku>" id="itemlist_<venda_atrsku>">
+
+	<div class="buttonMultiAdd box productDetailGradientBox buyControls">
+		<div class="qtybox"><label for="qty"><venda_text id=site.quantity></label><input class="qty textInput" name="qtylist" id="qtylist_<venda_atrsku>" type="text" value="1" size="3" maxlength="3"></div>
+		<venda_block label=121,atrreleaseyr=notnull>
+		<label class="addToCheckBoxLabel">Add to basket<input type="checkbox" id="<venda_atrsku>" class="addToCheckBox" /></label>
+		<!-- <input type="submit" class="button buttonAlt buttonArrow preorder submit addproduct" value="<venda_text id=site.button.preorder>" onClick="document.form.ex.value='co_disp-shopc';" data-track="addtobasket"> -->
+		</venda_block label=121>
+		<venda_block label=122,atrreleaseyr=null>
+		<label class="addToCheckBoxLabel">Add to basket<input type="checkbox" id="<venda_atrsku>" class="addToCheckBox" /></label>
+		<!-- <input type="submit" class="button buttonAlt buttonArrow add submit addproduct" value="<venda_text id=site.button.add_to_basket>" onClick="document.form.ex.value='co_disp-shopc';" data-track="addtobasket"> -->
+		</venda_block label=122>
+		<!-- <input type="submit" class="button buttonAlt buttonArrow buy submit buynow" value="<venda_text id=site.button.buy_now>" onClick="document.form.ex.value='co_wizr-shopcart';" data-track="buynow"> -->
+	</div>
+	<venda_block label=120,atrreleaseyr=notnull>
+		<p class="release"><venda_text id=site.product_detail.not_yet_released></p>
+		<p><venda_text id=site.product_detail.attr.release_date></p>
+	</venda_block label=120>	
+	</venda_block label=131>
+	
+	<venda_block label=132,atronhand&lt;1>
+	<span class="nostock"><venda_text id=site.out_of_stock></span>
+	<venda_block label=167,atretayr=notnull><p class="eta"><venda_text id=site.attr.eta_date_invt> <venda_atretady>/<venda_atretamn>/<venda_atretayr></p></venda_block label=167>
+	<a href="<venda_dispview invt=<venda_invtref>>?htxt=<venda_htxt mode=make,attrref=<venda_atrsku>>&temp=emailinstock" title="<venda_text id=site.link.title.email_when_in_stock.invt>" data-invtref="<venda_atrsku>" id="emwbis_link" class="emwbisLink button" data-track="open-emwbis"><venda_text id=site.link.email_when_in_stock></a>
+	</venda_block label=132>
+	</venda_block label=130>
+	</div>
+	</div>	
+	</venda_detblock_attribute>
+	<venda_block label=219,chkatt=notnull> 
+		<div id="invalidQtyMsg" class="hide"><venda_text id=site.attributes.product_detail.please_enter_quantity></div>
+		</venda_block label=219>	
+		<venda_tpcomment><!-- div id 'grid' is used to show the product grid --></venda_tpcomment>
+		<div id="grid"></div>
+	
+	<venda_tpcomment><!-- start: multibuy --></venda_tpcomment>
+	   <venda_block label=340,invtsell2=notnull>
+		<div class="multibuy">
+			<h3><venda_text id=site.multibuy></h3>
+			<div>
+			<p><venda_text id=site.product_detail.multibuy.buy><venda_invtstartqty2><venda_block label=52,invtsell3=null>+</venda_block label=52> <venda_invtname> <venda_text id=site.product_detail.multibuy.for> <strong><venda_currsym><venda_invtsell2></strong> <venda_text id=site.product_detail.multibuy.each></p>
+			<venda_block label=341,invtsell3=notnull>
+			<p><venda_text id=site.product_detail.multibuy.buy><venda_invtstartqty3><venda_block label=53,invtsell4=null>+</venda_block label=53> <venda_invtname> <venda_text id=site.product_detail.multibuy.for> <strong><venda_currsym><venda_invtsell3></strong> <venda_text id=site.product_detail.multibuy.each></p>
+			</venda_block label=341>
+			<venda_block label=342,invtsell4=notnull>
+			<p><venda_text id=site.product_detail.multibuy.buy><venda_invtstartqty4><venda_block label=54,invtsell5=null>+</venda_block label=54> <venda_invtname> <venda_text id=site.product_detail.multibuy.for> <strong><venda_currsym><venda_invtsell4></strong> <venda_text id=site.product_detail.multibuy.each></p>
+			</venda_block label=342>
+			<venda_block label=343,invtsell5=notnull>
+			<p><venda_text id=site.product_detail.multibuy.buy><venda_invtstartqty5><venda_block label=55,invtsell6=null>+</venda_block label=55> <venda_invtname> <venda_text id=site.product_detail.multibuy.for> <strong><venda_currsym><venda_invtsell5></strong> <venda_text id=site.product_detail.multibuy.each></p>
+			</venda_block label=343>
+			<venda_block label=344,invtsell6=notnull>
+			<p><venda_text id=site.product_detail.multibuy.buy><venda_invtstartqty6>+ <venda_invtname> <venda_text id=site.product_detail.multibuy.for> <strong><venda_currsym><venda_invtsell6></strong> <venda_text id=site.product_detail.multibuy.each></p>
+			</venda_block label=344>
+			</div>
+		</div>
+	  </venda_block label=340>
+	<venda_tpcomment><!-- end: multibuy --></venda_tpcomment>
+	
+	<venda_tpcomment><!-- end: product detail contents --></venda_tpcomment>
+	<venda_tpxt mode=set,name=parent,value=<venda_invtcatref0>>
+	<!-- tpxt used for crumbtrail -->
+	<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+	<!-- tpxt used for recently viewed items -->
+	<venda_tpxt mode=set,name=invtref,value=<venda_invtref>>
+
+	<venda_extflds template=extflds,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+	</div>
+	<venda_tpcomment><!-- end: right hand side (price, description, etc) --></venda_tpcomment>
+	
+	<venda_tpcomment><!-- start: left hand side contents --></venda_tpcomment>
+	<div class="grid_12 pull_12 omega">
+	<div class="invtmedia grid_10 push_2 alpha" id="image_<venda_invtuuid>">
+		<div id="productdetail-image">
+			<venda_block label=10,med-medium=notnull>
+				
+				<venda_block label=40,med-large=notnull,pdxtimageware!=1>
+					<a itemprop="image" href="<venda_media rec=invt,type=movie-swf-pict,key=large,img=no>" class = 'cloud-zoom' id='zoom1' rel="adjustX: 53, adjustY:-4, zoomWidth: 462" title="<venda_text id=site.product_detail.view_large_image.title>" data-track="open-largeimage">
+				</venda_block label=40>
+				
+				<venda_block label=140,med-large=notnull,pdxtimageware=1>
+					<a href="<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup" id="zoom_img" target="_blank" title="<venda_text id=site.product_detail.zoomable_image.title>">
+				</venda_block label=140>
+				
+				<venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=medium><!-- show "medium" key by default -->
+					
+				<venda_block label=81,med-large=notnull>
+					</a>
+				</venda_block label=81>
+			
+			</venda_block label=10>
+			<venda_block label=11,med-medium=null>
+			<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_medium.gif" alt="<venda_text id=site.link.alt.no_image.invt>">
+			</venda_block label=11>
+		</div>
+		<div id="productdetail-swap" style="display:none;"></div>
+		<div id="productdetail-viewlarge" class="enlarge"></div>
+	</div>
+	<div id="productdetail-altview" class="grid_2 pull_10 omega altImageList"></div>
+	<venda_inctemplate name=alternateviewScript,type=invt>
+		
+		<venda_tpcomment><!-- start: productCycling V2 --></venda_tpcomment>
+        <venda_category temp=productCycling,rec=icat,ref=<venda_curcatref>,center_on=<venda_invtref>,itemsperpage=3>
+        <venda_tpcomment><!-- end: productCycling --></venda_tpcomment>
+
+	<venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
+	<div id="infotab" class="tabs productDetailTabs">
+		<div class="tabheader">
+			<ul class="nav">
+			<li><a href="#contentTab1" title="Description">Description</a></li>
+			<li><a href="#contentTab2" title="Specification">Specification</a></li>
+			<li><a href="#contentTab3" title="Delivery">Delivery</a></li>
+			<li class="last"><a href="#contentTab4" title="Returns">Returns</a></li>
+			</ul>
+		</div>
+		<div class="tabcontent">
+			<!-- description -->
+			<div class="tab">
+				<venda_block label=12,invtdesc1=notnull><p itemprop="description" class="invtdesc1"><venda_invtdesc1></p></venda_block label=12>
+				<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
+				<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
+				<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
+			</div>
+			<div class="tab" itemprop="description">
+			<table summary="<venda_text id=site.product_detail.product_specifications_information_summary>" title="<venda_text id=site.product_detail.product_specifications_information_title>" cellspacing="0" cellpadding="0">
+				<tbody>	
+				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=2,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=3,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=4,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=5,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				</tbody>
+			</table>
+			</div>
+			<div class="tab"><venda_page page=deliveryproduct></div>
+			<div class="tab"><venda_page page=returnsproduct></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	var infotab = new Venda.Widget.createTab("#infotab");
+	infotab.init();
+	</script>
+	<venda_tpcomment><!-- end: product details tab --></venda_tpcomment>
+	
+	<venda_inctemplate name=socialBookMarks,type=widgets>
+	</div>
+	<venda_tpcomment><!-- end: left hand side (picture) --></venda_tpcomment>
+        </div>
+	<venda_tpcomment><!-- start: bottom tab, one wide column --></venda_tpcomment>
+	<div id="bottomtab" class="tabs noBorderTabs grid_24 alpha omega">
+		<div class="tabheader">
+			<ul class="nav">
+				<venda_block label=27,invtacctot&gt;0><li><a href="#contentTab1" title="<venda_text id=site.product_detail.accessories_title>"><venda_text id=site.product_detail.accessories></a></li></venda_block label=27>
+				<venda_block label=221a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><li><a href="#contentTab2" title="<venda_text id=site.product_detail.vbm_title>"><venda_text id=site.product_detail.vbm></a></li></venda_block label=221a>
+				<venda_block label=221b,mode=value,<venda_setting type=ebiz,name=tracktagvbm>!=1><li><a href="#contentTab2" title="<venda_text id=site.product_detail.related_title>"><venda_text id=site.product_detail.related></a></li></venda_block label=221b>
+				<venda_block label=29,invtsubtot&gt;0><li><a href="#contentTab3" title="<venda_text id=site.product_detail.substitute_title>"><venda_text id=site.product_detail.substitute></a></li></venda_block label=29>
+				<li id="showRVI"><a href="#contentTab4" title="<venda_text id=site.product_detail.recent_items>"><venda_text id=site.product_detail.recent_items></a></li>
+			</ul>
+		</div>
+		<div class="tabcontent">
+			<!-- accessories -->
+			<venda_block label=27,invtacctot&gt;0><div class="tab"><venda_invtacc template=accessories></div></venda_block label=27>
+			<!-- related products (predictor or VBM) -->
+			<venda_block label=222a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="tab"><venda_inctemplate type=vbm,name=productDetail></div></venda_block label=222a>
+			<venda_block label=222b,mode=value,<venda_setting type=ebiz,name=tracktagvbm>!=1><div class="tab"><venda_invtrelated limit=4,threshold=2,template=related></div></venda_block label=222b>
+			<!-- substitutes -->
+			<venda_block label=29,invtsubtot&gt;0><div class="tab"><venda_invtsub template=substitutes></div></venda_block label=29>
+			<!-- RVI -->
+			<div class="tab"><venda_inctemplate name=recentlyViewedProductDetailSlider,type=widgets></div>
+		</div>
+	</div>
+	<venda_tpcomment><!-- end: Tab bottom --></venda_tpcomment>
+	<script type="text/javascript">
+		jQuery(function(){
+			if(typeof Venda.Platform.EqualHeight != "undefined"){
+				var classtoset = new Array ('#iacc li','#iacc li .image','#iacc li .details','#iacc li .details h2','#iacc li .details .invtdesc2','#iacc li .details .priceDetails','#iacc li .details .price','#iacc li .details .release','#iacc li .details .moreInfo','#vbmProds li','#vbmProds li .image','#vbmProds li .details','#vbmProds li .details h2','#vbmProds li .details .invtdesc2','#vbmProds li .details .priceDetails','#vbmProds li .details .price','#vbmProds li .details .release','#vbmProds li .details .moreInfo','#substitute li','#substitute li .image','#substitute li .details','#substitute li .details h2','#substitute li .details .invtdesc2','#substitute li .details .priceDetails','#substitute li .details .price','#substitute li .details .release','#substitute li .details .moreInfo','#rvilist li','#rvilist li .image','#rvilist li .details','#rvilist li .details h2','#rvilist li .details .invtdesc2','#rvilist li .details .priceDetails','#rvilist li .details .price','#rvilist li .details .release','#rvilist li .details .moreInfo', '#sliderlist li','#sliderlist li .image','#sliderlist li .details','#sliderlist li .details h2','#sliderlist li .details .invtdesc2','#sliderlist li .details .priceDetails','#sliderlist li .details .moreinfo');
+				Venda.Platform.EqualHeight.init(classtoset);
+			}
+		});
+		
+		var bottomtab = new Venda.Widget.createTab("#bottomtab");
+		bottomtab.init();
+	</script>	
+	
+	<venda_block label=568,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+	<!-- power review engine function call to read reviews -->
+	<div id="readreviewdisplay" class="grid_24 alpha omega" style="display:none;"><a name="readreview"></a>
+	<script type="text/javascript">engine(document);</script>
+	<div id="#readReview"></div>
+	</div>
+	</venda_block label=568>
+	
+	<venda_tpcomment><!-- Used to set attibute type, name and settings --></venda_tpcomment>
+	<div class="attributesForm" id="productdetailMulti" style="display: none;"><venda_pdxtatrtype></div><venda_tpcomment><!-- dropdown, halfswatch, swatch, grid, multiAdd2 --></venda_tpcomment>
+	<div id="invtref" style="display: none;"><venda_invtref></div>
+	<div id="attributeNames">
+		<div class="att1" style="display: none;"><venda_att1></div>
+		<div class="att2" style="display: none;"><venda_att2></div>
+		<div class="att3" style="display: none;"><venda_att3></div>
+		<div class="att4" style="display: none;"><venda_att4></div>
+	</div>
+	<div id="invtrelease" style="display: none;"><venda_invtrelease></div>
+	
+<venda_inctemplate name=cmDisplayShop5s,type=includes/tracking/coremetrics>

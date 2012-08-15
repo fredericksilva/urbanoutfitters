@@ -1,0 +1,63 @@
+<div class="minicartDetail" id="minicartDetail">
+
+	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+	
+	<venda_minicart template=minicartItemsTotal>
+
+	<venda_block label=52,mode=value,<venda_shopcart mode=getqty>!=0><venda_order shopcart=1,template=minicartDetail></venda_block label=52>
+	<venda_block label=53,mode=value,<venda_shopcart mode=getqty>=0><span class="minicart_empty" style="padding: 10px 10px 70px 10px;display:block;"><venda_text id=site.empty_basket.basket_is_empty></span></venda_block label=53>
+
+	<venda_block label=34,mode=value,<venda_tpxt mode=get,name=instore>!=1>
+	<div class="minicartDetailBottom">
+
+	<a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" class="button buttonAlt"><venda_block label=25,med-basket=notnull><venda_media rec=element,type=pict,key=basket,border=0></venda_block label=25><venda_block label=26,med-basket=null><venda_text id=site.minicart.view_basket.link></venda_block label=26></a>
+	
+	<venda_block label=11,mode=value,<venda_shopcart mode=getqty>!=0>
+	
+		<venda_block label=46,mode=value,<venda_setting type=ebiz,name=expresscheckout>!=2>
+		
+			<venda_block label=100,ustype=R>
+				<venda_block label=210,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=confirm&param1=login"></venda_block label=210>
+				<venda_block label=211,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=billtologin&param1=login"></venda_block label=211>
+			</venda_block label=100>
+			
+			<venda_block label=101,ustype!=R>
+				<a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=billtologin&param1=login">
+			</venda_block label=101>
+			
+			<venda_block label=27,med-checkout=notnull>
+				<venda_media rec=element,type=pict,key=checkout,border=0>
+			</venda_block label=27>
+			
+			<venda_block label=28,med-checkout=null>
+				<venda_text id=site.minicart.checkout.link>
+			</venda_block label=28>
+			
+			</a>
+		</venda_block label=46>
+		
+		<venda_block label=47,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2>
+		
+			<venda_tpcomment><!-- if using express checkout only --></venda_tpcomment>
+			<venda_block label=129,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+				<venda_tpcomment><!-- with postcode lookup --></venda_tpcomment>
+					<a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=zipcode&param1=login&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>"><venda_block label=29,med-checkout=notnull><venda_media rec=element,type=pict,key=checkout,border=0></venda_block label=29><venda_block label=30,med-checkout=null><venda_text id=site.minicart.checkout.link></venda_block label=30></a>
+			</venda_block label=129>
+			
+			<venda_block label=130,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+				<venda_tpcomment><!-- without postcode lookup --></venda_tpcomment>
+				<a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=billto&param1=details&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>"><venda_block label=31,med-checkout=notnull><venda_media rec=element,type=pict,key=checkout,border=0></venda_block label=31><venda_block label=32,med-checkout=null><venda_text id=site.minicart.checkout.link></venda_block label=32></a>
+			</venda_block label=130>
+			
+		</venda_block label=47>
+	
+	</venda_block label=11>
+	
+	<venda_block label=12,mode=value,<venda_shopcart mode=getqty>=0>
+	<a class="button buttonAlt buttonArrow" href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><venda_block label=41,med-checkout=notnull><venda_media rec=element,type=pict,key=checkout,border=0></venda_block label=41><venda_block label=42,med-checkout=null><venda_text id=site.minicart.checkout.link></venda_block label=42></a>
+	</venda_block label=12>
+
+	</div>
+
+	</venda_block label=34>
+</div>

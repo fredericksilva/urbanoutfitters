@@ -1,0 +1,47 @@
+<!-- Venda Templates: v11.5 - do not remove -->
+<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+<venda_tpcomment><!-- tag values used for minicart update without reload --></venda_tpcomment>
+<div id="tag-addedmsgref" style="display:none;"><venda_addedmsg msg=addedref></div>
+<div id="tag-bsref" style="display:none;"><venda_bsref></div>
+<venda_block label=21,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>
+<div id="tag-vbmref" style="display:none;"><venda_addedmsg msg=addedref></div>
+<div id="tag-vbmhtxt" style="display:none;"><venda_htxt mode=get,name=vbm></div>
+<div id="tag-vbmsrchhtxt" style="display:none;"><venda_htxt mode=get,name=searchadd></div>
+</venda_block label=21>
+
+<div id="tag-addedmsg" style="display:none;"><venda_block label=32,mode=value,<venda_addedmsg msg=addedref>=notnull><venda_addedmsg msg=addedref></venda_block label=32></div>
+<div id="tag-codehttp" style="display:none;"><venda_codehttp></div>
+<div id="tag-addtobaskettext" style="display:none;"><venda_text id=site.productdetail.adding_item_to_basket></div>
+<div id="tag-headertext" style="display:none;"><span><venda_text id=site.minicart.header.text></span></div>
+
+<!-- Venda Templates: v10.3 - do not remove -->
+<div class="grid_5"><venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/logo.png" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112></div>
+
+<div class="grid_15">
+<div>
+<ul class="headerLinks">
+	<li class="welcome"><venda_block label=1,ustype=R><venda_userinfo><venda_text id=site.header.login_welcommessage> <span><venda_sesfname> <venda_seslname></span></venda_userinfo></venda_block label=1><venda_block label=2,ustype!=R><venda_text id=site.header.logout_welcomemessage> <venda_setting type=ebiz,name=name></venda_block label=2>
+	</li>
+	<venda_block label=20,ustype=R><venda_tpcomment><!-- When editing these links please note you also should edit div id="tag-signinloggedinlinks" below --></venda_tpcomment>
+	<venda_block label=245,usgrref!=instore>
+	<li class="myaccount"><venda_block label=300,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a href="<venda_dispview page=myaccount>"></venda_block label=300><venda_block label=301,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a href="<venda_codehttps>?ex=co_wizr-login&bsref=<venda_bsref>"></venda_block label=301><venda_text id=site.header.myaccount_link></a></li>
+	</venda_block label=245>
+	<li class="logout loginout"><a href="<venda_dispview page=home>&log=4"><venda_text id=site.header.logout_link></a></li>
+	</venda_block label=20>
+	<venda_block label=21,ustype!=R>
+	<li class="login loginout"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"><venda_text id=site.header.login_link></a></li>
+	</venda_block label=21>
+</ul>
+<venda_inctemplate name=regionLanguageSwitch,type=widgets>
+</div>
+<venda_inctemplate name=search,type=includes>
+</div>
+<div class="grid_4">
+	<div class="minicartStatic">
+		<venda_minicart template=itemsTotal>
+
+		<div id="minicartDetailWrapper">
+		</div>
+	</div>
+</div>
+<venda_tpcomment><!--  Configuration to show signin screen as popup. Please include the signinpoup template: <venda _ inctemplate name = signinPopup,type = widgets> --></venda_tpcomment>

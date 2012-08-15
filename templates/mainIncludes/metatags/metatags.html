@@ -1,0 +1,44 @@
+<venda_block label=1,rtype=invt>
+<link rel="canonical" href="<venda_dispview invt=<venda_invtref>>" />
+<meta name="description" content="<venda_block label=11,pdxtmetadesc=notnull><venda_pdxtmetadesc></venda_block label=11><venda_block label=12,pdxtmetadesc=null><venda_text id=site.seo_metatag.invt.metadesc></venda_block label=12>" />
+<meta name="keywords" content="<venda_block label=13,pdxtmetakeywords=notnull><venda_pdxtmetakeywords></venda_block label=13><venda_block label=14,pdxtmetakeywords=null><venda_text id=site.seo_metatag.invt.metakeywords></venda_block label=14>" />
+<meta property="fb:app_id" content="<venda_setting type=ebiz,name=ebxtfbappid>" />
+<meta property="og:title" content="<venda_invtname>" />
+<meta property="og:type" content="product" />
+<meta property="og:url" content="<venda_dispview invt=<venda_invtref>>" />
+<meta property="og:image" content="<venda_media rec=invt,type=pict,key=xsmall,img=no>" />
+<meta property="og:description" content="<venda_invtdesc1>" />
+<meta property="og:site_name" content="<venda_setting type=ebiz,name=name>" />
+</venda_block label=1>
+<venda_block label=2,rtype=icat>
+<link rel="canonical" href="<venda_dispview icat=<venda_icatref>><venda_block label=pgnm,mode=value,<venda_glxt mode=get,name=currentpage>!=null,<venda_glxt mode=get,name=currentpage>!=1>?setpagenum=<venda_glxt mode=get,name=currentpage></venda_block label=pgnm>" />
+<meta name="description" content="<venda_block label=21,icxtmetadesc=notnull><venda_icxtmetadesc></venda_block label=21><venda_block label=22,icxtmetadesc=null><venda_text id=site.seo_metatag.icat.metadesc></venda_block label=22>" />
+<meta name="keywords" content="<venda_block label=23,icxtmetakeywords=notnull><venda_icxtmetakeywords></venda_block label=23><venda_block label=24,icxtmetakeywords=null><venda_text id=site.seo_metatag.icat.metakeywords></venda_block label=24>" />
+</venda_block label=2>
+<venda_block label=3,stryref=notnull><venda_tpcomment><!-- stories do not pass an rtype so use stryref instead --></venda_tpcomment>
+<link rel="canonical" href="<venda_dispview stry=<venda_stryref>>" />
+<meta name="description" content="<venda_block label=31,stxtmetadesc=notnull><venda_stxtmetadesc></venda_block label=31><venda_block label=32,stxtmetadesc=null><venda_text id=site.seo_metatag.scat.metadesc></venda_block label=32>" />
+<meta name="keywords" content="<venda_block label=33,stxtmetakeywords=notnull><venda_stxtmetakeywords></venda_block label=33><venda_block label=34,stxtmetakeywords=null><venda_text id=site.seo_metatag.scat.metakeywords></venda_block label=34>" />
+</venda_block label=3>
+<venda_block label=4,rtype=scat>
+<meta name="description" content="<venda_block label=41,scxtmetadesc=notnull><venda_scxtmetadesc></venda_block label=41><venda_block label=42,scxtmetadesc=null><venda_text id=site.seo_metatag.scat.metadesc></venda_block label=42>" />
+<meta name="keywords" content="<venda_block label=43,scxtmetakeywords=notnull><venda_scxtmetakeywords></venda_block label=43><venda_block label=44,scxtmetakeywords=null><venda_text id=site.seo_metatag.scat.metakeywords></venda_block label=44>" />
+</venda_block label=4>
+<venda_block label=5,rtype=page>
+<link rel="canonical" href="<venda_block label=51,pageref!=home><venda_dispview page=<venda_pageref>></venda_block label=51><venda_block label=52,pageref=home>/</venda_block label=52>" />
+<meta name="description" content="<venda_block label=61,pgxtmetadesc=notnull><venda_pgxtmetadesc></venda_block label=61><venda_block label=62,pgxtmetadesc=null><venda_text id=site.seo_metatag.pcat.metadesc></venda_block label=62>" />
+<meta name="keywords" content="<venda_block label=63,pgxtmetakeywords=notnull><venda_pgxtmetakeywords></venda_block label=63><venda_block label=64,pgxtmetakeywords=null><venda_text id=site.seo_metatag.pcat.metakeywords></venda_block label=64>" />
+</venda_block label=5>
+<venda_block label=6,rtype=pcat>
+<meta name="description" content="<venda_block label=61,pcxtmetadesc=notnull><venda_pcxtmetadesc></venda_block label=61><venda_block label=62,pcxtmetadesc=null><venda_text id=site.seo_metatag.pcat.metadesc></venda_block label=62>" />
+<meta name="keywords" content="<venda_block label=63,pcxtmetakeywords=notnull><venda_pcxtmetakeywords></venda_block label=63><venda_block label=64,pcxtmetakeywords=null><venda_text id=site.seo_metatag.pcat.metakeywords></venda_block label=64>" />
+</venda_block label=6>
+<venda_block label=7,rtype!=invt,rtype!=icat,rtype!=scat,rtype!=page,rtype!=pcat,stryref=null>
+<meta name="description" content="<venda_text id=site.seo_metatag.default.metadesc>>" />
+<meta name="keywords" content="<venda_text id=site.seo_metatag.default.metakeywords>" />
+</venda_block label=7>
+<venda_block label=8,mode=value,<venda_islive>=null>
+<meta name="robots" content="noindex" />
+</venda_block label=8>
+<venda_tpcomment><!-- Facebook Page Insights <meta property="fb:page_id" content="" />--></venda_tpcomment>
+<venda_inctemplate name=webtrendsmeta,type=includes/tracking>

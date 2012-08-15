@@ -1,0 +1,15 @@
+<div class="box checkoutMinicart">
+<h2 class="header">Items in your order</h2>
+<div class="boxContent">
+	<venda_block label=52,mode=value,<venda_shopcart mode=getqty>!=0><venda_order shopcart=1,template=minicart_detail_checkout></venda_block label=52>
+	<venda_block label=53,mode=value,<venda_shopcart mode=getqty>=0><p><venda_text id=site.empty_basket.basket_is_empty></p></venda_block label=53>
+	<div id="checkoutMinicart_totals" class="checkoutMinicartTotals">
+		<span><venda_text id=site.minicart_detail.before.total></span> <span class="total"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><span id="updatemdTotal" class="price"><venda_ohsubsell></span></a></span>
+	</div>
+	<venda_block label=101,workflow!=instore>
+	<div class="checkoutMinicartButton">
+		<a class="button" href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><venda_text id=site.minicart.view_basket.link></a>
+	</div>
+	</venda_block label=101>
+</div>
+</div>

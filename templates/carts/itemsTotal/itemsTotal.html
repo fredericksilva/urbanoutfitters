@@ -1,0 +1,55 @@
+<venda_block label=24,mode=value,<venda_tpxt mode=get,name=instore>!=1>
+<venda_tpcomment><!-- Use this format "Items: 1" for items if set 'true'
+Use this format "1 Item" for items if set 'false'--></venda_tpcomment>
+<div id="tag-itemBD" style="display:none;"><venda_text id=site.basketdetail.item></div>
+<div id="tag-itemsBD" style="display:none;"><venda_text id=site.basketdetail.items></div>
+
+<div class="minicart">
+<div class="minicartContainerHighlight"></div>
+<h5 class="minicartHeader showminicart" data-track="open-minicart"><venda_text id=site.header.minicartheader></h5>
+<ul class="minicartContent<venda_block label=50,cartitemtotal!=0> items_added</venda_block label=50><venda_block label=51,cartitemtotal=0> items_empty</venda_block label=51>">
+	<li class="items"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" id="minicart_items"><span id="updateItems"><venda_cartitemtotal></span> <span class="updatebdItemsText"><venda_block label=19,cartitemtotal=1><venda_text id=site.basketdetail.item></venda_block label=19><venda_block label=20,cartitemtotal!=1><venda_text id=site.basketdetail.items></venda_block label=20></span></a></li>
+	<li class="total"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" id="minicart_total"><venda_text id=site.basketdetail.total> <span id="updateTotal"><venda_total></span></a></li>
+</ul>
+</div>
+
+<venda_block label=11,mode=value,<venda_shopcart mode=getqty>!=0>
+
+	<venda_block label=46,mode=value,<venda_setting type=ebiz,name=expresscheckout>!=2>
+
+		<venda_block label=140,ustype=R>
+			<venda_block label=142,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1>
+				<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=confirm&param1=login">
+			</venda_block label=142>
+
+			<venda_block label=143,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1>
+				<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=billtologin&param1=login">
+			</venda_block label=143>
+		</venda_block label=140>
+
+		<venda_block label=141,ustype!=R>
+			<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=billtologin&param1=login">
+		</venda_block label=141>
+
+	</venda_block label=46>
+
+	<venda_block label=47,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2>
+		<venda_block label=129,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+			<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=zipcode&param1=login&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>">
+		</venda_block label=129>
+
+		<venda_block label=130,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+			<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=billto&param1=details&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>">
+		</venda_block label=130>
+	</venda_block label=47>
+
+</venda_block label=11>
+
+<venda_block label=12,mode=value,<venda_shopcart mode=getqty>=0>
+<a id="goToCheckout" class="button buttonAlt buttonArrow" href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22">
+</venda_block label=12>
+
+<venda_text id=site.basketdetail.checkout_link>
+</a>
+
+</venda_block label=24>

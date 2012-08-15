@@ -1,64 +1,85 @@
-<venda_detblock1>
-<tr>
-	<td><venda_invtinputref></td>
-	<td><venda_invtname></td>
-	<td><venda_currsym><venda_invtsell></td>
-	<td>N/A</td>
-	<td>
-		<input type="text" name="qtylist" value="1" size="2">
-	</td>
-</tr>
-<input type="hidden" name="itemlist" value="<venda_invtref>">
-<input type="hidden" name="availlist" value="<venda_invtavail>">
-<input type="hidden" name="attall" value="">
-</venda_detblock1>
+<div id="tag-redirect" style="display:none;"><venda_dispview page=installflash></div>
+<div id="tag-lightboxloadmessage" style="display:none;"><venda_text id=site.lightboxloadmessage></div>
+<venda_tpcomment><!-- tag values used for tell a friend, emwbis, write and read a review popups --></venda_tpcomment>
+<div id="tag-loadmessage" style="display:none;"><venda_text id=site.loadmessage></div>
+<div id="tag-qtymsg" style="display:none;"><venda_text id=site.productdetail.validate.qty></div>
+<div id="tag-ebizref" style="display:none;"><venda_setting type=ebiz,name=ref></div>
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-invtref" style="display:none;"><venda_invtref></div>
+<div id="tag-invtname" style="display:none;"><venda_invtname></div>
+<div id="tag-currsym" style="display:none;"><venda_currsym></div>
 
+<venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
+<div id="attributes-stockNA" style="display:none;"><venda_text id=site.attributes.product_detail.selection_not_available></div>
+<div id="attributes-stockOut" style="display:none;"><venda_text id=site.attributes.product_detail.selection_out_of_stock></div>
+<div id="attributes-productselected" style="display:none;"><venda_text id=site.attributes.product_detail.you_have_selected></div>
+<div id="attributes-productstatus" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_colon></div>
+<div id="attributes-only" style="display:none;"><venda_text id=site.attributes.product_detail.only></div>
+<div id="attributes-left" style="display:none;"><venda_text id=site.attributes.product_detail.left></div>
+<div id="attributes-optionDefault" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>
+<div id="attributes-tooltip" style="display:none;"><venda_text id=site.attributes.product_detail.is_out_of_stock></div>
+<div id="attributes-quantity" style="display:none;"><venda_text id=site.attributes.product_detail.enter_quantity></div>
+<div id="attributes-chooseVariant" style="display:none;"><venda_text id=site.attributes.product_detail.choose_variant></div>
+<div id="attributes-addThisProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_this_product></div>
+<div id="attributes-addAllProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_all_product></div>
+<div id="attributes-noneChecked" style="display:none;"><venda_text id=site.attributes.product_detail.none_checked></div>
+
+<venda_detblock1>
+<tr><venda_inventory ref=<venda_invtref>,temp=quickShop></tr>
+</venda_detblock1>
 <venda_detblock2>
-<tr>
- <!-- status can be unpub nostock mainunpub mainnostock atrunpub atrnostock-->
-	<td><venda_invtinputref></td>
-	<td><venda_invtname></td>
-	<td>N/A</td>
-	<td>
-    <select name="attall"><venda_selectatrdropdown></select>
-    </td>
-    <td><input type="text" name="qtylist" value="1" size="2"></td>
-</tr>
-<input type="hidden" name="itemlist" value="<venda_invtref>">
-<input type="hidden" name="availlist" value="<venda_invtavail>">
+<tr><venda_inventory ref=<venda_invtref>,temp=quickShop></tr>
 </venda_detblock2>
 
-<h1>Quick Shop</h1>
-<h2>Add Items By Sku Code</h2>
+<div class="quickshop box">
+<h1 class="header"><venda_text id=site.quickshop.heading></h1>
+<div class="quickShopContent">
+<venda_block label=1,errors=notnull><p class="error"><venda_errors></p></venda_block label=1>
+<venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=site.quickshop.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=site.quickshop.addedmsg>></p></venda_block label=32>
+<div id="addedmsg"  class="addedmessage hide"><venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=site.addedmsg>></p><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=32></div>
+<p><venda_text id=site.quickshop.message.screen></p>				
+<form name="form" action="<venda_codehttp>" method="post" name="addproductform" id="addproductform">
 
-<venda_form>
-	
-<venda_block label=1,errors=notnull>
-<p class="errors"><venda_errors></p>
-</venda_block label=1>
+	<input type="hidden" name="bsref" value="<venda_bsref>">
+	<input type="hidden" name="log" value="22">
+	<input type="hidden" name="mode" value="addmul">
+	<input type="hidden" name="curpage" value="">
+	<input type="hidden" name="next" value="">
+	<input type="hidden" name="layout">
+	<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+	<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+	<input type="hidden" name="ex" value="co_disp-shopc">
+	<input type="hidden" name="page" value="quickshop">
+	<input type="hidden" name="param1" value="bulk">
+	<input type="hidden" name="param2" value="invt">	
 
-<p>Certain items need colour and size specification. Please choose a size and colour for each of the items below.</p>
-
-<input type="hidden" name="type" value="<venda_type>">
-<input type="hidden" name="layout" value="default">
-<input type="hidden" name="log" value="22">
-
-	<p class="spacer"></p>
-	<!-- NEED TO CLEAN UP THIS HEADER - DROP H2 WITH NON-BREAKING SPACES AND REPLACE WITH TABLE/DIVS - ONLY DONE AS SHORT TERM AESTHETIC FIX -->
-	<table border="0" cellspacing="0" cellpadding="0">
-        <thead>
-        <th scope="col">Code</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Size/Colour</th>
-        <th scope="col">Qty.</th>
-        </thead>
-        <tbody>
+	<div class="quickshop" cellpadding="0" cellspacing="0" summary="<venda_text id=site.quickshop.table.title>">
+		<div class="quickshopHeader">
+			<div class="image quickshopDiv"><venda_text id=site.basket.column_heading.product_image></div>
+			<div class="name quickshopDiv"><venda_text id=site.quickshop.column.name></div>
+			<div class="price quickshopDiv"><venda_text id=site.quickshop.column.price></div>
+			<div class="quantity quickshopDiv"><venda_text id=site.quickshop.column.qty></div>
+			<div class="attrSelect quickshopDiv"><venda_text id=site.quickshop.column.attr></div>	
+			<div class="remove quickshopDiv"><venda_text id=site.basket.column_heading.remove></div>
+			<div style="clear: both;"></div>
+		</div>
 		<venda_detail1>
 		<venda_detail2>
-		</tbody>
-        </table>
+	</div>
+	
+	<div>
+	<!-- venda_block label=71,prodavail=1>< venda_wizbutton step=shopcartmulti,mode=process,param1=quickshop,param2=quickshop,src=<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif,alt=<venda_text id=site.quickshop.button.title.add_to_basket>,class=right></venda_block label=71-->
+	<a href="<venda_dispview page=quickshop>" class="searchagain button"><venda_text id=site.quickshop.button.title.search_again></a>	
+	<input type="submit" id="addproduct" class="button buttonArrow add submit push_18 addproduct" value="<venda_text id=site.quickshop.button.title.add_to_basket>" onClick="document.form.ex.value='co_disp-shopc';">
+	</div>
+</form>
+</div>
 
-        
-		<venda_wizbutton step=glstlist,mode=process,param1=add,param2=quickshop,value=Update Basket,border=0,src=<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_update.gif,alt=Update Basket>
-	</form>
+<div class="attributesForm" id="quickShop" style="display: none;">dropdown</div>
+
+<script type="text/javascript">
+Venda.Widget.MinicartDetail.trackingProdAddEnable = '0'; //disable the tracking Product Add
+</script>
+</div>
+<venda_tpxt mode=set,name=orsc,value=1>
+<venda_tpxt mode=set,name=track,value=quickshop>

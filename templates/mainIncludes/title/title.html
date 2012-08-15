@@ -1,0 +1,71 @@
+<title>
+<venda_tpcomment><!-- Product --></venda_tpcomment>
+<venda_block label=1,rtype=invt>
+<venda_block label=11,pdxtseotitle=notnull><venda_pdxtseotitle></venda_block label=11>
+<venda_block label=12,pdxtseotitle=null><venda_block label=555,invtbrand=notnull>"<venda_invtbrand>" </venda_block label=555><venda_invtname> <venda_text id=site.title.at> <venda_setting type=ebiz,name=name></venda_block label=12>
+</venda_block label=1>
+<venda_tpcomment><!-- Category --></venda_tpcomment>
+<venda_block label=2,rtype=icat>
+<venda_block label=21,icxtseotitle=notnull><venda_icxtseotitle></venda_block label=21>
+<venda_block label=22,icxtseotitle=null><venda_icatname> <venda_text id=site.title.at.icat> <venda_setting type=ebiz,name=name></venda_block label=22>
+</venda_block label=2>
+<venda_tpcomment><!-- Page --></venda_tpcomment>
+<venda_block label=3,rtype=page>
+<venda_block label=31,pgxtseotitle=notnull><venda_pgxtseotitle></venda_block label=31>
+<venda_block label=32,pgxtseotitle=null><venda_pagename> <venda_text id=site.title.at.page> <venda_setting type=ebiz,name=name></venda_block label=32>
+</venda_block label=3>
+<venda_tpcomment><!-- Page Category --></venda_tpcomment>
+<venda_block label=4,rtype=pcat>
+<venda_block label=41,pcxtseotitle=notnull><venda_pcxtseotitle></venda_block label=41>
+<venda_block label=42,pcxtseotitle=null><venda_pcatname> <venda_text id=site.title.at.pcat> <venda_setting type=ebiz,name=name></venda_block label=42>
+</venda_block label=4>
+<venda_tpcomment><!-- Story --></venda_tpcomment>
+<venda_block label=5,stryref=notnull>
+<venda_block label=51,stxtseotitle=notnull><venda_stxtseotitle></venda_block label=51>
+<venda_block label=52,stxtseotitle=null><venda_stryname> <venda_text id=site.title.at.stry> <venda_setting type=ebiz,name=name></venda_block label=52>
+</venda_block label=5>
+<venda_tpcomment><!-- Story Category --></venda_tpcomment>
+<venda_block label=6,rtype=scat>
+<venda_block label=61,scxtseotitle=notnull><venda_scxtseotitle></venda_block label=61>
+<venda_block label=62,scxtseotitle=null><venda_scatname> <venda_text id=site.title.at.scat> <venda_setting type=ebiz,name=name></venda_block label=62>
+</venda_block label=6>
+<venda_tpcomment><!-- Login --></venda_tpcomment>
+<venda_block label=11,mode=value,<venda_tpxt mode=get,name=co_comn-login>=1>
+<venda_block label=811,errors=null,workflow=notnull>
+<venda_block label=111,workflow=shopcart><venda_text id=site.title.sign_in_checkout></venda_block label=111>
+<venda_block label=112,workflow=register,workflow=login,workflow=view,workflow=refer,operator=or><venda_text id=site.title.sign_in_myaccount></venda_block label=112> <venda_text id=site.title.at> 
+</venda_block label=811>
+<venda_block label=812,workflow=null>
+<venda_block label=111,mode=value,<venda_tpxt mode=get,name=co_comn-workflow>=shopcart><venda_text id=site.title.sign_in_checkout></venda_block label=111>
+<venda_block label=112,mode=value,<venda_tpxt mode=get,name=co_comn-workflow>!=shopcart><venda_text id=site.title.sign_in_myaccount></venda_block label=112> <venda_text id=site.title.at> <venda_setting type=ebiz,name=name>
+</venda_block label=812> 
+</venda_block label=11>
+<venda_tpcomment><!-- Search --></venda_tpcomment><venda_block label=12,workflow=locayta><venda_setting type=ebiz,name=name> <venda_tpxt mode=get,name=srchrefinedby></venda_block label=12>
+<venda_tpcomment><!-- Search 2 --></venda_tpcomment><venda_block label=search2,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull><venda_setting type=ebiz,name=name> <venda_text id=site.title.search.search_results></venda_block label=search2>
+<venda_tpcomment><!-- Store locator --></venda_tpcomment><venda_block label=13,workflow=postcodedistance,param1=,param2=><venda_text id=site.title.store_locator> <venda_text id=site.title.at> </venda_block label=13>
+<venda_block label=14,mode=value,<venda_tpxt mode=get,name=track>=orgc-screen><venda_text id=site.title.gift_certificates> <venda_text id=site.title.at></venda_block label=14>
+<venda_block label=15,mode=value,<venda_tpxt mode=get,name=track>=refr-names><venda_text id=site.title.refer_friend> <venda_text id=site.title.at></venda_block label=15>
+<venda_tpcomment><!-- Bill to --></venda_tpcomment><venda_block label=16,mode=value,<venda_tpxt mode=get,name=track>=orbt-screen,<venda_tpxt mode=get,name=co_comn-login>!=1><venda_text id=site.title.contact_details> <venda_text id=site.title.at> </venda_block label=16>
+<venda_tpcomment><!-- Zip/post code --></venda_tpcomment><venda_block label=17,mode=value,<venda_tpxt mode=get,name=track>=orzc-screen><venda_text id=site.title.postcode_lookup> <venda_text id=site.title.at> </venda_block label=17>
+<venda_tpcomment><!-- Delivery/multiple address/address --></venda_tpcomment><venda_block label=18,mode=value,<venda_tpxt mode=get,name=track>=orad-editadd><venda_block label=19,param1!=><venda_text id=site.title.delivery_details> </venda_block label=19><venda_block label=20,param1=,param2=><venda_text id=site.title.multiple_delivery_addresses> </venda_block label=20><venda_text id=site.title.at> </venda_block label=18>
+<venda_block label=21,workflow=postcodedistance,param2=delivertostore><venda_text id=site.title.delivery_details> <venda_text id=site.title.at> </venda_block label=21>
+<venda_block label=29,mode=value,<venda_tpxt mode=get,name=track>=orad-screen><venda_text id=site.title.address_book> <venda_text id=site.title.at> </venda_block label=29>
+<venda_tpcomment><!-- basket/giftwrap/redeem promo/order receipt/order summary --></venda_tpcomment>
+<venda_block label=22,workflow=shopcart,workflow=giftcertificates,workflow=instore,operator=or>
+<venda_block label=122,mode=value,<venda_tpxt mode=get,name=co_comn-login>!=1>
+<venda_block label=23,mode=value,<venda_tpxt mode=get,name=track>=,<venda_tpxt mode=get,name=co_comn-login>!=1><venda_text id=site.title.basket> <venda_text id=site.title.at> </venda_block label=23>
+<venda_block label=24,mode=value,<venda_tpxt mode=get,name=track>=orgw-screen><venda_text id=site.title.gift_wrapping> <venda_text id=site.title.at> </venda_block label=24>
+<venda_block label=25,mode=value,<venda_tpxt mode=get,name=track>=gift-screen><venda_text id=site.title.redeem_gift_certificate> <venda_text id=site.title.at> </venda_block label=25>
+<venda_block label=26,mode=value,<venda_tpxt mode=get,name=track>=orcp-screen><venda_text id=site.title.redeem_promotion_code> <venda_text id=site.title.at> </venda_block label=26>
+<venda_block label=27,mode=value,<venda_tpxt mode=get,name=track>=orcf-screen><venda_text id=site.title.order_confirmation> <venda_text id=site.title.at> </venda_block label=27>
+<venda_block label=28,mode=value,<venda_tpxt mode=get,name=track>=orderreceipt><venda_text id=site.title.order_receipt> <venda_text id=site.title.at> </venda_block label=28>
+<venda_block label=29,mode=value,<venda_tpxt mode=get,name=track>=quickshop><venda_text id=site.title.quickshop> <venda_text id=site.title.at> </venda_block label=29>
+</venda_block label=122>
+</venda_block label=22>
+<venda_tpcomment><!-- Reminders --></venda_tpcomment><venda_block label=30,workflow=reminder><venda_text id=site.title.reminder> <venda_text id=site.title.at> </venda_block label=30>
+<venda_tpcomment><!-- show business name if in workflow, not search --></venda_tpcomment><venda_block label=7,workflow=notnull,workflow!=locayta><venda_setting type=ebiz,name=name></venda_block label=7>
+<venda_tpcomment><!-- show business name if user-myform --></venda_tpcomment><venda_block label=44,mode=value,<venda_tpxt mode=get,name=track>=user-myform><venda_setting type=ebiz,name=name></venda_block label=44>
+<venda_tpcomment><!-- Errors --></venda_tpcomment><venda_block label=8,errors=notnull> <venda_text id=site.title.errors></venda_block label=8>
+<venda_tpcomment><!-- Total pages --></venda_tpcomment><venda_block label=919,mode=value,<venda_tpxt mode=get,name=totalpagesTitle>=notnull,<venda_tpxt mode=get,name=totalpagesTitle>!=1,operator=and><venda_block label=9191,workflow!=locayta><venda_text id=site.title.page_numbers></venda_block label=9191></venda_block label=919>
+</title>
+<venda_tpcomment><!-- Set TPXT --></venda_tpcomment><venda_block label=9,pageref=home><venda_tpxt mode=set,name=home,value=1></venda_block label=9><venda_block label=10,icatref=notnull><venda_tpxt mode=set,name=icatref,value=<venda_icatref>></venda_block label=10>

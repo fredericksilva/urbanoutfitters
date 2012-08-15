@@ -1,0 +1,7 @@
+<venda_block label=24,mode=value,<venda_tpxt mode=get,name=instore>!=1>
+	<ul id="minicart_totals" class="minicartDetailTotals<venda_block label=50,mode=value,<venda_shopcart mode=getqty>!=0> items_added</venda_block label=50><venda_block label=51,mode=value,<venda_cartitemtotal>=0> items_empty</venda_block label=51>">
+		<li class="items"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><span id="updatemdItems"><venda_cartitemtotal></span> <span class="updatebdItemsText"><venda_block label=19,mode=value,<venda_shopcart mode=getqty>=1><venda_text id=site.basketdetail.item></venda_block label=19><venda_block label=20,mode=value,<venda_shopcart mode=getqty>!=1><venda_text id=site.basketdetail.items></venda_block label=20></span></a></li>
+		<li class="total"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><venda_text id=site.minicart_detail.before.total><span id="updatemdTotal" class="price"><venda_total></span></a></li>
+		<venda_block label=105,totaldisc&gt;0.00,totaldisc!=null><li class="discount">(<venda_text id=site.minicart_detail.discount>: <venda_currsym><venda_totaldisc>)</li></venda_block label=105>
+	</ul>
+</venda_block label=24>
