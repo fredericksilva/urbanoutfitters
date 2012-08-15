@@ -1,0 +1,30 @@
+<venda_inctemplate name=checkoutBegin,type=includes>
+<!-- start columns 2 - 3 -->
+<div id="col-two-three">
+
+<div class="font1">
+<div style="height:578px;">
+	<div class="heading-all">
+	<h1>SHOPPING BASKET</h1>
+	<div class="underline"><p></p></div>
+	</div>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<p>Your shopping basket is empty.</p>
+
+	<div id="buttons">
+	<a href="<venda_dispview page=home>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continueshopping.gif" alt="CONTINUE SHOPPING" border="0" class="right"></a>
+	<div class="clear-all"></div>
+	</div>
+
+</div>
+</div>
+<venda_tpxt mode=set,name=track,value=orsc-shopcartempty>
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orsc-shopcartempty.html
+ -->
+</div>
+<!-- end columns 2 - 3 -->

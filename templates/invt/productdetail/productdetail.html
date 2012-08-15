@@ -1,0 +1,374 @@
+<venda_inctemplate name=crumbtrail_detail,type=includes>
+<br class="clear-all">
+<div class="mt9">
+	<div class="detailcolone">
+		<div>
+			<venda_block label=10,med-medium=notnull>
+			<!-- start RT65125-->	<venda_block label=88,pdxtimageware=1><!-- Imageware popup -->
+					<a id="imgWare" name="imgWare" href="http://imageware.venda.com:80/imageware/fsi4/fsi.swf?cfg=sc_urbanoutfitters&showcase_server=http://imageware.venda.com:80/imageware&showcase_dir=<venda_setting type=ebiz,name=ref>/invt/<venda_invtref>/&mousemodes=0&mousemodeselect=0&zoommeter=0&history=0&magnifier=0&maxzoom=0&navextension=0&clockprogress=0&softwarecursor=0&selectframe=0&HideUI=1&UISwitchable=0" onClick="popup(this.href,'368','396','',''); return false;" title="VIEW MORE PHOTOS">				<img src="<venda_media rec=invt,type=movie-swf-pict,key=multi,default=medium,dyn=yes,img=no>" title="<venda_invtname>" id="multi" name="multi" width="214px" border="0"></a>
+		         </venda_block label=88>	
+		         <venda_block label=88,pdxtimageware!=1>
+				<img src="<venda_media rec=invt,type=movie-swf-pict,key=multi,default=medium,dyn=yes,img=no>" title="<venda_invtname>" id="multi" name="multi" width="214px" border="0">
+				</venda_block label=88>	
+			<!-- end RT65125-->
+			</venda_block label=10>
+			<venda_block label=11,med-medium=null>
+				<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_med.jpg" alt="<venda_invtname>" title="<venda_invtname>" border="0">
+			</venda_block label=11>
+		</div>
+		<div class="left">
+		<venda_block label=88,pdxtimageware=1><!-- Imageware popup -->
+			<p class="itbo"><a id="imgWare" name="imgWare" href="http://imageware.venda.com:80/imageware/fsi4/fsi.swf?cfg=sc_urbanoutfitters&showcase_server=http://imageware.venda.com:80/imageware&showcase_dir=<venda_setting type=ebiz,name=ref>/invt/<venda_invtref>/&mousemodes=0&mousemodeselect=0&zoommeter=0&history=0&magnifier=0&maxzoom=0&navextension=0&clockprogress=0&softwarecursor=0&selectframe=0&HideUI=1&UISwitchable=0" onClick="popup(this.href,'368','396','',''); return false;" title="VIEW MORE PHOTOS">View More Photos</a></p>
+		</venda_block label=88>	
+			<p class="itbo"><a href="<venda_dispview invt=<venda_invtref>>&temp=tellafriend&bklist=<venda_bklist>" title="EMAIL A FRIEND">Email A Friend</a></p>
+			<venda_block label=333,pdxtsizechart=notnull>
+			<p class="itbo"><a href="#" onclick="popup('<venda_dispview page=<venda_pdxtsizechart>>&layout=popups','620','550'); return false;" title="VIEW THE SIZE CHART">View The Size Chart</a></p>
+		</venda_block label=333>
+         <p class="itbo"><a href="#" onClick="popup('<venda_ebizurl>/page/deliveryinformation&layout=popups','650','500'); return false;">Delivery Information</a></p>
+
+		</div>
+	</div>
+	<div class="detailcoltwo">
+		<form name="form" action="<venda_codehttp>" method="get">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="log" value="22">
+		<input type="hidden" name="mode" value="add">
+		<input type="hidden" name="curpage" value="">
+		<input type="hidden" name="next" value="">
+		<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+		<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+		<input type="hidden" name="ex" value="co_wizr-shopcart">
+		<!-- "buy" defines sku to add if "ex" is "co_disp-shopc" -->
+		<input type="hidden" name="buy" value="<venda_invtref>">
+		<!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
+		<input type="hidden" name="invt" value="<venda_invtref>">
+		<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
+		<input type="hidden" name="ivref" value="<venda_invtref>">
+		<input type="hidden" name="bklist" value="<venda_bklist>">
+	
+	<div class="invtName"><venda_invtname></div>	
+	
+	<div class="ml5">
+		<div class="proPrice">
+				<!-------------------- product doesn't have attributes and if in stock   ---------------------->
+		<venda_block label=16,chkatt=null>
+			<venda_block label=17,invtwas=notnull,invtwas!=0.00,invtwas1&gt;invtsell1>
+				<div class="green"><del>Was <venda_currsym><venda_invtwas></del></div>
+				<div class="red">Now <venda_currsym><venda_invtsell>&nbsp;<venda_block label=55,pdxtpromo=notnull><span class="bluePomo up">(<venda_pdxtpromo>)</span></venda_block label=55></div>	
+			</venda_block label=17>
+			<venda_block label=107,invtsavingonwas=null,invtwas=0.00,invtwas&lt;invtsell,operator=or>
+				<p class="green"><venda_currsym><venda_invtsell>&nbsp;<venda_block label=55,pdxtpromo=notnull><span class="bluePomo up">(<venda_pdxtpromo>)</span></venda_block label=55></p>	
+			</venda_block label=107>
+		</venda_block label=16>
+		
+				<!------------------------ if product does have attributes --------------------------->
+		<venda_block label=20,chkatt=notnull>
+			<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+				<span class="green"><venda_currsym></strong><span id="priceDiv"><venda_invtatrmaxsubsell></span></span>&nbsp;<venda_block label=55,pdxtpromo=notnull><span class="bluePomo up">(<venda_pdxtpromo>)</span></venda_block label=55>
+			</venda_block label=555>
+			<venda_block label=777,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+				<span class="green">Was <venda_currsym><venda_invtatrmaxsubwas></span><br>
+				<span class="red">Now <venda_currsym><span id="priceDiv"><venda_invtatrmaxsubsell></span></span>&nbsp;<venda_block label=55,pdxtpromo=notnull><span class="bluePomo up">(<venda_pdxtpromo>)</span></venda_block label=55>
+			</venda_block label=777>
+		</venda_block label=20>
+		</div>
+        
+        <p class="line" style="width:399px;">&nbsp;</p>
+
+		
+		<div class="fontT">
+			<venda_block label=12,invtdesc1=notnull><p class="mt8"><venda_invtdesc1></p></venda_block label=12>
+			<venda_block label=14,invtdesc3=notnull><p><venda_invtdesc3></p></venda_block label=14>
+			<venda_block label=15,invtdesc4=notnull><p><venda_invtdesc4></p></venda_block label=15>
+			<venda_block label=103,pdxtadditionalinfo=notnull>
+			<p class="black mt8">Additional Shipping/Stock Information.</p>
+			<p class="black"><venda_pdxtadditionalinfo></p>
+			</venda_block label=103>
+		</div>
+	</div>
+    
+    	<p class="line" style="width:399px;">&nbsp;</p>
+
+	
+	
+	<div class="ml5 left">		
+		<!-- ////////////////////////////////////////////// col two - left /////////////////////////////////////////////////////// -->
+		<div class="detailcoltwo-left">
+				<!-- ++++++++++++++++ if in stock ++++++++++++++++ -->
+				<venda_block label=25,invtavail&gt;0>
+					<!-------------------- product doesn't have attributes and if in stock   ---------------------->
+					<venda_block label=700,chkatt=null>
+						<venda_block label=555,invtpreorder=null> <!-- doesn't have preorder -->
+							
+                            <div class="left inp">
+							<input name="qty" id="qty" type="text" value="1" size="2" maxlength="3">
+							</div>
+                            <div class="quat">
+								<label for="qty" class="productdetailsubheads fontC2">&nbsp;Quantity&nbsp;</label>		
+							</div>
+                            
+                             <br class="clear-all"><br /><div class="itboCh"><a href="#" onclick="popup('<venda_codehttp>?ex=co_wizr-productgrid&bsref=<venda_bsref>&step=shopcartmulti&invt=<venda_invtref>&ordercol=alphanu&layout=popups','615','550','popup'); return false;" title="check availability">Check Availibility</a></div>
+							
+							<br class="clear-all">
+							<input type="image" class="mt6" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif" alt="ADD TO BASKET" onClick="document.form.ex.value='co_disp-shopc';" onMouseOver="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket_r.gif'" onMouseOut="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif'"><br /><br />
+						
+                       
+                        
+                        
+                        </venda_block label=555>
+						
+						<venda_block label=666,invtpreorder=notnull> <!-- does have preorder -->
+							<div class="mt8">
+								<div class="itboCh"><a href="#" onclick="popup('<venda_codehttp>?ex=co_wizr-productgrid&bsref=<venda_bsref>&step=shopcartmulti&invt=<venda_invtref>&ordercol=alphanu&layout=popups','615','550','popup'); return false;" title="CHECK AVAILABILITY">Check Availability</a></div>							
+								<!-- if future release date -->
+								<span id="outofstockDiv" style="display:none;">Sorry - Out of stock</span>
+								<div id="instockDiv">
+									Not yet released<br>
+									<span>You can order now and receive it on the official release date of <venda_invtreleasedy>/<venda_invtreleasemn>/<venda_invtreleaseyr></span>
+									<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_preorder.gif" alt="pre order" title="pre order" class="marginleft5" onClick="document.form.ex.value='co_disp-shopc';CheckAtt(document.form,'');return false;">
+								</div>
+							</div>
+						</venda_block label=666>
+					</venda_block label=700>
+					
+					<!------------------------ if product does have attributes --------------------------->
+					<venda_block label=701,chkatt=notnull>
+						<venda_block label=777,invtpreorder=null> <!-- doesn't have preorder -->
+			<venda_javacodeimages type=medium><!-- need to use image keys "[att1name]_medium" -->
+			<venda_javacodeprice nocurrsym=1>
+			<venda_javacodeonhand>
+			<venda_javacode>
+			<script language="javascript">
+			<!-- Hide
+			function ChangeColor(colorName){
+				colorName = colorName.replace('<venda_ebizurl>/content/ebiz/<venda_bsref>/invt/<venda_invtref>/<venda_invtref>_','');
+			 	colorName = colorName.replace('_sw.jpg',''); 
+				for(i=0;i < document.form.att1.length;i++){
+					imageName = document.form.att1.options[i].value;
+					imageName1 = imageName.toLowerCase(imageName); 
+					imageName1 = imageName1.replace(' ','');
+					 if(colorName==imageName1){
+					  	document.form.att1.options[i].selected=true;
+					}
+				}
+				changeImages();
+				ChangePrice();
+			  }
+			function displayStock() {
+				if (document.getElementById("instockDiv").style.visibility == 'visible'){
+					document.getElementById("instockDiv").style.display = 'block';	
+					document.getElementById("outofstockDiv").style.display = 'none';	
+					
+				} else {
+					document.getElementById("instockDiv").style.display = 'none';
+					document.getElementById("outofstockDiv").style.display = 'block';
+				}
+			}
+							function VisibilityNone () {
+								document.getElementById("instockDiv").style.visibility = '';
+								document.getElementById("outofstockDiv").style.visibility = '';
+							}
+			//End Javascript-->
+			</script>
+							
+			<fieldset style="height:80px;">
+			<legend class="hide">Please select from the following options:</legend>
+			<venda_block label=21,selatt1=notnull><label for="att1" class="productdetailsubheads attList">Colour</label><br class="clear-all">
+							<select name="att1" id="att1" class="left" onChange="ChangePrice();changeImages();<venda_block label=772212,invtavail&gt;0>VisibilityNone();ChangeOutofstockDiv();displayStock();</venda_block label=772212>"><venda_selatt1></select><br></venda_block label=21>			
+			<br style="line-height:8px">
+			<venda_block label=22,selatt2=notnull><label for="att2" class="productdetailsubheads attList">Size</label><br class="clear-all">
+							<select name="att2" id="att2" class="left" onChange="ChangePrice();changeImages();<venda_block label=772212,invtavail&gt;0>VisibilityNone();ChangeOutofstockDiv();displayStock();</venda_block label=772212>"><venda_selatt2></select></venda_block label=22>						
+							<venda_block label=23,selatt3=notnull><label for="att3" class="productdetailsubheads attList"><strong><venda_att3></strong></label><select name="att3" id="att3" onChange="ChangePrice();changeImages();<venda_block label=772212,invtavail&gt;0>VisibilityNone();ChangeOutofstockDiv();displayStock();</venda_block label=772212>"><venda_selatt3></select></venda_block label=23>
+							<venda_block label=24,selatt4=notnull><label for="att4" class="productdetailsubheads attList"><strong><venda_att4></strong></label><select name="att4" id="att4" onChange="ChangePrice();changeImages();<venda_block label=772212,invtavail&gt;0>VisibilityNone();ChangeOutofstockDiv();displayStock();</venda_block label=772212>"><venda_selatt4></select></venda_block label=24>
+			</fieldset>
+		
+						
+					<div class="mt8">
+								<span id="outofstockDiv" style="display:none;">Sorry - Out of stock
+						
+					</span>
+								<div id="instockDiv" style="visibility:visible;">
+						
+                        <span class="left inp"><input name="qty" id="qty" type="text" value="1" size="2" maxlength="3"></span>
+                        <span class="quat"><label for="qty" class="productdetailsubheads">&nbsp;Quantity&nbsp;</label></span>
+                        
+                        
+						
+                            <br class="clear-all"><br /><div class="itboCh"><a href="#" onclick="popup('<venda_codehttp>?ex=co_wizr-productgrid&bsref=<venda_bsref>&step=shopcartmulti&invt=<venda_invtref>&ordercol=alphanu&layout=popups','615','550','popup'); return false;" title="check availability">Check Availibility</a></div><br />
+                        
+						<br class="clear-all">
+						<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif" alt="ADD TO BASKET" onClick="document.form.ex.value='co_disp-shopc';CheckAtt(document.form,''); return false;" onMouseOver="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket_r.gif'" onMouseOut="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif'">
+                        <br /><br />
+                        
+                    
+                        
+					</div>
+					</div>
+						</venda_block label=777>
+			
+						<venda_block label=888,invtpreorder=notnull> <!-- does have preorder -->
+			<div class="mt8">
+										
+				<!-- if future release date -->
+				<span id="outofstockDiv" style="display:none;">Sorry - Out of stock</span>
+				<div id="instockDiv">
+					Not yet released<br>
+					<span>You can order now and receive it on the official release date of <venda_invtreleasedy>/<venda_invtreleasemn>/<venda_invtreleaseyr></span>
+					<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_preorder.gif" alt="pre order" title="pre order" class="marginleft5" onClick="document.form.ex.value='co_disp-shopc';CheckAtt(document.form,'');return false;">
+				</div>
+			</div>
+						</venda_block label=888>
+					</venda_block label=701>
+				</venda_block label=25>
+			
+				<!-- ++++++++++++++++ if out of stock ++++++++++++++++ -->
+			<venda_block label=26,invtavail&lt;1>
+					<span id="outofstockDiv">Sorry - Out of stock
+						<div class="itboCh"><a href="#" onclick="popup('<venda_codehttp>?ex=co_wizr-productgrid&bsref=<venda_bsref>&step=shopcartmulti&invt=<venda_invtref>&ordercol=alphanu&layout=popups','615','550','popup'); return false;" title="check availability"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/check_availability.gif" border="0"></a></div>
+					</span>
+				<venda_block label=167,etadate=notnull><p>Expected back in stock on: <venda_invtetadatey>/<venda_invtetadatemn>/<venda_invtetadateyr></p></venda_block label=167>
+			</venda_block label=26>
+				
+			<venda_block label=32,mode=value,addedmsg=notnull><p class="red font12"><venda_addedmsg msg=You have added addedqty addedname to your basket></p></venda_block label=32>
+			
+		</div>
+			
+			<!-- ////////////////////////////////////////////// col two - right /////////////////////////////////////////////////////// -->
+		<div class="detailcoltwo-right">
+			<venda_block label=456,chkatt=notnull>
+				<venda_block label=666,med-colour1=notnull,med-colour2=notnull,med-colour3=notnull,med-colour4=notnull,,med-colour5=notnull,med-colour6=notnull,med-colour7=notnull,med-colour8=notnull,med-colour9=notnull,med-colour10=notnull,med-colour11=notnull,med-colour12=notnull,operator=or>
+				<div class="productdetailsubheads">Available Colours</div>
+				<div class="availcolour">
+				<venda_block label=111,med-colour1=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour1,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour1,border=0,width=30,height=22></a>
+				</venda_block label=111>
+				<venda_block label=112,med-colour2=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour2,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour2,border=0,width=30,height=22></a>
+				</venda_block label=112>
+				<venda_block label=113,med-colour3=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour3,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour3,border=0,width=30,height=22></a>
+				</venda_block label=113>
+				<venda_block label=114,med-colour4=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour4,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour4,border=0,width=30,height=22></a>
+				</venda_block label=114>
+				<venda_block label=115,med-colour5=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour5,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour5,border=0,width=30,height=22></a>
+				</venda_block label=115>	
+				<venda_block label=116,med-colour6=notnull>
+				<a href="#" class="last" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour6,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour6,border=0,width=30,height=22></a>
+				</venda_block label=116>	
+				<br class="clear-all">
+				</div>
+				<div class="availcolour">
+				<venda_block label=117,med-colour7=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour7,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour7,border=0,width=30,height=22></a>
+				</venda_block label=117>		
+				<venda_block label=118,med-colour8=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour8,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour8,border=0,width=30,height=22></a>
+				</venda_block label=118>		
+				<venda_block label=119,med-colour9=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour9,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour9,border=0,width=30,height=22></a>
+				</venda_block label=119>		
+				<venda_block label=120,med-colour10=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour10,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour10,border=0,width=30,height=22></a>
+				</venda_block label=120>		
+				<venda_block label=121,med-colour11=notnull>
+				<a href="#" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour11,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour11,border=0,width=30,height=22></a>
+				</venda_block label=121>		
+				<venda_block label=122,med-colour12=notnull>
+				<a href="#" class="last" onclick="ChangeColor('<venda_media rec=invt,type=movie-swf-pict,key=colour12,img=no>')"><venda_media rec=invt,type=movie-swf-pict,key=colour12,border=0,width=30,height=22></a>
+				</venda_block label=122>		
+				</div>
+				</venda_block label=456>
+			</venda_block label=666>
+			<br class="clear-all">
+			<venda_block label=27,invtacctot&gt;0>
+			<!-- accessories -->
+			<div style="margin-top:14px;">&nbsp;</div>
+			<venda_invtacc template=accessories>
+			</venda_block label=27>
+			<venda_block label=29,invtsubtot&gt;0>
+			<!-- substitutes -->
+			<venda_invtsub template=substitutes>
+			</venda_block label=29>
+		</div>
+		</div>
+	</form>
+	<venda_block label=062832,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=notnull><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=062832>
+	<venda_block label=0628320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=0628320>
+		<!--START MULTIBUY STUFF-->
+		   <venda_block label=340,invtsell2=notnull>
+		   <div>
+		    <h3>Multiple-buy Savings</h3>
+		    <div>
+		    <p>Buy <venda_invtstartqty2><venda_block label=52,invtsell3=null>+</venda_block label=52> <venda_invtname> for <strong><venda_currsym><venda_invtsell2></strong> each</p>
+		    <venda_block label=341,invtsell3=notnull>
+		    <p>Buy <venda_invtstartqty3><venda_block label=53,invtsell4=null>+</venda_block label=53> <venda_invtname> for <strong><venda_currsym><venda_invtsell3></strong> each</p>
+		    </venda_block label=341>
+		    <venda_block label=342,invtsell4=notnull>
+		    <p>Buy <venda_invtstartqty4><venda_block label=54,invtsell5=null>+</venda_block label=54> <venda_invtname> for <strong><venda_currsym><venda_invtsell4></strong> each</p>
+		    </venda_block label=342>
+		    <venda_block label=343,invtsell5=notnull>
+		    <p>Buy <venda_invtstartqty5><venda_block label=55,invtsell6=null>+</venda_block label=55> <venda_invtname> for <strong><venda_currsym><venda_invtsell5></strong> each</p>
+		    </venda_block label=343>
+		    <venda_block label=344,invtsell6=notnull>
+		    <p>Buy <venda_invtstartqty6>+ <venda_invtname> for <strong><venda_currsym><venda_invtsell6></strong> each</p>
+		    </venda_block label=344>
+		    </div>
+		   </div>
+		  </venda_block label=340>
+		<!--END MULTIBUY STUFF-->
+		
+		<venda_category temp=reviewlink,ref=<venda_invtref>,rec=scat>
+	</div>
+</div>
+
+<br class="clear-all">
+    <!-- DIVIDER LINE -->
+<div class="thickline700">&nbsp;</div>
+
+<!-- tpxt used for recently viewed items -->
+ <venda_tpxt mode=set,name=invtref,value=<venda_invtref>>
+
+<br class="clear-all">
+<div id="tabrecentlyview">				
+				<!-- tpxt used for recently viewed items -->
+				<venda_tpxt mode=set,name=invtref,value=<venda_invtref>>
+				<venda_element element=lastvieweditems>	
+				<venda_extflds template=extflds,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+				
+	<div id="showRVI" class="LshowRVI">
+		<span></span><span class="productdetailsubheads"><venda_text id=site.product_detail.recent_items></span>
+	<div>
+	<img id="slideLeft" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previousrvi.gif" alt="<venda_text
+id=site.product_detail.recent_items.previous>" border="0" class="slide" style="visibility:hidden;">
+	<div class="rviwrapper">
+		<venda_tpcomment><!--venda_rvi shows up to (limit=)6 last viewed product. Note that the limit
+must be greated than the rviSlider displayCount above.--></venda_tpcomment>
+		<ul id="rvilist"><venda_rvi temp=rviproductdetail_detblock,limit=10></ul>
+	</div>
+	<img id="slideRight" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_nextrvi.gif" alt="<venda_text id=site.product_detail.recent_items.next>" border="0" class="slide" style="visibility:hidden;">
+</div>
+</div>
+</div>
+	<script type="text/javascript">
+		addEvent(window, 'load', function() {
+		 	ChangePrice();
+		  	changeImages();
+		 	<venda_block label=55221,invtavail&gt;0,chkatt=notnull>
+				 ChangeOutofstockDiv();
+	       </venda_block label=55221>
+		<venda_tpcomment>// START - javascript for RVISlider. Please remove if not needed </venda_tpcomment>
+		var rviSlider = new Venda.Widget.Slider({
+			sliderID: 'rvilist',
+			maxNum: 10,
+			displayCount: 5,
+			slideAmtNum: 1,
+			slideLeft: 'slideLeft',
+			slideRight: 'slideRight',
+			duration: 0.2
+		});
+		YAHOO.util.Event.onDOMReady(rviSlider.init, rviSlider, true);
+});
+<venda_tpcomment>// END - javascript for RVISlider</venda_tpcomment>
+</script>

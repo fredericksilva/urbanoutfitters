@@ -1,0 +1,65 @@
+/* @override 
+	http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/css/prod-temp.css
+	http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/css/prod-temp.css
+	http://www.urbanoutfitters.de/content/ebiz/urbanoutfitters/resources/css/prod-temp.css
+*/
+
+.backToCat {float: right; margin: 0; text-decoration: none;}
+.backToCat:hover {color: #00ccff;}
+
+#productdetail {width: 100%; margin-top: 13px;}
+.productdetailcolone {float:left; width:475px;}
+#productdetailimage {padding-right:5px;float:left;}
+#productdetailthumbs li {border-bottom-width: 5px; cursor: pointer;}
+#productdetailthumbs li img {width: 73px; height: 110px;}
+
+.productdetailcoltwo {width: 475px;}
+
+#productdetail .yui-navset {border: 1px solid #ccc; width: 474px;}
+#productdetail .yui-navset .yui-nav li {float: left; position: relative;}
+#productdetail .yui-navset .yui-nav li a {padding: 7px 0; float: left; text-decoration: none;border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; width: 94px; text-align: center;}
+#productdetail .yui-navset .yui-nav li a:hover,
+#productdetail .yui-navset .yui-nav li.selected a {color: #00ccff;}
+#productdetail .yui-navset .yui-nav li.selected span {background: url(../images/tab-arrow.gif) no-repeat center center; width: 9px; height: 5px; position: absolute; left: 50%; bottom: -4px; margin-left: -3px;}
+#productdetail .yui-navset .yui-nav li.first a {border-left: none;}
+#productdetail .yui-navset .yui-content {clear: both; }
+#productdetail .yui-navset .yui-content #tab1,
+#productdetail .yui-navset .yui-content #tab2,
+#productdetail .yui-navset .yui-content #tab3,
+#productdetail .yui-navset .yui-content #tab4 {padding: 20px; min-height: 500px;}
+
+.productname,
+.productprice {font-weight:normal; font-size:123%; padding-bottom:3px; margin: 0;}
+
+/* //SOCIAL// */
+#productdetail .social {margin-top: 12px; margin-bottom: 5px;}
+#productdetail .social iframe { width: 100px !important; }
+
+#productdetail .social.de iframe#faceB { width: 110px !important;}
+#productdetail .social.de a#pinterest.pin-it-button { margin-left: 10px;  }
+
+
+#tab1 .productdetailsubheads {text-transform: capitalize; margin-top: 25px; font-size: 100%;}
+#options_deliveryinfo {display: block; font-size: 100%;}
+#options_sizechart {display:block;}
+#productdetail h4 {margin: .5em 0;}
+#productdetail .sizecharttable h2 {margin-top: 2em;}
+
+.avaHead {display: none;}
+.talCol {float: none;}
+.availability {border-collapse: collapse; font: 12px Helvetica, Arial, Geneva, sans-serif;}
+.availability td {border: 1px solid #d0d2d2; padding: 5px;}
+.availabilityColours {clear: both; font: 12px Helvetica, Arial, Geneva, sans-serif;}
+
+#productdetail #tabbox2.yui-navset {width: 459px; margin-top: 18px;}
+#productdetail #tabbox2.yui-navset .yui-nav li a {width: 229px;}
+#productdetail #tabbox2.yui-navset .yui-content #rvitab {width: 100%; overflow: hidden;}
+
+#productdetail #availproductdetail #iacc .featprods {width:100%; padding-top: 10px;}
+#productdetail #availproductdetail #iacc .featprods li {width: 67px; padding: 0 4px;}
+
+#tabrecentlyview #showRVI {width: 459px; margin: 0 0 0 5px; min-height: inherit;}
+#tabrecentlyview #rvidiv .image {margin: 0; min-height: inherit; height: 100px;}
+#tabrecentlyview .LshowRVI ul#rvilist li {min-height: inherit;}
+#tabrecentlyview .LshowRVI ul#rvilist {margin: 10px 0;}
+#tabrecentlyview #showRVI img.slide {margin-top:49px;}

@@ -1,0 +1,15 @@
+<fieldset class="inpform">
+<legend class="hide">contact details at this address</legend>
+<div id="pinkHeader">Contact Details</div>
+<div><label for="title">Title:</label><select name="title" id="title">
+	<option value="Mr" <venda_block label=121,title=Mr>selected</venda_block label=121>>Mr</option>
+	<option value="Mrs" <venda_block label=111,title=Mrs>selected</venda_block label=111>>Mrs</option>
+	<option value="Miss" <venda_block label=101,title=Miss>selected</venda_block label=101>>Miss</option>
+	<option value="Ms" <venda_block label=121,title=Ms>selected</venda_block label=121>>Ms</option>
+	<option value="" <venda_block label=131,title=Other>selected</venda_block label=131>>Other</option>
+</select>
+</div>
+<div><label for="fname">First Name: <span class="required">*</span></label> <venda_fname field=text,size=25,maxlength=30,required=yes></div>
+<div><label for="lname">Last Name: <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30,required=yes></div>
+<div class="phone"><div class="phonelabel"><label for="phone" class="dontFloat">Telephone Number:</label> <label for="area" class="dontFloat invisible">and Area Code:</label></div> <venda_area field=text,size=4,maxlength=6,class=w30><venda_phone field=text,size=18,maxlength=20,class=w123></div>
+</fieldset>

@@ -1,0 +1,179 @@
+<venda_inctemplate name=textEmailDetblocks,type=includes>
+==============================================================================
+
+
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><venda_ebizname> Order Despatch Notification - <venda_ohordnum></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><venda_ebizname> Mitteilung über den Versand der Bestellung - <venda_ohordnum></venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><venda_ebizname> Notice d'expédition de votre commande - <venda_ohordnum></venda_block label=1013>
+
+
+==============================================================================
+
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+Thank you for your order number <venda_ohordnum>. We thought you would like to know that your order has been authorised and despatched. Your credit/debit card has now been charged.
+
+
+</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+Vielen Dank für Ihre Bestellung Nummer <venda_ohordnum>. Wir dachten, Sie würden gerne erfahren, dass Ihre Bestellung genehmigt und versendet wurde. Ihre Kredit-/Debitkarte wurde nun belastet.
+
+
+</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>
+Nous vous remercions de votre commande numéro <venda_ohordnum>. Nous sommes heureux de vous annoncer que votre commande a été autorisée et expédiée. Le montant a été débité sur votre carte de crédit/débit.
+
+
+</venda_block label=1023>
+<venda_inctemplate name=textEmailBody,type=includes>
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+Order Tracking - UK Standard Delivery.
+
+
+
+Please click http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number> to track your order.
+
+
+
+You will be able to track your order after 2 days.
+
+
+
+Order Tracking - Express Delivery
+
+
+
+Please click http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number> to track your order.
+
+
+
+You should be able to track the journey of your parcel from tomorrow morning.
+
+
+
+Order Tracking - Other
+
+
+
+If your order is being despatched outside of the UK, please click http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber=<venda_tpxt mode=get,name=number> to track your order.
+
+
+
+Where is my order?
+
+
+
+http://www.urbanoutfitters.co.uk/page/whereismyorder
+
+
+
+Got a question about your order?  You can contact us via:
+EMAIL: UrbanEuropeCS@urbanout.com
+PHONE: +44 (0) 845 330 1288 – We’re open 7 days a week 9am – 2am (GMT)
+ 
+If you placed your order via: www.urbanoutfitters.de <http://www.urbanoutfitters.de>  
+EMAIL: service@urbanoutfitters.de
+PHONE: 06 93 80 78 93 39 - We’re open Monday – Friday 10am – 6pm (MEZ)
+
+
+
+Thank you for shopping at <venda_ebizurl>
+</venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de>
+Sendungsverfolgung - GB Standardversand
+
+
+
+Bitte klicken Sie auf http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number>, um Ihre Bestellung zu verfolgen.
+
+
+
+Sie können Ihre Bestellung nach 2 Tagen verfolgen.
+
+
+
+Sendungsverfolgung - Expressversand
+
+
+
+Bitte klicken Sie auf http://www.dpd.co.uk/,um Ihre Bestellung zu verfolgen.
+
+
+
+Sie sollten den Versand Ihres Pakets ab morgen früh verfolgen können.
+
+
+ 
+Sendungsverfolgung - Sonstige
+
+
+
+Falls Ihre Bestellung außerhalb Großbritanniens verschickt wird, klicken Sie bitte auf http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber=<venda_tpxt mode=get,name=number>, um Ihre Bestellung zu verfolgen.
+
+
+
+Wo befindet sich meine Bestellung?
+
+
+
+http://www.urbanoutfitters.de/page/whereismyorder
+
+
+
+Für Fragen zu Ihrer Bestellung kontaktieren Sie uns bitte per E-Mail an service@urbanoutfitters.de oder rufen Sie uns von Montag bis Freitag, 10.00-18.00 Uhr unter 06 93 80 78 93 39 an.
+
+
+
+Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
+</venda_block label=1032>
+<venda_block label=1033,ohusgrrf=guest_fr>
+Suivi de commande - Livraison standard R.-U.
+
+
+
+Veuillez cliquer http://www.royalmail.com/portal/rm/track?trackNumber=<venda_tpxt mode=get,name=number>, pour suivre votre commande.
+
+
+
+Vous pourrez suivre votre commande dans 2 jours.
+
+
+
+Suivi de commande - Livraison Express
+
+
+
+Veuillez cliquer http://www.dpd.co.uk/ pour suivre votre commande.
+
+
+
+Vous devriez être capable de suivre votre commande dès demain matin.
+
+
+ 
+Suivi de commande - Autre
+
+
+
+Si votre commande est expédiée en dehors du R.-U., veuillez cliquer http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber=<venda_tpxt mode=get,name=number> pour suivre votre commande.
+
+
+
+ù est ma commande ?
+
+
+
+http://www.urbanoutfitters.fr/page/whereismyorder
+
+
+
+Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, veuillez nous contacter à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+
+
+
+Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
+</venda_block label=1033>
+<venda_inctemplate name=textEmailFooter,type=includes>

@@ -1,0 +1,162 @@
+<script language="JavaScript" type="text/javascript">
+function validateFields() {					
+ 
+var stopclick=0;
+
+var remtype1 = '<venda_remtype1udufnbr>';
+var remday1 = '<venda_remday1udufnbr>';
+var remmonth1 = '<venda_remmonth1udufnbr>';
+var remyear = '<venda_remyearudufnbr>';
+
+if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value == "") {
+	alert("Please select an occasion for your reminder");						
+	document.wizform.elements[remtype1].focus();
+	return;
+}						
+if (document.wizform.elements[remday1].options[document.wizform.elements[remday1].selectedIndex].value == "") {
+	alert("Please select a day for your reminder");						
+	document.wizform.elements[remday1].focus();
+	return;
+}
+if (document.wizform.elements[remmonth1].options[document.wizform.elements[remmonth1].selectedIndex].value == "") {
+	alert("Please select a month for your reminder");						
+	document.wizform.elements[remmonth1].focus();
+	return;
+}
+if (document.wizform.elements[remyear].value =="") {
+	alert("Please enter a year");
+	document.wizform.elements[remyear].focus();
+return;
+}
+
+var yeartxt = document.wizform.elements[remyear].value;
+
+if (yeartxt.length < 4) {
+alert("Please enter Year to be 4 digit");
+document.wizform.elements[remyear].focus();
+return;
+}
+
+// only allow numbers to be entered
+var checkOK = "0123456789";
+var allValid = true;
+var allNum = "";
+for (i = 0;  i < yeartxt.length;  i++){
+	ch = yeartxt.charAt(i);
+	for (j = 0;  j < checkOK.length;  j++)
+	if (ch == checkOK.charAt(j))
+	break;
+	if (j == checkOK.length){
+		allValid = false;
+		break;
+	}
+		if (ch != ",")
+		allNum += ch;
+}
+	if (!allValid){
+		alert("Please enter only digit in the \"year\" field.");
+		document.wizform.elements[remyear].focus();
+		return;
+}
+
+function covertMonth(pmonth){
+	switch (pmonth){
+	case "Jan": newMonth=1;break;
+	case "Feb": newMonth=2;break;
+	case "Mar": newMonth=3;break;
+	case "Apr": newMonth=4;break;
+	case "May": newMonth=5;break;
+	case "Jun": newMonth=6;break;
+	case "Jul": newMonth=7;break;
+	case "Aug": newMonth=8;break;
+	case "Sep": newMonth=9;break;
+	case "Oct": newMonth=10;break;
+	case "Nov": newMonth=11;break;
+	case "Dec": newMonth=12;break;
+	}
+	return newMonth;
+}
+
+//Is the date in the past ?
+var monthLength = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+var dateExists=true;
+var day = document.wizform.elements[remday1].value;
+var month =  covertMonth(document.wizform.elements[remmonth1].value);
+var year = document.wizform.elements[remyear].value;
+	
+	if (year/4 == parseInt(year/4))
+		monthLength[1] = 29;
+
+	if (day > monthLength[month-1])
+		dateExists = false;
+
+	monthLength[1] = 28;
+
+	if (!dateExists){ 
+		alert("Please enter a valid date.");
+		return;
+	}
+	
+	var now = new Date();
+	now = now.getTime(); //NN3
+
+	var dateToCheck = new Date();
+	dateToCheck.setYear(year);
+	dateToCheck.setMonth(month-1);
+	dateToCheck.setDate(day);
+	var checkDate = dateToCheck.getTime();
+	var pastDate = (now > checkDate);
+	var dateDiff = (checkDate - now)/86400000;
+
+	if(pastDate){	
+		alert("Please enter a date in the future.");
+		return;
+	} else	
+	if (dateDiff < 14) {
+		alert("Please enter a date more than 4 days.");
+		return;	
+	}
+<venda_wizbutton step=usext,mode=process,callonly=yes>
+}
+</script>
+
+<!-- start of editing reminder -->
+<h1>Edit Reminder</h1>
+										
+<venda_block label=1,errors=notnull><h3 class="error"><venda_errors></h3></venda_block label=1>
+
+<venda_form>
+<input type="hidden" name="usxtgroup" value="<venda_usxtgroup>">
+<input type="hidden" name="order1" value="remmonth">
+<input type="hidden" name="order2" value="remday">
+<input type="hidden" name="subgroup" value="4">
+<table summary="Information about each item in your basket" cellspacing="0" cellpadding="0" border="0">
+	<thead>
+		<tr>
+			<th scope="col">&nbsp;</th>
+			<th scope="col">Occasion</th>
+			<th scope="col">Day</th>
+			<th scope="col">Month</th>
+			<th scope="col">Year</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><venda_recfname> <venda_reclname>'s</td>
+			<td><select name="<venda_remtype1udufnbr>" id="<venda_remtype1udufnbr>"><venda_usxselectremtype1></select></td>
+			<td><select name="<venda_remday1udufnbr>" id="<venda_remday1udufnbr>"><venda_usxselectremday1></select></td>
+			<td><select name="<venda_remmonth1udufnbr>" id="<venda_remmonth1udufnbr>"><venda_usxselectremmonth1></select></td>
+			<td><input type="text" name="<venda_remyearudufnbr>" id="<venda_remyearudufnbr>" size="4" maxlength="4" value="<venda_remyear>"></td>
+		</tr>
+	</tbody>
+</table>
+
+<a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&order1=remmonth&order2=remday&subgroup=4&step=usext"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previous.gif" alt="PREVIOUS" border="0"></a>
+<input type="image" onclick="validateFields(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" border="0">
+</form>
+<!-- end of editing reminder -->
+
+<!-- 
+page: wz_usxt-edit.html
+workflow: <venda_workflow>
+ -->

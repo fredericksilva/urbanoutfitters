@@ -1,0 +1,42 @@
+<div id="imageware">
+<venda_block label=100,mode=value,<venda_htxt mode=get,name=detectflash>!=no>        
+    <script type="text/javascript">
+    	// <![CDATA[
+    	
+    	var myFlashObject = new FlashObject("http://imageware.venda.com:80/imageware/fsi4/fsi.swf?cfg=sc_urbanoutfitters&showcase_server=http://imageware.venda.com:80/imageware&showcase_dir=<venda_setting type=ebiz,name=ref>/invt/<venda_invtref>/&cfg=showcase_presets/default_outside_right.fsi&mousemodes=0&mousemodeselect=0&zoommeter=0&history=0&magnifier=0&maxzoom=0&navextension=0&clockprogress=0&softwarecursor=0&selectframe=0&HideUI=1&UISwitchable=0");
+    	myFlashObject.redirect = "<venda_dispview page=installflash>";
+    	myFlashObject.write();
+    	
+    	// ]]>
+    </script>
+
+    <noscript>
+        <div id="installjs">
+        	
+            <p>This feature requires that you have JavaScript turned on to detect whether you have Flash installed on your machine.</p>
+            <ul>
+            	<li>Netscape users go to Edit, Preferences, Advanced and tick Enable JavaScript. Version 7 users go to Advanced, Scripts &amp; Plug-ins.</li>
+            	<li>Internet Explorer users go to Tools, Internet Options, Security, Custom Level, Scripting and enable Active Scripting.</li>
+            	<li>If you do not wish to turn on JavaScript and you do have Flash installed, <a href="<venda_dispview invt=<venda_invtref>>&temp=imageware&layout=flashpopup?htxt=<venda_htxt mode=make,detectflash=no>">click here to view the Flash version</a>.</li>
+            </ul>
+         
+        </div>
+    </noscript>
+</venda_block label=100>
+    
+<venda_block label=101,mode=value,<venda_htxt mode=get,name=detectflash>=no>
+<!-- User does not want to turn on javascript-->
+    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" 
+   codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+   width="100%" height="93%" id="fsipages" align="middle">
+    <param name="allowScriptAccess" value="sameDomain" />
+    <param name="movie" value="http://imageware.venda.com/imageware/fsi4/fsi.swf?cfg=sc_urbanoutfitters&FPXBase=http://imageware.venda.com/imageware%2Fimageware%3Fsrc%3D&FPXSrc=<venda_setting type=ebiz,name=ref>/invt/<venda_invtref>.tif&ViewerWidth=100%&ViewerHeight=93%&NoNav=0&plugins=resize" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#ffffff" />
+    <embed src="http://imageware.venda.com/imageware/fsi4/fsi.swf?cfg=sc_urbanoutfitters&FPXBase=http://imageware.venda.com/imageware%2Fimageware%3Fsrc%3D&FPXSrc=<venda_setting type=ebiz,name=ref>/invt/<venda_invtref>.tif&ViewerWidth=100%&ViewerHeight=93%&NoNav=0&plugins=resize" quality="high" bgcolor="#ffffff" width="100%" 
+       height="93%" name="fsipages" align="middle" allowScriptAccess="sameDomain" 
+       type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+<p><a href="<venda_dispview invt=<venda_invtref>>">Back to product details</a></p>
+</venda_block label=101>
+ </div>

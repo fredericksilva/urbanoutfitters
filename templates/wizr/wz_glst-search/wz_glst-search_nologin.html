@@ -1,0 +1,72 @@
+<!-- Loop for Order Results -->
+<venda_detblock1>
+ <tr>
+		<td valign="top"><venda_glstrfnbr></td>
+		
+		<venda_block label=300,glstownerrelation=bride>
+		<td valign="top">
+		<venda_glstcreatortitle> <venda_glstcreatorfname> <venda_glstcreatorlname>
+		</td>
+		<td valign="top">
+		<venda_glstpartnertitle> <venda_glstpartnerfname> <venda_glstpartnerlname>
+		</td>
+		</venda_block label=300>
+		
+		<venda_block label=301,glstownerrelation!=bride>
+		<td valign="top">
+		<venda_glstpartnertitle> <venda_glstpartnerfname> <venda_glstpartnerlname>
+		</td>
+		<td valign="top">
+		<venda_glstcreatortitle> <venda_glstcreatorfname> <venda_glstcreatorlname>
+		</td>
+		</venda_block label=301>
+		<td valign="top"><venda_dateformat type=long,format=dd mm yyyy,suffix=1,date=<venda_glsteventdate>></td>
+		<td valign="top"><venda_glststore></td>
+		<td><a href="#" onclick="displayDetail(<venda_glstrfnbr>); return false;"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_go.gif" alt="go" border="0" id="go"></a></td>
+</tr>
+</venda_detblock1>
+
+<venda_form>
+<!-- Begin Search Results -->
+<h1>Gift List - Results</h1>
+	
+	<venda_block label=302,glstresultstot=0>
+	<p>Sorry, no Gift Lists were found.</p> 
+    
+	<venda_block label=332,editgiftlist!=1>
+    <p>Please return to the <a href="<venda_dispview page=home>">Home page</a> or use our <a href="<venda_dispview page=advancedsearch>">advanced search</a>.</p>
+    </venda_block label=332>
+    
+    <venda_block label=333,editgiftlist=1>
+    <p>Please return to the <a href="<venda_dispview page=admin>">Admin page</a> to try again, or use our <a href="<venda_dispview page=advancedsearch>">advanced search</a>.</p>
+    </venda_block label=333>
+    
+	</venda_block label=302>	
+    
+	<venda_block label=303,glstresultstot&gt;0>
+	<p>Please select a wedding from the list below, using the <strong>Go</strong> button.</p>
+
+    <h2>List of Matches</h2>
+    <table cellpadding="0" cellspacing="0" border="0">
+		<thead>
+		<th scope="col">Wedding ID</th>
+		<th scope="col">Bride's Name</th>
+		<th scope="col">Groom's Name</th>
+		<th scope="col">Wedding Date</th>
+		<th scope="col" colspan="2">Store</th>
+		</thead>
+		<tbody>
+		<!-- Begin Results Loop -->
+		<venda_detail1>
+		<!-- End Results Loop -->
+		</tbody>
+	</table>	  
+	</venda_block label=303>	
+
+</form>
+
+<!--
+page:wz_glst-search.html
+workflow:<venda_workflow>
+step:<venda_curstep>
+-->

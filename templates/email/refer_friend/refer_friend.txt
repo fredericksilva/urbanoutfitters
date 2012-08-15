@@ -1,0 +1,19 @@
+Gift List Notification<cr>
+<cr>
+Dear <venda_name><cr>
+<cr>
+<venda_block label=201,partnerfname=notnull>
+<venda_fname> <venda_lname> & <venda_partnerfname> <venda_partnerlname> have created a Gift List and wanted to let you know.<cr>
+</venda_block label=201>
+<venda_block label=202,partnerfname=null>
+<venda_fname> <venda_lname> has created a Gift List and wanted to let you know.<cr>
+</venda_block label=202>
+<cr>
+The message to you is: <venda_message><cr>
+To access <venda_fname><venda_block label=208,partnerfname=notnull> & <venda_partnerfname></venda_block label=208>'s Gift List: Simply visit <venda_dispview page=giftlist> and use the following details to login into your friend's Gift List:<cr>
+<cr>
+Gift List ID: <venda_glrfnbr><cr>
+Gift List Password: <venda_glstpswd><cr>
+<cr>
+Kind regards<cr>
+<venda_ebizname>

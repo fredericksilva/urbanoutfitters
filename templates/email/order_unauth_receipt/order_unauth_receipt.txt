@@ -1,0 +1,30 @@
+<venda_inctemplate name=textEmailDetblocks,type=includes>
+
+==============================================================================
+
+
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><venda_ebizname> Order <venda_ohordnum>, Card Authorisation Delayed</venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><venda_ebizname> Bestellung <venda_ohordnum>, Kartenautorisierung verzögert</venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><venda_ebizname> Commande <venda_ohordnum>, l'autorisation d'utilisation de la carte a été repoussée</venda_block label=1013>
+
+
+==============================================================================
+
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_block label=20,msg=notnull><venda_msg></venda_block label=20>
+
+
+
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>Your Order has not been authorised yet. A final confirmation email will follow.</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>Ihre Bestellung wurde noch nicht autorisiert. Eine endgültige E-Mail-Bestätigung wird folgen.</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>Votre commande n'a pas encore été autorisée. Un dernier email de confirmation suivra.</venda_block label=1023>
+
+
+
+
+<venda_inctemplate name=textEmailBody,type=includes>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

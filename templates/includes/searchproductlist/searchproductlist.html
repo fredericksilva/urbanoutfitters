@@ -1,0 +1,46 @@
+<form name="sortform" id="sortform" method="get" action="<venda_codehttp>">
+<input type="hidden" name="ex" id="ex" value="co_wizr-xapian">
+<input type="hidden" name="bsref" id="bsref" value="<venda_bsref>">
+<input type="hidden" name="filtercat" value="<venda_block label=7748,icatref=notnull><venda_icatref></venda_block label=7748><venda_block label=7847,field_searchcat=notnull><venda_field_searchcat></venda_block label=7847>">
+<input type="hidden" name="searchex" id="searchex" value="<venda_block query=notnull><venda_query></venda_block><venda_block label=336,query=null>*</venda_block label=336>">
+<input type="hidden" name="xptpl" id="template" value="wz_xapian_productlist">
+<input type="hidden" name="layout" value="default">
+<input type="hidden" name="itemsperpage" id="itemsperpage" value="<venda_itemsperpage>">
+<input type="hidden" name="carryfields" id="carryfields" value="sortprice,icatname,searchcat,bklist,layout">
+<input type="hidden" name="srchopt" id="srchopt" value="sortprice">
+<input type="hidden" name="sortprice" value="">
+<input type="hidden" name="parentcat" value="">
+<input type="hidden" name="searchcat" value="<venda_block label=7846,field_searchcat=null,icatref=notnull><venda_icatref></venda_block label=7846><venda_block label=7847,field_searchcat=notnull><venda_field_searchcat></venda_block label=7847>">
+<input type="hidden" name="icatname" value="<venda_block label=7748,icatref=notnull><venda_icatname></venda_block label=7748><venda_block label=7749,field_icatname=notnull><venda_field_icatname></venda_block label=7749>">
+<input type="hidden" name="bklist" value="<venda_block label=78,bklist=notnull><venda_bklist></venda_block label=78><venda_block label=789,bklist=null><venda_cattree bklist=<venda_icatref>,type=icat></venda_block label=789>">
+<input type="hidden" name="isviewall" value="<venda_block label=79,isviewall=notnull><venda_isviewall></venda_block label=79>">
+
+<select name="sort" onchange="urlsort(this.value);" class="font8">
+<option value="">sort results by</option>
+<option value="sortprice|up">sort by price ascending</option>
+<option value="sortprice|down">sort by price descending</option>
+</select>
+<script language="JavaScript" type="text/javascript">
+<!--
+// original code by 
+function urlsort(sortby)
+{ 
+	document.sortform.searchex.value="";
+	if(document.sortform.isviewall.value==1){
+		document.sortform.itemsperpage.value="100";
+	}
+   	switch (sortby) {
+	case "sortprice|up":
+       	document.sortform.sortprice.value="up";
+        break;
+	case "sortprice|down":
+		document.sortform.sortprice.value="down";
+        break;
+	}
+	document.sortform.sort.value="";  
+	document.sortform.submit();
+
+}
+//-->
+</script> 
+</form>

@@ -1,0 +1,51 @@
+<venda_detblock1>
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<p>Your RMA No.: <venda_com>.</p>
+<p>
+The following products have been returned:
+</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de>
+<p>Ihre RMA-Nr.: <venda_com>.</p>
+<p>
+Folgende Produkte wurden zur&uuml;ckgesandt:
+</venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_ohusgrrf>=guest_fr>
+<p>Votre numéro RMA : <venda_com>.</p>
+<p>
+Les articles suivants ont été retournés :
+</venda_block label=1013>
+<ul>
+<venda_detail2>
+</ul>
+</p>
+</venda_detblock1>
+
+<venda_detblock2>
+	<li><venda_oiivname> (<venda_status>)</li>
+</venda_detblock2>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+<venda_block label=1014,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<title><venda_ebizname> Return Confirmation</title>
+</venda_block label=1014>
+<venda_block label=1015,mode=value,<venda_ohusgrrf>=guest_de>
+<title><venda_ebizname> R&#252;ckgabebest&#228;tigung</title>
+</venda_block label=1015>
+<venda_block label=1016,mode=value,<venda_ohusgrrf>=guest_fr>
+<title><venda_ebizname> Confirmation de retour</title>
+</venda_block label=1016>
+</head>
+<body>
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<venda_inctemplate name=htmlEmailHeader,type=includes>
+
+<venda_detail1>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

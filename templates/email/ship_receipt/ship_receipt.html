@@ -1,0 +1,105 @@
+<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+<html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
+<meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+<head>
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><title><venda_ebizname> Order Despatch Notification - <venda_ohordnum></title></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><title><venda_ebizname> Mitteilung über den Versand der Bestellung - <venda_ohordnum></title></venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><title><venda_ebizname> Notice d'expédition de votre commande - <venda_ohordnum></title></venda_block label=1013>
+</head>
+<body style="width:500px; color:#000; margin:5px 20px; background:#fff;">
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Ship Receipt</strong>
+</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+<a href="http://www.urbanoutfitters.de/"><img src="http://www.urbanoutfitters.de/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Versandbestätigung</strong>
+</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>
+<a href="http://www.urbanoutfitters.fr/"><img src="http://www.urbanoutfitters.fr/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Reçu d'expédition</strong>
+</venda_block label=1023>
+<br><br>
+
+<venda_inctemplate name=htmlEmailHeader,type=includes>
+
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr> <p>Thank you for your order number <venda_ohordnum>. We thought you would like to know that your order has been authorised and despatched. Your credit/debit card has now been charged.</p></venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de> <p>Vielen Dank für Ihre Bestellung Nr. <venda_ohordnum>. Wir dachten, Sie würden gerne erfahren, dass Ihre Bestellung genehmigt und versandt wurde. Ihre Kredit-/Debitkarte wurde nun belastet.</p> </venda_block label=1032>
+<venda_block label=1033,ohusgrrf=guest_fr> <p>Nous vous remercions de votre commande numéro <venda_ohordnum>. Nous sommes heureux de vous annoncer que votre commande a été autorisée et expédiée. Le montant a été débité sur votre carte de crédit/débit.</p> </venda_block label=1033>
+
+<venda_inctemplate name=htmlEmailBody,type=includes>
+
+<venda_block label=1041,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<p><b>Order Tracking - UK Standard Delivery.</b><br>
+Please click <a href="http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number>">here</a> to track your order.<br>
+You will be able to track your order after 2 days.</p>
+
+<p><b>Order Tracking - Express Delivery</b><br>
+Please click <a href="http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number>">here</a> to track your order.<br>
+You should be able to track the journey of your parcel from tomorrow morning.</p>
+
+<p><b>Order Tracking - Other</b><br>
+If your order is being despatched outside of the UK, please click <a href="http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber=<venda_tpxt mode=get,name=number>">here</a> to track your order.</p>
+ 
+<p>Where is my order?</p>
+ 
+<p>Got a question about your order?  You can contact us via:<br>
+  EMAIL: <a href="mailto:UrbanEuropeCS@urbanout.com">UrbanEuropeCS@urbanout.com</a><br>
+  PHONE: +44 (0) 845 330 1288 - We're open 7 days a week 9am - 2am (GMT)<br>
+  <br>
+  If you placed your order via: <a href="http://www.urbanoutfitters.co.uk">www.urbanoutfitters.co.uk</a><br>
+  EMAIL: <a href="mailto:UrbanEuropeCS@urbanout.com">UrbanEuropeCS@urbanout.com</a><br>
+  PHONE: 06 93 80 78 93 39 - We're open Monday - Friday 10am - 6pm (MEZ)</p>
+
+<p>Thank you for shopping at <a href="<venda_ebizurl>"><venda_ebizurl></a></p>
+</venda_block label=1041>
+<venda_block label=1042,ohusgrrf=guest_de>
+<p><b>Sendungsverfolgung - GB Standardversand</b><br>
+Bitte klicken Sie <a href="http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number>">hier</a>, um Ihre Bestellung zu verfolgen.<br>
+Sie können Ihre Bestellung nach 2 Tagen verfolgen.</p>
+
+<p><b>Sendungsverfolgung - Expressversand</b><br>
+Bitte klicken Sie <a href="http://www.dpd.co.uk">hier</a>, um Ihre Bestellung zu verfolgen.<br>
+Sie sollten den Versand Ihres Pakets ab morgen früh verfolgen können.</p>
+
+<p><b>Sendungsverfolgung - Sonstige</b><br>
+Falls Ihre Bestellung außerhalb Großbritanniens verschickt wird, klicken Sie bitte <a href="http://www.hermes-europe.co.uk/customerparceltrackingservice/trackingDetailsHermes.jsp?barcode=<venda_tpxt mode=get,name=number>">hier</a>, um Ihre Bestellung zu verfolgen.</p>
+ 
+<p>Wo befindet sich meine Bestellung?</p>
+ 
+<p>Für Fragen zu Ihrer Bestellung kontaktieren Sie uns bitte per E-Mail unter <a href="mailto:service@urbanoutfitters.de">service@urbanoutfitters.de</a> oder rufen Sie uns von Montag bis Freitag, 10.00-18.00 Uhr unter 06 93 80 78 93 39 an.</p>
+
+<p>Vielen Dank für Ihren Einkauf bei <a href="http://www.urbanoutfitters.de">http://www.urbanoutfitters.de</a></p>
+</venda_block label=1042>
+
+<venda_block label=1043,ohusgrrf=guest_fr>
+  
+<p><b>Suivi de commande - Autre</b><br>
+Si votre commande est expédiée en dehors du R.-U., veuillez cliquer <a href="http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber= <venda_tpxt mode=get,name=number>&search.searchScope=">ici</a> pour suivre votre commande.</p>
+ 
+<p>Où est ma commande ?</p>
+ 
+<p>Si vous nâ€™avez pas reçu votre commande sous 3 jours ouvrés, il est possible que votre colis ait été déposé à votre bureau de poste, pour vérifier cela :</p>
+<p>-Cliquez <a href="http://www.dpd.co.uk/tracking/trackingSearch.do?search.searchType=1&search.consignmentNumber= <venda_tpxt mode=get,name=number>&search.searchScope=">ici </a></p>
+<p>-Copiez le numéro : Parcel No 1550 1770 XXX XXX X (en haut à gauche)</p>
+<p>-Collez ce numéro de colis sur le site CHRONOPOST <a href="http://www.chronopost.fr">www.chronopost.fr</a></p>
+<p>Si vous nâ€™y arrivez toujours pasâ€¦nâ€™hésitez pas à nous contacter par email ou par téléphone comme indiqué ci-dessous.</p>
+<p>Avez-vous une question concernant votre commande? Contactez-nous par :<br>
+  EMAIL : <a href="mailto:service@urbanoutfitters.fr">service@urbanoutfitters.fr</a> <br>
+  TELEPHONE : +33 (0)1 57 32 44 22. Notre centre dâ€™appel est ouvert du lundi au vendredi de 9h à 18h.</p>
+<p><br>
+  Merci dâ€™avoir fait vos achats sur <a href="http://www.urbanoutfitters.fr">www.urbanoutfitters.fr</a></p>
+
+</venda_block label=1043>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

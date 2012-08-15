@@ -1,0 +1,73 @@
+<html lang="<venda_block label=487,usgrref!=guest_de,usgrref!=guest_fr>en</venda_block label=487><venda_block label=488,usgrref=guest_de>de</venda_block label=488><venda_block label=489,usgrref=guest_fr>fr</venda_block label=489>">
+<meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+<head>
+<venda_block label=1011,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr><title><venda_ebizname> Password Reminder</title></venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_usgrref>=guest_de><title><venda_ebizname> Passworterinnerung</title></venda_block label=1012>	
+<venda_block label=1013,mode=value,<venda_usgrref>=guest_fr><title><venda_ebizname> Indice mot de passe</title></venda_block label=1013>	
+</head>
+<body>
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<venda_block label=1021,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Password Recovery</strong>
+</venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_usgrref>=guest_de>
+<a href="http://www.urbanoutfitters.de/"><img src="http://www.urbanoutfitters.de/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Passwort-Wiederherstellung</strong>
+</venda_block label=1022>
+<venda_block label=1023,mode=value,<venda_usgrref>=guest_fr>
+<a href="http://www.urbanoutfitters.fr/"><img src="http://www.urbanoutfitters.fr/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Récupération de votre mot de passe</strong>
+</venda_block label=1023>
+<br><br>
+
+<venda_block label=1031,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+<p>Dear <venda_fname>,</p>
+<p>As requested here are the details for logging onto your UrbanOutfitters.co.uk account:</p>
+</venda_block label=1031>
+<venda_block label=1032,mode=value,<venda_usgrref>=guest_de>
+<p>Sehr geehrte/r <venda_fname>,</p>
+<p>Wie gewünscht senden wir Ihnen nun Ihre Anmeldeinformationen für Ihr UrbanOutfitters-Konto:</p>
+</venda_block label=1032>
+<venda_block label=1033,mode=value,<venda_usgrref>=guest_fr>
+<p>Ch&#232;re/Cher <venda_fname>,</p>
+<p>Comme vous l'avez demand&eacute;, voici les d&eacute;tails concernant la connexion &agrave; votre compte urbanoutfitters.fr </p>
+</venda_block label=1033>
+<p>
+<venda_block label=1041,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>Login: </venda_block label=1041>
+<venda_block label=1042,mode=value,<venda_usgrref>=guest_de>Benutzername: </venda_block label=1042>
+<venda_block label=1043,mode=value,<venda_usgrref>=guest_fr>Identifiant de connexion : </venda_block label=1043>
+<venda_block label=1,usemail=notnull><venda_usemail></venda_block label=1>
+<venda_block label=2,usemail=null,uslogin=notnull><venda_uslogin></venda_block label=2>
+<br>
+<venda_block label=1051,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>Password: </venda_block label=1051>
+<venda_block label=1052,mode=value,<venda_usgrref>=guest_de>Passwort: </venda_block label=1052>
+<venda_block label=1053,mode=value,<venda_usgrref>=guest_fr>Mot de passe : </venda_block label=1053>
+<venda_block label=3,password=notnull><venda_password></venda_block label=3>
+</p>
+
+<venda_block label=1061,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+<p>If you did not request this, there is no need to worry, it has only been sent to you.</p>
+<p>Thanks and we look forward to you visiting our site soon.</p>
+<p><a href="<venda_ebizurl>"><venda_ebizurl></a></p>
+</venda_block label=1061>
+<venda_block label=1062,mode=value,<venda_usgrref>=guest_de>
+<p>Wenn Sie diese Informationen nicht angefragt haben, müssen Sie sich keine Sorgen machen, da diese nur an Sie gesendet wurden.</p>
+<p>Vielen Dank und wir freuen uns, Sie bald wieder auf unserer Website begrüßen zu dürfen.</p>
+<p><a href="http://www.urbanoutfitters.de">http://www.urbanoutfitters.de</a></p>
+</venda_block label=1062>
+<venda_block label=1063,mode=value,<venda_usgrref>=guest_fr>
+<p>Si vous n'avez pas demand&eacute; ces informations, ne vous inqui&eacute;tez pas, elles n'ont &eacute;t&eacute; envoy&eacute;es qu'&agrave; vous.</p>
+<p>Nous vous remercions et esp&eacute;rons vous revoir bient&ocirc;t sur notre site.</p>
+<p><a href="http://www.urbanoutfitters.fr">http://www.urbanoutfitters.fr</a></p>
+</venda_block label=1063>
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+	<venda_inctemplate name=setcountry,type=includes>
+	<div id="headerregion">
+		<p><img id="flagimage" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/europe_flag.gif" class="flag" border="0" alt="Europe" width="17" height="13" /></p>
+		<p><span id="countryname" style="text-transform:capitalize;font:11px Arial;"></span> | <span><a href="<venda_ebizurl>/page/landingpage" onclick="return chkChangeCountry();">Change Country</a><span></p>
+		<venda_page page=currencyselector>
+		<venda_minicart template=changecountryscript>
+   	</div>
+
+<!-- minicart -->
+<!-- mp_trans_remove_start -->
+ <div id="headercart">
+<!-- mp_trans_remove_end -->
+  <!-- mp_trans_disable_start -->
+    <!-- mp_trans_add="FR" <div id="headercart" class="fr"> -->
+    <!-- mp_trans_add="DE" <div id="headercart" class="de"> -->
+  <!-- mp_trans_disable_end -->
+	<venda_minicart template=newminicart>
+ </div>
+<!-- minicart end -->
+
+<!-- Order Changed was header links above Cart -->
+
+  <!-- Header Links -->
+<!-- mp_trans_remove_start -->
+<div id="headerlinks">
+<!-- mp_trans_remove_end -->
+  <!-- mp_trans_disable_start -->
+   <!-- mp_trans_add="FR" <div id="headerlinks" class="fr">  -->
+   <!-- mp_trans_add="DE" <div id="headerlinks" class="de"> -->
+  <!-- mp_trans_disable_end -->
+	<ul>
+   
+	 <venda_block label=20,ustype=R>
+       <!-- logged in -->             
+       <li><a href="<venda_ebizurl>/page/newhome&log=4">Sign Out</a></li> 
+     </venda_block label=20>
+    
+	 <venda_block label=21,ustype!=R>
+	   <!-- logged out -->
+	    <li class="singin"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>" title="Sign In">Sign In</a></li>
+        <li class="register"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>" title="Register">Register</a></li>
+	 </venda_block label=21>	
+
+     <venda_block label=22,ustype=R>
+       <!-- logged in -->            
+       <li><venda_userinfo><a href="<venda_dispview page=myaccount>" title="My Account"><span class="sesfname"><venda_sesfname>'s Account </span></a></venda_userinfo></li> 
+     </venda_block label=22>	
+		
+	</ul>
+</div>
+  <div class="clear-all"></div>
+	
+<script language="javascript" type="text/javascript"> 
+	var ctrycookies = new CookieJar({expires: 3600 * 24 * 1000,path: '/'});
+	var checkCountry="";
+	if (ctrycookies.get('ckCountry')){
+	var checkCountry = ctrycookies.get('ckCountry');
+	}
+	if (checkCountry){
+	imgurl= "<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/uouk_redirect/small_flag/"+checkCountry+"-flag.gif";
+	document.getElementById("countryname").innerHTML = checkCountry;
+	jQuery('#flagimage').attr('src', imgurl); 
+	}
+</script> 

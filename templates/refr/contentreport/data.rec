@@ -1,0 +1,1 @@
+ref	contentreport	name	Content Report	format	plain	transport	email	user		host		password		filename	contentreport.psv	path		remotepath		emailto	jcanlcelson@urbanoutfitters.com, ElStephens@urbanoutfitters.com, JStanley@urbanoutfitters.com	emailfrom	Venda	subject	Content Report	zippedfilename		zip		maxdesc		rtype	refr

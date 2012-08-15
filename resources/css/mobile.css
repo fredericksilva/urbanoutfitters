@@ -1,0 +1,256 @@
+/* @override http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/css/mobile.css */
+
+/* @group GENERAL STYLES */
+
+/* **styles for v5+ browsers** */
+
+body {
+	margin:0;
+	padding:0;
+	color:#000;
+	font: 100% Arial, Helvetica, sans-serif;
+	background:url(' ')  ;
+}
+
+/* display elements */
+
+h1, h2, h3, p {
+	margin:.5em 0;
+	padding:0;
+}
+h1 { font-size:1.6em;}
+h2 { font-size:1.4em; color:#000000;}
+h3 { font-size:1.2em; border-bottom:1px solid #000000; }
+p { font-size: 1em; }
+
+a {	text-decoration: underline;	color:#000000; }
+a:hover {text-decoration:none;}
+
+.error {color:#1f79ac; background:#fff;}
+
+.bold {font-weight:bold;}
+
+.normal {font-weight:normal;}
+
+/* list elements */
+ul { margin:0; padding:0; list-style:none; }
+
+
+ul.bullet li{ padding:2px; list-style: disc outside; margin:0 18px; }
+
+/* admin elements */
+#admin, #admin a {	position:absolute; margin:0; background:#f00; color:#fff; display:none;}
+#admin {text-align:center;}
+
+/* hidden elements */
+.hide {display:none;}
+.left {float:left;}
+.right {float:right;}
+.clear-all { clear:both; height:0;	line-height:0;	font-size:0;}
+
+/* start styles to centre content (remove these styles if site should be left-aligned) */
+
+body {	text-align:left; /* centres content in ie4/5 */}
+
+#buttons {	overflow: hidden; width: 620px;	padding: 5px; }
+
+/* @end */
+
+/* @group STRUCTURE */
+
+/* structural elements */
+#wrapper {	
+	margin: 0;	
+	text-align:center; 
+	width:100%;
+	
+}
+
+#contentwrapper {	
+    width: 100%;
+   	padding:50px 20px 0 20px;
+	margin: 0 auto;
+	position:  relative;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/signupmobile/tribg.gif');
+	background-repeat: repeat-x;
+	}
+
+
+/* @end */
+
+/* @group HEADER & FOOT */
+
+    
+/* LOGO */
+
+#headercontainer { }
+
+#headerlogo { margin: 0 auto 2em; padding-top: 5px; }
+
+/* ** SIMPLE TOP NAV ** */
+
+#maintopnav { clear:both; }	
+
+
+#menutopnav ul li{ display: inline; }	
+
+#menutopnav ul li.noml{	margin:0; float:left;}
+		
+#topnav {	
+	color:#000000;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:1em;	
+	line-height: auto;
+	text-transform:uppercase;
+	margin: 0 auto 5px auto;
+}
+
+
+#topnav li { display: inline; margin-right: 2%; }
+
+
+#topnav a{	color:#000000;	text-decoration:none; padding:1px; }
+#topnav a:hover{ color:#00ccff;}
+#topnav a.current{ color:#00ccff; }
+
+#footercontainer {
+	width: auto;
+	height: 30px;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/signupmobile/tribg.gif');
+	background-repeat: repeat-x;
+	
+}
+
+/* @end */
+
+/* @group MOBILE FORM (MOFO) */
+
+
+#MOFOWrap {
+    color: #000000;
+    font-size: 100%;
+	text-align: center;
+	width: 480px;
+	margin: 0 auto;
+	
+}
+
+#commentForm { text-align: left; margin: 0 auto;  }
+
+#commentForm label span {
+	text-align: left;
+	font-size: 	0.722em;
+    float: left;
+    font-weight: bold;
+    width: 9em;
+    }
+
+#commentForm em { float: left; font-size: 18px; color: #00CCFF; margin-right: 5px;}
+
+#commentForm .EmailTextField, .RFF {
+    background-color: #CCCCCC;
+    border: 1px none;
+    color: #000000;
+    font: 0.722em Arial,Helvetica,sans-serif;
+    height: 26px;
+    width: 66%;
+	margin-right: 10px; 
+	clear: right;
+	list-style-type: circle;
+}
+
+#commentForm input#submit { 
+    background-color: #000;
+    border: 1px none;
+    color: #fff;
+    font: 13px Arial,Helvetica,sans-serif;
+    height: 36px;
+    width: 100px;
+    margin-top:  20px;	
+}
+
+#commentForm label span.FRadiob { float: right; width: 300px; }
+
+
+#commentForm .FLeft { position: relative; width: 400px; margin: 0 auto; }
+
+.MOFOtitle { text-align: center; }
+
+#commentForm div.FLeft p.mandatory { font-size: 0.75em; color:  #00CCFF; }
+
+#commentForm div.FLeft p.mandatory ul { list-style: none  }
+
+#commentForm .FRight { float: right; border-bottom: 1px dotted; height: 350px; }
+
+#commentForm input#Opt_1 { background-color: gray;
+              border: 1px none; 
+              color: #000000;
+              font: 13px Arial,Helvetica,sans-serif;
+              height: 18px;}
+			  
+
+#commentForm p label.error { display: block; margin:5px 0 0 123px; color: #00CCFF;}
+
+/* @end */
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+
+	#contentwrapper {	
+		width:  480px;
+		padding: 50px 5px 0 5px;
+		margin: 0 auto;
+		/*background: url('/content/ebiz/urbanoutfitters/resources/images/signupmobile/tribg.gif');*/
+		}
+
+	h1 {
+		font-size: 24px;
+	}
+	
+	#MOFOWrap { 
+		color: #000000;
+		font-size: 100%;
+		text-align: center;
+		width: auto;
+		margin: 0 auto;	
+ }
+ 
+   #commentForm label span {	
+	font-size: 	1.2em;
+	margin-bottom:  3px;
+    float: left;
+    font-weight: bold;
+    width: 12em;
+    }
+
+   #commentForm div.FLeft p label span {
+	
+}
+
+  #commentForm div.FLeft p em { clear:  left;}
+  
+  #commentForm div.FLeft p.mandatory { font-size: 1em; color:  #00CCFF; }
+	
+	
+  #TITLE { font-size: 1.2em; margin: 0 100px 0 0; }
+
+  #STORE_NAME { font-size: 1.2em; margin: 0  100px 0 0; }
+  
+ 	
+#footercontainer {
+	width: 480px;
+	height: 30px;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/signupmobile/tribg.gif');
+	background-repeat: repeat-x;
+	
+}
+
+
+
+	
+
+}
+
+
+

@@ -1,0 +1,193 @@
+<link href="<venda_dispview scat=communty>&layout=rss&temp=rss" rel="alternate" type="application/rss+xml" title="Community News from Urban Outfitters" />
+<style type="text/css">
+<!--
+/* nav styles */
+#primaryNav li a.headlink.top-cat-features {color:#0cf!important;}
+/*  t w i t t e r f e e d   s t y l e s */
+.twtr-hd,
+.twtr-ft {display:none!important;}
+.twtr-widget h3, .twtr-widget h4, .twtr-widget p {text-align: left!important;}
+.twtr-widget .twtr-tweet {border: none!important;}
+.twtr-widget .twtr-tweet-wrap {padding:0 8px 20px!important;}
+.twtr-widget {font-family: Arial, helvetica, arial, sans-serif!important;}
+#twtr-widget-1 .twtr-tweet a:hover {color:#00ccff!important;}
+-->
+</style>
+
+<venda_detblock>
+	<venda_block label=905,mode=value,<venda_itemcount1>&lt;5>
+		<li class="comm">
+			<h2><venda_scatname1></h2>
+			<venda_category rec=scat,ref=<venda_scatref1>,temp=community_subindex>
+		</li>
+	</venda_block label=905>
+</venda_detblock>
+
+<div class="comleft">
+	
+	<div class="comm-video">     
+		<venda_page page=commvid>		
+	</div>
+    
+	<ul class="commIndex">
+		<venda_detail>
+	</ul>
+</div>
+
+<div class="comRight">
+
+    <venda_category rec=scat,ref=community,temp=community_nav2>
+
+
+	<h2 class="fb"><a href="http://www.facebook.com/urbanoutfitterseurope" target="_blank">Facebook</a></h2>
+	  <div class="comLikeButton"> 
+	 <!-- mp_trans_remove_start -->
+       <iframe src="<venda_protocol>://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Furbanoutfitterseurope&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+    <!-- mp_trans_remove_end --> 
+    <!-- mp_trans_disable_start --> 
+    <!-- mp_trans_add="FR" 
+        <iframe src="<venda_protocol>://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Furbanoutfittersfrance&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+--> 
+    <!-- mp_trans_add="DE" 
+<iframe src="<venda_protocol>://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FUrbanOutfittersDeutschland&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+--> 
+    <!-- mp_trans_disable_end -->
+ 
+  </div>  <!-- comLikeButton --> 
+   
+   <h2 class="flicr"><a href="http://www.flickr.com/photos/urbanoutfitterseurope/" target="_blank">Flickr</a></h2>
+   <ul id="basicuse" class="thumbs"></ul>
+   <a href="http://www.flickr.com/photos/urbanoutfitterseurope/" target="_blank" title="View more photos" class="comTwit">View More Photos</a>
+
+   <h2 class="yt"><a href="http://www.youtube.com/urbanoutfitterscouk" target="_blank">YouTube</a></h2>
+   <div class="ytVid">
+	   <venda_page page=youtube_latest>
+   </div>
+   
+   <!-- mp_trans_remove_start -->  
+   <h2 class="twitter"><a href="http://twitter.com/#!/uoeurope" target="_blank">Twitter</a></h2>
+   <div class="twitterComm">
+		<script src="<venda_protocol>://widgets.twimg.com/j/2/widget.js"></script>
+		<script>
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 5,
+		  interval: 6000,
+		  width: 250,
+		  height: 300,
+		  theme: {
+		    shell: {
+		      background: '#ffffff',
+		      color: '#000000'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#000000',
+		      links: '#999999'
+		    }
+		  },
+		  features: {
+		    scrollbar: false,
+		    loop: false,
+		    live: false,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: false,
+		    behavior: 'all'
+		  }
+		}).render().setUser('uoeurope').start();
+		</script>	
+	</div><!-- twitterComm - UK -->
+	<!-- mp_trans_remove_end --> 
+        <!-- mp_trans_disable_start -->
+	
+           <!-- mp_trans_add="FR"
+	     <h2 class="twitter"><a href="http://twitter.com/#!/uoeurope" target="_blank">Twitter</a></h2>
+             <div class="twitterComm">
+		<script src="<venda_protocol>://widgets.twimg.com/j/2/widget.js"></script>
+		<script>
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 5,
+		  interval: 6000,
+		  width: 250,
+		  height: 300,
+		  theme: {
+		    shell: {
+		      background: '#ffffff',
+		      color: '#000000'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#000000',
+		      links: '#999999'
+		    }
+		  },
+		  features: {
+		    scrollbar: false,
+		    loop: false,
+		    live: false,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: false,
+		    behavior: 'all'
+		  }
+		}).render().setUser('uoeurope').start();
+		</script>	
+	     </div> --> <!-- twitterComm - FR -->
+	     
+           <!-- mp_trans_add="DE"
+	      <h2 class="twitter"><a href="http://twitter.com/#!/UODeutschland" target="_blank">Twitter</a></h2>
+   <div class="twitterComm">
+		<script src="<venda_protocol>://widgets.twimg.com/j/2/widget.js"></script>
+		<script>
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 5,
+		  interval: 6000,
+		  width: 250,
+		  height: 300,
+		  theme: {
+		    shell: {
+		      background: '#ffffff',
+		      color: '#000000'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#000000',
+		      links: '#999999'
+		    }
+		  },
+		  features: {
+		    scrollbar: false,
+		    loop: false,
+		    live: false,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: false,
+		    behavior: 'all'
+		  }
+		}).render().setUser('UODeutschland').start();
+		</script>	
+	</div> --> <!-- twitterComm - DE -->
+        <!-- mp_trans_disable_end --> 
+
+</div> <!-- comRight -->
+
+<script src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jflickrfeed.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	$('#basicuse').jflickrfeed({
+		limit: 9,
+		qstrings: {
+			id: '21054892@N07'
+		},
+		itemTemplate: '<li><a href="{{link}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
+	});
+	
+});
+</script>

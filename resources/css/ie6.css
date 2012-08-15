@@ -1,0 +1,546 @@
+
+/* styles for IE 6 version */
+
+/* @group GENERAL STYLES */
+
+body {
+	margin:0;
+	padding:0;
+	color:#000000;
+	font:76% Arial, Times New Roman, Times, serif,Georgia;
+	font-size:12px;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/headerline.gif) repeat-x;
+}
+
+#wrapper {
+	background: transparent !important;	
+	width: 910px;
+	padding: 0;
+}
+
+
+#covLogin div.transnone {
+margin:5px 0 0 95px;
+text-transform:none;
+}
+
+#button_log {
+margin:70px 0 0;
+}
+
+#button_excheckout {
+margin:136px 0 0;
+}
+
+/* @end */
+
+/* @group HEADER */
+/* *** header *** */
+
+#headercontainer {
+   width:930px; 
+   background-color: #fff;
+   top: 32px; 
+   height: 100px; /* was 110px */
+   display: block;
+}
+
+/** Above Header section **/
+
+#aboveheader {
+	width:930px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/headerline.gif);
+	background-repeat:repeat-x;
+	position: absolute;
+	top: 0px;
+	z-index: 800;
+	display: block;			
+}
+ 
+/* Currency */
+
+#selectCur p{
+	font-size:11px;
+	line-height:13px;
+}
+
+#selectCur a {text-decoration:none;}
+#selectCur a.euroon , #selectCur a.restofworldon  {text-decoration:underline;}
+
+/* header Links */
+
+#headerregion {float:left;}
+
+#headerlinks { float:right; display: inline-block; padding: 0 5px 0 0 ;}
+
+#headerlinks ul { display: block;} 
+
+#headerlinks ul li.singin a { margin-right: 5px; display: inline;}
+
+#headerlinks li {display: inline;}
+
+.SearchTextField {
+	border-top: 2px solid #bbb;
+	border-right: 2px solid #bbb;
+}
+
+
+/* Search Box */
+
+input#search_submit {
+    background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left top transparent;
+    clear: both;
+    display: block;    
+    overflow: hidden;
+    text-indent: -999px;
+    width: 55px;
+    cursor: pointer;
+}
+
+div#headersearch.fr input#search_submit {
+	 background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left top transparent;
+}
+
+div#headersearch.de input#search_submit {
+	 background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left top transparent;
+}
+
+input#search_submit:hover {
+    background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left bottom transparent;
+    clear: both;
+    display: block;    
+    overflow: hidden;
+    text-indent: -999px;
+    width: 55px;
+    cursor: pointer;
+}
+
+div#headersearch.fr input#search_submit:hover {
+    background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left bottom transparent;    
+}
+
+div#headersearch.de input#search_submit:hover {
+    background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search.png") no-repeat scroll left bottom transparent;    
+}
+
+
+/* SHOPPING CART */
+#headercart {
+	width: 200px !important;
+	margin: 0px;
+	display: block;
+	display: inline;
+	
+}
+
+#headercart.de {	
+	width: 300px;
+	display: inline;
+}
+
+#headercart.fr {
+	/*width: 120px;*/
+}
+
+.mini{	
+	display: inline;
+
+}
+
+
+/* END HEADER */
+
+/* @end Header */
+
+
+/* @group PRIMARY NAV - MEGA MENU */
+
+/** Primary Nav - Fed's IE 6 Fix **/
+
+#primaryNav li a {
+	color: black;
+	font-size: 11px; 
+	text-decoration: none;
+	/*text-transform: uppercase;*/
+	padding: 5px 10px;
+	float: left;
+}
+
+#primaryNav li .sub {
+	display: none;
+	position: absolute;
+	top: 26px;
+	left: 8px;  
+	background-color:#fff;
+	/*background-color: rgba(254,255,255,0.95); */    	
+	padding: 6px 6px;
+	float: left;	
+	border-top: 0px solid; 
+	border-bottom: 1px solid; 
+	border-left: 0px solid;
+	border-right: 1px solid;
+	border-color: #a6a6a6;	 
+	font-size: 0.65em;
+	box-shadow: 0px 5px 5px #383838;
+	-webkit-box-shadow: 0px 3px 4px #383838;
+	-moz-box-shadow: 0px 5px 5px #383838;	    
+    z-index:1000;      
+}
+
+#primaryNav li .sub {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/content/ebiz/urbanoutfitters/resources/images/elements/w_bg.png');
+	
+}
+
+
+#primaryNav .sub ul li {
+	width: 100%;	
+/*--Override parent list item--*/
+	color: #adadad;	
+		
+}
+
+#primaryNav .sub ul li a {
+	float: none;
+	text-indent:1px;
+	/*--Override text-indent from parent list item--*/
+	height: auto;
+    /*--Override height from parent list item--*/
+	padding: 5px 0 0 1px;	
+	display: block;
+	background: transparent;
+	text-transform: capitalize;
+	color: #494949;
+	overflow:hidden;
+	/* W Fix */	
+}
+
+/* @end */
+
+
+
+/* @group FOOTER */ /* Do not delete @group and @end comments!! */
+
+/* *** FOOTER ***/
+
+.footerline {
+	background-image: url(/content/ebiz/urbanoutfitters/resources/images/21pxgreyline.gif);
+	background-repeat: repeat-x;
+	height: 21px;
+	width:930px;
+}
+
+.footersolidline {
+	clear:both;
+	width:930px;
+	border-bottom:solid #999999 1px;
+	margin: 12px 0 12px 0;
+}
+
+#footercontainer {
+	width: 930px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10.5px;
+	letter-spacing:0.2px;
+	color:#000000;
+	margin: 20px 0 0 0;
+	border-top:1px solid #000000;
+	padding:10px 0 10px 0;
+	clear:both;
+	/* Fed */
+	height: 80px; /* thinner Footer Container for new design */
+}
+
+#footercontainer a {color:#000000;}
+#footercontainer a:hover {text-decoration:none;}
+
+#footersignup { 
+    width: 930px; 
+	height: 30px;
+	border-bottom:1px solid #000000;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+/* ** Fed's New Footer Styles ** */
+
+#footerLike{	
+	width: 280px !important;
+	height: 40px;
+	margin-top: 10px;
+	float: left;
+	display: inline;
+}
+
+#footerLike span { font-size: 12px; display: inline; margin-bottom: 5px;}
+
+#footerLike .footLikeButton  {
+	margin: 10px 0;
+	width: 280px !important;
+	display: inline;
+}
+#footerLike .footLikeButton iframe  {	
+	width: 280px !important;
+}
+
+
+#footerTop { 
+    float: left;
+	width: 300px;
+	height: 40px;
+	position: relative;
+	margin: 10px 0px 0 20px ;
+	text-align: center;
+	display: inline;
+	
+	
+}
+
+#footerTop ul.footTop { 
+    float: left;
+    width: 300px; 		
+}
+#footerTop ul.footTop li {
+	list-style-type: none;
+	display: inline;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#footerTop ul.footTop li a {
+	 text-decoration: none;
+	 padding-left: 5px;
+}
+
+#footerTop ul.footBottom { 
+    float: left;
+    clear: both;
+    width: 300px;
+  	margin: 10px 0 10px 0;
+  	display: inline;
+}
+
+#footerTop ul.footBottom li  {
+	list-style-type: none;
+	display: inline;
+	text-transform: capitalize;
+	font-size: 10px; 
+}
+
+#footerTop ul.footBottom li a { 
+	padding-left: 5px;
+	color: gray;
+	
+}
+
+/* Social Icons */ 
+
+#footerSocial {	
+    float: right;   
+    width: 120px;
+    height: 40px;
+  	margin: 10px 0;
+  	text-align: right;
+  	display: inline;
+	
+}
+
+/* Facebook Icon */
+#footerSocial div.fbcont { 
+    width: 20px;
+ 	height: 21px;	
+ 	float: left;
+ 	margin-right: 10px;
+ 	display: inline;
+}
+#footerSocial div.fbcont a.fb {
+	width: 20px; 
+	height: 21px; 
+	display: block;
+	overflow: hidden;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll 0 0;	
+}
+#footerSocial div.fbcont a.fb:hover { 	
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll -21px 0;
+}
+
+/* Tweetie Icon */
+#footerSocial div.twcont {
+	width: 20px;
+ 	height: 21px;	
+ 	float: left;
+ 	margin-right: 10px;
+ 	display: inline;
+}
+
+#footerSocial div.twcont a.twit { 
+    width: 20px; 
+	height: 21px; 	
+	display: block;
+	overflow: hidden;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll 0 -20px;
+}
+
+#footerSocial div.twcont a.twit:hover{ 
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll -21px -20px;
+}	
+
+/* Flickr Icon */
+#footerSocial div.flkcont {
+	width: 20px;
+ 	height: 21px;	
+ 	float: left;
+ 	margin-right: 10px;
+ 	display: inline;
+}
+#footerSocial div.flkcont a.flk { 
+    width: 20px; 
+	height: 21px; 	
+	display: block;
+	overflow: hidden;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll 0 -40px;
+}
+#footerSocial div.flkcont a.flk:hover { 
+background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll -21px -40px;
+}
+
+/* YouTube Icon */
+#footerSocial div.tbcont {
+	width: 20px;
+ 	height: 21px;	
+ 	float: left;
+ 	display: inline;
+}
+#footerSocial div.tbcont a.tb { 
+    width: 20px; 
+	height: 21px; 	
+	display: block;
+	overflow: hidden;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll 0 -60px;
+}
+#footerSocial div.tbcont a.tb:hover { 
+background: url(/content/ebiz/urbanoutfitters/resources/images/footer/social.png) no-repeat scroll -21px -60px;
+}
+
+/* Social End */ 
+
+/* *** Fed's New Footer End *** */
+
+/* *Old Footer Styles* */
+
+#footerlists {clear:both;}
+
+#footerlists ul {
+	width:135px;
+	float:left;
+	margin:0 20px 0 0;
+}
+
+ul#footersignup {width:310px;}
+ul#footerlistlast {margin:0;}
+#footerlists li {padding:2px 0;}
+#footerlists li.first {
+	text-transform:uppercase;
+	font-weight:bold;
+	margin:0;
+	font-size:12px;
+}
+
+
+#footerlinks {
+	margin: -25px auto 0 auto;
+	width: 180px;
+	padding:20px 0 10px 0;
+	text-align: center;
+	float:none;
+}
+
+#footerlinks ul {
+	clear:both;
+}
+
+#footerlinks li {
+	display:inline;
+	padding:0 5px 0 5px;
+}
+
+#footerlinks li.first {text-transform:none; }
+
+#footerleft {
+	float:left;
+	width:470px;
+}
+
+#footerright {
+	float:left;
+	clear:right;
+	width:440px;
+	margin-left:20px;
+}
+
+#belowfooter {
+	width:930px;
+	padding:0 20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10.5px;
+	letter-spacing:0.2px;
+	color:#999999;
+}
+#belowfooter a {
+	color:#000000;
+	text-decoration:none;
+	text-align: center !important;
+}
+
+#belowfooter a:hover {text-decoration:underline;}
+
+#venda {
+	float: none;
+	padding-top:7px;
+	width: 200px;
+	margin:-10px auto 10px auto;
+	text-align: center !important;
+	
+	
+}
+.pdbottom {_padding-bottom:2px;}
+
+/* END FOOTER */
+
+/* @end */
+
+/* @group PRODUCT DETAIL PAGE */
+
+#zoomedImage {	
+   /* Absolute positioning for zoomed Image IE6 */
+	top: 200px !important; }
+
+
+/* @end */
+
+
+/* @group COMMUNITY */
+
+/* View All Features */
+.commHeader ul {position: absolute; right: 10px; top: 10px;}
+
+/* Subscribe to UO Community RSS */ 
+.commHeader a.rss {position: absolute; left: 0px; top: 10px; clear: left;}
+
+.comRight {}
+
+.comRight .footLikeButton { }
+
+/* @end */
+
+/* @group Gateway New */
+
+#contentwrapper .gw-container { position: relative; width: 950px; height: 790px; margin-top: 0px;  }
+
+#contentwrapper .gw-container .gw-comm { width: 338px; float: right; overflow: hidden; height: 242px; }
+
+#contentwrapper .gw-container div.gw-comm ul.commlist { float: left; display: inline; font-size: 11px; width: 368px; height: 170px; overflow: hidden; display: block; margin-bottom: 20px;}
+
+
+/* @end */
+

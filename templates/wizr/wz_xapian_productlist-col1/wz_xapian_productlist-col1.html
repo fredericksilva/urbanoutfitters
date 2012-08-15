@@ -1,0 +1,37 @@
+<venda_detblock3>
+	<script language="javascript">
+		j++;
+		if (j > 1){
+			document.write('<span class="mlr6">-</span>');
+		}
+	</script>
+	<venda_resultgrp maxnext=4,xptpl=wz_xapian_productlist,show=pages>
+</venda_detblock3>
+
+<script language="javascript">
+j=0;
+i=0;
+n=0;
+</script>
+<venda_detblock1>
+	<venda_inctemplate name=productlistDetblock,type=includes>
+</venda_detblock1>
+<div>
+<div class="left icatName up"><venda_field_icatname></div>
+<div class="right" style="height:25px;"><venda_inctemplate name=searchproductlist,type=includes></div>
+</div>
+<br class="clear-all">
+<div class="h19">
+	<venda_inctemplate name=crumbtrail,type=includes>
+	<venda_form method=get>
+		<venda_block label=37,lastpage&gt;1>
+		<div class="pagesel"><span class="mlr6">PAGE</span> <venda_pagenum> <span class="mlr6">(</span> <venda_detail3> <span class="mlr6">)</span> <span class="mr6">/</span> 
+		<venda_block label=66,isviewall=null><a href="<venda_viewall itemsperpage=100,xptpl=wz_xapian_productlist>&bklist=<venda_bklist>">VIEW ALL</a></venda_block label=66> 		 					
+			</div>
+		</venda_block label=37>
+		<venda_block label=67,isviewall=notnull><div class="pagesel"><a href="<venda_viewpaginated itemsperpage=8,xptpl=wz_xapian_productlist>&bklist=<venda_bklist>">VIEW BY PAGE</a></div></venda_block label=67>
+	</venda_form>
+</div>
+<ul id="productlist">
+	<venda_detail1>
+</ul> 

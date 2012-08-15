@@ -1,0 +1,27 @@
+==============================================================================
+
+<venda_ebizname> Recommendation
+
+==============================================================================
+
+
+
+Dear <venda_dest_name>,
+
+<venda_message>
+
+
+<venda_invtname> <venda_block label=20,invtsell>0>at <venda_currsym><venda_invtsell></venda_block label=20><venda_block label=21,invtsell=0.00,invtatrminsubsell>0>- From <venda_currsym><venda_invtatrminsubsell></venda_block label=21> - <venda_dispview invt=<venda_invtref>>
+
+Speak to you soon.
+
+From
+<venda_fname>
+
+
+Please do not reply to this message
+
+
+
+
+<venda_inctemplate name=textEmailFooter,type=includes>

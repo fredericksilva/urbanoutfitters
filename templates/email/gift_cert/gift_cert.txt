@@ -1,0 +1,55 @@
+==============================================================================
+
+<venda_ebizname> Gift Certificate
+
+==============================================================================
+
+
+
+Dear <venda_to>
+
+
+
+You have received a <venda_currsym><venda_amount> <venda_ebizname> Gift Certificate from <venda_from>.
+
+
+
+Message:
+
+<venda_comment>
+
+
+
+See below for full details.
+
+Don't delete this message as it contains all the information you need to use your Gift Certificate.
+
+
+
+- Go to <venda_serveradd>
+
+- Select the items you wish to purchase and add them to your basket
+
+- Go through the checkout process until you get to the final order summary page
+
+- Click on the 'purchase using gift certificate' button and paste this Gift Certificate claim code exactly as shown: <venda_giftcode>
+
+- Click 'continue' to redeem the Gift Certificate
+
+
+
+Expiry date: <venda_gcexpires>
+
+
+
+If the value of your order is higher than the value of the Gift Certificate, you will need to pay the difference using a credit/debit card.
+
+If the value of your order is lower than the value of the Gift Certificate, the balance will be added to your <venda_ebizname> account, and you can use it on future visits.
+
+Thanks and we look forward to you visiting our site soon.
+<venda_ebizurl>
+
+
+
+
+<venda_inctemplate name=textEmailFooter,type=includes>

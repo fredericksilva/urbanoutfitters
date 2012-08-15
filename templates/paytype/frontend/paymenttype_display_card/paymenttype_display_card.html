@@ -1,0 +1,30 @@
+<venda_block label=12,paymentused=notnull>
+<table summary="<venda_text id=site.order_receipt.table_summary>" title="<venda_text id=site.order_receipt.table_title>">
+<tr>
+	<th scope="row"><venda_block label=215,sortcode=null><venda_text id=site.order_receipt.card_number></venda_block label=215><venda_block label=216,sortcode=notnull><venda_text id=site.order_confirmation.label.elv_number></venda_block label=216></th>
+	<td><venda_ohccnum></td>
+</tr>
+<tr>
+	<th scope="row"><venda_text id=site.order_receipt.card_name></th>
+	<td><!-- mp_trans_disable_start --><venda_ohccname><!-- mp_trans_disable_end --></td>
+</tr>
+<venda_block label=212,expires=notnull,cardtype!=directdebitsde>
+<tr>
+	<th scope="row"><venda_text id=site.order_receipt.card_expiry_date></th>
+	<td><venda_expires></td>
+</tr>
+</venda_block label=212>
+<venda_block label=213,sortcode=notnull>
+<tr>
+	<th scope="row"><venda_text id=site.order_receipt.sort_code></th>
+	<td><venda_sortcode></td>
+</tr>
+</venda_block label=213>
+<venda_block label=211,ohccissue=notnull,cardtype!=directdebitsde>
+<tr>
+	<th scope="row"><venda_text id=site.order_receipt.card_issue></th>
+	<td><venda_ohccissue></td>
+</tr>
+</venda_block label=211>
+</table>
+</venda_block label=12>

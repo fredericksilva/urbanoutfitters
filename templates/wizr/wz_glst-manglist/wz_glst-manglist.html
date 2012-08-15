@@ -1,0 +1,68 @@
+<venda_detblock1>
+<venda_block label=245,glstdefault=1>
+<!-- default gift list -->
+<tr>
+	<td valign="top"><a href="<venda_codehttp>?ex=co_wizr-giftlist&bsref=<venda_bsref>&step=glstlist"><strong><venda_glsteventtype><venda_glsteventtypeother></strong></a></td>
+	<td valign="top"><strong><venda_glstrfnbr></strong></td>
+	<!-- <td><venda_glstpartnerfname> <venda_glstpartnerlname><venda_block label=3,glstpartnerfname=null,glstpartnerlname=null>N/A</venda_block label=3></td> -->
+	<td valign="top"><strong><venda_dateformat type=short,format=dd mm yyyy,suffix=1,date=<venda_glsteventdate>></strong></td>
+	<td valign="top">&nbsp;<strong>Default</strong></td>
+</tr>
+</venda_block label=245>
+
+<venda_block label=345,glstdefault!=1>
+<!-- not default gift list -->
+<tr>
+	<td valign="top"><venda_glsteventtype><venda_glsteventtypeother></td>
+	<td valign="top"><venda_glstrfnbr></td>
+	<!-- <td><venda_glstpartnerfname> <venda_glstpartnerlname><venda_block label=3,glstpartnerfname=null,glstpartnerlname=null>N/A</venda_block label=3></td> -->
+	<td valign="top"><venda_dateformat type=short,format=dd mm yyyy,suffix=1,date=<venda_glsteventdate>></td>
+	<td valign="top"><input type="radio" name="glstupdate" id="glstupdate<venda_glstrfnbr>" value="<venda_glstrfnbr>" onClick='<venda_wizbutton step=glstmang,param1=,param2=,mode=process,callonly=yes>'> <label for="glstupdate<venda_glstrfnbr>">Make Default</label></td>
+</tr>
+</venda_block label=345>
+</venda_detblock1>
+
+
+<h1>Gift Lists Manager</h1>
+<h2>Gift Lists for <venda_userinfo><venda_sestitle> <venda_sesname></venda_userinfo></h2>
+
+<venda_block label=201,glsttot&gt;0>
+<p>Your Gift Lists are shown below. You can manage one Gift List at a time. To change your default Gift List simply select the relevant radio button.</p>
+<p>You can update items and event details for the default Gift List by clicking the 'View/Update Default Gift List' link using the menu on the right hand side.</p>
+
+<venda_form>
+<table cellpadding="0" cellspacing="0" border="1" width="100%" summary="Items in your Gift List">
+<thead>
+<tr>
+    <th scope="col">Occasion</td>
+	<th scope="col">ID</td>
+	<!-- <th scope="col">Partner's Name</th> -->
+	<th scope="col">Occasion Date</th>
+	<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>			
+	<venda_detail1>			
+</tbody>	
+</table>
+<ul>
+	<li><a href="<venda_codehttps>?ex=co_wizr-giftlist&bsref=<venda_bsref>&glstlogout=1">Create a New Gift List</a></li><!-- logout of current default gift list -->
+	<li><a href="<venda_codehttp>?ex=co_wizr-giftlist&bsref=<venda_bsref>&step=glstlist">View/Update Default Gift List</a></li>
+	<!-- <li><a href="<venda_codehttp>?ex=co_wizr-giftlist&bsref=<venda_bsref>&step=glstedit">Edit Default Gift List Occasion Details</a></li> -->
+	<!-- <li><a href="<venda_codehttp>?ex=co_wizr-giftlist&bsref=<venda_bsref>&step=shipadd&layout=default">Edit Delivery Addresses</a></li> -->
+	<!-- <li><a href="<venda_dispview page=home>">Add Items to Default Gift List by Browsing</a></li> -->
+	<!-- <li><a href="<venda_dispview page=notifyguests>">Notify Friends of Default Gift List</a></li> -->
+	<li><a href="#" onClick='<venda_wizbutton step=glstlogout,param1=logout,param2=,mode=process,callonly=yes> return false;'>Logout of Gift Lists Manager</a></li>
+</ul>
+</venda_block label=201>
+
+<venda_block label=202,glsttot&lt;1>
+<p>Sorry, it appears you have not yet set up any Gift Lists, <a href="<venda_codehttps>?ex=co_wizr-giftlist&bsref=<venda_bsref>&layout=default&glstlogout=1">click here</a> to create a Gift List.</p>
+</venda_block label=202>
+
+
+<!--
+page: wz_glst-manglist.html
+workflow: <venda_workflow>
+step: <venda_curstep>
+-->

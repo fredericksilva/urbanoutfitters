@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Gift List Notification</title>
+</head>
+<body>
+
+<h1>Gift List Notification</h1>
+<p>Dear <venda_name></p>
+
+<venda_block label=201,partnerfname=notnull>
+<p><venda_fname> <venda_lname> &amp; <venda_partnerfname> <venda_partnerlname> have created a Gift List and wanted to let you know.</p>
+</venda_block label=201>
+<venda_block label=202,partnerfname=null>
+<p><venda_fname> <venda_lname> has created a Gift List and wanted to let you know.</p>
+</venda_block label=202>
+
+<p><strong>The message to you is:</strong> <venda_message></p>
+<p><strong>To access <venda_fname><venda_block label=208,partnerfname=notnull> &amp; <venda_partnerfname></venda_block label=208>'s Gift List</strong>: Simply visit the <a href="<venda_dispview page=giftlist>">Gift List page</a> and use the following details to login into your friend's Gift List:</p>
+
+<p><strong>Gift List ID:</strong> <venda_glrfnbr></p>
+<p><strong>Gift List Password:</strong> <venda_glstpswd></p>
+
+<p>Kind regards</p>
+<p><venda_ebizname></p>
+
+</body>
+</html>

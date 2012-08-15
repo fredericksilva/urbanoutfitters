@@ -1,0 +1,48 @@
+<script language="JavaScript">
+<!--
+function validate(){
+
+	if (document.emailmeback.email.value == '') {
+		alert("Please enter your email address");
+		document.emailmeback.email.focus();
+		return false;
+		}
+	var checkUserEmail = document.emailmeback.email.value;
+	if (checkUserEmail != '') {
+		if ((checkUserEmail.indexOf('@') < 0) || ((checkUserEmail.charAt(checkUserEmail.length-4) != '.') && (checkUserEmail.charAt(checkUserEmail.length-3) != '.'))) {
+			alert("Please enter a valid email address.");
+			document.emailmeback.email.focus();
+			return false;
+		}
+	}
+}
+//-->
+</script>
+
+<form action="<venda_codehttp>" method="get" name="emailmeback" onsubmit="return validate();">
+<input type="hidden" name="ex" value="tl_emlinstock-emailme">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="invtref" value="<venda_invtref>">
+<input type="hidden" name="invt" value="<venda_invtref>">
+<input type="hidden" name="layout" value="default">
+<input type="hidden" name="temp" value="thankyou">
+
+<div id="emailmeback">
+	<h1>Email me when this item is back in stock</h1>
+	
+	<div><label for="email">Your email address:</label> <input name="email" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" id="email" maxlength="150"></div>
+	
+	<input type="image" value="Submit" alt="Submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" id="CONTINUE">
+	
+	<p><a href="<venda_dispview invt=<venda_invtref>>">Back</a></p>
+</div>
+
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+// blank email if it contains user
+if ((document.emailmeback.email.value.substring(0,1)=='<') || (document.emailmeback.email.value.substring(0,4)=='user')) {
+	document.emailmeback.email.value='';
+}
+// -->
+</script>

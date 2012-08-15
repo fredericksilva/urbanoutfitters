@@ -1,0 +1,279 @@
+<div id="col-blank">&nbsp;</div>
+<div id="col-myaccount-login">
+<div id="covLogin">
+<venda_block label=1,errors=notnull><div style="margin-top:-12px;"><h2><span class="error">“Invalid email address or password, please try again."</span></h2></div></venda_block label=1>
+<div id="covLogin-col-one">
+	<h2 class="hide">NEW CUSTOMERS - REGISTER</h2>
+	<div id="loginHeader">NEW CUSTOMERS - REGISTER</div>
+<form name="loginform2" method="post" action="<venda_codehttps>" onSubmit="return passEmail(2);">
+
+<venda_block label=11,errors=notnull>
+<input type="hidden" name="param1" value="<venda_param1>">
+</venda_block label=11>
+
+<!-- common values -->
+<input type="hidden" name="log" value="1">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="trrfext" value="1">
+
+<venda_block label=20,workflow!=shopcart,workflow!=giftcertificates,workflow!=refer>
+	<venda_block label=23,workflow!=giftlist>
+	<!-- values for workflow=register, or view if you have errors -->
+	<input type="hidden" name="page" value="myaccount">
+	<input type="hidden" name="ex" value="co_disp-view">
+	<input type="hidden" name="curlayout" value="checkout">
+	</venda_block label=23>
+	
+	<venda_block label=21,workflow=giftlist,step!=glstmang>
+	<!-- values for workflow=giftlist create -->
+	<input type="hidden" name="step" value="glstcreate">
+	<input type="hidden" name="curstep" value="glstcreate">
+	<input type="hidden" name="ex" value="co_wizr-giftlist">
+	<input type="hidden" name="curlayout" value="noleft">
+	<input type="hidden" name="layout" value="noleft">
+	<input type="hidden" name="glstlogout" value="1">
+	</venda_block label=21>
+	
+	<venda_block label=22,workflow=giftlist,step=glstmang>
+	<!-- values for workflow=giftlist mang -->
+	<input type="hidden" name="step" value="glstmang">
+	<input type="hidden" name="ex" value="co_wizr-giftlist">
+	<input type="hidden" name="curlayout" value="noleft">
+	<input type="hidden" name="layout" value="noleft">
+	</venda_block label=22>
+</venda_block label=20>
+
+<venda_block label=12,workflow=shopcart,workflow=giftcertificates,operator=or>
+	<!-- values for workflow=shopcart or giftcertificates (and co_comn-login shopcart) only -->
+	<venda_block label=13,usgrref!=instore><input type="hidden" name="step" value="confirm"></venda_block label=13>
+		<venda_block label=14,usgrref=instore>
+			<input type="hidden" name="step" value="zipcode">
+			<input type="hidden" name="wizard" value="instore">
+		</venda_block label=14>
+			<input type="hidden" name="ex" value="co_wizr-shopcart">
+			<input type="hidden" name="curlayout" value="checkout">
+			<input type="hidden" name="layout" value="checkout">
+</venda_block label=12>
+
+<venda_block label=13,workflow=refer>
+	<!-- values for workflow=refer (and co_comn-login refer) only -->
+	<input type="hidden" name="step" value="refer">
+	<input type="hidden" name="ex" value="co_wizr-refer">
+	<input type="hidden" name="curlayout" value="noleft">
+</venda_block label=13>
+
+<venda_block label=15,usgrref!=instore><input type="hidden" name="glxt" value="<venda_glxt mode=make,addsnotdone=1>"></venda_block label=15>
+
+<input type="hidden" name="registered" id="notRegistered" value="0">
+<input type="hidden" name="registered" id="alreadyRegistered" value="">
+	<div id="login-col1">
+		<fieldset>
+		<legend class="hide">CREATE AN ACCOUNT</legend>
+				<div class="row"><label for="email">Email Address</label><input type="text" name="email" id="email" value="" size="20" maxlength="150" class="inputtext137"></div><div class="clear-all"><!-- --></div>
+				<div class="regisNote">Register now to track the progress of your order, view your order history and select your email preferences so you can be the first to know about U.O news and offers.</div><div class="clear-all"><!-- --></div>
+				<div id="button_regis"><input onclick="document.loginform2.alreadyRegistered.value='';document.loginform2.notRegistered.value='0';" type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_register_new.gif" alt="REGISTER" class="right"></div><div class="clear-all"><!-- --></div>
+		</fieldset>
+	</div>
+</form>
+<div class="clear-all"><!-- --></div>
+</div>
+<div id="covLogin-col-two">
+	<h2 class="hide">EXISTING CUSTOMERS - SIGN IN</h2>
+	<div id="loginHeader">EXISTING CUSTOMERS - SIGN IN</div>
+<form name="loginform" method="post" action="<venda_codehttps>" onSubmit="return passEmail(1);">
+
+<venda_block label=11,errors=notnull>
+<input type="hidden" name="param1" value="<venda_param1>">
+</venda_block label=11>
+
+<!-- common values -->
+<input type="hidden" name="log" value="1">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="trrfext" value="1">
+
+<venda_block label=20,workflow!=shopcart,workflow!=giftcertificates,workflow!=refer>
+	<venda_block label=23,workflow!=giftlist>
+	<!-- values for workflow=register, or view if you have errors -->
+	
+	<venda_block label=33560,mode=value,<venda_htxt mode=get,name=bvreviews>=notnull>
+	<input type="hidden" name="htxt" value="<venda_htxt mode=make,bvreviews=1>">
+	</venda_block label=33560>
+
+	<input type="hidden" name="page" value="myaccount">
+	<input type="hidden" name="ex" value="co_disp-view">
+	<input type="hidden" name="curlayout" value="checkout">
+	</venda_block label=23>
+	
+	<venda_block label=21,workflow=giftlist,step!=glstmang>
+	<!-- values for workflow=giftlist create -->
+	<input type="hidden" name="step" value="glstcreate">
+	<input type="hidden" name="curstep" value="glstcreate">
+	<input type="hidden" name="ex" value="co_wizr-giftlist">
+	<input type="hidden" name="curlayout" value="noleft">
+	<input type="hidden" name="layout" value="noleft">
+	<input type="hidden" name="glstlogout" value="1">
+	</venda_block label=21>
+	
+	<venda_block label=22,workflow=giftlist,step=glstmang>
+	<!-- values for workflow=giftlist mang -->
+	<input type="hidden" name="step" value="glstmang">
+	<input type="hidden" name="ex" value="co_wizr-giftlist">
+	<input type="hidden" name="curlayout" value="noleft">
+	<input type="hidden" name="layout" value="noleft">
+	</venda_block label=22>
+</venda_block label=20>
+
+<venda_block label=12,workflow=shopcart,workflow=giftcertificates,operator=or>
+	<!-- values for workflow=shopcart or giftcertificates (and co_comn-login shopcart) only -->
+	<venda_block label=13,usgrref!=instore><input type="hidden" name="step" value="confirm"></venda_block label=13>
+		<venda_block label=14,usgrref=instore>
+			<input type="hidden" name="step" value="zipcode">
+			<input type="hidden" name="wizard" value="instore">
+		</venda_block label=14>
+			<input type="hidden" name="ex" value="co_wizr-shopcart">
+			<input type="hidden" name="curlayout" value="checkout">
+			<input type="hidden" name="layout" value="checkout">
+</venda_block label=12>
+
+<venda_block label=13,workflow=refer>
+	<!-- values for workflow=refer (and co_comn-login refer) only -->
+	<input type="hidden" name="step" value="refer">
+	<input type="hidden" name="ex" value="co_wizr-refer">
+	<input type="hidden" name="curlayout" value="noleft">
+</venda_block label=13>
+
+<venda_block label=15,usgrref!=instore><input type="hidden" name="glxt" value="<venda_glxt mode=make,addsnotdone=1>"></venda_block label=15>
+
+<input type="hidden" name="registered" id="notRegistered" value="0">
+<input type="hidden" name="registered" id="alreadyRegistered" value="">
+
+	<div id="login-col2">
+		<fieldset>
+		<legend class="hide">SIGN IN</legend>
+			<div class="row"><label for="email">Email Address</label><input type="text" name="email" id="email" value="" size="20" maxlength="150" onblur="checkUser();" class="inputtext137"></div>
+			<div class="clear-all"><!-- --></div>
+			<div class="passwordlabel"><label for="alreadyRegistered">Password</label><input type="password" name="password" id="password" size="25" maxlength="30" onfocus="document.loginform.registered[1].checked=true;" class="inputtext137"></div>
+			<div class="clear-all"><!-- --></div>
+			<div class="transnone row"><a href="<venda_passcode>">Forgot Your Password?</a></div><div class="clear-all"><!-- --></div>
+			<div id="button_log"><input onclick="document.loginform.alreadyRegistered.value='1';document.loginform.notRegistered.value='';" type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_signin_new.gif" alt="SIGN IN" class="right"></div><div class="clear-all"><!-- --></div>
+			<div id="height15"></div>			
+		</fieldset>	
+	</div>
+</form>
+<div class="clear-all"><!-- --></div>
+</div>
+
+	<div id="covLogin-col-three">
+		<venda_inctemplate type=admn/co_comn-login,name=express_checkout>
+	</div>
+</div>
+<div class="clear-all"><!-- --></div>
+</div>
+<script language="javascript" type="text/javascript">
+<!-- 
+function cleanUp() {
+	if ((document.loginform.email.value.substring(0,1)=='<') || (document.loginform.email.value.substring(0,4)=='user')) {
+		document.loginform.email.value='';
+	}
+	if (document.loginform.email.value!='') {
+		document.loginform.registered[1].checked=true;
+	}
+	if (document.loginform.password.value!='') {
+		document.loginform.password.value='';
+	}
+}
+
+cleanUp();
+
+function checkUser() {
+	if (document.loginform.password.value!='') {
+		document.loginform.registered[1].checked=true;
+	}
+}
+
+function checkemail(str) {
+	var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+	return (filter.test(str));
+}
+
+function passEmail(frm) {
+	if (frm==1){
+		var frmlogin=document.loginform;
+		if (frmlogin.email.value=='' && frmlogin.registered[1].value=='1') {
+		alert('Please enter an email address');
+		frmlogin.email.focus();
+		return false;
+		}
+		if (frmlogin.registered[1].value=='1' && frmlogin.password.value=='') {
+			alert('Please enter your password to Continue');
+			frmlogin.password.focus();
+			return false;
+		}
+	} else if (frm==2){
+		var frmlogin=document.loginform2;
+		if (frmlogin.email.value=='') {
+			alert('Please enter an email address');
+			frmlogin.email.focus();
+			return false;
+		}
+		if (frmlogin.email.value!='') {
+			var chkEmail=false;
+			chkEmail=checkemail(frmlogin.email.value);
+			if(chkEmail==false){
+				alert("Please enter a valid email address");
+				frmlogin.email.value="";
+				frmlogin.email.focus();
+				return false;
+			}
+		}
+	}
+
+	if (frmlogin.registered[0].value=='0') {
+		emailaddress = frmlogin.email.value;
+			<venda_block label=68,workflow!=shopcart,workflow!=refer,workflow!=giftlist>
+				//location.href='<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=zipcode&log=2&userEmail='+emailaddress;
+				var signInIframe = document.getElementById('iframewrapper'); <venda_tpcomment>// variable to check if the login is loaded via the popup</venda_tpcomment>
+				<venda_block label=29,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+					var locationURL = '<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=zipcode&glxt=<venda_glxt mode=make,glxtusertype=><venda_block label=33559,mode=value,<venda_htxt mode=get,name=bvreviews>=notnull>&htxt=<venda_htxt mode=make,bvreviews=1></venda_block label=33559>&log=2&userEmail='+emailaddress;
+				</venda_block label=29>
+				<venda_block label=30,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+					var locationURL = '<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=billto&param1=details&glxt=<venda_glxt mode=make,glxtusertype=><venda_block label=33558,mode=value,<venda_htxt mode=get,name=bvreviews>=notnull>&htxt=<venda_htxt mode=make,bvreviews=1></venda_block label=33558>&log=2&userEmail='+emailaddress;
+				</venda_block label=30>
+				if(!signInIframe){location.href=locationURL;}
+			else{parent.location.href=locationURL;}
+			</venda_block label=68>
+            
+			<venda_block label=69,workflow=shopcart>
+				//location.href='<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=zipcode&param1=<venda_param1>&log=2&userEmail='+emailaddress+'&layout=checkout';
+				<venda_block label=32,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+					location.href='<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=zipcode&param1=<venda_param1>&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress+'&htxt=<venda_htxt mode=make,step=1>';
+				</venda_block label=32>
+                                <venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>location.href='<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=billto&param1=details&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress+'&layout=checkout&htxt=<venda_htxt mode=make,step=1>';</venda_block label=33>
+			</venda_block label=69>
+            
+			<venda_block label=70,workflow=refer>
+				//location.href='<venda_codehttps>?ex=co_wizr-refer&bsref=<venda_bsref>&step=zipcode&param1=<venda_param1>&log=2&userEmail='+emailaddress;
+				<venda_block label=34,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>location.href='<venda_codehttps>?ex=co_wizr-refer&bsref=<venda_bsref>&step=zipcode&param1=<venda_param1>&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress;</venda_block label=34>
+                                <venda_block label=35,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>location.href='<venda_codehttps>?ex=co_wizr-refer&bsref=<venda_bsref>&step=billto&param1=details&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress;</venda_block label=35>
+			</venda_block label=70>
+            
+            <venda_block label=71,workflow=giftlist>
+				//location.href='<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=zipcode&log=2&userEmail='+emailaddress;
+				<venda_block label=36,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>location.href='<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=zipcode&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress;</venda_block label=36>
+                                <venda_block label=37,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>location.href='<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&step=billto&param1=details&glxt=<venda_glxt mode=make,glxtusertype=>&log=2&userEmail='+emailaddress;</venda_block label=37>
+			</venda_block label=71>
+						
+			return false;
+	}
+
+}
+// -->
+</script>
+
+<!-- 
+step:<venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: co_comn-login
+ -->

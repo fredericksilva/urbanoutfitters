@@ -1,0 +1,29 @@
+<venda_inctemplate name=textEmailDetblocks,type=includes>
+==============================================================================
+
+
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><venda_ebizname> Order <venda_ohordnum>, Card Authorisation Failed</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de><venda_ebizname> Bestellung <venda_ohordnum>, Kartenautorisierung fehlgeschlagen</venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_ohusgrrf>=guest_fr><venda_ebizname> Commande <venda_ohordnum>, l'autorisation d'utilisation de la carte a échoué</venda_block label=1013>
+
+
+==============================================================================
+
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_block label=20,msg=notnull><venda_msg></venda_block label=20>
+
+
+
+<venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>Your Order could not be authorised. No more attempts will be made to authorise your order.</venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de>Ihre Bestellung konnte nicht autorisiert werden. Es werden keine weiteren Versuche unternommen, Ihre Bestellung zu autorisieren.</venda_block label=1022>
+<venda_block label=1023,mode=value,<venda_ohusgrrf>=guest_fr>Votre commande n'a pas été autorisée. Nous n'effectuerons aucune autre tentative d'autorisation de votre commande.</venda_block label=1023>
+
+
+
+
+<venda_inctemplate name=textEmailBody,type=includes>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

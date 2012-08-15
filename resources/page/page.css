@@ -1,0 +1,103 @@
+/*Store Locator page*/
+
+.hmarding-zero{/*set margin and padding of h1,h2 to be zero*/
+	margin:0;
+	padding:0;
+}
+#storelocations{/*wrapper of the page*/
+	width:800px;
+	padding:0 0 40px 29px ;
+}
+#stlo-left-col{
+	width:478px;
+	margin:8px 0 0 0;
+}
+#store-events-annoucements{
+	margin:51px 0 0 0;
+}
+#store-events-annoucements p{
+	margin:6px 0 0 5px;
+	color:#666;
+	font-size:0.95em;
+	font-family:Courier New, times;
+}
+#store-events-annoucements a{color:#2177aa;}
+#stlo-right-col{
+	width:322px;
+	margin:8px 0 0 0;
+}
+#addresscolumn{
+	margin:16px 0 0 0;
+	text-align:center;
+}
+.address p{margin:4px 0 0 0;color:#2a75ae;line-height:12px;font-size:0.95em;}
+/*end of store locator page*/
+
+/*faqs and joblist pages*/
+ul.anchorlist {margin:0 0 53px 0;padding:0;}
+ul.anchorlist li{list-style:none;padding:0 0 0 4px;}
+ul.anchorlist a{color:#3d6c5a;text-decoration:none;border-bottom:1px solid #da74b5;}
+ul.anchorlist .bluet a{color:#2074a3;text-decoration:none;border-bottom:1px solid #da74b5;}
+.clear-height{height:16px;}
+.content-text{line-height:20px;}
+.content-text h2{color:#2178ae;font-size:1em;margin:0;padding:0;}
+.content-text p{color:#3d6c5a; margin:0 0 20px 0;}
+.content-text p.topic{margin:0 0 0 0;padding:0;}
+.content-text a{color:#3d6c5a;text-decoration:none;border-bottom:1px solid #da74b5;}
+.content-text a.noline{border:0;}
+.content-text ul{
+	margin:5px 0 5px 30px ;
+	color:#3d6c5a;
+	list-style:disc;
+}
+.content-text ul.nodecoration{margin:0;color:#3d6c5a;list-style:none;}
+#joblistdesc{color:#496557;font-weight:bold;font-family:courier new, times;font-size:0.95em;letter-spacing:-1.4px;}
+.positions{width:315px;margin:26px 0 33px 0;}
+.joblistdetail{margin:0;padding:34px 0 0 4px;border-top:1px solid #24b485;}
+.joblistdetail h2 a{color:#2178ae;font-size:1em;margin:0;padding:0;border:0;}
+.joblistdetail a{color:#2074a3;text-decoration:none;border-bottom:1px solid #2074a3;}
+/*end of faqs page*/
+
+/*music center styles*/
+.musiccenter{
+	width:384px;
+	margin:0 0 0 29px;
+	padding:0;
+}
+div.box-music-center {
+	font-family: Courier New ,Times;
+	width:829px;
+}
+.desc-spacing{margin-top:10px;margin-bottom:10px;}
+.list-spacing{margin-top:30px;margin-bottom:10px;}
+.desc-bottom-line{padding-bottom:15px;border-bottom:1px solid #3fbe93}
+
+.musiccenter-image{width:130px;background-color:red;}
+.musiccenter-button{padding: 6px 0 0 0;text-align:center;}
+.desc{
+	width:241px;
+	margin:0;
+	padding:0 0 0 3px;
+}
+.desc h2{
+	color:#1d79a8;
+	font-size:.9em;
+	font-weight:bold;
+	margin:0 0 8px 0;
+	padding:0 0 8px 0;
+	border-bottom:2px solid #1d79a8;
+}
+.desc p{
+	font-family:courier new;
+	font-size:.9em;
+	color:#939393;
+	margin:0;
+	padding:0;
+}
+/*end of music center page*/
+
+/*sign up for newsletter styles*/
+.email label{color:#3d6c5a;width:100px;position:relative;top:3px;}
+.email input{font-family:times;}
+/*end of sign up for newsletter*/
+

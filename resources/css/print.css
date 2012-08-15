@@ -1,0 +1,53 @@
+/* styles for print version (applied on top of styles.css) */
+
+body {
+	font:11pt Arial, Helvetica, Verdana, sans-serif; /* use points for print */
+	}
+
+/* % values fill width of printed page */
+#wrapper {
+	width:100%; /* was 700px */
+	}
+#col-one {
+	 display:none;
+	}
+#col-two-three {
+	width:100%; /* was 540px */
+	float:left ;
+	}
+#col-two {
+	width:100%; /* was 380px */
+	}
+#col-three {
+	display:none;
+	}
+
+legend {
+	display:none; /* ie (pc) fix - was pushing #col-one down */
+	}
+#admin{
+	display:none;	
+	}
+#menutopnav{	
+	display:none;	
+	}
+#header .logo{display: inline;}
+#header .mini{display:none;	}	
+#header .hd_line{display:none;	}	
+#header .row-tow{display:none;	}	
+#header .bg_header{width:630px;height:96px;background-repeat: repeat-x;}
+#footer{	
+	display:none;
+	}
+#venda{
+	display:none;
+	}
+#buttons {
+	display:none; 
+	}
+#print {
+	display:none; 
+	}
+#btn-order-receipt-continue-shopping{
+	display:none; 	
+	}

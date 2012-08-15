@@ -1,0 +1,89 @@
+<!-- Reviews -->
+<script type="text/javascript" language="javascript">
+<!--
+    var BVisLoaded = false;
+    function BVcheckLoadState() {
+    	if(!BVisLoaded) {
+    	    var page = document.getElementById('BVFrame').src;
+			<venda_block label=1771,mode=value,<venda_islive>!=1>
+				<venda_block label=1011,mode=value,<venda_sessionlanguage>=en>
+					document.getElementById('BVFrame').src='<venda_setting type=ebiz,name=bvurlen>/bvstaging/logging?page=' + escape(page);
+				</venda_block label=1011>
+				<venda_block label=1012,mode=value,<venda_sessionlanguage>=de>
+					document.getElementById('BVFrame').src='<venda_setting type=ebiz,name=bvurlde>/bvstaging/logging?page=' + escape(page);
+				</venda_block label=1012>
+			</venda_block label=1771>
+			
+			<venda_block label=1772,mode=value,<venda_islive>=1>
+				<venda_block label=1011,mode=value,<venda_sessionlanguage>=en>
+					document.getElementById('BVFrame').src='<venda_setting type=ebiz,name=bvurlen>/logging?page=' + escape(page);
+				</venda_block label=1011>
+				<venda_block label=1012,mode=value,<venda_sessionlanguage>=de>
+					document.getElementById('BVFrame').src='<venda_setting type=ebiz,name=bvurlde>/logging?page=' + escape(page);
+				</venda_block label=1012>
+			</venda_block label=1772>
+			
+    	    document.getElementById('BVReviewsContainer').innerHTML = '<!-- Review retrieval timed out -->';
+       }
+    }
+//-->
+</script>
+
+<div id="BVSubmissionParameters" style="display: none;"></div>
+<div id="BVContainerPageURL" style="display: none;"><venda_dispview page=bvreviews></div>
+
+<iframe id="BVFrame" name="BVFrame" src="" style="visibility: hidden; width: 1px; height: 1px; position: absolute; left: -999px; top: -999px;"></iframe>
+
+<script type="text/javascript" language="javascript">
+<!--
+    function bvLoadRR() {
+        // Start Configuration
+		<venda_block label=1773,mode=value,<venda_islive>!=1>
+			<venda_block label=1031,mode=value,<venda_sessionlanguage>=en>
+				var bvPage = '<venda_setting type=ebiz,name=bvurlen>/bvstaging/<venda_setting type=ebiz,name=bvdisplaycodeen>/<venda_invtref>/reviews.htm?format=embedded';
+			</venda_block label=1031>
+			<venda_block label=1032,mode=value,<venda_sessionlanguage>=de>
+				var bvPage = '<venda_setting type=ebiz,name=bvurlde>/bvstaging/<venda_setting type=ebiz,name=bvdisplaycodede>/<venda_invtref>/reviews.htm?format=embedded';
+			</venda_block label=1032>
+		</venda_block label=1773>
+		
+		<venda_block label=1774,mode=value,<venda_islive>=1>
+			<venda_block label=1031,mode=value,<venda_sessionlanguage>=en>
+				var bvPage = '<venda_setting type=ebiz,name=bvurlen>/<venda_setting type=ebiz,name=bvdisplaycodeen>/<venda_invtref>/reviews.htm?format=embedded';
+			</venda_block label=1031>
+			<venda_block label=1032,mode=value,<venda_sessionlanguage>=de>
+				var bvPage = '<venda_setting type=ebiz,name=bvurlde>/<venda_setting type=ebiz,name=bvdisplaycodede>/<venda_invtref>/reviews.htm?format=embedded';
+			</venda_block label=1032>
+		</venda_block label=1774>
+			
+        var URLParamNames = {
+            reviewID : 'featurereview',
+            reviewPage : 'reviewspage'
+        };
+        // End Configuration
+        
+        var getURLParam = function(name) { 
+            if (!name) return null;
+            var match = (new RegExp('[?&]' + name + '=([^&#]+)')).exec(window.location.search);
+            return match ? decodeURIComponent(match[1]) : null;        
+        };
+        
+        bvReviewID = getURLParam(URLParamNames.reviewID);
+        bvReviewPage = getURLParam(URLParamNames.reviewPage);
+        
+        if (/^[0-9]+$/.test(bvReviewID)) {
+            bvPage += '&reviewid=' + bvReviewID;
+        } else if (/^[0-9]+$/.test(bvReviewPage)) {
+            bvPage += '&page=' + bvReviewPage;
+        }
+        
+        document.getElementById('BVFrame').src = bvPage;
+        
+        //Timeout for review load.  Consider reviews unavailable if not loaded within 15 seconds
+        setTimeout("BVcheckLoadState()", 15000);
+    }
+    
+    bvLoadRR();
+//-->
+</script>
+<!-- End Reviews -->

@@ -1,0 +1,51 @@
+<venda_block label=99,ustype!=R>
+<p id="selectCur">&nbsp;Change Currency <a href="#" onclick="Venda.Ebiz.switchCurrency(document.location,'restofworld','<venda_workflow>'); return false;" <venda_block label=1101,mode=value,<venda_sessionlocation>=restofworld>class="restofworldon"</venda_block label=1101>>&pound;</a>&nbsp;<a href="#" onclick="Venda.Ebiz.switchCurrency(document.location,'eur','<venda_workflow>'); return false;" <venda_block label=1102,mode=value,<venda_sessionlocation>=eur>class="euroon"</venda_block label=1102>>&euro;</a></p>
+</venda_block label=99>
+
+<script language="javascript" type="text/javascript">  
+	Venda.Ebiz.switchCurrency = function (location, region, workflow) {
+		var fullURL = unescape(location.href);
+		var baseURL = location.protocol + "//" + location.host;
+		if (baseURL.substring(baseURL.length-2, baseURL.length-1) == "/") {
+			baseURL = baseURL.substring(0, baseURL.length-2);
+		}
+		var redirectURL = "";
+		// only for LIVE site because parameter setlocn doesn't on short URL (e.g. www.sitename.com&setlocn=xxx)
+		if ((baseURL == fullURL) || ((baseURL + "/") == fullURL) || workflow != "") {			
+			redirectURL = baseURL.replace("https","http") + "/page/home&setlocn=" + region + "&log=4";				
+		} else {
+			var afterHash = "";
+			var hashPos = fullURL.indexOf("\#");
+			if (hashPos != -1) {
+				afterHash = fullURL.substring(hashPos, fullURL.length);
+				fullURL = fullURL.substring(0, hashPos);
+ 			}
+			// clean log parameter + prevent error when switch currency after add to basket
+			var logValue = Venda.Platform.getUrlParam(fullURL, "log");
+			if (logValue == 4) {
+				fullURL = fullURL.replace("&log=4","");
+
+			} else if (logValue == 22) {
+				fullURL = fullURL.replace("&log=22","");
+				fullURL = fullURL.replace("&mode=add","");
+			} else if ((logValue == "") && (fullURL.indexOf("&log=") != -1)) {
+				fullURL = fullURL.replace("&log=","");
+			}
+			
+			var setlocnValue = Venda.Platform.getUrlParam(fullURL, "setlocn");
+			if (setlocnValue != "") {
+				redirectURL = fullURL.replace("=" + setlocnValue, "=" + region) + "&log=4" + afterHash;
+			} else if ((setlocnValue == "") && (fullURL.indexOf("&setlocn=") != -1)) { 
+				redirectURL = fullURL.replace("&setlocn=", "&setlocn=" + region) + "&log=4" + afterHash;
+			} else if ((setlocnValue == "") && (fullURL.indexOf("&setlocn=") == -1)) {
+				redirectURL = fullURL + "&setlocn=" + region + "&log=4" + afterHash;
+			}
+
+		}
+		if (redirectURL != "") {
+			location.href = redirectURL;
+		}
+	};
+
+</script> 
+

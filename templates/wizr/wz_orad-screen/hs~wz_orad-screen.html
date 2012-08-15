@@ -1,0 +1,121 @@
+<venda_detblock>
+<li>
+	<venda_block label=10,abrfnbr1&gt;0>
+	<div>
+	<fieldset class="addlist">
+		<input type="hidden" name="abrfnbr" value="<venda_abrfnbr1>">
+		<legend class="hide">
+		<venda_block label=101,adtype1=1>Billing Address</venda_block label=101>
+		<venda_block label=102,adtype1=0>Delivery Address<venda_block label=13,addrname1=notnull> (<venda_addrname1>)</venda_block label=13></venda_block label=102>
+		</legend>
+			/*<div id="pinkHeader3">
+				<venda_block label=101,adtype1=1>BILLING ADDRESS</venda_block label=101>
+				<venda_block label=102,adtype1=0>DELIVERY ADDRESS<venda_block label=13,addrname1=notnull> (<venda_addrname1>)</venda_block label=13></venda_block label=102>
+			</div>
+			<div id="bcontent">
+				<strong><venda_title1> <venda_fname1> <venda_lname1></strong><br>
+				<venda_block label=31,company1=notnull><venda_company1><br></venda_block label=31>
+				<venda_num1> <venda_addr11><venda_block label=3,addr21=notnull><br><venda_addr21></venda_block label=3><br>
+				<venda_city1>, <venda_state1> <venda_zipc1><br>
+				<venda_cntry1>
+			</div>*/
+		
+		<venda_block label=132,adtype1=0>
+		<!-- if it's a delivery address -->
+            <venda_block label=220,workflow=giftlist>
+			<div><a href='#' onClick='<venda_wizbutton step=editadd,param1=<venda_abrfnbr1>,param2=edit,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="edit" border="0"></a></div>
+			</venda_block label=220>
+			<venda_block label=320,workflow=manageaddresses>
+			<div><a href='#' onClick='<venda_wizbutton step=editadd,param1=<venda_abrfnbr1>,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="edit" border="0"></a></div>
+			</venda_block label=320>
+			<venda_block label=321,workflow=shopcart,workflow=instore,operator=or>
+				<venda_block label=325,param2!=multiple>
+				<div><a href='#' onClick='<venda_wizbutton step=editadd,param1=<venda_abrfnbr1>,param2=adbook,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="edit" border="0"></a></div>
+				</venda_block label=325>
+				<venda_block label=322,param2=multiple>
+				<div><a href='#' onClick='<venda_wizbutton step=editadd,param1=<venda_abrfnbr1>,param2=multiple,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="edit" border="0"></a></div>
+				</venda_block label=322>
+			</venda_block label=321>
+			<venda_block label=324,workflow=register>
+			<div><a href='#' onClick='<venda_wizbutton step=editadd,param1=<venda_abrfnbr1>,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="edit" border="0"></a></div>
+			</venda_block label=324>
+		</venda_block label=132>
+		
+		<venda_block label=133,adtype1!=0>
+		<!-- if it's a billing address no edit button -->
+		</venda_block label=133>
+		
+		<venda_block label=63,default1=1>
+		<!-- if it's the current default address -->
+			<venda_block label=46,workflow!=shopcart,workflow!=instore><div>Default delivery address</div><div class="clear-all"></div></venda_block label=46>
+			<venda_block label=47,workflow=shopcart,workflow=instore,operator=or><div>Deliver to this address</div><div class="clear-all"></div></venda_block label=47>
+		</venda_block label=63>
+		
+		<venda_block label=5,default1=0>
+		<div>
+			<input type="radio" name="update" id="<venda_abrfnbr1>" class="rdDefault" value="<venda_abrfnbr1>"<venda_block label=4,default1=1> checked="checked"</venda_block label=4>>
+			<venda_block label=48,workflow!=shopcart,workflow!=instore><label for="<venda_abrfnbr1>" class="dontFloat">Make default delivery address</label></venda_block label=48>
+			<venda_block label=49,workflow=shopcart,workflow=instore,operator=or><label for="<venda_abrfnbr1>" class="dontFloat">Use this address</label></venda_block label=49>
+		</div><div class="clear-all"></div>
+		</venda_block label=5>
+	</fieldset>
+	</div>
+	</venda_block label=10>
+</li>
+</venda_detblock>
+
+
+
+<div id="my_covContent">
+<div id="grayHeader"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/hdr_address_book.gif" alt="YOUR ADDRESS BOOK" border="0"></div>
+<venda_block label=1,errors=notnull><div class="error"><venda_errors></div></venda_block label=1>
+<p>You can edit your existing addresses by clicking on the 'Edit' button and filling in the address form. You cannot edit your Billing Address from this page.</p>
+<p>You can also choose a default address. This delivery address will be automatically selected when you place an order. You can alter the default address at any time.</p>
+
+<venda_form>
+
+<ul id="addresslist">
+<venda_detail>
+</ul>
+
+<div id="my-button3">
+<venda_block label=551,workflow!=shopcart,workflow!=giftlist,workflow!=instore>
+	<a href='#' onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addnewaddress.gif" alt="add New Address" border="0" class="left"></a>
+</venda_block label=551>
+<venda_block label=552,workflow=shopcart>
+<!-- not required for instore -->
+	<venda_block label=553,param2=multiple>
+		<a href='#' onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=multiple,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addnewaddress.gif" alt="add New Address" border="0" class="left"></a>
+	</venda_block label=553>
+	<venda_block label=554,param2!=multiple>
+		<a href='#' onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=adbook,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addnewaddress.gif" alt="add New Address" border="0" class="left"></a>
+	</venda_block label=554>
+</venda_block label=552>
+<venda_block label=560,workflow=giftlist>
+		<a href='#' onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addnewaddress.gif" alt="add New Address" border="0" class="left"></a>
+</venda_block label=560>
+
+<venda_block label=416,workflow=shopcart,workflow=instore,operator=or>
+<input type="image" onClick='<venda_wizbutton step=confirm,mode=process,check=yes,secure=yes,callonly=yes> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_done.gif" alt="done" class="right">
+</venda_block label=416>
+<venda_block label=417,workflow=manageaddresses>
+<input type="image" onClick='<venda_wizbutton step=--page-myaccount,mode=process,check=yes,secure=yes,callonly=yes> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_done.gif" alt="done" class="right">
+</venda_block label=417>
+<venda_block label=418,workflow=giftlist>
+<a href="<venda_codehttp>?ex=co_wizr-giftlist&bsref=<venda_bsref>&step=glstlist"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_done.gif" alt="done" border="0" class="right"></a>
+</venda_block label=418>
+</div>
+
+</form>
+</div>
+<venda_block label=20,workflow=instore>
+<venda_tpxt mode=set,name=instore,value=1>
+</venda_block label=20>
+
+<!-- 
+step: <venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orad-screen
+workflow: <venda_workflow>
+ -->

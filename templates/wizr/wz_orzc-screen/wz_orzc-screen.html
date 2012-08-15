@@ -1,0 +1,292 @@
+<venda_zones type=countries,template=zoneJs>
+<venda_block label=8801,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1>
+<venda_block label=57,workflow=comingsoon>
+<!-- email-only registration -->
+
+<venda_block label=58,curstep=details>
+<script language="javascript" type="text/javascript">
+	<!-- 
+	function checkemail(str) {
+		var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+		return (filter.test(str));
+	}
+	function validateFields() {
+		var filterNumber = /[0-9]/;
+		if (document.wizform.fname.value == '') {
+			alert('Please enter your first name.');
+			document.wizform.fname.focus();
+			return;
+		}
+		if (document.wizform.lname.value == '') {
+			alert('Please enter your surname.');
+			document.wizform.lname.focus();
+			return;
+		}
+		if (document.wizform.usemail.value == '') {
+			alert('Please enter your email address.');
+			document.wizform.usemail.focus();
+			return;
+		}
+		var checkUserEmail = document.wizform.usemail.value;
+		if (checkUserEmail != '') {
+			if ( checkemail(checkUserEmail) ) {
+				alert('Please enter a valid email address.');
+				document.wizform.usemail.focus();
+				return;
+			}
+		}
+		<venda_wizbutton step=confirm,mode=process,check=yes,callonly=yes>
+	}
+	// -->
+	</script>
+<div class="right">
+<h1>Sign up to be notified of the <venda_ebizname> launch</h1>
+<venda_block label=100,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=100>
+<p>Enter your details below and we'll email you when <venda_ebizname> launches.</p>
+
+<venda_form>
+<input type="hidden" name="uslgemail" value="">
+<input type="hidden" name="ustype" value="E">
+
+<fieldset class="inpform">
+<legend>Your Details</legend>
+<div><label for="fname">First Name: <span class="required">*</span></label> <venda_fname field=text,size=25,maxlength=30,required=yes></div>
+<div><label for="lname">Last Name: <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30,required=yes></div>
+<div><label for="usemail">Email: <span class="required">*</span></label> <venda_usemail field=text,size=25,required=yes></div>
+</fieldset>
+
+<div id="buttons">
+<input type="image" onClick="validateFields(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" class="right">
+</div>
+
+</form>
+</venda_block label=58>
+
+<venda_block label=59,curstep=confirm>
+<h1>Sign up to be notified of the <venda_ebizname> launch</h1>
+<venda_block label=101,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=101>
+<p>Thank you for entering your details. We'll email you as soon as <venda_ebizname> launches.</p>
+<dl>
+	<dt>Your details are as follows:</dt>
+		<dd><strong>Name:</strong> <venda_fname> <venda_lname></dd>
+		<dd><strong>Email:</strong> <venda_usemail></dd>
+</dl>
+</venda_block label=59>
+</div>
+</venda_block label=57>
+
+
+
+
+<venda_block label=56,workflow!=comingsoon>
+<!-- normal registration -->
+<div id="<venda_block label=505,workflow=manageaddresses>my_covContentZip</venda_block label=505><venda_block label=505,workflow!=manageaddresses>cov_colRight</venda_block label=505>">
+<venda_block label=38,param1!=delivery><div class="heading-all"><h1>BILLING ADDRESS</h1><div class="underline"><p></p></div></div></venda_block label=38>
+<venda_block label=39,param1=delivery,workflow=manageaddresses><div id="grayHeader"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/hdr_delivery_address.gif" alt="DELIVERY ADDRESS" border="0"></div></venda_block label=39>
+<venda_block label=40,param1=delivery,workflow!=manageaddresses><div class="heading-all"><h1>DELIVERY ADDRESS</h1><div class="underline"><p></p></div></div></venda_block label=40>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<venda_form>
+<venda_block label=47,instore!=1><input type="hidden" name="ustype" value="P"></venda_block label=47>
+<venda_block label=42,param1!=delivery>
+<input type="hidden" name="glxt" value="<venda_glxt mode=make,addsnotdone=>">
+<venda_block label=48,instore=1>
+<!-- if you're in instore workflow create a new account and copy basket to new user -->
+<input type="hidden" name="log" value="2">
+<input type="hidden" name="copysc" value="0">
+</venda_block label=48>
+</venda_block label=42>
+<venda_block label=420,workflow!=manageaddresses>
+<input type="hidden" name="layout" value="noleft">
+</venda_block label=420>
+<venda_block label=430,workflow=manageaddresses>
+<input type="hidden" name="layout" value="myaccount">
+</venda_block label=430>
+
+<venda_block label=37,param1=delivery><input type="hidden" name="zipcodelookup" value="1"></venda_block label=37>
+
+<fieldset class="inpform">
+<legend class="hide">Please enter your postcode:</legend>
+<div id="pinkHeader2"><strong>PLEASE ENTER YOUR POSTCODE:</strong></div>
+<div><label for="zipc">Postcode:</label> <venda_zipc field=text,size=10,maxlength=20,required=yes></div><br>
+</fieldset>
+<venda_block label=7,workflow=shopcart,workflow=instore,operator=or>
+	<venda_block label=251,param1=delivery>
+	<div class="drakgray">If your billing address is outside of Mainland UK, or you do not know your postcode <a href="#" onClick='<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;' title="don't know postcode">click here.</a></div>
+	</venda_block label=251>
+	<venda_block label=261,param1!=delivery>
+	
+	<venda_block label=1122,mode=value,<venda_sessionlocation>=restofworld>
+		<input type="hidden" name="cntry" value="United Kingdom">
+	</venda_block label=1122>
+	<venda_block label=1123,mode=value,<venda_sessionlocation>=eur>
+		<input type="hidden" name="cntry" value="Gemany">
+	</venda_block label=1123>
+	
+	<div class="darkgray">If your billing address is outside of Mainland UK, or you do not know your postcode <a href="#" onClick='<venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;' title="don't know postcode">click here.</a></div>
+	</venda_block label=261>
+</venda_block label=7>
+
+<venda_block label=21,workflow=manageaddresses>
+<div class="darkgray">If your billing address is outside of Mainland UK, or you do not know your postcode <a href="#" onClick='<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;' title="don't know postcode">click here.</a></div>
+</venda_block label=21>
+
+<venda_block label=31,workflow=register,workflow=refer,operator=or>
+<div class="darkgray">If your billing address is outside of Mainland UK, or you do not know your postcode <a href="#" onClick='<venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;' title="don't know postcode">click here.</a></div>
+</venda_block label=31>
+
+<venda_block label=41,workflow=giftlist>
+<div class="darkgray">If your billing address is outside of Mainland UK, or you do not know your postcode <a href='#' onClick='<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;' title="don't know postcode">click here.</a></div>
+</venda_block label=41>
+
+
+<script language="javascript" type="text/javascript">
+<!-- 
+document.wizform.zipc.value='';
+// -->
+</script>
+
+<venda_block label=50,instore!=1>
+<venda_block label=40,param1=delivery,ustype=P><venda_usemail field=hidden></venda_block label=40>
+<venda_block label=44,param1!=delivery>
+	<venda_block label=41,workflow=shopcart,workflow=instore,workflow=refer,workflow=register,operator=or>
+	<fieldset class="inpform">
+	<legend class="hide">YOUR EMAIL ADDRESS:</legend>
+	<div id="pinkHeader2"><strong>YOUR EMAIL ADDRESS:</strong></div>
+	<div><label for="usemail">Email:</label> <venda_usemail field=text,size=25,maxlength=150,required=yes></div>
+	</fieldset>
+	
+	<script language="javascript" type="text/javascript">
+				<!-- 
+				// pass along email address from previous page
+				function checkemail(str) {
+					var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+					return (filter.test(str));
+				}
+				
+				var urlArray = location.href.split('&');
+				var i=0;
+				var test;
+				var testArray;
+				
+					for (i=0; i<urlArray.length; i++) {
+						test=urlArray[i];
+						testArray=test.split('=');
+						test=testArray[1];
+						if (checkemail(test)) {
+							document.wizform.usemail.value=test;
+						}
+					}
+				// -->
+	</script>
+	</venda_block label=41>
+</venda_block label=44>
+</venda_block label=50>
+
+
+	<div id="button_v1">
+	<input type="image" onClick="doContinue(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" class="right">
+	</div>
+    
+</form>
+</div>
+</venda_block label=56>
+
+<script language="javascript" type="text/javascript">
+	<!-- 
+	if (document.wizform) {
+		if (document.wizform.zipc) {
+			document.wizform.zipc.value='';
+		}
+	}
+	// -->
+</script>
+
+<!-- END Standard postcode lookup -->
+</venda_block label=8801>
+
+<venda_block label=8800,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1>
+<!-- START Singlestep postcode look up -->
+
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup,name=js_inpage>
+<venda_block label=356,workflow!=comingsoon>
+	<venda_block label=70,param2!=delivery,param2!=editadd,param1!=delivery,operator=and>
+	<!-- display contact address details --> 
+	<div class="checkoutR">
+		<venda_category rec=elementcat,ref=orbtcolumn>
+		<!-- start column 1 -->
+<div id="col-one">
+<venda_inctemplate name=content_nav,type=includes>
+</div>
+<!-- end column 1 -->
+	</div>
+	<div class="ch-border">
+		<div id="covMyContent">
+			<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup,name=contact_address>
+		</div>
+	</venda_block label=70>
+	
+	<venda_block label=75,workflow=shopcart>
+	<venda_block label=751,curstep=zipcodedelivery,curstep=zipcoderesults,operator=or>
+		<venda_block label=7511,mode=value,<venda_htxt mode=get,name=step>=2,<venda_param1>=delivery,<venda_param2>=delivery,operator=or>
+		<!-- display delivery address form -->
+	<div class="checkoutR">
+		<venda_category rec=elementcat,ref=editaddcolumn>
+		<div id="col-one">
+<venda_inctemplate name=content_nav,type=includes>
+</div>
+	</div>
+	<div class="checkoutL">
+		<div id="<venda_block label=505,workflow=manageaddresses>my_covContentZip</venda_block label=505><venda_block label=505,workflow!=manageaddresses>covMyContent</venda_block label=505>">
+			<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup,name=delivery_address>
+		</div>
+			</venda_block label=7511>
+		</venda_block label=751>
+	</venda_block label=75>
+		
+	<venda_block label=71,workflow=manageaddresses>
+	<!-- add delivery address - myaccount -->
+	<div class="checkoutR">
+		<venda_category rec=elementcat,ref=editaddcolumn>
+	</div>
+	<div class="checkoutL">
+		<div id="<venda_block label=505,workflow=manageaddresses>my_covContentZip</venda_block label=505><venda_block label=505,workflow!=manageaddresses>covMyContent</venda_block label=505>">
+			<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup,name=delivery_address>
+		</div>
+	</venda_block label=71>
+</venda_block label=356>
+	<venda_category rec=elementcat,ref=orzccontent>
+</div>
+
+<venda_block label=2513,workflow!=shopcart,workflow!=instore,curstep=billtologin>
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=2513>
+
+<venda_block label=563,workflow=refer,curstep=referlogin>
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=563>
+
+<venda_block label=573,workflow=login>
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=573>
+<!-- END Singlestep postcode look up -->	
+</venda_block label=8800>
+
+<venda_block label=20,workflow=instore>
+<venda_tpxt mode=set,name=instore,value=1>
+</venda_block label=20>
+<!-- 
+step:<venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_orzc-screen.html
+ -->
+<script language="javascript" type="text/javascript">
+var registerstep = '<venda_curstep>'; // step for register
+if (registerstep=='billto'){
+registerstep = 'billingaddress'
+}
+			var cj = new CookieJar({expires: 3600 * 24 * 7, path: '/'}); 
+			cj.put('register', true);
+</script>

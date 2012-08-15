@@ -1,0 +1,105 @@
+<venda_block label=1011,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+==============================================================================
+
+
+<venda_ebizname> Registration
+
+
+==============================================================================
+
+
+
+Dear <venda_fname>,
+
+
+
+Hurrah! You've successfully registered and created an account at Urban Outfitters - www.urbanoutfitters.co.uk.
+
+
+
+To ensure you don't miss out on anything and are kept up-to-date on all news, offers and events; make sure you have opted-in to receive the Urban Outfitters emails. 
+
+
+
+If you are unsure, just log in to your account to check or update your communication preferences. 
+
+
+
+Let the fun and shopping begin!
+
+
+
+Urban Outfitters Europe
+
+
+<venda_ebizurl>
+</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_usgrref>=guest_de>
+==============================================================================
+
+
+<venda_ebizname> Registrierung
+
+
+==============================================================================
+
+
+
+Sehr geehrte/r <venda_fname>,
+
+
+Herzlichen Glückwunsch! Sie haben sich erfolgreich bei Urban Outfitters - www.urbanoutfitters.de - angemeldet und ein Konto erstellt.
+
+
+Damit Sie nichts verpassen und bei Neuigkeiten, Angeboten und Veranstaltungen immer auf dem neuesten Stand bleiben, wählen Sie bitte die entsprechende Option aus, um E-Mails von Urban Outfitters zu erhalten.
+
+
+Wenn Sie sich nicht sicher sind, melden Sie sich zur Überprüfung einfach in Ihrem Konto an oder aktualisieren Sie Ihre Kommunikationsmethode.
+
+
+Wir wünschen Ihnen viel Spaß bei Ihrem Einkauf!
+
+
+Urban Outfitters Europa
+
+
+
+
+
+http://www.urbanoutfitters.de
+</venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_usgrref>=guest_fr>
+==============================================================================
+
+
+<venda_ebizname> Inscription
+
+
+==============================================================================
+
+
+
+Ch&#232;re/Cher <venda_fname>,
+
+
+Hourrah ! Vous vous êtes inscrit(e) avec succ&#232;s et vous venez de créer votre compte chez Urban Outfitters - www.urbanoutfitters.fr
+
+
+Afin de vous assurer que vous ne laissez passer aucune opportunité et que vous recevez toutes les nouvelles, offres et annonces d'événements, vérifiez que vous avez bien choisi de recevoir les e-mails envoyés par Urban Outfitters.
+
+
+Si vous n'êtes pas certain(e), il vous suffit de vous connecter à votre compte et de vérifier ou mettre à jour vos préférences de communication.
+
+
+Que les jeux et le shopping commencent !
+
+
+Urban Outfitters Europe
+
+
+
+
+
+http://www.urbanoutfitters.fr
+</venda_block label=1013>
+<venda_inctemplate name=textEmailFooter,type=includes>

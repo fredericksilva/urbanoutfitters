@@ -1,0 +1,346 @@
+<venda_zones type=countries,template=zoneJs>
+<venda_block label=100,workflow=shopcart,workflow=instore,operator=or>
+
+<venda_block label=152,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1>
+<venda_block label=59,param1=login,param2!=singlestep>
+<!-- login and password -->
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=59>
+<venda_block label=1423,workflow=shopcart,param2=singlestep>
+<!-- remain on wz_orzc-screen when system errors occur -->
+<venda_inctemplate type=wizr,name=wz_orzc-screen>
+</venda_block label=1423>
+</venda_block label=152>
+
+<venda_block label=153,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1>
+	<!-- login and password -->
+	<venda_block label=51,param1=login>
+		<venda_inctemplate type=admn,name=co_comn-login>
+	</venda_block label=51>
+</venda_block label=153>
+	
+	<venda_block label=25,param2=edit>
+	<script language="JavaScript" type="text/javascript">
+		<!-- Hide
+			function checkemail(str) {
+				var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+				return (filter.test(str));
+			}
+		function CheckValid() {
+			var custEmail = document.wizform.usemail.value;
+			if (custEmail!=''){
+				if (!checkemail(custEmail)) {
+					alert("Please enter a valid email address.");
+					document.wizform.usemail.focus();
+					return false;
+				}
+			}
+			if (document.wizform.fname.value == '') {
+				alert('Please enter a first name.');
+				document.wizform.fname.focus();
+				return;
+			}
+			if (document.wizform.lname.value == '') {
+				alert('Please enter a last name.');
+				document.wizform.lname.focus();
+				return;
+			}
+			//Hack for step2, required=yes is not work.
+			if (document.wizform.num.value == "") {
+				alert("Please enter a house name or flat number.");
+				document.wizform.num.focus();
+				return;
+			}
+
+			if (document.wizform.addr1.value == "") {
+				alert("Please enter an address.");
+				document.wizform.addr1.focus();
+				return;
+			}
+
+			if (document.wizform.city.value == "") {
+				alert("Please enter a town or city.");
+				document.wizform.city.focus();
+				return;
+			}
+
+			if (document.wizform.cntry.value == "") {
+				alert("Please select a country.");
+				document.wizform.cntry.focus();
+				return;
+			}
+			if (document.wizform.area.value == "") {
+				alert("Please enter a phone area.");
+				document.wizform.area.focus();
+				return;
+			}
+			if (document.wizform.phone.value == '') {
+				alert('Please enter a phone number.');
+				document.wizform.phone.focus();
+				return;
+			}
+			if (document.wizform.usemail.value == '') {
+				alert('Please enter an email address.');
+				document.wizform.usemail.focus();
+				return;
+			}
+			
+			if (document.wizform.usemail.value == '') {
+				alert('Please enter an email address.');
+				document.wizform.usemail.focus();
+				return;
+			}
+			<venda_wizbutton step=confirm,mode=process,check=yes,callonly=yes>
+		}
+		//End Javascript-->
+		</script>
+		<!-- edit billing address via confirm pg -->
+		<div class="ch-border">
+		<div id="covMyContent">
+				<venda_form>
+				<input type="hidden" name="uslgemail" value="">
+				<input type="hidden" name="usemail" value="<venda_usemail>">
+				<venda_block label=83,mode=value,<venda_glxt mode=get,name=glxtusertype>=p><input type="hidden" name="ustype" value="P"></venda_block label=83>
+				<div class="heading-all"><h1>EDIT BILLING ADDRESS</h1><div class="underline"><p></p></div></div>
+				
+				<venda_inctemplate name=stepBox,type=includes>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2><div class="h15"></div></venda_block label=1>
+				
+
+				<p>Your address must match the billing address on your credit/debit card.</p>
+				<p>All deliveries require a signature.</p>
+				<p>Please provide an address where someone can sign for delivery.</p>
+
+				<!--div id="height5"></div-->
+				<fieldset class="inpform">
+				<legend class="hide">Name at this Address</legend>
+				<div id="pinkHeader2">NAME AT THIS ADDRESS</div>
+				<div><label for="title">Title:</label><select name="title" id="title">
+					<option value="Mr" <venda_block label=121,title=Mr>selected</venda_block label=121>>Mr</option>
+					<option value="Mrs" <venda_block label=111,title=Mrs>selected</venda_block label=111>>Mrs</option>
+					<option value="Miss" <venda_block label=101,title=Miss>selected</venda_block label=101>>Miss</option>
+					<option value="Ms" <venda_block label=121,title=Ms>selected</venda_block label=121>>Ms</option>
+					<option value="" <venda_block label=131,title=Other>selected</venda_block label=131>>Other</option>
+				</select>
+				</div>
+				<div><label for="fname">First Name: <span class="required">*</span></label><venda_fname field=text,size=25,maxlength=30,required=yes></div>
+				<div><label for="lname">Last Name: <span class="required">*</span></label><venda_lname field=text,size=25,maxlength=30,required=yes></div>
+				</fieldset>
+				
+				<fieldset class="inpform">
+				<legend class="hide">Address Details</legend>
+				<div id="pinkHeader2">ADDRESS DETAILS</div>
+				<div><label for="company">Company:</label><venda_company field=text,size=25,maxlength=20></div>
+				<div><label for="num">House Name/Flat Number: <span class="required">*</span></label><venda_num field=text,size=25,maxlength=20,required=yes></div>
+				<div><label for="addr1">Address: <span class="required">*</span></label><venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+				<div><label for="addr2" class="invisible">Address Line 2:</label><venda_addr2 field=text,size=25,maxlength=50></div>
+				<div><label for="city">City: <span class="required">*</span></label><venda_city field=text,size=25,maxlength=30,required=yes></div>
+				<div><label for="state">County:</label><venda_state field=text,size=25,maxlength=20></div>
+				<div><label for="zipc">Postcode:</label><venda_zipc field=text,size=25,maxlength=20></div>
+				<div><label for="cntry">Country: <span class="required">*</span></label><venda_cntry 		 field=hidden><venda_cntry></div>
+				</fieldset>
+				
+				<fieldset class="inpform">
+				<legend class="hide">Further Account Details</legend>
+				<div id="pinkHeader2">FURTHER ACCOUNT DETAILS</div>
+				<div class="phone"><div class="phonelabel"><label for="phone" class="dontFloat">Phone Number: <span class="required">*</span></label> <label for="area" class="dontFloat invisible">and Area Code:</label></div><venda_area field=text,size=4,required=yes,class=w30 inpbd><venda_phone field=text,size=18,required=yes,class=w123 inpbd></div>
+
+				<p>Fields with an asterisk (<span class="required">*</span>) must be filled in.</p>
+
+				</fieldset>
+				<!--div class="h15"></div-->
+				<div id="button_v3">
+				<a href="#" onclick='<venda_wizbutton step=confirm,mode=display,callonly=yes> return false;' alt="<venda_text id=site.button.previous>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previous.gif" alt="<venda_text id=site.button.previous>" border="0" class="left"></a>
+<input type="image" onclick='CheckValid();return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="<venda_text id=site.button.continue>" class="right">
+
+				</div>
+				
+				</form>
+				</div>
+		</div>
+	</venda_block label=25>
+
+</venda_block label=100>
+
+
+<venda_block label=200,param1=details>
+<div class="ch-border">
+<div id="covMyContent">
+		<!-- register -->
+		<venda_form>
+		<input type="hidden" name="layout" value="">
+		<input type="hidden" name="uslgemail" value="">
+		<input type="hidden" name="ustype" value="R">
+		<!--div class="header-h1"><h1>Billing Address</h1></div-->
+		<div class="heading-all"><h1>BILLING ADDRESS</h1><div class="underline"><p></p></div></div>
+		
+		<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2><div class="h15"></div></venda_block label=1>
+		<venda_block label=711,workflow=shopcart>
+		<venda_inctemplate name=stepBox,type=includes>
+		</venda_block label=711>
+
+		<p>Your address must match the billing address on your credit/debit card.</p>
+		<p>All deliveries require a signature.</p>
+		<p>Please provide an address where someone can sign for delivery.</p>
+
+		<fieldset class="inpform">
+		<legend class="hide">Personal Details</legend>
+		<div id="pinkHeader2"><strong>PERSONAL DETAILS</strong></div>
+		<div>
+		<label for="title">Title:</label><select name="title" id="title">
+			<option value="Mr" <venda_block label=121,title=Mr>selected</venda_block label=121>>Mr</option>
+			<option value="Mrs" <venda_block label=111,title=Mrs>selected</venda_block label=111>>Mrs</option>
+			<option value="Miss" <venda_block label=101,title=Miss>selected</venda_block label=101>>Miss</option>
+			<option value="Ms" <venda_block label=121,title=Ms>selected</venda_block label=121>>Ms</option>
+			<option value="" <venda_block label=131,title=Other>selected</venda_block label=131>>Other</option>
+		</select>
+		</div>
+		<div><label for="fname">First Name: <span class="required">*</span></label><venda_fname field=text,size=25,maxlength=30,required=yes></div>
+		<div><label for="lname">Last Name: <span class="required">*</span></label><venda_lname field=text,size=25,maxlength=30,required=yes></div>
+		</fieldset>
+		
+		<fieldset class="inpform">
+		<legend class="hide">Address Details</legend>
+		<div id="pinkHeader2"><strong>ADDRESS DETAILS</strong></div>
+		<venda_block label=10,param2=uk,errors=null>
+		<div style="margin-bottom:2px;"><label for="zcdropdown">Addresses Found: <span class="required">*</span></label><venda_zcdropdown></div>
+		If the address was not found or is incorrectly listed, <a href="#" onClick='<venda_block label=48,instore!=1>document.wizform.ustype.value="P"; </venda_block label=48><venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;'>please enter it manually.</a>
+		<venda_city field=hidden><venda_state field=hidden><venda_zipc field=hidden><venda_cntry field=hidden>
+		</venda_block label=10>
+		<venda_block label=11,param2!=uk,errors=notnull,operator=or>
+		<div><label for="company">Company:</label><venda_company field=text,size=25,maxlength=20></div>
+		<div><label for="num">House Name/Flat Number: <span class="required">*</span></label><venda_num field=text,size=25,maxlength=20,required=yes></div>
+		<div><label for="addr1">Address: <span class="required">*</span></label><venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+		<div><label for="addr2" class="invisible">Address Line 2:</label><venda_addr2 field=text,size=25,maxlength=50></div>
+		<div><label for="city">City: <span class="required">*</span></label><venda_city field=text,size=25,maxlength=30,required=yes></div>
+		<div><label for="state">County:</label><venda_state field=text,size=25,maxlength=20></div>
+		<div><label for="zipc">Postcode:</label><venda_zipc field=text,size=25,maxlength=20></div>
+		<div><label for="cntry">Country: <span class="required">*</span></label><venda_cntry field=combo,required=yes,ship=1></div>
+		</venda_block label=11>
+		</fieldset>
+		
+		<fieldset class="inpform">
+		<legend class="hide">Further Account Details</legend>
+		<div id="pinkHeader2"><strong>FURTHER ACCOUNT DETAILS</strong></div>
+		<div class="phone"><div><label for="phone" class="dontFloat">Phone Number: <span class="required">*</span></label><label for="area" class="dontFloat invisible">and Area Code:</label></div><venda_area field=text,size=4,required=yes,class=w30 inpbd><venda_phone field=text,size=18,required=yes,class=w123 inpbd></div>
+		<venda_block label=50,instore!=1>
+		<div><label for="usemail">Email: <span class="required">*</span></label><venda_usemail field=text,size=25,required=yes,class=w160 inpbd></div>
+		<input type="hidden" name="usmailform" value="3">
+		<div class="tickBox"><input type="checkbox" name="blkemail" id="blkemail" value="1"><label for="blkemail">Please tick to receive email updates from <venda_ebizname>.</label></div>
+		</venda_block label=50>
+		</fieldset>
+	
+		<venda_block label=151,instore!=1>
+		<fieldset class="inpform">
+		<legend class="hide">Please Choose a Password</legend>
+		<div id="pinkHeader2"><strong>PLEASE CHOOSE A PASSWORD</strong></div>
+		<div><label for="uspswd">Password: <span class="required">*</span></label><venda_uspswd field=password,size=25,required=yes,class=w160 inpbd></div>
+		<div><label for="uspswd2">Verify Password: <span class="required">*</span></label><venda_uspswd2 field=password,size=25,required=yes,class=w160 inpbd></div>
+
+		<p>Fields with an asterisk (<span class="required">*</span>) must be filled in.</p>
+
+		</fieldset>
+		</venda_block label=151>
+		<venda_block label=54,instore=1><venda_uspswd field=hidden><venda_uspswd2 field=hidden></venda_block label=54>
+		
+		<venda_block label=15,workflow=shopcart,workflow=instore,operator=or>
+		<div class="fontC bblack"><input type="checkbox" name="differentaddress" id="differentaddress"><label for="differentaddress">Different delivery address?</label> Tick this box if the delivery address is different to your billing address.</div><div id="height5"></div>
+		</venda_block label=15>
+		<script language="javascript" type="text/javascript">
+		<!--
+		function checkemail(str) {
+				var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+				return (filter.test(str));
+			}
+		function nextPage () {
+			var custEmail = document.wizform.usemail.value;
+			if (custEmail!=''){
+				if (!checkemail(custEmail)) {
+					alert("Please enter a valid email address.");
+					document.wizform.usemail.focus();
+					return false;
+				}
+			}	
+				<venda_block label=34,param2=uk,errors=null>
+				if (document.wizform.zcdropdown.selectedIndex==0) {
+					alert("Please select an address from those found");
+					document.wizform.zcdropdown.focus();
+					return false;
+				}
+				else {
+				</venda_block label=34>
+				<venda_block label=35,workflow=shopcart,workflow=instore,operator=or>
+				// if in shopcart workflow
+				if (document.wizform.differentaddress.checked) {
+					// different delivery address
+					<venda_wizbutton step=zipcodedelivery,mode=process,param1=delivery,callonly=yes,check=yes>
+				}
+				else {
+					// same delivery address
+					<venda_wizbutton step=confirm,mode=process,callonly=yes,check=yes>
+				}
+				</venda_block label=35>
+				<venda_block label=36,workflow=register>
+				// if in register workflow
+				var cj = new CookieJar({expires: 3600 * 24 * 7, path: '/'}); 
+				cj.put('register', true);
+				<venda_wizbutton step=--page-myaccount,mode=process,param1=details,param2=uk,check=yes,callonly=yes>
+				</venda_block label=36>
+			}
+		<venda_block label=37,param2=uk,errors=null>}</venda_block label=37>
+		// -->
+		</script>
+		
+		<venda_block label=78,workflow=register>
+			<div id="button_v1">
+			<a href="#" onClick='<venda_wizbutton step=zipcode,mode=display,callonly=yes> return false;' alt="PREVIOUS"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previous.gif" alt="PREVIOUS" border="0" class="left"></a>
+			<input type="image" onClick="nextPage(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_register.gif" alt="REGISTER" class="right">
+			</div>
+		</venda_block label=78>
+		<venda_block label=79,workflow=shopcart,workflow=instore,operator=or>
+			<div id="button_v1">
+			<a href="#" onClick='<venda_wizbutton step=zipcode,mode=display,callonly=yes> return false;' alt="PREVIOUS"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previous.gif" alt="PREVIOUS" border="0" class="left"></a>
+			<input type="image" onClick="nextPage(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" class="right">
+			</div>
+		</venda_block label=79>
+		<venda_block label=76,workflow=refer>
+			<div id="button_v1">
+			<input type="image" onClick='<venda_wizbutton step=refer,mode=process,check=yes,callonly=yes> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_register.gif" alt="REGISTER" class="right">
+			</div>
+		</venda_block label=76>
+		<venda_block label=77,workflow=reminder>
+			<div id="button_v1">
+			<input type="image" onclick='<venda_wizbutton step=usext,mode=process,check=yes,callonly=yes> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_register.gif" alt="register" class="right">
+			</div>
+		</venda_block label=77>
+		</form>
+		</div>
+</div>
+</venda_block label=200>
+
+<venda_block label=251,workflow!=shopcart,workflow!=instore,curstep=billtologin>
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=251>
+
+<venda_block label=56,workflow=refer,curstep=referlogin>
+<venda_inctemplate type=admn,name=co_comn-login>
+</venda_block label=56>
+
+<venda_block label=20,workflow=instore>
+<venda_tpxt mode=set,name=instore,value=1>
+</venda_block label=20>
+
+<!-- 
+workflow: <venda_workflow>
+step: <venda_step>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orbt-screen.html
+ -->
+
+<script language="javascript" type="text/javascript">
+var registerstep= '<venda_curstep>';// step for register
+if (registerstep=='billto'){
+registerstep = 'billingaddress'
+}
+</script>

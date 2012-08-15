@@ -1,0 +1,106 @@
+<div id="content">
+<!-- start contact/billing details -->
+<div id="box">
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">CONTACT/BILLING DETAILS</div>
+	<div id="address" style="padding:5px 0 20px 10px;">
+	<div><strong>Cardholder:</strong> <venda_ohfname> <venda_ohlname></div>
+	<div><strong>Address:</strong> <venda_block label=73,ohcompany=notnull><venda_ohcompany> </venda_block label=73>
+	<venda_ohnum> <venda_ohaddr1> <venda_block label=74,ohaddr2=notnull><venda_ohaddr2> </venda_block label=74>
+	<venda_ohcity> <venda_ohstate> <venda_ohzipc> <venda_ohcntry></div>
+	<div><strong>Phone:</strong> <venda_oharea> <venda_ohphone></div>
+	</div>
+</venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de>
+<div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">KONTAKT/RECHNUNGSINFORMATIONEN</div>
+	<div id="address" style="padding:5px 0 20px 10px;">
+	<div><strong>Karteninhaber:</strong> <venda_ohfname> <venda_ohlname></div>
+	<div><strong>Adresse:</strong> <venda_block label=73,ohcompany=notnull><venda_ohcompany> </venda_block label=73>
+	<venda_ohnum> <venda_ohaddr1> <venda_block label=74,ohaddr2=notnull><venda_ohaddr2> </venda_block label=74>
+	<venda_ohcity> <venda_ohstate> <venda_ohzipc> <venda_ohcntry></div>
+	<div><strong>Telefon:</strong> <venda_oharea> <venda_ohphone></div>
+	</div>
+</venda_block label=1012>
+</div>
+<!-- end contact/billing details -->
+
+<!-- start delivery/items loop -->
+<venda_detail1>
+<!-- end delivery/items loop -->
+
+<!-- start totals -->
+<div id="box">
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+	<div id="address" style="padding:5px 0 20px 10px;">
+		<div><div id="col-left" style="	float:left; width:120px;">Subtotal:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohsub></div></div><br class="clear-all">
+		
+		<venda_block label=670,ohgwtot&gt;0>
+		<div><div id="col-left" style="	float:left; width:120px;">Gift Box:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohgwtot></div></div><br class="clear-all">
+		</venda_block label=670>
+		
+		<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Discount:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> -<venda_ohcursym><venda_ohdisc></div></div><br class="clear-all">
+		</venda_block label=64>
+		
+		<div><div id="col-left" style="	float:left; width:120px;">P&amp;P:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohship></div></div><br class="clear-all">
+		
+		<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Estimated Tax:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohtax></div></div><br class="clear-all">
+		</venda_block label=91>		
+		
+		<div><div id="col-left" style="	float:left; width:120px;">Order Total:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohtot></div></div><br class="clear-all">
+		
+		<div style="margin:3px 0 0 0;">(This order includes <venda_ohcursym><venda_ohtaxinc> VAT)</div>
+		
+		<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Account Credit Used:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_creditaccount></div></div><br class="clear-all">
+		<venda_block label=65,storecredit&gt;0.00,storecredit=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Credit Remaining:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_storecredit></div></div><br class="clear-all">
+		</venda_block label=65>
+		<div><div id="col-left" style="	float:left; width:120px;">Balance Paid:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_balance></div></div><br class="clear-all">
+		</venda_block label=70>
+	</div>
+</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+	<div id="address" style="padding:5px 0 20px 10px;">
+		<div><div id="col-left" style="	float:left; width:120px;">Zwischensumme:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohsub></div></div><br class="clear-all">
+		
+		<venda_block label=670,ohgwtot&gt;0>
+		<div><div id="col-left" style="	float:left; width:120px;">Geschenkbox:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohgwtot></div></div><br class="clear-all">
+		</venda_block label=670>
+		
+		<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Rabatt:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> -<venda_ohcursym><venda_ohdisc></div></div><br class="clear-all">
+		</venda_block label=64>
+		
+		<div><div id="col-left" style="	float:left; width:120px;">Porto und Verpackung:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohship></div></div><br class="clear-all">
+		
+		<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Voraussichtliche Steuern:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohtax></div></div><br class="clear-all">
+		</venda_block label=91>
+		
+		<div><div id="col-left" style="	float:left; width:120px;">Gesamtbetrag:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_ohtot></div></div><br class="clear-all">
+		
+		<div style="margin:3px 0 0 0;">(Diese Bestellung enth&auml;lt <venda_ohcursym><venda_ohtaxinc> MwSt.)</div>
+		
+		<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Verwendetes Kontoguthaben:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_creditaccount></div></div><br class="clear-all">
+		<venda_block label=65,storecredit&gt;0.00,storecredit=notnull>
+		<div><div id="col-left" style="	float:left; width:120px;">Verbleibendes Guthaben:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_storecredit></div></div><br class="clear-all">
+		</venda_block label=65>
+		<div><div id="col-left" style="	float:left; width:120px;">Bezahlter Betrag:</div><div id="col-right" style="float:left; text-align:right; width:124px;"> <venda_ohcursym><venda_balance></div></div><br class="clear-all">
+		</venda_block label=70>
+	</div>
+</venda_block label=1022>
+	
+</div>
+<!-- end totals -->
+
+
+<venda_block label=62,coupons=notnull>
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><div style="padding-left:10px"><div id="col-vouchers-l" style="float:left; width:75px;">Vouchers:</div></venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de><div style="padding-left:10px"><div id="col-vouchers-l" style="float:left; width:75px;">Gutscheine:</div></venda_block label=1032>
+<div id="col-vouchers-r" style="float:right; width:415px; text-align:left;"><venda_detail3></div>
+</div><br class="clear-all"><br><br>
+</venda_block label=62>
+</div>

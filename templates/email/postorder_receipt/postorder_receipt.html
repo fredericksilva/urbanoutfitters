@@ -1,0 +1,81 @@
+﻿<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+<html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
+<meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+<head>	
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><title><venda_ebizname> <venda_block label=76,ohreplnbr=null>Order Confirmation</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Free</venda_block label=78> Replacement Order</venda_block label=77> - <venda_ohordnum></title></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><title><venda_ebizname> <venda_block label=76,ohreplnbr=null>Bestellung</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Kostenlose</venda_block label=78> Ersatzware</venda_block label=77> - <venda_ohordnum></title></venda_block label=1012>	
+</head>
+<body style="width:500px; color:#000; margin:5px 20px; background:#fff;">
+<div id="emailBody" style="width:500px; margin:0; padding:0; font-size:12px; font-family:Arial; ">
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+<div id="logo">
+	<venda_inctemplate name=htmlEmailLogo,type=includes>
+	<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><h1><venda_block label=76,ohreplnbr=null>Confirmation of your order OR Your subscription request</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Free</venda_block label=78> Replacement Order</venda_block label=77> - <venda_ohordnum></h1></venda_block label=1021>
+	<venda_block label=1022,ohusgrrf=guest_de><h1><venda_block label=76,ohreplnbr=null>Bestätigung Ihrer Bestellung ODER Ihres Abos Bestellung für</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Kostenlose</venda_block label=78> Ersatzware</venda_block label=77> - <venda_ohordnum></h1></venda_block label=1022>	
+	<div class="clear">&nbsp;</div>
+</div>
+
+
+<div id="emailcontent">
+<!-- htmlEmailHeader -->
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><p style="margin:0 0 1.35em;">Dear <strong><venda_block label=11,ohtitle=notnull><venda_block label=1023,ohtitle=Mr><venda_text id=site.contact_address.label.title_mr></venda_block label=1023><venda_block label=1024,ohtitle=Mrs><venda_text id=site.contact_address.label.title_mrs></venda_block label=1024><venda_block label=1025,ohtitle=Miss><venda_text id=site.contact_address.label.title_miss></venda_block label=1025></venda_block label=11> <venda_ohfname> <venda_ohlname></strong></p></venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de><p style="margin:0 0 1.35em;">Sehr geehrte/r <strong><venda_block label=11,ohtitle=notnull><venda_block label=1023,ohtitle=Mr><venda_text id=site.contact_address.label.title_mr></venda_block label=1023><venda_block label=1024,ohtitle=Mrs><venda_text id=site.contact_address.label.title_mrs></venda_block label=1024><venda_block label=1025,ohtitle=Miss><venda_text id=site.contact_address.label.title_miss></venda_block label=1025></venda_block label=11> <venda_ohfname> <venda_ohlname></strong></p></venda_block label=1032>	
+
+<br/>
+<!-- ***************************************************************** -->
+<venda_block label=766,ohfstatus!=Waiting for Payment>
+<venda_block label=66,ohreplnbr=null>
+<!-- for standard orders -->
+<venda_block label=1041,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<p style="margin:0 0 1.35em;">Thank you for placing an order on Urbanoutfitters.</p>
+<p style="margin:0 0 1.35em;">Your order number is <strong><venda_ohordnum></strong>.</p>
+</venda_block label=1041>
+<venda_block label=1042,ohusgrrf=guest_de>
+<p style="margin:0 0 1.35em;">Vielen Dank für Ihre Bestellung bei Urbanoutfitters.</p>
+<p style="margin:0 0 1.35em;">Ihre Bestellnummer lautet <strong><venda_ohordnum></strong>.</p>
+</venda_block label=1042>
+<br/>
+</venda_block label=66>
+
+<!-- ***************************************************************** -->
+<venda_block label=67,ohreplnbr=notnull>
+<!-- for replacement orders -->
+<venda_block label=1051,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><p style="margin:0 0 1.35em;">We would like to let you know that your <venda_block label=68,ohpaytype=6>free </venda_block label=68>replacement order has been processed and will be despatched shortly. Your order number is <strong><venda_ohordnum></strong>.</p></venda_block label=1051>
+<venda_block label=1052,ohusgrrf=guest_de><p style="margin:0 0 1.35em;">Wir möchten Ihnen mitteilen, dass Ihre Bestellung für <venda_block label=68,ohpaytype=6>kostenlose </venda_block label=68>Ersatzware bearbeitet wurde und in Kürze abgeschickt wird. Ihre Bestellnummer lautet <strong><venda_ohordnum></strong>.</p></venda_block label=1052>
+</venda_block label=67>
+
+<!-- ***************************************************************** -->
+
+	<!-- add condition -->
+<!-- handset or prepaid -->
+<venda_block label=1061,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><p style="margin:0 0 1.35em;">Please find below your order summary.</p></venda_block label=1061>
+<venda_block label=1062,ohusgrrf=guest_de><p style="margin:0 0 1.35em;">Hier ist Ihre Bestell-Übersicht.</p></venda_block label=1062>
+
+
+<!-- ***************************************************************** -->
+
+
+<venda_inctemplate name=htmlEmailBody,type=includes>
+
+<venda_block label=68,ohreplnbr=null>
+<!-- for standard orders -->
+
+</venda_block label=68>
+
+<!-- ***************************************************************** -->
+
+
+</venda_block label=766>
+
+<venda_block label=767,ohfstatus=Waiting for Payment>
+
+</venda_block label=767>
+
+
+
+<!-- ***************************************************************** -->
+</div>
+</div>
+</body>
+</html>

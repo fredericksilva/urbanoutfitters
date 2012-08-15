@@ -1,0 +1,46 @@
+<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+
+<html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
+<meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+<head>	
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><title><venda_ebizname> Order <venda_ohordnum>, Card Authorisation Failed</title></venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de><title><venda_ebizname> Bestellung <venda_ohordnum>, Kartenautorisierung fehlgeschlagen</title></venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_ohusgrrf>=guest_fr><title><venda_ebizname> Commande <venda_ohordnum>, l'autorisation d'utilisation de la carte a échoué</title></venda_block label=1013>
+</head>
+<body style="width:500px; color:#000; margin:5px 20px; background:#fff;">
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Card Authorisation</strong>
+</venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de>
+<a href="http://www.urbanoutfitters.de/"><img src="http://www.urbanoutfitters.de/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Kartenautorisierung</strong>
+</venda_block label=1022>
+<venda_block label=1023,mode=value,<venda_ohusgrrf>=guest_fr>
+<a href="http://www.urbanoutfitters.fr/"><img src="http://www.urbanoutfitters.fr/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Autorisation d'utilisation de la carte</strong>
+</venda_block label=1023>
+<br><br>
+
+<venda_inctemplate name=htmlEmailHeader,type=includes>
+
+<venda_block label=20,msg=notnull><p style="margin:0 0 1.35em;"><venda_msg></p></venda_block label=20>
+<venda_block label=1031,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><p style="margin:0 0 1.35em;">Your order could not be authorised. No more attempts will be made to authorise your order.</p></venda_block label=1031>
+<venda_block label=1032,mode=value,<venda_ohusgrrf>=guest_de><p style="margin:0 0 1.35em;">Ihre Bestellung konnte nicht autorisiert werden. Es werden keine weiteren Versuche unternommen, Ihre Bestellung zu autorisieren.</p></venda_block label=1032>
+<venda_block label=1033,mode=value,<venda_ohusgrrf>=guest_fr><p style="margin:0 0 1.35em;">Votre commande n'a pas &eacute;t&eacute; autoris&eacute;e. Nous n'effectuerons aucune autre tentative d'autorisation de votre commande.</p>
+
+</venda_block label=1033>
+
+<venda_inctemplate name=htmlEmailBody,type=includes>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

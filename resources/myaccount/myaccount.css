@@ -1,0 +1,313 @@
+#col-myaccount-login{
+	width:630px;
+	height:349px;
+	float:right;
+	background:#FFFFFF url(../images/bg_myaccount_signin.jpg) no-repeat;
+}
+#col-two-three-myaccount {
+	width:630px;
+	float:right;
+	background: #FFFFFF;
+	color:#989898;
+	margin:0;
+	padding:0;
+	}
+#col-two-myaccount {
+	width:210px;
+	float:left;
+	background: #FFFFFF;
+	margin:0;
+	padding:0;
+}
+#col-three-myaccount {
+	width:391px;
+	float:left;
+	background: #FFFFFF;
+	color:#color:#989898;;
+	margin:24px 0 0 27px;
+	padding:0;
+}
+#col-two-three-myaccount a:link,
+#col-two-three-myaccount a:active,
+#col-two-three-myaccount a:visited {
+	color:#1f79ac;
+}
+#col-two-three-myaccount a:hover {
+	color:#57C5A2;
+}
+#covLogin {
+	width:630px;
+	float:left;
+	margin:125px 0 0 0;
+	padding:0;
+	color:#606060;
+}
+#covLogin .error {
+	margin: 0 0 5px 84px;
+}
+#covLogin-col-one {
+	width:360px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#covLogin-col-two {
+	width:270px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#login-col1 {
+	margin:0 0 0 75px;
+	padding:0;
+}
+#login-col2 {
+	margin:0 0 0 0;
+	padding:0;
+}
+#covLogin label {
+	width:150px;
+	margin:0;
+	padding:0 0 0 0;
+}
+.inputtext150 {
+	width:150px;
+    margin:0;
+	padding:0 0 0 0;
+}
+#button_login {
+	margin-top: 6px !important;
+	margin-top/**/:/**/3px;
+	padding:0;
+}
+.row {
+	height:15px;
+	margin:3px 0 0 0;
+	padding:0;
+}
+.bluelink {
+	color:#0D75AC;
+}
+
+/*/////////// My Account //////////////// */
+#covMyaccount {
+	padding:0;
+	margin:-7px 0 0 0;
+	font-family:Times;
+	color:#959595;
+} 
+#greenHead {
+	font-size:2em;
+	font-family:Times;
+	color:#41B890;
+	margin:0;
+	padding:0;
+}
+#doubleGreenLine {
+	height:5px;
+	background:#FFFFFF url(../images/img_double_green_line.gif) bottom left;
+	background-repeat:repeat-x;
+}
+#bblue {
+	color:#1f79ac;
+}
+#bblack {
+	color:#000;
+}
+#mgray{
+	color:#1889B5;
+}
+#bpink {
+	color:#dd75b0;
+}
+#grayHeader {
+	/*color:#646464;
+	font-size:1.3em;
+	font-family:Courier New;
+	font-weight:bold;*/
+	background:#FFFFFF url(../images/img_gray_line.gif) bottom left;
+	background-repeat:repeat-x;
+	height:15px;
+}
+#pinkHeader {
+	color:#da62a0;
+	font-size:1em;
+	font-weight:bold;
+	padding-bottom:3px;
+	font-family:Courier New;
+}
+#pinkHeader2 {
+	color:#da62a0;
+	font-size:1em;
+	font-weight:bold;
+	padding-bottom:1px;
+	font-family:Courier New;
+}
+#pinkHeader3 {
+	color:#da62a0;
+	font-size:1em;
+	font-weight:bold;
+	font-family:Courier New;
+}
+#covMyaccount p {
+	margin-bottom:13px;
+}
+#covNav_Myaccount {
+	margin:24px 0 0 0;
+	padding:0;
+	color:#666666;
+	font-family:Courier New;
+}
+#innerNav {
+	margin:7px 0 7px 7px;
+}
+#height30 {
+	height:30px;
+}
+#height15 {
+	height:15px;
+}
+#height10 {
+	height:10px;
+}
+#height5 {
+	height:5px;
+}
+#mynav {
+	margin:0;
+	padding:0;
+}
+ul#mynav {
+	margin-bottom:50px;
+	padding:0;
+	list-style: none;
+	font-family:Courier New;
+	font-weight:bold;
+	color:#1f79ac;
+}
+ul#mynav li {
+	margin:0;
+	padding:0 0 3px 0;
+}
+#my_covContent{
+	width:390px;
+	padding:0 0 40px 0;
+	margin:0;
+	color:#959595;
+	font-family:Times;
+}
+/*/////////// My Account - Another Part//////////////// */
+#my_covContent p {
+ 	padding-bottom:7px;
+}
+ul#addresslist li {
+	margin:0 0 15px 0;
+	padding:0;
+}
+.view_button {
+	padding:10px 0 6px 0;
+}
+table#orderhistorylist th {
+	color:#000000;
+	font-weight:normal;
+	text-align:left;
+	font-family:Courier New;
+}
+table#orderhistorylist td {
+	color:#666;
+	font-weight:normal;
+	text-align:left;
+	font-family:Courier New;
+}
+#my_covContent fieldset {
+	margin:0;
+	padding:0
+}
+#my-button {
+	padding-top:12px;
+}
+#my-button2 {
+	padding-top:2px;
+}
+#my-button3 {
+	margin-top:-10px;
+}
+.alignM	{
+	vertical-align:top;
+}
+#shippadd fieldset {
+	/*background: #EAEDF0;*/
+	margin: 0px 0px 15px 0px;
+	padding: 0px;
+}
+#shippadd p {
+	margin:0px 0px 11px 0px;
+	padding:0px;
+}
+#contact {
+	color:#666666;
+	font-family:Courier New;
+	padding-bottom:17px;
+}
+#bcontent {
+	color:#666;
+	font-family:Courier New;
+}
+table#ordersummary th {
+	color:#000;
+	font-family:Courier New;
+	font-weight:normal;
+	text-align:left;
+}
+table#ordersummary td {
+	color:#666;
+	font-family:Courier New;
+}
+/***** FORM ON LOGIN & MYACCOUNT *******/
+fieldset.inpform {
+	font-family:Courier New;
+	color:#000;
+}
+fieldset.inpform label,
+div.phonelabel {
+	width:200px;
+}
+label.prefer {
+	padding-left:5px;
+}
+.phone input.w123 {
+	width:123px !important;  /*for netscape*/
+	width/**/:119px;            /*for ie*/	
+}
+
+ul#referlist {
+	padding:0;
+	margin:0;
+	list-stye:none;
+	font-family:Courier New;
+	color:#666;
+}
+ul#referlist li {
+	padding:0 0 2px 0;
+	margin:0;
+}
+fieldset.addlist{
+	font-family:Courier New;
+	color:#666;
+}
+fieldset.addlist input {
+	float:left;
+}
+fieldset.addlist label{
+	float:left;
+	padding:0 0 0 5px;
+	width:300px;
+}
+fieldset.addlist p{
+	margin: -5px 0 0 0;
+	padding:0;
+}
+#covMyContent {
+	margin:0;
+	padding:0;
+}

@@ -1,0 +1,113 @@
+<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+
+<html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
+<meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
+<head>
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><title><venda_ebizname> <venda_block label=76,ohreplnbr=null>Order  - <venda_ohordnum></venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6>Free</venda_block label=78> replacement order - <venda_ohordnum></venda_block label=77></title></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><title><venda_ebizname> <venda_block label=76,ohreplnbr=null>Bestellung  - <venda_ohordnum></venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6>Kostenlos</venda_block label=78> Ersatzbestellung - <venda_ohordnum></venda_block label=77></title></venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><title><venda_ebizname> <venda_block label=76,ohreplnbr=null>Commande - <venda_ohordnum></venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6>Commande de remplacement</venda_block label=78> gratuite - <venda_ohordnum></venda_block label=77></title></venda_block label=1013>
+</head>
+<body style="width:500px; color:#000; background:#fff;">
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Order Receipt</strong>
+</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+<a href="http://www.urbanoutfitters.de/"><img src="http://www.urbanoutfitters.de/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Bestellbestätigung</strong>
+</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>
+<a href="http://www.urbanoutfitters.fr/"><img src="http://www.urbanoutfitters.fr/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Réception de la commande</strong>
+</venda_block label=1023>
+<br><br>
+
+<venda_inctemplate name=htmlEmailHeader,type=includes>
+
+<!-- for standard orders -->
+<venda_block label=66,ohreplnbr=null>
+	<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><p>Thank you for visiting <venda_ebizname>. Your order number is <venda_ohordnum>.</p></venda_block label=1031>
+	<venda_block label=1032,ohusgrrf=guest_de><p>Vielen Dank für Ihren Besuch bei <venda_ebizname>. Ihre Bestellnummer lautet <venda_ohordnum>.</p></venda_block label=1032>	
+	<venda_block label=1033,ohusgrrf=guest_fr><p>Nous vous remercions de votre visite chez <venda_ebizname> Votre numéro de commande est le <venda_ohordnum>.</p></venda_block label=1033>	
+</venda_block label=66>
+
+<!-- for replacement orders -->
+<venda_block label=67,ohreplnbr=notnull>
+	<venda_block label=1041,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><p>We would just like to let you know that your <venda_block label=68,ohpaytype=6>free </venda_block label=68>replacement has been processed and should be despatched shortly. Your order number is <strong><venda_ohordnum></strong>.</p></venda_block label=1041>
+	<venda_block label=1042,ohusgrrf=guest_de><p>Wir möchten Ihnen mitteilen, dass Ihre <venda_block label=68,ohpaytype=6>kostenlose </venda_block label=68>Ersatzbestellung bearbeitet wurde und in Kürze versendet wird. Ihre Bestellnummer lautet <strong><venda_ohordnum></strong>.</p></venda_block label=1042>	
+	<venda_block label=1043,ohusgrrf=guest_fr><p>Nous souhaitons vous faire savoir que votre <venda_block label=68,ohpaytype=6>échange </venda_block label=68>gratuit a été traité, et devrait être expédié sous peu. Votre numéro de commande est le <strong><venda_ohordnum></strong>.</p></venda_block label=1043>	
+</venda_block label=67>
+
+<!--venda_inctemplate name=htmlEmailMessage,type=includes-->
+
+<venda_inctemplate name=htmlEmailBody,type=includes>
+
+<venda_block label=1051,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+<p>We are now going to get busy picking and packing your order, so that we can get it shipped out to you as soon as possible.</p>
+
+<p>P&P promotions are included in your discount total and will not show as a deduction from your P&P charges.</p>
+
+<p>All items are subject to availability. If for any reason we are unable to fulfill any part of your order, we will email you to let you know that these items or order have been cancelled. Obviously you will not be charged for the items that were cancelled and the remainder of your order will be shipped as normal.</p>
+
+<p>As soon as your order is ready, we will carefully pack it to keep it safe as it makes its way to you.<br>
+So that's all for now; just keep a look out for our next email, as that will be the email to confirm dispatch and let you know that your order is on its way!</p>
+
+<p>Please note that this e-mail is only an acknowledgment of receipt of your order of items from urbanoutfitters.co.uk and your contract to purchase these items is not complete until we send you an e-mail notifying you that the items have been dispatched to you.</p>
+
+<p>Please note, we are unable to make any amendments to your order.</p>
+
+<p>For questions relating to your order, please contact us at <a href="mailto:UrbanEuropeCS@urbanout.com">UrbanEuropeCS@urbanout.com</a> or ring us at +44 (0) 845 330 1288 Mon-Fri, 9:00 - 18:00.</p>
+
+<p>Thank you for shopping at <a href="<venda_ebizurl>"><venda_ebizurl></a></p>
+</venda_block label=1051>
+<venda_block label=1052,ohusgrrf=guest_de>
+<p>Wir werden nun Ihre Bestellung so schnell wie möglich bearbeiten und verpacken, damit wir diese umgehend an Sie versenden können.</p>
+
+<p>Der Rabatt auf Ihre Versandkosten wird automatisch vom Gesamtbetrag abgezogen. Sie zahlen dir hier angegebenen Lieferkosten nicht.</p>
+
+<p>Drücken Sie uns die Daumen, dass wir Ihre Auswahl auf Lager haben, da alle Artikel der Verfügbarkeit unterliegen. Wenn wir aus irgendwelchen Gründen einen Teil Ihrer Bestellung nicht bearbeiten können, senden wir Ihnen eine E-Mail, um Sie wissen zu lassen, dass diese Artikel oder die Bestellung storniert wurden. Natürlich werden Ihnen die stornierten Artikel nicht in Rechnung gestellt und der Rest Ihrer Bestellung wird ganz normal verschickt.</p>
+
+<p>Sobald Ihre Bestellung fertig ist, werden wir sie vorsichtig verpacken, damit alles sicher verstaut ist, wenn Ihre Artikel zu Ihnen auf dem Weg sind.<br> Das ist von unserer Seite zurzeit alles; bitte beachten Sie unsere nächste E-Mail, da dies die E-Mail sein wird, die den Versand bestätigt und Sie wissen lassen wird, dass sich Ihre Bestellung auf dem Weg zu Ihnen befindet! </p>
+
+<p>Bitte beachten Sie, dass diese E-Mail nur eine Bestellbestätigung für Artikel von urbanoutfitters.de ist und Ihr Kaufvertrag für diese Artikel erst erfüllt wurde, wenn wir Ihnen eine E-Mail senden, in der mitgeteilt wird, dass die Artikel an Sie versendet wurden.</p>
+
+<p>Bitte beachten Sie, dass wir keine Änderungen an Ihrer Bestellung vornehmen können.</p>
+
+<p>Bei Fragen zu Ihrer Bestellung, kontaktieren Sie uns bitte per E-Mail unter <a href="mailto:service@urbanoutfitters.de">service@urbanoutfitters.de</a> oder rufen Sie uns von Montag bis Freitag, 10.00-18.00 Uhr unter 06 93 80 78 93 39 an.</p>
+
+<p>Vielen Dank für Ihren Einkauf bei <a href="http://www.urbanoutfitters.de">http://www.urbanoutfitters.de</a></p>
+</venda_block label=1052>
+<venda_block label=1053,ohusgrrf=guest_fr>
+<p>Nous allons dès maintenant préparer et emballer votre commande afin qu'elle puisse vous parvenir dès que possible.</p>
+
+
+
+<p>Nous croisons les doigts pour que votre commande soit disponible, car tous nos articles sont proposés dans la limite des stocks. Si pour une raison quelconque, nous ne pouvons satisfaire votre demande, nous vous enverrons un email pour vous faire savoir que votre commande a été annulée en partie ou en totalité.<br>
+Le prix des articles annulés n'est évidemment pas débité sur votre carte de crédit, et le reste de votre commande sera expédié normalement.</p>
+
+<p>La réduction des frais de livraison est incluse dans le total à payer, les frais de livraison figurant sur le reçu ne vous sont donc pas facturés.</p>
+
+<p>Une fois votre commande prête, elle est soigneusement emballée afin de vous être livrée en toute sécurité.</p>
+
+<p>C'est tout pour l'instant ; surveillez votre boîte email, le prochain message que nous vous enverrons sera pour vous confirmer que votre commande est bien partie !</p>
+
+<p>Notez bien que cet email tient lieu d'accusé de réception de votre commande sur le site urbanoutfitters.fr; votre achat ne sera entièrement validé que lorsque vous recevrez de notre part un email de confirmation d'expédition de vos articles.</p>
+
+<p>Veuillez noter que nous ne pouvons prendre en compte aucune modification de votre commande.</p>
+
+<p>Pour toute question concernant votre commande, veuillez nous contacter sur <a href="mailto:service@urbanoutfitters.fr">service@urbanoutfitters.fr</a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.</p>
+
+<p>Merci d'avoir fait vos achats sur <a href="http://www.urbanoutfitters.fr/">http://www.urbanoutfitters.fr</a></p>
+</venda_block label=1053>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+Gift List Confirmation
+
+
+
+Dear <venda_glstcreatorfname><venda_block label=10,glstpartnerfname=notnull> and <venda_glstpartnerfname></venda_block label=10>
+
+Congratulations and thank you for choosing <venda_ebizname> for your Gift List. Your Gift List has been set up successfully and your Gift List details are shown below.
+
+
+
+Gift List ID: <venda_glstrfnbr>
+
+Gift List Password: <venda_glstpswd>
+
+
+
+To manage your Gift List, please go to <venda_dispview page=giftlist> and follow the instructions.
+
+
+
+Kind regards
+
+<venda_ebizname>

@@ -1,0 +1,29 @@
+/* styles for v4+ browsers */
+
+body {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#fff;
+	font:76% Arial, Helvetica, Verdana, sans-serif;
+	}
+
+/* display elements */
+.error {
+	color:#f00;
+	background:#fff;
+	}
+
+/* list elements */
+ul {
+	margin:0;
+	padding:0;
+	}
+
+/* admin elements */
+#admin, #admin a {
+	margin:0;
+	padding:.5em 0;
+	background:#f00;
+	color:#fff;
+	}

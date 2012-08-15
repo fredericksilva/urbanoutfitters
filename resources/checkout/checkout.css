@@ -1,0 +1,253 @@
+/* form elements (mostly on checkout pages) */
+form {
+	display:inline;
+}
+input, select {
+	font-size:90%;
+	vertical-align:middle;
+}
+radio, checkbox {
+	vertical-align:middle;
+	float:left;
+	width:10%;
+}
+textarea {
+	font-size:90%;
+}
+legend {
+	font-weight:bold;
+	padding-bottom:6px;
+	margin-left:-6px;
+}
+label {
+	font-weight:normal;
+}
+fieldset {
+	border:none;
+	margin-bottom:1em;
+	clear:both;
+	padding:0 6px 6px 10px;
+}
+fieldset label {
+	float:left;
+	width:36%;
+}
+fieldset div div {
+	clear:none;
+	float:left;
+	width:33%;
+}
+fieldset div {
+	clear:both;
+	height:23px;
+}
+
+/* other checkout classes */
+.required {
+	color:#f00;
+	}
+/*.dontFloat {
+	float:none;
+	width:auto;
+}*/
+.invisible {
+	color:#fff;
+}
+
+/*Start checkout layout for ORDER SUMMARY*/
+#col-two-three-full{
+	width:830px; /* #wrapper = #col-one + 10px + #col-two-three */
+	background:#FFF;
+	padding:20px 0 0 30px;
+	margin:0;
+}
+#col-two-order-summary{
+	background:#FFF;
+	width:480px;
+	margin:0;
+	padding:0;
+}
+#col-two-order-summary-inside{
+	background:url('/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg1.jpg') no-repeat #f3f3f3;
+	margin:0;
+	padding:8px 15px 0 12px;
+}
+#col-three-order-summary{
+	background:#FFF;
+	width:320px;
+	margin:0;
+	padding:0;
+}
+#col-three-order-summary-inside{
+	margin:0;
+	padding:8px 0 0 10px;
+}
+#order-summary-shipping-to{
+}
+#order-summary-order-total{
+	background:url('/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg2.jpg') #f3f3f3;
+	padding:0 15px 0 12px;
+	border-top:2px solid #FFF;
+}
+#order-summary-order-total-bottom{
+	width:480px;
+	height:83px;
+	background:url('/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg2-bottom.jpg') #f3f3f3;
+}
+#order-summary-delivery-options{
+	height:93px;
+}
+.hdr-subject{
+	border-bottom: 2px solid #959595;
+	color: #959595;
+	font-size: 1.2em;
+	padding:13px 0 0 0;
+}
+.hdr-subject2{
+	border-bottom: 2px solid #DE75B0;
+	color: #DE75B0;
+	font-size: 1.2em;
+	padding:13px 0 0 0;
+}
+.hdr-subject3{
+	border-bottom: 2px solid #1F7AA9;
+	color: #1F7AA9;
+	font-size: 1.2em;
+	padding:13px 0 0 0;
+}
+div#additional-svc {
+	margin:0;
+	padding:8px 0 0 0;
+}
+div#additional-svc div{
+	display: inline;
+	float:left;
+	margin:0 0 0 18px;
+}
+div#additional-svc div.first{
+	margin:0 0 0 5px;
+}
+* html #btn-place-order{
+	margin:0;
+}
+#btn-place-order{
+	margin: 5px 0 0 0;
+}
+/*End checkout layout for ORDER SUMMARY*/
+
+/*Start basket*/
+div.basket-thumb {
+	float: left;
+	width: 93px;
+	height: 111px;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/basket-bg.jpg') top;
+	padding: 0;
+	margin: 0;
+}
+div.basket-thumb img {
+	border: 2px #FFF solid;
+	margin: 5px 0 0 7px;
+	padding: 0;
+}
+td.col-qty input{
+	width:19px;
+	height:17px;
+	border:1px #000 solid;
+	line-height:17px;
+	margin:3px 0 0 0;
+	padding:0 0 0 4px;
+}
+.green-text{
+	font-size: 0.9em;
+	color: #23B181;	
+}
+.yellow-text{
+	font-size: 0.9em;
+	color: #89930E;
+	line-height:18px;
+}
+.invtname-text {
+	color: #1f79ac;
+}
+.box-invt{
+	float: left;
+	width: 203px;
+	margin: 0;
+	padding: 7px 0 10px 10px;
+}
+.box-invt p{
+	margin: 0;
+	padding: 0;
+	line-height:17px;
+}
+.btn-remove{
+	font-size: 0.9em;
+	color: #20b283;
+}
+.tr-basket td{
+	vertical-align: top;
+	border-bottom: 2px solid #20b283;
+	padding: 10px 0 10px 0;
+}
+.price-text p{
+	padding:0 5px 0 0;
+}
+.total-amount{
+	background:#ecfaf4;
+	line-height:21px;
+	margin:5px 3px 5px 0;
+	padding:0 5px 0 7px;
+	border:0;
+}
+/*End basket*/
+
+/*Start more ideas*/
+ul#moreideas {
+	margin:0;
+	padding:0;
+	width:201px;
+}
+ul#moreideas li{
+	display: inline;
+	list-style-type: none;
+	float:left;
+}
+ul#moreideas li a{
+/*	background: #F00;*/
+}
+/*End more ideas*/
+
+/*Start ORDER RECEIPT*/
+#order-receipt-payment-details{
+	width:310px;
+}
+#order-receipt-contact-details{
+	width:310px;
+}
+#order-receipt-order-totals{
+	width:310px;
+}
+#order-receipt-shipping-to{
+	width:310px;
+}
+.order-receipt-item-list{
+	width:314px;
+}
+.order-receipt-item-list div{
+/*	border:1px solid #F00;*/
+}
+/*End ORDER RECEIPT*/
+
+
+
+.font2{
+	font-family: Courier New;
+/*	font-family: Times New Roman;*/
+}
+.font1{
+/*	font-family: Courier New;*/
+	font-family: Times New Roman;
+}
+.row-text{
+	color: #1F7AA9;
+}

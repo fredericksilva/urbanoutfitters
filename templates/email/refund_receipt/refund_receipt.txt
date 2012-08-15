@@ -1,0 +1,55 @@
+==============================================================================
+
+
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><venda_ebizname> Refund Details</venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><venda_ebizname> Rückerstattungsinformationen</venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><venda_ebizname> Informations de remboursement</venda_block label=1013>
+
+
+==============================================================================
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+Your return from order <venda_ohordnum> was processed on <venda_nowdaymon>/<venda_nowmon>/<venda_nowyear>. A credit of <venda_currsym><venda_refamt> has been applied to your card. Please allow 3-5 working days for your refund to appear.
+
+
+
+For questions related to your order, please contact us at <venda_ebizemail> or ring us at <venda_ebizphone> Mon-Fri, 9:00 - 18:00.
+
+
+
+Thank you for shopping at <venda_ebizurl>.
+
+
+</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+Die Rücksendung Ihrer Bestellung <venda_ohordnum> wurde am <venda_nowdaymon>/<venda_nowmon>/<venda_nowyear> bearbeitet. Eine Gutschrift von <venda_currsym><venda_refamt> wurde Ihrer Karte angerechnet. Gestatten Sie uns bitte 3 bis 5 Werktage, bis die Rückerstattung erscheint.
+
+
+Wenn Ihre Bestellung einen Werberabatt enthalten hat, haben wir dies berücksichtigt. Aus diesem Grund kann der Rückerstattungspreis der einzelnen Artikel vom ursprünglichen Verkaufspreis abweichen.
+
+
+Bei Fragen bezüglich Ihrer Bestellung, kontaktieren Sie uns bitte unter service@urbanoutfitters.de oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.
+
+
+Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
+
+
+</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>
+Le retour concernant votre commande <venda_ohordnum> a été traité le <venda_nowdaymon>/<venda_nowmon>/<venda_nowyear>. La somme de <venda_currsym><venda_refamt> a été créditée sur votre carte. Merci de patienter entre 3 et 5 jours pour que votre remboursement apparaisse.
+
+
+Si votre commande initiale prenait en compte un code promotionnel, nous avons considéré ce détail, le prix de remboursement des articles par unité peut donc varier du prix de vente d'origine.
+
+
+Pour toute question concernant votre commande, veuillez nous contacter à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+
+
+Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
+
+
+</venda_block label=1023>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

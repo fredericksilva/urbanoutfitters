@@ -1,0 +1,20 @@
+<fieldset class="inpform">
+		<legend class="hide">Address Details</legend>
+		<div id="pinkHeader2"><strong>ADDRESS DETAILS</strong></div>
+		<venda_block label=10,param2=uk,errors=null>
+		<div style="margin-bottom:2px;"><label for="zcdropdown">Addresses Found: <span class="required">*</span></label><venda_zcdropdown></div>
+		If the address was not found or is incorrectly listed, <a href="#" onClick='<venda_block label=48,instore!=1>document.wizform.ustype.value="P"; </venda_block label=48><venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;'>please enter it manually.</a>
+		<venda_city field=hidden><venda_state field=hidden><venda_zipc field=hidden><venda_cntry field=hidden>
+		</venda_block label=10>
+		<venda_block label=11,param2!=uk,errors=notnull,operator=or>
+		<div><label for="company">Company:</label><venda_company field=text,size=25,maxlength=20></div>
+		<div><label for="num">House Name/Flat Number: <span class="required">*</span></label><venda_num field=text,size=25,maxlength=20,required=yes></div>
+		<div><label for="addr1">Address: <span class="required">*</span></label><venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+		<div><label for="addr2" class="invisible">Address Line 2:</label><venda_addr2 field=text,size=25,maxlength=50></div>
+		<div><label for="city">City: <span class="required">*</span></label><venda_city field=text,size=25,maxlength=30,required=yes></div>
+		<div><label for="state">County:</label><venda_state field=text,size=25,maxlength=20></div>
+		<div><label for="zipc">Postcode: <span id="addstar"></span></label><venda_zipc field=text,size=25,maxlength=20>
+		<span id="postcodelookup" class="pclookup"><a href="#" onclick="lookUp('billing'); return false;"><span></span><venda_text id=site.singlesteppc_lookup.contact_address.address_details.lookuppostcode></a></span></div>
+		<div><label for="cntry">Country: <span class="required">*</span></label> <venda_cntry field=combo,required=yes,ship=1></div>
+		</venda_block label=11>
+</fieldset>

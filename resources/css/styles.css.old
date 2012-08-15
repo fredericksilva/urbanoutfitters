@@ -1,0 +1,1489 @@
+/* styles for v5+ browsers */
+
+body {
+	margin:0;
+	padding:0;
+	color:#666;
+	background:#fff;
+	font:76% Arial, Times New Roman, Times, serif,Georgia;
+	}
+
+/* display elements */
+h1, h2, h3, p {
+	margin:.5em 0;
+	padding:0;
+	}
+h1 {
+	font-size:1.6em;
+	}
+h2 {
+	font-size:1.4em;color:#333;
+	}
+h3 {
+	font-size:1.2em;
+	border-bottom:1px solid #333;
+	}
+p{
+	font-size:1.1em;
+	}
+a {
+	/*border-bottom:1px solid #1f79ac;*/
+	text-decoration: underline;
+	color:#999;
+	}
+a:hover {
+	color:#999;
+	}
+.error {
+	color:#1f79ac;
+	background:#fff;
+	}
+.bold {
+	font-weight:bold;
+	}
+.normal {
+	font-weight:normal;
+	}
+/* list elements */
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+ul.bullet li{padding:2px;list-style: disc outside;margin:0 18px;}
+
+/* admin elements */
+#admin, #admin a {
+	margin:0;
+	padding:.5em 0;
+	background:#f00;
+	color:#fff;
+	}
+
+/* hidden elements */
+.hide {
+	display:none;
+	}
+
+.left {
+	float:left;
+	}
+.right {
+	float:right;
+	}
+.clear-all { /* can be used on a <div> or <br> to avoid collapsing divs - especially ns6 (pc) */
+	clear:both;
+	height:0;
+	line-height:0;
+	font-size:0;
+	}
+
+/* structural elements */
+/* if no right column required, remove #col-three and #col-two then put content in #col-two-three */
+#wrapper {
+	width:830px; /* #wrapper = #col-one + 10px + #col-two-three */
+	background:#fff;
+	}
+#header {
+	width:830px;
+	height:96px;
+	margin:0px;
+	padding:0;
+	background:#fff;
+	}
+#col-one {
+	width:180px;
+	float:left;
+	margin:0 20px 0 0;
+	background:#fff;
+	}
+#col-two-three { /* #col-two-three = #col-two + 10px + #col-three */
+	width:630px;
+	float:right;
+	margin:0;
+	padding:0;	
+	background:#fff;
+	}
+#col-two {
+	width:630px;
+	float:left;
+	margin:0;
+	padding:0;		
+	background:#fff;
+	}
+#col-three {
+	width:150px;
+	float:right;
+	background:#fff;
+	}
+/* Header*/
+.logo{
+	width:200px;
+	float:left;
+	margin-right:0 ;
+	}
+.bg_header{
+	width:630px;
+	height:96px;
+	margin:0;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/bg_header.jpg);
+	background-repeat: repeat-x;
+	}		
+.row-tow{
+	float:left;
+	width:630px;
+	margin:0;
+	padding:0;	
+	}	
+.searchbox{
+	float:left;
+	width:120px;
+	margin:0 0 0 5px;
+	}		
+.searchbox fieldset{
+	margin:0;
+	padding:0;
+	}
+.newsletterbox{
+	float:right;
+	width:120px;
+	margin:0;
+	}		
+.newsletterbox fieldset{
+	margin:0;
+	padding:0;		
+	}
+input.inpsch{
+	width:100px;
+	font:10px Arial;
+	vertical-align:middle;
+	color:#333;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/box_colour_swatch.jpg);
+	}	
+.wraplink {
+	float:left;
+	width:380px;
+	margin-top:3px;
+	}	
+ul.linkpage {
+	width:350px;
+	margin:0;
+	text-align: center;
+	font:12px Arial;
+	}
+ul.linkpage li {
+	display: inline;
+	margin-right:6px;
+	padding-left:12px; 
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_sepline.gif);
+	background-repeat:no-repeat;
+	background-position:0 3px;
+	}
+ul.linkpage li.first{
+	display:inline;
+	background-image:none;
+	margin-left:0;
+	padding-left:8px; 
+	}
+ul.linkpage a{
+	color:#333;
+	text-decoration: none;
+	}
+ul.linkpage a:hover{
+	color:#999;
+	text-decoration: none;
+	}	
+.hd_line{
+	width:630px;
+	line-height:3px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/hd_line.gif);
+	background-repeat: repeat-x;
+	}		
+/*Footer */
+td#bgfooter {
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/bg_footer.gif);
+	height:86px;
+	width:23px;	
+	}
+.pdbottom {_padding-bottom:2px;}
+#footer {
+	width:691px;
+	margin:0;
+	padding:0;
+	float:left;
+	font:12px Arial;	
+	font-weight: bold;	
+	}
+#footer li {
+	display: inline;
+	margin-left:0px;
+	padding-left:12px; 
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_sepline.gif);
+	background-repeat:no-repeat;
+	background-position:0 3px;
+	}
+#footer li.first{
+	display:inline;
+	background-image:none;
+	margin-left:0;
+	padding-left:8px; 
+	}
+#footer li.greenf{
+	color:#333;
+	font-weight:bold;
+	padding-right:10px;
+	}		
+#footer a.mgnone{
+	margin-right:0;
+	color:#333;
+	}		
+#footer a{
+	margin-right:7px;
+	color:#333;	
+	text-decoration: none;
+	}	
+#footer a:hover{
+	color:#999;
+	}		
+#venda {
+	float:right;
+	width:116px;
+	height:24px;
+	margin:0;
+	border-left:0;
+	padding:0;
+	}
+	
+#static-wrapper{
+	width:801px;
+	background:#fff;
+	padding:0 0 10px 29px ;
+	}
+/* start styles to centre content (remove these styles if site should be left-aligned) */
+body {
+	text-align:left; /* centres content in ie4/5 */
+	}
+#wrapper {
+	margin:0; /* centres content (except in ie4/5) */
+	text-align:left; /* left-aligns all sub-content */
+	}
+#col-two-three {
+	text-align:left; /* ie4 fix needed due to float:right; */
+	}
+/* end styles to centre content */
+
+/* previous/continue buttons floated left/right within #buttons div */
+#buttons {
+	overflow:hidden;
+ 	width: 620px;
+	padding:5px;
+	}
+
+/* nav styles */
+#leftnav ul{ 
+	margin:2px 0;
+	}
+#leftnav ul li a{
+	text-decoration: none;
+	color:#333;
+	font:10.5px Arial;
+	}	
+#leftnav ul li a:hover{
+	color:#999 !important;
+	border-bottom:1px solid #999;
+	}			
+#leftnav ul li {
+	margin:0;
+	padding:0 0 2px 0;	
+	}
+#leftnav ul.gcert {
+	margin:4px 0 0 0;
+	}
+.leftnavcatopen	a, .leftnavcatopen a:hover {
+	float:left;
+	width:100%;
+	color:#999;
+	border-bottom:1px solid #999;
+	font-weight:bold;
+	text-transform: uppercase;
+	}
+.leftnavcat a {
+	float:left;
+	width:100%;
+	border-bottom:1px solid #333;
+	font-weight:bold;
+	text-transform: uppercase;
+	}
+.leftnavcat a:hover {
+	float:left;
+	width:100%;
+	border-bottom:1px solid #999;
+	color:#999;
+	font-weight:bold;
+	text-transform: uppercase;	
+	}
+.leftnavsub a {
+	color:#333;
+	font:10.5px Arial;
+	line-height:16px;
+	float:left;
+	width:100%;
+	border-bottom:1px solid #FFF;
+	}		
+.leftnavsub a:hover {
+	font:10.5px Arial;
+	line-height:16px;
+	width:100%;
+	color:#999;
+	border-bottom:1px solid #999;
+	float:left;
+	}		
+#crumbTrail{
+	font:10.5px Arial;
+	color:#999;
+	letter-spacing:.75px;
+	}
+#crumbTrail a{
+	text-decoration: none;
+	color:#999;
+	padding-left:5px;
+	font:10.5px Arial;
+	letter-spacing:.75px;
+	}
+#crumbTrail2{
+	font:10.5px Arial;
+	color:#999;
+	line-height:8px;
+	letter-spacing:.75px;
+	
+	}
+#crumbTrail2 a{
+	text-decoration: none;
+	color:#999;
+	padding-left:5px;
+	}	
+/* product list styles */
+ul#productlist{
+	width:630px;
+	margin:0;
+	padding:0;
+	font:10.5px Arial;
+	color:#999;
+	}
+ul#productlist p{
+	margin:0;
+	padding:0;
+	}	
+ul#productlist li {
+	float:left;
+	margin:0 10px 0 0;
+	padding-bottom:15px;
+	width:150px; 
+	/*min-height:353px;
+	height:353px;*/
+	}
+ul#productlist li.none {
+	float:left;
+	margin:0;
+	width:150px;
+	}	
+ul#categorylist{
+	width:630px;
+	margin:0 0 15px 0;
+	padding:0;
+	}	
+ul#categorylist li{
+	float:left;
+	margin:0 0 15px 0;
+	width:155px;
+	height:100px;
+	text-align:center;
+	}	
+#accessoies{
+	margin-top:3px;
+	padding:0;
+	}	
+#accessoies div.detAcc{
+	float:left;
+	height:103px;
+	margin:0;padding:0;
+	}	
+/* featured products styles */
+#featured ul  {
+	margin:.5em;
+	padding:.5em;
+	border-bottom:1px solid #000;
+	}
+	
+/* contact address */	
+fieldset.inpform div{
+	height:23px;
+	}
+fieldset.inpform{
+	margin:0 0 15px 0;
+	}
+fieldset.inpform p{
+	margin:0 0 10px 0;
+	}
+fieldset.inpform input{
+	width:155px;
+	border:1px solid #7E7F71;
+	padding-left:5px;
+	}
+fieldset.inpform select{
+	width:165px;
+	}
+.tick{
+	margin:0 0 0 0;
+	}
+.tick input{
+	float:left;
+	}
+.tick label{
+	float:left;
+	width:auto;
+	padding-top:2px;
+	}
+select.ml4{
+	margin-left:4px;
+	}	
+/*  Login */	
+.sel input{float:left;	}
+.sel label{width:auto;	}
+/* Gategory */
+.icatName{
+	font:16px Arial;
+	letter-spacing:.75px;
+	font-weight: bold;
+	color:#666;
+	}
+	
+/*  Top nav */
+	
+#menutopnav ul li{
+	margin:22px 0 0 12px;
+	float:left;
+	}	
+#menutopnav ul li.noml{
+	margin:22px 0 0 0;
+	height:23px;
+	float:left;
+	}		
+#topnav{padding:0;margin:0;}
+.mini{
+	float:right;
+	margin:0;
+	height:41px;
+	width:127px;
+	font:10px Arial;
+	color: #999;
+	}
+a.item{
+	color:#999;
+	text-decoration: none;
+	font-weight: bold;	
+	}	
+a.item:hover{	
+	color:#999 !important;
+}
+/* popup available */
+.avaHead{
+	margin:20px 0 40px 0;
+	color:#000;
+	}
+.talCol{
+	width:100px;
+	margin:10px 0 0 0;  
+	float:left;
+	text-align:left;
+	}
+.talCol img{
+	margin:0 5px -3px 0;
+	padding:0; 
+	}	
+/* Product detail */		
+.detailcolone{
+	width:223px;
+	float:left;
+	
+	}
+.detailcoltwo{
+	width:400px;
+	float:left;
+	padding-top:17px;
+	}	
+.detailcoltwo-left{
+	float:left;
+	width:193px;
+	}
+.h20{
+	height:20px;
+	}
+.detailcoltwo-left fieldset{	
+	margin:0;
+	padding:0;
+	}
+.detailcoltwo-right{
+	float:left;
+	width:202px;
+	}	
+.availcolour{
+	width:198px;
+	margin-top:3px;
+	}	
+
+.availcolour a{
+	float:left;
+	margin-right:3px;
+	}
+
+.availcolour a.last{
+	margin-right:0px;
+	}	
+		
+.twiceLine{
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/linebold.gif);
+	background-repeat:repeat-x;
+	width:200px;
+	line-height:8px;
+	}
+.line{
+	line-height:1px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/one_line.gif);
+	background-repeat:repeat-x;
+	margin-bottom:6px;
+	}
+.line2{
+	line-height:2px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/one_line2.gif);
+	background-repeat:repeat-x;
+	}	
+.emailline{
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/linebold.gif);
+	background-repeat:repeat-x;
+	}
+.invtName{
+	font:16px Arial;
+	font-weight: bold;
+	color:#333;
+	margin:0 0 3px 4px;
+	text-transform: uppercase;
+	}
+.inp input{
+	width:17px;
+	font:90% Arial;
+	text-align:center;
+	margin-top:5px;
+	}
+.quat{
+	float:left;
+	margin:0 0 9px 6px;
+	}
+.proPrice{
+	font:12px Arial;
+	letter-spacing:.5px;
+	font-weight: bold;
+	}
+.attList{
+	float:left;height:16px;
+	}	
+/* General */
+.mb2{	margin:0 0 2px 0;	}
+.w160{ width:160px;	}	
+.wh130{
+	width:130px;
+	height:130px;
+	}
+.h19{ 
+	height:19px;
+	margin-top:4px;
+	}
+.mg0{margin:0;	}	
+.mgl5{margin-left:-5px;	}	
+.mlr6{margin:0 6px 0 6px;	}
+.mr6{margin:0 6px 0 0;	}
+.mt6{margin-top:6px;	}
+.mt9{margin-top:9px;	}
+.ml5{margin-left:5px;	}
+.mt8{margin-top:8px;	}
+
+.inpbd{
+	border:1px solid #7E7F71;
+	}	
+.catpage{
+	width:625px ;
+	height:400px ;
+	}	
+.font11{font: 11px Arial;	}
+.font12{font: 12px Arial;	}
+.font9{
+	font:9px Arial;
+	color:#959595;
+	}
+.lightgray{color:#999;	}	
+.mediumgray{color:#666;	}	
+.darkgray{color:#333;	}	
+.lightblue{color:#00CCFF;	}
+.red{color:#FE0034;	}	
+.pink{color:#DD75B0;	}	
+.blue{color:#1F79AC;	}	
+.bluePomo{color:#0099FF;	}	
+.green{color:#20B283;	}	
+.greenPrice{ color:#669966;	}	
+.black{ color:#000000;	}
+.center{text-align:center;	}
+.textleft{text-align:left;}
+.addPink{color:#da62a0;font:12px Arial;}	
+.up{
+	text-transform: uppercase;
+	}
+.transnone{text-transform: none;}
+.itbo{
+	font :90% Arial;
+	color:#1F79AC;
+	font-style: italic;
+	font-weight: bold;	
+	text-decoration: none;
+	letter-spacing:.3px;
+	}	
+.itbo a{
+	text-decoration: none;
+	}	
+.itboCh a{
+	text-decoration: none;
+	}			
+.pagesel{
+	float:right;
+	font:10.5px Arial;
+	color:#999;
+	letter-spacing:.75px;
+	}	
+.pagesel a{
+	text-decoration: none;
+	color:#333;
+	text-transform: uppercase;
+	}
+.pagesel a:hover{
+	color:#999;
+	}
+.pageselSeh{
+	font:10.5px Arial;
+	color:#999;
+	text-align:center;
+	margin:5px 0 9px 0;
+	line-height:12px;
+	letter-spacing:.75px;
+	}	
+.pageselSeh a{
+	text-decoration: none;
+	color:#333;
+	text-transform: uppercase;
+	}	
+.pageselSeh a:hover{
+	color:#999;
+	}	
+.sh-mes1{
+	text-align:center;
+	margin-bottom:9px;
+	}			
+.greenLine{
+	line-height:1px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/one_line.gif);
+	background-repeat:repeat-x;
+	margin-botom:8px;
+	}
+.selSeh{
+	text-align:center;
+	margin-bottom:14px;
+	}	
+.selSeh select{
+	width:170px;
+	margin-right:10px;
+	align:center;
+	
+	}	
+
+		/*  static page by Gim */	
+/*shared styles*/
+.heading-all h1{
+	text-transform: uppercase;
+	color:#333;
+	margin:0;padding:0;
+	font-weight:normal;
+	font:18px Arial;
+	letter-spacing:1.5px;
+	}
+.heading-all .underline{
+	border-top:2px solid #333;
+	height:2px;
+	}
+.heading-all .underline p{margin:0;padding:0;	}
+
+.content-text{
+	line-height:20px;
+	margin:10px 0 0 0;	
+	}
+.content-text h2{
+	color:#333;
+	font-size:1em;
+	margin:0;
+	padding:0;
+	}
+.content-text p{
+	color:#333; 
+	margin:0 0 20px 0;	
+	}
+.content-text p.topic{
+	margin:0 0 0 0;
+	padding:0;
+	}
+.content-text a{
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+	}
+.content-text a.noline{border:0;	}
+.content-text ul{
+	margin:5px 0 5px 30px ;
+	color:#333;
+	list-style:disc;
+	}
+.content-text ul.nodecoration{
+	margin:0;
+	color:#333;
+	list-style:none;	
+	}
+.formset textarea {
+	float:left;
+	width:150px;
+	margin:0;
+	_margin/**/:0 0 0 3px;
+	font-family:arial;
+	}
+.formset div.spacing {height:3px;margin:0;padding:0;	}
+.formset div.spacing p{margin:0;padding:0;	}
+.formset fieldset { margin:0;padding:0;	}
+.formset fieldset label{
+	width:180px;
+	}
+.formset fieldset input{
+	width:150px;
+	}
+.hmarding-zero{/*set margin and padding of h1,h2 to be zero*/
+	margin:0;
+	padding:0;
+	}
+#storelocations{/*wrapper of the page*/
+	width:630px;
+	padding:0 0 40px 0;
+	}
+#store-events-annoucements{
+	margin:30px 0 0 0;
+	padding: 0;
+	}
+#store-events-annoucements a{
+	color:#333;
+	}
+.smallline{
+	float:left;
+	width:100%;
+	height:5px;
+	border-top:1px solid #333;
+	}
+#store-events-annoucements {
+	color:#999;
+	font:12px Arial;
+	line-height:16px;
+	}
+#store-events-annoucements a{color:#333;text-decoration:none;border-bottom:1px solid #00CCFF;}
+
+.address p{margin:0;color:#333;line-height:16px;font:12px Arial;	}
+.address p a {color:#333;text-decoration:none;border-bottom:1px solid #00CCFF;	}
+.address{margin-bottom: 20px;}
+/*end of store locator page*/
+
+/*faqs and joblist pages*/
+ul.anchorlist {margin:10px 0 53px 0;padding:0;	}
+ul.anchorlist li{list-style:none;padding:0 0 0 4px;line-height:16px;	}
+ul.anchorlist a{color:#999;text-decoration:none;border-bottom:1px solid #00CCFF;	}
+.bluet a{color:#999;text-decoration:none;border-bottom:1px solid #00CCFF;	}
+.clear-height{height:16px;	}
+
+#joblistdesc{color:#999;	}
+.positions{width:315px;margin:26px 0 33px 0;	}
+.joblistdetail{margin:0;padding:34px 0 0 4px;border-top:1px solid #333;	}
+.joblistdetail h2 a{color:#333;font-size:1em;margin:0;padding:0;border:0;font-weight:bold;text-transform: uppercase;}
+.joblistdetail a{color:#999;text-decoration:none;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #00CCFF;line-height:18px;}
+/*end of faqs page*/
+
+/*music center styles*/
+.musiccenter{
+	width:384px;
+	margin:0 0 0 29px;
+	padding:0;
+	}
+.marginleft29{
+	margin:0 0 0 29px;
+	}
+div.box-music-center {
+	font-family: Arial, Courier New ,Times;
+	width:829px;
+	}
+.desc-spacing{margin-top:10px;margin-bottom:10px;	}
+.list-spacing{margin-top:30px;margin-bottom:10px;	}
+.desc-bottom-line{padding-bottom:15px;border-bottom:1px solid #333	}
+
+.musiccenter-image{width:130px;	}
+.musiccenter-button{padding: 6px 0 0 0;text-align:center;	}
+.musiccenter .desc{
+	width:241px;
+	margin:0;
+	padding:0 0 0 3px;
+	}
+.musiccenter .desc h2{
+	color:#333;
+	font-size:.9em;
+	font-weight:bold;
+	margin:0 0 8px 0;
+	padding:0 0 8px 0;
+	border-bottom:2px solid #333;
+	}
+.musiccenter .desc p{
+	font-family:Arial;
+	font-size:.9em;
+	color:#333;
+	margin:0;
+	padding:0;
+	}
+#musiccenter-detail {margin:0 0 0 29px;	}
+#musiccenter-detail h1{
+	text-transform: uppercase;
+	color:#333;
+	margin:0;padding:0;
+	font-weight:normal;
+	}
+#musiccenter-detail .underline{
+	border-top:2px solid #333;
+	border-bottom:1px solid #333;
+	height:2px;
+	}
+#musiccenter-detail .underline p{margin:0;padding:0;	}
+#musiccenter-detail img{margin:10px;	}
+#musiccenter-detail p{padding:0 0 0 10px;	}
+/*end of music center page*/
+
+/*sign up for newsletter styles*/
+.email label{color:#3d6c5a;width:100px;position:relative;top:3px;	}
+.email input{font:10.5px Arial;	}
+/*end of sign up for newsletter*/
+
+/*View size chart page*/
+.viewsizechart {padding-left:10px;}
+.viewsizechart h2{font:12px Arial;letter-spacing:1.5px;color:#333;	}
+.viewsizechart tr{
+	font-size:10.5px;
+	}
+.viewsizechart th{
+	width:160px;
+	text-align:left;
+	font-size:10.5px;
+	font-family:arial;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	color:#333;
+	}
+.viewsizechart td{
+	width:40px;
+	font-size:10.5px;
+	padding:0;
+	margin:0;
+	font-family:Arial;	
+	color:#999;
+	}
+.viewsizechart .sizecharttable{margin:20px 0 0 0;color:#999;}
+.sizewidth td {width:80px}
+/*view size chart page*/
+
+/*help(story) styles*/
+#helpContent {text-align:left;margin:0px;	}
+#helpContent hr{border:0;border-bottom:1px solid #fff;border-top:1px solid #333;	}
+/*end of help styles*/
+
+/* Myaccount by Jeab*/
+#col-myaccount-login{
+	width:630px;
+	height:349px;
+	margin-top:-15px;
+	margin-bottom:20px;
+	float:right;
+	background:#FFFFFF url(../images/bg_myaccount_signin.jpg) no-repeat;
+}
+#col-two-three-myaccount {
+	width:630px;
+	float:right;
+	background: #FFFFFF;
+	color:#989898;
+	margin:0;
+	padding:0;
+	}
+#col-two-myaccount {
+	width:210px;
+	float:left;
+	background: #FFFFFF;
+	margin:0;
+	padding:0;
+}
+#col-three-myaccount {
+	width:391px;
+	float:left;
+	background: #FFFFFF;
+	color:#989898;;
+	margin:24px 0 0 27px;
+	padding:0;
+}
+#cov_colRight a:link,
+#cov_colRight a:hover,
+#cov_colRight a:active,
+#cov_colRight a:visited,
+#covMyContent a:link,
+#covMyContent a:hover,
+#covMyContent a:active,
+#covMyContent a:visited {
+	color:#999;
+}
+#col-two-three-myaccount a:link,
+#col-two-three-myaccount a:hover,
+#col-two-three-myaccount a:active,
+#col-two-three-myaccount a:visited {
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+	}
+#covLogin a:link,
+#covLogin a:hover,
+#covLogin a:active,
+#covLogin a:visited {
+	color:#FE0034;
+	text-decoration:none;
+	font:12px Arial;
+}
+#covLogin {
+	width:630px;
+	float:left;
+	margin:125px 0 0 0;
+	padding:0;
+	color:#666;
+}
+#covLogin .error {
+	margin: 0 0 5px 84px;
+}
+#covLogin-col-one {
+	width:290px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#covLogin-col-two {
+	width:270px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#login-col1 {
+	margin:0 0 0 7px;
+	padding:0;
+}
+#login-col2 {
+	margin:0 0 0 0;
+	padding:0;
+}
+#covLogin label {
+	width:150px;
+	margin:0;
+	padding:0 0 0 0;
+}
+.inputtext150 {
+	width:150px;
+    margin:0;
+	padding:0 0 0 0;
+}
+#button_login {
+	margin-top: 7px !important;
+	margin-top/**/:/**/5px;
+	padding:0;
+}
+.row {
+	height:15px;
+	margin:3px 0 0 0;
+	padding:0;
+}
+.bluelink {
+	color:#0D75AC;
+}
+
+/*/////////// My Account //////////////// */
+#covMyaccount {
+	padding:0;
+	margin:-7px 0 0 0;
+	font-family:Arial;
+	color:#333;
+} 
+#covMyaccount p {
+	margin-bottom:13px;
+}
+.fontT{font:12px Arial;}
+.fontC{font-family:Arial;font-size:1em;}
+.fontC a{font-family:Arial;font-size:1em;}
+.fontC2{font-family:Arial;font-size:1.1em;}
+.bblack {color:#000;}
+.bgray {color:#666;}
+/*#bpink {color:#dd75b0;}*/
+#bpink {color:#999;} /*RT65125*/
+#bblue {color:#1f79ac;}
+#grayHeader {
+	background:#FFFFFF url(../images/img_gray_line.gif) bottom left;
+	background-repeat:repeat-x;
+	height:15px;
+}
+#greenHeader {
+	margin:0 0 13px 0;
+	padding:0;
+}
+#greenHeader2 {
+	margin:0 0 5px 0;
+	padding:0;
+}
+#pinkHeader {
+	color:#333;
+	font-size:12px;
+	padding-bottom:3px;
+	font-family:Arial;
+}
+#pinkHeader2 {
+	/*color:#da62a0;*/
+	color:#999; /*RT65125*/
+	font-size:1em;
+	font-weight:bold;
+	padding-bottom:1px;
+	font-family:Arial;
+}
+#pinkHeader3 {
+	color:#999;
+	font-size:1.1em;
+	font-weight:bold;
+	font-family:Arial;
+}
+#pinkHeader4 {
+	color:#999;
+	font-size:1em;
+	font-weight:bold;
+	padding-bottom:0px;
+	font-family:Arial;
+}
+
+#covNav_Myaccount {
+	margin:24px 0 0 0;
+	padding:0;
+	color:#333;
+	font-family:Arial;
+}
+#innerNav {
+	margin:7px 0;
+}
+#height30 {
+	height:30px;
+}
+#height15 {
+	height:15px;
+}
+#height10 {
+	height:10px;
+}
+#height5 {
+	height:5px;
+}
+#mynav {
+	margin:0;
+	padding:0;
+}
+ul#mynav {
+	margin-bottom:50px;
+	padding:0;
+	list-style: none;
+	font-family:Arial;
+	font-weight:bold;
+	color:#1f79ac;
+}
+ul#mynav li {
+	margin:0;
+	padding:0 0 3px 0;
+}
+/*/////////// My Account - Another Part//////////////// */
+#covMyContent {
+	width:630px;
+	margin:0 0 25px 0;
+	padding:0;
+	float:right;
+}
+#covMyContent p {
+	color:#959595;
+	font-family:Arial;
+}
+#covMyContent fieldset,
+#covMyContent fieldset.inpform,
+#covMyContent fieldset.inpform2 {
+	margin-top:18px;
+	padding:0;
+	font-family:Arial;
+	color:#000;
+}
+.inplink  {
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+}
+ul#addresslist li {
+	margin:0 0 15px 0;
+	padding:0;
+}
+.view_button {
+	padding:10px 0 6px 0;
+}
+table#orderhistorylist th {
+	color:#333;
+	font-weight:normal;
+	text-align:left;
+	font-family:Arial;
+}
+table#orderhistorylist td {
+	color:#666;
+	font-weight:normal;
+	text-align:left;
+	font-family:Arial;
+}
+.blueline {	
+	float:left;
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+}
+#my_covContent{
+	width:390px;
+	padding:0 0 40px 0;
+	margin:0;
+	color:#333;
+	font-family:Arial;
+}
+#my_covContent p {
+ 	padding-bottom:7px;
+}
+#my_covContent fieldset {
+	margin:0;
+	padding:0;
+}
+#my-button {
+	padding-top:12px;
+}
+#my-button2 {
+	padding-top:2px;
+}
+#my-button3 {
+	margin-top:-10px;
+}
+.alignM	{
+	vertical-align:top;
+}
+#shippadd fieldset {
+	/*background: #EAEDF0;*/
+	margin: 0px 0px 15px 0px;
+	padding: 0px;
+}
+#shippadd p {
+	margin:0px 0px 11px 0px;
+	padding:0px;
+}
+#contact {
+	color:#666666;
+	font-family:Arial;
+	padding-bottom:17px;
+}
+#bcontent {
+	color:#666;
+	font-family:Arial;
+}
+table#ordersummary th {
+	color:#000;
+	font-family:Arial;
+	font-weight:normal;
+	text-align:left;
+	width:330px;
+}
+table#ordersummary td {
+	color:#666;
+	font-family:Arial;
+	text-align:right;
+}
+/***** FORM ON LOGIN & MYACCOUNT *******/
+fieldset.inpform label,
+fieldset.inpform2 label,
+div.phonelabel {
+	width:209px;
+}
+fieldset.inpform .tickBox label {
+	width:550px;
+	float:left;
+	padding:1px 0 0 5px;
+}
+fieldset.inpform .tickBox input {
+	width:15px;
+	float:left;
+	border:0;
+}
+.tickBox input{
+	float:left;
+	width:10px;
+}
+.tickBox label{
+	float:left;
+	color:#000;
+	font-family:Arial;
+}
+label.prefer {
+	padding-left:5px;
+}
+.phone input.w123 {
+	width:118px !important;  /*for netscape*/
+	width/**/:116px;            /*for ie*/	
+}
+.phone input.w126 {
+	width:121px !important;  /*for netscape*/
+	width/**/:118px;            /*for ie*/	
+}
+.phone input {
+	margin-right:6px;
+}
+.phone label{
+	clear:both;
+	width:300px;
+}
+.phone input.w30{ width:30px;  }   /*for safari*/
+
+ul#referlist {
+	padding:0;
+	margin:0;
+	list-stye:none;
+	font-family:Arial;
+	color:#666;
+}
+ul#referlist li {
+	padding:0 0 2px 0;
+	margin:0;
+}
+fieldset.addlist{
+	font-family:Arial;
+	font-size:.9em;
+	color:#666;
+}
+fieldset.addlist input {
+	float:left;
+}
+fieldset.addlist label{
+	float:left;
+	padding:0 0 0 5px;
+	width:300px;
+}
+fieldset.addlist p{
+	margin: -5px 0 0 0;
+	padding:0;
+}
+/*##### Address Book ########*/
+#my_covContentZip {
+	margin:0 0 25px 0;
+	padding:0;
+	font-family:Arial;
+	color:#959595;
+}
+#my_covContentZip fieldset.inpform{
+	margin-top:10px;
+	padding:0;
+	font-family:Arial;
+	color:#000;
+}
+#my_covContentZip a {
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;		
+}
+/*##### col-right 630px content (wz_pwrm-screen)*/
+#cov_colRight {
+	width:630px;
+	float:right;
+	padding:0;
+	margin:0 0 25px 0;
+	font-family:Arial;
+	color:#666;
+}
+#cov_colRight fieldset {
+	margin:0;
+	padding:10px 0 0 0;
+	font-family:Arial;
+	color:#000;
+}
+#button_v1 {
+	margin:0;
+	padding:5px 0 10px 0;
+}
+#button_v2 {
+	margin:0;
+	padding:10px 0 10px 0;
+}
+#button_v3 {
+	margin:0;
+	padding:0 0 10px 0;
+}
+#cov_colRightMyaccount {
+	width:390px;
+	float:right;
+	padding:0;
+	margin:0 0 25px 0;
+	font-family:Arial;
+	color:#333;
+}
+#cov_colRightMyaccount fieldset {
+	margin:0;
+	padding:0 0 0 0;
+}
+#cov_colRightMyaccount fieldset label {
+	margin:0;
+	padding:0 0 0 5;
+	font-family:Arial;
+	color:#000;
+}
+#cov_colRightMyaccount fieldset label.invisible {
+	color:#fff;
+}
+fieldset.giftcert{margin:9px 0 0 -10px;}
+fieldset.giftcert div{	height:23px;}
+fieldset.giftcert label{width:110px;}		
+fontcourier{
+  	font-family:Arial;
+}
+input.referTick {
+	width:15px;
+}
+.rdAlign{
+	margin-top:3px;  /*for Safari*/
+} 
+.rdAlign{
+	margin-top:1px !important;#
+	margin-top/**/:2px;#
+}
+.phone input.w30{ width:25px;#  }   /*for ie firefox netscape*/
+
+/* Extra CSS for WYSIWYG */
+
+#static{
+text-align:left;
+margin:0;
+padding:0px;
+}	
+#static h1{
+	text-transform: uppercase;
+	color:#333;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font:18px Arial;
+	letter-spacing:1.5px;
+	}
+#static .underline{
+	border-top:2px solid #333;
+	height:2px;
+	}
+#static h5{
+	color:#333; 
+	font-size:1em;
+	margin:0;
+	padding-bottom:10px;
+	font-weight:normal;
+	}
+ #static a{
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+	}
+#static ul{
+	list-style:disc;
+   margin:5px 0 5px 15px ;
+	}
+#static ul li{
+	line-height:20px;
+	} 
+#static p{
+	margin:0 0 20px 0;	
+	}
+	#col-two #static h2{
+	color:#333;
+	font:12px Arial;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	}
+/* for some page (paymentoptions,managingyouraccount and termsandconditions)*/	
+	
+#static2{
+text-align:left;
+margin:0;
+padding:0;
+}	
+ #static2 h1{
+	text-transform: uppercase;
+	color:#333;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font:18px Arial;
+	letter-spacing:1.5px;
+	}
+	#col-two #static2 .underline{
+	border-top:2px solid #333;
+	height:2px;
+	}
+#static2 h5{
+	color:#333; 
+	font-size:1em;
+	margin:0;
+	padding-bottom:10px;
+	}
+#static2 a{
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #da74b5;	
+	}
+#static2 ul{
+	color:#333; 
+	  margin:5px 0 5px 30px ;
+	  	list-style:disc;
+	line-height:18px;
+	}
+	#static2 ul li{
+	line-height:18px;
+	color:#666;
+	} 
+	#static2 p{
+    margin:0 0 20px 0;	
+	color:#666; 
+	line-height:18px;
+	} 
+#static2 h2{
+	color:#333;
+	font:12px Arial;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	text-transform: uppercase;
+	}
+
+
+

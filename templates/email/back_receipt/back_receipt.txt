@@ -1,0 +1,20 @@
+<venda_inctemplate name=textEmailDetblocks,type=includes>
+
+==============================================================================
+<cr>
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><venda_ebizname> Back Order Notification - <venda_ohordnum></venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de><venda_ebizname> Benachrichtigung über Nachlieferung - <venda_ohordnum></venda_block label=1012>
+<cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>We would like you to know that some of the items from your order number <venda_ohordnum>, placed on <venda_ohstmpen> have been placed on backorder.</venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de>Wir mšchten Ihnen mitteilen, dass einige der Artikel in Ihrer Bestellung Nr. <venda_ohordnum> vom <venda_ohstmpen> derzeit nicht am Lager sind und nachgeliefert werden.</venda_block label=1022>
+<cr><cr>
+
+<venda_inctemplate name=textEmailMessage,type=includes>
+
+<venda_inctemplate name=textEmailBody,type=includes>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

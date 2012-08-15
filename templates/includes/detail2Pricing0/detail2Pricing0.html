@@ -1,0 +1,62 @@
+<!--PRICING BELOW-->
+<venda_block label=100,invtatrminsubwas&gt;0>
+<venda_block label=101,invtatrnonredprices=null,invtatrredprices&gt;0>
+<venda_block label=102,invtatrwasprices&gt;0,invtatrsellprices=null>
+<!--all reduced, was all the same-->
+<p><strong>Now: <venda_currsym><venda_invtatrminsubsell> to <venda_currsym><venda_invtatrmaxsubsell></strong></p>
+                <p>Was: <venda_currsym><venda_invtatrminsubwas></p>
+</venda_block label=102>
+            
+<venda_block label=103,invtatrwasprices=null,invtatrsellprices&gt;0>
+<!--all reduced sell all same-->
+<p><strong>Now: <venda_currsym><venda_invtatrminsubsell></strong></p>
+                <p>Was: <venda_currsym><venda_invtatrminsubwas> to <venda_currsym><venda_invtatrmaxsubwas></p>
+</venda_block label=103>
+            
+<venda_block label=104,invtatrwasprices=null,invtatrsellprices=null>
+<!--all reduced sell / was all diff-->
+<p><strong>Now: <venda_currsym><venda_invtatrminsubsell> to <venda_currsym><venda_invtatrmaxsubsell></strong></p>
+                <p>Was: <venda_currsym><venda_invtatrminsubwas> to <venda_currsym><venda_invtatrmaxsubwas></p>
+</venda_block label=104>
+            
+<venda_block label=105,invtatrwasprices&gt;0,invtatrsellprices&gt;0>
+<!--just one reduced -->
+<p><strong>Now: <venda_currsym><venda_invtatrminsubsell></strong></p>
+                <p>Was: <venda_currsym><venda_invtatrminsubwas></p>
+</venda_block label=105>
+</venda_block label=101>
+<venda_block label=106,invtatrnonredprices&gt;0,invtatrredprices&gt;0>
+<!--some prices reduced -->
+<p>Now: <venda_currsym><venda_invtatrminsubsell> to <venda_currsym><venda_invtatrmaxsubsell></p>
+                <p>some prices reduced</p>
+</venda_block label=106>
+<venda_block label=108,invtatrnonredprices&gt;0,invtatrredprices=null>
+
+<venda_block label=127,invtatrsellprices&gt;0>
+<!-- one price for all attributes, was and now -->
+<!-- no reductions -->
+<p><venda_currsym><venda_invtatrminsubsell></p>
+</venda_block label=127>
+            
+<venda_block label=128,invtatrsellprices=null>
+<!-- variable prices no reductions -->
+<!-- no reductions -->
+<p>From: <venda_currsym><venda_invtatrminsubsell> to <venda_currsym><venda_invtatrmaxsubsell></p>
+</venda_block label=128>
+</venda_block label=108>
+</venda_block label=100>
+
+<venda_block label=107,invtatrminsubwas=null,invtatrminsubwas=0.00,operator=or>
+<venda_block label=207,invtatrsellprices=null>
+<p>From: <venda_currsym><venda_invtatrminsubsell> to <venda_currsym><venda_invtatrmaxsubsell></p>
+</venda_block label=207>
+            
+<venda_block label=208,invtatrsellprices=1,invtatrminsubsell=notnull,invtatrminsubsell&gt;0.00,operator=and>
+<p><venda_currsym><venda_invtatrminsubsell></p>
+</venda_block label=208>
+            
+<venda_block label=308,invtatrminsubsell=0.00,invtatrminsubsell=null,operator=or>
+<p><venda_invtsymsell></p></venda_block label=308>
+
+</venda_block label=107>
+<!-- END PRICING -->

@@ -1,0 +1,58 @@
+<html>
+<head>
+<venda_block label=1011,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr><title><venda_ebizname> Updated Details</title></venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_usgrref>=guest_de><title><venda_ebizname> Aktualisierte Informationen</title></venda_block label=1012>	
+<venda_block label=1013,mode=value,<venda_usgrref>=guest_fr><title><venda_ebizname> Informations mises à jour</title></venda_block label=1013>	
+</head>
+<body>
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<venda_block label=1021,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Updated Details</strong>
+</venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_usgrref>=guest_de>
+<a href="http://www.urbanoutfitters.de/"><img src="http://www.urbanoutfitters.de/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Aktualisierte Informationen</strong>
+</venda_block label=1022>
+<venda_block label=1023,mode=value,<venda_usgrref>=guest_fr>
+<a href="http://www.urbanoutfitters.fr/"><img src="http://www.urbanoutfitters.fr/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Informations mises à jour</strong>
+</venda_block label=1023>
+<br><br>
+
+<venda_block label=1031,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+<p>Dear <venda_fname>,</p>
+<p>Thank you for updating the details in your <venda_ebizname> account.</p>
+
+<p>For any questions, please contact us at <a href="mailto:<venda_ebizemail>"><venda_ebizemail></a> or ring us at
+<venda_ebizphone> Mon-Fri, 9:00 - 18:00.</p>
+
+<p>Thank you for shopping at <a href="<venda_ebizurl>"><venda_ebizurl></a>.</p>
+</venda_block label=1031>
+
+<venda_block label=1032,mode=value,<venda_usgrref>=guest_de>
+<p>Sehr geehrte/r <venda_fname>,</p>
+<p>Vielen Dank für die Aktualisierung Ihrer Informationen in Ihrem <venda_ebizname> Konto.</p>
+<p>Bei Fragen kontaktieren Sie uns bitte unter <a href="mailto:service@urbanoutfitters.de">service@urbanoutfitters.de</a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.</p>
+<p>Vielen Dank für Ihren Einkauf bei <a href="http://www.urbanoutfitters.de">http://www.urbanoutfitters.de</a>.</p>
+</venda_block label=1032>
+
+<venda_block label=1033,mode=value,<venda_usgrref>=guest_fr>
+<p>Ch&#232;re/Cher <venda_fname>,</p>
+<p>Nous vous remercions d'avoir mis &agrave; jour les informations contenues dans votre compte <venda_ebizname>.</p>
+<p>Pour toute question, contactez-nous &agrave; l'adresse <a href="mailto:service@urbanoutfitters.fr">service@urbanoutfitters.fr</a> ou par t&eacute;l&eacute;phone +33 (0) 1 57 32 44 22 au du lun. au ven., de 9h00 &agrave; 18h00.</p>
+
+<p>Merci d'avoir fait vos achats sur <a href="http://www.urbanoutfitters.fr">www.urbanoutfitters.fr</a></p>
+
+</venda_block label=1033>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

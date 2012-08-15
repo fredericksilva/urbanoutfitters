@@ -1,0 +1,166 @@
+<script type="text/javascript" src="http://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script>
+<script type="text/javascript">var availDoubleCheck = "";</script>
+<script type="text/javascript"><!-- translate htxt for Avail-->
+var availsrch="<venda_htxt mode=make,availsrch=<venda_searchargs>>";
+</script>
+
+<script language="javascript">
+j=0;
+n=0;
+i=0;
+</script>
+<venda_detblock3>
+	<script language="javascript">
+		j++;
+		if (j > 1)
+		{
+			document.write('<span class="mlr6"> </span>');
+		}
+	</script>
+	<venda_resultgrp maxnext=7,xptpl=wz_xapian_advanced,show=pages>
+</venda_detblock3>
+
+<venda_detblock1>
+	<venda_inctemplate name=productlistDetblock2,type=includes>
+</venda_detblock1>
+
+<venda_detblock2>
+	<option value="<venda_ref1>"><venda_name1></option>
+</venda_detblock2>
+<venda_detblock4>
+	<venda_block label=444,extfieldvalue=notnull>
+		<option value="<venda_extfieldvalue>"><venda_extfieldvalue></option>
+	</venda_block label=444>
+</venda_detblock4>
+<!--Edit this javascript so it references your product extended fields-->
+<script language="JavaScript">
+function PassBrandValue() {
+	document.wizform.U.value = document.wizform.brand.options[document.wizform.brand.selectedIndex].value;
+	RefineSearch();
+}
+function PassCategory() {
+	document.wizform.C.value = document.wizform.category.options[document.wizform.category.selectedIndex].value;
+	document.wizform.catname.value = document.wizform.category.options[document.wizform.category.selectedIndex].text;	
+	RefineSearch();
+}
+function PassProductType() {
+	document.wizform.V.value = document.wizform.producttype.options[document.wizform.producttype.selectedIndex].value;
+}
+function Price() {
+	document.wizform.maxprice.value = document.wizform.maxp.options[document.wizform.maxp.selectedIndex].value;
+	RefineSearch();
+	document.wizform.maxp.disabled = document.wizform.maxp;
+}
+function Passpdxt2() {
+	document.wizform.F.value = document.wizform.pdxtfeature2.options[document.wizform.pdxtfeature2.selectedIndex].value;
+}
+function RefineSearch() {
+	document.wizform.enctype="";
+	document.wizform.method = "get";
+	<venda_wizbutton step=xapian,callonly=yes>
+}
+</script>
+
+<venda_form method=get>
+	<!-- Check the include template 'searchFields' to ensure all the correct fields are passed through --->
+	<venda_inctemplate name=searchFields,type=includes>
+	<venda_inctemplate name=advancedsearchFields,type=includes>
+	<input type="hidden" name="searchex" id="searchex" value="<venda_block query=notnull><venda_query></venda_block><venda_block label=336,query=null>*</venda_block label=336>">
+	<input type="hidden" name="sortname" id="sortname" value="<venda_block field_sortname=notnull><venda_field_sortname></venda_block>">
+	<input type="hidden" name="sortprice" id="sortprice" value="<venda_block field_sortprice=notnull><venda_field_sortprice></venda_block>">
+	<input type="hidden" name="sortrelease" id="sortrelease" value="<venda_block field_sortrelease=notnull><venda_field_sortrelease></venda_block>">
+	<input type="hidden" name="catname" id="catname" value="<venda_field_catname>">
+	<div style="display:none" id="tag-searchterm"><venda_block label=444,query=notnull><venda_query></venda_block label=444><venda_block label=445,query=null>*</venda_block label=445></div>
+	
+
+	<div class="sh-mes1">
+		<venda_block label=104,spell=null,sertotal=notnull>
+			We found <span class="searchresults"><venda_sertotal></span> products based on your search for "<span class="searchresults"><!-- mp_trans_searchkwd_start --><venda_block label=444,query=notnull><venda_query></venda_block label=444><venda_block label=445,query=null>*</venda_block label=445><!-- mp_trans_searchkwd_end --></span>". Refine your search by using the following dropdown menus. 
+		</venda_block label=104>
+		
+		<venda_block label=101,spell=notnull,sertotal=notnull>
+			Your search for "<span class="searchresults"><!-- mp_trans_searchkwd_start --><venda_block label=102,catname=notnull><venda_catname> </venda_block label=102><venda_query><!-- mp_trans_searchkwd_end --></span>" returned no results. The closest match was "<span class="searchresults"><!-- mp_trans_searchkwd_start --><venda_spell><!-- mp_trans_searchkwd_end --></span>".
+		</venda_block label=101>
+		
+		<venda_block label=2,sertotal=null>
+			Sorry, we currently have no records related to "<span class="searchresults"><!-- mp_trans_searchkwd_start --><venda_block label=102,catname=notnull><venda_catname> </venda_block label=102><venda_block query=notnull><venda_query></venda_block><venda_block label=336,query=null>*</venda_block label=336><!-- mp_trans_searchkwd_end --></span>" that match your search.
+		</venda_block label=2>
+	</div>
+	<venda_block label=1,sertotal=notnull>
+	<!-- For refine by brand to work, $field{brand} must be inserted into the *.loc template (systems should do this) -->
+	<div class="selSeh">
+		<label for="brand" class="hide">Brand</label>
+		<select name="brand" id="brand" onchange="PassBrandValue();">
+		    <option value="" selected>By Brand</option>
+			   <venda_detail4 field=brand,capitalize>
+		</select>
+		
+		<!-- Your extended field must be set up in the control panel, with the Boolean field values filled in as 'E' - if you choose another value, you must replace the field 'E' in this template and in the two include templates. Search and replace 'pdxtfeature1' with your extended field's tag name throughout this template. The tag name must also be inserted as $field(tagname) in the *.loc template (systems should do this)-->
+		<label for="category" class="hide">By Category</label>
+		<select name="category" id="category" onchange="PassCategory();">
+		    <option value="" selected>By Category</option>
+		    <venda_detail2 field=name1,capitalize>
+		</select>
+		
+		<venda_block label=1100,mode=value,<venda_sessionlocation>=restofworld>
+			<select name="maxp" id="maxp" onchange="Price();">
+				<option value="">By Price</option>
+				<option value="10.00" <venda_block label=125,field_maxprice=10.00>selected</venda_block label=125>>Under <venda_currsym>10.00</option>
+				<option value="30.00" <venda_block label=127,field_maxprice=30.00>selected</venda_block label=127>>Under <venda_currsym>30.00</option>
+				<option value="50.00" <venda_block label=129,field_maxprice=50.00>selected</venda_block label=129>>Under <venda_currsym>50.00</option>
+				<option value="100.00" <venda_block label=134,field_maxprice=100.00>selected</venda_block label=134>>Under <venda_currsym>100.00</option>
+			</select>
+		</venda_block label=1100>
+		
+	</div>
+			
+	<div class="pageselSearch">Page&nbsp;&nbsp;<venda_detail3></div>
+
+	<ul id="productlist">
+		<venda_detail1>
+	</ul>
+	<script language="JavaScript">
+	<!-- 
+		for(t=0;t < document.wizform.brand.options.length;t++){
+			if(document.wizform.brand.options[t].value == '<venda_field_U>' && t!=0){
+				document.wizform.brand.selectedIndex = t;
+				document.wizform.brand.disabled = true;
+			}
+		}
+		for(t=0;t < document.wizform.category.options.length;t++){
+			if(document.wizform.category.options[t].value == '<venda_field_C>' && t!=0){
+				document.wizform.category.selectedIndex = t;
+				document.wizform.category.disabled = true;
+			}
+		}
+		<venda_block label=1101,mode=value,<venda_sessionlocation>=restofworld>
+		for(t=0;t < document.wizform.maxp.options.length;t++){
+			if(document.wizform.maxp.options[t].value == '<venda_field_maxprice>' && t!=0){
+				document.wizform.maxp.selectedIndex = t;
+				document.wizform.maxp.disabled = true;
+			}
+		}
+		</venda_block label=1101>
+	// -->
+	</script>
+</form>
+	<script language="javascript">   
+	j=0;   
+	</script> 
+
+<br class="clear-all">
+	<div class="pageselSearch">Page&nbsp;&nbsp;<venda_detail3></div>
+	<venda_inctemplate type=includes,name=availsearchrecs>
+
+<script type="text/javascript">
+	var availLinks = $('.availlink');
+	for (var i=0;i< availLinks.length;i++)
+	{
+		availLinks[i].href = (availLinks[i].href+'?htxt='+availsrch);
+	}
+</script>
+</venda_block label=1>
+
+<!-- tell productlistDetblock include that this is advanced search -->
+<venda_tpxt mode=set,name=template,value=advancedsearch> 
+<venda_inctemplate name=tealiumtracking,type=includes/tracking>

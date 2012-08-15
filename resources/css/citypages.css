@@ -1,0 +1,2380 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#citypage {
+width:930px;
+margin:0 0 20px 0;
+float:left;
+clear:both;
+background-color:#ffffff;
+font-family:"Times New Roman", Times, serif;
+font-size:12px;
+}
+#citypage a {
+color:#000000;
+}
+#citypage a:hover {
+text-decoration:none;
+}
+
+/* LONDON NAV */
+ul#citypagetopnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#citypagetopnav li {
+display:inline;
+}
+
+ul#citypagetopnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#citypagetopnav li#citypagetopnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat 0 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -162px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -255px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -348px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -441px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -534px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -627px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -720px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#citypagetopnav li#citypagetopnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_londonnav.gif) no-repeat -813px 0;
+}
+
+ul#citypagetopnav  li#citypagetopnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#citypagetopnav  li#citypagetopnav_download a.current {
+background-position:-813px -40px;
+}
+/* END LONDON NAV */
+
+/* 	COPENHAGEN NAV */
+ul#copenhagennav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#copenhagennav li {
+display:inline;
+}
+
+ul#copenhagennav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#copenhagennav li#copenhagennav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat 0 0;
+}
+
+ul#copenhagennav  li#copenhagennav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#copenhagennav li#copenhagennav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -162px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -255px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -348px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -441px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -534px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -627px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -720px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#copenhagennav li#copenhagennav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_copenhagennav.gif) no-repeat -813px 0;
+}
+
+ul#copenhagennav  li#copenhagennav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#copenhagennav  li#copenhagennav_download a.current {
+background-position:-813px -40px;
+}
+/* 	END COPENHAGEN NAV */
+
+/* MANCHESTER NAV */
+ul#manchesternav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#manchesternav li {
+display:inline;
+}
+
+ul#manchesternav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#manchesternav li#manchesternav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat 0 0;
+}
+
+ul#manchesternav  li#manchesternav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#manchesternav  li#manchesternav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#manchesternav li#manchesternav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -162px 0;
+}
+
+ul#manchesternav  li#manchesternav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#manchesternav  li#manchesternav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#manchesternav li#manchesternav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -255px 0;
+}
+
+ul#manchesternav  li#manchesternav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#manchesternav  li#manchesternav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#manchesternav li#manchesternav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -348px 0;
+}
+
+ul#manchesternav  li#manchesternav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#manchesternav  li#manchesternav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#manchesternav li#manchesternav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -441px 0;
+}
+
+ul#manchesternav  li#manchesternav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#manchesternav  li#manchesternav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#manchesternav li#manchesternav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -534px 0;
+}
+
+ul#manchesternav  li#manchesternav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#manchesternav  li#manchesternav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#manchesternav li#manchesternav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -627px 0;
+}
+
+ul#manchesternav  li#manchesternav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#manchesternav  li#manchesternav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#manchesternav li#manchesternav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -720px 0;
+}
+
+ul#manchesternav  li#manchesternav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#manchesternav  li#manchesternav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#manchesternav li#manchesternav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -813px 0;
+}
+
+ul#manchesternav  li#manchesternav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#manchesternav  li#manchesternav_download a.current {
+background-position:-813px -40px;
+}
+/* END MANCHESTER NAV */
+
+/* ANTWERP NAV */
+ul#antwerpnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#antwerpnav li {
+display:inline;
+}
+
+ul#antwerpnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#antwerpnav li#antwerpnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat 0 0;
+}
+
+ul#antwerpnav  li#antwerpnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#antwerpnav li#antwerpnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -162px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -255px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -348px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -441px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -534px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -627px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -720px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#antwerpnav li#antwerpnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_antwerpnav.gif) no-repeat -813px 0;
+}
+
+ul#antwerpnav  li#antwerpnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#antwerpnav  li#antwerpnav_download a.current {
+background-position:-813px -40px;
+}
+/* END ANTWERP NAV */
+
+/* BELFAST NAV */
+ul#belfastnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#belfastnav li {
+display:inline;
+}
+
+ul#belfastnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#belfastnav li#belfastnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat 0 0;
+}
+
+ul#belfastnav  li#belfastnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#belfastnav  li#belfastnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#belfastnav li#belfastnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -162px 0;
+}
+
+ul#belfastnav  li#belfastnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#belfastnav  li#belfastnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#belfastnav li#belfastnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -255px 0;
+}
+
+ul#belfastnav  li#belfastnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#belfastnav  li#belfastnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#belfastnav li#belfastnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -348px 0;
+}
+
+ul#belfastnav  li#belfastnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#belfastnav  li#belfastnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#belfastnav li#belfastnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -441px 0;
+}
+
+ul#belfastnav  li#belfastnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#belfastnav  li#belfastnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#belfastnav li#belfastnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -534px 0;
+}
+
+ul#belfastnav  li#belfastnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#belfastnav  li#belfastnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#belfastnav li#belfastnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -627px 0;
+}
+
+ul#belfastnav  li#belfastnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#belfastnav  li#belfastnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#belfastnav li#belfastnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -720px 0;
+}
+
+ul#belfastnav  li#belfastnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#belfastnav  li#belfastnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#belfastnav li#belfastnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_belfastnav.gif) no-repeat -813px 0;
+}
+
+ul#belfastnav  li#belfastnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#belfastnav  li#belfastnav_download a.current {
+background-position:-813px -40px;
+}
+/* END BELFAST NAV */
+
+/* BIRMINGHAM NAV */
+ul#birminghamnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#birminghamnav li {
+display:inline;
+}
+
+ul#birminghamnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#birminghamnav li#birminghamnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat 0 0;
+}
+
+ul#birminghamnav  li#birminghamnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#birminghamnav li#birminghamnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -162px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -255px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -348px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -441px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -534px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -627px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -720px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#birminghamnav li#birminghamnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_birminghamnav.gif) no-repeat -813px 0;
+}
+
+ul#birminghamnav  li#birminghamnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#birminghamnav  li#birminghamnav_download a.current {
+background-position:-813px -40px;
+}
+/* END BIRMINGHAM NAV */
+
+/* BRISTOL NAV */
+ul#bristolnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#bristolnav li {
+display:inline;
+}
+
+ul#bristolnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#bristolnav li#bristolnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat 0 0;
+}
+
+ul#bristolnav  li#bristolnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#bristolnav  li#bristolnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#bristolnav li#bristolnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -162px 0;
+}
+
+ul#bristolnav  li#bristolnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#bristolnav  li#bristolnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#bristolnav li#bristolnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -255px 0;
+}
+
+ul#bristolnav  li#bristolnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#bristolnav  li#bristolnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#bristolnav li#bristolnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -348px 0;
+}
+
+ul#bristolnav  li#bristolnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#bristolnav  li#bristolnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#bristolnav li#bristolnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -441px 0;
+}
+
+ul#bristolnav  li#bristolnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#bristolnav  li#bristolnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#bristolnav li#bristolnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -534px 0;
+}
+
+ul#bristolnav  li#bristolnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#bristolnav  li#bristolnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#bristolnav li#bristolnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -627px 0;
+}
+
+ul#bristolnav  li#bristolnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#bristolnav  li#bristolnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#bristolnav li#bristolnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -720px 0;
+}
+
+ul#bristolnav  li#bristolnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#bristolnav  li#bristolnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#bristolnav li#bristolnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_bristolnav.gif) no-repeat -813px 0;
+}
+
+ul#bristolnav  li#bristolnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#bristolnav  li#bristolnav_download a.current {
+background-position:-813px -40px;
+}
+/* END BRISTOL NAV */
+
+/* DUBLIN NAV */
+ul#dublinnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#dublinnav li {
+display:inline;
+}
+
+ul#dublinnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#dublinnav li#dublinnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat 0 0;
+}
+
+ul#dublinnav  li#dublinnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#dublinnav  li#dublinnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#dublinnav li#dublinnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -162px 0;
+}
+
+ul#dublinnav  li#dublinnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#dublinnav  li#dublinnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#dublinnav li#dublinnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -255px 0;
+}
+
+ul#dublinnav  li#dublinnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#dublinnav  li#dublinnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#dublinnav li#dublinnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -348px 0;
+}
+
+ul#dublinnav  li#dublinnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#dublinnav  li#dublinnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#dublinnav li#dublinnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -441px 0;
+}
+
+ul#dublinnav  li#dublinnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#dublinnav  li#dublinnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#dublinnav li#dublinnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -534px 0;
+}
+
+ul#dublinnav  li#dublinnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#dublinnav  li#dublinnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#dublinnav li#dublinnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -627px 0;
+}
+
+ul#dublinnav  li#dublinnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#dublinnav  li#dublinnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#dublinnav li#dublinnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -720px 0;
+}
+
+ul#dublinnav  li#dublinnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#dublinnav  li#dublinnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#dublinnav li#dublinnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_dublinnav.gif) no-repeat -813px 0;
+}
+
+ul#dublinnav  li#dublinnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#dublinnav  li#dublinnav_download a.current {
+background-position:-813px -40px;
+}
+/* END DUBLIN NAV */
+
+/* GLASGOW NAV */
+ul#glasgownav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#glasgownav li {
+display:inline;
+}
+
+ul#glasgownav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#glasgownav li#glasgownav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat 0 0;
+}
+
+ul#glasgownav  li#glasgownav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#glasgownav  li#glasgownav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#glasgownav li#glasgownav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -162px 0;
+}
+
+ul#glasgownav  li#glasgownav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#glasgownav  li#glasgownav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#glasgownav li#glasgownav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -255px 0;
+}
+
+ul#glasgownav  li#glasgownav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#glasgownav  li#glasgownav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#glasgownav li#glasgownav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -348px 0;
+}
+
+ul#glasgownav  li#glasgownav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#glasgownav  li#glasgownav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#glasgownav li#glasgownav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -441px 0;
+}
+
+ul#glasgownav  li#glasgownav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#glasgownav  li#glasgownav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#glasgownav li#glasgownav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -534px 0;
+}
+
+ul#glasgownav  li#glasgownav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#glasgownav  li#glasgownav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#glasgownav li#glasgownav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -627px 0;
+}
+
+ul#glasgownav  li#glasgownav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#glasgownav  li#glasgownav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#glasgownav li#glasgownav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -720px 0;
+}
+
+ul#glasgownav  li#glasgownav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#glasgownav  li#glasgownav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#glasgownav li#glasgownav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_glasgownav.gif) no-repeat -813px 0;
+}
+
+ul#glasgownav  li#glasgownav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#glasgownav  li#glasgownav_download a.current {
+background-position:-813px -40px;
+}
+/* END GLASGOW NAV */
+
+/* HAMBURG NAV */
+ul#hamburgnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#hamburgnav li {
+display:inline;
+}
+
+ul#hamburgnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#hamburgnav li#hamburgnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat 0 0;
+}
+
+ul#hamburgnav  li#hamburgnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#hamburgnav li#hamburgnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -162px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -255px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -348px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -441px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -534px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -627px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -720px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#hamburgnav li#hamburgnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_hamburgnav.gif) no-repeat -813px 0;
+}
+
+ul#hamburgnav  li#hamburgnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#hamburgnav  li#hamburgnav_download a.current {
+background-position:-813px -40px;
+}
+/* END HAMBURG NAV */
+
+/* LEEDS NAV */
+ul#leedsnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#leedsnav li {
+display:inline;
+}
+
+ul#leedsnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#leedsnav li#leedsnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat 0 0;
+}
+
+ul#leedsnav  li#leedsnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#leedsnav  li#leedsnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#leedsnav li#leedsnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -162px 0;
+}
+
+ul#leedsnav  li#leedsnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#leedsnav  li#leedsnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#leedsnav li#leedsnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -255px 0;
+}
+
+ul#leedsnav  li#leedsnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#leedsnav  li#leedsnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#leedsnav li#leedsnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -348px 0;
+}
+
+ul#leedsnav  li#leedsnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#leedsnav  li#leedsnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#leedsnav li#leedsnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -441px 0;
+}
+
+ul#leedsnav  li#leedsnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#leedsnav  li#leedsnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#leedsnav li#leedsnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -534px 0;
+}
+
+ul#leedsnav  li#leedsnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#leedsnav  li#leedsnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#leedsnav li#leedsnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -627px 0;
+}
+
+ul#leedsnav  li#leedsnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#leedsnav  li#leedsnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#leedsnav li#leedsnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -720px 0;
+}
+
+ul#leedsnav  li#leedsnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#leedsnav  li#leedsnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#leedsnav li#leedsnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_leedsnav.gif) no-repeat -813px 0;
+}
+
+ul#leedsnav  li#leedsnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#leedsnav  li#leedsnav_download a.current {
+background-position:-813px -40px;
+}
+/* END LEEDS NAV */
+
+/* LIVERPOOL NAV */
+ul#liverpoolnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#liverpoolnav li {
+display:inline;
+}
+
+ul#liverpoolnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#liverpoolnav li#liverpoolnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat 0 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -162px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -255px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -348px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -441px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -534px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -627px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -720px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#liverpoolnav li#liverpoolnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_liverpoolnav.gif) no-repeat -813px 0;
+}
+
+ul#liverpoolnav  li#liverpoolnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#liverpoolnav  li#liverpoolnav_download a.current {
+background-position:-813px -40px;
+}
+/* END LIVERPOOL NAV */
+
+/* MANCHESTER NAV */
+ul#manchesternav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#manchesternav li {
+display:inline;
+}
+
+ul#manchesternav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#manchesternav li#manchesternav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat 0 0;
+}
+
+ul#manchesternav  li#manchesternav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#manchesternav  li#manchesternav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#manchesternav li#manchesternav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -162px 0;
+}
+
+ul#manchesternav  li#manchesternav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#manchesternav  li#manchesternav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#manchesternav li#manchesternav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -255px 0;
+}
+
+ul#manchesternav  li#manchesternav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#manchesternav  li#manchesternav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#manchesternav li#manchesternav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -348px 0;
+}
+
+ul#manchesternav  li#manchesternav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#manchesternav  li#manchesternav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#manchesternav li#manchesternav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -441px 0;
+}
+
+ul#manchesternav  li#manchesternav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#manchesternav  li#manchesternav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#manchesternav li#manchesternav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -534px 0;
+}
+
+ul#manchesternav  li#manchesternav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#manchesternav  li#manchesternav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#manchesternav li#manchesternav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -627px 0;
+}
+
+ul#manchesternav  li#manchesternav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#manchesternav  li#manchesternav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#manchesternav li#manchesternav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -720px 0;
+}
+
+ul#manchesternav  li#manchesternav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#manchesternav  li#manchesternav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#manchesternav li#manchesternav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_manchesternav.gif) no-repeat -813px 0;
+}
+
+ul#manchesternav  li#manchesternav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#manchesternav  li#manchesternav_download a.current {
+background-position:-813px -40px;
+}
+/* END MANCHESTER NAV */
+
+/* STOCKHOLM NAV */
+ul#stockholmnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#stockholmnav li {
+display:inline;
+}
+
+ul#stockholmnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#stockholmnav li#stockholmnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat 0 0;
+}
+
+ul#stockholmnav  li#stockholmnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#stockholmnav li#stockholmnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -162px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -255px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -348px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -441px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -534px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -627px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -720px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#stockholmnav li#stockholmnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_stockholmnav.gif) no-repeat -813px 0;
+}
+
+ul#stockholmnav  li#stockholmnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#stockholmnav  li#stockholmnav_download a.current {
+background-position:-813px -40px;
+}
+/* END STOCKHOLM NAV */
+
+/* EDINBURGH NAV */
+ul#edinburghnav {
+list-style:none;
+width:933px;
+height:40px;
+padding:0;
+margin:0 0 3px 0;
+}
+
+ul#edinburghnav li {
+display:inline;
+}
+
+ul#edinburghnav li a {
+height:40px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#edinburghnav li#edinburghnav_1 a {
+width:162px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat 0 0;
+}
+
+ul#edinburghnav  li#edinburghnav_1 a:hover {
+background-position:0 -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_1 a.current {
+background-position:0 -40px;
+}
+
+ul#edinburghnav li#edinburghnav_intro a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -162px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_intro a:hover {
+background-position:-162px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_intro a.current {
+background-position:-162px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_map a {
+width:93px;;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -255px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_map a:hover {
+background-position:-255px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_map a.current {
+background-position:-255px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_see a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -348px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_see a:hover {
+background-position:-348px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_see a.current {
+background-position:-348px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_spend a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -441px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_spend a:hover {
+background-position:-441px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_spend a.current {
+background-position:-441px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_eat a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -534px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_eat a:hover {
+background-position:-534px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_eat a.current {
+background-position:-534px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_music a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -627px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_music a:hover {
+background-position:-627px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_music a.current {
+background-position:-627px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_stores a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -720px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_stores a:hover {
+background-position:-720px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_stores a.current {
+background-position:-720px -40px;
+}
+
+ul#edinburghnav li#edinburghnav_download a {
+width:93px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_edinburghnav.gif) no-repeat -813px 0;
+}
+
+ul#edinburghnav  li#edinburghnav_download a:hover {
+background-position:-813px -40px;
+}
+
+ul#edinburghnav  li#edinburghnav_download a.current {
+background-position:-813px -40px;
+}
+/* END EDINBURGH NAV */
+
+/* 	CITY SUB NAV */
+
+ul#citypagecitynav {
+list-style:none;
+width:933px;
+height:20px;
+padding:0;
+margin:0 0 20px 0;
+}
+
+ul#citypagecitynav li {
+display:inline;
+}
+
+ul#citypagecitynav li a {
+height:20px;
+text-indent:-9999px;
+float:left;
+margin-right:3px;
+}
+
+ul#citypagecitynav li#citypagecitynav_antwerp a {
+width:66px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat 0 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_antwerp a:hover {
+background-position:0 -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_belfast a {
+width:59px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -66px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_belfast a:hover {
+background-position:-66px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_birmingham a {
+width:84px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -125px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_birmingham a:hover {
+background-position:-125px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_bristol a {
+width:58px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -209px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_bristol a:hover {
+background-position:-209px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_copenhagen a {
+width:88px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -267px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_copenhagen a:hover {
+background-position:-267px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_dublin a {
+width:53px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -355px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_dublin a:hover {
+background-position:-355px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_glasgow a {
+width:69px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -408px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_glasgow a:hover {
+background-position:-408px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_hamburg a {
+width:69px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -477px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_hamburg a:hover {
+background-position:-477px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_leeds a {
+width:48px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -546px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_leeds a:hover {
+background-position:-546px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_liverpool a {
+width:72px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -594px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_liverpool a:hover {
+background-position:-594px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_london a {
+width:64px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -666px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_london a:hover {
+background-position:-666px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_manchester a {
+width:84px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -730px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_manchester a:hover {
+background-position:-730px -20px;
+}
+
+ul#citypagecitynav li#citypagecitynav_stockholm a {
+width:80px;
+background:url(http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/images/citypages/citypages_citynav.gif) no-repeat -814px 0;
+}
+
+ul#citypagecitynav  li#citypagecitynav_stockholm a:hover {
+background-position:-814px -20px;
+}
+
+/* END CITY SUB NAV */
+
+.largecolone {
+width:454px;
+margin-right:20px;
+float:left;
+}
+.largecolone p.header {
+font-size:16px;
+font-weight:bold;
+padding:0;
+margin:0;
+}
+.largecoltwo{
+width:454px;
+float:right;
+}
+.colone {
+width:217px;
+margin-right:20px;
+float:left;
+}
+.column2 {
+float:left;
+width:454px;
+margin:0 20px 0 0;
+}
+.photo {
+clear:both;
+}
+.column21 {
+float:left;
+width:217px;
+margin:0 20px 0 0;
+}
+.column22 {
+float:left;
+width:217px;
+}
+.column3 {
+float:left;
+width:217px;
+}
+.aboutblock {
+background-color:#FFFF99;
+padding:5px;
+margin: 10px 0 0 0;
+}
+.subheader {
+font-style:italic;
+font-size:13px;
+}
+#citypagestores {
+width:930px;
+height:465px;
+position:relative;
+}
+#citypagestores img, #storescontent, #storescontentless {
+position:absolute;
+}
+#storesimage {
+	top:6px;
+	left:558px;
+}
+#storescontent {
+	top:52px;
+	left:26px;
+}
+#storesimageless {
+	top:5px;
+	left:371px;
+}
+#storescontentless {
+	top:80px;
+	left:25px;
+}
+#storescontent p.store {
+float:left;
+margin-right:20px;
+height:300px;
+}
+#map {
+float:left;
+}
+#mapkey {
+float:left;
+margin-right:20px;
+}
+p.photocredits {
+color:#666666;
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+margin: 40px 0 0 0;
+}
+
+/* MAIN CITY LANDING PAGE - GREETINGS FROM... */
+.citypageblurb {
+width:454px;
+border-top:1px solid #000000;
+border-bottom:1px solid #000000;
+margin: 20px 20px 0 0;
+padding: 5px 0 5px 0;
+float:left;
+}
+.citypageblurb a {
+text-transform:uppercase;
+color:#3300FF;
+}
+.citypageblurb a:hover{
+text-decoration:none;
+}
+.citypageblurb p.header {
+font-size:16px;
+font-weight:bold;
+}
+.citypageblurbtext {
+width:217px;
+margin:0 20px 0 0;
+padding:0;
+float:left;
+}
+.citypageblurb img {
+float:left;
+}
+/* MAIN CITY LANDING PAGE - GREETINGS FROM... */
+
+/* CITY PAGES - CHOOSE A CITY */
+#citypagemain {
+width:950px;
+}
+#citypagemain img{
+margin: 20px 20px 0 0;
+float:left;
+}
+/* CITY PAGES - CHOOSE A CITY */
+
+/* READ MORE ABOUT... */
+#pagenav {
+width:930px;
+margin:0 0 5px 0;
+float:left;
+text-align:right;
+font-family:"Courier New", Courier, monospace;
+font-size:12px;
+}
+#pagenav a {
+color:#000000;
+text-decoration:none;
+}
+#pagenav a:hover {
+text-decoration:underline;
+}
+/* READ MORE ABOUT... */

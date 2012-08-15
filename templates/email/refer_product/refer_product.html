@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Welcome to <venda_ebizname></title>
+</head>
+<body>
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Recommendation</strong>
+<br><br>
+
+<table width="760" cellspacing="0" cellpadding="10" border="0" align="center">
+<tr>
+	<td valign="top">
+		<br>
+		Dear <venda_dest_name>,<br>
+		<br>
+		<venda_message><br>
+		<br>
+		<venda_block label=10,med-small=notnull>
+				<a href="<venda_dispview invt=<venda_invtref>>" title="<venda_invtname>"><img src="<venda_media rec=invt,type=movie-swf-pict,key=multi,default=small,dyn=yes,img=no>" title="<venda_invtname>" id="multi" name="multi" border="0" width=150,height=229></a>
+			</venda_block label=10>
+			<venda_block label=11,med-small=null>
+				<a href="<venda_dispview invt=<venda_invtref>>" title="<venda_invtname>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg" alt="<venda_invtname>" title="<venda_invtname>" border="0"></a>
+		</venda_block label=11>
+<br>
+		<a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname>
+			<venda_block label=20,invtsell>0>
+				 at <venda_currsym><venda_invtsell>
+			</venda_block label=20>
+			<venda_block label=21,invtsell=0.00,invtatrminsubsell>0>
+				- From <venda_currsym><venda_invtatrminsubsell>
+			</venda_block label=21>
+		</a>
+		<br><br>
+		
+		Speak to you soon.<br><br>
+		From<br>
+		<venda_block label=44,fname=Empty>A Friend</venda_block label=44>
+		<venda_block label=45,fname!=Empty><venda_fname> <venda_lname></venda_block label=45>
+		<br>
+		<br>Please do not reply to this message<br>
+	</td>
+</tr>
+</table>
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

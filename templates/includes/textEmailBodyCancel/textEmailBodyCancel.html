@@ -1,0 +1,92 @@
+==============================================================================<cr>
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>CONTACT/BILLING DETAILS<cr></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de>KONTAKT-/RECHNUNGSINFORMATIONEN<cr></venda_block label=1012>
+==============================================================================<cr><cr>
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+Cardholder: <venda_ohfname> <venda_ohlname><cr><cr>
+
+Address:
+<venda_block label=73,ohcompany=notnull> <venda_ohcompany></venda_block label=73>
+ <venda_ohnum> <venda_ohaddr1>
+<venda_block label=74,ohaddr2=notnull> <venda_ohaddr2></venda_block label=74>
+ <venda_ohcity>
+<venda_block label=75,ohstate=notnull> <venda_ohstate> </venda_block label=75> <venda_ohzipc>
+ <venda_ohcntry><cr><cr>
+
+Phone:
+ <venda_oharea> <venda_ohphone><cr>
+ </venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>
+Karteninhaber: <venda_ohfname> <venda_ohlname><cr><cr>
+
+Adresse:
+<venda_block label=73,ohcompany=notnull> <venda_ohcompany></venda_block label=73>
+ <venda_ohnum> <venda_ohaddr1>
+<venda_block label=74,ohaddr2=notnull> <venda_ohaddr2></venda_block label=74>
+ <venda_ohcity>
+<venda_block label=75,ohstate=notnull> <venda_ohstate> </venda_block label=75> <venda_ohzipc>
+ <venda_ohcntry><cr><cr>
+
+Telefon:
+ <venda_oharea> <venda_ohphone><cr>
+ </venda_block label=1022>
+
+<venda_detail1>
+------------------------------------------------------------------------------<cr>
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
+SUB TOTAL: <venda_ohsub> <venda_ohcur><cr>
+<venda_block label=670,ohgwtot&gt;0>
+GIFT BOX: <venda_ohgwtot> <venda_ohcur><cr>
+</venda_block label=670>
+<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+DISCOUNT: -<venda_ohdisc> <venda_ohcur><cr>
+</venda_block label=64>
+<venda_block label=65,ohtax!=0.00,ohtax=notnull>
+ESTIMATED TAX: <venda_ohtax> <venda_ohcur><cr>
+</venda_block label=65>
+P&P: <venda_ohship> <venda_ohcur><cr>
+------------------------------------------------------------------------------<cr>
+ORDER TOTAL: <venda_ohtot> <venda_ohcur><cr>
+(including <venda_ohtaxinc> VAT <venda_ohcur>)<cr>
+------------------------------------------------------------------------------<cr>
+<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull>
+ACCOUNT CREDIT USED: <venda_creditaccount> <venda_ohcur><cr>
+<venda_block label=65,storecredit&gt;0.00,storecredit=notnull>
+CREDIT REMAINING: <venda_storecredit> <venda_ohcur><cr>
+</venda_block label=65>
+BALANCE PAID: <venda_balance> <venda_ohcur><cr>
+</venda_block label=70>
+<cr>
+<venda_block label=62,coupons=notnull>
+VOUCHERS:<cr>
+</venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de>
+ZWISCHENSUMME: <venda_ohsub> <venda_ohcur><cr>
+<venda_block label=670,ohgwtot&gt;0>
+GESCHENKBOX: <venda_ohgwtot> <venda_ohcur><cr>
+</venda_block label=670>
+<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+RABATT: -<venda_ohdisc> <venda_ohcur><cr>
+</venda_block label=64>
+<venda_block label=65,ohtax!=0.00,ohtax=notnull>
+VORAUSSICHTLICHE STEUERN: <venda_ohtax> <venda_ohcur><cr>
+</venda_block label=65>
+Porto und Verpackung: <venda_ohship> <venda_ohcur><cr>
+------------------------------------------------------------------------------<cr>
+GESAMTBETRAG: <venda_ohtot> <venda_ohcur><cr>
+(einschlieﬂlich <venda_ohtaxinc> MwSt <venda_ohcur>)<cr>
+------------------------------------------------------------------------------<cr>
+<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull>
+VERWENDETES KONTOGUTHABEN: <venda_creditaccount> <venda_ohcur><cr>
+<venda_block label=65,storecredit&gt;0.00,storecredit=notnull>
+VERBLEIBENDES GUTHABEN: <venda_storecredit> <venda_ohcur><cr>
+</venda_block label=65>
+BEZAHLTER BETRAG: <venda_balance> <venda_ohcur><cr>
+</venda_block label=70>
+<cr>
+<venda_block label=62,coupons=notnull>
+GUTSCHEINE:<cr>
+</venda_block label=1032>
+<venda_detail3><cr>
+</venda_block label=62>
+<cr>

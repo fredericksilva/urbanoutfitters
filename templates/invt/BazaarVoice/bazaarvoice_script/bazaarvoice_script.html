@@ -1,0 +1,42 @@
+<script type="text/javascript" language="javascript">
+<!--
+document.domain = "<venda_setting type=ebiz,name=bvdomain>";
+function ratingsDisplayed(totalReviewsCount, avgRating, ratingsOnlyReviewCount, recommendPercentage, productID)
+{
+    if (totalReviewsCount == 0) {
+        jQuery("#BVReviewsContainer").hide();
+		jQuery("#BVSVPLinkContainer").hide();
+		jQuery("#noReview").show();
+		//jQuery("#noReviewbtn").html(jQuery("div#BVRRRatingSummaryLinkWriteFirstID").html());
+		jQuery("#noReviewbtn").html(jQuery("div#BVReviewsContainer #BVRRWidgetID #BVRRContentContainerID #BVRRDisplayContentID #BVRRDisplayContentHeaderID").html());
+    }
+	jQuery("#BVRRRatingSummaryLinkReadID a").click(function(){
+		productTab.set('activeIndex', 0);
+    });
+
+}
+//-->
+</script>
+<venda_block label=1771,mode=value,<venda_islive>!=1>
+	<venda_block label=1011,mode=value,<venda_sessionlanguage>=en>
+	<link rel="stylesheet" href="<venda_setting type=ebiz,name=bvurlen>/bvstaging/static/<venda_setting type=ebiz,name=bvdisplaycodeen>/bazaarvoice.css" ></link>
+	<script language="JavaScript" src="<venda_setting type=ebiz,name=bvurlen>/bvstaging/static/<venda_setting type=ebiz,name=bvdisplaycodeen>/bazaarvoice.js" type="text/javascript"></script>
+	</venda_block label=1011>
+	<venda_block label=1012,mode=value,<venda_sessionlanguage>=de>
+	<link rel="stylesheet" href="<venda_setting type=ebiz,name=bvurlde>/bvstaging/static/<venda_setting type=ebiz,name=bvdisplaycodede>/bazaarvoice.css" ></link>
+	<script language="JavaScript" src="<venda_setting type=ebiz,name=bvurlde>/bvstaging/static/<venda_setting type=ebiz,name=bvdisplaycodede>/bazaarvoice.js" type="text/javascript"></script>
+	</venda_block label=1012>
+</venda_block label=1771>
+
+<venda_block label=1772,mode=value,<venda_islive>=1>
+	<venda_block label=1011,mode=value,<venda_sessionlanguage>=en>
+	<link rel="stylesheet" href="<venda_setting type=ebiz,name=bvurlen>/static/<venda_setting type=ebiz,name=bvdisplaycodeen>/bazaarvoice.css" ></link>
+	<script language="JavaScript" src="<venda_setting type=ebiz,name=bvurlen>/static/<venda_setting type=ebiz,name=bvdisplaycodeen>/bazaarvoice.js" type="text/javascript"></script>
+	</venda_block label=1011>
+	<venda_block label=1012,mode=value,<venda_sessionlanguage>=de>
+	<link rel="stylesheet" href="<venda_setting type=ebiz,name=bvurlde>/static/<venda_setting type=ebiz,name=bvdisplaycodede>/bazaarvoice.css" ></link>
+	<script language="JavaScript" src="<venda_setting type=ebiz,name=bvurlde>/static/<venda_setting type=ebiz,name=bvdisplaycodede>/bazaarvoice.js" type="text/javascript"></script>
+	</venda_block label=1012>
+</venda_block label=1772>
+
+<link type="text/css" rel="stylesheet" href="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/css/bazaarvoice_cust.css" ></link>

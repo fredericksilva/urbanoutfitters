@@ -1,0 +1,40 @@
+<style type="text/css">
+/* Primarynav section higlight */
+#primaryNav li a.headlink.top-cat-brands { color:#0cf!important; }
+</style>
+
+<venda_detblock>
+	<li class="brands" id="<venda_icatref1>Brands">
+		<venda_category rec=icat,ref=<venda_icatref1>,temp=brand_list,cacheall=1>
+	</li>
+</venda_detblock>
+
+
+<venda_block label=53,cattot!=>
+	
+
+
+<div id="brands">
+	<ol class="brandNav">
+		<venda_category rec=icat,ref=branddirectory,temp=brand_nav,cacheall=1>
+	</ol>
+	
+	<ol class="brandList">
+		<venda_detail>
+	</ol>
+</div>
+</venda_block label=53>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".scroll").click(function(event){
+		event.preventDefault();
+		var full_url = this.href;
+		var parts = full_url.split("#");
+		var trgt = parts[1];
+		var target_offset = $("#"+trgt).offset();
+		var target_top = target_offset.top - 35;
+		$('html, body').animate({scrollTop:target_top}, 500);
+	});
+});
+</script>

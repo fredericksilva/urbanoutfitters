@@ -1,0 +1,226 @@
+<venda_inctemplate name=orderDetblocks,type=includes>
+
+<venda_detblock3>
+	<venda_block label=1200,mode=value,<venda_currency>=Pounds>
+		<!--input type="hidden" name="shipmethod_<venda _pkrfnbr>" value="<venda _shipmethod>"-->
+		<p><input class="radiobox" type="radio" name="shipmethod_<venda_pkrfnbr>" value="<venda_shipmethod>" id="<venda_shipmethod>" <venda_block label=100,shipcheck=1>checked</venda_block label=100> onClick='Step2(wizform,"confirm","","<venda_pkrfnbr>","changerate","","","_self","")'> <label for="<venda_shipmethod>"><venda_page page=<venda_shipmethod>pound><!--<venda_shipname>--></label>
+		<a class="ship-details" href="#" onclick="popup('<venda_codehttp>?ex=co_disp-view&page=<venda_shipmethod>_moreinfopound&bsref=<venda_bsref>&layout=popups','_blank','location=0,toolbar=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=500,height=400'); return false;"> more information</a></p>
+	</venda_block label=1200>
+	
+	<venda_block label=1201,mode=value,<venda_currency>=Euros>
+		<p><input class="radiobox" type="radio" name="shipmethod_<venda_pkrfnbr>" value="<venda_shipmethod>" id="<venda_shipmethod>" <venda_block label=100,shipcheck=1>checked</venda_block label=100> onClick='Step2(wizform,"confirm","","<venda_pkrfnbr>","changerate","","","_self","")'> <label for="<venda_shipmethod>"><venda_page page=<venda_shipmethod>euro><!--<venda_shipname>--></label>
+		<a class="ship-details" href="#" onclick="popup('<venda_codehttp>?ex=co_disp-view&page=<venda_shipmethod>_moreinfoeuro&bsref=<venda_bsref>&layout=popups','_blank','location=0,toolbar=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=500,height=400'); return false;"> more information</a></p>
+	</venda_block label=1201>
+</venda_detblock3>
+
+<venda_detblock9>
+<p><venda_codesc></p>
+</venda_detblock9>
+
+<!-- start columns 2 - 3 - full -->
+<div id="col-two-three-full" class="font2">
+
+<div class="font1">
+	<div class="heading-all"><h1>Order Summary</h1></div>
+</div>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<venda_form>
+<input type="hidden" name="rfrfnbr" value="<venda_defaultrefer>">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+<venda_block label=71,usgrref=instore><venda_block label=72,mode=value,<venda_glxt mode=get,name=addsnotdone>=1>
+// this was an instore user who was not logged in before checking out: send back to fill in addresses
+location.href='<venda_codehttps>?ex=co_wizr-instore&bsref=<venda_bsref>&step=zipcode';
+</venda_block label=72></venda_block label=71>
+
+numberAddresses=0;
+// -->
+</script>
+<div id="col-two-order-summary" class="left">
+<div id="col-two-order-summary-box">
+	<div id="col-two-order-summary-inside">
+		<!-- start package summary -->
+			<venda_detail1>
+		<!-- end package summary -->
+	</div>
+</div>
+	
+
+	
+</div>
+
+<div id="col-three-order-summary" class="left">
+	<div id="col-three-order-summary-inside">
+		<!-- start contact details -->
+		<div id="order-summary-billing-to" class="order-summary-box">
+        <div class="OrderSummaryHdr">Billing Address</div>
+			<venda_inctemplate name=contactDetails,type=includes>
+			<a href="#" onClick='<venda_wizbutton step=billto,mode=process,param1=show,param2=edit,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_changebillingaddress.gif" alt="Change Billing Address" border="0"></a>
+		</div>
+		<!-- end contact details -->		
+		
+        
+        <div id="order-summary-order-total" class="order-summary-box">
+		<div class="OrderSummaryHdr">Order Totals</div>
+		<div class="ml5"><venda_inctemplate name=orderSummary,type=includes></div>
+		
+        <venda_block label=82,realpktot&gt;0>
+		<a href="#" onClick='<venda_wizbutton step=coupon,mode=process,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/btn_promotionvoucher.gif" alt="Use Promotional Voucher" border="0"></a>
+		</venda_block label=82>
+        
+        <venda_block label=3,ohcodisc&gt;0,accdisc&gt;0,operator=or>
+		<!-- start promotions -->
+		<div id="promo-included">
+			<strong>Promotions Included:</strong> <venda_detail9>
+			<!-- <p>Your order includes &pound;<venda_ohcodisc> voucher</p> -->
+			<venda_block label=5,accdisc&gt;0>
+			<p>Your order includes <venda_currsym><venda_accdisc> accessory discount</p>
+			</venda_block label=5>
+		</div>
+		<!-- end promotions -->
+		</venda_block label=3>
+        
+        </div>
+        
+		
+	
+        <venda_block label=11,showpayments=notnull,showcredit=notnull>
+		<!-- start payment details -->
+		<div id="order-summary-payment-options" class="order-summary-box">
+        <div class="OrderSummaryHdr">Payment Options</div>
+		<venda_paymenttypes templatetype=paytype/frontend,template=paymenttypes_entry,ohrfnbr=<venda_ohrfnbr>,entry=1>
+		</div>
+        <!-- end payment details -->
+		
+        <div class="tickbox_container">
+			<input type="checkbox" name="confirmord" id="confirmord"><label for="confirmord">By placing your order you agree to UrbanOutfitters.co.uk's <a href="#" onclick="popup('<venda_dispview page=privacypolicy>&layout=popups')">Privacy notice</a> and <a href="#" onclick="popup('<venda_dispview page=termsandconditions>&layout=popups')">Terms and Conditions</a>.</label>
+		</div>
+		<script language="javascript" type="text/javascript">
+		<!-- 
+		// realpktot is number of packages minus gift certificate packages
+		if (<venda_realpktot>>1) {
+			alert("Please Note: Your delivery charge may have increased because items in your order will need to be sent separately.\r\nThis could be because you are sending items to more than one address,\r\nor you have pre-ordered titles which will be sent later when they are released for sale.");
+		}
+		
+		function checkCardType(){
+			
+			<venda_tpcomment>//on form submit add enough 0s to the beginning of the account number field so there are 10 digits</venda_tpcomment>
+			if (jQuery("#cardtype").val()==="directdebitsde"){
+				var value = jQuery("#elv #elvohccnum input").val();
+				var length = value.length;
+				var zeros = "";
+				for (i=length;i<10;i++){
+					var zeros = zeros+"0";
+				}
+				jQuery("#elv #elvohccnum input").val(zeros+value);
+			};
+			
+			cardtype=document.wizform.cardtype;
+			issue=document.wizform.ohccissue;
+			month=document.wizform.month;
+			year=document.wizform.year;
+			startmonth=document.wizform.startmonth;
+			startyear=document.wizform.startyear;
+			
+			if (cardtype.value=="solo" && issue.value==""){
+				alert("Please enter issue number.");
+				issue.focus();
+				return false;
+			}
+			if (cardtype.value=="switchmaestro"){
+				if((month.options[month.selectedIndex].value!="" && year.options[year.selectedIndex].value!="") &&
+				   (startmonth.options[startmonth.selectedIndex].value!="" && startyear.options[startyear.selectedIndex].value!="")){
+					//Has expiry date and start date but no issue number.
+				} else if((month.options[month.selectedIndex].value!="" && year.options[year.selectedIndex].value!="") && issue.value!=""){
+					//Has expiry date and Issue number but no start date.
+				} else {
+					alert("Please enter issue number.");
+					issue.focus();
+					return false;
+				}
+			}
+			if (!document.wizform.confirmord.checked) {
+				alert("Please tick the box to confirm your delivery and billing address details are correct.");
+				return false;
+			}
+			return Step2(document.wizform,"next","process", "process", "","_self","yes","","");
+		}
+		
+		// -->
+		</script>
+		</venda_block label=11>
+		
+		<venda_block label=111,showpayments=null,showcredit=null,operator=or>
+		<script language="javascript" type="text/javascript">
+		<!-- 
+		// realpktot is number of packages minus gift certificate packages
+		if (<venda_realpktot>>1) {
+			alert("Please Note: Your delivery charge may have increased because items in your order will need to be sent separately.\r\nThis could be because you are sending items to more than one address,\r\nor you have pre-ordered titles which will be sent later when they are released for sale.");
+		}
+		function checkCardType(){
+			return Step2(document.wizform,"next","process", "process", "","_self","yes","","");
+		}
+
+		// -->
+		</script>		
+		</venda_block label=111>
+		
+        <span style="display:none">DO NOT DELETE - IE6 Repeating Characters bug fix</span>
+        	
+		<div id="btn-place-order">
+			<input type="image" onClick='checkCardType(); return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_placeyourorder.gif" alt="PLACE YOUR ORDER">
+		</div>
+	</div>
+</div>
+
+</form>
+
+<venda_tpxt mode=set,name=confirmtrack,value=affiliatewindowsconfirm>
+<venda_block label=20,workflow=instore>
+<venda_tpxt mode=set,name=instore,value=1>
+</venda_block label=20>
+
+<venda_tpxt mode=set,name=track,value=ordersummary>
+<div style="display:none;" class="orfn-order-sum">
+<div style="display:none;" class="orderid"><venda_ohordnum></div>
+<div style="display:none;" class="orderdiscount"><venda_ohdisc></div>
+<div style="display:none;" class="ordersubtotal"><venda_ohsub></div>
+<div style="display:none;" class="ordershipping"><venda_ohship></div>
+<div style="display:none;" class="ordertax"><venda_block label=1220,ohtaxinc=0.00><venda_ohtax></venda_block label=1220><venda_block label=1221,ohtax=0.00><venda_ohtaxinc></venda_block label=1221></div>
+<div style="display:none;" class="orderpaymenttype"><venda_ohcctype></div>
+<div style="display:none;" class="ordertotal"><venda_ohtot></div>
+<div style="display:none;" class="customeremail"><venda_ohemail></div>
+</div>
+
+<!-- 
+workflow: <venda_workflow>
+step: <venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orcf-screen.html
+ -->
+ 
+ </div>
+<!-- end columns 2 - 3 - full -->
+<!-- MyCoupons Tracking Pixel -->
+
+<script type="text/javascript">
+var PROMO_COOKIE_NAME = 'PROMO';
+
+function putCompareCookie(CookieVal){
+	var cj = new CookieJar({expires: 3600 * 24 * 7, path: '/'});  
+	cj.put(PROMO_COOKIE_NAME, CookieVal);    
+}
+var promocode = "<venda_co_promotions_subpromo>";
+<venda_block label=119,mode=value,promocode=notnull>
+	promocode = "<venda_co_promotions_subpromo>";
+</venda_block label=119>
+<venda_block label=120,mode=value,promocode=null>
+ 	promocode = "";
+</venda_block label=120>
+putCompareCookie(promocode);
+</script>
+
+<!-- MyCoupons Tracking Pixel -->

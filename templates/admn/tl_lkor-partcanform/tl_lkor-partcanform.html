@@ -1,0 +1,51 @@
+<venda_detblock1>
+<venda_detail2>
+</venda_detblock1>
+
+<venda_detblock2>
+<tr>
+	<input type="hidden" name="oirfnbr" value="<venda_oirfnbr>">
+	<input type="hidden" name="oiivref" value="<venda_oiivref>">
+	<td><venda_oiivname></td>
+	<td><input type="checkbox" name="can<venda_oirfnbr>" value="1"></td>
+	<td>
+		<venda_block label=10,oistatus=2,oistatus=On Hold,operator=or>In Progress</venda_block label=10>
+		<venda_block label=11,oistatus=3>Released for delivery</venda_block label=11>
+		<venda_block label=12,oistatus=4>Backordered</venda_block label=12>
+		<venda_block label=13,oistatus=5>Shipped</venda_block label=13>
+		<venda_block label=14,oistatus=6>Returned</venda_block label=14>
+		<venda_block label=15,oistatus!=2,oistatus!=3,oistatus!=4,oistatus!=5,oistatus!=6,oistatus!=On Hold><venda_oistatus></venda_block label=15>
+	</td>	
+</tr>
+</venda_detblock2>
+
+
+
+
+<h1>Cancel Items From this Order</h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<venda_block label=31,preverrors=notnull><h2 class="error"><venda_preverrors></h2></venda_block label=31>
+
+<venda_form>
+<input type="hidden" name="usercan" value="1">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="ohrfnbr" value="<venda_ohrfnbr>">
+
+<table summary="The items from this order, their current status, and the option to cancel an item" width="100%" border="1">
+<thead>
+<tr>
+	<th scope="col">Item</th>
+	<th scope="col">Cancel</th>
+	<th scope="col">Status</th>
+</tr>
+</thead>
+<tbody>
+<venda_detail1>
+</tbody>
+</table>
+
+<div id="buttons">
+<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_cancelitems.gif" alt="Cancel Items" class="right">
+</div>
+
+</form>

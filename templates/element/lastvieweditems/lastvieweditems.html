@@ -1,0 +1,28 @@
+<script type="text/javascript">
+function setCustomRVI() {
+	//borrow recently viewed items cookie (if the cookie exists)
+	var cj = new CookieJar({expires:'',path: '/'});
+	if (cj.get("RVI")!=null) {
+		var listOfRVIs = cj.get("RVI");
+		//copy the list of recently viewed items to the "Custom RVI Cookie"
+		cj.put("customRVI",listOfRVIs);
+		//alert("recently viewed items:"+listOfRVIs);
+	}
+}
+</script>
+
+<venda_block label=416,mode=value,<venda_tpxt mode=get,name=invtref>=>
+<script type="text/javascript">
+var cj = new CookieJar({expires: 3600 * 24 * 7, path: '/'});
+addEvent(window, 'load', function() { Venda.Widget.RecentlyViewedItems.setRVISiteWide(cj);setCustomRVI(); }, false);
+</script>
+<div id="showRVISiteWide" class="LshowRVISiteWide">
+<h2><span></span><venda_elementname></h2>
+<ul id="rvisitewidelist"><venda_block mode=value,<venda_elxtrvinumber>!=><venda_rvi temp=rvisitewide_detblock,limit=<venda_elxtrvinumber>></venda_block><venda_block mode=value,<venda_elxtrvinumber>=><venda_rvi temp=rvisitewide_detblock,limit=3></venda_block></ul>
+</div>
+</venda_block label=416>
+<venda_block label=417,mode=value,<venda_tpxt mode=get,name=invtref>!=>
+<script type="text/javascript">
+addEvent(window, 'load', function() { Venda.Widget.RecentlyViewedItems.setRecentlyViewedItems('<venda_tpxt mode=get,name=invtref>', ("<venda_tpxt mode=get,name=invtref>", <venda_block mode=value,<venda_elxtrvinumber>!=><venda_elxtrvinumber></venda_block><venda_block mode=value,<venda_elxtrvinumber>=>3</venda_block>));setCustomRVI();}, false);
+</script>
+</venda_block label=417>

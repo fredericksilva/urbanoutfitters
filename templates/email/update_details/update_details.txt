@@ -1,0 +1,62 @@
+==============================================================================
+
+
+<venda_block label=1011,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr><venda_ebizname> Updated Details</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_usgrref>=guest_de><venda_ebizname> Aktualisierte Daten</venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_usgrref>=guest_fr><venda_ebizname> Informations mises à jour</venda_block label=1013>
+
+
+==============================================================================
+
+
+
+
+<venda_block label=1021,mode=value,<venda_usgrref>!=guest_de,<venda_usgrref>!=guest_fr>
+Dear <venda_fname>,
+
+
+
+Thank you for updating the details in your <venda_ebizname> account.
+
+
+
+For any questions, please contact us at <venda_ebizemail> or ring us at <venda_ebizphone> Mon-Fri, 9:00 - 18:00.
+
+
+
+Thank you for shopping at <venda_ebizurl>.
+
+
+</venda_block label=1021>
+
+<venda_block label=1022,mode=value,<venda_usgrref>=guest_de>
+Sehr geehrte/r <venda_fname>,
+
+
+Vielen Dank für die Aktualisierung Ihrer Informationen in Ihrem <venda_ebizname> Konto.
+
+
+Bei Fragen kontaktieren Sie uns bitte unter service@urbanoutfitters.de oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.
+
+
+Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
+
+
+</venda_block label=1022>
+
+<venda_block label=1023,mode=value,<venda_usgrref>=guest_fr>
+Ch&#232;re/Cher <venda_fname>,
+
+
+Nous vous remercions d'avoir mis à jour les informations contenues dans votre <venda_ebizname> compte.
+
+
+Pour toute question, contactez-nous à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+
+
+Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
+
+
+</venda_block label=1023>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

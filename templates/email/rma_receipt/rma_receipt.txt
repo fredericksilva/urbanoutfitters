@@ -1,0 +1,57 @@
+<venda_detblock1>
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+
+Your RMA No.: <venda_com>.
+
+
+The following products have been returned:
+
+</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de>
+
+Ihre RMA-Nr.: <venda_com>.
+
+
+Folgende Produkte wurden zurückgesandt:
+
+</venda_block label=1012>
+<venda_block label=1013,mode=value,<venda_ohusgrrf>=guest_fr>
+
+Votre numéro RMA : <venda_com>.
+
+
+Les articles suivants ont été retournés :
+
+</venda_block label=1013>
+<venda_detail2>
+</venda_detblock1>
+
+
+<venda_detblock2>
+- <venda_oiivname> (<venda_status>)<cr>
+</venda_detblock2>
+
+
+==============================================================================
+
+<venda_block label=1014,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<venda_ebizname> Return Confirmation
+
+</venda_block label=1014>
+<venda_block label=1015,mode=value,<venda_ohusgrrf>=guest_de>
+<venda_ebizname> Rückgabebestätigung
+
+</venda_block label=1015>
+<venda_block label=1016,mode=value,<venda_ohusgrrf>=guest_fr>
+<venda_ebizname> Confirmation de retour
+
+</venda_block label=1016>
+==============================================================================
+
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_detail1>
+
+<venda_inctemplate name=textEmailFooter,type=includes>

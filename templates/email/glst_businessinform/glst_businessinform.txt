@@ -1,0 +1,29 @@
+Gift List Confirmation
+
+
+
+Dear <venda_ebizname>
+
+
+
+<venda_glstcreatortitle> <venda_glstcreatorfname> <venda_glstcreatorlname><venda_block label=10,glstpartnerfname=notnull> and <venda_glstpartnertitle> <venda_glstpartnerfname> <venda_glstpartnerlname> have</venda_block label=10><venda_block label=11,glstpartnerfname=null> has</venda_block label=11> created:
+
+
+
+Gift List Details
+
+
+
+Gift List ID: <venda_glstrfnbr>
+
+Occasion: <venda_glsteventtype><venda_glsteventtypeother>
+
+Occasion Date: <venda_glsteventdate>
+
+Creator's Email Address: <venda_usemail>
+
+
+
+Many thanks
+
+Venda

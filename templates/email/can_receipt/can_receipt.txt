@@ -1,0 +1,43 @@
+<venda_inctemplate name=textEmailDetblocksCancel,type=includes>
+
+==============================================================================
+
+
+<venda_block label=1011,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><venda_ebizname> Order Cancellation - <venda_ohordnum></venda_block label=1011>
+<venda_block label=1012,ohusgrrf=guest_de><venda_ebizname> Auftragsstornierung - <venda_ohordnum></venda_block label=1012>
+<venda_block label=1013,ohusgrrf=guest_fr><venda_ebizname> Annulation de commande - <venda_ohordnum></venda_block label=1013>
+
+
+==============================================================================
+
+
+
+<venda_inctemplate name=textEmailHeader,type=includes>
+
+<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>Thank you for visiting UrbanOutfitters.co.uk. Unfortunately we were unable to despatch some or all the items in order number <venda_ohordnum>.</venda_block label=1021>
+<venda_block label=1022,ohusgrrf=guest_de>Vielen Dank für Ihren Besuch bei <venda_ebizname>. Leider können wir einige oder alle bestellten Artikel nicht versenden. Die Auftragsnummer lautet <venda_ohordnum>.</venda_block label=1022>
+<venda_block label=1023,ohusgrrf=guest_fr>Nous vous remercions de votre visite. <venda_ebizname> Nous ne pouvons malheureusement pas expédier la totalité ou certains articles de la commande numéro <venda_ohordnum>.</venda_block label=1023>
+
+
+
+
+<venda_inctemplate name=textEmailBodyCancel,type=includes>
+
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>We apologise for any inconvenience this may have caused. If you have any questions regarding this order, please contact us at <venda_ebizemail> or ring us at <venda_ebizarea> <venda_ebizphone> Mon-Fri, 9:00-18:00.
+
+
+Thank you for shopping at <venda_ebizurl>.</venda_block label=1031>
+<venda_block label=1032,ohusgrrf=guest_de>Wir entschuldigen uns für jegliche dadurch verursachte Unannehmlichkeiten. Bei Fragen zu dieser Bestellung, kontaktieren Sie uns bitte per E-Mail unter service@urbanoutfitters.de oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag, 10:00 Uhr bis 18:00 Uhr.
+
+
+Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de/.</venda_block label=1032>
+<venda_block label=1033,ohusgrrf=guest_fr>Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, veuillez nous contacter à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+
+
+Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr/.
+</venda_block label=1033>
+
+
+
+
+<venda_inctemplate name=textEmailFooter,type=includes>

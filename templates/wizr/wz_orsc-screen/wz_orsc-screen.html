@@ -1,0 +1,253 @@
+<!-- Avail -->
+<script type="text/javascript">
+var availProdsDetsc = "";
+</script>
+<!-- Avail -->
+<venda_detblock>
+<venda_block label=41,oiwizcode=null>
+	<input type="hidden" name="oiord" value="<venda_invtref>">
+	
+	<venda_block label=115,oiitype=3>
+	<!-- if product is gift certificate -->
+	<tr class="tr-basket">
+		<td>
+			<div class="basket-thumb">
+				<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>&bklist=icat,3,shop,home" title="Buy another <venda_invtname>" class="invtname-text bold"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_thu.jpg" style="width:67px;height:93px;"></a>
+			</div>
+			<div class="box-invt">
+				<div class="basket-invt"><a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>&bklist=icat,3,shop,home" title="Buy another <venda_invtname>"><venda_invtname></a></div>
+				<div class="mt5"><venda_invtref></div>
+				<div class="basket-small-text"><a href="#"  onClick='document.wizform.layout.value="checkout";Step2(document.wizform,"shopdelrf","process","sprf","<venda_invtref>,<venda_oirf>","_self","","",""); return false;'>Remove</a></div>
+			</div>
+		</td>
+		<td class="td-basket"><venda_currsym><venda_invtsell></div></td>
+		<td style="text-align: center;"><div style="line-height:18px;">x</div></td>
+		<td style="text-align: center;"><venda_oiqty></td>
+		<td style="text-align: right;"><div style="text-align: right;"><venda_currsym><venda_oiextprice></div></td>
+	</tr>
+	</venda_block label=115>
+	
+	<venda_block label=116,oiitype!=3>
+	<!-- if product is not gift certificate -->
+	<tr class="tr-basket">
+		
+		<venda_block label=111,invtatt1=notnull>
+		<!-- if product has attributes -->
+		<td>
+			<div class="basket-thumb">
+				<a href="<venda_dispview invt=<venda_invtparef>>" class="invtname-text bold">
+				<venda_block label=119,med-thumb=notnull>
+					<venda_media rec=invt,type=movie-swf-pict,key=thumb,alt=<venda_invtname>,width=67,height=103>
+				</venda_block label=119>
+				<venda_block label=120,med-thumb=null>
+					<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_thu.jpg" alt="<venda_invtname>" style="width:67px;height:93px;">
+				</venda_block label=120>
+				</a>
+			</div>
+			<div class="box-invt">
+				<div class="basket-invt"><a href="<venda_dispview invt=<venda_invtparef>>"><strong><venda_invtname></strong></a></div>
+				<div class="mt5"><venda_invtparef></div>
+				<div class="price-text">Colour: <strong><venda_invtatt1></strong></div>
+				<venda_block label=112,invtatt2=notnull><div class="price-text">Size: <strong><venda_invtatt2></strong></div></venda_block label=112>
+				<div class="basket-small-text"><a href="#"  onClick='document.wizform.layout.value="checkout";Step2(document.wizform,"shopdelrf","process","sprf","<venda_invtref>","_self","","",""); return false;'>Remove</a></div>
+				<venda_block label=30,invtpreorder=notnull>
+					<p>This item is not released until <venda_invtreleasedy>/<venda_invtreleasemn>/<venda_invtreleaseyr></p>
+				</venda_block label=30>
+			</div>
+		</td>
+		</venda_block label=111>
+		
+		<venda_block label=113,invtatt1=null>
+		<!-- if product has no attributes -->
+		<td>
+			<div class="basket-thumb">
+			<a href="<venda_dispview invt=<venda_invtref>>">
+				<venda_block label=117,med-thumb=notnull>
+					<venda_media rec=invt,type=movie-swf-pict,key=thumb,alt=<venda_invtname>,width=67,height=103>
+				</venda_block label=117>
+				<venda_block label=118,med-thumb=null>
+					<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_thu.jpg" alt="<venda_invtname>" style="width:67px;height:93px;">
+				</venda_block label=118>
+			</a>
+			</div>
+			<div class="box-invt">
+				<p class="basket-invt"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></p>
+				<p class="mt5"><venda_invtref></p>
+				<p class="basket-small-text"><a href="#"  onClick='document.wizform.layout.value="checkout";Step2(document.wizform,"shopdelrf","process","sprf","<venda_invtref>","_self","","",""); return false;'>Remove</a></p>
+				<venda_block label=30,invtpreorder=notnull>
+					<p>This item is not released until <venda_invtreleasedy>/<venda_invtreleasemn>/<venda_invtreleaseyr></p>
+				</venda_block label=30>
+			</div>
+		</td>
+		</venda_block label=113>
+		
+		<td>
+			<venda_block label=17,invtwas=notnull>
+				<venda_block label=55,invtpdxtpromo=notnull><span class="basketpromo"><venda_invtpdxtpromo></span><br></venda_block label=55>
+				<div class="price-text" style="line-height:18px;"><del>was <venda_currsym><venda_invtwas></del><br>
+				<span class="red-basket price-text " style="line-height:18px;">now <venda_currsym><venda_invtsell></span></div>	
+			</venda_block label=17>
+			<venda_block label=107,invtsavingonwas=null,invtwas=0.00,operator=or>
+				<div>
+					<venda_block label=55,invtpdxtpromo=notnull><span class="basketpromo"><venda_invtpdxtpromo></span><br></venda_block label=55>
+					<span class="price-text"><venda_currsym><venda_invtsell></span>
+				</div>
+			</venda_block label=107>
+		</td>
+		<td style="text-align: center;"><div class="basket-small-text">x</div></td>
+		<td class="col-qty" style="text-align: center;"><input type="text" name="oiqty-<venda_oiivref>" size="3" maxlength="3" value="<venda_oiqty>" class="font2"></td>
+		<td><div style="text-align: right;" class="price-text"><venda_currsym><venda_oiextprice></div>
+		 <div style="display:none;" class="invtref"><venda_block label=1001,invtparef=notnull><venda_invtparef></venda_block label=1001><venda_block label=1002,invtparef=null><venda_invtref></venda_block label=1002></div>
+		 <div style="display:none;" class="invtname"><venda_invtname></div>
+		 <div style="display:none;" class="invtqty"><venda_oiqty></div>
+		 <div style="display:none;" class="invtbrand"><venda_invtbrand></div>
+		 <div style="display:none;" class="sellprice"><venda_block label=1111,invtatt1=null><venda_invtsell></venda_block label=1111><venda_block label=1112,invtatt1=notnull><venda_invtatrsell></venda_block label=1112></div>
+		 <div style="display:none;" class="wasprice"><venda_block label=1113,invtatt1=null><venda_invtwas></venda_block label=1113><venda_block label=1114,invtatt1=notnull><venda_invtatrwas></venda_block label=1114></div>
+		</td>
+	</tr>
+	</venda_block label=116>
+</venda_block label=41>
+<!-- Avail -->
+<venda_block label=230,invtatt1=notnull>
+<script type="text/javascript">
+availProdsDetsc = availProdsDetsc + "<venda_invtparef>,";
+</script>
+</venda_block label=230>
+<venda_block label=231,invtatt1=null>
+<script type="text/javascript">
+availProdsDetsc = availProdsDetsc + "<venda_invtref>,";
+</script>
+</venda_block label=231>
+<!-- Avail -->
+</venda_detblock>
+
+<venda_detblock9>
+<p><venda_codesc> (Estimated Discount -<venda_currsym><venda_coamt>)</p>
+</venda_detblock9>
+
+<SCRIPT type='text/javascript'>
+<!-- Hide 
+function toggle(obj) {
+	if ( document.getElementById(obj).style.display == '' || document.getElementById(obj).style.display == 'none' ) {
+		document.getElementById(obj).style.display = 'block';
+	}
+	else {
+		document.getElementById(obj).style.display = 'none';
+	}
+}
+//End Javascript-->
+</SCRIPT>
+<venda_inctemplate name=checkoutBegin,type=includes>
+<div id="shopping-basket-container" class="font2">
+<!-- Basket Top Banner -->
+<venda_page page=basketbanner>
+<!-- Basket Top Banner End -->
+<div class="heading-all">
+<h1>SHOPPING BASKET</h1>
+</div>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<venda_form>
+<input type="hidden" name="log" value="0">
+<input type="hidden" name="layout" value="0">
+<venda_block label=45,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2><input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=p>"></venda_block label=45>
+
+<table summary="Information about each item in your basket" width="100%" border="0" cellspacing="0" cellpadding="0" id="shopcart-items">
+	<thead>
+	<tr style="vertical-align: bottom;">
+		<th scope="col" width="331" align="left">Item</th>
+		<th scope="col" width="85" align="left">Price</th>
+		<th scope="col" width="41"></th>
+		<th scope="col" width="63" style="text-align: center;">Quantity</th>
+		<th scope="col" width="110" style="text-align:right;">Total</th>
+	</tr>
+	</thead>
+	<tbody>
+	<venda_detail>
+	<venda_block label=43,ohdisc&gt;0>
+	<!-- start discount -->
+	<tr class="tr-basket">
+		<td scope="row" colspan="4">Total Estimated Discount</td>
+		<td colspan="1"><div style="text-align: right;margin:0 14px 0 0;">-<venda_currsym><venda_ohdisc></div></td>
+	</tr>
+	<!-- end discount -->
+	</venda_block label=43>
+	<tr class="tr-basket">
+		<td scope="row" colspan="1" style="border-bottom:none;">
+			<!-- start MORE IDEAS products -->
+			<venda_category rec=icat,ref=basket,temp=moreideas,cacheall=1>
+			<!-- end MORE IDEAS products -->
+
+			<div id="basket-delivery">
+            <p><a href="javascript:toggle('basket_deliveryinfo');">View Delivery Information</a></p>
+			<p id="basket_deliveryinfo">
+				<venda_page page=productdetaildeliveryinfo>
+			</p>
+            </div>
+
+		</td>
+		<td colspan="4" style="border-bottom:none;">
+				<div id="basket-buttons">
+					<a href="<venda_dispview page=home>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_backtoshop.gif" alt="Back To Shop" border="0"></a>
+                    <a href="#" onClick='document.wizform.layout.value="checkout";Step2(document.wizform,"shopcart","process","","updated","_self","","",""); return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_updatebasket.gif" alt="Update Basket" border="0"></a>
+				</div>
+			
+            <div class="clear-all"></div>
+			
+            <div id="basket-total-row">
+            <div id="basket-total">
+				<div class="basket-total-line">TOTAL</div>
+				<div class="exclude-deliv">(excluding delivery)</div>
+			</div>
+			<div class="total-amount"><venda_currsym><venda_esttotal></div>
+			</div>
+            
+            <div class="clear-all"></div>
+			
+            <div id="checkout-button">
+			<venda_block label=46,mode=value,<venda_setting type=ebiz,name=expresscheckout>!=2>
+			<venda_block label=100,ustype=R><venda_block label=210,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><input type="image" onclick='<venda_wizbutton step=confirm,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_checkout.gif" alt="GO TO CHECKOUT" class="right btCheckout"></venda_block label=210><venda_block label=211,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><input type="image" onclick='<venda_wizbutton step=billtologin,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_checkout.gif" alt="GO TO CHECKOUT" class="right btCheckout"></venda_block label=211></venda_block label=100>
+	<venda_block label=101,ustype!=R><input type="image" onclick='<venda_wizbutton step=billtologin,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_checkout.gif" alt="GO TO CHECKOUT" class="right btCheckout"></venda_block label=101>
+</venda_block label=46>
+<venda_block label=47,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2>
+<!-- if site provides express checkout option only -->
+	<venda_block label=129,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+	<!-- with postcode lookup -->
+	<input type="image" onclick='<venda_wizbutton step=zipcode,mode=process,param1=login,log=2,callonly=yes,wizard=shopcart> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_checkout.gif" alt="GO TO CHECKOUT" class="right btCheckout">
+	</venda_block label=129>
+	<venda_block label=130,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+	<!-- without postcode lookup -->
+	<input type="image" onclick='<venda_wizbutton step=billto,mode=process,param1=login,log=2,callonly=yes,wizard=shopcart> return false;' src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_checkout.gif" alt="GO TO CHECKOUT" class="right btCheckout">
+	</venda_block label=130>
+</venda_block label=47></div>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+</form>
+<!-- Avail -->
+<div style="display:none" id="tag-basketitems"><venda_tracking type=product,definition=productref></div>
+<script type="text/javascript">
+	var basketitems = availProdsDetsc.substring(0, availProdsDetsc.length-1);
+	//alert(basketitems+"basket Item");
+	document.getElementById('tag-basketitems').innerHTML = basketitems;
+</script>
+<!-- Avail -->
+<venda_inctemplate type=includes,name=availbasket>
+
+<!--venda_block label=43,ohdisc&gt;0-->
+<!-- promotions still need cleaning up -->
+<!--h2>Promotions Included</h2-->
+<!--venda_detail9-->
+<!--/venda_block label=43-->
+
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orsc-screen.html
+ -->
+ 
+</div>
+<venda_tpxt mode=set,name=track,value=orsc-screen> 

@@ -1,0 +1,127 @@
+<venda_detblock1>
+<cr>
+==============================================================================<cr>
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>Delivery Details<cr></venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de>Versandinformationen<cr></venda_block label=1012>
+==============================================================================<cr><cr>
+
+<venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+Recipient: <venda_pkfname> <venda_pklname><cr><cr>
+
+Address:
+<venda_block label=70,pkcompany=notnull> <venda_pkcompany> </venda_block label=70>
+<venda_pknum> <venda_pkaddr1>
+<venda_block label=72,pkaddr2=notnull> <venda_pkaddr2></venda_block label=72>
+ <venda_pkcity>
+<venda_block label=73,pkstate=notnull> <venda_pkstate></venda_block label=73> <venda_pkzipc>
+ <venda_pkcntry><cr><cr>
+
+<venda_block label=41,pkshipmthd=notnull>
+Delivery Method:
+ <venda_pkshipmthd><cr>
+<venda_block label=51,num=notnull>
+Consignment Number:
+<venda_num><cr>
+</venda_block label=51><cr>
+</venda_block label=41>
+</venda_block label=1021>
+
+<venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de>
+Empfänger: <venda_pkfname> <venda_pklname><cr><cr>
+
+Adresse:
+<venda_block label=70,pkcompany=notnull> <venda_pkcompany> </venda_block label=70>
+<venda_pknum> <venda_pkaddr1>
+<venda_block label=72,pkaddr2=notnull> <venda_pkaddr2></venda_block label=72>
+ <venda_pkcity>
+<venda_block label=73,pkstate=notnull> <venda_pkstate></venda_block label=73> <venda_pkzipc>
+ <venda_pkcntry><cr><cr>
+
+<venda_block label=41,pkshipmthd=notnull>
+Versandmethode:
+ <venda_pkshipmthd><cr>
+<venda_block label=51,num=notnull>
+Sendungsnummer:
+<venda_num><cr>
+</venda_block label=51><cr>
+</venda_block label=41>
+</venda_block label=1022>
+
+
+==============================================================================<cr>
+<venda_block label=1031,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>Order Summary<cr></venda_block label=1031>
+<venda_block label=1032,mode=value,<venda_ohusgrrf>=guest_de>Bestell-Übersicht<cr></venda_block label=1032>
+==============================================================================<cr><cr>
+<venda_detail2>
+</venda_detblock1>
+
+
+<venda_detblock2>
+<venda_block label=1041,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<venda_block label=450,oiitype=3>Gift Certificate</venda_block label=450>
+<venda_block label=460,oiitype=3><venda_oiivname></venda_block label=460>
+<venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111>
+<venda_block label=221,oigwref=notnull> (gift wrapped)</venda_block label=221>
+ (<venda_oisub> <venda_ohcur>)
+x <venda_oiqty> = <venda_oiextsub> <venda_ohcur>  
+
+<venda_block label=19,oistatus!=5,oistatus!=6,oistatus!=8,oistatus!=3>
+(<venda_status>)
+</venda_block label=19>
+
+<venda_block label=20,oistatus=5,oistatus=6,oistatus=8,oistatus=3,operator=or>
+<venda_block label=11,oistatus=3>Ready to despatch</venda_block label=11>
+<venda_block label=112,oistatus=6>
+(Despatched <venda_stmp>)
+</venda_block label=112>
+<venda_block label=113,oistatus=5>
+(<venda_block label=114,num=notnull>Tracking #: <venda_num></venda_block label=114>Despatched <venda_stmp>)
+</venda_block label=113>
+<venda_tpxt mode=set,name=number,value=<venda_num>>
+<venda_block label=115,oistatus=7,oistatus=8,operator=or>(RMA #: <venda_num> Despatched <venda_stmp>)</venda_block label=115>
+</venda_block label=20>
+</venda_block label=1041>
+<venda_block label=1042,mode=value,<venda_ohusgrrf>=guest_de>
+<venda_block label=450,oiitype=3>Geschenkgutschein</venda_block label=450>
+<venda_block label=460,oiitype=3><venda_oiivname></venda_block label=460>
+<venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111>
+<venda_block label=221,oigwref=notnull> (als Geschenk verpackt)</venda_block label=221>
+ (<venda_oisub> <venda_ohcur>)
+x <venda_oiqty> = <venda_oiextsub> <venda_ohcur>  
+
+<venda_block label=19,oistatus!=5,oistatus!=6,oistatus!=8,oistatus!=3>
+(<venda_status>)
+</venda_block label=19>
+
+<venda_block label=20,oistatus=5,oistatus=6,oistatus=8,oistatus=3,operator=or>
+<venda_block label=11,oistatus=3>Versandbereit</venda_block label=11>
+<venda_block label=112,oistatus=6>
+(Versendet <venda_stmp>)
+</venda_block label=112>
+<venda_block label=113,oistatus=5>
+(<venda_block label=114,num=notnull>Nachverfolgungsnr.: <venda_num></venda_block label=114>Versendet <venda_stmp>)
+</venda_block label=113>
+<venda_tpxt mode=set,name=number,value=<venda_num>>
+<venda_block label=115,oistatus=7,oistatus=8,operator=or>(RMA-Nr: <venda_num> Versendet <venda_stmp>)</venda_block label=115>
+</venda_block label=20>
+</venda_block label=1042>
+
+<cr><cr>
+<venda_block label=45,oiitype=3>
+<venda_block label=1051,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+Sent to: <venda_gcto> at <venda_gcemail><cr>
+Expiry date: <venda_gcexpires><cr>
+Message: <venda_oicmt>
+</venda_block label=1051>
+<venda_block label=1052,mode=value,<venda_ohusgrrf>=guest_de>
+Gesendet an: <venda_gcto> unter <venda_gcemail><cr>
+Gültig bis: <venda_gcexpires><cr>
+Nachricht: <venda_oicmt>
+</venda_block label=1052>
+<cr><cr>
+</venda_block label=45>
+</venda_detblock2>
+
+<venda_detblock3>
+<venda_ckname> (-<venda_cktotal> <venda_ohcur>)<cr>
+</venda_detblock3>

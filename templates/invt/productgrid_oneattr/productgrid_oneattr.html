@@ -1,0 +1,142 @@
+<venda_tpcomment>
+<!--
+=== This template is used for single attribute. There are the 'add to basket' button and qty box  ===
+All functionality is enabled by default and for each client will need to be removed to match the requirements
+
+Select the out of stock and instock behaviour for your product grid:
+Out of stock icon combinations: 
+1 Out of stock 
+2 Out of stock / No. of weeks
+3 Out of stock / EMWBIS (using ETA date)  ---(default)
+4 EMWBIS (onhand < 1) 
+5 EMWBIS (onhand < 1) / No. of weeks (when selected goes to EMWBIS)
+
+Instock icon combinations: 
+1 In stock 
+2 In stock (onhand > X+1) / Low stock (onhand <= X)
+3 In stock / Pre-order 
+4 In stock (onhand > X+1) / Low stock (onhand <= X) / Pre-order ---(default)
+
+Important: You must add the ProductGrid.js to the JS element category to use: 
+Attribute price change on hover
+EMWBIS ajax pop up
+buy now
+add to basket
+Required: Image change on hover
+-->
+</venda_tpcomment>
+
+<venda_detblock1>
+<!--th scope="col"><a href="#"><venda_headatr></a></th-->
+</venda_detblock1>
+
+<venda_detblock2>
+<venda_block label=300,rows!=notav,rows!=unpub>
+<tr>
+<th><a href="#" onmouseout="Venda.Widget.ProductGrid.changeDefaultPrice();" onmouseover="Venda.Widget.ProductGrid.changeAtrPrice('<venda_invtatrsell>','<venda_invtatrwas>','<venda_invtatrmsrp>','<venda_invtsavingonwas>');"><venda_invtatr1></a></th>
+<td>
+<venda_tpcomment>
+<!-- 
+label:
+301 - sell price
+302 - was price
+303 - parent price (if the attribute don't have sell price)
+ -->
+</venda_tpcomment>
+<venda_block label=301,invtatrsell&gt;0>
+    <p class="price"><venda_currsym><venda_invtatrsell></p>
+</venda_block label=301>
+<venda_block label=302,invtatrwas=notnull,invtatrwas&gt;0,invtsavingonwas&gt;0.00>
+    <p class="price">was <venda_currsym><venda_invtatrwas></p>
+</venda_block label=302>
+<venda_block label=303,invtatrsell=null,invtatrsell=0.00,operator=or>
+    <p class="price"><venda_invtsymsell></p>
+</venda_block label=303>
+
+<venda_block label=400,rows!=notav,rows!=unpub,invtavail&lt;1>
+<venda_tpcomment>
+<!-- out of stock
+if you don't use 'No. of weeks' icon:
+- remove label 4012 (all condition in there)
+- remove condition block (label 4011)  ONLY.
+ -->
+</venda_tpcomment>
+    <venda_block label=4011,invtatretayr=null> 
+        <p><venda_text id=site.out_of_stock></p>
+        <venda_block label=4012,invtpreorder=1><!--  Pre-order -->
+            <p><venda_text id=site.product_grid.for_despatch></p>
+        </venda_block label=4012>
+    </venda_block label=4011>
+    
+     <venda_block label=4012,invtatretayr=notnull>    
+        <p class="emailMe"><a id="ln<venda_rows>" href="<venda_dispview invt=<venda_invtref>>?htxt=<venda_htxt mode=make,attrref=<venda_rows>,attr1=<venda_invtatr1>,attr2=<venda_invtatr2>>&temp=emailinstock" onmouseout="Venda.Widget.ProductGrid.changeDefaultPrice();" onmouseover="Venda.Widget.ProductGrid.changeAtrPrice('<venda_invtatrsell>','<venda_invtatrwas>','<venda_invtatrmsrp>','<venda_invtsavingonwas>');">Email Me When In Stock</a></p>
+        <venda_block label=4022,invtatretawkleft=3>
+            <!--  No. of weeks  - use ETA only due to weeks tag -->
+            <p><venda_text id=site.product_grid.wait_for><venda_block label=111,invtatretawkleft&gt;1><venda_text id=site.product_grid.wait_weeks></venda_block label=111></p>
+        </venda_block label=4022>  
+    </venda_block label=4012>        
+</venda_block label=400>
+
+<venda_block label=401,rows!=notav,rows!=unpub,invtavail&gt;0>
+<!-- Instock -->
+<venda_block label=402,invtpreorder=1><!-- Pre Order -->
+        <p><input  name="qtylist" value="1" id="qty<venda_invtatr1>" type="text" size="3" maxlength="3" class="invt_qtybox"><label for="qty" class="bold"> Qty</label>
+        <a href='#' onClick="Venda.Widget.ProductGrid.setProduct('<venda_invtatr1>','','','');Venda.Widget.ProductGrid.addProduct(document.wizform.qty<venda_invtatr1>.value);"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_preorder.gif" alt="<venda_text id=site.product_grid.title.pre_order>" title="<venda_text id=site.product_grid.title.pre_order>"></a></p>
+</venda_block label=402>
+
+<venda_block label=403,invtpreorder!=1>
+<venda_tpcomment>
+<!-- 
+if you don't use low stock:
+- remove label 4031 (all condition in there)
+- change invtavail from 4 to 0 at label 4032.
+ -->
+</venda_tpcomment>
+    <venda_block label=4031,rows!=unpub,invtavail&lt;5,invtavail&gt;0,rows!=nostock,rows!=notav>
+    <!-- Low Stock - if onhand value is less than 5 (by default) -->
+        <p><input  name="qtylist" value="1" id="qty<venda_invtatr1>" type="text" size="3" maxlength="3" class="invt_qtybox"><label for="qty" class="bold"> Qty</label>
+        <a href="#" onClick="Venda.Widget.ProductGrid.setProduct('<venda_invtatr1>','','','');Venda.Widget.ProductGrid.addProduct(document.wizform.qty<venda_invtatr1>.value);" title="<venda_text id=site.button.alt.add_to_basket.invt>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif" alt="<venda_text id=site.button.alt.add_to_basket.invt>"></a></p>
+    </venda_block label=4031>
+    
+    <venda_block label=4032,rows!=notav,rows!=unpub,invtavail&gt;4>
+    <!-- Instock -->
+        <p><input  name="qtylist" value="1" id="qty<venda_invtatr1>" type="text" size="3" maxlength="3" class="invt_qtybox"><label for="qty" class="bold"> Qty</label>
+        <a href="#" onClick="Venda.Widget.ProductGrid.setProduct('<venda_invtatr1>','','','');Venda.Widget.ProductGrid.addProduct(document.wizform.qty<venda_invtatr1>.value);" title="<venda_text id=site.button.alt.add_to_basket.invt>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif" alt="<venda_text id=site.button.alt.add_to_basket.invt>"></a></p>
+        <!-- Buy now -->
+        <!-- <p><a href="#" onClick="Venda.Widget.ProductGrid.setProduct('<venda_invtatr1>','','','');Venda.Widget.ProductGrid.buyProduct(document.wizform.qty<venda_invtatr1>.value);"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_buynow.gif" alt="<venda_text id=site.button.alt.buy_now.invt>"></a></p> -->
+    </venda_block label=4032>
+</venda_block label=403>
+
+</venda_block label=401>
+
+
+</td>
+</tr>
+</venda_block label=300>
+</venda_detblock2>
+
+<venda_detblock3>
+<!--th scope="row"><venda_colrows></th-->
+</venda_detblock3>
+
+<venda_form method=get>
+<input type="hidden" name="bklist" value="<venda_cattree bklist=,type=invt>">
+<input type="hidden" name="log" value="22">
+<input type="hidden" name="nextpage" value="refresh">
+<input type="hidden" name="qtylist" value="1">
+<input type="hidden" name="itemlist" value="">
+
+<venda_inctemplate name=detail2Pricing0,type=includes>
+
+<h2><venda_text id=site.product_grid.availability_of_attribute></h2>
+<p><venda_text id=site.product_grid.message></p>
+<p><a href="<venda_dispview page=sizechart>"><venda_text id=site.product_grid.size_chart></a></p>
+
+<table border="1" summary="<venda_text id=site.product_grid.table_summary_one_attr>">
+	
+	<tbody>
+		<venda_detail3>
+	</tbody>
+</table>
+
+</form>

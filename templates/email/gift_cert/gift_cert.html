@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title><venda_ebizname> Gift Certificate</title>
+</head>
+<body>
+
+<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+
+<br><br>
+<a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
+<br><br>
+<strong>Gift Certificate</strong>
+<br><br>
+
+<p>Dear <venda_to>,</p>
+<p>You have received a <strong><venda_currsym><venda_amount></strong> <venda_ebizname> Gift Certificate from <strong><venda_from></strong>.</p>
+<p><strong>Message:</strong><br><venda_comment></p>
+<p>See below for full details.</p>
+<p>Don't delete this message as it contains all the information you need to use your gift certificate.</p>
+<ul>
+	<li>Go to <a href="<venda_serveradd>"><venda_serveradd></a></li>
+	<li>Select the items you wish to purchase and add them to your basket</li>
+	<li>Go through the checkout process until you get to the final order summary page</li>
+	<li>Click on the 'purchase using gift certificate' button and paste this Gift Certificate claim code exactly as shown: <strong><venda_giftcode></strong></li>
+	<li>Click 'Continue' to redeem the Gift Certificate</li>
+</ul>
+<p><strong>Expiry date: <venda_gcexpires></strong></p>
+<p>If the value of your order is higher than the value of the Gift Certificate, you will need to pay the difference using a credit/debit card.</p>
+<p>If the value of your order is lower than the value of the Gift Certificate, the balance will be added to your <venda_ebizname> account, and you can use it on future visits.</p>
+
+<p>
+<div>Thanks and we look forward to you visiting our site soon.</div>
+<div><a href="<venda_ebizurl>"><venda_ebizurl></a></div>
+</p>
+
+<venda_inctemplate name=htmlEmailFooter,type=includes>
+
+</body>
+</html>

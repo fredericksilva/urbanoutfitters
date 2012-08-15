@@ -1,0 +1,81 @@
+<script language='JavaScript'>
+<!-- 
+function checkemail(str) {
+		var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+		return (filter.test(str));
+	}
+function validateFields() {
+	// check name
+	<venda_block label=710,ustype!=R>
+	if (document.tellafriend.fname.value == '') {
+			alert('Please enter your name.');
+			document.tellafriend.fname.focus();
+			return;
+	}
+	</venda_block label=710>
+	if (document.tellafriend.name.value == '') {
+		alert('Please enter a name.');
+		document.tellafriend.name.focus();
+		return;
+	}
+	// check email address
+	if (document.tellafriend.email.value == '') {
+		alert('Please enter an email address.');
+		document.tellafriend.email.focus();
+		return;
+	}
+	var custEmail = document.tellafriend.email.value;
+	if (!checkemail(custEmail)) {
+		alert('Please enter a valid email address.');
+		document.tellafriend.email.focus();
+		return false;	
+	}
+	// check message
+	if (document.tellafriend.field1.value == '') {
+		alert('Please enter a message.');
+		document.tellafriend.field1.focus();
+		return;
+	}
+	document.tellafriend.submit();
+}
+ -->
+</script>
+				
+<form action="<venda_codehttp>" method="post" name="tellafriend">							
+<input type="hidden" name="ex" value="co_disp-referfr">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="from" value="<venda_ebizemail>">
+<input type="hidden" name="subject" value="Take A Look">
+<input type="hidden" name="invt" value="<venda_invtref>">
+<input type="hidden" name="label1" value=">">
+<input type="hidden" name="label2" value=">">
+<input type="hidden" name="temp" value="tellafriendthankyou">
+<input type="hidden" name="bklist" value="<venda_bklist>">
+	
+<div class="heading-all"><h1>EMAIL A FRIEND</h1></div>
+
+<div class="formset">
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<p>Please fill out the form to email a friend about <strong><venda_invtname></strong>.</p>
+
+<venda_block label=71,ustype!=R>
+<fieldset>
+<legend class="hide">Your details</legend>
+<div><label for="field2">Your Name: <span class="required">*</span></label><input type="text" name="fname" id="fname" size="20"></div>
+</fieldset>
+</venda_block label=71>
+<fieldset>
+<legend class="hide">Friend's details</legend>
+<div><strong>Friend's details</strong></div>
+<div><label for="name">Friend's Name: <span class="required">*</span></label><input name="name" size="20" maxlength="20"></div>
+<div><label for="email">Friend's Email: <span class="required">*</span></label><input name="email" size="20"></div>
+<div><label for="field1">Message: <span class="required">*</span></label><!-- mp_trans_schedule_disable_start --><textarea cols="46" name="field1" rows="3" wrap="virtual" class="font11">Check out what I found on the <venda_ebizname> website.</textarea><!-- mp_trans_schedule_disable_end --><br class="clear-all"/><div class="clear-all"></div></div>
+</fieldset>
+
+
+<div class="left">
+<a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_previous.gif" alt="PREVIOUS" border="0" class="continue"></a></div>
+<input type="image" onclick="validateFields(); return false;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" class="right continue">
+
+</div>
+</form>
