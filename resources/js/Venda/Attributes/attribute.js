@@ -38,6 +38,8 @@ jQuery(function() {
 
 Venda.Attributes.Initialize = function() {
 
+  Venda.Attributes.ImageMediaAssignment();
+
 	Venda.Attributes.initViewLargeImagePopup();
 
 	if(Venda.Attributes.attsArray.length > 0) {
@@ -1089,3 +1091,41 @@ Venda.Attributes.ImageSwap = function(att) {
 		jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
 	}
 };
+
+
+Venda.Attributes.imageAssigner = function(imgAtt) {
+  var imageURLs = {},
+      imgNumber = 6,
+      imgPath = "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_",
+      imgChoice = {
+        "imgS" : "_t",
+        "imgM" : "_m",
+        "imgL" : "_l"
+      }
+  for(var size in imgChoice) {
+    var images = []
+    for(var j = 1; j < imgNumber; j++) {
+        images.push(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
+    }  
+    imageURLs[size] = images           
+  }
+  return imageURLs
+}
+
+
+Venda.Attributes.ImageMediaAssignment = function() {
+  var uniqueAtt1 = []
+  for (var i = 0; i < Venda.Attributes.attsArray.length; i++) {
+      var currAtt1 = Venda.Attributes.attsArray[i].att1
+      if(jQuery.inArray(currAtt1,uniqueAtt1) == -1) { 
+        var currImages = Venda.Attributes.imageAssigner(currAtt1)
+        uniqueAtt1.push(currAtt1);
+        Venda.Attributes.StoreImageSwaps({
+          "param": currAtt1,
+          "images": currImages     
+          });
+        Venda.Attributes.SwatchURL[currAtt1] =  "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_" + currAtt1.toLowerCase() + "_sw.jpg";  
+      }
+  }
+
+}
