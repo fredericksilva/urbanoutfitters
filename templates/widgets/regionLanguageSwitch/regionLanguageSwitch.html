@@ -1,0 +1,36 @@
+<div class="regionLangSwitch">
+  <div>
+    <a href="#" id="flag" class="flag"><span class="selectedlang <venda_sessionlanguage>"></span>UK <span class="curr-select"><venda_currsym></span></a>
+  </div>
+  
+  <div id="flagContent" class="flagContent" style="display:none">
+  
+  	<div class="region">
+    	<p>Change Currency:</p>
+    	<ul>
+      	<li><a href="#" id="restofworld" class="us">&pound; GBP</a></li>
+      	<li><a href="#" id="eur" class="canada">&euro; EUR</a></li>
+    	</ul>
+  	</div>
+  	
+  	<div class="sepLine"></div>
+  
+  	<div class="lang">
+    	<p>Change Language:</p>
+    	<ul>
+      	<li><a href="#" id="en" class="en">English</a></li>
+      	<li><a href="#" id="de" class="de">German</a></li>
+      	<li><a href="#" id="fr" class="fr">French</a></li>
+    	</ul>
+  	</div>
+  	
+  </div>
+<!--a href="/page/landingswitcher" class="chRegion" data-track="open-languageswitcher"><venda_text id=site.regionlanguage.switch.header></a-->
+</div>
+
+<script type="text/javascript">
+Venda.Widget.RegionLangSwitch.isSearch = "<venda_searchtwo>";
+Venda.Widget.RegionLangSwitch.currRegion = Venda.Ebiz.CookieJar.get("locn") || "<venda_sessionlocation>";
+Venda.Widget.RegionLangSwitch.currLang = Venda.Ebiz.CookieJar.get("lang") || "<venda_sessionlanguage>";
+Venda.Widget.RegionLangSwitch.ebizURL = "<venda_serveradd>";
+</script>

@@ -1,0 +1,32 @@
+<venda_block label=001,mode=value,<venda_setting type=ebiz,name=showcomparebutton>=1>
+<venda_block label=002,mode=value,<venda_tpxt mode=get,name=comparecatref>!=,<venda_tpxt mode=get,name=categorySearch>!=,operator=or>
+<venda_block label=003,mode=value,<venda_tpxt mode=get,name=track>!=categorylist>
+
+<div id="JS-compare" style="display: none">
+	<div id="JS-compare-codehttp"><venda_codehttp></div>
+	<div id="JS-compare-bsref"><venda_bsref></div>
+	<div id="JS-compare-product-list-compare-validation"><venda_text id=site.product_list.compare_validation.min_2></div>
+	<div id="JS-compare-ebizurl"><venda_ebizurl></div>
+	<div id="JS-compare-currCategory"><venda_block label=41,mode=value,<venda_tpxt mode=get,name=comparecatref>!=><venda_tpxt mode=get,name=comparecatref></venda_block label=41><venda_block label=42,mode=value,<venda_tpxt mode=get,name=comparecatref>=><venda_block label=600,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=><venda_block label=700,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_block label=800,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_tpxt mode=get,name=categorySearch></venda_block label=800></venda_block label=700><venda_block label=701,mode=value,<venda_tpxt mode=get,name=categorySearch>=><venda_block label=801,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_tpxt mode=get,name=categorySearch></venda_block label=801></venda_block label=701></venda_block label=600></venda_block label=42></div>
+	<div id="JS-compare-setalwaysshowcompare"><venda_setting type=ebiz,name=setalwaysshowcompare></div>
+	<div id="JS-compare-product-is-already"><venda_text id=site.product_is_already.message></div>
+	<div id="JS-compare-cannot-compare-different-type"><venda_text id=site.cannot_compare_different_type.message></div>
+	<div id="JS-compare-remove-item-before"><venda_text id=site.remove_item_before.message></div>
+	<div id="JS-compare-compareproduct"><venda_text id=site.compareproduct.header></div>
+</div>
+
+<div id="compareProduct" class="compareProduct box" style="display:none;">
+	<h2 class="header"><span></span><venda_text id=site.compareproduct.header></h2>
+	<div class="compareContent">
+		<p class="compareDesc"><venda_text id=site.compareproduct.instructions></p>
+		<ul id="cpilist" class="cpilist"></ul>
+	</div>
+	<div id="compareButton" class="compareButton">
+	    <input type="button" class="button" id="compareClearAll" alt="<venda_text id=site.compare_products.clear_all.button.title>" value="<venda_text id=site.compare_products.clear_all.button>"/>
+		<input type="button" class="button" id="compareAll" alt="<venda_text id=site.button.title.compare_products>" value="<venda_text id=site.button.title.compare_products>">
+	</div>
+</div>
+
+</venda_block label=003>
+</venda_block label=002>
+</venda_block label=001>

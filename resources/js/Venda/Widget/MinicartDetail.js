@@ -21,7 +21,7 @@ Venda.Widget.MinicartDetail = function () {};
  * Create minicartDetail functionality once the DOM is loaded
  */
 jQuery(function() {
-	if(jQuery('.minicart').length) Venda.Widget.MinicartDetail.Create();
+	if(jQuery('.minicart').length > 0) Venda.Widget.MinicartDetail.Create();
 });
 
 

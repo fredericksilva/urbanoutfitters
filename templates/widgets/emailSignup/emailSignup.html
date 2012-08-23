@@ -1,0 +1,14 @@
+<h2 class="header"><venda_text id=site.emailsignup.header></h2>
+<div class="emailSignup boxContent">
+<form name="emailsonly1" action="<venda_codehttp>" method="get" onsubmit="Venda.Ebiz.validateEmail(document.emailsonly1,'<venda_text id=site.emailsignup.validationtext>'); return false;">
+<input type="hidden" name="ex" value="co_disp-view">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="page" value="signupforemails">
+	<fieldset>
+	<!--<legend><venda_text id=site.emailsignup.legendtext></legend>-->
+			<!--<label for="emailsignup"><venda_text id=site.emailsignup.labeltext></label>-->
+			<input type="text" class="textInput" name="email" id="emailsignup" size="16" value="<venda_text id=site.emailsignup.emailvalue>" onfocus="if (this.value=='<venda_text id=site.emailsignup.emailvalue>') {this.value=''};">
+			<input type="submit" value="<venda_text id=site.email_signup.button.alt>" id="newslettersubmit" class="submit button">
+	</fieldset>
+</form>
+</div>

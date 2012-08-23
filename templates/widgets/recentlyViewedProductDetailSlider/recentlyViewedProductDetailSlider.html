@@ -1,0 +1,24 @@
+<div id="showRVI" class="slider rviProds">
+	<a id="slideLeft" class="sliderBt sliderL" style="visibility:hidden;" title="<venda_text id=site.product_detail.recent_items.previous>"><span><venda_text id=site.product_detail.recent_items.previous></span></a>
+	<div class="sliderWrapper">
+		<ul id="sliderlist" class="sliderList prods prodsGrid prodsFourColumns"><venda_listrecords cookie=RVI,temp=recentlyViewedProductDetailDetblock,limit=7></ul>
+	</div>
+	<a id="slideRight" class="sliderBt sliderR" title="<venda_text id=site.product_detail.recent_items.next>"><span><venda_text id=site.product_detail.recent_items.next></span></a>
+</div>
+<script type="text/javascript">
+addEvent(window, 'load', function() { Venda.Widget.RecentlyViewedItems.setRecentlyViewedItems('<venda_invtref>', ("<venda_invtref>", 10));}, false);
+
+jQuery(function(){
+	jqSlider({
+		sliderID:'sliderlist',
+		displayCount: 4, 
+		slideAmtNum: 1, 
+		slideLeft:'slideLeft', 
+		slideRight:'slideRight', 
+		duration: 0.3});
+	if (is_touch_device()) {
+		jQuery('.sliderWrapper').css('overflow','auto');
+		jQuery('.sliderBt').remove();
+	}
+});
+</script>

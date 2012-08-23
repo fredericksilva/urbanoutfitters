@@ -1,0 +1,22 @@
+<venda_tpcomment>
+<!-- call javascript to set the cookie. The cookie will only be set when the user lands on the search results template -->
+</venda_tpcomment>
+<script type="text/javascript">
+var cj = new CookieJar({expires: 3600 * 24, path: '/'});
+<venda_block label=notsearch,mode=value,<venda_tpxt mode=get,name=activekeyword>=null>
+addEvent(window, 'load', function() {Venda.Widget.RecentSearchItems.ShowRSItems(cj,'<venda_glxt mode=get,name=searchurl>') }, false);
+</venda_block label=notsearch>
+<venda_block label=search,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull>
+	<venda_block label=774,mode=value,<venda_glxt mode=get,name=currentpage>=1>
+	addEvent(window, 'load', function() {Venda.Widget.RecentSearchItems.setRSItems('<venda_glxt mode=get,name=searchurl>', 3) }, false);
+	</venda_block label=774>
+	<venda_block label=16,mode=value,<venda_glxt mode=get,name=currentpage>!=1>
+		addEvent(window, 'load', function() {Venda.Widget.RecentSearchItems.ShowRSItems(cj,'<venda_glxt mode=get,name=searchurl>') }, false);
+	</venda_block label=16>
+</venda_block label=search>
+</script>
+<div id="showRSI" class="LshowRSI box" style="display:none;">
+<h2 class="header"><venda_text id=site.recentsearch.header></h2>
+<ol id="rsilist"></ol>
+<p><a href="#" onclick="Venda.Widget.RecentSearchItems.RemoveAll('showRSI','RSI');">Remove All</a></p>
+</div>

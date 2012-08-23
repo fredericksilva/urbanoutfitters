@@ -15,7 +15,7 @@ jQuery(function(){
 	currRegion = Venda.Widget.RegionLangSwitch.currRegion;
 	currLang = Venda.Widget.RegionLangSwitch.currLang;
 	jQuery("#flag").click(function(){ 
-		jQuery("#flagContent").toggle("fast"); 
+		jQuery("#flagContent").slideToggle("fast"); 
 		return false;
 	});
 	jQuery("#flagContent .region a").click(function() {	

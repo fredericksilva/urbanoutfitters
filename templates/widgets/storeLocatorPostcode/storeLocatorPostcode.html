@@ -1,0 +1,23 @@
+<h2 class="header"><venda_text id=site.store_locator_box.header></h2>
+<div class="storeLocator boxContent">
+<form id="storefinder" name="storefinder" method="post" onsubmit="return Venda.Ebiz.checkPostcode('storefinder','zipc','<venda_text id=site.store_locator_box.zipcvalue>')" action="<venda_codehttp>">
+	<input type="hidden" name="ex" value="co_wizr-postcodedistance">
+	<input type="hidden" name="threshold" value="1">
+	<input type="hidden" name="bsref" value="<venda_bsref>">
+	<input type="hidden" name="itemsperpage" value="4">
+	<input type="hidden" name="zipc2list" value="<venda_category rec=scat,ref=store,temp=storepostcodes,cacheall=1>">
+	
+	<fieldset>
+		<legend><venda_text id=site.store_locator_box.legend></legend>
+		<label for="formzipc" class="re-waiHide"><venda_text id=site.storelocator.label.postcode></label><input type="text" name="zipc" id="formzipc" value="<venda_text id=site.store_locator_box.zipcvalue>" onfocus="this.value='';">
+		<p><venda_text id=site.store_locator_box.instructions></p>
+		<label for="formbytown" class="re-waiHide"><venda_text id=site.storelocator.label.findstorebytown></label><select name="bytown" id="formbytown" onchange="postcode=this.value;this.form.zipc.value=postcode;this.form.submit();" class="town">
+		<option selected="selected"><venda_text id=site.store_locator_box.bytown></option>
+		<venda_category rec=scat,ref=storelocator,temp=bytown,cacheall=1>
+		</select>
+	</fieldset>
+	
+	<input type="button" name="pcsubmit" id="pcsubmit" value="<venda_text id=site.store_locator_box.button.alt>" alt="<venda_text id=site.store_locator_box.button.alt>" class="submit">
+	
+	</form>
+</div>

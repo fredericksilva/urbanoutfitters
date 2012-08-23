@@ -1093,6 +1093,13 @@ Venda.Attributes.ImageSwap = function(att) {
 };
 
 
+/**
+* The following two functions build up the list of attribute images based on file name so that we can transition to scene7 and use on both sites
+* ImageMediaAssignment is called once during initialize
+* @param{string} imgAtt is the unique part of the image, typically colour as stored in attr1 but could be something else i.e. suplsku 
+* @author Matthew Wyatt <mwyatt@anthropologie.com>
+*/
+
 Venda.Attributes.imageAssigner = function(imgAtt) {
   var imageURLs = {},
       imgNumber = 6,
