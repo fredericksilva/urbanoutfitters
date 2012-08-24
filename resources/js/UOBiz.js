@@ -1046,3 +1046,10 @@ Venda.Ebiz.colorSwatch.prototype = {
         }
     }
 };
+jQuery(document).ready(function () {
+
+    jQuery('.mm_sub > ul').masonry({
+      itemSelector: '.mm_toplevel'
+    });
+    
+});

@@ -652,13 +652,11 @@ body {
     padding: 0;
     font: 100%/1em Helvetica,Arial,sans-serif;
     color: #555;
-    background: #cfc5b6;
+    background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
 }
 
 .wrapper {
     margin: 0 auto;
-    padding: 10px 0;
-    width: 960px;
     position: relative;
 }
 
@@ -1022,10 +1020,19 @@ ol.prods li {
 }
 
 .crumbtrail {
-    font-size: .85em;
+    font-size: 12px;
     margin: 0;
-    padding: 6px 5px;
+    padding: 6px 0;
     clear: both;
+    line-height: 18px;
+}
+.crumbtrail a {
+    float: left;
+}
+.crumbtrail img {
+    float: left;
+    margin-top: 0;
+    padding: 0 8px;
 }
 
 .crumbtrailAnchor {
@@ -1170,7 +1177,7 @@ ol.prods li {
     line-height: 18px;
     min-width: 960px;
     overflow: hidden;
-    padding: 5px 7px;
+    padding: 5px 0;
     text-align: center;
     width: 100%;
 }
@@ -1189,7 +1196,7 @@ ol.prods li {
     line-height: 18px;
     min-width: 960px;
     overflow: hidden;
-    padding: 5px 7px;
+    padding: 5px 0;
     text-align: center;
     width: 100%;
 }
@@ -1229,6 +1236,7 @@ ol.prods li {
 
 .minicart {
     line-height: 30px;
+    position: relative;
 }
 
 .minicartHeader {
@@ -1337,7 +1345,6 @@ ol.prods li {
 
 .minicartDetailBottom {
     padding: 10px;
-    background-color: #ebebeb;
     text-align: left;
     overflow: hidden;
 }
@@ -1524,75 +1531,91 @@ fieldset {
 .mm_ul {
     float: left;
     width: 950px;
-    margin: 10px 5px 0;
-    background: transparent url(../images/gradients.png) repeat-x 0 -160px;
-    line-height: 30px;
+    margin-top: 20px;
+    line-height: 24px;
     text-align: center;
+}
+.mm_ul .vertical-divider {
+    margin: 0;
 }
 
 .mm_ul li {
     float: left;
-    position: relative;
-    width: 158px;
-    font-weight: 700;
+}
+.mm_ul .divide1 {
+    display: none;
+}
+
+.mm_ul > li:first-child {
+    border: none;
 }
 
 .mm_ul li a {
+    color: #444444;
     display: block;
-    color: #fff;
+    font-family: Arial;
+    font-size: 16px;
+    letter-spacing: 0.5px;
     text-decoration: none;
-    background: #222 url(../images/gradients.png) repeat-x 0 -160px;
-    border-right: 1px solid #201e1f;
-    border-left: 1px solid #555354;
 }
 
-.mm_ul li a:hover,li.mm_liSelected a {
-    background-position: 0 -130px;
-    border-left-color: transparent;
+.mm_ul > li > a {
+    padding: 0 20px 5px 20px;
+    border-bottom: 6px solid transparent;
+}
+
+.mm_ul > li:nth-child(2) > a {
+    padding-left: 10px;
+}
+
+.mm_ul > li > a:hover, li.mm_liSelected > a {
+    border-bottom: 6px solid #333;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
 }
 
 .mm_sub {
-    position: absolute;
-    display: none;
+    position: relative;
+    display: block;
     left: 0;
-    top: 30px;
-    padding: 15px 0;
-    color: #eee;
+    top: 0;
     z-index: 1001;
     text-align: left;
     background-color: #fff;
-    border: 1px solid #353535;
+    border: 1px solid #666666;
     border-top: none;
+    padding: 5px 15px 25px;
+    width: 920px !important;
+    margin: 0 auto;
 }
 
-.mm_left .mm_sub {
-    right: 0;
-    left: auto;
+.mm_fullwidth {
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
-
-.mm_sub ul {
-    float: left;
-    width: 156px;
-    line-height: 18px;
+.mm_fullbar {
+    background: url("../images/nav-fullbar-background.gif") repeat scroll 0 0 transparent;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    top: 113px;
+    width: 100%;
+    z-index: -1;
 }
-
-.mm_sub li {
+.mm_sub > li {
     width: 156px;
     font-weight: 400;
 }
 
 .mm_sub li a {
-    background: #fff none;
-    color: #666;
-    border-left: none;
-    border-right: none;
-    padding-left: 15px;
+    color: #444;
     display: block;
-    height: 21px;
 }
 
 .mm_sub li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .mm_sub .mm_subheader {
@@ -1614,6 +1637,39 @@ fieldset {
     display: none;
 }
 
+.mm_ul > li > div > div > ul {
+    width: 728px;
+}
+
+.mm_ul > li > div > div > ul > li {
+    border-top: 1px dotted #333333;
+    margin: 16px 8px 0 16px;
+    width: 120px;
+    overflow: hidden;
+}
+
+.mm_ul > li > div > div > ul > li > a {
+    color: #444444;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 0;
+    line-height: 15px;
+}
+
+.mm_ul .subsub-cats li {
+    float: none;
+}
+
+.mm_ul .subsub-cats {
+    display: block;
+}
+
+.mm_ul .subsub-cats a {
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
 /* Single Line Highlight */
 .topnav_active_1 {
     font-weight: 700;
@@ -1621,19 +1677,17 @@ fieldset {
 
 /* Mega Menu Highlight */
 .mm_active_1 {
-    font-weight: 700;
+
 }
 
 .mm_active_2 {
-    font-weight: 700;
+
 }
 
 .mm_ul li .mm_active_1 {
-    background: transparent url(../images/gradients.png) repeat-x scroll 0 -560px;
 }
 
 .mm_sub li .mm_active_2 {
-    background: transparent url(../images/gradients.png) repeat-x scroll 0 -130px;
 }
 
 /* Category Nav Highlight */
@@ -4901,10 +4955,6 @@ to {
     border: 1px solid #777;
 }
 
-.ui-corner-all {
-    border-radius: 4px;
-}
-
 .ui-slider-horizontal {
     height: .8em;
 }
@@ -5424,6 +5474,7 @@ ul#rvisitewidelist li a:hover div {
 
 /* Utilities */
 .full-width {
+    position: relative;
     width: 100%;
 }
 
@@ -5444,7 +5495,23 @@ ul#rvisitewidelist li a:hover div {
     margin: 3px 8px;
     width: 2px;
 }
+.diagonal-divider {
+    background: url("../images/diagonal-divide.png") no-repeat scroll 0 0 transparent;
+    height: 17px;
+    margin: 3px 8px;
+    width: 13px; 
+    display: block; 
+}
+.mainHeader {
+    margin-top: 10px;
+}
+#productdetail-image img {
+}
 
+.minicartDetailDialog {
+  border: 1px solid #333;
+  background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
+}
 /* Footer */
 
 /* Product Detail */

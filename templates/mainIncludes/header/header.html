@@ -57,4 +57,27 @@
 	  <p style="float: right">Search box to go here</p>
 	</div>
 </div>
+
+<div class="grid_24">
+
+  </venda_tpcomment><venda_category rec=icat,ref=shop,temp=dynamicTopNavigation,itemsperpage=100>
+
+</div>
+<div class="grid_24">
+  
+  <venda_block label=980,workflow!=shopcart>
+  <venda_block label=113,pageref!=home><p class="crumbtrail clearfix">
+  <a href="<venda_ebizurl>" class="crumbtrailHome">Home</a>
+  <venda_cattree class=crumbtrailAnchor,sep=<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/diagonal-divide.png" />>
+  </p></venda_block label=113>
+  </venda_block label=980>
+  
+  <div id="tags_cattree" style="display: none;">
+  <venda_cattree index=1, value=catref>,
+  <venda_cattree index=2, value=catref>,
+  <venda_cattree index=3, value=catref>
+  </div>
+  
+</div>
+
 <venda_tpcomment><!--  Configuration to show signin screen as popup. Please include the signinpoup template: <venda _ inctemplate name = signinPopup,type = widgets> --></venda_tpcomment>

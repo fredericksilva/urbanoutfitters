@@ -278,7 +278,6 @@ jQuery(document).ready(function () {
 		jQuery("ul#mm_ul li .mm_sub").css({
 				'opacity' : '0'
 			});
-		
 		if (typeof is_touch_device == 'function' && is_touch_device()) {
 		  jQuery("ul#mm_ul > li > a").bind({
 			click: function(e) {
