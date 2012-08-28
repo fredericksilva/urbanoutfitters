@@ -1305,12 +1305,16 @@ ol.prods li {
 }
 
 .minicartDetailTotals li {
-    display: block;
-    float: left;
-    padding-left: .5em;
-    padding-right: .5em;
+    border-bottom: 1px solid #444;
+    font-size: 12px;
+    padding: 5px 0;
 }
-
+.minicartDetailTotals li .price {
+    float: right;
+}
+.minicartDetailTotals li:first-child {
+    border-top: 1px solid #444;
+}
 .minicartDetailTotals .items {
     border-right: 1px solid #444;
 }
@@ -1323,9 +1327,17 @@ ol.prods li {
     padding: 0 10px;
 }
 
+.minicart_viewer {
+    border-top: 1px dotted #333333;
+}
+
 .prodsMinicartCheckout li {
     padding: 10px 0 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px dotted #333333;
+}
+
+.prodsMinicartCheckout li:first-child {
+    border-top: none;
 }
 
 .prodsMinicartCheckout .details {
@@ -1600,7 +1612,7 @@ fieldset {
     height: 6px;
     left: 0;
     position: absolute;
-    top: 113px;
+    top: 114px;
     width: 100%;
     z-index: -1;
 }
@@ -5512,6 +5524,7 @@ ul#rvisitewidelist li a:hover div {
   border: 1px solid #333;
   background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
 }
+
 /* Footer */
 
 /* Product Detail */

@@ -1,11 +1,11 @@
 <div class="minicartDetail" id="minicartDetail">
 
 	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
-	
-	<venda_minicart template=minicartItemsTotal>
 
 	<venda_block label=52,mode=value,<venda_shopcart mode=getqty>!=0><venda_order shopcart=1,template=minicartDetail></venda_block label=52>
 	<venda_block label=53,mode=value,<venda_shopcart mode=getqty>=0><span class="minicart_empty" style="padding: 10px 10px 70px 10px;display:block;"><venda_text id=site.empty_basket.basket_is_empty></span></venda_block label=53>
+	
+	<venda_minicart template=minicartItemsTotal>
 
 	<venda_block label=34,mode=value,<venda_tpxt mode=get,name=instore>!=1>
 	<div class="minicartDetailBottom">
