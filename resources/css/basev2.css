@@ -584,6 +584,7 @@ a:hover,a:focus,a:active,.underline {
 
 a img {
     border: 0;
+    outline: none;
 }
 
 input {
@@ -1300,7 +1301,7 @@ ol.prods li {
 }
 
 .minicartDetailTotals {
-    padding: 10px 10px 0;
+    padding: 0 10px;
     overflow: hidden;
 }
 
@@ -1323,25 +1324,46 @@ ol.prods li {
     border-left: 1px solid #444;
 }
 
-.prodsMinicartCheckout {
-    padding: 0 10px;
+.minicart-viewer {
+    margin: 10px;
+    border-top: 1px dotted #333333;
+    border-bottom: 1px dotted #333333;
 }
 
-.minicart_viewer {
-    border-top: 1px dotted #333333;
+.minicart-promo {
+    background: #fff100;
+    height: 50px;
+    width: 100%;
 }
 
 .prodsMinicartCheckout li {
-    padding: 10px 0 0;
     border-top: 1px dotted #333333;
+    margin: 0;
 }
 
 .prodsMinicartCheckout li:first-child {
-    border-top: none;
+    border-top: 1px solid transparent;
 }
 
 .prodsMinicartCheckout .details {
+    font-size: 11px;
+    line-height: 13px;
     text-align: left;
+}
+
+.prodsMinicartCheckout .details .price {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.prodsMinicartCheckout .details .item {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.prodsMinicartCheckout .details span {
+    display: block;
 }
 
 .checkoutMinicart .prodsMinicartCheckout {
@@ -1371,18 +1393,32 @@ ol.prods li {
 }
 
 .basketScroll {
-    width: 100%;
+    background: #FFFFFF;
+    border: none;
+    color: #333;
+    display: block;
     height: 25px;
-    border: 0;
-    background: transparent;
-    color: #ccc;
+    margin: 10px 10px 0;
+    opacity: 0.5;
+    width: 280px;
+    cursor: pointer;
+}
+
+#scrollUp {
+    margin: 10px 10px 0;
+}
+
+#scrollDown {
+    margin: 0 10px 10px;
 }
 
 /* Minicart highlight */
 ul#minicart_products li {
     position: relative;
     overflow: hidden;
-    height: 57px;
+    height: 110px;
+    padding: 10px 0;
+    outline: none;
 }
 
 div.minicartContainerHighlight {
@@ -1400,7 +1436,6 @@ ul.minicartContent {
 div.minicartDetailHighlight {
     position: absolute;
     width: 100%;
-    height: 100%;
 }
 
 div.minicartDetailContent {
