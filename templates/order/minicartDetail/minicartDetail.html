@@ -51,10 +51,15 @@
 	</venda_block label=30>
 	</div>
 	<div class="details">
+	  <span class="price"><venda_currsym><venda_invtsell><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=site.minicart_detail.each></venda_block label=10></span>
 		<venda_block label=80,invtatrtot&lt;1><span class="item"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></span></venda_block label=80>
-		<venda_block label=81,invtatrtot&gt;0><span class="item"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_invtname></a></span> <span class="invtatt"><venda_text id=site.basket.product_name.attribute_start><venda_invtatt1><venda_block label=7,invtatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt2></venda_block label=7><venda_block label=8,invtatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt3></venda_block label=8><venda_block label=9,invtatt4=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt4></venda_block label=9><venda_text id=site.basket.product_name.attribute_end></span></venda_block label=81>
-		<span class="quantity"><venda_text id=site.quantity>&nbsp;<venda_oiqty></span>
-		<span class="price"><venda_currsym><venda_invtsell><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=site.minicart_detail.each></venda_block label=10></span>
+		<venda_block label=81,invtatrtot&gt;0>
+		<span class="item"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_invtname></a></span> 
+		<span class="invtatt2">Size: <venda_block label=7,invtatt2=notnull><venda_invtatt2></venda_block label=7></span>
+		<span class="invtatt1">Colour: <venda_block label=8,invtatt2=notnull><venda_invtatt1></venda_block label=8></span>
+		</venda_block label=81>
+		<span class="quantity">QTY: <venda_oiqty></span>
+		
 	</div>
 </venda_block label=119>
 
@@ -96,6 +101,6 @@
 </li>
 </venda_detblock_item>
 
-<div class="minicart_viewer">
+<div class="minicart-viewer">
 <ul id="minicart_products" class="prods prodsList prodsMinicartCheckout"><venda_detail_item></ul>
 </div>
