@@ -688,7 +688,7 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 			'height' : maxHeight + 'px'
 		});
 		
-		jQuery(".minicart-viewer").before("<button id='scrollUp' class='basketScroll'>&nbsp;</button>");
+		jQuery(".minicart-viewer").before("<button id='scrollUp' class='basketScroll scroll-subtle'>&nbsp;</button>");
 		jQuery(".minicart-viewer").after("<button id='scrollDown' class='basketScroll'>&#9660;</button>");
 		
 		var top = 0;
@@ -698,11 +698,11 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 				top += maxHeight;
 				jQuery("#minicart_products").animate({
 					'margin-top' : top + 'px'
-				}, 200, function () { jQuery("#scrollDown").html("&#9660;"); });
+				}, 200, function () { jQuery("#scrollDown").html("&#9660;").removeClass('scroll-subtle'); });
 			}
 			if (step == 1) {
-				jQuery("#scrollDown").html("&#9660;");
-				jQuery(this).html("&nbsp;");
+				jQuery("#scrollDown").html("&#9660;").removeClass('scroll-subtle');
+				jQuery(this).html("&nbsp;").addClass('scroll-subtle');
 			}
 		});
 		jQuery("#scrollDown").on("click", function () {
@@ -711,11 +711,11 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 				top -= maxHeight;
 				jQuery("#minicart_products").animate({
 					'margin-top' : top + 'px'
-				}, 200, function () { jQuery("#scrollUp").html("&#9650;"); });
+				}, 200, function () { jQuery("#scrollUp").html("&#9650;").removeClass('scroll-subtle'); });
 			}
 			if (step == pages) {
-				jQuery("#scrollUp").html("&#9650;");
-				jQuery(this).html("&nbsp;");
+				jQuery("#scrollUp").html("&#9650;").removeClass('scroll-subtle');
+				jQuery(this).html("&nbsp;").addClass('scroll-subtle');
 			}
 		});
 		
