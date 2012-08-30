@@ -1,20 +1,38 @@
+<link href="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/css/basev2.css" rel="stylesheet" type="text/css">
+<style>
+.signupbox { border: 2px solid #000; }
+</style>
 
-<div class="grid_24">
-	<div class="grid_16 alpha"></div>
-	<div class="grid_8 omega"></div>
-</div>
-<div class="grid_24">
-	<div class="grid_8 alpha">
-		
-	</div>
-	<div class="grid_8">
-		
-	</div>
-	<div class="grid_8 omega">
-		
-	</div>
-</div>
+<div id="footercontainer grid_24">
 
+	<div class="grid_24">
+		<div class="grid_16 alpha"><hr class="foot-line"><br><br> </div>
+		<div class="grid_8 omega">
+		
+			<form id="signUpForm" action="POST" name="signupform" onsubmit="return(false);">
+				<fieldset>
+					<input id="signupbox" class="searchTextField" type="text" name="signupbox" size="20" value="Enter your email address" 
+					onclick="if (this.value=='Enter your email address'){this.value='';}">
+				</fieldset>
+				
+				<input id="searchsubmit" class="submit" type="submit" name="searchsubmit" value="Search" onclick="if (q.value=='Enter keyword'){q.value='';}">
+			</form>		
+		</div>
+	</div>
+	
+	<div class="grid_24">
+		<div class="grid_8 alpha">
+			
+		</div>
+		<div class="grid_8">
+			
+		</div>
+		<div class="grid_8 omega">
+			
+		</div>
+	</div>
+	
+</div>
 <div class="grid_4"><venda_inctemplate name=pciLogo,type=widgets></div>
 <div class="grid_4 push_16"><venda_inctemplate name=vendaLogo,type=widgets></div>
 <p class="grid_10 pull_1 footerText"><venda_text id=site.footer.copyright> &copy; <venda_dateformat date=now,format=yyyy> <venda_ebizname></p>
