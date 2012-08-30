@@ -5567,5 +5567,21 @@ ul#rvisitewidelist li a:hover div {
 }
 
 /* Footer */
+.footer-details {
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+}
+
+.footer-details ul {
+  display: block;
+  width: 50%;
+  float: left;  
+  list-style-type: none;
+}
+
+.footer-details ul li {
+  display: block;
+}
+
 
 /* Product Detail */
