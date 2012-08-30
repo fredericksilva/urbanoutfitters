@@ -616,7 +616,7 @@ input {
 }
 
 .footerText {
-    text-align: center;
+    text-align: left;
     font-size: .8em;
     line-height: 1.3em;
     color: #737373;
@@ -5566,10 +5566,84 @@ ul#rvisitewidelist li a:hover div {
   background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
 }
 
-/* Footer */
+/********************************
+******* # FOOTER STYLES # *******
+********************************/
+
+hr.foot-line { 
+	border:2px solid #4D4D4D; 
+	margin-right: 20px;
+}
+
+.signup-img { 
+	position: absolute; 
+	margin: -7px 0 0 20px;
+}
+
+#signUpForm {
+	margin-top: 5px;
+}
+
+input#signupbox { 
+	border: 4px solid #4D4D4D; 
+	background: transparent;
+	float: left; 
+	height: 13px;
+	width: 222px;
+	padding: 5px 10px;
+	color: #4D4D4D;
+	font-size: 11px;
+}
+
+input#searchsubmit {
+	border-top: 4px solid #4D4D4D; 
+	border-right: 4px solid #4D4D4D;
+	border-bottom: 4px solid #4D4D4D;
+	border-left: 0px;
+	background: transparent;
+	float: left;
+	color: #4D4D4D;
+	padding: 4px 5px; 
+	
+}
+
+#signUpForm fieldset { 
+	width: auto; 
+	float: left; 
+}
+
+
+
+.fbLikeB { 
+	height: 40px; 
+	float: left; 
+}
+.fbLikeB span {
+    float: left;
+    margin: 8px 8px 8px 0px;
+}
+.fbLikeB .fbook-button {  
+	float: left;
+    height: 30px;
+}
+
+.fbLikeB .fbook { margin-top: 5px; }
+
+h4.foot { 
+	font-size: 12px; 
+	font-family: Helvetica, Arial, sans-serif; 
+}
+
 .footer-details {
-  border-left: 1px solid #333;
-  border-top: 1px solid #333;
+   border-left: 1px solid #4D4D4D;
+   border-top: 1px solid #4D4D4D;
+   margin-right: 20px;
+   margin-top: 5px;
+   padding: 12px;
+}
+
+.footer-details.social {
+	margin-right: 0;
 }
 
 .footer-details ul {
@@ -5577,11 +5651,86 @@ ul#rvisitewidelist li a:hover div {
   width: 50%;
   float: left;  
   list-style-type: none;
+  height: 64px;
 }
 
 .footer-details ul li {
   display: block;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.footer-details ul.getSocial {
+  display: block;
+  list-style-type: none;
+  width: 286px;
+}
+
+.footer-details ul.getSocial li {
+  display: block;
+  width: 33%;
+  float: left;  
+}
+
+.socialCont {margin-right: 0;}
+
+/*social icon links */
+
+.getSocial li a { 
+	background: url("../images/footer/foot_social_new.png") no-repeat scroll transparent;
+	float: left;
+ }
+
+.getSocial li a.foot-fb {
+    display: block;
+    height: 18px;
+    width: 70px;
+    background-position: 0 0;
+}
+.getSocial li a.foot-tw {
+    display: block;
+    height: 20px;
+    width: 60px;
+    background-position: 0 -20px;
+}
+.getSocial li a.foot-fl {
+    display: block;
+    height: 16px;
+    width: 50px;
+    background-position: -104px 0;    
+}
+.getSocial li a.foot-yt {
+    display: block;
+    height: 24px;
+    width: 60px;
+    background-position: -104px -21px;  
+}
+.getSocial li a.foot-comm {
+    display: block;
+    height: 18px;
+    width: 60px;   
+    background-position: -190px 0; 
 }
 
 
+.getSocial li a.foot-blog {    
+    display: block;
+    height: 20px;
+    width: 60px;
+    background-position: -190px -20px;
+}
+
+.foot-devider { 
+	height: 30px; 
+	background: url("../images/footer/foot-line.png") repeat-x scroll transparent 0 50%;
+	margin-top: 5px; 
+}
+.foot-ccard {
+	float: right;
+}
+
+
+#pcilogo {
+	margin-top: -4px;
+}
 /* Product Detail */

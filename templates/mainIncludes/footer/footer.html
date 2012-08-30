@@ -1,67 +1,74 @@
-<venda_page page=footerlinks>
 <div class="grid_24">
   <div class="grid_16 alpha">
-    social
+    <hr class="foot-line">
+    <div class="fbLikeB">
+			<span class="floatL">Like us on facebook</span>
+			<div class="fbook-button">		
+			<iframe class="fbook floatL" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:100px; height:21px;" src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Furbanoutfitterseurope&layout=button_count&show_faces=false&width=100&action=like&font=arial&colorscheme=light&height=21"></iframe>
+			</div><!-- End fbook-button -->
+	</div><!-- End fbLikeB -->
+
   </div>
   <div class="grid_8 omega">
-    signup
+       <img class="signup-img" src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/foot_signup_uk.png" border="0" title="Sign Up" alt="Sign Up" />
+			<form id="signUpForm" action="POST" name="signupform" onsubmit="return(false);">
+				<fieldset>
+					<input id="signupbox" class="searchTextField" type="text" name="signupbox" size="50" value="Enter your email address" 
+					onclick="if (this.value=='Enter your email address'){this.value='';}">
+				</fieldset>				
+				<input id="searchsubmit" class="submit" type="submit" name="searchsubmit" value="Submit" onclick="">
+			</form>	
   </div>
 </div>
 
 <div class="grid_24">
   <div class="grid_8 alpha">
-    <h4>Info and Delivery</h4>
+    <h4 class="foot">Info and Delivery</h4>
     <div class="footer-details clearfix">
       <ul>
-        <li>Link 1</li>
-        <li>Link 2</li>
-        <li>Link 3</li>
-        <li>Link 4</li>
+        <li><a href="#">Help &amp; info</a></li>
+        <li><a href="#">Delivery information</a></li>
+        <li><a href="#">Track order</a></li>
+        <li><a href="#">Return policy</a></li>
       </ul>
+      
       <ul>
-        <li>Link 5</li>
-        <li>Link 6</li>
-        <li>Link 7</li>
-        <li>Link 8</li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">T&amp;Cs</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Privacy</a></li>
       </ul>
     </div>
   </div>
   <div class="grid_8">
-    <h4>Info and Delivery</h4>
+    <h4 class="foot">About UO</h4>
     <div class="footer-details clearfix">
       <ul>
-        <li>Link 1</li>
-        <li>Link 2</li>
-        <li>Link 3</li>
-        <li>Link 4</li>
+        <li><a href="#">UO Stores</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">US site</a></li>
       </ul>
+      
       <ul>
-        <li>Link 5</li>
-        <li>Link 6</li>
-        <li>Link 7</li>
-        <li>Link 8</li>
+        <li><a href="#">Email sign up</a><li>
       </ul>
     </div>
   </div>
   <div class="grid_8 omega">
-    <h4>Info and Delivery</h4>
-    <div class="footer-details clearfix">
-      <ul>
-        <li>Link 1</li>
-        <li>Link 2</li>
-        <li>Link 3</li>
-        <li>Link 4</li>
-      </ul>
-      <ul>
-        <li>Link 5</li>
-        <li>Link 6</li>
-        <li>Link 7</li>
-        <li>Link 8</li>
-      </ul>
+    <h4 class="foot">Let's get social</h4>
+    <div class="footer-details clearfix social">
+    	<ul class="getSocial">
+			<li><a target="_blank" href="http://www.facebook.com/urbanoutfitterseurope" class="foot-fb"></a></li>
+			<li><a target="_blank" href="http://www.flickr.com/photos/urbanoutfitterseurope/" class="foot-fl"></a></li>
+			
+		    <li><a href="http://urbanoutfitters.uat.venda.com/scat/community/" class="foot-comm"></a></li>			
+			<li><a target="_blank" href="http://twitter.com/uoeurope" class="foot-tw"></a></li>
+			
+			<li><a target="_blank" href="http://www.youtube.com/urbanoutfitterscouk" class="foot-yt"></a></li>	
+			<li><a class="foot-blog" href="http://urbanoutfitters-blog.co.uk" target="_blank"></a></li>
+		</ul>
     </div>
   </div>
 </div>
 
-<div class="grid_4"><venda_inctemplate name=pciLogo,type=widgets></div>
-<div class="grid_4 push_16"><venda_inctemplate name=vendaLogo,type=widgets></div>
-<p class="grid_10 pull_1 footerText"><venda_text id=site.footer.copyright> &copy; <venda_dateformat date=now,format=yyyy> <venda_ebizname></p>
+
