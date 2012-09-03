@@ -5573,9 +5573,9 @@ ul#rvisitewidelist li a:hover div {
   background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
 }
 
-/********************************
-******* # FOOTER STYLES # *******
-********************************/
+/*/////////////////////////////////////////////*/
+/*/////////// # FOOTER STYLES # ///////////////*/  
+/*/////////////////////////////////////////////*/
 
 hr.foot-line { 
 	border:2px solid #4D4D4D; 
@@ -5587,11 +5587,11 @@ hr.foot-line {
 	margin: -7px 0 0 20px;
 }
 
-#signUpForm {
+#commentForm {
 	margin-top: 5px;
 }
 
-input#signupbox { 
+.foot-signUp input#email { 
 	border: 4px solid #4D4D4D; 
 	background: transparent;
 	float: left; 
@@ -5602,7 +5602,7 @@ input#signupbox {
 	font-size: 11px;
 }
 
-input#searchsubmit {
+.foot-signUp input#formsubmit {
 	border-top: 4px solid #4D4D4D; 
 	border-right: 4px solid #4D4D4D;
 	border-bottom: 4px solid #4D4D4D;
@@ -5614,7 +5614,7 @@ input#searchsubmit {
 	
 }
 
-#signUpForm fieldset { 
+.foot-signUp #commentForm fieldset { 
 	width: auto; 
 	float: left; 
 }
