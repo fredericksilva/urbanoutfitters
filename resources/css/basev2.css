@@ -1638,7 +1638,7 @@ fieldset {
     background-color: #fff;
     border: 1px solid #666666;
     border-top: none;
-    padding: 5px 15px 25px;
+    padding: 0 15px 25px;
     width: 920px !important;
     margin: 0 auto;
 }
@@ -1692,6 +1692,13 @@ fieldset {
 
 .mm_ul > li > div > div > ul {
     width: 728px;
+    float: left;
+}
+
+.mmpromo {
+    float: left;
+    margin: 16px 0 0 20px;
+    width: 155px;
 }
 
 .mm_ul > li > div > div > ul > li {
