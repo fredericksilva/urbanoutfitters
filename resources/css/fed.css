@@ -1,0 +1,94 @@
+/* ---------------------------------- */
+/* ---- Productdetail Styles Fed ---- */
+/* ---------------------------------- */
+
+.prodDesc {  
+	/* some padding here to center the columns */
+} 
+.prodDesc h1 { 
+	width: 320px; 
+} 
+
+.oneProduct .priceField {
+    float: left;
+    margin: 10px 0 20px;
+}
+
+#attributeInputs div {
+    clear:none; 
+	float: left;
+}
+.product-att select { 
+ width: 170px;
+
+}
+
+.product-att label {
+	display: none;
+}
+
+.box.stockFeedbackBox {
+	display: none !important;
+}
+
+.buyControls, .buyControlsMulti {
+	text-align: left;
+}
+.productDetailGradientBox {
+	background: none;
+	border: 0 none;
+}
+.submit.buynow { 
+	display: none;	
+}
+
+.submit.addproduct {
+    height: 34px;
+    width: 141px;
+	background: #4C4C4C;
+	border: 0 none;	
+    padding: 3px 18px 2px;	
+}
+
+#qtybox label {
+	display: none;
+}
+
+input#qty {
+	height: 32px;
+	text-align: center;
+	background: transparent;
+	border: 1px solid #4C4C4C;
+	color: #4C4C4C;
+	margin-right: 10px;	
+}
+
+.productDetailGradientBox.reviews { 
+	position: absolute;
+	margin-top: -166px;    
+    right: 0;
+}
+
+/* Infotabs Panel */
+
+#infotab { 
+	background: url("../images/footer/foot-line.png") repeat-x top;
+	padding:  5px 0px;
+}
+#infotab .tab, #infotab li.active { 
+	border: none;	
+}
+#infotab .tab {
+	background: url("../images/footer/foot-line.png") repeat-x bottom; 
+	padding:  5px 14px;
+	margin-bottom:  10px;
+}
+
+
+#infotab .tabcontent { border: none; }
+#infotab .nav ul li { border:0;}
+
+#infotab .tabheader ul.nav li a { 
+	font-size: 14px; 
+	font-weight: bold;	
+}

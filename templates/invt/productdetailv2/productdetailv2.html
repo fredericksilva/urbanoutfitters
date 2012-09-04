@@ -58,9 +58,9 @@ jQuery(function(){
 <venda_tpcomment>// END - javascript for tell a friend, emwbis, write and read a review</venda_tpcomment>
 </script>
 
-<!-- Second column -->
+<venda_tpcomment><!-- Second column - Product Description --></venda_tpcomment>
 <div itemscope itemtype="http://schema.org/Product">
-	<div class="grid_12 push_12 alpha">
+	<div class="grid_12 push_12 alpha prodDesc">
 	<h1 itemprop="name" id="comp-name<venda_invtref>"><venda_invtname></h1>
 	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
 	<venda_block label=320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=320>
@@ -125,25 +125,25 @@ jQuery(function(){
 			<venda_tpcomment><!-- start: attributes dropdown --></venda_tpcomment>
 				<div id="attributeInputs" class="attributeInputs">
 					<venda_block label=21,selatt1=notnull>
-					<div>
+					<div class="product-att">
 						<label for="att1"><venda_att1><venda_text id=site.product_detail.attribute.label_colon></label> 
 						<select name="att1" id="att1_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select>
 					</div>
 					</venda_block label=21>
 					<venda_block label=22,selatt2=notnull>
-					<div>
+					<div class="product-att">
 						<label for="att2"><venda_att2><venda_text id=site.product_detail.attribute.label_colon></label>
 						<select name="att2" id="att2_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select>
 					</div>
 					</venda_block label=22>
 					<venda_block label=23,selatt3=notnull>
-					<div>
+					<div class="product-att">
 						<label for="att3"><venda_att3><venda_text id=site.product_detail.attribute.label_colon></label>
 						<select name="att3" id="att3_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att3></option><venda_selatt3></select>
 					</div>
 					</venda_block label=23>
 					<venda_block label=24,selatt4=notnull>
-					<div>
+					<div class="product-att">
 						<label for="att4"><venda_att4><venda_text id=site.product_detail.attribute.label_colon></label>
 						<select name="att4" id="att4_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att4></option><venda_selatt4></select>
 					</div>
@@ -308,38 +308,45 @@ jQuery(function(){
 
 	
 	<venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
-	<div id="infotab" class="tabs productDetailTabs">
-		<div class="tabheader">
-			<ul class="nav">
-			<li><a href="#contentTab1" title="Description">Description</a></li>
-			<li><a href="#contentTab2" title="Specification">Specification</a></li>
-			<li><a href="#contentTab3" title="Delivery">Delivery</a></li>
-			<li class="last"><a href="#contentTab4" title="Returns">Returns</a></li>
+	<div id="tabnav" class="tabs productDetailTabs">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1" title="Description">Description</a></li>
+				<li><a href="#tabs-2" title="Info &amp; Sizing">Info &amp; Sizing</a></li>
+				<li><a href="#tabs-3" title="Delivery Delivery &amp; Returns">Delivery &amp; Returns</a></li>
+				<li class="last"><a href="#tabs-4" title="Reviews">Reviews</a></li>
 			</ul>
-		</div>
-		<div class="tabcontent">
-			<!-- description -->
-			<div class="tab">
+		
+			<div id="tabs-1">					
 				<venda_block label=12,invtdesc1=notnull><p class="invtdesc1" itemprop="description"><venda_invtdesc1></p></venda_block label=12>
 				<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
 				<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
 				<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
-			</div>
-			<div class="tab">
-			<table summary="<venda_text id=site.product_detail.product_specifications_information_summary>" title="<venda_text id=site.product_detail.product_specifications_information_title>" cellspacing="0" cellpadding="0">
-				<tbody>	
-				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=2,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=3,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=4,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-				<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=5,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-				</tbody>
-			</table>
-			</div>
-			<div class="tab"><venda_page page=deliveryproduct></div>
-			<div class="tab"><venda_page page=returnsproduct></div>
-		</div>
-	</div>
+			</div><!-- End tabs-1 -->
+		
+			<div id="tabs-2">
+				<table summary="<venda_text id=site.product_detail.product_specifications_information_summary>" title="<venda_text id=site.product_detail.product_specifications_information_title>" cellspacing="0" cellpadding="0">
+					<tbody>	
+					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=2,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=3,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=4,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=5,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
+					</tbody>
+				</table>
+			</div><!-- End tabs-2 -->
+			
+			<div id="tabs-3">
+				<venda_page page=deliveryproduct>
+			</div><!-- End tabs-3 -->
+			
+			<div id="tabs-4">
+				<venda_page page=returnsproduct>
+			</div><!-- End tabs-4 -->
+		</div> <!-- End tabs -->
+	</div><!-- End tabnav -->
+	<div class="clear-all"></div>
+	
 	<script type="text/javascript">
 	var infotab = new Venda.Widget.createTab("#infotab");
 	infotab.init();
