@@ -1,0 +1,90 @@
+<venda_tpcomment><!-- NON ATTRIBUTE --></venda_tpcomment>
+<venda_block label=noatt,invtatrtot&lt;1>
+	<venda_tpcomment><!-- no savings --></venda_tpcomment>
+	<venda_block label=noatt_nosavings,mode=value,<venda_invtsavingonwas>=>
+		<p class="priceField">
+			<span class="priceNow"><span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span>
+		</p>
+	</venda_block label=noatt_nosavings>
+	<venda_tpcomment><!-- savings --></venda_tpcomment>
+	<venda_block label=noatt_savings,mode=value,<venda_invtsavingonwas>!=>
+		<p class="priceField">
+			<span class="priceNow"><span><venda_text id=site.product.price.now></span> <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span></span><br>
+			<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+		</p>
+	</venda_block label=noatt_savings>
+</venda_block label=noatt>
+
+
+<venda_tpcomment><!-- ATTRIBUTE --></venda_tpcomment>
+<venda_block label=att,invtatrtot&gt;0>
+
+	<venda_tpcomment><!-- no savings --></venda_tpcomment>
+	<venda_block label=att_nosavings,mode=value,<venda_invtatrminsubsell>=0.00,<venda_invtatrminsubsell>&gt;<venda_invtatrminsubwas>,<venda_invtatrminsubsell>=<venda_invtatrminsubwas>,operator=or>
+		<p class="priceField">
+			<venda_block label=att_nosavings_basic,mode=value,<venda_invtatrminsubsell>=0.00>
+
+				<venda_block label=att_nosavings_basic_nowas,mode=value,<venda_invtsavingonwas>=>
+					<span class="priceNow"><span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span></span>
+				</venda_block label=att_nosavings_basic_nowas>
+
+				<venda_block label=att_nosavings_basic_was,mode=value,<venda_invtsavingonwas>!=>
+					<span class="priceNow"><venda_text id=site.product.price.now></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span><br>
+					<span class="priceWas"><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span>
+				</venda_block label=att_nosavings_basic_was>
+
+			</venda_block label=att_nosavings_basic>
+			<venda_block label=att_nosavings_adv,mode=value,<venda_invtatrminsubsell>!=0.00>
+
+				<venda_tpcomment><!-- same price --></venda_tpcomment>
+				<venda_block label=att_nosavings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
+					<span class="priceNow"><span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>
+				</venda_block label=att_nosavings_adv_sameprice>
+
+				<venda_tpcomment><!-- different price --></venda_tpcomment>
+				<venda_block label=att_nosavings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
+					<span class="priceNow"><span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></span></span>
+				</venda_block label=att_nosavings_adv_diffprice>
+
+			</venda_block label=att_nosavings_adv>
+		</p>
+	</venda_block label=att_nosavings>
+	
+	<venda_tpcomment><!-- savings --></venda_tpcomment>
+	<venda_block label=att_savings,mode=value,<venda_invtatrminsubsell>!=0.00,<venda_invtatrminsubsell>&lt;<venda_invtatrminsubwas>,operator=and>
+		<p class="priceField">
+	
+			<venda_block label=att_savings_basic,mode=value,<venda_invtatrminsubsell>=>
+				<span class="priceNow"><span id="price" class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span>
+			</venda_block label=att_savings_basic>
+			
+			<venda_block label=att_savings_adv,mode=value,<venda_invtatrminsubsell>!=>
+			
+				<venda_tpcomment><!-- same price --></venda_tpcomment>
+				<venda_block label=att_savings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
+					<span class="priceNow"><span><venda_text id=site.product.price.now></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span><br>
+					<venda_block label=att_savings_adv_sameprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
+						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtatrminsubwas></span></span>
+					</venda_block label=att_savings_adv_sameprice_single>
+					<venda_block label=att_savings_adv_sameprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
+						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+					</venda_block label=att_savings_adv_sameprice_range>
+				</venda_block label=att_savings_adv_sameprice>
+				
+				<venda_tpcomment><!-- different price --></venda_tpcomment>
+				<venda_block label=att_savings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
+				<span class="priceNow"><span id="price" itemprop="price"><venda_text id=site.product.price.now><span class="price"> <venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span><br>
+					<venda_block label=att_savings_adv_diffprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
+						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span></span></span>
+					</venda_block label=att_savings_adv_diffprice_single>
+					<venda_block label=att_savings_adv_diffprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
+						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+					</venda_block label=att_savings_adv_diffprice_range>
+				</venda_block label=att_savings_adv_diffprice>
+				
+			</venda_block label=att_savings_adv>
+
+		</p>
+	</venda_block label=att_savings>
+	
+</venda_block label=att>

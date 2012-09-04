@@ -25,13 +25,13 @@ function checkFieldGN(formName, field, defaultStr) {
 </script>
 <div class="solr-search"> 
 
-<form id="solrsearch" onsubmit="checkFieldGN('formsolrsearch','q','Enter keyword'); checkFormGN(); return(false);" id="formsolrsearch" name="formsolrsearch" action="/search">
+<form id="solrsearch" onsubmit="checkFieldGN('formsolrsearch','q','Search'); checkFormGN(); return(false);" id="formsolrsearch" name="formsolrsearch" action="/search">
 
 <fieldset> 
-  <input class="solr-textfield" type="text" onclick="if (this.value=='Enter keyword'){this.value='';}" value="Search" size="20" id="q" name="q"> 
+  <input class="solr-textfield" type="text" onclick="if (this.value=='Search'){this.value='';}" value="Search" size="20" id="q" name="q"> 
 </fieldset> 
 
-<input type="submit" class="solr-submit" onclick="if (q.value=='Enter keyword'){q.value='';}" value="" name="searchsubmit"> 
+<input type="submit" class="solr-submit" onclick="if (q.value=='Search'){q.value='';}" value="" name="searchsubmit"> 
 
 </form>
 </div>
