@@ -59,6 +59,7 @@ jQuery(function(){
 </script>
 
 <venda_tpcomment><!-- Second column - Product Description --></venda_tpcomment>
+
 <div itemscope itemtype="http://schema.org/Product">
 	<div class="grid_12 push_12 alpha prodDesc">
 	<h1 itemprop="name" id="comp-name<venda_invtref>"><venda_invtname></h1>
@@ -106,6 +107,19 @@ jQuery(function(){
 				<venda_block label=onhand,invtonhand&gt;0><venda_block label=instock,invtpreorder!=1><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=preorder,invtpreorder=1><link itemprop="availability" href="http://schema.org/PreOrder"></venda_block label=preorder></venda_block label=onhand><venda_block label=outofstock,invtonhand&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
 			</div>
+			<!-- promotional extended fields -->
+			<div class="producdetail-promo">			
+				<venda_block label=55,pdxtpromo=notnull>
+					<div class="general-promo"><venda_pdxtpromo></div>
+				</venda_block label=55>
+				<venda_block label=58,invtpdxtonlinexcl=notnull>
+					<img class="onexcl" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/onlineexcl_uk.png" />
+				</venda_block label=58>	
+				<venda_block label=333,invtpdxtboutiqueimg=notnull>
+					<img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.png"/>
+				</venda_block label=333>
+								
+			</div>
 			</venda_block label=16>
 			<venda_tpcomment><!-- end: price - if product doesn't have attributes --></venda_tpcomment>
 			
@@ -115,6 +129,19 @@ jQuery(function(){
 				<meta itemprop="priceCurrency" content="<venda_currencycode>">
 				<venda_block label=instock,invtatrinstock&gt;0><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=outofstock,invtatrinstock&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
+			</div>
+			<!-- promotional extended fields -->
+			<div class="producdetail-promo">			
+				<venda_block label=55,pdxtpromo=notnull>
+					<div class="general-promo"><venda_pdxtpromo></div>
+				</venda_block label=55>
+				<venda_block label=58,invtpdxtonlinexcl=notnull>
+					<img class="onexcl" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/onlineexcl_uk.png" />
+				</venda_block label=58>
+				<venda_block label=333,invtpdxtboutiqueimg=notnull>
+					<img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.png"/>
+				</venda_block label=333>
+									
 			</div>
 			<venda_tpcomment><!-- end: price - if product does have attributes --></venda_tpcomment>
 			
@@ -149,8 +176,7 @@ jQuery(function(){
 					</div>
 					
 					</venda_block label=24>
-				</div>
-				
+				</div>				
 				<div style="clear: both;"></div>
 			<venda_tpcomment><!-- end: attributes dropdown --></venda_tpcomment>
 
@@ -177,8 +203,9 @@ jQuery(function(){
 			</venda_block label=200>
 			
 			<div id="addedmsg" class="addedmessage"><venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=site.addedmsg>></p><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=32></div>
-			
-			<venda_block label=52,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+		
+				    
+			<venda_block label=52,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>			
 			<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
 			<!-- power reviews snippet for product reviews -->
 			<script type="text/javascript">snippet(document);</script>
@@ -318,63 +345,96 @@ jQuery(function(){
 		<div id="accordion">
 		
 			<h3><a href="#" title="Description">Description</a></h3>
+			
 			<div class="tab1">					
-				<venda_block label=12,invtdesc1=notnull><p class="invtdesc1" itemprop="description"><venda_invtdesc1></p></venda_block label=12>
-				<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
-				<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
-				<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
+				<venda_block label=12,invtdesc1=notnull>
+					<p class="invtdesc1" itemprop="description"><venda_invtdesc1></p>
+				</venda_block label=12>
+				<venda_block label=13,invtdesc2=notnull>
+					<p class="invtdesc2"><venda_invtdesc2></p>
+				</venda_block label=13>
+				<venda_block label=14,invtdesc3=notnull>
+					<p class="invtdesc3"><venda_invtdesc3></p>
+				</venda_block label=14>
+				<venda_block label=15,invtdesc4=notnull>
+					<p class="invtdesc4"><venda_invtdesc4></p>
+				</venda_block label=15>
+				
 			</div><!-- End tab1 -->
 			
 			<h3><a href="#" title="Info &amp; Sizing">Info &amp; Sizing</a></h3>
+			
 			<div class="tab2">
-				<table summary="<venda_text id=site.product_detail.product_specifications_information_summary>" title="<venda_text id=site.product_detail.product_specifications_information_title>" cellspacing="0" cellpadding="0">
-					<tbody>	
-					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=2,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=3,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=4,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=5,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
-					</tbody>
-				</table>
-				<!-- DELETE THIS - TESTING ONLY -->
-				<span>Some content for tab2 here</span><br>
-				<span>Some content for tab2 here</span><br>
-				<span>Some content for tab2 here</span><br>
-				<span>Some content for tab2 here</span><br>
+			
+				<venda_block label=14,pdxtsizechart=null>
+					<p>Sizing information not available</p>
+				</venda_block label=14>
+
+				<!--SIZE CHART HIDDEN DIVS-->	
+				<venda_block label=13,pdxtsizechart=notnull>				
+					<div id="options_sizechart">					
+						<!--WOMENS SIZE CHART -->
+						<venda_block label=11,pdxtsizechart=womenssize>
+						<venda_page page=womenssizechart>
+						</venda_block label=11>
+						<!--END WOMENS SIZE CHART -->						
+						
+						<!--MENS SIZE CHART -->
+						<venda_block label=12,pdxtsizechart=menssize>
+						<venda_page page=menssizechart>
+						</venda_block label=12>
+						<!--END MENS SIZE CHART -->					
+					</div>				
+				</venda_block label=13>
+				<!-- END SIZE CHART-->	
+				
 		  </div><!-- End tab2 -->
 			
 		  <h3><a href="#" title="Delivery Delivery &amp; Returns">Delivery &amp; Returns</a></h3>
 		  <div class="tab3">
-			  <venda_page page=deliveryproduct>
-			  <!-- DELETE THIS - TESTING ONLY -->
-				<span>Some content for tab3 here</span><br>
-				<span>Some content for tab3 here</span><br>
-				<span>Some content for tab3 here</span><br>
-				<span>Some content for tab3 here</span><br>
+		  
+		  	<h4>Delivery Information</h4>
+		  		<div id="options_deliveryinfo">
+					<venda_page page=productdetaildeliveryinfo>
+				</div>
+			<h4>Returns</h4>
+				<div id="options_returns">
+					<venda_page page=productdetailreturns>
+				</div>
 		  </div><!-- End tab3 -->
 
 		  <h3><a href="#" title="Reviews">Reviews</a></h3>
 		  <div class="tab4">
-			  <venda_page page=returnsproduct>
-			  <!-- DELETE THIS - TESTING ONLY -->
-				<span>Some content for tab4 here</span><br>
-				<span>Some content for tab4 here</span><br>
-				<span>Some content for tab4 here</span><br>
-				<span>Some content for tab4 here</span><br>
+			 <div class="reviews">		
+				<venda_block label=1031,mode=value,<venda_sessionlanguage>=en>
+				<venda_tpcomment><!-- Bazaar Voice: display printable link / only EN --></venda_tpcomment>
+				<venda_inctemplate name=bazaarvoice_printablelink,type=invt/BazaarVoice>
+						
+				<venda_tpcomment><!-- Bazaar Voice: display Review / only EN --></venda_tpcomment>
+				<venda_inctemplate name=bazaarvoice_display,type=invt/BazaarVoice>
+		
+				<venda_tpcomment><!-- Bazaar Voice: Load content  / only EN--></venda_tpcomment>
+				<venda_inctemplate name=bazaarvoice_loadcontent,type=invt/BazaarVoice>
+						
+				<div id="noReview" style="display:none;"><div id="noReviewTxt">Currently, There are no reviews for this product.</div><div id="noReviewbtn"></div>
+					</venda_block label=1031>
+				</div>
+			</div>
 		  </div><!-- End tab4 -->									
 						
-		</div> <!-- End accordion -->		
+		</div> <!-- End accordion -->	
+			
 	</div><!-- End productDetailTabs -->
 	
 	<div class="clear-all"></div>
 	
-	<script type="text/javascript">
-	var infotab = new Venda.Widget.createTab("#infotab");
-	infotab.init();
-	</script>
-	<venda_tpcomment><!-- end: product details tab --></venda_tpcomment>
+	<venda_tpcomment><!-- promotional banner --></venda_tpcomment>
+	<div id="proddetail-promobanner">
+		<venda_page page=proddetail-promobanner>
+	</div>
+	
+	<div class="clear-all"></div>
 
-	<venda_inctemplate name=socialBookMarks,type=widgets>
 	
 	<venda_tpcomment><!-- end: product detail contents --></venda_tpcomment>
 	<venda_tpxt mode=set,name=parent,value=<venda_invtcatref0>>
