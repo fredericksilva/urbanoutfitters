@@ -69,26 +69,51 @@ input#qty {
     right: 0;
 }
 
-/* Infotabs Panel */
+/* Accordion Panel */
 
-#infotab { 
-	background: url("../images/footer/foot-line.png") repeat-x top;
-	padding:  5px 0px;
+.productDetailTabs { 
+	background: url("../images/footer/foot-line.png") repeat-x bottom;
+	padding:  4px 0;
+	margin-bottom: 20px;
 }
-#infotab .tab, #infotab li.active { 
-	border: none;	
+#accordion h3 {
+	outline: 0;
+	height: 16px;
+	padding: 10px 0 5px;
+    background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent;
 }
-#infotab .tab {
-	background: url("../images/footer/foot-line.png") repeat-x bottom; 
-	padding:  5px 14px;
-	margin-bottom:  10px;
+#accordion h3 a { 
+    outline: 0;
+	color: #4C4C4C; 
+	font-size: 15px; 
+	font-weight: bold;
+	padding-bottom: 8px;
+	display: block;
+}
+
+#accordion .ui-state-active a {
+    color: #4C4C4C; 
+    background: url("../images/footer/foot-line.png") repeat-x scroll bottom transparent;
+	display: block;
+	padding-bottom: 8px;
 }
 
 
-#infotab .tabcontent { border: none; }
-#infotab .nav ul li { border:0;}
-
-#infotab .tabheader ul.nav li a { 
-	font-size: 14px; 
-	font-weight: bold;	
+#accordion .ui-icon-triangle-1-s {
+	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: right;
 }
+
+#accordion .ui-icon-triangle-1-e {
+	background: url("../images/img-plus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: right;
+}
+
+#accordion .tab1, #accordion .tab2, #accordion .tab3, #accordion .tab4 { padding: 10px 0;}
+

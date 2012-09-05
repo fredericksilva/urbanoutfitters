@@ -303,28 +303,30 @@ jQuery(function(){
 			</div>
 		  </venda_block label=340>
 		<venda_tpcomment><!-- end: multibuy --></venda_tpcomment>
-	
-	
-
-	
-	<venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
-	<div id="tabnav" class="tabs productDetailTabs">
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1" title="Description">Description</a></li>
-				<li><a href="#tabs-2" title="Info &amp; Sizing">Info &amp; Sizing</a></li>
-				<li><a href="#tabs-3" title="Delivery Delivery &amp; Returns">Delivery &amp; Returns</a></li>
-				<li class="last"><a href="#tabs-4" title="Reviews">Reviews</a></li>
-			</ul>
 		
-			<div id="tabs-1">					
+	<venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
+	
+	<script>
+		jQuery(function() {
+			jQuery( "#accordion" ).accordion({
+				collapsible: true
+			});
+		});
+	</script>
+
+	<div class="productDetailTabs">
+		<div id="accordion">
+		
+			<h3><a href="#" title="Description">Description</a></h3>
+			<div class="tab1">					
 				<venda_block label=12,invtdesc1=notnull><p class="invtdesc1" itemprop="description"><venda_invtdesc1></p></venda_block label=12>
 				<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
 				<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
 				<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
-			</div><!-- End tabs-1 -->
-		
-			<div id="tabs-2">
+			</div><!-- End tab1 -->
+			
+			<h3><a href="#" title="Info &amp; Sizing">Info &amp; Sizing</a></h3>
+			<div class="tab2">
 				<table summary="<venda_text id=site.product_detail.product_specifications_information_summary>" title="<venda_text id=site.product_detail.product_specifications_information_title>" cellspacing="0" cellpadding="0">
 					<tbody>	
 					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
@@ -334,17 +336,36 @@ jQuery(function(){
 					<venda_extflds hideempty=0,realseq=0,template=pdxtDisplay,group=5,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
 					</tbody>
 				</table>
-			</div><!-- End tabs-2 -->
+				<!-- DELETE THIS - TESTING ONLY -->
+				<span>Some content for tab2 here</span><br>
+				<span>Some content for tab2 here</span><br>
+				<span>Some content for tab2 here</span><br>
+				<span>Some content for tab2 here</span><br>
+		  </div><!-- End tab2 -->
 			
-			<div id="tabs-3">
-				<venda_page page=deliveryproduct>
-			</div><!-- End tabs-3 -->
-			
-			<div id="tabs-4">
-				<venda_page page=returnsproduct>
-			</div><!-- End tabs-4 -->
-		</div> <!-- End tabs -->
-	</div><!-- End tabnav -->
+		  <h3><a href="#" title="Delivery Delivery &amp; Returns">Delivery &amp; Returns</a></h3>
+		  <div class="tab3">
+			  <venda_page page=deliveryproduct>
+			  <!-- DELETE THIS - TESTING ONLY -->
+				<span>Some content for tab3 here</span><br>
+				<span>Some content for tab3 here</span><br>
+				<span>Some content for tab3 here</span><br>
+				<span>Some content for tab3 here</span><br>
+		  </div><!-- End tab3 -->
+
+		  <h3><a href="#" title="Reviews">Reviews</a></h3>
+		  <div class="tab4">
+			  <venda_page page=returnsproduct>
+			  <!-- DELETE THIS - TESTING ONLY -->
+				<span>Some content for tab4 here</span><br>
+				<span>Some content for tab4 here</span><br>
+				<span>Some content for tab4 here</span><br>
+				<span>Some content for tab4 here</span><br>
+		  </div><!-- End tab4 -->									
+						
+		</div> <!-- End accordion -->		
+	</div><!-- End productDetailTabs -->
+	
 	<div class="clear-all"></div>
 	
 	<script type="text/javascript">
