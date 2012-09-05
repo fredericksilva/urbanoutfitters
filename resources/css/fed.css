@@ -12,6 +12,8 @@
 span.sku {
 	display: none;
 }
+.productselectedwrapper { display: none;}
+
 .oneProduct .priceField {
     float: left;
     margin: 10px 0 10px;
@@ -23,7 +25,6 @@ span.sku {
 	float: left;
 	padding-top: 0;
 	margin-right: 10px;
-	
 }
 .producdetail-promo img.boutique { 
 	float: left;
