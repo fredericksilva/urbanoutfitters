@@ -1,0 +1,133 @@
+/* ---------------------------------- */
+/* ---- Productdetail Styles Fed ---- */
+/* ---------------------------------- */
+
+.prodDesc {  
+	/* some padding here to center the columns */
+} 
+.prodDesc h1 { 
+	width: 320px; 
+	font-size: 21px;
+} 
+span.sku {
+	display: none;
+}
+.productselectedwrapper { display: none;}
+
+.oneProduct .priceField {
+    float: left;
+    margin: 10px 0 10px;
+}
+
+#price.price { font-size: 21px; }
+
+.producdetail-promo img.onexcl {
+	float: left;
+	padding-top: 0;
+	margin-right: 10px;
+}
+.producdetail-promo img.boutique { 
+	float: left;
+	padding-top: 3px;
+	margin-right: 10px;	
+}	
+#attributeInputs div {
+    clear:none; 
+	float: left;
+}
+.product-att select { 
+ 	width: 170px;
+
+}
+.product-att label {
+	display: none;
+}
+.box.stockFeedbackBox {
+	display: none !important;
+}
+.buyControls, .buyControlsMulti {
+	text-align: left;
+}
+.productDetailGradientBox {
+	background: none;
+	border: 0 none;
+}
+.submit.buynow { 
+	display: none;	
+}
+.submit.addproduct {
+    height: 34px;
+    width: 141px;
+	background: #4C4C4C;
+	border: 0 none;	
+    padding: 3px 18px 2px;	
+}
+#qtybox label {
+	display: none;
+}
+input#qty {
+	height: 32px;
+	text-align: center;
+	background: transparent;
+	border: 1px solid #4C4C4C;
+	color: #4C4C4C;
+	margin-right: 10px;	
+}
+.productDetailGradientBox.reviews { 
+	position: absolute;
+	margin-top: -176px;    
+    right: 0;
+}
+
+/* Accordion Panel */
+
+.productDetailTabs { 
+	background: url("../images/footer/foot-line.png") repeat-x bottom;
+	padding:  4px 0;
+	margin-bottom: 20px;
+}
+
+.productDetailTabs h3 {
+	outline: 0;
+	height: 16px;
+	padding: 10px 0 5px;
+    background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent;
+}
+.productDetailTabs h3 a { 
+    outline: 0;
+	color: #4C4C4C; 
+	font-size: 15px; 
+	font-weight: bold;
+	padding-bottom: 8px;
+	display: block;
+}
+
+#accordion .ui-state-active a {
+    color: #4C4C4C; 
+    background: url("../images/footer/foot-line.png") repeat-x scroll bottom transparent;
+	display: block;
+	padding-bottom: 8px;
+}
+
+
+#accordion .ui-icon-triangle-1-s {
+	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: right;
+	cursor: pointer;
+}
+
+#accordion .ui-icon-triangle-1-e {
+	background: url("../images/img-plus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: right;
+	cursor: pointer;
+}
+
+.productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
+
+.proddetail-promobanner { margin-top: 60px; border: 0;}
