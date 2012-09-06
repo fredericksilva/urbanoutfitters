@@ -1054,7 +1054,6 @@ Venda.Attributes.StoreImageSwaps = function(obj) {
 		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
 			CloudHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>";
 		}
-		console.log(CloudHTML)
 		jQuery(".slider .slides").html(CloudHTML);
 		jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ", " + Venda.Attributes.imgNo + ");'>View Large Image</a>");
 		Venda.Attributes.initImgObj = obj;
