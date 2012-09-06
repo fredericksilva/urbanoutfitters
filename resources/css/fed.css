@@ -86,13 +86,14 @@ input#qty {
 	padding:  4px 0;
 	margin-bottom: 20px;
 }
-#accordion h3 {
+
+.productDetailTabs h3 {
 	outline: 0;
 	height: 16px;
 	padding: 10px 0 5px;
     background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent;
 }
-#accordion h3 a { 
+.productDetailTabs h3 a { 
     outline: 0;
 	color: #4C4C4C; 
 	font-size: 15px; 
@@ -127,6 +128,6 @@ input#qty {
 	cursor: pointer;
 }
 
-#accordion .tab1, #accordion .tab2, #accordion .tab3, #accordion .tab4 { padding: 10px 0;}
+.productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
 
-#proddetail-promobanner { margin-top: 60px; border: 0;}
+.proddetail-promobanner { margin-top: 60px; border: 0;}
