@@ -60,8 +60,9 @@ jQuery(function(){
 
 <venda_tpcomment><!-- Second column - Product Description --></venda_tpcomment>
 
-<div itemscope itemtype="http://schema.org/Product">
-	<div class="grid_12 push_12 alpha prodDesc">
+<div itemscope itemtype="http://schema.org/Product" class="product-data">
+	<div class="grid_12 push_12 omega prodDesc">
+	<div class="product-details">
 	<h1 itemprop="name" id="comp-name<venda_invtref>"><venda_invtname></h1>
 	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
 	<venda_block label=320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=320>
@@ -433,38 +434,60 @@ jQuery(function(){
 
 	<venda_extflds template=extflds,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>>
 	</div>
+	</div>
 	<venda_tpcomment><!-- end: right hand side (price, description, etc) --></venda_tpcomment>
 	
 	<venda_tpcomment><!-- start: left hand side (picture) --></venda_tpcomment>
-	<div class="grid_12 pull_12 omega">
-	
-		<div class="invtmedia grid_10 push_2 alpha" id="image_<venda_invtuuid>">
-			<div id="productdetail-image">
-				<venda_block label=10,med-medium=notnull>
-					
-					<venda_block label=40,med-large=notnull,pdxtimageware!=1>
-						<a itemprop="image" href="<venda_media rec=invt,type=movie-swf-pict,key=large,img=no>" class = 'cloud-zoom' id='zoom1' rel="adjustX: 53, adjustY:-4, zoomWidth: 462" title="<venda_text id=site.product_detail.view_large_image.title>" data-track="open-largeimage">
-					</venda_block label=40>
-					
-					<venda_block label=140,med-large=notnull,pdxtimageware=1>
-						<a href="<venda_dispview invt=<venda_invtref>>?temp=imageware&layout=flashpopup" id="zoom_img" target="_blank" title="<venda_text id=site.product_detail.zoomable_image.title>">
-					</venda_block label=140>
-					
-					<venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=medium><!-- show "medium" key by default -->
-						
-					<venda_block label=81,med-large=notnull>
-						</a>
-					</venda_block label=81>
-				
-				</venda_block label=10>
-				<venda_block label=11,med-medium=null>
-				<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_medium.gif" alt="<venda_text id=site.link.alt.no_image.invt>">
-				</venda_block label=11>
-			</div>
-			<div id="productdetail-swap" style="display:none;"></div>
-			<div id="productdetail-viewlarge" class="enlarge"></div>
-		</div>
-		<div id="productdetail-altview" class="grid_2 pull_10 omega altImageList"></div>
+	<div class="grid_12 pull_12 alpha">
+
+	<div id="main" role="main">
+      <section class="slider">
+        <div class="flexslider uo-product-slider">
+          <ul class="slides">
+            <li>
+              <a href='http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_h1.jpg' class='cloud-zoom' rel="adjustX: 90, zoomWidth: 460, lensOpacity: 1">
+  	    	      <img src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_l1.jpg" />
+              </a>
+  	    		</li>
+  	    		<li>
+    	    	  <a href='http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_h2.jpg' class='cloud-zoom' rel="adjustX: 90, zoomWidth: 460, lensOpacity: 1">
+  	    	      <img src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_l2.jpg" />
+    	    	  </a>
+  	    		</li>
+  	    		<li>
+    	    	  <a href='http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_h3.jpg' class='cloud-zoom' rel="adjustX: 90, zoomWidth: 460, lensOpacity: 1">
+  	    	      <img src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_l3.jpg" />
+    	    	  </a>
+  	    		</li>
+  	    		<li>
+    	    	  <a href='http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_h4.jpg' class='cloud-zoom' rel="adjustX: 90, zoomWidth: 460, lensOpacity: 1">
+  	    	      <img src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_l4.jpg" />
+    	    	  </a>
+  	    		</li>
+  	    		<li>
+    	    	  <a href='http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_h5.jpg' class='cloud-zoom' rel="adjustX: 90, zoomWidth: 460, lensOpacity: 1">
+  	    	      <img src="http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/slider/Ivory_l5.jpg" />
+    	    	  </a>
+  	    		</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+      jQuery('.flexslider').flexslider({
+        animation: "fade",
+        slideshow: false,
+        animationSpeed: 300, 
+        start: function(slider){
+          var slideTot = jQuery('.flex-control-nav li').length
+          jQuery('.flex-control-nav li a').append('/' + slideTot);
+        }
+      });
+    });
+    </script>
+
 		<venda_inctemplate name=alternateviewScript,type=invt>
 		<venda_tpcomment><!-- start: productCycling V2 --></venda_tpcomment>
         <venda_category temp=productCycling,rec=icat,ref=<venda_curcatref>,center_on=<venda_invtref>,itemsperpage=3>
