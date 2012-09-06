@@ -47,3 +47,8 @@
   background: #FFF100;
   height: 240px;
 }
+
+.mm_ul > li > a {
+  letter-spacing: 0;
+  font-weight: 700;
+}
