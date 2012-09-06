@@ -65,6 +65,13 @@ jQuery(function(){
 	<div class="product-details">
 	<h1 itemprop="name" id="comp-name<venda_invtref>"><venda_invtname></h1>
 	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+	
+				<venda_block label=567,mode=value,<venda_setting type=ebiz,name=powerreviews>!=1>
+			<div class="box productDetailGradientBox reviews">
+				<p class="writereview" style="margin:0;"><a href="<venda_dispview invt=<venda_invtref>>&temp=writereview" id="writereview_link"><venda_text id=site.product_detail.write_review></a></p>
+				<venda_category temp=reviewlink,ref=<venda_invtref>,rec=scat>
+			</div>
+			</venda_block label=567>
 	<venda_block label=320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=320>
 
 	<span class="sku" itemprop="productID"><span><venda_text id=site.product_detail.product_sku.label></span> <venda_invtref></span>
@@ -277,12 +284,6 @@ jQuery(function(){
 			</venda_block label=26>
 			</div>
 			<venda_tpcomment><!-- end: buyControl div --></venda_tpcomment>
-			<venda_block label=567,mode=value,<venda_setting type=ebiz,name=powerreviews>!=1>
-			<div class="box productDetailGradientBox reviews">
-				<p class="writereview" style="margin:0;"><a href="<venda_dispview invt=<venda_invtref>>&temp=writereview" id="writereview_link"><venda_text id=site.product_detail.write_review></a></p>
-				<venda_category temp=reviewlink,ref=<venda_invtref>,rec=scat>
-			</div>
-			</venda_block label=567>
 		
 			<venda_tpcomment><!-- ATTRIBUTES SETTINGS --></venda_tpcomment>
 			<venda_block label=1000,chkatt=notnull>

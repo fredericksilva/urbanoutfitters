@@ -36,6 +36,7 @@
 
 .product-details {
   padding: 0 10px;
+  position: relative;
 }
 
 .uo-product-slider, .uo-product-slider .slides li img { 
@@ -194,4 +195,12 @@
 .mm_ul > li > a {
   letter-spacing: 0;
   font-weight: 700;
+}
+
+.prodDesc h1 {
+  width: 100%;
+}
+
+.productDetailGradientBox.reviews {
+  margin: 0;
 }
