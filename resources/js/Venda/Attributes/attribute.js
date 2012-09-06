@@ -1052,9 +1052,10 @@ Venda.Attributes.StoreImageSwaps = function(obj) {
 			if(obj.images.imgS[i]) Venda.Attributes.howManyZoomImgs+=1;
 		}
 		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
-			CloudHTML += "<a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom-gallery\" id=\"CloudThumb_id_" + i + "\" rel=\"useZoom: 'zoom1', smallImage: '" + obj.images.imgM[i] +"'\"><img src=\"" + obj.images.imgS[i] + "\"></a>";
+			CloudHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>";
 		}
-		jQuery("#productdetail-altview").html(CloudHTML);
+		console.log(CloudHTML)
+		jQuery(".slider .slides").html(CloudHTML);
 		jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ", " + Venda.Attributes.imgNo + ");'>View Large Image</a>");
 		Venda.Attributes.initImgObj = obj;
 		
@@ -1079,11 +1080,10 @@ Venda.Attributes.ImageSwap = function(att) {
 
 	for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
 		if(obj.images.imgS[i] != "") {
-			jQuery("#productdetail-altview #CloudThumb_id_" + i + " img").attr({"src": obj.images.imgS[i]});
-			jQuery("#productdetail-altview #CloudThumb_id_" + i).attr({"href": obj.images.imgL[i] });
-			jQuery("#productdetail-altview #CloudThumb_id_" + i).attr({"rel": "useZoom: 'zoom1', smallImage: '" + obj.images.imgM[i] +"'"});
+			jQuery(".slider .slides #slide-id-" + i + " a").attr({"href": obj.images.imgL[i] });
+			jQuery(".slider .slides #slide-id-" + i + " a img").attr({"src": obj.images.imgM[i] });
 		}
-	}
+	}			
 	
 	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
 		jQuery("#productdetail-image a").attr({"href": obj.images.imgL[0]});
@@ -1106,8 +1106,8 @@ Venda.Attributes.imageAssigner = function(imgAtt) {
       imgPath = "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_",
       imgChoice = {
         "imgS" : "_t",
-        "imgM" : "_m",
-        "imgL" : "_l"
+        "imgM" : "_l",
+        "imgL" : "_h"
       }
   for(var size in imgChoice) {
     var images = []
