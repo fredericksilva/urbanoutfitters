@@ -155,8 +155,7 @@ jQuery(function(){
 			
 			<div class="attrFeedback productselectedwrapper">
 				<span id="productselected"></span>
-			</div>
-			
+			</div>			
 			<venda_tpcomment><!-- start: attributes dropdown --></venda_tpcomment>
 				<div id="attributeInputs" class="attributeInputs">
 					<venda_block label=21,selatt1=notnull>
@@ -228,7 +227,7 @@ jQuery(function(){
 
 				<venda_tpcomment><!-- start: button link image --></venda_tpcomment>
 				<venda_block label=700,chkatt=null>
-				<label for="qty"><venda_text id=site.quantity></label><input name="qty" id="qty" type="text" value="1" size="3" maxlength="3" class="qty textInput" >
+				<label for="qty"><venda_text id=site.quantity></label><span class="qty-left"><a href="#"></a></span><input name="qty" id="qty" type="text" value="1" size="3" maxlength="3" class="qty textInput" ><span class="qty-right"><a href="#"></a></span>
 				<!-- if product doesn't have attributes -->
 				<venda_block label=34,invtpreorder!=1>
 				<input type="submit" class="button buttonAlt buttonArrow add submit addproduct" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket">
@@ -307,7 +306,7 @@ jQuery(function(){
 
 
 		<venda_block label=219,chkatt=notnull> 
-			<venda_inctemplate name=attributeData,type=invt> 	<venda_tpcomment><!-- Used to load attribute product data--></venda_tpcomment>
+			<venda_inctemplate name=attributeData,type=invt> <venda_tpcomment><!-- Used to load attribute product data--></venda_tpcomment>
 		</venda_block label=219>	
 		
 		<venda_tpcomment><!-- start: multibuy --></venda_tpcomment>

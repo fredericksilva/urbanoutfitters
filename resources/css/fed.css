@@ -130,4 +130,6 @@ input#qty {
 
 .productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
 
+.tab3 h4 { margin-top: 10px; }
+
 .proddetail-promobanner { margin-top: 60px; border: 0;}
