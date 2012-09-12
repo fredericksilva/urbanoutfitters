@@ -58,6 +58,20 @@ jQuery(function(){
 <venda_tpcomment>// END - javascript for tell a friend, emwbis, write and read a review</venda_tpcomment>
 </script>
 
+<venda_tpcomment><!-- Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
+<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>
+<script type="text/javascript">
+	//move to attributes.js
+	jQuery(function(){
+		jQuery(".product-att select").selectmenu({ style: 'dropdown' });
+		
+		jQuery(".product-att select").selectmenu("destroy").selectmenu({ style: "dropdown" });
+		
+	});
+</script>	
+<venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
+
 <venda_tpcomment><!-- Second column - Product Description --></venda_tpcomment>
 
 <div itemscope itemtype="http://schema.org/Product" class="product-data">

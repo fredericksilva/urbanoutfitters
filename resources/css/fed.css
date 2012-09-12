@@ -133,3 +133,230 @@ input#qty {
 .tab3 h4 { margin-top: 10px; }
 
 .proddetail-promobanner { margin-top: 60px; border: 0;}
+
+/* ** DropDowns Custom Styles ** */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { 
+	position: absolute !important; 
+	clip: rect(1px 1px 1px 1px); 
+	clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { 
+	margin: 0; 
+	padding: 0;
+	border: 0; 
+	outline: 0; 
+	line-height: 1.3; 
+	text-decoration: none; 
+	font-size: 100%; 
+	list-style: none; 
+}
+.ui-helper-clearfix:before, .ui-helper-clearfix:after { 
+	content: ""; 
+	display: table; 
+}
+.ui-helper-clearfix:after { clear: both; }
+.ui-helper-clearfix { zoom: 1; }
+.ui-helper-zfix { 
+	width: 100%; 
+	height: 100%; 
+	top: 0; 
+	left: 0; 
+	position: absolute; 
+	opacity: 0; 
+	filter:Alpha(Opacity=0);
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.product-att .ui-icon { 
+	display: block; 
+	text-indent: -99999px; 
+	overflow: hidden; 
+	background-repeat: no-repeat; }
+.product-att .ui-icon { 
+	width: 16px; 
+	height: 30px; 
+	background-image: url('../images/btn_dropdown.png')/*{iconsContent}*/; }
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+/* Selectmenu
+----------------------------------*/
+#attributeInputs .product-att  { 
+	margin-right:  30px;
+	margin-top: 16px;
+}
+
+.ui-selectmenu { 
+	display: block; 
+	display: inline-block; 
+	position: relative; 
+	height: 2.2em; 
+	vertical-align: middle; 
+	text-decoration: none; 
+	overflow: ; zoom: 1;  
+	height: 29px; 
+	outline: none;}
+.product-att .ui-selectmenu-icon { 
+	background: url('../images/btn_dropdown.png') no-repeat right; 
+	position:absolute; 
+	right:-10px; top:-1px; 
+}
+.ui-selectmenu-menu { 
+	padding:0;
+	margin:0;
+	position:absolute;
+	top: 0;
+	display: none;
+	z-index: 1005;
+	font-size: 13px;
+} /* z-index: 1005 to make selectmenu work with dialog */
+.product-att .ui-selectmenu-menu  ul { 
+	padding:0; 
+	margin:0; 
+	list-style:none; 
+	position: relative; 
+	overflow: auto; 
+	overflow-y: auto ; 
+	overflow-x: hidden; 
+	-webkit-overflow-scrolling: touch; 
+	border-left: 1px solid #4d4d4d; 
+	border-right: 1px solid #4d4d4d; 
+	border-bottom: 1px solid #4d4d4d;} 
+.ui-selectmenu-open { 
+	display: block; 
+	background: url('../images/paper-background.jpg') repeat; 
+	border-top:  0px solid #4d4d4d;
+	border-right:  1px solid #4d4d4d;
+	border-bottom:  1px solid #4d4d4d;
+	border-left:  1px solid #4d4d4d;
+	width: 159px;
+}
+.ui-selectmenu-menu-popup { margin-top: -1px; }
+.ui-selectmenu-menu li { 
+	padding:0; 
+	margin:0; 
+	display: block; 
+	border-top: 0px dotted transparent; 
+	border-bottom: 1px dotted transparent; 
+	border-right-width: 0 !important; 
+	border-left-width: 0 !important; 
+	font-weight: normal !important; 
+	width: 159px; 
+}
+
+.ui-selectmenu-menu li a, .ui-selectmenu-status { 
+	line-height: 1em; 
+	display: block; 
+	padding: 6px 0px 6px 10px; 
+	outline:none; 
+	text-decoration:none; 
+}
+
+.product-att .ui-selectmenu-menu li.ui-state-disabled a, 
+.product-att .ui-state-disabled { cursor: default; }
+.product-att .ui-selectmenu-menu li.ui-selectmenu-hasIcon a,
+.product-att .ui-selectmenu-hasIcon .ui-selectmenu-status { 
+	padding-left: 20px; 
+	position: relative; 
+	margin-left: 5px; }
+.product-att .ui-selectmenu-menu li .ui-icon, 
+.product-att .ui-selectmenu-status .ui-icon { 
+	position: absolute; 
+	top: 1em; 
+	margin-top: -8px; 
+	left: 0; 
+}
+.product-att .ui-selectmenu-status { 
+	line-height: 1.5em; 
+	outline: none; 
+}
+.product-att .ui-selectmenu-menu li span,
+.ui-selectmenu-status span { 
+	display:block; 
+	margin-bottom: .2em; 
+}
+.product-att .ui-selectmenu-menu li .ui-selectmenu-item-header { font-weight: bold; }
+.product-att .ui-selectmenu-menu li .ui-selectmenu-item-footer { opacity: .8; }
+
+/* for optgroups */
+.ui-selectmenu-menu .ui-selectmenu-group { font-size: 1em; }
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label { 
+	line-height: 1.2em; 
+	display:block; 
+	padding: .6em .5em 0; 
+	font-weight: bold; 
+}
+.ui-selectmenu-menu .ui-selectmenu-group ul { margin: 0; padding: 0; }
+/* IE6 workaround (dotted transparent borders) */
+* html .ui-selectmenu-menu li { border-color: pink; filter:chroma(color=pink); width:100%; }
+* html .ui-selectmenu-menu li a { position: relative }
+/* IE7 workaround (opacity disabled) */
+*+html .ui-state-disabled, *+html .ui-state-disabled a { color: silver; }
+
+
+/* Interaction states
+----------------------------------*/
+.product-att .ui-state-default, 
+.product-att .ui-widget-content .ui-state-default, 
+.product-att .ui-widget-header .ui-state-default { 
+	border: 1px solid #4d4d4d/*{borderColorDefault}*/; 
+	background: transparent; 
+	font-weight: normal/*{fwDefault}*/; 
+	color: #555555/*{fcDefault}*/; 
+}
+.product-att .ui-state-default a, 
+.product-att .ui-state-default a:link, 
+.product-att .ui-state-default a:visited { 
+	color: #555555/*{fcDefault}*/; 
+	text-decoration: none; 
+}
+.product-att .ui-state-hover, 
+.product-att .ui-widget-content .ui-state-hover, 
+.product-att .ui-widget-header .ui-state-hover,
+.product-att .ui-state-focus, .product-att .ui-widget-content .ui-state-focus, 
+.product-att .ui-widget-header .ui-state-focus { 
+	border-bottom: 1px solid #4d4d4d; 
+	background: transparent; 
+	font-weight: normal; 
+	color: #212121; }
+.product-att .ui-state-hover a, .product-att .ui-state-hover a:hover { 
+	color: #212121; 
+	text-decoration: none; }
+
+.product-att .ui-state-active, 
+.product-att .ui-widget-content .ui-state-active, 
+.product-att .ui-widget-header .ui-state-active { 
+	border-bottom: 1px solid #4d4d4d/*{borderColorActive}*/;
+	background: transparent; 
+	font-weight: normal/*{fwDefault}*/; 
+	color: #212121/*{fcActive}*/; 
+}
+.product-att .ui-state-active a, 
+.product-att .ui-state-active a:link, 
+.product-att .ui-state-active a:visited { 
+	color: #212121/*{fcActive}*/; 
+	text-decoration: none; 
+	outline: none; 
+}
+.ui-widget a, .ui-widget:active { outline: none; }
