@@ -63,11 +63,13 @@ jQuery(function(){
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript">
 	//move to attributes.js
-	jQuery(function(){
+	jQuery(document).ready(function() {
+	//init dropdown
 		jQuery(".product-att select").selectmenu({ style: 'dropdown' });
-		
-		jQuery(".product-att select").selectmenu("destroy").selectmenu({ style: "dropdown" });
-		
+	//repopulate on click (need to be fixed to work on page load)		
+		jQuery("span.ui-selectmenu-status,span.ui-selectmenu-icon.ui-icon.ui-icon-triangle-1-s").click(function(){
+			jQuery(".product-att select").selectmenu({ style: 'dropdown' });				
+		});      
 	});
 </script>	
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
@@ -174,26 +176,34 @@ jQuery(function(){
 				<div id="attributeInputs" class="attributeInputs">
 					<venda_block label=21,selatt1=notnull>
 					<div class="product-att">
-						<label for="att1"><venda_att1><venda_text id=site.product_detail.attribute.label_colon></label> 
-						<select name="att1" id="att1_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select>
+						<label for="att1"><venda_att1>Select Colour</label> 
+						<select name="att1" id="att1_<venda_invtuuid>">
+							<option value="option1">Select Colour</option><venda_selatt1>
+						</select>
 					</div>
 					</venda_block label=21>
 					<venda_block label=22,selatt2=notnull>
 					<div class="product-att">
-						<label for="att2"><venda_att2><venda_text id=site.product_detail.attribute.label_colon></label>
-						<select name="att2" id="att2_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select>
+						<label for="att2"><venda_att2>Select Size</label>
+						<select name="att2" id="att2_<venda_invtuuid>">
+							<option value="option2">Select Size</option><venda_selatt2>
+						</select>
 					</div>
 					</venda_block label=22>
 					<venda_block label=23,selatt3=notnull>
 					<div class="product-att">
 						<label for="att3"><venda_att3><venda_text id=site.product_detail.attribute.label_colon></label>
-						<select name="att3" id="att3_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att3></option><venda_selatt3></select>
+						<select name="att3" id="att3_<venda_invtuuid>">
+							<option value="option3"><venda_text id=site.product_detail.attribute.att3></option><venda_selatt3>
+						</select>
 					</div>
 					</venda_block label=23>
 					<venda_block label=24,selatt4=notnull>
 					<div class="product-att">
 						<label for="att4"><venda_att4><venda_text id=site.product_detail.attribute.label_colon></label>
-						<select name="att4" id="att4_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att4></option><venda_selatt4></select>
+						<select name="att4" id="att4_<venda_invtuuid>">
+							<option value="option4"><venda_text id=site.product_detail.attribute.att4></option><venda_selatt4>
+						</select>
 					</div>
 					
 					</venda_block label=24>
