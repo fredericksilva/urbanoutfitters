@@ -204,3 +204,11 @@
 .productDetailGradientBox.reviews {
   margin: 0;
 }
+
+div.zoomPopupWrapper {
+  width: 800px !important;
+}
+
+.zoomPopupWrapper .ui-dialog-content {
+  padding: 0;
+}
