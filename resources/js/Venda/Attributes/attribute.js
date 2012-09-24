@@ -1068,6 +1068,7 @@ Venda.Attributes.ImageSwap = function(att) {
 	
 	Venda.Attributes.imgNo = 0;
 	var obj;
+	var sliderHTML = "";
 	
 	for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 		if(Venda.Attributes.storeImgsArr[i].param === att) {
@@ -1077,16 +1078,24 @@ Venda.Attributes.ImageSwap = function(att) {
 		}
 	}
 
-	for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
+	for(var i = 0; i < obj.images.imgM.length; i++) {
 		if(obj.images.imgS[i] != "") {
 			jQuery(".slider .slides #slide-id-" + i + " a").attr({"href": obj.images.imgL[i] });
 			jQuery(".slider .slides #slide-id-" + i + " a img").attr({"src": obj.images.imgM[i] });
 		}
-	}			
-	
+  		sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
+	}
+	jQuery("#main .slider").html("<div class=\"flexslider uo-product-slider\"><ul class=\"slides\">" + sliderHTML + "</ul></div>");		
+  jQuery('.flexslider').flexslider({
+    animation: "fade",
+    slideshow: false,
+    animationSpeed: 300, 
+    start: function(slider){
+      var slideTot = jQuery('.uo-product-slider .flex-control-nav li').length
+      jQuery('.flex-control-nav li a').append('/' + slideTot);
+    }
+  });		
 	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
-		jQuery("#productdetail-image a").attr({"href": obj.images.imgL[0]});
-		jQuery("#productdetail-image a img").attr({"src": obj.images.imgM[0]});
 		jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
 	}
 };
@@ -1104,7 +1113,8 @@ Venda.Attributes.imageExists = []
 Venda.Attributes.imageAssigner = function(imgAtt) {
   var imageURLs = {},
       imgNumber = 6,
-      imgPath = "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_",
+      imgPath = "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/",
+      imgStart = jQuery('#tag-invtref').text() + "_",
       imgChoice = {
         "imgS" : "_t",
         "imgM" : "_l",
@@ -1113,8 +1123,10 @@ Venda.Attributes.imageAssigner = function(imgAtt) {
   for(var size in imgChoice) {
     var images = []
     for(var j = 1; j < imgNumber; j++) {
-        console.log(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
-        images.push(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
+    	var imgToAdd = imgPath + imgStart + imgAtt + imgChoice[size] + j + ".jpg"
+        if(jQuery.inArray(imgStart + imgAtt + imgChoice[size] + j + ".jpg", Venda.Attributes.availableMedia) != -1) {
+        	images.push(imgToAdd) 
+        }
     }  
     imageURLs[size] = images           
   }

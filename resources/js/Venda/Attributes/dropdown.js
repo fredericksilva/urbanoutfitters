@@ -34,7 +34,12 @@ Venda.Attributes.DropDown = function () {
 			
  		//ColourSwatch selection
 		var singleuID = jQuery(".oneProduct").attr("id").substr(11);
-		var urlParam = location.href.split("=")[1];
+		var urlParam = Venda.Attributes.storeImgsArr[0].param;
+		
+		if(RegExp('[?&]colour=([^&]*)').exec(window.location.href)){
+        var urlParam = decodeURIComponent(RegExp('[?&]colour=([^&]*)').exec(window.location.href)[1].replace(/\+/g, ' '));
+    } 
+    		
 		if((jQuery(".oneProduct").length === 1) && (urlParam != "")) {
 			for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 				if(Venda.Attributes.storeImgsArr[i].param == urlParam) {
