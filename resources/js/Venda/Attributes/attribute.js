@@ -1054,7 +1054,6 @@ Venda.Attributes.StoreImageSwaps = function(obj) {
 		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
 			CloudHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>";
 		}
-		console.log(CloudHTML)
 		jQuery(".slider .slides").html(CloudHTML);
 		jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ", " + Venda.Attributes.imgNo + ");'>View Large Image</a>");
 		Venda.Attributes.initImgObj = obj;
@@ -1100,6 +1099,8 @@ Venda.Attributes.ImageSwap = function(att) {
 * @author Matthew Wyatt <mwyatt@anthropologie.com>
 */
 
+Venda.Attributes.imageExists = []
+
 Venda.Attributes.imageAssigner = function(imgAtt) {
   var imageURLs = {},
       imgNumber = 6,
@@ -1112,6 +1113,7 @@ Venda.Attributes.imageAssigner = function(imgAtt) {
   for(var size in imgChoice) {
     var images = []
     for(var j = 1; j < imgNumber; j++) {
+        console.log(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
         images.push(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
     }  
     imageURLs[size] = images           
