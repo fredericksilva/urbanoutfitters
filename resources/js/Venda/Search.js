@@ -285,7 +285,7 @@ Venda.Search.Feature.multiRefine.prototype = {
         jQuery('.multirefine .termtext').each(function(idx, refine) {
             var multi = jQuery('#multirefine-tmpl label').clone(true),
                single = jQuery(refine),
-               chosen = single.hasClass('chosen');
+               chosen = single.hasClass('chosen'),
                    cb = multi.find('input:checkbox');
             if(chosen)
                 cb.get(0).checked = true;
