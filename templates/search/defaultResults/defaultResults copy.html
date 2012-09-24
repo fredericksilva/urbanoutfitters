@@ -1,19 +1,14 @@
-<venda_tpcomment><!-- Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
-<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.position.js"></script>
-<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>	
-<venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
-
 <div id="content-search-body">
 <venda_block label=151,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1><script type="text/javascript"><venda_inctemplate type=includes,name=powerreviewscripts></script></venda_block label=151>
     <a id="content-top"></a>
-    <div id="searchResults" class="grid_19 push_5">
+    <div id="searchResults" class="grid_18 push_6">
         <a name="content" id="content"></a>
 		<venda_block label=222,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="searchVBM"><venda_inctemplate type=vbm,name=searchResults></div><script type="text/javascript">var searchVBMstr = "<venda_primarysearchtext>";</script></venda_block label=222>
         <div class="box searchAlt searchContent">
 
-            <!--<venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
+            <venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
 			<h1 class="header"><venda_text id=desktop.heading.search_results></h1>
-			</venda_block label=isKeyword>-->
+			</venda_block label=isKeyword>
 
 			 <venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
 				<venda_category rec=icat,ref=<venda_tpxt mode=get,name=activecategory>,temp=categorysearchbanner,cacheall=1>
@@ -21,21 +16,36 @@
                 <div id="response">
                     <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
                 </div>
+
                 <venda_block label=345,totalresults!=0>
                     <div class="box boxSearchAlt">
                         <div class="boxContent">
                             <div class="resultDetail">
-                            <venda_pagination template=pagination1>
-                            	<div class="perLine">
-	                            	<div class="threePerLine"><span><a class="threePerLineLink" href="<venda_searchurl>">3 Per Line</a></span></div>
-	                            	<div class="fivePerLine" style="display:none;"><span><a class="fivePerLineLink" href="<venda_searchurl>">5 Per Line</a></span></div>
-                            	</div>
+                                <div class="resultMsg">
+								<venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
+								<h4>
+								<venda_block label=suggest,suggestion=notnull><venda_text id=desktop.info.search_suggest> "<a href="/search?q=<venda_suggestion>"><venda_suggestion></a>"? </venda_block label=suggest>
+
+                                <venda_text id=desktop.info.search_your_search> <venda_block label=410,primarysearchtext=notnull,primarysearchtext!=*:*><venda_text id=desktop.info.search_for> <span class="primarysearchtext">"<span id="paramq" class="keywordsearchtext"><venda_primarysearchtext></span>"</span> </venda_block label=410><venda_text id=desktop.info.search_returned> 
+
+                                <venda_block label=ss,suggestedsearch=notnull><venda_text id=desktop.info.search_match> <span class="correctedquery">"<span class="correctedquerytext"><venda_suggestion></span>"</span> <venda_text id=desktop.info.search_which></venda_block label=ss> <span class="totalresults"><venda_totalresults></span> <venda_block label=991,totalresults=1><venda_text id=desktop.info.search_result></venda_block label=991><venda_block label=99,totalresults!=1><venda_text id=desktop.info.search_results></venda_block label=99>
+								</h4>
+								</venda_block label=isKeyword>
+
+								<venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
+								<h4>
+								<venda_tpcomment><!-- searched by category : Found N results in Music. --></venda_tpcomment>
+								<span class="totalresults"><venda_totalresults></span> Styles Found
+								</h4>
+								</venda_block label=isCategory>
+                                </div>
+
                                 <div class="sort">
                                     <venda_detblock_sortedby>
                                         <option value="<venda_url>"<venda_block sortedon=notnull> selected="selected"</venda_block>><venda_option></option>
                                     </venda_detblock_sortedby>
                                     <form>
-                                        <label for="sortby"></label>
+                                        <label for="sortby"><venda_text id=desktop.info.sortby>:</label>
                                         <select name="sortby" id="sortby">
                                             <venda_block label=12,mode=value,<venda_setting type=ebiz,name=sortrelevantfirst>=1>
                                                 <option value="<venda_searchurl sort=,setpagenum=1>"><venda_text id=desktop.info.sortby_relevance></option>
@@ -65,7 +75,7 @@
                             <div class="productPreviewArrow"></div></div>
                             
                             <div class="pagn pagnTop">
-                                <venda_pagination template=pagination2>
+                                <venda_pagination template=pagination>
                             </div>
                             <div class="compareSearch">
                                 <venda_inctemplate name=compareItems,type=widgets>
@@ -75,13 +85,9 @@
                     <ul class="prods prodsFourColumns prodsGrid">
                         <venda_detail_results>
                     </ul>
-                    <div class="boxContent">
+
                     <div class="pagn pagnBtm">
-                    <div class="resultDetail">
-                    	<venda_pagination template=pagination1>
-                    </div>
-                        <venda_pagination template=pagination2>
-                    </div>
+                        <venda_pagination template=pagination>
                     </div>
                 </venda_block label=345>
 
@@ -123,10 +129,10 @@ var invtref = this.id;
 </venda_block label=3>
 <venda_tpcomment><!-- Tags for JS --></venda_tpcomment>
 <div style="display:none;" id="tag-error"><venda_text id=site.search_results.ajaxerror></div>
-	
-    <div class="leftSidebar grid_5 pull_19 alpha">
+
+    <div class="leftSidebar grid_6 pull_18">
         <div class="refinelist">
-            <venda_inctemplate name=refineList-New,type=search>
+            <venda_inctemplate name=refineList,type=search>
         </div>
     </div>
 
@@ -147,97 +153,7 @@ jQuery(function() {
 
     jQuery('#content-search').bind('search-loading-end', function(evt) {
     
-    /**
-	* Hide swatchContainer if there are less than 2 swatches
-	*/
-    jQuery(".prods li").each(function () {     	
-    	var n = jQuery(this).find(".sw_image").length;
-    	if (n < 2) {
-    		var swatchCont = jQuery(this).find(".swatchContainer");
-    			jQuery(swatchCont).html("");
-    			jQuery(swatchCont).hide();
-    	}
-    });
-    
-    /**
-	* Change the swatch names to lowercase
-	*/
-    jQuery(".sw_image span img").attr("src", function() { 
-    		return '<venda_entmediaadd>/ebiz/<venda_bsref>/invt/'+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
-    });
-
-    /**
-	* Script for increasing image size to have 3 per line
-	* Can probably be cleaned up and improved before go Live
-	*/
-    jQuery(function() {
-    var prodRef = jQuery(".prodRef").text();
-    if (document.location.href.indexOf('&perline=3') > -1 ) {
-    	jQuery(".prods li").css('width','33%');
-        jQuery(".threePerLine").hide();
-    	jQuery(".fivePerLine").show();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_l1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_l1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-        jQuery("a.moredetail img").css({width:'243px',height:'364px'});
-
-    }
-    if (document.location.href.indexOf('&perline=5') > -1 ) {
-    	jQuery(".prods li").css('width','19.5%');
-        jQuery(".threePerLine").show();
-    	jQuery(".fivePerLine").hide();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_l1.jpg','_sm1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_l1.jpg','_sm1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-    	jQuery("a.moredetail img").css({width:'145px',height:'218px'});
-    }
-    });
-    
-    jQuery(function() {
-    	jQuery('.threePerLineLink').click(function() {
-    		if ( document.location.href.indexOf('perline=5') > -1 ) {
-    			this.href = this.href.replace('perline=5', 'perline=3');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=3');
-        	}
-        	return true;
-        });
-        jQuery('.fivePerLineLink').click(function() {
-        	if ( document.location.href.indexOf('perline=3') > -1 ) {
-    			this.href = this.href.replace('perline=3', 'perline=5');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=5');
-        	}
-        	return true;
-        });
-    });
-    
-    	/**
-    	* jQuery UI dropdown styling
-    	*/
-    	jQuery(function(){
-			jQuery(".sort select").selectmenu({ style: 'dropdown' });
-			jQuery(".sortby").click(function(){
-				jQuery(".sort select").selectmenu({ style: 'dropdown' });
-		 	});	
-		});
-    
-    	/**
-    	* Accordion toggle on Refine List
-    	* Can probably be added to search js
-    	*/
+    	// accordion toggle on refineList
     	jQuery(".accordion_slice").each(function (c) {
         		var b = "";
         		jQuery(this).find(".vendaField").each(function (f) {
@@ -264,6 +180,7 @@ jQuery(function() {
 		    		});
 		    	});
 		 });
+		 
 		 
 
         <venda_block label=CompareProductsInt,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>

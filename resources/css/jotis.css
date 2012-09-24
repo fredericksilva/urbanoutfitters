@@ -1,0 +1,397 @@
+/* productlist-search css */
+#height10 {
+	padding: 5px 0;
+}
+
+#content-search-body {
+	margin-left:5px;
+}
+
+.editorialPage {
+	margin-left: 5px;
+}
+
+.prodsFourColumns li {
+	width: 19.5%;
+}
+
+.prods {
+	margin:0 0 0 1px !important;
+}
+
+.prods a img {
+	border:1px solid #4c4c4c;
+}
+
+.prodsGrid .image, .prodsGrid .details {
+	padding: 0 !important; 
+	position: relative;
+}
+
+.productlistinfo {
+	font-weight:normal;
+}
+
+.wasprice {
+	font-weight:normal;
+}
+
+/* searchInvt online-exclusive and boutique pdxt images */
+.boutique-pdxt {
+	float:right;
+	padding:0 0 5px;
+}
+
+.online-pdxt {
+	padding:0 0 5px;
+}
+
+/* inline css so as not to conflict with fed css on ui */
+body.search_body .ui-selectmenu-open {
+	border: none;
+	width: 136px;
+	box-shadow: #5C5C5C 1px 1px 5px;
+}
+
+body.search_body .ui-selectmenu-menu li a {
+	font-size: 12px;
+	padding: 6px 8px;
+}
+
+body.search_body .ui-selectmenu-menu li {
+	width: 136px;
+}
+
+body.search_body .ui-selectmenu-menu li:hover {
+	background: url('../images/paper-background-dark.jpg') repeat;
+}
+
+/* search pagination */
+.pagnTop, .pagnBtm {
+	float: none;
+}
+
+.boxContent {
+	background: url("../images/pagn_top_bg.png") no-repeat;
+}
+
+.box {
+	border: none;
+}
+
+.resultDetail .resultMsg {
+	padding-top: 4px;
+	padding-left: 12px;
+	margin-right:15px;
+	float:left;
+}
+
+.resultDetail .pagn_viewAll {
+	padding-top:4px;
+	margin-right:15px;
+	float:left;
+}
+
+.pagnViewAll, .pagnShowViewByPaged a {
+	padding:3px 8px;
+	box-shadow: #5c5c5c 1px 1px 5px;
+	color:#4c4c4c;
+}
+
+.perLine {
+	padding-top:2px;
+	margin-right:15px;
+	float:left;
+}
+
+.threePerLine, .fivePerLine {
+	padding:2px 8px;
+	box-shadow: #5c5c5c 1px 1px 5px;
+	color:#4c4c4c;
+	cursor: pointer;
+}
+
+.threePerLine span:hover, .fivePerLine span:hover {
+	opacity:0.8;
+}
+
+.resultDetail .sort {
+	padding-top:2px;
+	margin-right:15px;
+	float:left;
+}
+
+.resultDetail .sort .ui-selectmenu {
+	height: auto !important;
+	width:120px !important;
+	padding:4px 8px;
+	box-shadow: #5c5c5c 1px 1px 5px;
+	background:url("../images/pagn-sort-arrows.png") 125px no-repeat;
+}
+
+.resultDetail .sort select {
+	-webkit-appearance: menulist;
+	box-sizing: border-box;
+	-webkit-box-align: center;
+	border: none;
+	border-image: initial;
+	white-space: pre;
+	-webkit-rtl-ordering: logical;
+	color:#4c4c4c;
+	cursor: pointer;
+	width:120px;
+}
+
+.resultDetail .sort .ui-selectmenu-menu li a, .ui-selectmenu-status {
+	line-height: auto;
+	padding: 0;
+	color:#4c4c4c;
+}
+
+/* pagn numbers and links */
+.pagnLinkNavigate {
+	float: right;
+	line-height: 16px;
+	height: auto;
+	padding-top: 2px;
+	margin-right: 12px;
+}
+
+.pagnNumList {
+	margin:0;
+}
+
+.pagnPrev-off, .pagnNext-off {
+	color:#918d82;
+	padding:2px 3px 0;
+}
+
+.pagnPrev, .pagnNext {
+	color:#4c4c4c;
+	padding:2px 3px 0;
+}
+
+.pagnPrev, .pagnPrev-off {
+	float:left;
+}
+
+.pagnNext, .pagnNext-off {
+	float:right;
+}
+
+.pagnNumbers .pagnNumber, .pagnNumLast, .pagnNumFirst {
+	width:21px;
+	height:18px;
+	text-align:center;
+	box-shadow: #5c5c5c 1px 1px 5px;
+	margin:0 2px;
+	color:#4c4c4c;
+	float:left;
+	padding-top:2px;
+}
+
+.pagnNumLast, .pagnNumFirst {
+	margin:0 8px;
+}
+
+.pagnEllipsis {
+	margin:0;
+}
+
+.pagnNumbers .pagnNumCurrent {
+	width:19px;
+	height:17px;
+	text-align:center;
+	box-shadow: #5c5c5c 1px 1px 3px;
+	background-color:#4c4c4c;
+	color:#fff;
+	border:1px solid #fff;
+	margin:0 2px;
+	float:left;
+	padding-top:1px;
+}
+
+/* search refineList */
+.termtext input[type="checkbox"], .termtext a.updatesearch div.checkboxIcon {
+	-webkit-appearance: none;
+	-moz-appearance:none;
+	-o-appearance:none;
+	width: 10px;
+	height: 10px;
+	margin:0 5px 0;
+	padding:0;
+	border: 1px solid #4C4C4C;
+	border-top-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	float:left;
+}
+
+.termtext input[type="checkbox"]:checked, .chosen a.updatesearch div.checkboxIcon {
+	background-color:#4C4C4C;
+}
+
+.collatedresult, .collatedresult .chosen {
+	font-size: 11px !important;
+	font-weight: normal !important;
+	color: #4c4c4c;
+}
+
+#collate .termtext {
+	margin:1px 0 3px;
+	min-height: 21px;
+}
+
+#collate .updatesearch {
+	margin:0 !important;
+}
+
+#collate h3.collateheading {
+	background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent !important;
+	padding:8px 0 !important;
+	margin:10px 0 !important;
+	position: relative; /* to improve alignment of + and - accordion backgrounds */
+}
+
+#collate h3.collateheading span.collateText {
+	background: url("../images/footer/foot-line.png") repeat-x scroll bottom transparent;
+	display:block;
+	padding:0 0 14px;
+	margin: 0 2px 0 0;
+	font-size: 1.1em;
+}
+
+.pricecollateresult {
+	padding-left: 0;
+	width: auto;
+}
+
+.viewScroll {
+	margin:0;
+	max-height: 210px !important;
+}
+
+#loadingsearch {
+	position:absolute !important;
+	width: 950px !important;
+	opacity: .30 !important;
+	filter: alpha(opacity=30) !important;
+	-moz-opacity: .30 !important;
+	margin-left:5px;
+}
+
+/* css for search accordion */
+.iconPlus {
+	background: url("../images/img-plus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	margin: 5px 0 0 0;
+	display: block;
+	float: right;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.iconMinus {
+	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 20px;
+	margin: 5px 0 0 0;
+	display: block;
+	float: right;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.accordion_slice {
+	position:relative;
+}
+
+#clear_accordion_slice {
+	position:absolute;
+	right:25px;
+	bottom:8px;
+	font-weight:bold;
+	font-size:12px;
+}
+
+/* search product list css overwrites */
+.prods li {
+	float:none !important;
+}
+
+.pagn {
+	width:auto !important;
+}
+
+.prods li {
+	text-align:left;
+}
+
+/* search setswatch and swatchContainer css */
+.swatchContainer {
+	width: 25px !important;
+	position: absolute;
+	top: 18px;
+	left: 5px;
+	background: url('../images/paper-background.jpg') repeat;
+}
+
+.swatchContainer::before {
+	content: "";
+	position: absolute;
+	top: -15px;
+	background: url('../images/colour-swatch-bg-top.png') no-repeat;
+	height: 15px;
+	width: 25px;
+}
+
+.swatchContainer::after {
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	background: url('../images/colour-swatch-bg-bottom.png') no-repeat;
+	height: 15px;
+	width: 25px;
+}
+
+.swatchContainer a img {
+	width: 15px;
+	height: 15px;
+	margin: 3px 4px 0 !important;
+}
+
+.swatchOverlay {
+	width: 17px;
+	height: 17px;
+	top: 3px;
+	left: 4px;
+	position: absolute;
+}
+
+/* # QUICK BUY # */
+
+/* Produc List Styles */
+.quickLinkBox {
+	position: absolute;
+	width: 102px;
+	text-align: center;
+	bottom:10%;
+	left:50%;
+	margin-left:-51px;
+	visibility: hidden;
+}
+
+a.quickBuyDetails { 
+	display: block;
+	width: 80px; 
+	padding: 6px 10px; 
+	text-decoration: none;  
+	background-color: rgba(245,246,254,0.66);  
+}
+a:hover.quickBuyDetails {
+	background: rgba(35,35,35,1);
+}
+
+.quickLinkBox a:hover {
+	color:#fff;
+}
