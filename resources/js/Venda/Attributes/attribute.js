@@ -987,12 +987,11 @@ Venda.Attributes.ImageSwapReset = function() {
 	Venda.Attributes.howManyZoomImgs = 0;
 	Venda.Attributes.objImageNum = {};
 	Venda.Attributes.imgParam = null;
-	Venda.Attributes.imgNo = 0;
 }
 Venda.Attributes.ImageSwapReset();
 
 Venda.Attributes.initViewLargeImagePopup = function() {
-	Venda.Attributes.viewLargeImgPopup = new jQuery("<div class=\"popupslider\"><ul class=\"slides\"></ul></div>");
+	Venda.Attributes.viewLargeImgPopup = new jQuery("<div class=\"Zoompopup\"></div>");
 	var popupOpts = {
 		autoOpen : false, 
 		resizable : false, 
@@ -1006,85 +1005,83 @@ Venda.Attributes.initViewLargeImagePopup = function() {
 		var el;
 		if(e==null) el = event.srcElement;
 		else	el = e.target;
-		if(el.className == "mousetrap") Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam, Venda.Attributes.imgNo);
+		if(el.className == "mousetrap") Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam);
 	}
 	
 	if(typeof is_touch_device == 'function' && is_touch_device()) {
 		jQuery(".cloud-zoom").click(function() {
-			Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam, Venda.Attributes.imgNo); return false;
+			Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam); return false;
 		});
 	}
-	
-	jQuery(".cloud-zoom-gallery").click(function() {
-		Venda.Attributes.imgNo = this.id.substr(14);
-	});
 
 };
 
 
-Venda.Attributes.ViewLargeImg = function(param, imgNo) {
-	var popupContentThumbs = "";
-	var popupContentImg = "";
-	if(param == null) {
-		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
-			popupContentThumbs += "<a href=\"javascript: void(0);\" onclick=\"jQuery('#viewLargeMainImg').attr({'src': '" + Venda.Attributes.initImgObj.images.imgL[i] + "' });\"><img src=\"" + Venda.Attributes.initImgObj.images.imgS[i] + "\"></a>";
-		}
-		popupContentImg += "<img id=\"viewLargeMainImg\" src='" +  Venda.Attributes.initImgObj.images.imgL[imgNo] + "' />";
-	} else {
-		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
-			popupContentThumbs += "<a href=\"javascript: void(0);\" onclick=\"jQuery('#viewLargeMainImg').attr({'src': '" + Venda.Attributes.storeImgsArr[param].images.imgL[i] + "' });\"><img src=\"" + Venda.Attributes.storeImgsArr[param].images.imgS[i] + "\"></a>";
-		}
-		popupContentImg += "<img id=\"viewLargeMainImg\" src='" +  Venda.Attributes.storeImgsArr[param].images.imgL[imgNo] + "' />";
+Venda.Attributes.ViewLargeImg = function(param) {
+  
+	var popupContentSlides = "",
+	    popupImgsAvail = Venda.Attributes.objImageNum[Venda.Attributes.storeImgsArr[param].param],
+	    startSlideHere = parseInt(jQuery(".flex-active-slide").attr("id").split("-")[2], 10)
+	
+	for(var i = 0; i < popupImgsAvail; i++) {
+		popupContentSlides += "<li><img src=\"" + Venda.Attributes.storeImgsArr[param].images.imgL[i] + "\" /></li>";
 	}
-	jQuery(".zoomPopupWrapper .ui-dialog-content #viewLargeThumbs").html(popupContentThumbs);
-	jQuery(".zoomPopupWrapper .ui-dialog-content #viewLargeImg").html(popupContentImg);
+	
+	jQuery(".Zoompopup").html("<div class=\"flexslider popupslider\"><ul class=\"slides\">" + popupContentSlides + "</ul></div>");
+	jQuery('.popupslider').flexslider({
+  	slideshow: false,
+  	animationSpeed: 200, 
+  	startAt: startSlideHere,
+  	start: function(slider){
+      var slideTot = jQuery('.popupslider .flex-control-nav li').length
+      jQuery('.popupslider .flex-control-nav li a').append('/' + slideTot);
+    }
+	});
 	Venda.Attributes.viewLargeImgPopup.dialog("open");
 	jQuery('.ui-widget-overlay').live('click',function() {
 		Venda.Attributes.viewLargeImgPopup.dialog("close");
 	});
 };
 
-
 Venda.Attributes.StoreImageSwaps = function(obj) {
-	
+	  var toAdd = obj.param
+	  Venda.Attributes.objImageNum[toAdd] = 0
 		for(var i = 0; i < obj.images.imgS.length; i++) {
-			if(obj.images.imgS[i]) Venda.Attributes.howManyZoomImgs+=1;
+			if(obj.images.imgS[i]) Venda.Attributes.objImageNum[toAdd]+=1;
 		}
-		var toAdd = obj.param
-		Venda.Attributes.objImageNum[toAdd] = 1
-		console.log(Venda.Attributes.objImageNum)
 		Venda.Attributes.storeImgsArr.push(obj);
 };
 
 Venda.Attributes.ImageSwap = function(att) {
-	
-	Venda.Attributes.imgNo = 0;
+
 	var obj;
 	var sliderHTML = "";
 	
 	for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 		if(Venda.Attributes.storeImgsArr[i].param === att) {
 			obj = Venda.Attributes.storeImgsArr[i];
-			Venda.Attributes.imgParam = i;
-			jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ", " + Venda.Attributes.imgNo + ");'>View Large Image</a>");
+			if(obj.images.imgL.length == obj.images.imgM.length){
+  			Venda.Attributes.imgParam = i;
+  			jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ");'>FULL IMAGE</a>");
+			}
 		}
 	}
 
 	for(var i = 0; i < obj.images.imgM.length; i++) {
-		if(obj.images.imgS[i] != "") {
-			jQuery(".slider .slides #slide-id-" + i + " a").attr({"href": obj.images.imgL[i] });
-			jQuery(".slider .slides #slide-id-" + i + " a img").attr({"src": obj.images.imgM[i] });
-		}
-  		sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
+    if(obj.images.imgL[i]){
+      sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
+    } else {
+      sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
+    }
 	}
 	jQuery("#main .slider").html("<div class=\"flexslider uo-product-slider\"><ul class=\"slides\">" + sliderHTML + "</ul></div>");		
-  jQuery('.flexslider').flexslider({
+  jQuery('.uo-product-slider').flexslider({
     animation: "fade",
     slideshow: false,
     animationSpeed: 300, 
     start: function(slider){
       var slideTot = jQuery('.uo-product-slider .flex-control-nav li').length
-      jQuery('.flex-control-nav li a').append('/' + slideTot);
+      jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
     }
   });		
 	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
