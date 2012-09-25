@@ -985,13 +985,14 @@ Venda.Attributes.ImageSwapReset = function() {
 	Venda.Attributes.initImgObj = {};
 	Venda.Attributes.storeImgsArr = [];
 	Venda.Attributes.howManyZoomImgs = 0;
+	Venda.Attributes.objImageNum = {};
 	Venda.Attributes.imgParam = null;
 	Venda.Attributes.imgNo = 0;
 }
 Venda.Attributes.ImageSwapReset();
 
 Venda.Attributes.initViewLargeImagePopup = function() {
-	Venda.Attributes.viewLargeImgPopup = new jQuery("<div><div id=\"viewLargeThumbs\"></div><div id=\"viewLargeImg\"></div></div>");
+	Venda.Attributes.viewLargeImgPopup = new jQuery("<div class=\"popupslider\"><ul class=\"slides\"></ul></div>");
 	var popupOpts = {
 		autoOpen : false, 
 		resizable : false, 
@@ -1046,22 +1047,13 @@ Venda.Attributes.ViewLargeImg = function(param, imgNo) {
 
 Venda.Attributes.StoreImageSwaps = function(obj) {
 	
-	if(obj.param == "") {
-		var CloudHTML = "";
 		for(var i = 0; i < obj.images.imgS.length; i++) {
 			if(obj.images.imgS[i]) Venda.Attributes.howManyZoomImgs+=1;
 		}
-		for(var i = 0; i < Venda.Attributes.howManyZoomImgs; i++) {
-			CloudHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>";
-		}
-		jQuery(".slider .slides").html(CloudHTML);
-		jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ", " + Venda.Attributes.imgNo + ");'>View Large Image</a>");
-		Venda.Attributes.initImgObj = obj;
-		
-	} else {
+		var toAdd = obj.param
+		Venda.Attributes.objImageNum[toAdd] = 1
+		console.log(Venda.Attributes.objImageNum)
 		Venda.Attributes.storeImgsArr.push(obj);
-	}
-	
 };
 
 Venda.Attributes.ImageSwap = function(att) {
@@ -1100,6 +1092,8 @@ Venda.Attributes.ImageSwap = function(att) {
 	}
 };
 
+    
+
 
 /**
 * The following two functions build up the list of attribute images based on file name so that we can transition to scene7 and use on both sites
@@ -1132,7 +1126,6 @@ Venda.Attributes.imageAssigner = function(imgAtt) {
   }
   return imageURLs
 }
-
 
 Venda.Attributes.ImageMediaAssignment = function() {
   var uniqueAtt1 = []
