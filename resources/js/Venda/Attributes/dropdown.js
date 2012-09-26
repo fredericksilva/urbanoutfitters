@@ -26,7 +26,6 @@ Venda.Attributes.DropDown = function () {
 			Venda.Attributes.updateAttributes(uID); */
 		}
 	});
-	
 	// This is getting all the assets that can be loaded after the Onload	
 	var url = jQuery("#tag-ebizurl").text() + '/content/ebiz/' + jQuery("#tag-ebizref").text() + '/resources/js/Venda/Attributes/attributeAsset-Dropdown.js';
 	jQuery.getScript(url, function(Status){ if (!Status){console.warn('Whoops! attributeAsset-Dropdown.js did not load');} else {
@@ -48,7 +47,7 @@ Venda.Attributes.DropDown = function () {
 				}
 			}
 		}
-		
+	jQuery(".attributeInputs select").selectmenu({ style: 'dropdown' });	
 	//All loaded
 	}
 	});

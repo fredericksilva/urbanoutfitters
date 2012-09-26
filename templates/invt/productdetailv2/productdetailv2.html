@@ -11,21 +11,21 @@
 <div id="tag-currsym" style="display:none;"><venda_currsym></div>
 
 <venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
-<div id="attributes-stockNA" style="display:none;"><venda_text id=site.attributes.product_detail.selection_not_available></div>
-<div id="attributes-stockOut" style="display:none;"><venda_text id=site.attributes.product_detail.selection_out_of_stock></div>
-<div id="attributes-productselected" style="display:none;"><venda_text id=site.attributes.product_detail.you_have_selected></div>
-<div id="attributes-productstatus" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_colon></div>
-<div id="attributes-only" style="display:none;"><venda_text id=site.attributes.product_detail.only></div>
-<div id="attributes-left" style="display:none;"><venda_text id=site.attributes.product_detail.left></div>
-<div id="attributes-optionDefault" style="display:none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>
-<div id="attributes-tooltip" style="display:none;"><venda_text id=site.attributes.product_detail.is_out_of_stock></div>
-<div id="attributes-backorder" style="display:none;"><venda_text id=site.attributes.product_detail.backorder.text></div>
-<div id="attributes-preorder" style="display:none;"><venda_text id=site.attributes.product_detail.preorder.text></div>
-<div id="attributes-quantity" style="display:none;"><venda_text id=site.attributes.product_detail.enter_quantity></div>
-<div id="attributes-chooseVariant" style="display:none;"><venda_text id=site.attributes.product_detail.choose_variant></div>
-<div id="attributes-addThisProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_this_product></div>
-<div id="attributes-addAllProduct" style="display:none;"><venda_text id=site.attributes.product_detail.add_all_product></div>
-<div id="attributes-noneChecked" style="display:none;"><venda_text id=site.attributes.product_detail.none_checked></div>
+<div id="attributes-stockNA" style="display:none;">Not available </div>
+<div id="attributes-stockOut" style="display:none;">Out of stock </div>
+<div id="attributes-productselected" style="display:none;">You have selected </div>
+<div id="attributes-productstatus" style="display:none;">Please select </div>
+<div id="attributes-only" style="display:none;"> only </div>
+<div id="attributes-left" style="display:none;"> left </div>
+<div id="attributes-optionDefault" style="display:none;">Please select </div>
+<div id="attributes-tooltip" style="display:none;">is out of stock </div>
+<div id="attributes-backorder" style="display:none;">Backorder </div>
+<div id="attributes-preorder" style="display:none;">Preorder </div>
+<div id="attributes-quantity" style="display:none;">Enter quantity </div>
+<div id="attributes-chooseVariant" style="display:none;">Choose variant </div>
+<div id="attributes-addThisProduct" style="display:none;">Add this product </div>
+<div id="attributes-addAllProduct" style="display:none;">Add all products </div>
+<div id="attributes-noneChecked" style="display:none;">None checked </div>
 
 <venda_tpcomment><!-- VCP switch settings required for attributes JS --></venda_tpcomment>
 <div id="OutOfStockThreshold" style="display: none;"><venda_setting type=ebiz,name=emailmebackthreshold></div><venda_tpcomment><!-- Out of Stock Threshold --></venda_tpcomment>
@@ -203,11 +203,6 @@ jQuery(function(){
 				</div>
 			</venda_block label=25>
 			
-			<div class="box productDetailGradientBox attrFeedback stockFeedbackBox">
-				<span id="productstatus"><venda_text id=site.attributes.product_detail.please_make_selection></span>
-				<span id="stockstatus"></span> <span id="atrononhandholder" class="hide"><venda_text id=site.attributes.product_detail.only><span id="atronhand"></span><venda_text id=site.attributes.product_detail.left></span>
-			</div>
-
 			</venda_block label=200>
 			
 			<div id="addedmsg" class="addedmessage"><venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=site.addedmsg>></p><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=32></div>
@@ -284,6 +279,11 @@ jQuery(function(){
 			</venda_block label=26>
 			</div>
 			<venda_tpcomment><!-- end: buyControl div --></venda_tpcomment>
+			
+			<div class="box productDetailGradientBox attrFeedback stockFeedbackBox">
+				<span id="productstatus"><venda_text id=site.attributes.product_detail.please_make_selection></span>
+				<span id="stockstatus"></span> <span id="atrononhandholder" class="hide"><venda_text id=site.attributes.product_detail.only><span id="atronhand"></span><venda_text id=site.attributes.product_detail.left></span>
+			</div>
 		
 			<venda_tpcomment><!-- ATTRIBUTES SETTINGS --></venda_tpcomment>
 			<venda_block label=1000,chkatt=notnull>
@@ -450,12 +450,9 @@ jQuery(function(){
         </div>
       </section>
     </div>
-    
-<<<<<<< HEAD
+
     <div id="productdetail-viewlarge"></div>
     
-=======
->>>>>>> 35091623-newsearch
     <script type="text/javascript">
     Venda.Attributes.availableMedia = ["<venda_invtmedname1>","<venda_invtmedname2>","<venda_invtmedname3>","<venda_invtmedname4>","<venda_invtmedname5>","<venda_invtmedname6>","<venda_invtmedname7>","<venda_invtmedname8>","<venda_invtmedname9>","<venda_invtmedname10>","<venda_invtmedname11>","<venda_invtmedname12>","<venda_invtmedname13>","<venda_invtmedname14>","<venda_invtmedname15>","<venda_invtmedname16>","<venda_invtmedname17>","<venda_invtmedname18>","<venda_invtmedname19>","<venda_invtmedname20>","<venda_invtmedname21>","<venda_invtmedname22>","<venda_invtmedname23>","<venda_invtmedname24>","<venda_invtmedname25>","<venda_invtmedname26>","<venda_invtmedname27>","<venda_invtmedname28>","<venda_invtmedname29>","<venda_invtmedname30>","<venda_invtmedname31>","<venda_invtmedname32>","<venda_invtmedname33>","<venda_invtmedname34>","<venda_invtmedname35>","<venda_invtmedname36>","<venda_invtmedname37>","<venda_invtmedname38>","<venda_invtmedname39>","<venda_invtmedname40>","<venda_invtmedname41>","<venda_invtmedname42>","<venda_invtmedname43>","<venda_invtmedname44>","<venda_invtmedname45>","<venda_invtmedname46>","<venda_invtmedname47>","<venda_invtmedname48>","<venda_invtmedname49>","<venda_invtmedname50>","<venda_invtmedname51>","<venda_invtmedname52>","<venda_invtmedname53>","<venda_invtmedname54>","<venda_invtmedname55>","<venda_invtmedname56>","<venda_invtmedname57>","<venda_invtmedname58>","<venda_invtmedname59>","<venda_invtmedname60>","<venda_invtmedname61>","<venda_invtmedname62>","<venda_invtmedname63>","<venda_invtmedname64>","<venda_invtmedname65>","<venda_invtmedname66>","<venda_invtmedname67>","<venda_invtmedname68>","<venda_invtmedname69>","<venda_invtmedname70>","<venda_invtmedname71>","<venda_invtmedname72>","<venda_invtmedname73>","<venda_invtmedname74>","<venda_invtmedname75>","<venda_invtmedname76>","<venda_invtmedname77>","<venda_invtmedname78>","<venda_invtmedname79>","<venda_invtmedname80>","<venda_invtmedname81>","<venda_invtmedname82>","<venda_invtmedname83>","<venda_invtmedname84>","<venda_invtmedname85>","<venda_invtmedname86>","<venda_invtmedname87>","<venda_invtmedname88>","<venda_invtmedname89>","<venda_invtmedname90>","<venda_invtmedname91>","<venda_invtmedname92>","<venda_invtmedname93>","<venda_invtmedname94>","<venda_invtmedname95>","<venda_invtmedname96>","<venda_invtmedname97>","<venda_invtmedname98>","<venda_invtmedname99>","<venda_invtmedname100>","<venda_invtmedname101>","<venda_invtmedname102>","<venda_invtmedname103>","<venda_invtmedname104>","<venda_invtmedname105>","<venda_invtmedname106>","<venda_invtmedname107>","<venda_invtmedname108>","<venda_invtmedname109>","<venda_invtmedname110>","<venda_invtmedname111>","<venda_invtmedname112>","<venda_invtmedname113>","<venda_invtmedname114>","<venda_invtmedname115>","<venda_invtmedname116>","<venda_invtmedname117>","<venda_invtmedname118>","<venda_invtmedname119>","<venda_invtmedname120>"]
     </script>

@@ -12,7 +12,6 @@
 span.sku {
 	display: none;
 }
-.productselectedwrapper { display: none;}
 
 .oneProduct .priceField {
     float: left;
@@ -21,6 +20,15 @@ span.sku {
 
 #price.price { font-size: 21px; }
 
+.productselectedwrapper {
+  display: none;
+}
+.stockFeedbackBox {
+  margin: 5px 0;
+  padding: 0;
+  text-align: left;
+  font-size: 12px;
+}
 .producdetail-promo img.onexcl {
 	float: left;
 	padding-top: 0;
@@ -42,9 +50,6 @@ span.sku {
 .product-att label {
 	display: none;
 }
-.box.stockFeedbackBox {
-	display: none !important;
-}
 .buyControls, .buyControlsMulti {
 	text-align: left;
 }
@@ -56,11 +61,12 @@ span.sku {
 	display: none;	
 }
 .submit.addproduct {
-    height: 34px;
-    width: 141px;
+  height: 34px;
+  width: 141px;
 	background: #4C4C4C;
 	border: 0 none;	
-    padding: 3px 18px 2px;	
+  padding: 3px 18px 2px;
+  text-transform: uppercase;	
 }
 #qtybox label {
 	display: none;
@@ -215,10 +221,11 @@ input#qty {
 	vertical-align: middle; 
 	text-decoration: none; 
 	overflow: ; zoom: 1;  
-	height: 29px; 
-	outline: none;}
+	height: 28px; 
+	outline: none;
+}
 .product-att .ui-selectmenu-icon { 
-	background: url('../images/btn_dropdown.png') no-repeat right; 
+	background: url('../images/btn_dropdown.png') no-repeat right -33px; 
 	position:absolute; 
 	right:-10px; top:-1px; 
 }
@@ -250,7 +257,8 @@ input#qty {
 	border-right:  1px solid #4d4d4d;
 	border-bottom:  1px solid #4d4d4d;
 	border-left:  1px solid #4d4d4d;
-	width: 159px;
+	width: 165px;
+	padding: 5px 0;
 }
 .ui-selectmenu-menu-popup { margin-top: -1px; }
 .ui-selectmenu-menu li { 
@@ -290,6 +298,7 @@ input#qty {
 .product-att .ui-selectmenu-status { 
 	line-height: 1.5em; 
 	outline: none; 
+	padding: 6px 10px;
 }
 .product-att .ui-selectmenu-menu li span,
 .ui-selectmenu-status span { 
