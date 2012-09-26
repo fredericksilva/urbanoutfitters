@@ -10,10 +10,11 @@
  *
  * @author Alby Barber <abarber@venda.com>
  * @author Donatas Cereska <DonatasCereska@venda.com>
+ * @author Matthew Wyatt <mwyatt@anthropologie.com>
 */
 
 Venda.Attributes.Swatch = function () {
-	
+	 
 	jQuery(".oneProduct").each(function(index) {
 		var uID = this.id.substr(11);
 		Venda.Attributes.productArr[index] = new Venda.Attributes.GenerateOptionsJSON(index, uID);
@@ -35,7 +36,12 @@ Venda.Attributes.Swatch = function () {
 			
  		//ColourSwatch selection
 		var singleuID = jQuery(".oneProduct").attr("id").substr(11);
-		var urlParam = location.href.split("=")[1];
+		var urlParam = Venda.Attributes.storeImgsArr[0].param;
+
+		if(RegExp('[?&]colour=([^&]*)').exec(window.location.href)){
+        var urlParam = decodeURIComponent(RegExp('[?&]colour=([^&]*)').exec(window.location.href)[1].replace(/\+/g, ' '));
+    } 
+		
 		if((jQuery(".oneProduct").length === 1) && (urlParam != "")) {
 			for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 				if(Venda.Attributes.storeImgsArr[i].param == urlParam) {
