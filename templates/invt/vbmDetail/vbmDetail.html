@@ -59,13 +59,26 @@
 </venda_block label=78>
 
 <script>
+		/**
+	* Hide swatchContainer if there are less than 2 swatches
+	*/
+    jQuery(".featprods li").each(function () {    
+    	var n = jQuery(this).find(".sw_image").length;
+    	if (n < 2) {
+    		var swatchCont = jQuery(this).find(".swatchContainer");
+    			jQuery(swatchCont).html("");
+    			jQuery(swatchCont).hide();
+    	}
+    });
 	/**
 	* Change the swatch names to lowercase
 	*/
 	jQuery(".sw_image span img").attr("src", function() { 
 		return '<venda_entmediaadd>/ebiz/<venda_bsref>/invt/'+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
 		});
-				
+	/**
+	* select the first swatch automatically on page refresh
+	*/			
 	jQuery(".swatchContainer a").click(function(){
         var $this = jQuery(this);
 

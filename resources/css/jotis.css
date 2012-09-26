@@ -399,6 +399,10 @@ a:hover.quickBuyDetails {
 /* # PRODUCTDETAIL ACCESSORIES # */
 
 /* We Recommend, Boutique Style, Recently Viewed  */
+#bottomtab {
+	margin:10px 0 0;
+}
+
 .liwrapper {
 	position:relative;
 }
@@ -408,12 +412,12 @@ a:hover.quickBuyDetails {
 }
 
 .liwrapper .image {
-	box-shadow: #5c5c5c 2px 1px 5px;
+	box-shadow: #5c5c5c 3px 3px 5px;
 	width:186px;
 	height:280px;
 }
 
-.liwrapper .productname {
+.liwrapper .productname, .liwrapper .price {
 	font-weight:bold;
 }
 
