@@ -1,0 +1,34 @@
+<div class="boxNoBorder">
+<div class="tabheader">
+	<ul class="nav">
+		<!-- Avail Tab We Recommend -->
+		<venda_block label=221a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1></venda_block label=221a>
+		<li class="vbmTab"><a href="#contentTab1" title="<venda_text id=site.product_detail.vbm_title>"><venda_text id=site.product_detail.vbm></a></li>
+
+		<!-- Boutique Styles 2 -->
+		<venda_block label=27,invtacctot&gt;0></venda_block label=27>
+		<li><a href="#contentTab3" title="<venda_text id=site.product_detail.accessories_title>"><venda_text id=site.product_detail.accessories></a></li>
+		<!-- Substitute Products -->
+		<venda_block label=29,invtsubtot&gt;0></venda_block label=29>
+		<li><a href="#contentTab4" title="<venda_text id=site.product_detail.substitute_title>"><venda_text id=site.product_detail.substitute></a></li>
+		<!-- Recently Viewed -->
+		<li><a href="#contentTab5" title="<venda_text id=site.product_detail.recent_items>"><venda_text id=site.product_detail.recent_items></a></li>
+	</ul>
+</div>
+<div class="tabcontent">
+	<!-- Avail Tab We Recommend -->
+	<venda_block label=222a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1></venda_block label=222a>
+	<div class="tab vbmTab">
+	<venda_inctemplate type=includes/vbm,name=productDetail></div>
+
+	<!-- Boutique Styles 2 -->
+	<venda_block label=27,invtacctot&gt;0></venda_block label=27>
+	<div class="tab"><venda_invtacc template=accessories></div>
+	<!-- Substitute Products -->
+	<venda_block label=29,invtsubtot&gt;0></venda_block label=29>
+	<div class="tab"><venda_invtsub template=substitutes></div>
+	<!-- Recently Viewed -->
+	<div class="tab"><venda_inctemplate name=recentlyViewedProductDetailSlider,type=widgets></div>
+</div>
+</div>
+    

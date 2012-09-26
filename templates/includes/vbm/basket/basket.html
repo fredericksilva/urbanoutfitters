@@ -1,0 +1,33 @@
+<venda_tpcomment><!-- Venda Behavioural Merchandising currently uses Avail in ACE --></venda_tpcomment>
+<script type="text/javascript" src="http://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script>
+<div id="tag-basketitems" style="display:none"><venda_tracking type=product,definition=productref></div>
+<div id="tag-removeprod" style="display:none"><venda_param3></div>
+<venda_block label=vbmtesting,mode=value,<venda_islive>!=1><div id="__avail_log__" style="display:none;"></div></venda_block label=vbmtesting><div id="vbm-panel-vbmbasket" class="vbmbasketlist">
+<div id="vbm-panel-loading" style="display:none;" class="loadingImg"><p><venda_text id=site.lightboxloadmessage></p></div>
+<venda_tpcomment><!-- ajax content will go here --></venda_tpcomment>
+</div>
+<venda_tpcomment><!-- VBM function calls --></venda_tpcomment>
+<script type="text/javascript">
+jQuery(function() {
+	Venda.Widget.VBM.populateProductRecs("vbmbasket","<venda_addedmsg msg=addedref>","<venda_htxt mode=get,name=vbm>");
+});
+
+function trackToVBM() {
+var vbmLinks = (jQuery("#vbmProds a"));
+for (var i=0; i<vbmLinks.length; i++) {
+		vbmLinks[i].href = (vbmLinks[i].href+"?vbmrec=true");
+}};
+
+var timer;
+
+function attachTrackToVBMProds() {
+	if(document.getElementById("vbmProds")) {
+		trackToVBM();
+		clearTimeout(timer);
+	} else {
+		timer = setTimeout("attachTrackToVBMProds()", 100);
+	}
+};
+
+attachTrackToVBMProds();
+</script>

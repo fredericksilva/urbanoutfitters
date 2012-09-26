@@ -1,0 +1,46 @@
+<venda_tpcomment><!-- Venda Behavioural Merchandising currently uses Avail in ACE --></venda_tpcomment>
+<script type="text/javascript" src="http://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script>
+<div id="availsearch">
+<h2 class="header-avail" id="h2searchrecs">Still can't find what you're looking for? How about these? </h2>
+<venda_block label=vbmtesting,mode=value,<venda_islive>!=1><div id="__avail_log__" style="display:none;"></div></venda_block label=vbmtesting><div id="vbm-panel-vbmsrch" class="vbmsearchlist">
+<div id="vbm-panel-loading" style="display:none;" class="loadingImg"><p><venda_text id=site.lightboxloadmessage></p></div>
+<venda_tpcomment><!-- ajax content will go here --></venda_tpcomment>
+</div>
+</div>
+<venda_tpcomment><!-- VBM function calls --></venda_tpcomment>
+<script type="text/javascript">
+jQuery(function() {
+	Venda.Widget.VBM.populateProductRecs("vbmsrch","<venda_addedmsg msg=addedref>","<venda_htxt mode=get,name=searchadd>");
+	jQuery("#searchResults .prods a, .image a").attr("href", function(){
+		return this.href+'&htxt='+vbmsrch;
+	});
+});
+jQuery('.add,.buy,.preorder').click(function() {
+	var invtref = this.id;
+	invtref = invtref.replace("addproduct", "");
+	invtref = invtref.replace("buy-", "");
+	invtref = invtref.replace("preorder-", "");
+	Venda.Widget.VBM.SetCookie("<venda_primarysearchtext>",invtref);
+});
+function trackToVBM() {
+var vbmLinks2 = (jQuery("#vbmProds a"));
+for (var i=0; i<vbmLinks2.length; i++) {
+	if(vbmsrch!==""){
+		vbmLinks2[i].href = (vbmLinks2[i].href+'?htxt='+vbmsrch+"&vbmrec=true");
+	}
+}};
+
+var timer;
+
+function attachTrackToVBMProds() {
+	if(document.getElementById("vbmProds")) {
+		trackToVBM();
+		clearTimeout(timer);
+	} else {
+		timer = setTimeout("attachTrackToVBMProds()", 500);
+	}
+};
+
+attachTrackToVBMProds();
+</script>
+<div style="display:none" id="tag-searchterm"><venda_primarysearchtext></div>

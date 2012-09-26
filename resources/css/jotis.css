@@ -395,3 +395,38 @@ a:hover.quickBuyDetails {
 .quickLinkBox a:hover {
 	color:#fff;
 }
+
+/* # PRODUCTDETAIL ACCESSORIES # */
+
+/* We Recommend, Boutique Style, Recently Viewed  */
+.liwrapper {
+	position:relative;
+}
+
+.liwrapper img {
+	border: 1px solid #4C4C4C;
+}
+
+.liwrapper .image {
+	box-shadow: #5c5c5c 2px 1px 5px;
+	width:186px;
+	height:280px;
+}
+
+.liwrapper .productname {
+	font-weight:bold;
+}
+
+.featprods li {
+	width:188px;
+	padding:0 2px;
+	margin:20px 0;
+}
+
+.featprods li:first-child {
+	padding:0 2px 0 0;
+}
+
+.featprods li:last-child {
+	padding:0 0 0 2px;
+}
