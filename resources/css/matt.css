@@ -214,6 +214,10 @@
   background-position: -58px 0;
 }
 
+#productdetail-viewlarge {
+  margin-bottom: 20px;
+}
+
 #productdetail-viewlarge a {
   background: url("../images/zoompopup-reveal-bg.png") no-repeat transparent;
   display: block;
