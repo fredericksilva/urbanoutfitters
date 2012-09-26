@@ -1,0 +1,29 @@
+<div id="productlist" class="full">
+
+<!-- PRODUCT LIST TOP BANNER -->
+<center style="margin-left:5px;">
+<venda_block icxttopbannerlinkref=notnull>
+<a href="<venda_dispview icat=<venda_icxttopbannerlinkref>>"> <venda_media rec=icat,type=pict,key=categorybanner,border=0></a>
+</venda_block>
+<venda_block icxttopbannerlinkref=null>
+<venda_media rec=icat,type=pict,key=categorybanner,border=0>
+</venda_block>
+</center>
+
+<!-- PULL IN PRODUCT LIST EDITORIAL PAGE -->
+<div class="editorialPage">
+<venda_page page=<venda_icxttopbannerlinkref>>
+</div>
+
+<!-- PRODUCT LIST TOP BANNER -->
+<div id="height10"></div>
+
+<!-- venda_search tag starts - parentCategoryRef <venda_icatref> -->
+<venda_search parentCategoryRef=<venda_icatref>,sort=sequence_<venda_icatref>:name,order=asc:asc,perpage=<venda_itemsperpage>>
+<!-- venda_search tag ends -->
+
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
+
+<div id="parentCatName" style="display:none;"><venda_icatname></div>
+<div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>
+<div id="parentCatRef" style="display:none;"><venda_icatref></div>

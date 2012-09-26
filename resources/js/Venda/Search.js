@@ -4,8 +4,8 @@ Venda.Search = function(options) {
     this._searchLifo = [];
     jQuery.extend(this, {
         maxPagesCached: 5,
-        showViewAll:    false,
-        viewAllLimit:   10,
+        showViewAll:    true,
+        viewAllLimit:   100,
         features:       []
     }, options);
 
@@ -272,7 +272,7 @@ Venda.Search.Feature.viewMoreLess.prototype = {
     }
 };
 
-Venda.Search.Feature.multiRefine = function() {};
+/*Venda.Search.Feature.multiRefine = function() {};
 Venda.Search.Feature.multiRefine.prototype = {
     clickHandler: function(evt) {
         return false;
@@ -295,13 +295,13 @@ Venda.Search.Feature.multiRefine.prototype = {
         });
         return false;
     }
-};
+};*/
 
 Venda.Search.Feature.indicateLoading = function() {};
 Venda.Search.Feature.indicateLoading.prototype = {
     clickHandler: function(evt) {
         jQuery('#loadingsearch').show();
-        jQuery('#content-search-body ul.prods li').hide();
+        jQuery('.searchContent').hide();
         return false;
     },
     display: function() {
@@ -322,7 +322,7 @@ Venda.Search.Feature.hideLoading.prototype = {
     }
 };
 
-Venda.Search.Feature.filterRefinements = function() {};
+/*Venda.Search.Feature.filterRefinements = function() {};
 Venda.Search.Feature.filterRefinements.prototype = {
     clickHandler: function(evt) {
 
@@ -354,7 +354,7 @@ Venda.Search.Feature.filterRefinements.prototype = {
         jQuery(".filterinput").bind('keyup', jQuery.proxy(this, 'clickHandler'));
         return false;
     } 
-};
+}; */
 
 Venda.Search.Feature.popListItems = function() {};
 Venda.Search.Feature.popListItems.prototype = {

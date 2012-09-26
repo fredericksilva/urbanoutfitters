@@ -1018,7 +1018,6 @@ Venda.Ebiz.colorSwatch = function(conf){
 Venda.Ebiz.colorSwatch.prototype = {
     init: function(){
             jQuery(this.conf.contentID).on("click", ".swatchContainer a", function(){
-
         	var $this = jQuery(this);
 
         	var mainImg 	 = $this.data("setimage"),
@@ -1026,7 +1025,7 @@ Venda.Ebiz.colorSwatch.prototype = {
             	prodLink 	 = mainImgObj.find("a:first").data("prodLink");
 
             if(mainImg == ""){
-                mainImg = mainImgObj.find("a:first").data("defaultImage");
+                mainImg = mainImgObj.find("a:first").data("defaultimage");
             }
 
             mainImgObj.find('img:first')

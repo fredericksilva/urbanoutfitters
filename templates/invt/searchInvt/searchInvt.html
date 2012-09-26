@@ -1,64 +1,29 @@
+<venda_block label=45,invtpublish=1>
 <venda_block label=78,invtref!=giftcert>
 <!-- &bklist= is needed for search product list -->
 <!-- Debug venda_bklist  : <venda_bklist> -->
 <!-- Debug venda_bklist1 : <venda_bklist1> -->
-<venda_block label=4,med-small=notnull>
-<a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>" title="<venda_invtname>"><venda_media rec=invt,type=movie-swf-pict,key=small,border=0,width=150,height=225></a>
-</venda_block label=4>
-<venda_block label=5,med-small=null>
-<a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg" alt="<venda_invtname1>" title="<venda_invtname>" border="0"></a>
-</venda_block label=5>
-
-<!-- DISPLAY SWATCHES -->
-	<div id="product-list-swatches">
-    <venda_block label=666,med-colour1=notnull,med-colour2=notnull,med-colour3=notnull,med-colour4=notnull,med-colour5=notnull,med-colour6=notnull,med-colour7=notnull,med-colour8=notnull,med-colour9=notnull,med-colour10=notnull,med-colour11=notnull,med-colour12=notnull,operator=or>
-        <a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>">
-        <venda_block label=111,med-colour1=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour1,border=0,width=30,height=22>
-		</venda_block label=111>
-		<venda_block label=112,med-colour2=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour2,border=0,width=30,height=22>
-		</venda_block label=112>
-		<venda_block label=113,med-colour3=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour3,border=0,width=30,height=22>
-		</venda_block label=113>
-		<venda_block label=114,med-colour4=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour4,border=0,width=30,height=22>
-		</venda_block label=114>
-		<venda_block label=115,med-colour5=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour5,border=0,width=30,height=22>
-		</venda_block label=115>	
-		<venda_block label=116,med-colour6=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour6,border=0,width=30,height=22>
-		</venda_block label=116>	
-		<venda_block label=117,med-colour7=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour7,border=0,width=30,height=22>
-		</venda_block label=117>		
-		<venda_block label=118,med-colour8=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour8,border=0,width=30,height=22>
-		</venda_block label=118>		
-		<venda_block label=119,med-colour9=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour9,border=0,width=30,height=22>
-		</venda_block label=119>		
-		<venda_block label=120,med-colour10=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour10,border=0,width=30,height=22>
-		</venda_block label=120>		
-		<venda_block label=121,med-colour11=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour11,border=0,width=30,height=22>
-		</venda_block label=121>		
-		<venda_block label=122,med-colour12=notnull>
-			<venda_media rec=invt,type=movie-swf-pict,key=colour12,border=0,width=30,height=22>
-		</venda_block label=122>
-        </a>		
-</venda_block label=666>
-</div>
-<!-- END -->
+<div id="comp-image<venda_invtref>" class="image">
+	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg">
+		    <venda_block label=4,med-setsmall=notnull>
+		        <venda_media rec=invt,type=movie-swf-pict,key=setsmall,width=145,height=218>
+		    </venda_block label=4>
+		    <venda_block label=44,med-setsmall=null>
+		        <venda_media rec=invt,type=movie-swf-pict,key=small,width=145,height=218>
+		    </venda_block label=44>
+		    <venda_block label=5,med-small=null>
+		        <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_s.jpg" alt="<venda_invtname1>" title="<venda_invtname>" border="0" width="145px" height="218px">
+		    </venda_block label=5>
+		</a>
+		<venda_block label=510,invtavail&gt;0>
+		<div class="quickLinkBox"><a href="<venda_dispview invt=<venda_invtref>>&temp=quickBuyDetailsNew&layout=blank" id="<venda_invtref>" class="quickBuyDetails" data-track="open-quickbuy">Quick View</a></div>	
+		</venda_block label=510>	
+		<venda_mediagrid template=colourSwatch>		
+	</div>
 
 <div class="productlistinfo">
 <span style="display:none;" class="productSku"><venda_invtref></span>
 <p class="productname"><venda_invtname></p>
-<venda_block label=323,invtivtype=boutique><img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.gif"/></venda_block label=323>
-<venda_block label=55,invtpdxtpromo=notnull><p class="list-promo"><venda_invtpdxtpromo></p></venda_block label=55>
 <venda_block label=10,invtatrtot&lt;1>
 <!-- if product doesn't have attributes -->
 	<venda_block label=11,invtsavingonwas=notnull,invtwas!=0.00,invtwas&gt;invtsell>
@@ -93,6 +58,8 @@
 		</p>
 	</venda_block label=666>
 </venda_block label=20>
+<venda_block label=323,pdxtboutiqueimg=1><img class="boutique-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique-pdxt.png"/></venda_block label=323>
+<venda_block label=55,pdxtonlinexcl=1><img class="online-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/online-exclusive-pdxt.png"/></venda_block label=55>
 </div>
 <venda_block label=30,invtavail&gt;0,invtatrtot&lt;1>
 <!-- if in stock and product doesn't have attributes -->
@@ -148,33 +115,14 @@
 <venda_block label=44,mode=value,<venda_tpxt mode=get,name=template>!=advancedsearch>
 </form>
 </venda_block label=44>
-<!-- 
-if qty to be fixed as 1, use simpler addshop buttons instead...
-add to basket button needs extra parameters if we're on a search template
 
-<venda_block label=37,invtpreorder1!=1><venda_jump type=addshop,rtype=invt,value=invtref1,label=31>Buy Now</venda_jump label=31></venda_block label=37>
 
-<venda_block label=25,mode=value,<venda_tpxt mode=get,name=template>!=searchproductlist>
-<venda_block label=28,mode=value,<venda_tpxt mode=get,name=template>!=advancedsearch>
-<venda_block label=63,mode=value,<venda_tpxt mode=get,name=template>!=standardsearch>
-<venda_jump type=addshop2,rtype=invt,value=invtref1,label=32><venda_block label=710,invtpreorder1!=1>Add to Basket</venda_block label=710><venda_block label=711,invtpreorder1=1>Pre-Order</venda_block label=711></venda_jump label=32>
-</venda_block label=63>
-</venda_block label=28>
-</venda_block label=25>
-
-<venda_block label=26,mode=value,<venda_tpxt mode=get,name=template>=searchproductlist>
-<venda_jump type=addshop2,rtype=invt,value=invtref1,curpage=search,searchargs=<venda_query>,srchopt=<venda_srchopt>,string=<venda_string>,xptpl=wz_xapian_productlist,xpcache=1,label=32><venda_block label=710,invtpreorder1!=1>Add to Basket</venda_block label=710><venda_block label=711,invtpreorder1=1>Pre-Order</venda_block label=711></venda_jump label=32>
-</venda_block label=26>
-
-<venda_block label=64,mode=value,<venda_tpxt mode=get,name=template>=standardsearch>
-<venda_jump type=addshop2,rtype=invt,value=invtref1,curpage=search,searchargs=<venda_query>,srchopt=<venda_srchopt>,string=<venda_string>,xpcache=1,label=32><venda_block label=65,invtpreorder1!=1>Add to Basket</venda_block label=65><venda_block label=66,invtpreorder1=1>Pre-Order</venda_block label=66></venda_jump label=32>
-</venda_block label=64>
- -->
 </venda_block label=30>
 <venda_block label=104,invtsell2=notnull>
 <p>Multiple-buy savings</p>
 </venda_block label=104>
 </venda_block label=78>
+</venda_block label=45>
 
 <venda_block label=79,invtref=giftcert>
 <a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>&bklist=icat,3,shop,home"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg" alt="<venda_invtname>" title="<venda_invtname>" border="0"></a>

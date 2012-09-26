@@ -1,0 +1,94 @@
+<venda_block label=78,invtref!=giftcert,invtpublish=1>
+<li>
+<div class="liwrapper">
+	<div id="comp-image<venda_invtref>" class="image">
+	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>?bklist=<venda_bklist>&htxt=<venda_htxt mode=make,vbm=true>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg">
+		    <venda_block label=4,med-setsmall=notnull>
+		        <venda_media rec=invt,type=movie-swf-pict,key=setsmall,width=186,height=280>
+		    </venda_block label=4>
+		    <venda_block label=44,med-setsmall=null>
+		        <venda_media rec=invt,type=movie-swf-pict,key=small,width=186,height=280>
+		    </venda_block label=44>
+		    <venda_block label=5,med-small=null>
+		        <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_s.jpg" alt="<venda_invtname1>" title="<venda_invtname>" border="0" width="145px" height="218px">
+		    </venda_block label=5>
+		</a>	
+		<venda_mediagrid template=colourSwatch>		
+	</div>
+
+<div class="productlistinfo">
+<span style="display:none;" class="productSku"><venda_invtref></span>
+<p class="productname"><venda_invtname></p>
+<venda_block label=10,invtatrtot&lt;1>
+<!-- if product doesn't have attributes -->
+	<venda_block label=11,invtsavingonwas=notnull,invtwas!=0.00,invtwas&gt;invtsell>
+		<p class="price"><span class="saleprice"><venda_currsym><venda_invtsell></span><span class="wasprice">(was <venda_currsym><venda_invtwas>)</span></p>
+	</venda_block label=11>
+	
+	<venda_block label=101,invtsavingonwas=null,invtwas1=0.00,invtwas&lt;=invtsell,operator=or>
+		<p class="price"><venda_currsym><venda_invtsell></p>
+	</venda_block label=101>
+</venda_block label=10>
+<venda_block label=20,invtatrtot&gt;0>
+<!-- if product does have attributes -->
+	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+		<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+			<p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
+		</venda_block label=211>
+		<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+			<p class="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></p>
+		</venda_block label=221>
+	</venda_block label=555>
+	<venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+		<p class="price">
+        <span class="saleprice">
+			<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+				<venda_currsym><venda_invtatrmaxsubsell>
+			</venda_block label=211>
+			<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+				<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+			</venda_block label=221>
+		</span>
+        <span class="wasprice">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+		</p>
+	</venda_block label=666>
+</venda_block label=20>
+</div>
+</div>
+</li>
+</venda_block label=78>
+
+<script>
+	/**
+	* Change the swatch names to lowercase
+	*/
+	jQuery(".sw_image span img").attr("src", function() { 
+		return '<venda_entmediaadd>/ebiz/<venda_bsref>/invt/'+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
+		});
+				
+	jQuery(".swatchContainer a").click(function(){
+        var $this = jQuery(this);
+
+        var mainImg 	 = $this.data("setimage"),
+			mainImgObj 	 = jQuery("#"+ $this.data("prodid") ),
+            prodLink 	 = mainImgObj.find("a:first").data("prodLink");
+
+        if(mainImg == ""){
+            mainImg = mainImgObj.find("a:first").data("defaultimage");
+            }
+
+            mainImgObj.find('img:first')
+            	.attr("src", mainImg)
+            	.end()
+            	.find("a:first")
+            	.attr("href", this.href || "");
+
+            $this.parent("").find("a").removeClass("sw_selected");
+            $this.addClass("sw_selected");
+
+            return false;
+
+    });
+        
+    jQuery('.swatchContainer div').find(" > a:first").click();
+</script>
