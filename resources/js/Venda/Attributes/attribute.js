@@ -14,6 +14,7 @@
  *
  * @author Alby Barber <abarber@venda.com>
  * @author Donatas Cereska <DonatasCereska@venda.com>
+ * @author Matthew Wyatt <mwyatt@anthropologie.com>
 */
 
 Venda.namespace('Attributes');
@@ -389,7 +390,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	// Reset the UI.
 	EmwbisID.addClass("Re-paint-out");
 	stockFeedbackBox.removeClass("In_stock_box Out_of_stock_box");
-	addToBasketLinks.css("opacity","1");
+	addToBasketLinks.css({"opacity":"1", "cursor":"pointer"});
 	
 	switch(stockstatus) {
 	
@@ -439,7 +440,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 					}
 					else{
 						addproductID.addClass("Re-paint");
-						addToBasketLinks.css("opacity","0.5");
+						addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
 					}
 				}
 		break;
@@ -458,7 +459,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		default:
 			// Not Available
 			addproductID.addClass("Re-paint");
-			addToBasketLinks.css("opacity","0.5");
+			addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
 	}
 
 	jQuery('#oneProduct_' + uID + ' .attrFeedback  #stockstatus').hide().text(stockFeedback).addClass("Re-paint");

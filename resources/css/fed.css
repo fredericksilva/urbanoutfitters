@@ -34,6 +34,10 @@ span.sku {
 	padding-top: 0;
 	margin-right: 10px;
 }
+.buyControls {
+  padding-left: 0;
+  margin-bottom: 5px;
+}
 .producdetail-promo img.boutique { 
 	float: left;
 	padding-top: 3px;
@@ -61,23 +65,39 @@ span.sku {
 	display: none;	
 }
 .submit.addproduct {
-  height: 34px;
+  height: 32px;
   width: 141px;
 	background: #4C4C4C;
 	border: 0 none;	
   padding: 3px 18px 2px;
   text-transform: uppercase;	
+  margin-left: 20px;
+}
+.submit.addproduct:hover {
+  text-decoration: none;
 }
 #qtybox label {
 	display: none;
 }
+#qtybox .qtyChange {
+  background: url("../images/btn_dropdown.png") no-repeat scroll right -33px transparent;
+  width: 15px;
+  height: 31px;
+  cursor: pointer;
+}
+#qtybox span, #qtybox input {
+  float: left;
+}
+#qtybox #qtyDown {
+  background-position: -1px -1px;
+}
 input#qty {
-	height: 32px;
-	text-align: center;
-	background: transparent;
-	border: 1px solid #4C4C4C;
-	color: #4C4C4C;
-	margin-right: 10px;	
+  background: none repeat scroll 0 0 transparent;
+  border: 1px solid #4C4C4C;
+  color: #4C4C4C;
+  height: 29px;
+  text-align: center;
+  padding: 0 2px;	
 }
 .productDetailGradientBox.reviews { 
 	position: absolute;
@@ -114,7 +134,6 @@ input#qty {
 	display: block;
 	padding-bottom: 8px;
 }
-
 
 #accordion .ui-icon-triangle-1-s {
 	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;

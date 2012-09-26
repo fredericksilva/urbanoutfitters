@@ -72,6 +72,18 @@ jQuery("select").change(function() {
 
 });
 
+jQuery('.qtyChange').click(function(){
+    var currentQty = parseInt(jQuery('#qtybox #qty').val(), 10),
+        qtyButton = jQuery(this).attr('id')
+    if(qtyButton == "qtyUp"){
+        jQuery('#qtybox #qty').val(currentQty += 1)
+    } else {
+        if (currentQty > 0) {
+            jQuery('#qtybox #qty').val(currentQty -= 1)    
+        }
+    }
+});
+
 Venda.Attributes.DropdownBehaviour = function(attName, attValue, uID) {
 	Venda.Attributes.setSelectedJSON(attName,attValue, uID);
 	Venda.Attributes.updateAttributes(uID);
