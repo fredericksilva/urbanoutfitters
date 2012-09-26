@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch');
+    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','uiSelectmenu');
 };
 
 // Utility method.
@@ -386,4 +386,121 @@ Venda.Search.Feature.colorSwatch.prototype = {
         colorSwatch.init();
         return false;
     }
+};
+
+/**
+* The following scripts have been added to perform the following functionality on the 
+* productlist and categorylist templates.
+* Search perLine '3 or 5 products', Accordion toggle on Refine List, Clear button on
+* each collate results, Hide swatchContainer if there are less than 2 swatches and jQuery UI dropdown styling
+* @author Jotis Moore <jmoore@urbanoutfitters.com>
+**/
+Venda.Search.Feature.perLine = function() {};
+Venda.Search.Feature.perLine.prototype = {
+    display: function() {
+    	var prodRef = jQuery(".prodRef").text();
+    if (document.location.href.indexOf('&perline=3') > -1 ) {
+    	jQuery(".prods li").css('width','33%');
+        jQuery(".threePerLine").hide();
+    	jQuery(".fivePerLine").show();
+    		jQuery("a.moredetail img").each(function () {
+    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_l1.jpg');
+    			jQuery(this).attr("src",ImageSrc);
+    		});
+    		jQuery(".sw_image").each(function () {
+    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_l1.jpg');
+    			jQuery(this).data("setimage",SetImageSrc);
+    		});
+        jQuery("a.moredetail img").css({width:'243px',height:'364px'});
+
+    }
+    if (document.location.href.indexOf('&perline=5') > -1 ) {
+    	jQuery(".prods li").css('width','19.5%');
+        jQuery(".threePerLine").show();
+    	jQuery(".fivePerLine").hide();
+    		jQuery("a.moredetail img").each(function () {
+    			var ImageSrc = jQuery(this).attr("src").replace('_l1.jpg','_sm1.jpg');
+    			jQuery(this).attr("src",ImageSrc);
+    		});
+    		jQuery(".sw_image").each(function () {
+    			var SetImageSrc = jQuery(this).data("setimage").replace('_l1.jpg','_sm1.jpg');
+    			jQuery(this).data("setimage",SetImageSrc);
+    		});
+    	jQuery("a.moredetail img").css({width:'145px',height:'218px'});
+    	};
+        jQuery('.threePerLineLink').click(function() {
+    		if ( document.location.href.indexOf('perline=5') > -1 ) {
+    			this.href = this.href.replace('perline=5', 'perline=3');
+    		}
+    		else {
+        	jQuery(this).attr('href', this.href + '&perline=3');
+        	}
+        	return true;
+        });
+        jQuery('.fivePerLineLink').click(function() {
+        	if ( document.location.href.indexOf('perline=3') > -1 ) {
+    			this.href = this.href.replace('perline=3', 'perline=5');
+    		}
+    		else {
+        	jQuery(this).attr('href', this.href + '&perline=5');
+        	}
+        	return true;
+        });
+    }
+};
+
+Venda.Search.Feature.searchAccordion = function() {};
+Venda.Search.Feature.searchAccordion.prototype = {
+    display: function() {
+    	jQuery(".accordion_slice").each(function (c) {
+        	var b = "";
+        	jQuery(this).find(".vendaField").each(function (f) {
+	        	b = jQuery(this).text()
+	        });
+	        var fa = "";
+	        jQuery('#'+b).click(function() {
+		        jQuery('#'+b+'results').slideToggle('slow', function() {
+		    });
+		    jQuery('#'+b+'icon').toggleClass('iconMinus');
+		});
+		
+		if (jQuery(this).find("div.chosen").length > 0) {
+		    jQuery(".clear"+b).show();
+		}
+
+		jQuery(function(){
+		    jQuery(this).find(".vendasearchURL").each(function (d) {
+	        	url = jQuery(this).text();
+	        });
+	        jQuery(".clear"+b+" a[href^='"+url+"']").each(function() {
+		    	var re = new RegExp('\&'+b+'='+'([^&]*)', "g");
+		    	this.href = this.href.replace(re, "");
+		    	});
+		    });
+		});
+	}
+};
+
+Venda.Search.Feature.swatchHide = function() {};
+Venda.Search.Feature.swatchHide.prototype = {
+	display: function() {
+    	jQuery(".prods li").each(function () {     	
+    		var n = jQuery(this).find(".sw_image").length;
+    		if (n < 2) {
+    			var swatchCont = jQuery(this).find(".swatchContainer");
+    			jQuery(swatchCont).html("");
+    			jQuery(swatchCont).hide();
+    		}
+    	});
+    }
+};
+
+Venda.Search.Feature.uiSelectmenu = function() {};
+Venda.Search.Feature.uiSelectmenu.prototype = {
+	display: function() {
+		jQuery(".sort select").selectmenu({ style: 'dropdown' });
+		jQuery(".sortby").click(function(){
+			jQuery(".sort select").selectmenu({ style: 'dropdown' });
+		});
+	}
 };
