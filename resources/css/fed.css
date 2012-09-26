@@ -115,7 +115,7 @@ input#qty {
 
 .productDetailTabs h3 {
 	outline: 0;
-	height: 16px;
+	height: 20px;
 	padding: 10px 0 5px;
     background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent;
 }
@@ -136,8 +136,8 @@ input#qty {
 }
 
 #accordion .ui-icon-triangle-1-s {
-	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;
-	width: 20px;
+	background: url("../images/img-minus.png") no-repeat scroll 0 3px transparent;
+	width: 11px;
 	height: 20px;
 	display: block;
 	float: right;
@@ -145,8 +145,8 @@ input#qty {
 }
 
 #accordion .ui-icon-triangle-1-e {
-	background: url("../images/img-plus.png") no-repeat scroll 0 0 transparent;
-	width: 20px;
+	background: url("../images/img-plus.png") no-repeat scroll 0 2px transparent;
+	width: 11px;
 	height: 20px;
 	display: block;
 	float: right;

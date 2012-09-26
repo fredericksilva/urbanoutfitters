@@ -1052,7 +1052,8 @@ jQuery(document).ready(function () {
     });    	
 	
     jQuery( ".accordion-panels" ).accordion({
-			collapsible: true
+			collapsible: true,
+			autoHeight: false
 		});
     
 });
