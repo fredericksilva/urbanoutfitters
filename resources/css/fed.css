@@ -12,7 +12,6 @@
 span.sku {
 	display: none;
 }
-.productselectedwrapper { display: none;}
 
 .oneProduct .priceField {
     float: left;
@@ -21,10 +20,23 @@ span.sku {
 
 #price.price { font-size: 21px; }
 
+.productselectedwrapper {
+  display: none;
+}
+.stockFeedbackBox {
+  margin: 5px 0;
+  padding: 0;
+  text-align: left;
+  font-size: 12px;
+}
 .producdetail-promo img.onexcl {
 	float: left;
 	padding-top: 0;
 	margin-right: 10px;
+}
+.buyControls {
+  padding-left: 0;
+  margin-bottom: 5px;
 }
 .producdetail-promo img.boutique { 
 	float: left;
@@ -42,9 +54,6 @@ span.sku {
 .product-att label {
 	display: none;
 }
-.box.stockFeedbackBox {
-	display: none !important;
-}
 .buyControls, .buyControlsMulti {
 	text-align: left;
 }
@@ -56,22 +65,39 @@ span.sku {
 	display: none;	
 }
 .submit.addproduct {
-    height: 34px;
-    width: 141px;
+  height: 32px;
+  width: 141px;
 	background: #4C4C4C;
 	border: 0 none;	
-    padding: 3px 18px 2px;	
+  padding: 3px 18px 2px;
+  text-transform: uppercase;	
+  margin-left: 20px;
+}
+.submit.addproduct:hover {
+  text-decoration: none;
 }
 #qtybox label {
 	display: none;
 }
+#qtybox .qtyChange {
+  background: url("../images/btn_dropdown.png") no-repeat scroll right -33px transparent;
+  width: 15px;
+  height: 31px;
+  cursor: pointer;
+}
+#qtybox span, #qtybox input {
+  float: left;
+}
+#qtybox #qtyDown {
+  background-position: -1px -1px;
+}
 input#qty {
-	height: 32px;
-	text-align: center;
-	background: transparent;
-	border: 1px solid #4C4C4C;
-	color: #4C4C4C;
-	margin-right: 10px;	
+  background: none repeat scroll 0 0 transparent;
+  border: 1px solid #4C4C4C;
+  color: #4C4C4C;
+  height: 29px;
+  text-align: center;
+  padding: 0 2px;	
 }
 .productDetailGradientBox.reviews { 
 	position: absolute;
@@ -89,7 +115,7 @@ input#qty {
 
 .productDetailTabs h3 {
 	outline: 0;
-	height: 16px;
+	height: 20px;
 	padding: 10px 0 5px;
     background: url("../images/footer/foot-line.png") repeat-x scroll 0 0 transparent;
 }
@@ -109,10 +135,9 @@ input#qty {
 	padding-bottom: 8px;
 }
 
-
 #accordion .ui-icon-triangle-1-s {
-	background: url("../images/img-minus.png") no-repeat scroll 0 0 transparent;
-	width: 20px;
+	background: url("../images/img-minus.png") no-repeat scroll 0 3px transparent;
+	width: 11px;
 	height: 20px;
 	display: block;
 	float: right;
@@ -120,8 +145,8 @@ input#qty {
 }
 
 #accordion .ui-icon-triangle-1-e {
-	background: url("../images/img-plus.png") no-repeat scroll 0 0 transparent;
-	width: 20px;
+	background: url("../images/img-plus.png") no-repeat scroll 0 2px transparent;
+	width: 11px;
 	height: 20px;
 	display: block;
 	float: right;
@@ -215,10 +240,11 @@ input#qty {
 	vertical-align: middle; 
 	text-decoration: none; 
 	overflow: ; zoom: 1;  
-	height: 29px; 
-	outline: none;}
+	height: 28px; 
+	outline: none;
+}
 .product-att .ui-selectmenu-icon { 
-	background: url('../images/btn_dropdown.png') no-repeat right; 
+	background: url('../images/btn_dropdown.png') no-repeat right -33px; 
 	position:absolute; 
 	right:-10px; top:-1px; 
 }
@@ -250,7 +276,8 @@ input#qty {
 	border-right:  1px solid #4d4d4d;
 	border-bottom:  1px solid #4d4d4d;
 	border-left:  1px solid #4d4d4d;
-	width: 159px;
+	width: 165px;
+	padding: 5px 0;
 }
 .ui-selectmenu-menu-popup { margin-top: -1px; }
 .ui-selectmenu-menu li { 
@@ -290,6 +317,7 @@ input#qty {
 .product-att .ui-selectmenu-status { 
 	line-height: 1.5em; 
 	outline: none; 
+	padding: 6px 10px;
 }
 .product-att .ui-selectmenu-menu li span,
 .ui-selectmenu-status span { 
