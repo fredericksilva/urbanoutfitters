@@ -239,7 +239,17 @@
 .mm_ul {
   margin-top: 16px;
 }
-
+.mm_fullwidth {
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  visibility: hidden;
+}
+.mm_ul > li:hover > .mm_fullwidth {
+  filter: alpha(opacity=1);
+  opacity: 1;
+  visibility: visible;
+}
 .tabcontent ul li {
   float: left;
 }
