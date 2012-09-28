@@ -78,7 +78,7 @@ jQuery('.qtyChange').click(function(){
     if(qtyButton == "qtyUp"){
         jQuery('#qtybox #qty').val(currentQty += 1)
     } else {
-        if (currentQty > 0) {
+        if (currentQty > 1) {
             jQuery('#qtybox #qty').val(currentQty -= 1)    
         }
     }

@@ -15,4 +15,14 @@
 	}
 </script>
 <!-- end Venda tracking -->
-<script type="text/javascript" src="/venda-support/js/tracking/prod_stats_counter.js"></script>
+<venda_block label=815,mode=value,<venda_setting type=ebiz,name=tracktagcoremetrics>=1>
+<script type="text/javascript">
+	cmSetProduction();
+	names=new Array("prodId", "prodName", "prodQty", "prodPrice", "catId");
+	values=new Array("<venda_invtref>", "<venda_invtname>", "<venda_addedmsg msg=addedqty>", "<venda_invtsell>", "<venda_invtcatref0>");
+	cmCreateShopAction5Tag(values[0], values[1], values[2], values[3], values[4]);
+	stepName="invt/<venda_invtref>_added";
+	cmDisplayShop5s();
+	//cmCreateProductviewTag(values[0], values[1], values[4]);
+</script>
+</venda_block label=815>

@@ -38,8 +38,8 @@ Venda.Widget.MinicartDetail.Create = function () {
 		
 		fade : false,
 		scroll : true,
-		openDuration : 0.4,
-		visibleTime : 8,
+		openDuration : 0.2,
+		visibleTime : 99999999999,
 		
 		highlight : true,
 		highlightColor : "#ff0000",
@@ -47,7 +47,7 @@ Venda.Widget.MinicartDetail.Create = function () {
 		highlightDuration : 4,
 		
 		header : false,
-		closeButton : true,
+		closeButton : false,
 		draggable : false,
 		
 		showOnHover : false,
@@ -689,7 +689,7 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 		});
 		
 		jQuery(".minicart-viewer").before("<button id='scrollUp' class='basketScroll scroll-subtle'>&nbsp;</button>");
-		jQuery(".minicart-viewer").after("<button id='scrollDown' class='basketScroll'>&#9660;</button>");
+		jQuery(".minicart-viewer").after("<button id='scrollDown' class='basketScroll'><span class='down-arrow'></span></button>");
 		
 		var top = 0;
 		jQuery("#scrollUp").on("click", function () {
@@ -698,10 +698,10 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 				top += maxHeight;
 				jQuery("#minicart_products").animate({
 					'margin-top' : top + 'px'
-				}, 200, function () { jQuery("#scrollDown").html("&#9660;").removeClass('scroll-subtle'); });
+				}, 200, function () { jQuery("#scrollDown").html("<span class='down-arrow'></span>").removeClass('scroll-subtle'); });
 			}
 			if (step == 1) {
-				jQuery("#scrollDown").html("&#9660;").removeClass('scroll-subtle');
+				jQuery("#scrollDown").html("<span class='down-arrow'></span>").removeClass('scroll-subtle');
 				jQuery(this).html("&nbsp;").addClass('scroll-subtle');
 			}
 		});
@@ -711,10 +711,10 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 				top -= maxHeight;
 				jQuery("#minicart_products").animate({
 					'margin-top' : top + 'px'
-				}, 200, function () { jQuery("#scrollUp").html("&#9650;").removeClass('scroll-subtle'); });
+				}, 200, function () { jQuery("#scrollUp").html("<span class='up-arrow'></span>").removeClass('scroll-subtle'); });
 			}
 			if (step == pages) {
-				jQuery("#scrollUp").html("&#9650;").removeClass('scroll-subtle');
+				jQuery("#scrollUp").html("<span class='up-arrow'></span>").removeClass('scroll-subtle');
 				jQuery(this).html("&nbsp;").addClass('scroll-subtle');
 			}
 		});

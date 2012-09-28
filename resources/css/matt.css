@@ -231,6 +231,54 @@
   margin: 0 auto;
 }
 
+.minicartDetailContent .image a {
+  display: block;
+  width: 75px;
+  height: 112px;
+}
+
+.minicartDetailTotals .items {
+  display: none;
+}
+
+.minicartDetailDialog .error {
+    background-color: #444444;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: normal;
+    margin: 10px 10px 0 10px;
+    padding: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 16px;
+    border-bottom: none;
+}
+
+.basketScroll span {
+    background: url("../images/paper-arrows.png") no-repeat 0 0 transparent;
+    width: 13px;
+    height: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.basketScroll .down-arrow {
+    background-position: 0 -8px;
+}
+
+.minicartDetailBottom a {
+    background: none;
+    border: 2px solid #777;
+    margin: 0;
+    padding: 7px 20px !important;
+    text-align: center;
+    color: #555;  
+}
+.minicartDetailBottom .buttonArrow {
+    background: #444;
+    color: #ffffff;
+    border-color: #444;
+}
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
@@ -280,4 +328,27 @@ div.zoomPopupWrapper {
 #viewLargeImg {
   margin: 0;
   line-height: 0;
+}
+
+.loaderBar {
+  background: url(../images/uo-loading.gif) no-repeat center center;
+  display: block;
+}
+
+.minicartDetailTotals li {
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+}
+.basketScroll{
+  background: url("../images/paper-background.jpg") repeat scroll 0 0 #CFC5B6;
+  border: 2px solid #222;
+}
+.minicart-viewer {
+  border-top: none;
+}
+.prodsMinicartCheckout li:first-child {
+  border-top: 1px dotted #333;
+}
+button::-moz-focus-inner {
+  border: 0;
 }

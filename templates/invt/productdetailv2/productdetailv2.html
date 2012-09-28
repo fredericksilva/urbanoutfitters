@@ -96,13 +96,10 @@ jQuery(function(){
 		<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
 		<input type="hidden" name="ivref" value="<venda_invtref>">
 
-		<!-- htxt for VBM tracking to track with buy now function -->
-		<venda_block label=vbmtrack,mode=value,<venda_htxt mode=get,name=vbm>=true>     
+		<!-- htxt for VBM tracking to track with buy now function -->  
 		<input type="hidden" name="htxt" id="htxt" value="<venda_htxt mode=make,vbm=true>">
-		</venda_block label=vbmtrack>
-		<venda_block label=21,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>
 		<div style="display:none;" id="tag-vbmref"><venda_invtref></div>
-		</venda_block label=21>
+
 		<venda_tpcomment><!-- start: price - if product doesn't have attributes --></venda_tpcomment>
 		
 
