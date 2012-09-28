@@ -42,7 +42,14 @@ Venda.Attributes.DropDown = function () {
 		if((jQuery(".oneProduct").length === 1) && (urlParam != "")) {
 			for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 				if(Venda.Attributes.storeImgsArr[i].param == urlParam) {
+				  var adjustAtt3 = ""
 					document.getElementById('addproductform').elements["att1"].value = urlParam;
+  			   for(var i = 0; i < Venda.Attributes.attsArray.length; i++) {
+      	     if(Venda.Attributes.attsArray[i].att1 == urlParam){
+        	     adjustAtt3 = document.getElementById('addproductform').elements["att3"].value = Venda.Attributes.attsArray[i].att3
+      	     } 
+      	   }
+      	  Venda.Attributes.setSelectedJSON('att3', adjustAtt3, singleuID);
 					Venda.Attributes.DropdownBehaviour('att1', urlParam, singleuID);
 				}
 			}
@@ -60,6 +67,16 @@ jQuery("select").change(function() {
 		attName = this.name,
 		attValue = this.value,
 		attText = jQuery('#' + attName + '_' + uID +' option:selected').attr('data-attText');
+		
+		if(attName == "att1"){
+		  var adjustAtt3 = ""
+       for(var i = 0; i < Venda.Attributes.attsArray.length; i++) {
+         if(Venda.Attributes.attsArray[i].att1 == attValue){
+    	     adjustAtt3 = document.getElementById('addproductform').elements["att3"].value = Venda.Attributes.attsArray[i].att3
+         } 
+       }	
+       	Venda.Attributes.setSelectedJSON('att3', adjustAtt3, uID);
+		} 
 
 	Venda.Attributes.DropdownBehaviour(attName, attText, uID);
 
@@ -86,6 +103,6 @@ jQuery('.qtyChange').click(function(){
 
 Venda.Attributes.DropdownBehaviour = function(attName, attValue, uID) {
 	Venda.Attributes.setSelectedJSON(attName,attValue, uID);
-	Venda.Attributes.updateAttributes(uID);
+	Venda.Attributes.updateAttributes(uID, attValue, attName);
 	Venda.Attributes.UpdateDD('att2', uID);
 }

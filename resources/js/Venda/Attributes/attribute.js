@@ -110,6 +110,14 @@ Venda.Attributes.insertUI = function(content) {
 Venda.Attributes.Set = function(att1, att2, att3, att4, uID) {
 	
 	var att1 = att1 || "";	var att2 = att2 || "";	var att3 = att3 || "";	var att4 = att4 || "";
+	   
+	   for(var i = 0; i < Venda.Attributes.attsArray.length; i++) {
+	     if(Venda.Attributes.attsArray[i].att1 == att1 && Venda.Attributes.attsArray[i].att2 == att2){
+  	     att3 = Venda.Attributes.attsArray[i].att3
+  	     att4 = Venda.Attributes.attsArray[i].att4
+	     } 
+	   }
+	   
   	if (Venda.Attributes.IsAllSelected(att1, att2, att3, att4, uID)) {
 		var index = Venda.Attributes.SearchObj(att1, att2, att3, att4, uID);
  		if(typeof index != "undefined") {
@@ -865,7 +873,6 @@ jQuery('.Out_of_stock:not(.gridBlock, .key li)').live('mouseleave', function(){
 */
 
 Venda.Attributes.updateAttributes = function (uID, what, param) {
-
 	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
 		if (Venda.Attributes.productArr[i].attSet.id == uID) {
 			
@@ -957,7 +964,7 @@ Venda.Attributes.updateAttributes = function (uID, what, param) {
 		}
 	}
 	
-	if((Venda.Attributes.storeImgsArr.length > 0) && (Venda.Attributes.productArr[0].attSet.att1.imageRef != "")) { Venda.Attributes.ImageSwap(Venda.Attributes.productArr[0].attSet.att1.imageRef); 
+	if((Venda.Attributes.storeImgsArr.length > 0) && (Venda.Attributes.productArr[0].attSet.att1.imageRef != "") && (param == "att1")) { Venda.Attributes.ImageSwap(Venda.Attributes.productArr[0].attSet.att1.imageRef); 
 	};
 
 };
@@ -1067,26 +1074,27 @@ Venda.Attributes.ImageSwap = function(att) {
 			}
 		}
 	}
-
-	for(var i = 0; i < obj.images.imgM.length; i++) {
-    if(obj.images.imgL[i]){
-      sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
-    } else {
-      sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
-    }
-	}
-	jQuery("#main .slider").html("<div class=\"flexslider uo-product-slider\"><ul class=\"slides\">" + sliderHTML + "</ul></div>");		
-  jQuery('.uo-product-slider').flexslider({
-    animation: "fade",
-    slideshow: false,
-    animationSpeed: 300, 
-    start: function(slider){
-      var slideTot = jQuery('.uo-product-slider .flex-control-nav li').length
-      jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
-    }
-  });		
-	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
-		jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+	if(obj) {
+  	for(var i = 0; i < obj.images.imgM.length; i++) {
+      if(obj.images.imgL[i]){
+        sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
+      } else {
+        sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
+      }
+  	}
+  	jQuery("#main .slider").html("<div class=\"flexslider uo-product-slider\"><ul class=\"slides\">" + sliderHTML + "</ul></div>");		
+    jQuery('.uo-product-slider').flexslider({
+      animation: "fade",
+      slideshow: false,
+      animationSpeed: 300, 
+      start: function(slider){
+        var slideTot = jQuery('.uo-product-slider .flex-control-nav li').length
+        jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
+      }
+    });		
+  	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
+  		jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+  	}
 	}
 };
 
