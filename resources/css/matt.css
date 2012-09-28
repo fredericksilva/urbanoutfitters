@@ -279,6 +279,11 @@
     color: #ffffff;
     border-color: #444;
 }
+.mm_sub:after {
+  font-size: 0px; line-height: 0%; width: 100px;
+  border-top: 20px solid red;
+  border-right: 20px solid #f6f6f6;
+}
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
