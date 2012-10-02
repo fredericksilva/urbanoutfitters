@@ -496,10 +496,8 @@ Venda.Search.Feature.removePrice.prototype = {
 				var prePrice = priceParams.split('-')[0];
 				var postPrice = escape(priceParams.split('-')[1]);
 				priceParams = "&price_from=" + prePrice + "&price_to=" + postPrice;
-				console.log(priceParams)
 			})
 			jQuery(this).find("a[href^='"+url+"']").each(function() {
-				console.log(priceParams)
 		    	var priceUrl = new RegExp(priceParams, "g");
 		    	this.href = this.href.replace(priceUrl, "");
 		    });

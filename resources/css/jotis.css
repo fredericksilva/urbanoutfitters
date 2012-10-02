@@ -403,13 +403,27 @@ a:hover.quickBuyDetails {
 	margin:10px 0 0;
 }
 
+#bottomtab .accessoryProds li {
+	background: none;
+	border-top:0;
+	border-right: 1px solid #4c4c4c;
+	border-bottom: 0;
+	border-left:0;
+	margin-right: 0;
+	padding: 0 10px;
+} 
+
+.accessoryProds .nav {
+	padding:12px 0 0;
+}
+
 .accessoryProds {
+	position:relative;
 	height:40px;
 	box-shadow: #5c5c5c 1px 1px 5px;
 }
 
 .accessoryProds li {
-	border: 0 !important;
 	background:transparent !important;
 	color:#666;
 	font-size:14px;
@@ -462,3 +476,5 @@ a:hover.quickBuyDetails {
 .sliderList .image, .sliderList .details {
 	padding: 0;
 }
+
+/* Accessory products header corners */
