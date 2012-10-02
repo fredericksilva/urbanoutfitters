@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="prods prodsFourColumns prodsGrid">
+                    <ul class="prods prodsFiveColumns prodsGrid">
                         <venda_detail_results>
                     </ul>
                     <div class="boxContent">
@@ -145,12 +145,7 @@ jQuery(function() {
 });
 
     jQuery('#content-search').bind('search-loading-end', function(evt) {
-    
-    /* Change the swatch names to lowercase */
-    jQuery(".sw_image span img").attr("src", function() { 
-    		return '<venda_entmediaadd>/ebiz/<venda_bsref>/invt/'+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
-    });
-    
+        
         <venda_block label=CompareProductsInt,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
             // Compare - Product compare
             Venda.Widget.Compare.loadCompareItems();

@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','uiSelectmenu');
+    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice');
 };
 
 // Utility method.
@@ -400,7 +400,7 @@ Venda.Search.Feature.perLine.prototype = {
     display: function() {
     	var prodRef = jQuery(".prodRef").text();
     if (document.location.href.indexOf('&perline=3') > -1 ) {
-    	jQuery(".prods li").css('width','33%');
+    	jQuery(".prodsFiveColumns li").css('width','33%');
         jQuery(".threePerLine").hide();
     	jQuery(".fivePerLine").show();
     		jQuery("a.moredetail img").each(function () {
@@ -415,7 +415,7 @@ Venda.Search.Feature.perLine.prototype = {
 
     }
     if (document.location.href.indexOf('&perline=5') > -1 ) {
-    	jQuery(".prods li").css('width','19.5%');
+    	jQuery(".prodsFiveColumns li").css('width','19.5%');
         jQuery(".threePerLine").show();
     	jQuery(".fivePerLine").hide();
     		jQuery("a.moredetail img").each(function () {
@@ -481,10 +481,36 @@ Venda.Search.Feature.searchAccordion.prototype = {
 	}
 };
 
+Venda.Search.Feature.removePrice = function() {};
+Venda.Search.Feature.removePrice.prototype = {
+	display: function() {
+		jQuery(".accordion_slice").each(function () {
+			jQuery(this).find(".vendasearchURL").each(function (d) {
+	        	url = jQuery(this).text();
+	        })
+	    });
+		jQuery("#priceresults").find(".chosen").each(function () {
+			var priceParams = "";
+			jQuery(this).find(".priceFacet").each(function () {
+				priceParams = jQuery(this).text();
+				var prePrice = priceParams.split('-')[0];
+				var postPrice = escape(priceParams.split('-')[1]);
+				priceParams = "&price_from=" + prePrice + "&price_to=" + postPrice;
+				console.log(priceParams)
+			})
+			jQuery(this).find("a[href^='"+url+"']").each(function() {
+				console.log(priceParams)
+		    	var priceUrl = new RegExp(priceParams, "g");
+		    	this.href = this.href.replace(priceUrl, "");
+		    });
+		})
+	}
+}
+
 Venda.Search.Feature.swatchHide = function() {};
 Venda.Search.Feature.swatchHide.prototype = {
 	display: function() {
-    	jQuery(".prods li").each(function () {     	
+    	jQuery(".prodsFiveColumns li").each(function () {    	
     		var n = jQuery(this).find(".sw_image").length;
     		if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
@@ -493,6 +519,18 @@ Venda.Search.Feature.swatchHide.prototype = {
     		}
     	});
     }
+};
+
+Venda.Search.Feature.swatchCase = function() {};
+Venda.Search.Feature.swatchCase.prototype = {
+	display: function() {
+		jQuery(".prodsFiveColumns li").each(function () {  
+    		var imageUrl = jQuery(this).find(".imageUrl").text(); 
+    		jQuery(this).find(".sw_image span img").attr("src", function() {
+	    		return imageUrl+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
+	    	});
+	    })
+	}
 };
 
 Venda.Search.Feature.uiSelectmenu = function() {};

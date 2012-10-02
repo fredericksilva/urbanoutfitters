@@ -11,28 +11,28 @@
 	margin-left: 5px;
 }
 
-.prodsFourColumns li {
+.prodsFiveColumns li {
 	width: 19.5%;
 }
 
-.prods {
+.prodsFiveColumns {
 	margin:0 0 0 1px !important;
 }
 
-.prods a img {
+.prodsFiveColumns a img {
 	border:1px solid #4c4c4c;
 }
 
-.prodsGrid .image, .prodsGrid .details {
+.prodsFiveColumns .image, .prodsFiveColumns .details {
 	padding: 0 !important; 
 	position: relative;
 }
 
-.productlistinfo {
+.prodsFiveColumns .productlistinfo {
 	font-weight:normal;
 }
 
-.wasprice {
+.prodsFiveColumns .wasprice {
 	font-weight:normal;
 }
 
@@ -212,7 +212,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 /* search refineList */
-.termtext input[type="checkbox"], .termtext a.updatesearch div.checkboxIcon {
+.termtext a.updatesearch div.checkboxIcon {
 	-webkit-appearance: none;
 	-moz-appearance:none;
 	-o-appearance:none;
@@ -226,7 +226,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 	float:left;
 }
 
-.termtext input[type="checkbox"]:checked, .chosen a.updatesearch div.checkboxIcon {
+.chosen a.updatesearch div.checkboxIcon {
 	background-color:#4C4C4C;
 }
 
@@ -403,6 +403,24 @@ a:hover.quickBuyDetails {
 	margin:10px 0 0;
 }
 
+.accessoryProds {
+	height:40px;
+	box-shadow: #5c5c5c 1px 1px 5px;
+}
+
+.accessoryProds li {
+	border: 0 !important;
+	background:transparent !important;
+	color:#666;
+	font-size:14px;
+}
+
+.accessoryProds li.active a {
+	font-style: italic;
+	font-weight: bold;
+	color:#4c4c4c;
+}
+
 .liwrapper {
 	position:relative;
 }
@@ -413,24 +431,34 @@ a:hover.quickBuyDetails {
 
 .liwrapper .image {
 	box-shadow: #5c5c5c 3px 3px 5px;
-	width:186px;
-	height:280px;
+	width:185px;
+	height:278px;
 }
 
-.liwrapper .productname, .liwrapper .price {
+.liwrapper .productlistinfo {
+	margin:20px 0;
 	font-weight:bold;
 }
 
-.featprods li {
-	width:188px;
+.featprods li, .sliderWrapper li {
+	width:187px;
 	padding:0 2px;
 	margin:20px 0;
 }
 
-.featprods li:first-child {
+.featprods li:first-child, .sliderWrapper li:first-child {
 	padding:0 2px 0 0;
 }
 
-.featprods li:last-child {
+.featprods li:last-child, .sliderWrapper li:last:child {
 	padding:0 0 0 2px;
+}
+
+.sliderWrapper {
+	width: 955px;
+	margin: 0;
+}
+
+.sliderList .image, .sliderList .details {
+	padding: 0;
 }
