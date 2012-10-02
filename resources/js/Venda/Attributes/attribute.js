@@ -1091,10 +1091,12 @@ Venda.Attributes.ImageSwap = function(att) {
         var slideTot = jQuery('.uo-product-slider .flex-control-nav li').length
         jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
       }
-    });		
-  	if((obj.images.imgM[0] != "") || (obj.images.imgL[0] !="")) {
-  		jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
-  	}
+    });	
+    jQuery(".uo-product-slider").hover(function() {
+      if(!jQuery('.cloud-zoom, .cloud-zoom-gallery').data('zoom')){
+        jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+      }
+    });
 	}
 };
 

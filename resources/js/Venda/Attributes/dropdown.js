@@ -45,7 +45,7 @@ Venda.Attributes.DropDown = function () {
 				  var adjustAtt3 = ""
 					document.getElementById('addproductform').elements["att1"].value = urlParam;
   			   for(var i = 0; i < Venda.Attributes.attsArray.length; i++) {
-      	     if(Venda.Attributes.attsArray[i].att1 == urlParam){
+      	     if(Venda.Attributes.attsArray[i].att1 == urlParam && document.getElementById('addproductform').elements["att3"]){
         	     adjustAtt3 = document.getElementById('addproductform').elements["att3"].value = Venda.Attributes.attsArray[i].att3
       	     } 
       	   }
@@ -71,7 +71,7 @@ jQuery("select").change(function() {
 		if(attName == "att1"){
 		  var adjustAtt3 = ""
        for(var i = 0; i < Venda.Attributes.attsArray.length; i++) {
-         if(Venda.Attributes.attsArray[i].att1 == attValue){
+         if(Venda.Attributes.attsArray[i].att1 == attValue && document.getElementById('addproductform').elements["att3"]){
     	     adjustAtt3 = document.getElementById('addproductform').elements["att3"].value = Venda.Attributes.attsArray[i].att3
          } 
        }	

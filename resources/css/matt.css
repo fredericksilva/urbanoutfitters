@@ -161,7 +161,9 @@
 .uo-product-slider .cloud-zoom-lens a {
     text-decoration: none;
 }
-
+.uo-product-slider .cloud-zoom {
+    cursor: crosshair;
+}
 .uo-product-slider .cloud-zoom-loading {
     background: none repeat scroll 0 0 #222222;
     border: none;
