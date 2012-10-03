@@ -1,18 +1,59 @@
 <li>
-	<div class="image">
-		<venda_block label=141,med-small=notnull>
-		<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=small></a>
-		</venda_block label=141>
-		<venda_block label=142,med-small=null>
-		<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=desktop.info.no_product_image_productlist>"></a>
-		</venda_block label=142>
+<div class="liwrapper">
+	<div class="imageUrl" style="display:none;"><venda_entmediaadd>/ebiz/<venda_bsref>/invt/</div>
+	<div class="swatchDetail" style="display:none;">-rvi</div>
+	<div id="comp-image<venda_invtref>-rvi" class="image">
+	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg">
+		    <venda_block label=4,med-setsmall=notnull>
+		        <venda_media rec=invt,type=movie-swf-pict,key=setsmall,width=185,height=278>
+		    </venda_block label=4>
+		    <venda_block label=44,med-setsmall=null>
+		        <venda_media rec=invt,type=movie-swf-pict,key=small,width=185,height=278>
+		    </venda_block label=44>
+		    <venda_block label=5,med-small=null>
+		        <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_s.jpg" alt="<venda_invtname1>" title="<venda_invtname>" border="0" width="145px" height="218px">
+		    </venda_block label=5>
+		</a>	
+		<venda_mediagrid template=colourSwatch>		
 	</div>
-	<div class="details">
-		<h2><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></h2>
-		<p class="invtdesc2"><venda_invtdesc2></p>
-		<div class="priceDetails">
-		<venda_inctemplate type=includes,name=priceFormat>
-		</div>
-		<p class="moreinfo"><a class="button smallButton" href="<venda_dispview invt=<venda_invtref>>" title="<venda_text id=desktop.info.product_moreinfo_title>"><venda_text id=desktop.button.more_info></a></p>
-	</div>
+
+<div class="productlistinfo">
+<span style="display:none;" class="productSku"><venda_invtref></span>
+<p class="productname"><venda_invtname></p>
+<venda_block label=10,invtatrtot&lt;1>
+<!-- if product doesn't have attributes -->
+	<venda_block label=11,invtsavingonwas=notnull,invtwas!=0.00,invtwas&gt;invtsell>
+		<p class="price"><span class="saleprice"><venda_currsym><venda_invtsell></span><span class="wasprice">(was <venda_currsym><venda_invtwas>)</span></p>
+	</venda_block label=11>
+	
+	<venda_block label=101,invtsavingonwas=null,invtwas1=0.00,invtwas&lt;=invtsell,operator=or>
+		<p class="price"><venda_currsym><venda_invtsell></p>
+	</venda_block label=101>
+</venda_block label=10>
+<venda_block label=20,invtatrtot&gt;0>
+<!-- if product does have attributes -->
+	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+		<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+			<p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
+		</venda_block label=211>
+		<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+			<p class="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></p>
+		</venda_block label=221>
+	</venda_block label=555>
+	<venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+		<p class="price">
+        <span class="saleprice">
+			<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+				<venda_currsym><venda_invtatrmaxsubsell>
+			</venda_block label=211>
+			<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+				<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+			</venda_block label=221>
+		</span>
+        <span class="wasprice">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+		</p>
+	</venda_block label=666>
+</venda_block label=20>
+</div>
+</div>
 </li>

@@ -769,6 +769,55 @@ Venda.Ebiz.checkPostcode = function(formObj,fieldObj,textMsg) {
 	}
 };
 /**
+* Product accessory js for swatch details
+*/
+Venda.Ebiz.swatchAccFunctions = {
+	AccessorySwatchFunctions: function () {
+		jQuery("#bottomtab .tabcontent li").each(function () {    
+    		var n = jQuery(this).find(".sw_image").length;
+    		if (n < 2) {
+    			var swatchCont = jQuery(this).find(".swatchContainer");
+    			jQuery(swatchCont).html("");
+    			jQuery(swatchCont).hide();
+    		}
+    	});
+    	jQuery(".liwrapper").each(function () {  
+    		var imageUrl = jQuery(this).find(".imageUrl").text(); 
+    		jQuery(this).find(".sw_image span img").attr("src", function() {
+	    		return imageUrl+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
+	    	});
+	    });
+    	jQuery(".liwrapper").each( function() {
+    		var sd = jQuery(this).find(".swatchDetail").text();
+    		jQuery(this).find(".swatchContainer a").click(function(){
+	    		var $this = jQuery(this);
+
+	    		var mainImg  = $this.data("setimage"),
+	    		mainImgObj 	 = jQuery("#"+ $this.data("prodid") +sd),
+	    		prodLink 	 = mainImgObj.find("a:first").data("prodLink");
+
+	    		if(mainImg == ""){
+		    		mainImg = mainImgObj.find("a:first").data("defaultimage");
+		    	}
+
+		    	mainImgObj.find('img:first')
+            		.attr("src", mainImg)
+            		.end()
+            		.find("a:first")
+            		.attr("href", this.href || "");
+
+            	$this.parent("").find("a").removeClass("sw_selected");
+            	$this.addClass("sw_selected");
+
+            	return false;
+
+            	});
+            jQuery(this).find('.swatchContainer div').find(" > a:first").click();
+        })
+    }
+};
+window.onload = function() { Venda.Ebiz.swatchAccFunctions.AccessorySwatchFunctions();};
+/**
 *  Element - Email newsletter signup / EMWBIS
 */
 Venda.Ebiz.checkemail = function(str) {
