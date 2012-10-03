@@ -71,6 +71,7 @@
     text-indent: -9999px;
     opacity: 1;
     z-index: 1000;
+    outline: none;
 }
 
 .uo-product-slider .flex-direction-nav .flex-next {
@@ -286,6 +287,112 @@
   border-top: 20px solid red;
   border-right: 20px solid #f6f6f6;
 }
+
+.homepage-slider .flex-direction-nav a {
+    width: 52px;
+    height: 30px;
+    margin: -15px 0 0;
+    display: block;
+    background: url(../images/uo-direction-nav.png) no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    opacity: 1;
+    z-index: 1000;
+    outline: none;
+}
+.homepage-slider .flex-direction-nav .flex-next {
+    background-position: -52px 0;
+    padding-right: 10px;
+    right: 0;
+}
+.homepage-slider .flex-direction-nav .flex-prev { 
+    padding-left: 10px;
+    background-position: 10px 0;
+    left: 0;
+}
+.homepage-slider .flex-direction-nav .flex-disabled {
+    opacity: .3!important;
+    filter: alpha(opacity=30);
+    cursor: default;
+}
+.homepage-slider:hover .flex-next {
+    background-position: -52px -30px;
+}
+.homepage-slider:hover .flex-prev {
+    background-position: 10px -30px;
+}
+.homepage-slider .flex-control-paging {
+    display: block;
+    float: left;
+    left: 50%;
+    position: absolute;
+    bottom: 20px;
+    width: auto;
+    background: url(../images/hp-slider-position-bg.png) no-repeat 0 0;
+    padding: 1px 28px;
+    margin-left: -70px;
+}
+.homepage-slider .flex-control-paging li {
+    display: block;
+    float: left;
+    position: relative;
+    padding: 4px 0px 5px;
+}
+.homepage-slider .flex-control-nav li a {
+    background: url(../images/hp-slider-position.gif) no-repeat -21px 0;
+    width: 20px;
+    height: 16px;
+}
+.homepage-slider .flex-control-nav li a:hover, .homepage-slider .flex-control-nav li a.flex-active {
+    opacity: 1;
+    background-position: 0 0;
+}
+.homepage-slider {
+  border: 1px solid #333; 
+  margin: 20px 0;
+  width: 948px;
+}
+.homepage-slider .homepage-slide {
+  width: 948px;
+  height: 450px;
+}
+.homepage-slider .hpslide1 {
+  background: #ff0000;
+}
+.homepage-slider .hpslide2 {
+  background: #00ff00;
+}
+.homepage-slider .hpslide3 {
+  background: #0000ff;
+}
+.homepage-slider .hpslide4 {
+  background: #f00fff;
+}
+.homepage-slider h2 {
+  text-align: center;
+  line-height: 450px;
+  color: #eee;
+  font-size: 24px;
+  letter-spacing: 20px;
+}
+.homepage-slots .slot {
+  width: 310px; 
+  margin-left: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+.homepage-slots .slot:first-child {
+  margin-left: 0;
+}
+.homepage-slots .slot-image {
+  padding: 10px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+  height: 140px; 
+}
+
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
