@@ -1,36 +1,35 @@
-<div class="regionLangSwitch">
-  <div>
-    <a href="#" id="flag" class="flag"><span class="selectedlang <venda_sessionlanguage>"></span>UK <span class="curr-select"><venda_currsym></span></a>
+<div class="regionLangSwitcher">
+
+  <div id="language-sel" class="switcher-sel">
+    <a href="#" id="language" class="<venda_sessionlanguage>"><span class="lang-flag"></span><span class="lang-copy"><venda_sessionlanguage></span><span class="switcher-down"></span></a>
+    <div id="language-content" class="switcher-content">
+    	<div class="lang">
+      	<ul>
+        	<li><a href="#" id="en" class="en"><span class="lang-flag"></span><span class="lang-copy">EN</span></a></li>
+        	<li><a href="#" id="fr" class="fr"><span class="lang-flag"></span><span class="lang-copy">FR</span></a></li>
+        	<li><a href="#" id="de" class="de"><span class="lang-flag"></span><span class="lang-copy">DE</span></a></li>
+      	</ul>
+    	</div>
+    </div>
   </div>
   
-  <div id="flagContent" class="flagContent" style="display:none">
-  
-  	<div class="region">
-    	<p>Change Currency:</p>
-    	<ul>
-      	<li><a href="#" id="restofworld" class="us">&pound; GBP</a></li>
-      	<li><a href="#" id="eur" class="canada">&euro; EUR</a></li>
-    	</ul>
-  	</div>
-  	
-  	<div class="sepLine"></div>
-  
-  	<div class="lang">
-    	<p>Change Language:</p>
-    	<ul>
-      	<li><a href="#" id="en" class="en">English</a></li>
-      	<li><a href="#" id="de" class="de">German</a></li>
-      	<li><a href="#" id="fr" class="fr">French</a></li>
-    	</ul>
-  	</div>
-  	
+  <div id="region-content" class="switcher-sel">
+    <a href="#" id="currency" class="<venda_sessionlocation>"><span class="curr-copy"><venda_currsym></span><span class="switcher-down"></span></a>
+    <div id="region-content" class="switcher-content">
+    	<div class="region">
+      	<ul>
+        	<li><a href="#" id="restofworld" class="us"><span class="curr-copy">&pound;</span></a></li>
+        	<li><a href="#" id="eur" class="canada"><span class="curr-copy">&euro;</span></a></li>
+      	</ul>
+    	</div>
+    </div>
   </div>
-<!--a href="/page/landingswitcher" class="chRegion" data-track="open-languageswitcher"><venda_text id=site.regionlanguage.switch.header></a-->
+  
 </div>
 
 <script type="text/javascript">
 Venda.Widget.RegionLangSwitch.isSearch = "<venda_searchtwo>";
 Venda.Widget.RegionLangSwitch.currRegion = Venda.Ebiz.CookieJar.get("locn") || "<venda_sessionlocation>";
 Venda.Widget.RegionLangSwitch.currLang = Venda.Ebiz.CookieJar.get("lang") || "<venda_sessionlanguage>";
-Venda.Widget.RegionLangSwitch.ebizURL = "<venda_serveradd>";
+Venda.Widget.RegionLangSwitch.ebizURL = "<venda_serveradd>".replace(/\/$/i, "");
 </script>
