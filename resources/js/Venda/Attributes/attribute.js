@@ -1201,7 +1201,7 @@ Venda.Attributes.ImageSwap = function(att) {
 	}
 	if(obj) {
   	for(var i = 0; i < obj.images.imgM.length; i++) {
-      if(obj.images.imgL[i]){
+      if(obj.images.imgL[i] && jQuery("#content-prodDetail").length){
         sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
       } else {
         sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
@@ -1217,7 +1217,7 @@ Venda.Attributes.ImageSwap = function(att) {
         jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
       }
     });	
-    jQuery(".uo-product-slider").hover(function() {
+    jQuery("#content-prodDetail .uo-product-slider").hover(function() {
       if(!jQuery('.cloud-zoom, .cloud-zoom-gallery').data('zoom')){
         jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
       }
@@ -1273,5 +1273,4 @@ Venda.Attributes.ImageMediaAssignment = function() {
         Venda.Attributes.SwatchURL[currAtt1] =  jQuery('tag-ebizurl').text() + "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_" + currAtt1.toLowerCase() + "_sw.jpg";  
       }
   }
-
 }
