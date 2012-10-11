@@ -38,7 +38,7 @@ Venda.Widget.MinicartDetail.Create = function () {
 		
 		fade : false,
 		scroll : true,
-		openDuration : 0.2,
+		openDuration : 0.5,
 		visibleTime : 6,
 		
 		highlight : true,
@@ -729,6 +729,8 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
  */
 Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 	
+	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("open");
+	
 	Venda.Widget.MinicartDetail.IsAnimInAction(true);
 	
 	var topPos = Venda.Widget.MinicartDetail.settings.topPad;
@@ -737,6 +739,7 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 	var initHeight = 149;
 	
 	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("option", "position", [leftPos, topPos]);
+	
 	
 	if (jQuery('#minicartDetail').length > 0) {
 		if (act == "addToBasket") {
@@ -853,8 +856,6 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 			jQuery('#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()});
 		}
 	}
-	
-	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("open");
 	
 };
 
