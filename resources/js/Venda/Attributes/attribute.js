@@ -66,7 +66,7 @@ Venda.Attributes.Initialize = function() {
   					var stockstatus = Venda.Attributes.GetAll(att1, att2, att3, Venda.Attributes.productArr[i].attSet.att4.options[t], 'stockstatus', uID);
   				}
   				
-  				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attName].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attName].options[t] + ' - ' + stockstatus + '</option>';
+  				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attName].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '</option>';
   			}
   			
   			jQuery("select[id='"+ attName +"_" + uID + "']").html(options).val(Venda.Attributes.productArr[i].attSet[attName].selectedValue);
@@ -517,7 +517,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		emwbisType		 = jQuery("#emwbisType").text(),
 		stockstatus	 	 = Venda.Attributes.Get('stockstatus'),
 		stockFeedback	 = stockstatus;
-	
+
 	// Reset the UI.
 	EmwbisID.addClass("Re-paint-out");
 	stockFeedbackBox.removeClass("In_stock_box Out_of_stock_box");
@@ -679,7 +679,7 @@ Venda.Attributes.GenerateOptionsJSON = function (index, uID) {
 	newattributes.attSet.att3.name = jQuery('#oneProduct_' + uID + ' #attributeNames .att3').text();
 	newattributes.attSet.att4.name = jQuery('#oneProduct_' + uID + ' #attributeNames .att4').text();
 	newattributes.attSet.id = uID;
-	
+
 	/**
 	* This is a function sorts attribute values in the page and puts them in the attributes object.
 	* @param{string} attributeNumber is the specified attribute e.g. att1. This is a value 1-4
