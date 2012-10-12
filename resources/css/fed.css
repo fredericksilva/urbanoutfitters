@@ -349,7 +349,7 @@ input#qty {
 .product-att .ui-widget-content .ui-state-default, 
 .product-att .ui-widget-header .ui-state-default { 
 	border: 1px solid #4d4d4d/*{borderColorDefault}*/; 
-	background: transparent; 
+	background: url("../images/paper-background.jpg") repeat scroll 0 0 #CFC5B6; 
 	font-weight: normal/*{fwDefault}*/; 
 	color: #555555/*{fcDefault}*/; 
 }
