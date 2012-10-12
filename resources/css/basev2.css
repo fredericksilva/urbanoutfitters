@@ -573,13 +573,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #444444;
     text-decoration: none;
 }
 
 a:hover,a:focus,a:active,.underline {
     text-decoration: none;
-    opacity: 0.8;
+    color: #000;
 }
 
 a img {
@@ -1624,7 +1624,6 @@ fieldset {
 .mm_ul > li > a:hover, li.mm_liSelected > a {
     border-bottom: 6px solid #333;
     font-weight: bold;
-    font-style: italic;
     color: #333;
 }
 
@@ -1735,21 +1734,11 @@ fieldset {
     font-weight: 700;
 }
 
-/* Mega Menu Highlight */
-.mm_active_1 {
-
-}
-
-.mm_active_2 {
-
-}
-
 .mm_ul li .mm_active_1 {
+    border-bottom: 6px solid #444;
+    font-weight: bold;
+    color: #333;
 }
-
-.mm_sub li .mm_active_2 {
-}
-
 /* Category Nav Highlight */
 .nav_active_1 {
     font-weight: 700;

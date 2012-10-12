@@ -233,7 +233,54 @@
   text-align: center;
   margin: 0 auto;
 }
-
+.socialButtons {
+  position: absolute;
+  top: 40px;
+  left: 4px;
+}
+.socialButtons li {
+  display: block;
+  height: 42px;
+  cursor: pointer;
+}
+.socialButtons li .social-logo {
+  width: 36px;
+  height: 42px;
+  float: left;
+  background: url("../images/product-social-bg.png") no-repeat transparent;
+  position: absolute;
+}
+.socialButtons li .social-logo span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  margin: 11px 0 0 16px;
+  background: url("../images/social-icons.png") no-repeat transparent;
+}
+.socialButtons li .social-logo .pinterest-logo {
+  background-position: 0 -15px;
+}
+.socialButtons li .social-logo .twitter-logo {
+  background-position: 0 -30px;
+}
+.socialButtons li:hover .social-logo .fb-logo {
+  background-position: -15px 0;
+}
+.socialButtons li:hover .social-logo .pinterest-logo {
+  background-position: -15px -15px;
+}
+.socialButtons li:hover .social-logo .twitter-logo {
+  background-position: -15px -30px;
+}
+.socialButtons li .social-button {
+  float: left;
+  padding: 8px 14px 0;
+  min-height: 29px;
+  position: absolute;
+  left: 36px;
+  z-index: -1;
+  background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
+}
 .minicartDetailContent .image a {
   display: block;
   width: 75px;

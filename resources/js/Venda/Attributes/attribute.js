@@ -191,6 +191,15 @@ Venda.Attributes.Initialize = function() {
           }
       }
   });
+  
+  jQuery('.socialButtons li').hover(
+    function () {
+      jQuery(this).find('.social-button').css('z-index','1001').show();
+    },
+    function () {
+      jQuery(this).find('.social-button').hide();
+    }
+  );
 
 }
 

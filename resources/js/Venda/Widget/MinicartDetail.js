@@ -5,6 +5,7 @@
  * Minicart Detail uses a carts template.
  *
  * @author Donatas Cereska <dcereska@venda.com>
+ * @author Matthew Wyatt <mwyatt@anthropologie.com>
  */
 Venda.namespace('Widget.MinicartDetail');
 
