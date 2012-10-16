@@ -43,7 +43,7 @@ Venda.Attributes.Initialize = function() {
   
   	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
   		if (Venda.Attributes.productArr[i].attSet.id == uID) {
-  			var options = '<option value="">' + jQuery('#attributes-optionDefault').text() + '</option>';
+  			var options = '<option value="">' + jQuery('#attributes-optionDefault').text() + Venda.Attributes.productArr[0].attSet[attName].name + '</option>';
   			var att1 = Venda.Attributes.productArr[i].attSet.att1.selected,
   				att2 = Venda.Attributes.productArr[i].attSet.att2.selected,
   				att3 = Venda.Attributes.productArr[i].attSet.att3.selected,
@@ -580,7 +580,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 					}
 					else{
 						addproductID.addClass("Re-paint");
-						addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
+						addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
 					}
 				}
 		break;
@@ -599,7 +599,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		default:
 			// Not Available
 			addproductID.addClass("Re-paint");
-			addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
+			addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
 	}
 
 	jQuery('#oneProduct_' + uID + ' .attrFeedback  #stockstatus').hide().text(stockFeedback).addClass("Re-paint");
@@ -924,11 +924,10 @@ Venda.Attributes.swatchImage = function(attnumber, uID){
 * @author Alby Barber <abarber@venda.com>
 */
 Venda.Attributes.generateDropDowns = function(attributeNumber, uID) {
-	var optionDefault = jQuery('#attributes-optionDefault').text();
-
+	var optionDefault = jQuery('#attributes-optionDefault').text() + Venda.Attributes.productArr[0].attSet[attributeNumber].name;
 	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
 		if (Venda.Attributes.productArr[i].attSet.id == uID) {
-			var options = '<option value="">'+ optionDefault +'</option>';
+			var options = '<option value="">'+ optionDefault + '</option>';
 			for (var t = 0; t < Venda.Attributes.productArr[i].attSet[attributeNumber].options.length; t++) {
 				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attributeNumber].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '</option>';
 			}

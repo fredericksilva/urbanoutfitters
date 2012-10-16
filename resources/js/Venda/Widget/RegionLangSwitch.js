@@ -23,7 +23,7 @@ jQuery(function(){
 	jQuery(".region #" + currRegion + ", .lang #" + currLang[Venda.Widget.RegionLangSwitch.ebizURL]).hide();
 	jQuery(".switcher-sel > a").click(function(){ 
 		jQuery(this).next(".switcher-content").slideDown("fast"); 
-		jQuery(this).find(".switcher-down").css("background-position", "-1px -1px");
+		jQuery(this).find(".switcher-down").css("background-position", "-12px -32px");
 		return false;
 	});
 	jQuery(".regionLangSwitcher .region a").click(function() {	
@@ -36,7 +36,7 @@ jQuery(function(){
 	});
 	jQuery(".switcher-sel").mouseleave(function() {
 		jQuery(".switcher-content").slideUp("fast"); 
-		jQuery(this).find(".switcher-down").css("background-position", "-13px -1px");
+		jQuery(this).find(".switcher-down").css("background-position", "-1px -32px");
 		return false;
 	});	
 });

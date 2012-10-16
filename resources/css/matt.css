@@ -30,10 +30,6 @@
 
 
 /* Product detail */
-.product-data {
-  margin-top: 20px;
-}
-
 .product-details {
   padding: 0 10px;
   position: relative;
@@ -459,8 +455,8 @@
 }
 .switcher-sel a {
   display: block;
-  height: 21px;
-  background: url("../images/paper-background.jpg") repeat scroll 0 0 #CFC5B6;
+  height: 20px;
+  background: url("../images/paper-background-detailed.jpg") repeat scroll 0 0 #CFC5B6;
   border: 1px solid #444;
   position: relative;
 }
@@ -469,35 +465,39 @@
 }
 .switcher-sel a .lang-flag {
   border-right: 1px solid #444;
-  height: 21px;
+  height: 20px;
   width: 22px;
-  background: url(../images/flag-bg.gif) no-repeat 0 0;
+  background: url("../images/flag-bg.gif") no-repeat 0 -1px;
   display: block;
   float: left;
 }
 .switcher-sel a.fr .lang-flag {
-  background-position: 0 -21px;
+  background-position: 0 -22px;
 }
 .switcher-sel a.de .lang-flag {
-  background-position: 0 -42px;
+  background-position: 0 -43px;
 }
 .switcher-sel .switcher-down {
-  background: url("../images/selection-arrows-small.png") no-repeat -13px -1px;
-  width: 12px;
-  height: 23px;
+  background: url("../images/uo-png-sprite.png") no-repeat scroll -1px -32px transparent;
   display: block;
+  height: 23px;
   position: absolute;
-  right: -13px;
+  right: -12px;
   top: -1px;
+  width: 11px;
 }
 .switcher-sel a .lang-copy {
-  padding: 3px 8px 0 6px;
+  padding: 3px 8px 0;
   float: left;
+  font-size: 11px;
+  font-weight: bold;
 }
 .switcher-sel a .curr-copy {
   padding: 3px 6px 2px 6px;
   float: left;  
   width: 8px;
+  font-size: 11px;
+  font-weight: bold;
 }
 .switcher-content {
   display: none;
@@ -507,9 +507,11 @@
   background: #444444;
   color: #fff;
 }
-
 .switcher-content li {
   margin-top: 4px;
+}
+.mainHeader a {
+  font-weight: bold;
 }
 
 
@@ -605,4 +607,12 @@ button::-moz-focus-inner {
     margin: 0;
     padding: 10px 0;
     text-align: left;
+}
+.producdetail-promo {
+  padding: 5px 5px 0;
+  overflow: hidden;
+}
+.producdetail-promo > div {
+  float: left;
+  margin-right: 15px;
 }
