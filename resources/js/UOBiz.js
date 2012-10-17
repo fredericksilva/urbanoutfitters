@@ -773,7 +773,8 @@ Venda.Ebiz.checkPostcode = function(formObj,fieldObj,textMsg) {
 */
 Venda.Ebiz.swatchAccFunctions = {
 	AccessorySwatchFunctions: function () {
-		jQuery("#bottomtab .tabcontent li").each(function () {    
+		jQuery("#bottomtab .tabcontent li").each(function () {
+			jQuery(this).find(".swatchContainer").show();
     		var n = jQuery(this).find(".sw_image").length;
     		if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
@@ -1090,7 +1091,7 @@ Venda.Ebiz.colorSwatch.prototype = {
 
         });
         if(this.conf.selectFirstColor){
-            jQuery('.swatchContainer div').find(" > a:first").click();
+	        jQuery('.swatchContainer div').find(" > a:first").click(); 
         }
     }
 };

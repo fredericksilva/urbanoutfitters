@@ -3,15 +3,20 @@
 	<ul class="nav">
 		<!-- Avail Tab We Recommend -->
 		<venda_block label=221a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1></venda_block label=221a>
-		<li class="vbmTab"><a href="#contentTab1" title="<venda_text id=site.product_detail.vbm_title>"><venda_text id=site.product_detail.vbm></a></li>
+		<li class="vbmTab"><a href="#contentTab1" title="<venda_text id=site.product_detail.vbm_title>">We Recommend</a></li>
+		<span class="addLine vbmLine"></span>
 		<!-- Boutique Styles 2 -->
-		<venda_block label=27,invtacctot&gt;0></venda_block label=27>
+		<venda_block label=27,invtacctot&gt;0>
 		<li><a href="#contentTab3" title="<venda_text id=site.product_detail.accessories_title>"><venda_text id=site.product_detail.accessories></a></li>
+		<span class="addLine"></span>
+		</venda_block label=27>
 		<!-- Substitute Products -->
-		<venda_block label=29,invtsubtot&gt;0></venda_block label=29>
+		<venda_block label=29,invtsubtot&gt;0>
 		<li><a href="#contentTab4" title="<venda_text id=site.product_detail.substitute_title>"><venda_text id=site.product_detail.substitute></a></li>
+		<span class="addLine"></span>
+		</venda_block label=29>
 		<!-- Recently Viewed -->
-		<li><a href="#contentTab5" title="<venda_text id=site.product_detail.recent_items>"><venda_text id=site.product_detail.recent_items></a></li>
+		<li><a href="#contentTab5" title="<venda_text id=site.product_detail.recent_items>">Recently Viewed</a></li>
 	</ul>
 </div>
 <div class="tabcontent">
@@ -20,11 +25,13 @@
 	<div class="tab vbmTab">
 	<venda_inctemplate type=includes/vbm,name=productDetail></div>
 	<!-- Boutique Styles 2 -->
-	<venda_block label=27,invtacctot&gt;0></venda_block label=27>
+	<venda_block label=27,invtacctot&gt;0>
 	<div class="tab"><venda_invtacc template=accessories></div>
+	</venda_block label=27>
 	<!-- Substitute Products -->
-	<venda_block label=29,invtsubtot&gt;0></venda_block label=29>
+	<venda_block label=29,invtsubtot&gt;0>
 	<div class="tab"><venda_invtsub template=substitutes></div>
+	</venda_block label=29>
 	<!-- Recently Viewed -->
 	<div class="tab"><venda_inctemplate name=recentlyViewedProductDetailSlider,type=widgets></div>
 </div>

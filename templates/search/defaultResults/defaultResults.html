@@ -1,6 +1,7 @@
 <venda_tpcomment><!-- Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.position.js"></script>
-<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>	
+<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>
+<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/tiny-scrollbar.js"></script>
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 
 <div id="content-search-body">
@@ -27,10 +28,10 @@
                             <div class="resultDetail">
                             <venda_pagination template=pagination1>
                             	<div class="perLine">
-	                            	<div class="threePerLine"><span><a class="threePerLineLink" href="<venda_searchurl>">3 Per Line</a></span></div>
-	                            	<div class="fivePerLine" style="display:none;"><span><a class="fivePerLineLink" href="<venda_searchurl>">5 Per Line</a></span></div>
+	                            	<div class="threePerLine" style="display:none;"><span><a class="threePerLineLink" href="<venda_searchurl>">3 Per Line</a></span></div>
+	                            	<div class="fivePerLine"><span><a class="fivePerLineLink" href="<venda_searchurl>">5 Per Line</a></span></div>
                             	</div>
-                                <div class="sort">
+                                <div class="sort"><span class="sort-sprite"></span>
                                     <venda_detblock_sortedby>
                                         <option value="<venda_url>"<venda_block sortedon=notnull> selected="selected"</venda_block>><venda_option></option>
                                     </venda_detblock_sortedby>
@@ -94,9 +95,6 @@
     			</div>
     		</div>
             </venda_block label=346>
-            
-            <venda_inctemplate type=includes,name=availsearchrecs>
-
         </div>
     </div>
     
@@ -136,7 +134,6 @@ var invtref = this.id;
             <span class="facet"></span>
         </label>
     </div>
-    <div id="loadingsearch" class="hide"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/Search/loadingsearch.gif" alt="<venda_text id=site.search_results.loading>"></div>
 </div>
 
 <script>
@@ -150,37 +147,6 @@ jQuery(function() {
             // Compare - Product compare
             Venda.Widget.Compare.loadCompareItems();
         </venda_block label=CompareProductsInt>
-
-        <venda_block label=powerreviewsSnippet,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewslocayta>=1>
-        jQuery.ajax({
-                type: "GET",
-                url: "<venda_serveradd>/partners/pwr/engine/js/full.js",
-                dataType: "script",
-                cache: true
-        }).done(function( html ) {
-                var     pr = jQuery('.reviewstar'),
-                        pr_array = jQuery.makeArray(pr);
-
-        jQuery.each(pr_array,function() {
-
-                var     $this = jQuery(this),
-                        pr_page_id1 = $this.children('.pr_page_id').val(),
-                        pr_write_review1 = $this.children('.pr_write_review').val(),
-                        pr_read_review1 = $this.children('.pr_read_review').val();
-
-                POWERREVIEWS.display.snippet(
-                { write : function(content) { jQuery('div#prs-'+pr_page_id1).append(content); } }, {
-                        pr_site_id : 1,
-                        pr_zip_location : '<venda_serveradd>/partners/',
-                        pr_style_sheet : '<venda_entmediaadd>/ebiz/<venda_bsref>/resources/css/powerreviews.css',
-                        pr_page_id : pr_page_id1,
-                        pr_write_review : pr_write_review1,
-                        pr_read_review : pr_read_review1,
-                        pr_snippet_min_reviews : 0
-                });
-        });
-        });
-        </venda_block label=powerreviewsSnippet>
 
 		// fix euro sign on Selected refinements, price refinements, product prices.
 		jQuery('#term .refine-list, #priceresults .facet, .price, #pricerangevalues, #updateTotal').html(function(idx, price) {

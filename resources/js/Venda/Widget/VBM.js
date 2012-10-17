@@ -26,6 +26,7 @@ Venda.Widget.VBM.hideVBMContent = function(){
 		jQuery(Venda.Widget.VBM.tabObj.tabID +" .tabcontent .vbmTab").html("");
 		Venda.Widget.VBM.tabObj.hideEmptyTab(Venda.Widget.VBM.tabObj.tabID);
 		jQuery(".vbmTab").hide();
+		jQuery(".vbmLine").hide();
 	}
 };
 Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {

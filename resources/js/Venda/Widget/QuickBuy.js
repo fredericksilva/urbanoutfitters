@@ -38,25 +38,26 @@ jQuery("body").append('<div id="quickBuy" class="quickBuy"><div class="productCo
 
 jQuery(".quickLinkBox a").live("click", function(e) {
 	var dialogClass = jQuery(this).attr("class");
-	/* variable are for sending a selected colour to quickBuy dialog */
 	var reg = new RegExp('[?&]colour=([^&]+)');
 	var attColour = (jQuery(this).attr("href").match(reg)) ? jQuery(this).attr("href").match(reg)[1] : "";
 	var URL = jQuery(this).attr("href").replace(attColour, escape(attColour));
 	var isQuickDetails = jQuery(this).hasClass("quickBuyDetails");
-	
+	Venda.Attributes.qbColour = jQuery(this).parent().siblings(".swatchContainer").find(".sw_selected").attr("data-color");
+	Venda.Attributes.attsArray = [];
+	jQuery("#quickBuy").dialog("destroy");
 	jQuery("#quickBuy").dialog(dialogOpts); 
 	jQuery(".productContent").html(" ");
 	jQuery("#quickBuy").dialog("open");
 	jQuery("#quickBuy").dialog("option", "dialogClass", dialogClass); 
 	jQuery("#quickBuy").dialog("option", "title", jQuery("#comp-name"+this.id).html());	
 	jQuery("."+dialogClass).popupIframe();	
-	jQuery(".productContent").addClass("loadingImg");
+	jQuery(".productContent").addClass("loadingsearch");
 	xPosition = (document.documentElement.clientWidth - jQuery(".productContent").width()) / 2;
 	jQuery("#quickBuy").dialog("option", "position", xPosition);
 	var trackingProdAddUrl = jQuery(this).attr("href").split("&");
     Venda.Widget.MinicartDetail.trackingProdAddUrl = trackingProdAddUrl[0];
 	jQuery(".productContent").load(URL, function(){
-		jQuery(".productContent").removeClass("loadingImg");
+		jQuery(".productContent").removeClass("loadingsearch");
 		jQuery(".productContent").show();		
 		if(isQuickDetails){
 			//Venda.ProductDetail.changeSet(attColour);
