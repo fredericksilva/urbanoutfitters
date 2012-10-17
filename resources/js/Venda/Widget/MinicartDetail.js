@@ -35,12 +35,12 @@ Venda.Widget.MinicartDetail.Create = function () {
 		enable : true,
 		
 		topPad : 48,
-		leftPad : 174,
+		leftPad : 175,
 		
 		fade : false,
 		scroll : true,
 		openDuration : 0.5,
-		visibleTime : 6,
+		visibleTime : 999999,
 		
 		highlight : true,
 		highlightColor : "#ff0000",
