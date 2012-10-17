@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice');
+    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours');
 };
 
 // Utility method.
@@ -400,9 +400,15 @@ Venda.Search.Feature.perLine.prototype = {
     display: function() {
     	var prodRef = jQuery(".prodRef").text();
     if (document.location.href.indexOf('&perline=3') > -1 ) {
+    	jQuery(".swatchContainer").show();
+    	jQuery(".quickLinkBox").each( function () {
+	    	jQuery(this).addClass("qb-large");
+	    	jQuery(this).removeClass("qb-small");
+    	});
     	jQuery(".prodsFiveColumns li").css('width','33%');
         jQuery(".threePerLine").hide();
     	jQuery(".fivePerLine").show();
+    	jQuery(".roundels").show();
     		jQuery("a.moredetail img").each(function () {
     			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_l1.jpg');
     			jQuery(this).attr("src",ImageSrc);
@@ -411,13 +417,19 @@ Venda.Search.Feature.perLine.prototype = {
     			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_l1.jpg');
     			jQuery(this).data("setimage",SetImageSrc);
     		});
-        jQuery("a.moredetail img").css({width:'243px',height:'364px'});
+        jQuery("a.moredetail img").css({width:'244px',height:'366px'});
 
     }
     if (document.location.href.indexOf('&perline=5') > -1 ) {
+    	jQuery(".swatchContainer").hide();
+    	jQuery(".quickLinkBox").each( function () {
+	    	jQuery(this).addClass("qb-small");
+	    	jQuery(this).removeClass("qb-large");
+    	});
     	jQuery(".prodsFiveColumns li").css('width','19.5%');
         jQuery(".threePerLine").show();
     	jQuery(".fivePerLine").hide();
+    	jQuery(".roundels").hide();
     		jQuery("a.moredetail img").each(function () {
     			var ImageSrc = jQuery(this).attr("src").replace('_l1.jpg','_sm1.jpg');
     			jQuery(this).attr("src",ImageSrc);
@@ -426,8 +438,8 @@ Venda.Search.Feature.perLine.prototype = {
     			var SetImageSrc = jQuery(this).data("setimage").replace('_l1.jpg','_sm1.jpg');
     			jQuery(this).data("setimage",SetImageSrc);
     		});
-    	jQuery("a.moredetail img").css({width:'145px',height:'218px'});
-    	};
+    	jQuery("a.moredetail img").css({width:'142px',height:'213px'});
+    	}
         jQuery('.threePerLineLink').click(function() {
     		if ( document.location.href.indexOf('perline=5') > -1 ) {
     			this.href = this.href.replace('perline=5', 'perline=3');
@@ -538,5 +550,51 @@ Venda.Search.Feature.uiSelectmenu.prototype = {
 		jQuery(".sortby").click(function(){
 			jQuery(".sort select").selectmenu({ style: 'dropdown' });
 		});
+		jQuery(".accordion_slice").each( function() {
+			var facetLength = jQuery(this).find(".termtext").length;
+			if (facetLength > 9) {
+				jQuery(this).find(".viewScroll .collatedresult").css('height','210px');
+			}
+			else {
+				jQuery(this).find(".viewScroll .collatedresult").css('height','auto');
+			}
+		})
+		jQuery('.viewScroll').tinyscrollbar();
 	}
+};
+
+Venda.Search.Feature.icxtHideRefine = function() {};
+Venda.Search.Feature.icxtHideRefine.prototype= {
+	display: function() {
+		var icxthiderefine = jQuery('.icxthiderefine').text();
+		var icxt1 = icxthiderefine.split(',')[0];
+		var icxt2 = icxthiderefine.split(',')[1];
+		var icxt3 = icxthiderefine.split(',')[2];
+		var icxt4 = icxthiderefine.split(',')[3];
+		var icxt5 = icxthiderefine.split(',')[4];
+		var icxt6 = icxthiderefine.split(',')[5];
+		var caticxt = [icxt1,icxt2,icxt3,icxt4,icxt5,icxt6];
+		for (var i = 0; i < caticxt.length; i++) {
+			jQuery('.accordion'+caticxt[i]).hide();
+		}
+	}
+};
+
+Venda.Search.Feature.refineColours = function() {};
+Venda.Search.Feature.refineColours.prototype = {
+	display: function() {
+		var colourFacet = jQuery('.colourFacet').text();
+		var lastColour = colourFacet.substring(colourFacet.lastIndexOf(",") + 1);
+		jQuery(".swatchContainer").each(function() {
+			jQuery(this).find("a").each( function() {
+			var $this = jQuery(this);
+				var sCol = $this.data("color");
+				var pId = $this.find("img").attr("name");
+				if (lastColour.indexOf(sCol) >=0) {
+					$this.click();
+					$this.prependTo("#swatch"+pId);
+				}
+			})
+		})
+ 	}
 };

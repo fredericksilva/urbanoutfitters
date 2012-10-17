@@ -12,14 +12,16 @@
             </venda_block label=556>
             <div class="checkboxIcon"></div>
             <span class="facet">
-              <venda_block label=range1,facet=0-24.99><venda_currsym>0 - <venda_currsym>24.99</venda_block label=range1>
-		      <venda_block label=range2,facet=25.00-49.99><venda_currsym>25.00 - <venda_currsym>49.99</venda_block label=range2>
-			  <venda_block label=range3,facet=50.00-74.99><venda_currsym>50.00 - <venda_currsym>74.99</venda_block label=range3>
-			  <venda_block label=range4,facet=75.00-99.99><venda_currsym>75.00 - <venda_currsym>99.99</venda_block label=range4>
-			  <venda_block label=range5,facet=100.00-*><venda_currsym>100.00 +</venda_block label=range5>
+              <venda_block label=range1,facet=0-9.99>Under <venda_currsym>10</venda_block label=range1>
+              <venda_block label=range2,facet=0.00-19.99>Under <venda_currsym>20</venda_block label=range2>
+		      <venda_block label=range3,facet=20.00-49.99><venda_currsym>20 - <venda_currsym>49</venda_block label=range3>
+			  <venda_block label=range4,facet=50.00-99.99><venda_currsym>50 - <venda_currsym>99</venda_block label=range4>
+			  <venda_block label=range5,facet=100.00-199.99><venda_currsym>100 - <venda_currsym>199</venda_block label=range5>
+			  <venda_block label=range6,facet=200.00-499.99><venda_currsym>200 - <venda_currsym>499</venda_block label=range6>
+			  <venda_block label=range6,facet=500.00-*><venda_currsym>500 +</venda_block label=range6>
               <venda_block label=365,facetname=null,field!=price><venda_facet></venda_block label=365>
               <venda_block label=366,facetname=notnull,field!=price><venda_facetname></venda_block label=366>
-              <venda_block label=11,field!=price><span class="count">(<venda_count>)</span></venda_block label=11>
+              <span class="count">(<venda_count>)</span>
             </span>
             <venda_block label=557,chosen=0,count!=0></a></venda_block label=557></div>
         </venda_block label=results>	
@@ -28,9 +30,9 @@
 <venda_detblock_facets>
     <!-- FACET <venda_field> -->
 	<venda_block label=55,totalcount!=0>
-	<div class="accordion_slice"<venda_block label=field,field=pdxtsearchgender,field=pdxtsearchcategory,field=pdxtsearchdept,operator=or><venda_block label=lessthanone,facet&lt;2> style="display:none;"</venda_block label=lessthanone></venda_block label=field>>
+	<div class="accordion_slice accordion<venda_field>"<venda_block label=field,field=pdxtsearchgender,field=pdxtsearchcategory,field=pdxtsearchdept,operator=or><venda_block label=lessthanone,facet&lt;2> style="display:none;"</venda_block label=lessthanone></venda_block label=field>>
 	<div class="vendaField" style="display:none;"><venda_field></div>
-	<div class="vendasearchURL" style="display:none;"><venda_searchurl></div>
+	<div class="vendasearchURL" style="display:none;"><!-- mp_trans_disable_start --><venda_searchurl><!-- mp_trans_disable_end --></div>
 	<h3 id="<venda_field>" <venda_block label=categoryRef,field=parentCategoryRef>style="display:none;"</venda_block label=categoryRef> class="collateheading"><span id="<venda_field>icon" class="iconMinus iconPlus"></span><span class="collateText">
 	<venda_block label=162221,field!=pdxtsearchgender,field!=pdxtsearchcategory,field!=pdxtsearchshape,field!=pdxtsearchstyle,field!=pdxtsearchboutique,field!=pdxtsearchdept><venda_dispfield></venda_block label=162221>
 	<venda_block label=162222,field=pdxtsearchgender>Gender</venda_block label=162222>
@@ -48,19 +50,20 @@
 	<venda_block label=162226,field=pdxtsearchdept>Department</venda_block label=162226>
 	<venda_block label=162227,field=pdxtsearchboutique>Boutique</venda_block label=162227>
 	</span><!-- (<venda_totalcount> results)--></h3>
+	<venda_block label=notPrice,field!=price,field!=parentCategoryRef><div id="clear_accordion_slice" class="clear<venda_field>" style="display:none;"><a href="<venda_searchurl>">Clear</a></div></venda_block label=notPrice>
 	<div id="<venda_field>results" <venda_block label=categoryRef,field=parentCategoryRef>style="display:none;"</venda_block label=categoryRef> class="collateresults <venda_block label=notPrice,field!=price><venda_field>Box</venda_block label=notPrice> viewScroll showviewall">
-	
+		<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 		<div class="collatedresult <venda_field>collateresult multirefine">
-			<venda_detail_facet_result alphasort=atrattrvalue1:brand,manualsort=atrattrvalue2~XXS:XS:XS/S:S:S/M:M:M/L:L:L/XL:XL:XXL:4:6:8:10:12:14:14/16:16:18:18/20:20:22:24:26:28:28 A:28 B:28 C:28 D:28 DD:28 F:28 FF:28G :30 A:30 B:30 C:30 D:30 DD:30 F:30 FF:30 G:32 A:32 B:32 C:32 D:32 DD:32 F:32 FF:32 G:34 A:34 B:34 C:34 D:34 DD:34 F:34 FF:34 G:36 A:36 B:36 C:36 D:36 DD:36 F:36 FF:36 G:38 A:38 B:38 C:38 D:38 DD:38 F:38 FF:38 G:40 A:40 B:40 C:40 D:40 DD:40 F:40 FF:40 G:42 A:42 B:42 C:42 D:42 DD:42 F:42 FF:42 G:44 A:44 B:44 C:44 D:44 DD:44 F:44 FF:44 G:46 A:46 B:46 C:46 D:46 DD:46 F:46 FF:46 G:48 A:48 B:48 C:48 D:48 DD:48 F:48 FF:48 G:50 A:50 B:50 C:50 D:50 DD:50 F:50 FF:50 G:52 A:52 B:52 C:52 D:52 DD:52 F:52 FF:52 G:54 A:54 B:54 C:54 D:54 DD:54 F:54 FF:54 G:56 A:56 B:56 C:56 D:56 DD:56 F:56 FF:56 G:58 A:58 B:58 C:58 D:58 DD:58 F:58 FF:58 G:60 A:60 B:60 C:60 D:60 DD:60 F:60 FF:60 G:24W 30L:24 W:24W 28L:24W 31L:24W 31L:24W 32L:24W29L:25 W:25W 28L:25W 30L:25W 31L:25W 32L:25W 34L:25W29L:26 W:26W 28L:26W 30L:26W 31L:26W 32L:26W 33L:26W 34L:26W29L:27W 28L:27W 28L:27W 30L:27W 31L:27W 32L:27W 33L:27W 34L:27W29L:28 W:28W 28L:28W 30L:28W 31L:28W 32L:28W 33L:28W 34L:28W 38L:28W29L:29W 28L:29W 30L:29W 31L:29W 32L:29W 33L:29W 34L:29W29L:30 W:30W 28L:30W 30L:30W 31L:30W 32L:30W 33L:30W 34L:30W29L:31 W:31W 28L:31W 30L:31W 31L:31W 32L:31W 33L:31W 34L:31W29L:32 W:32W 28L:32W 30L:32W 31L:32W 32L:32W 34L:32W29L:33 W:33W 32L:33W 34L:34 W:34W:34W 32L:34W 34L:36 W:36W 32L:36W 34L:38 W:0:1:2:3:4:5:6:7:8:9:10:11:12:13:14:24:25:26:27:28:29:30:31:32:34:36:38:40:42:44:46:OS/TU;price~0-24.99:25.00-49.99:50.00-74.99:75.00-99.99:100.00-*>
-			<venda_block label=notPrice,field!=price><div id="clear_accordion_slice" class="clear<venda_field>" style="display:none;"><a href="<venda_searchurl>">Clear</a></div></venda_block label=notPrice>
+			<div class="refineOverview">
+			<venda_detail_facet_result alphasort=atrattrvalue1:atrattrvalue3:brand,manualsort=atrattrvalue2~XXS:XS:XS/S:S:S/M:M:M/L:L:L/XL:XL:XXL:0:1:2:3:4:5:6:7:8:9:10:11:12:13:14:14/16:15:16:17:18:18/20:19:20:21:22:23:24:25:26:27:28:28 A:28 B:28 C:28 D:28 DD:28 F:28 FF:28 G:29:30:30 A:30 B:30 C:30 D:30 DD:30 F:30 FF:30 G:31:32:32 A:32 B:32 C:32 D:32 DD:32 F:32 FF:32 G:34:34 A:34 B:34 C:34 D:34 DD:34 F:34 FF:34 G:36:36 A:36 B:36 C:36 D:36 DD:36 F:36 FF:36 G:38:38 A:38 B:38 C:38 D:38 DD:38 F:38 FF:38 G:40:40 A:40 B:40 C:40 D:40 DD:40 F:40 FF:40 G:42:42 A:42 B:42 C:42 D:42 DD:42 F:42 FF:42 G:44:44 A:44 B:44 C:44 D:44 DD:44 F:44 FF:44 G:46:46 A:46 B:46 C:46 D:46 DD:46 F:46 FF:46 G:48 A:48 B:48 C:48 D:48 DD:48 F:48 FF:48 G:50 A:50 B:50 C:50 D:50 DD:50 F:50 FF:50 G:52 A:52 B:52 C:52 D:52 DD:52 F:52 FF:52 G:54 A:54 B:54 C:54 D:54 DD:54 F:54 FF:54 G:56 A:56 B:56 C:56 D:56 DD:56 F:56 FF:56 G:58 A:58 B:58 C:58 D:58 DD:58 F:58 FF:58 G:60 A:60 B:60 C:60 D:60 DD:60 F:60 FF:60 G:24W 30L:24 W:24W 28L:24W 31L:24W 31L:24W 32L:24W29L:25 W:25W 28L:25W 30L:25W 31L:25W 32L:25W 34L:25W29L:26 W:26W 28L:26W 30L:26W 31L:26W 32L:26W 33L:26W 34L:26W29L:27W 28L:27W 28L:27W 30L:27W 31L:27W 32L:27W 33L:27W 34L:27W29L:28 W:28W 28L:28W 30L:28W 31L:28W 32L:28W 33L:28W 34L:28W 38L:28W29L:29W 28L:29W 30L:29W 31L:29W 32L:29W 33L:29W 34L:29W29L:30 W:30W 28L:30W 30L:30W 31L:30W 32L:30W 33L:30W 34L:30W29L:31 W:31W 28L:31W 30L:31W 31L:31W 32L:31W 33L:31W 34L:31W29L:32 W:32W 28L:32W 30L:32W 31L:32W 32L:32W 34L:32W29L:33 W:33W 32L:33W 34L:34 W:34W:34W 32L:34W 34L:36 W:36W 32L:36W 34L:38 W:OS/TU;price~0-9.99:0.00-19.99:20.00-49.99:50.00-99.99:100.00-199.99:200.00-499.99:500.00-*>
 <p class="toggleviewall" style="display: none;">
 <a href="#">
 <span class="viewmorerefinements"><venda_text id=site.search_results.refine.viewall></span>
 <span class="viewlessrefinements" style="display: none;"><venda_text id=site.search_results.refine.viewless></span>
 </a>
 </p>
+			</div>
 		</div>
-			
 	</div>
 	</div>
 	
@@ -69,30 +72,32 @@
 
 <venda_tpcomment><!-- remove refinement --></venda_tpcomment>
 <venda_detblock_searched_fields>
-<div class="vendaFacet" style="display:none;"><venda_facetref></div>
+<venda_block label=colourFacet,field=atrattrvalue1>,<venda_facetref></venda_block label=colourFacet> 
+</venda_detblock_searched_fields>
+<div class="colourFacet" style="display:none;"><venda_detail_searched_fields></div>
+
+<!--<div class="vendaFacet" style="display:none;"><venda_facetref></div>
 	<venda_block label=331,facetref!=*:*><div id="<venda_field><venda_facetref>" class="refine-list">
 		<div class="refine-left"><a href="<venda_searchurlremove>" class="removesearch" rel="<venda_field>=<venda_facetref>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_removecollation.gif" alt="<venda_text id=site.button.remove_collation>" title="<venda_text id=site.button.remove_collation>"></a> <span class="refine-text"><venda_dispfield>: </span><a href="<venda_searchurlremove>" rel="<venda_field>=<venda_facetref>" id="remove<venda_field><venda_facetref>" class="refine-link removesearch"><venda_block label=332,field=price><venda_block label=range1,facetref=0-24.99><venda_currsym>0 - <venda_currsym>24.99</venda_block label=range1><venda_block label=range2,facetref=25.00-49.99><venda_currsym>25.00 - <venda_currsym>49.99</venda_block label=range2><venda_block label=range3,facetref=50.00-74.99><venda_currsym>50.00 - <venda_currsym>74.99</venda_block label=range3><venda_block label=range4,facetref=75.00-99.99><venda_currsym>75.00 - <venda_currsym>99.99</venda_block label=range4><venda_block label=range5,facetref=100.00-*><venda_currsym>100.00 +</venda_block label=range5></venda_block label=332><venda_block label=265,facetname=null,field!=price><venda_facetref></venda_block label=265><venda_block label=266,facetname=notnull,field!=price><venda_facetname></venda_block label=266></a></div><div class="refine-right"><a href="<venda_searchurlremove>" rel="<venda_field>=<venda_facetref>" class="refine-remove removesearch"><venda_text id=site.search_results.refine.remove></a></div>
 	</div></venda_block label=331>
-	<venda_block label=1671,field=q><venda_tpcomment><!-- stores current keyword value in tpxt:activekeyword --></venda_tpcomment><venda_tpxt mode=set,name=activekeyword,value=<venda_facetref>></venda_block label=1671>
+	<venda_block label=1671,field=q><venda_tpcomment></venda_tpcomment><venda_tpxt mode=set,name=activekeyword,value=<venda_facetref>></venda_block label=1671>
 	<venda_block label=1672,field!=><venda_tpxt mode=set,name=active<venda_field>,value=<venda_facetref>></venda_block label=1672>
-	<venda_block label=1670,field=parentCategoryRef><venda_tpcomment><!-- stores pcatid or cat value in tpxt:activecategory --></venda_tpcomment><venda_tpxt mode=set,name=activecategory,value=<venda_facetref>></venda_block label=1670>
-	<venda_block label=1500,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=1500>
-		      
-</venda_detblock_searched_fields>
+	<venda_block label=1670,field=parentCategoryRef><venda_tpcomment>></venda_tpcomment><venda_tpxt mode=set,name=activecategory,value=<venda_facetref>></venda_block label=1670>
+	<venda_block label=1500,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=1500>-->
 
 <!--<div id="term"><h2><span></span><venda_text id=site.search_results.refine.you_searched_by></h2>
-	<venda_detail_searched_fields>
+	
 </div>-->
 
 <venda_block label=345,totalresults!=0>
-<div id="collate"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/refine_by_logo.png" />
+<div id="collate">
 <venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
-<a href="/search?q=<venda_primarysearchtext>" style="float:right;">Clear All</a>
+<a href="/search?q=<venda_primarysearchtext>" style="float:right;font-weight:bold;">Clear All</a>
 </venda_block label=isKeyword>
 <venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
-<a href="<venda_sereradd>/icat/<venda_parentCategoryRef>" style="float:right;">Clear All</a>
+<a href="<venda_sereradd>/icat/<venda_parentCategoryRef>" style="float:right;font-weight:bold;">Clear All</a>
 </venda_block label=isCategory>
-
+<p>Refine By</p>
 <venda_detail_facets></div>
 </venda_block label=345>
 	

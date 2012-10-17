@@ -3,27 +3,35 @@
 <!-- &bklist= is needed for search product list -->
 <!-- Debug venda_bklist  : <venda_bklist> -->
 <!-- Debug venda_bklist1 : <venda_bklist1> -->
-<div class="imageUrl" style="display:none;"><venda_entmediaadd>/ebiz/<venda_bsref>/invt/</div>
+<div class="imageUrl" style="display:none;"><!-- mp_trans_disable_start --><venda_entmediaadd>/ebiz/<venda_bsref>/invt/<!-- mp_trans_disable_end --></div>
+<script>
+showAttribute1Array 		= 	[];
+var showAttribute1 = function(attrObj, attrValObj) {
+	showAttribute1JSON = jQuery.extend(attrObj, attrValObj);
+	showAttribute1Array.push(showAttribute1JSON);
+}
+</script>
+<venda_detblock_attribute>
+showAttribute1(<venda_atts>);
+</venda_detblock_attribute>
+<script type="text/javascript">
+<venda_detail_attribute>   
+</script>
 <div id="comp-image<venda_invtref>" class="image">
-	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg">
-		    <venda_block label=4,med-setsmall=notnull>
-		        <venda_media rec=invt,type=movie-swf-pict,key=setsmall,width=145,height=218>
-		    </venda_block label=4>
-		    <venda_block label=44,med-setsmall=null>
-		        <venda_media rec=invt,type=movie-swf-pict,key=small,width=145,height=218>
-		    </venda_block label=44>
-		    <venda_block label=5,med-small=null>
-		        <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_s.jpg" alt="<venda_invtname1>" title="<venda_invtname>" border="0" width="145px" height="218px">
-		    </venda_block label=5>
-		</a>
+	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg"><img src="" width="244px" height="366px"></a>
 		<venda_block label=510,invtavail&gt;0>
-		<div class="quickLinkBox"><a href="<venda_dispview invt=<venda_invtref>>&temp=quickBuyDetailsNew&layout=blank" id="<venda_invtref>" class="quickBuyDetails" data-track="open-quickbuy">Quick View</a></div>	
+		<div class="quickLinkBox qb-large"><a href="<venda_dispview invt=<venda_invtref>>&temp=quickBuyDetails-reDesign&layout=noheaders" id="<venda_invtref>" class="quickBuyDetails">Quick Buy</a></div>
 		</venda_block label=510>	
 		<venda_mediagrid template=colourSwatch>		
 	</div>
+<script>
+	
+for (var i = 0; i < showAttribute1Array.length; i++) {
+}
+</script>
 
 <div class="productlistinfo">
-<span style="display:none;" class="productSku"><venda_invtref></span>
+<span style="display:none;" class="productSku"><!-- mp_trans_disable_start --><venda_invtref><!-- mp_trans_disable_end --></span>
 <p class="productname"><venda_invtname></p>
 <venda_block label=10,invtatrtot&lt;1>
 <!-- if product doesn't have attributes -->
@@ -59,8 +67,14 @@
 		</p>
 	</venda_block label=666>
 </venda_block label=20>
-<venda_block label=323,pdxtboutiqueimg=1><img class="boutique-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique-pdxt.png"/></venda_block label=323>
-<venda_block label=55,pdxtonlinexcl=1><img class="online-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/online-exclusive-pdxt.png"/></venda_block label=55>
+<div class="roundels">
+<venda_block label=323,pdxtboutiqueimg=1><!--<img class="boutique-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique-pdxt.png"/>-->
+<div class="boutiqueLogo-underlay"><div class="boutiqueLogo">Boutique</div></div>
+</venda_block label=323>
+<venda_block label=55,pdxtonlinexcl=1><!--<img class="online-pdxt" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/online-exclusive-pdxt.png"/>-->
+<div class="onlineExLogo-underlay"><div class="onlineExLogo">Online Exclusive</div></div>
+</venda_block label=55>
+</div>
 </div>
 <venda_block label=30,invtavail&gt;0,invtatrtot&lt;1>
 <!-- if in stock and product doesn't have attributes -->
@@ -116,7 +130,6 @@
 <venda_block label=44,mode=value,<venda_tpxt mode=get,name=template>!=advancedsearch>
 </form>
 </venda_block label=44>
-
 
 </venda_block label=30>
 <venda_block label=104,invtsell2=notnull>

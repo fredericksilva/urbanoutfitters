@@ -51,13 +51,13 @@ jQuery(".quickLinkBox a").live("click", function(e) {
 	jQuery("#quickBuy").dialog("option", "dialogClass", dialogClass); 
 	jQuery("#quickBuy").dialog("option", "title", jQuery("#comp-name"+this.id).html());	
 	jQuery("."+dialogClass).popupIframe();	
-	jQuery(".productContent").addClass("loadingImg");
+	jQuery(".productContent").addClass("loadingsearch");
 	xPosition = (document.documentElement.clientWidth - jQuery(".productContent").width()) / 2;
 	jQuery("#quickBuy").dialog("option", "position", xPosition);
 	var trackingProdAddUrl = jQuery(this).attr("href").split("&");
     Venda.Widget.MinicartDetail.trackingProdAddUrl = trackingProdAddUrl[0];
 	jQuery(".productContent").load(URL, function(){
-		jQuery(".productContent").removeClass("loadingImg");
+		jQuery(".productContent").removeClass("loadingsearch");
 		jQuery(".productContent").show();		
 		if(isQuickDetails){
 			//Venda.ProductDetail.changeSet(attColour);
