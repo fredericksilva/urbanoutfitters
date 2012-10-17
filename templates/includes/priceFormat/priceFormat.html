@@ -9,8 +9,8 @@
 	<venda_tpcomment><!-- savings --></venda_tpcomment>
 	<venda_block label=noatt_savings,mode=value,<venda_invtsavingonwas>!=>
 		<p class="priceField">
-			<span class="priceNow"><span><venda_text id=site.product.price.now></span> <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span></span><br>
-			<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+			<span class="priceNow"><span></span> <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span></span>
+			<span class="priceWas"><span>was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
 		</p>
 	</venda_block label=noatt_savings>
 </venda_block label=noatt>
@@ -29,8 +29,8 @@
 				</venda_block label=att_nosavings_basic_nowas>
 
 				<venda_block label=att_nosavings_basic_was,mode=value,<venda_invtsavingonwas>!=>
-					<span class="priceNow"><venda_text id=site.product.price.now></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span><br>
-					<span class="priceWas"><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span>
+					<span class="priceNow"></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span>
+					<span class="priceWas">was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span>
 				</venda_block label=att_nosavings_basic_was>
 
 			</venda_block label=att_nosavings_basic>
@@ -62,23 +62,23 @@
 			
 				<venda_tpcomment><!-- same price --></venda_tpcomment>
 				<venda_block label=att_savings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
-					<span class="priceNow"><span><venda_text id=site.product.price.now></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span><br>
+					<span class="priceNow"><span></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>
 					<venda_block label=att_savings_adv_sameprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
-						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span class="price" id="atrwas"><venda_currsym><venda_invtatrminsubwas></span></span>
+						<span class="priceWas"><span>was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtatrminsubwas></span></span>
 					</venda_block label=att_savings_adv_sameprice_single>
 					<venda_block label=att_savings_adv_sameprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
-						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+						<span class="priceWas"><span>was</span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
 					</venda_block label=att_savings_adv_sameprice_range>
 				</venda_block label=att_savings_adv_sameprice>
 				
 				<venda_tpcomment><!-- different price --></venda_tpcomment>
 				<venda_block label=att_savings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
-				<span class="priceNow"><span id="price" itemprop="price"><venda_text id=site.product.price.now><span class="price"> <venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span><br>
+				<span class="priceNow"><span id="price" itemprop="price"><span class="price"> <venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span>
 					<venda_block label=att_savings_adv_diffprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
-						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span></span></span>
+						<span class="priceWas"><span>was</span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span></span></span>
 					</venda_block label=att_savings_adv_diffprice_single>
 					<venda_block label=att_savings_adv_diffprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
-						<span class="priceWas"><span><venda_text id=site.product.price.was></span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+						<span class="priceWas"><span>was</span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
 					</venda_block label=att_savings_adv_diffprice_range>
 				</venda_block label=att_savings_adv_diffprice>
 				

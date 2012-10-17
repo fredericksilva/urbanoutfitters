@@ -1325,7 +1325,7 @@ ol.prods li {
 }
 
 .minicart-promo {
-    background: #fff100;
+    background: #ff8b48;
     height: 50px;
     width: 100%;
 }
@@ -5606,8 +5606,12 @@ ul#rvisitewidelist li a:hover div {
 }
 
 .minicartDetailDialog {
-  border: 1px solid #333;
+  border: none;
   background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /*/////////////////////////////////////////////*/
@@ -5851,12 +5855,24 @@ span.sku {
 .submit.addproduct:hover {
   text-decoration: none;
 }
-.addproductbox .buy-box {
+.buy-box {
   position: relative;
   display: inline;
   margin-left: 25px;
 }
-.addproductbox .buy-left {
+.minicartDetailDialog .buy-box {
+  display: block;
+  float: right;
+  margin-right: 7px;
+}
+.minicartDetailDialog .buy-left {
+  top: 0;
+}
+.minicartDetailDialog .buy-right {
+  top: 0;
+  right: -7px;
+}
+.buy-left {
   background: url("../images/uo-png-sprite.png") no-repeat scroll -76px -1px transparent;
   width: 7px;
   height: 30px;
@@ -5865,7 +5881,7 @@ span.sku {
   left: -7px;
   display: block;
 }
-.addproductbox .buy-right {
+.buy-right {
   background: url("../images/uo-png-sprite.png") no-repeat scroll -198px -1px transparent;
   width: 7px;
   height: 30px;
@@ -5932,24 +5948,24 @@ input#qty {
 }
 
 #accordion .ui-state-active a {
-  color: #444; 
   background: url("../images/dotted-line-bg.gif") repeat-x scroll bottom transparent;
 	display: block;
 }
 
 #accordion .ui-icon-triangle-1-s {
-	background: url("../images/img-minus.png") no-repeat scroll 0 3px transparent;
-	width: 11px;
-	height: 20px;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px 0 transparent;
+	width: 13px;
+	height: 5px;
 	display: block;
 	float: right;
 	cursor: pointer;
+	margin-top: 3px;
 }
 
 #accordion .ui-icon-triangle-1-e {
-	background: url("../images/img-plus.png") no-repeat scroll 0 2px transparent;
-	width: 11px;
-	height: 20px;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px -4px transparent;
+	width: 13px;
+	height: 13px;
 	display: block;
 	float: right;
 	cursor: pointer;

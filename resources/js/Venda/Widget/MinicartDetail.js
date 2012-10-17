@@ -5,6 +5,7 @@
  * Minicart Detail uses a carts template.
  *
  * @author Donatas Cereska <dcereska@venda.com>
+ * @author Matthew Wyatt <mwyatt@anthropologie.com>
  */
 Venda.namespace('Widget.MinicartDetail');
 
@@ -34,12 +35,12 @@ Venda.Widget.MinicartDetail.Create = function () {
 		enable : true,
 		
 		topPad : 48,
-		leftPad : 174,
+		leftPad : 175,
 		
 		fade : false,
 		scroll : true,
-		openDuration : 0.2,
-		visibleTime : 6,
+		openDuration : 0.5,
+		visibleTime : 999999,
 		
 		highlight : true,
 		highlightColor : "#ff0000",
@@ -729,6 +730,8 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
  */
 Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 	
+	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("open");
+	
 	Venda.Widget.MinicartDetail.IsAnimInAction(true);
 	
 	var topPos = Venda.Widget.MinicartDetail.settings.topPad;
@@ -737,6 +740,7 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 	var initHeight = 149;
 	
 	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("option", "position", [leftPos, topPos]);
+	
 	
 	if (jQuery('#minicartDetail').length > 0) {
 		if (act == "addToBasket") {
@@ -853,8 +857,6 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 			jQuery('#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()});
 		}
 	}
-	
-	Venda.Widget.MinicartDetail.popupMinicartObj.dialog("open");
 	
 };
 
