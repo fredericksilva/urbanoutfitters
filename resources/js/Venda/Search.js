@@ -567,12 +567,12 @@ Venda.Search.Feature.icxtHideRefine = function() {};
 Venda.Search.Feature.icxtHideRefine.prototype= {
 	display: function() {
 		var icxthiderefine = jQuery('.icxthiderefine').text();
-		var icxt1 = icxthiderefine.split(',')[0];
-		var icxt2 = icxthiderefine.split(',')[1];
-		var icxt3 = icxthiderefine.split(',')[2];
-		var icxt4 = icxthiderefine.split(',')[3];
-		var icxt5 = icxthiderefine.split(',')[4];
-		var icxt6 = icxthiderefine.split(',')[5];
+		var icxt1 = icxthiderefine.split(' ')[0];
+		var icxt2 = icxthiderefine.split(' ')[1];
+		var icxt3 = icxthiderefine.split(' ')[2];
+		var icxt4 = icxthiderefine.split(' ')[3];
+		var icxt5 = icxthiderefine.split(' ')[4];
+		var icxt6 = icxthiderefine.split(' ')[5];
 		var caticxt = [icxt1,icxt2,icxt3,icxt4,icxt5,icxt6];
 		for (var i = 0; i < caticxt.length; i++) {
 			jQuery('.accordion'+caticxt[i]).hide();

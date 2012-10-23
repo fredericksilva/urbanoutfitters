@@ -3,18 +3,14 @@
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/tiny-scrollbar.js"></script>
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
-
 <div id="content-search-body">
+<div class="icxthiderefine" style="display:none;"><venda_tpxt mode=get,name=icatHideRefine></div>
 <venda_block label=151,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1><script type="text/javascript"><venda_inctemplate type=includes,name=powerreviewscripts></script></venda_block label=151>
     <a id="content-top"></a>
     <div id="searchResults" class="grid_19 push_5">
         <a name="content" id="content"></a>
 		<venda_block label=222,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="searchVBM"><venda_inctemplate type=vbm,name=searchResults></div><script type="text/javascript">var searchVBMstr = "<venda_primarysearchtext>";</script></venda_block label=222>
         <div class="box searchAlt searchContent">
-
-            <!--<venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
-			<h1 class="header"><venda_text id=desktop.heading.search_results></h1>
-			</venda_block label=isKeyword>-->
 
 			 <venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
 				<venda_category rec=icat,ref=<venda_tpxt mode=get,name=activecategory>,temp=categorysearchbanner,cacheall=1>
@@ -37,7 +33,7 @@
                                     </venda_detblock_sortedby>
                                     <form>
                                         <label for="sortby"></label>
-                                        <select name="sortby" id="sortby">
+                                        <select name="sortby" id="sortby" class="pagnSortby">
                                             <venda_block label=12,mode=value,<venda_setting type=ebiz,name=sortrelevantfirst>=1>
                                                 <option value="<venda_searchurl sort=,setpagenum=1>"><venda_text id=desktop.info.sortby_relevance></option>
                                             </venda_block label=12>

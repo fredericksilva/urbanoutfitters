@@ -17,7 +17,7 @@
 <div id="attributes-productstatus" style="display:none;">Please select </div>
 <div id="attributes-only" style="display:none;"> only </div>
 <div id="attributes-left" style="display:none;"> left </div>
-<div id="attributes-optionDefault" style="display:none;">Please select </div>
+<div id="attributes-optionDefault" style="display:none;">Select </div>
 <div id="attributes-tooltip" style="display:none;">is out of stock </div>
 <div id="attributes-backorder" style="display:none;">Backorder </div>
 <div id="attributes-preorder" style="display:none;">Preorder </div>
@@ -68,8 +68,6 @@ jQuery(function(){
 	
 				<venda_block label=567,mode=value,<venda_setting type=ebiz,name=powerreviews>!=1>
 			<div class="box productDetailGradientBox reviews">
-				<p class="writereview" style="margin:0;"><a href="<venda_dispview invt=<venda_invtref>>&temp=writereview" id="writereview_link"><venda_text id=site.product_detail.write_review></a></p>
-				<venda_category temp=reviewlink,ref=<venda_invtref>,rec=scat>
 			</div>
 			</venda_block label=567>
 	<venda_block label=320,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>=null><venda_inctemplate name=trackingProdView,type=includes></venda_block label=320>
@@ -117,12 +115,12 @@ jQuery(function(){
 				<venda_block label=55,pdxtpromo=notnull>
 					<div class="general-promo"><venda_pdxtpromo></div>
 				</venda_block label=55>
-				<venda_block label=58,invtpdxtonlinexcl=notnull>
-					<img class="onexcl" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/onlineexcl_uk.png" />
-				</venda_block label=58>	
 				<venda_block label=333,invtpdxtboutiqueimg=notnull>
-					<img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.png"/>
+					<div class="boutiqueLogo-underlay"><div class="boutiqueLogo">Boutique</div></div>
 				</venda_block label=333>
+				<venda_block label=58,invtpdxtonlinexcl=notnull>
+					<div class="onlineExLogo-underlay"><div class="onlineExLogo">Online Exclusive</div></div>
+				</venda_block label=58>	
 								
 			</div>
 			</venda_block label=16>
@@ -140,12 +138,12 @@ jQuery(function(){
 				<venda_block label=55,pdxtpromo=notnull>
 					<div class="general-promo"><venda_pdxtpromo></div>
 				</venda_block label=55>
-				<venda_block label=58,invtpdxtonlinexcl=notnull>
-					<img class="onexcl" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/onlineexcl_uk.png" />
-				</venda_block label=58>
 				<venda_block label=333,invtpdxtboutiqueimg=notnull>
-					<img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.png"/>
+					<div class="boutiqueLogo-underlay"><div class="boutiqueLogo">Boutique</div></div>
 				</venda_block label=333>
+				<venda_block label=58,invtpdxtonlinexcl=notnull>
+					<div class="onlineExLogo-underlay"><div class="onlineExLogo">Online Exclusive</div></div>
+				</venda_block label=58>
 									
 			</div>
 			<venda_tpcomment><!-- end: price - if product does have attributes --></venda_tpcomment>
@@ -159,13 +157,13 @@ jQuery(function(){
 					<venda_block label=21,selatt1=notnull>
 					<div class="product-att">
 						<label for="att1"><venda_att1><venda_text id=site.product_detail.attribute.label_colon></label> 
-						<select name="att1" id="att1_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select>
+						<select name="att1" id="att1_<venda_invtuuid>" class="select-att1"><option value=""><venda_text id=site.product_detail.attribute.att1></option><venda_selatt1></select>
 					</div>
 					</venda_block label=21>
 					<venda_block label=22,selatt2=notnull>
 					<div class="product-att">
 						<label for="att2"><venda_att2><venda_text id=site.product_detail.attribute.label_colon></label>
-						<select name="att2" id="att2_<venda_invtuuid>"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select>
+						<select name="att2" id="att2_<venda_invtuuid>" class="select-att2"><option value=""><venda_text id=site.product_detail.attribute.att2></option><venda_selatt2></select>
 					</div>
 					</venda_block label=22>
 					<venda_block label=23,selatt3=notnull>
@@ -239,11 +237,14 @@ jQuery(function(){
 
 					<div id="addproductbox" class="addproductbox">
 					
-					<div id="qtybox" class="qtybox"><label for="qty"><venda_text id=site.quantity></label><span class="qtyChange" id="qtyDown"></span><input name="qty" id="qty" type="text" value="1" size="3" maxlength="3" class="qty textInput"><span class="qtyChange" id="qtyUp"></span></div>
+					<div id="qtybox" class="qtybox"><label for="qty"><venda_text id=site.quantity></label><span class="qtyChange" id="qtyDown"></span><input name="qty" id="qty" type="text" value="1" size="2" maxlength="2" class="qty textInput"><span class="qtyChange" id="qtyUp"></span></div>
 
 					<venda_tpcomment><!-- Add to basket, PreOrder --></venda_tpcomment>
-					<input type="submit" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket" class="button buttonAlt buttonArrow add submit addproduct">
-					
+					<div class="buy-box">
+  					<span class="buy-left"></span>
+  					<input type="submit" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket" class="button buttonAlt buttonArrow add submit addproduct">
+  					<span class="buy-right"></span>
+					</div>
 					<venda_tpcomment><!-- Buy Now --></venda_tpcomment>
 					<input type="submit" value="<venda_text id=site.button.buy_now>" data-track="buynow" class="button buttonAlt buttonArrow buy submit buynow">
 					</div>
@@ -341,9 +342,6 @@ jQuery(function(){
 				<venda_block label=12,invtdesc1=notnull>
 					<p class="invtdesc1" itemprop="description"><venda_invtdesc1></p>
 				</venda_block label=12>
-				<venda_block label=13,invtdesc2=notnull>
-					<p class="invtdesc2"><venda_invtdesc2></p>
-				</venda_block label=13>
 				<venda_block label=14,invtdesc3=notnull>
 					<p class="invtdesc3"><venda_invtdesc3></p>
 				</venda_block label=14>
@@ -457,6 +455,7 @@ jQuery(function(){
 		<venda_tpcomment><!-- start: productCycling V2 --></venda_tpcomment>
         <venda_category temp=productCycling,rec=icat,ref=<venda_curcatref>,center_on=<venda_invtref>,itemsperpage=3>
         <venda_tpcomment><!-- end: productCycling --></venda_tpcomment>
+		<venda_inctemplate name=socialBookMarks,type=widgets>
 	</div>
 	<venda_tpcomment><!-- end: left hand side (picture) --></venda_tpcomment>
 	</div>

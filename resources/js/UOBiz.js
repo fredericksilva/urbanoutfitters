@@ -834,7 +834,7 @@ Venda.Ebiz.validateEmail = function(mail,msg) {
 		mail.email.focus();
 	}
 };
-	
+
 /**
 *  This function keeps the nav open when using the Category Navigation (Navigation Settings) element.
 *  This function is moved from 'sitewide.js', so avoid the error 
