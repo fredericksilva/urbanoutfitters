@@ -209,7 +209,7 @@ Venda.Attributes.Initialize = function() {
 */
 Venda.Attributes.Declare = function() {
 	Venda.Attributes.Settings = {
-		lowStockThreshold:			20,
+		lowStockThreshold:			10,
 		emailWhenOutOfStock:		false,
 		sourceFromAPI:				false,
 		priceRangeFormat:			"range",  // "range" = from - to; "from" = from only; "to" = to only;
@@ -522,7 +522,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	var addproductID 	 = jQuery('#oneProduct_' + uID + ' #addproductbox'),
 		EmwbisID		 = jQuery('#oneProduct_' + uID + ' #emwbis_link'),
 		stockFeedbackBox = jQuery('#oneProduct_' + uID + ' .stockFeedbackBox'),
-		addToBasketLinks = jQuery('#oneProduct_' + uID + ' .addproduct, #oneProduct_' + uID + ' .buynow'),
+		addToBasketLinks = jQuery('#oneProduct_' + uID + ' .buy-box .addproduct, #oneProduct_' + uID + ' .buynow'),
 		emwbisType		 = jQuery("#emwbisType").text(),
 		stockstatus	 	 = Venda.Attributes.Get('stockstatus'),
 		stockFeedback	 = stockstatus;
@@ -741,8 +741,9 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 			}
 		}
 	}
-
-	Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+	if(Venda.Attributes.productArr[0]) {
+	 Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+	}
 };
 
 /**

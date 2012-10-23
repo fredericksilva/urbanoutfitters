@@ -1032,19 +1032,10 @@ jQuery(function() {
 		document.getElementById('socialButtons').appendChild(oScript);
 	};
 	
-	Venda.Ebiz.loadGooglePlusButton = function() {
-		var oScript = document.createElement('script');
-		oScript.type = 'text/javascript';
-		oScript.async = true;
-		oScript.src = 'https://apis.google.com/js/plusone.js';
-		document.getElementById('socialButtons').appendChild(oScript);
-	};
-	
 	if (jQuery('#socialButtons').length === 1) {
 		jQuery(".mainHeader").next().addClass("socialHack");
 		Venda.Ebiz.loadTweetButton();
 		Venda.Ebiz.loadFBLikeButton();
-		Venda.Ebiz.loadGooglePlusButton();
 	}
 	/* End: loading social button */
 });
