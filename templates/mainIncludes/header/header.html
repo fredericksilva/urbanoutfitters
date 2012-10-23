@@ -16,7 +16,9 @@
     <venda_inctemplate name=regionLanguageSwitch,type=widgets>
   </div>
   <div class="grid_4 omega">
-    <a href="#" title="Get eMail" class="get-email"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/get-email.png" alt="Get eMail" /></a>
+    <a href="<venda_dispview page=emailsignup>" title="Email sign up" class="emailsu">
+      <span class="emailsu-copy">Email sign up</span>
+    </a>
   </div>
   <div class="grid_7 alpha omega">
     <p class="location-text">We deliver to you!</p>
@@ -24,7 +26,7 @@
 </div>
 
 <div class="grid_10">
-  <venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/urban-outfitters-logo.png" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112>
+  <venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/uo-logo-1.png" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112>
 </div>
 <div class="grid_7 clearfix">
   <div class="grid_7 alpha omega">
@@ -38,13 +40,11 @@
     	<venda_block label=20,ustype=R><venda_tpcomment><!-- When editing these links please note you also should edit div id="tag-signinloggedinlinks" below --></venda_tpcomment>
     	<venda_block label=245,usgrref!=instore>
     	<li class="myaccount"><venda_block label=300,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a href="<venda_dispview page=myaccount>"></venda_block label=300><venda_block label=301,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a href="<venda_codehttps>?ex=co_wizr-login&bsref=<venda_bsref>"></venda_block label=301>MY ACCOUNT</a></li>
-    	<li class="vertical-divider"></li>
     	</venda_block label=245>
     	<li class="logout loginout"><a href="<venda_dispview page=home>&log=4">LOGOUT</a></li>
     	</venda_block label=20>
     	<venda_block label=21,ustype!=R>
     	<li class="login loginout"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>">LOG IN</a></li>
-    	<li class="vertical-divider"></li>
     	<li class="login loginout"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>">REGISTER</a></li>
     	</venda_block label=21>
     </ul>
@@ -64,7 +64,7 @@
   <venda_block label=980,workflow!=shopcart>
   <venda_block label=113,pageref!=home><p class="crumbtrail clearfix">
   <a href="<venda_ebizurl>" class="crumbtrailHome">Home</a>
-  <venda_cattree class=crumbtrailAnchor,sep=<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/diagonal-divide.png" />>
+  <venda_cattree class=crumbtrailAnchor>
   </p></venda_block label=113>
   </venda_block label=980>
   

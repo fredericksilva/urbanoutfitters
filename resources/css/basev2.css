@@ -651,14 +651,30 @@ body .footerText {
 body {
     margin: 0;
     padding: 0;
-    font: 100%/1em Helvetica,Arial,sans-serif;
+    font: 100%/1em Helvetica, Arial, sans-serif;
     color: #333;
-    background: url("../images/paper-background-detailed.jpg") repeat scroll 0 0 #c9baa7;
+    background: url("../images/paper-background-soft.jpg") repeat scroll 0 0 #c9baa7;
 }
-
+.header-bg {
+    background: url("../images/paint-headfoot-bg.gif") repeat-x scroll 0 0 transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 408px;
+    z-index: -2;
+}
+.footer-bg {
+    background: url("../images/paint-headfoot-bg.gif") repeat-x scroll 0 -408px transparent;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 408px;
+    z-index: -2;
+}
 .wrapper {
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .wrapperAlt {
@@ -1302,7 +1318,7 @@ ol.prods li {
 .minicartDetailTotals li {
     border-bottom: 1px solid #444;
     font-size: 12px;
-    padding: 5px 0;
+    padding: 7px 0;
 }
 .minicartDetailTotals li .price {
     float: right;
@@ -1325,7 +1341,7 @@ ol.prods li {
 }
 
 .minicart-promo {
-    background: #fff100;
+    background: #ff8b48;
     height: 50px;
     width: 100%;
 }
@@ -1372,7 +1388,7 @@ ol.prods li {
 }
 
 .minicartDetailBottom {
-    padding: 10px;
+    padding: 15px 10px;
     text-align: left;
     overflow: hidden;
 }
@@ -1404,7 +1420,7 @@ ol.prods li {
 }
 
 #scrollDown {
-    margin: 0 10px 10px;
+    margin: 0 10px 15px;
 }
 
 .scroll-subtle {
@@ -1631,7 +1647,7 @@ fieldset {
 .mm_ul li a {
     color: #444444;
     display: block;
-    font-family: Arial;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -1673,7 +1689,7 @@ fieldset {
     height: 6px;
     left: 0;
     position: absolute;
-    top: 133px;
+    top: 143px;
     width: 100%;
     z-index: -1;
 }
@@ -1748,6 +1764,7 @@ fieldset {
     font-size: 11px;
     letter-spacing: 0;
     line-height: 15px;
+    font-weight: normal;
 }
 
 /* Single Line Highlight */
@@ -2524,7 +2541,7 @@ fieldset {
 }
 
 .addresslookup .loading {
-    background: url(../images/loading.gif) no-repeat scroll 50% 50% transparent;
+    background: url(../images/uo-loading.gif) no-repeat scroll 50% 50% transparent;
     height: 56px;
     margin: 0 auto;
     width: 36px;
@@ -3183,7 +3200,7 @@ div.quickshop div.remove {
 }
 
 .loadingImg,.loaderBar {
-    background: url(../images/loading.gif) no-repeat center center;
+    background: url(../images/uo-loading.gif) no-repeat center center;
     display: block;
 }
 
@@ -3671,7 +3688,7 @@ div.quickshop div.remove {
 }
 
 .preload {
-    background: url(../images/loading.gif) no-repeat 43px 30px;
+    background: url(../images/uo-loading.gif) no-repeat 43px 30px;
     color: #333;
     height: 43px;
     left: 3px;
@@ -3979,7 +3996,7 @@ div.quickshop div.remove {
 }
 
 .oneProduct {
-    background-image: url(../images/loading_bar.gif);
+    background-image: url(../images/uo-loading.gif);
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -4256,7 +4273,7 @@ label.addToCheckBoxLabel {
 
 /* This is for the title text. */
 .cloud-zoom-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     position: absolute !important;
     background-color: #000;
     color: #fff;
@@ -5606,8 +5623,12 @@ ul#rvisitewidelist li a:hover div {
 }
 
 .minicartDetailDialog {
-  border: 1px solid #333;
+  border: none;
   background: url(../images/paper-background.jpg) repeat scroll 0 0 #CFC5B6;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /*/////////////////////////////////////////////*/
@@ -5841,7 +5862,7 @@ span.sku {
 .submit.addproduct {
   height: 30px;
   width: 130px;
-	background: #444;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -76px 0 transparent;
 	border: 0 none;	
   padding: 3px 18px 2px;
   text-transform: uppercase;	
@@ -5851,12 +5872,24 @@ span.sku {
 .submit.addproduct:hover {
   text-decoration: none;
 }
-.addproductbox .buy-box {
+.buy-box {
   position: relative;
   display: inline;
   margin-left: 25px;
 }
-.addproductbox .buy-left {
+.minicartDetailDialog .buy-box {
+  display: block;
+  float: right;
+  margin-right: 7px;
+}
+.minicartDetailDialog .buy-left {
+  top: 0;
+}
+.minicartDetailDialog .buy-right {
+  top: 0;
+  right: -7px;
+}
+.buy-left {
   background: url("../images/uo-png-sprite.png") no-repeat scroll -76px -1px transparent;
   width: 7px;
   height: 30px;
@@ -5865,7 +5898,7 @@ span.sku {
   left: -7px;
   display: block;
 }
-.addproductbox .buy-right {
+.buy-right {
   background: url("../images/uo-png-sprite.png") no-repeat scroll -198px -1px transparent;
   width: 7px;
   height: 30px;
@@ -5932,24 +5965,24 @@ input#qty {
 }
 
 #accordion .ui-state-active a {
-  color: #444; 
   background: url("../images/dotted-line-bg.gif") repeat-x scroll bottom transparent;
 	display: block;
 }
 
 #accordion .ui-icon-triangle-1-s {
-	background: url("../images/img-minus.png") no-repeat scroll 0 3px transparent;
-	width: 11px;
-	height: 20px;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px 0 transparent;
+	width: 13px;
+	height: 5px;
 	display: block;
 	float: right;
 	cursor: pointer;
+	margin-top: 3px;
 }
 
 #accordion .ui-icon-triangle-1-e {
-	background: url("../images/img-plus.png") no-repeat scroll 0 2px transparent;
-	width: 11px;
-	height: 20px;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px -4px transparent;
+	width: 13px;
+	height: 13px;
 	display: block;
 	float: right;
 	cursor: pointer;

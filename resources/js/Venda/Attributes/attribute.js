@@ -43,7 +43,7 @@ Venda.Attributes.Initialize = function() {
   
   	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
   		if (Venda.Attributes.productArr[i].attSet.id == uID) {
-  			var options = '<option value="">' + jQuery('#attributes-optionDefault').text() + '</option>';
+  			var options = '<option value="">' + jQuery('#attributes-optionDefault').text() + Venda.Attributes.productArr[0].attSet[attName].name + '</option>';
   			var att1 = Venda.Attributes.productArr[i].attSet.att1.selected,
   				att2 = Venda.Attributes.productArr[i].attSet.att2.selected,
   				att3 = Venda.Attributes.productArr[i].attSet.att3.selected,
@@ -191,6 +191,15 @@ Venda.Attributes.Initialize = function() {
           }
       }
   });
+  
+  jQuery('.socialButtons li').hover(
+    function () {
+      jQuery(this).find('.social-button').css('z-index','1001').show();
+    },
+    function () {
+      jQuery(this).find('.social-button').hide();
+    }
+  );
 
 }
 
@@ -200,7 +209,7 @@ Venda.Attributes.Initialize = function() {
 */
 Venda.Attributes.Declare = function() {
 	Venda.Attributes.Settings = {
-		lowStockThreshold:			20,
+		lowStockThreshold:			10,
 		emailWhenOutOfStock:		false,
 		sourceFromAPI:				false,
 		priceRangeFormat:			"range",  // "range" = from - to; "from" = from only; "to" = to only;
@@ -513,7 +522,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	var addproductID 	 = jQuery('#oneProduct_' + uID + ' #addproductbox'),
 		EmwbisID		 = jQuery('#oneProduct_' + uID + ' #emwbis_link'),
 		stockFeedbackBox = jQuery('#oneProduct_' + uID + ' .stockFeedbackBox'),
-		addToBasketLinks = jQuery('#oneProduct_' + uID + ' .addproduct, #oneProduct_' + uID + ' .buynow'),
+		addToBasketLinks = jQuery('#oneProduct_' + uID + ' .buy-box .addproduct, #oneProduct_' + uID + ' .buynow'),
 		emwbisType		 = jQuery("#emwbisType").text(),
 		stockstatus	 	 = Venda.Attributes.Get('stockstatus'),
 		stockFeedback	 = stockstatus;
@@ -571,7 +580,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 					}
 					else{
 						addproductID.addClass("Re-paint");
-						addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
+						addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
 					}
 				}
 		break;
@@ -590,7 +599,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		default:
 			// Not Available
 			addproductID.addClass("Re-paint");
-			addToBasketLinks.css({"opacity":"0.5", "cursor":"default"});
+			addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
 	}
 
 	jQuery('#oneProduct_' + uID + ' .attrFeedback  #stockstatus').hide().text(stockFeedback).addClass("Re-paint");
@@ -732,8 +741,9 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 			}
 		}
 	}
-
-	Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+	if(Venda.Attributes.productArr[0]) {
+	 Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+	}
 };
 
 /**
@@ -915,11 +925,10 @@ Venda.Attributes.swatchImage = function(attnumber, uID){
 * @author Alby Barber <abarber@venda.com>
 */
 Venda.Attributes.generateDropDowns = function(attributeNumber, uID) {
-	var optionDefault = jQuery('#attributes-optionDefault').text();
-
+	var optionDefault = jQuery('#attributes-optionDefault').text() + Venda.Attributes.productArr[0].attSet[attributeNumber].name;
 	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
 		if (Venda.Attributes.productArr[i].attSet.id == uID) {
-			var options = '<option value="">'+ optionDefault +'</option>';
+			var options = '<option value="">'+ optionDefault + '</option>';
 			for (var t = 0; t < Venda.Attributes.productArr[i].attSet[attributeNumber].options.length; t++) {
 				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attributeNumber].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '</option>';
 			}
@@ -1201,7 +1210,7 @@ Venda.Attributes.ImageSwap = function(att) {
 	}
 	if(obj) {
   	for(var i = 0; i < obj.images.imgM.length; i++) {
-      if(obj.images.imgL[i]){
+      if(obj.images.imgL[i] && jQuery("#content-prodDetail").length){
         sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
       } else {
         sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
@@ -1217,7 +1226,7 @@ Venda.Attributes.ImageSwap = function(att) {
         jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
       }
     });	
-    jQuery(".uo-product-slider").hover(function() {
+    jQuery("#content-prodDetail .uo-product-slider").hover(function() {
       if(!jQuery('.cloud-zoom, .cloud-zoom-gallery').data('zoom')){
         jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
       }
@@ -1273,5 +1282,4 @@ Venda.Attributes.ImageMediaAssignment = function() {
         Venda.Attributes.SwatchURL[currAtt1] =  jQuery('tag-ebizurl').text() + "/content/ebiz/" + jQuery('#tag-ebizref').text() + "/invt/" + jQuery('#tag-invtref').text() + "/" + jQuery('#tag-invtref').text() + "_" + currAtt1.toLowerCase() + "_sw.jpg";  
       }
   }
-
 }
