@@ -662,14 +662,16 @@ body {
     top: 0;
     height: 408px;
     z-index: -2;
+    left: 0;
 }
 .footer-bg {
     background: url("../images/paint-headfoot-bg.gif") repeat-x scroll 0 -408px transparent;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 408px;
     z-index: -2;
+    left: 0;
 }
 .wrapper {
     margin: 0 auto;
@@ -5844,7 +5846,7 @@ span.sku {
  	width: 160px;
 }
 .product-att .select-att2 { 
- 	width: 110px;
+ 	width: 130px;
 }
 .product-att label {
 	display: none;
