@@ -67,7 +67,7 @@ a.sw_image span img {
 }
 
 /* inline css so as not to conflict with fed css on ui */
-body.search_body .ui-selectmenu-open {
+.resultDetail .sort select.pagnSortby {
 	border: none;
 	width: 136px;
 	-moz-box-shadow: 1px 1px 5px #5C5C5C;
@@ -84,10 +84,6 @@ body.search_body .ui-selectmenu-menu li a {
 	padding: 6px 8px;
 	text-transform: none;
 	font-weight:normal;
-}
-
-body.search_body .ui-selectmenu-menu li {
-	width: 136px;
 }
 
 body.search_body .ui-selectmenu-status {
@@ -186,8 +182,8 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 .resultDetail .sort span.sort-sprite {
-	background:url("../images/uo-png-sprite.png");
-	background-position:81px -32px;
+	background:url("../images/uo-png-sprite.png") no-repeat;
+	background-position: -150px -33px;
 	height: 12px;
 	width: 7px;
 	position: absolute;
@@ -316,13 +312,13 @@ body.search_body .ui-selectmenu-menu li:hover {
 	height: 11px;
 	margin: 2px 10px 0 2px;
 	padding:0;
-	background:url("../images/uo-png-sprite.png");
+	background:url("../images/uo-png-sprite.png") no-repeat;
 	background-position: -192px -96px;
 	float:left;
 }
 
 .termtext a.updatesearch:hover > div.checkboxIcon, .chosen a.updatesearch div.checkboxIcon {
-  	background:url("../images/uo-png-sprite.png");
+  	background:url("../images/uo-png-sprite.png") no-repeat;
   	background-position: -208px -96px;
 }
 
@@ -578,13 +574,17 @@ a.quickBuyDetails {
 	background: url('../images/paper-background.jpg') repeat scroll 0 0 #CFC5B6;
 }
 
+.quickBuyDetails .productContent {
+	width: 790px !important;
+}
+
 .quickBuy-Details .prodDesc {
-	width:430px;
+	width:400px;
 	float:right;
 }
 
 .quickBuy-Details .prodImages {
-	width:400px;
+	width:375px;
 	float:left;
 }
 
@@ -593,7 +593,7 @@ a.quickBuyDetails {
 }
 
 .quickBuy-Details .uo-product-slider {
-	margin: 0 20px 15px;
+	margin: 10px;
 }
 
 .quickBuy-Details .product-details h1 {
@@ -606,7 +606,7 @@ a.quickBuyDetails {
 }
 
 .quickBuy-Details .proddetail-promobanner a img {
-	width:400px;
+	width:330px;
 }
 
 .quickBuy-Details .productDetailTabs {
@@ -616,8 +616,8 @@ a.quickBuyDetails {
 .quickBuyDetails .ui-dialog-titlebar {
 	background: none;
 	position: absolute;
-	right: 30px;
-	top: 33px;
+	right: 15px;
+	top: 15px;
 }
 
 .quickBuyDetails .ui-dialog-titlebar a {
@@ -631,6 +631,26 @@ a.quickBuyDetails {
 
 .quickBuyDetails .ui-dialog-titlebar a span {
 	display:none;
+}
+
+.quickBuyInputs .product-att .ui-state-default, .quickBuyInputs .product-att .ui-widget-content .ui-state-default, .quickBuyInputs .product-att .ui-widget-header .ui-state-default {
+	-moz-box-shadow: 1px 1px 5px #5C5C5C;
+	-webkit-box-shadow: 1px 1px 5px #5C5C5C;
+	box-shadow: 1px 1px 5px #5C5C5C;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C');
+}
+
+.quickBuyQty #qtybox input#qty {
+	-moz-box-shadow: 1px 1px 5px #5C5C5C;
+	-webkit-box-shadow: 1px 1px 5px #5C5C5C;
+	box-shadow: 1px 1px 5px #5C5C5C;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C');
 }
 
 /* # PRODUCTDETAIL ACCESSORIES # */
@@ -887,4 +907,20 @@ a.quickBuyDetails {
 /* mainFooter margin */
 .mainFooter {
 	margin-top: 30px;
+}
+
+/* Signup Iframe */
+
+.signup-img {
+	background: url('../images/uo-png-sprite.png') no-repeat;
+	background-position: -168px -156px;
+	width: 70px;
+	height: 15px;
+    margin: -6px 0px 0px 20px;
+}
+
+.signupFrame {
+	border:0;
+	margin-top:5px;
+	overflow: hidden;
 }
