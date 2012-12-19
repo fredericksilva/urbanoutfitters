@@ -46,7 +46,7 @@ jQuery(".quickLinkBox a").live("click", function(e) {
 	Venda.Attributes.attsArray = [];
 	jQuery("#quickBuy").dialog("destroy");
 	jQuery("#quickBuy").dialog(dialogOpts); 
-	jQuery(".productContent").html(" ");
+	jQuery(".productContent").html("<div class='loadingImg'></div>");
 	jQuery("#quickBuy").dialog("open");
 	jQuery("#quickBuy").dialog("option", "dialogClass", dialogClass); 
 	jQuery("#quickBuy").dialog("option", "title", jQuery("#comp-name"+this.id).html());	

@@ -1,11 +1,88 @@
-<div class="grid_5"><venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/logo.png" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112></div>
-<div class="grid_10 push_9"><div class="pcilogocheckout"><div id="pcilogo">
-<a href="http://www.venda.com/pci-compliance-certificate?referer=<venda_serveradd>" rel="popup console 590 660" target="_blank" title="<venda_text id=pcilogotitle>">
-<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/en_pcilogo.png" alt="<venda_text id=pcilogoalt>" height="58" width="327" /></a>
-</div></div></div>
+  <!-- Header Links -->
+<div class="wrapper checkoutHeader">
+    <!-- mp_trans_remove_start -->
+    <div class="checkoutHeaderLinks">
+    <!-- mp_trans_remove_end -->
+      <!-- mp_trans_disable_start -->
+       <!-- mp_trans_add="FR" <div id="headerlinks" class="fr">  -->
+       <!-- mp_trans_add="DE" <div id="headerlinks" class="de"> -->
+      <!-- mp_trans_disable_end -->
+	    <ul style="display:none;">
+   
+	     <venda_block label=20,ustype=R>
+           <!-- logged in -->             
+           <li><a href="<venda_ebizurl>/page/home&log=4">Sign Out</a></li> 
+         </venda_block label=20>
+    
+	     <venda_block label=21,ustype!=R>
+	       <!-- logged out -->
+	        <li class="singin"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>" title="Sign In">Sign In</a></li>
+            <li class="register"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>" title="Register">Register</a></li>
+	     </venda_block label=21>	
 
-<ul class="mm_ul">
-	<li class="checkoutHome"><venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><span>Home</span><venda_block label=112,pageref!=home></a></venda_block label=112></li>
-	<li style="float:right;width:100px;"><a href="<venda_dispview pcat=help>&layout=staticpopup" class="doDialog" rel="1000,450,help," target="_blank">Help &amp; Info</a></li>
-</ul>
-<venda_inctemplate name=checkoutStepIndicators,type=widgets>
+         <venda_block label=22,ustype=R>
+           <!-- logged in -->            
+           <li><venda_userinfo><a href="<venda_dispview page=myaccount>" title="My Account">
+               <span class="sesfname"><!-- mp_trans_disable_start --><venda_sesfname><!-- mp_trans_disable_end -->'s Account </span>
+           </a></venda_userinfo></li> 
+         </venda_block label=22>	
+	    </ul>
+        <ul>
+            <li class="showminicart"><a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" title="View Bag">Bag</a></li>
+            <li class="help"><a href="/pages/help-info/page/helpandinfo/" title="Help">Help</a></li>
+            <li class="home"><a href="<venda_dispview page=home>" title="Home">Home</a></li>
+        </ul>
+    </div>
+    <div class="checkoutHeader">
+        <venda_inctemplate name=pciLogo,type=widgets>
+        <div class="checkoutlogo">
+            <a href="<venda_dispview page=home>" alt="Home" title="Home">
+                <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/redesign/redesignBanner.png" border="0" alt="URBAN OUTFITTERS"/>
+            </a>
+        </div> 
+    </div>
+
+
+
+    <div id="headerregion" style="display:none;">
+		    <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>	
+			    <p><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/uk_flag.gif" class="flag" border="0" alt="UK" /></p> 
+			    <p>UK | <venda_page page=countrydrop> </p>
+			    <venda_page page=currencyselector>
+    	    </venda_block label=1>
+    	
+   		    <!-- mp_trans_remove_start -->
+    	    <venda_block label=2,mode=value,<venda_sessionlocation>!=restofworld>
+				    <p><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/eu_flag.gif" class="flag" border="0" alt="Europe" /></p>  
+				    <p>EU | <venda_page page=countrydrop> </p>
+				    <venda_page page=currencyselector>
+	   	    </venda_block label=2>
+     	    <!-- mp_trans_remove_end -->
+		    <!-- mp_trans_add="FR"
+				    <p><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/fr_flag.gif" class="flag" border="0" alt="France"  /></p>  
+				    <p>FR | <venda_page page=countrydrop> </p>					
+				    -->
+				
+				    <!-- mp_trans_add="DE"
+					    <p><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/de_flag.gif" class="flag" border="0" alt="Deutschland" /></p>  
+					    <p>DE | <venda_page page=countrydrop> </p>
+				    -->		  		
+    </div> <!-- /#headerregion -->
+
+
+    <!-- minicart -->
+    <!-- mp_trans_remove_start -->
+     <div id="headercart" style="display:none;">
+    <!-- mp_trans_remove_end -->
+      <!-- mp_trans_disable_start -->
+        <!-- mp_trans_add="FR" <div id="headercart" class="fr"> -->
+        <!-- mp_trans_add="DE" <div id="headercart" class="de"> -->
+      <!-- mp_trans_disable_end -->
+	    <venda_minicart template=newminicart>
+     </div>
+    <!-- minicart end -->
+    <div class="clear-all"></div>
+</div>
+<div class="stepWrapper">
+    <venda_inctemplate name=checkoutStepIndicators,type=widgets>
+</div>

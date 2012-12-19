@@ -27,7 +27,7 @@ Please note that the products are in stock at the time of sending this e-mail an
 
 
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>
 
 
 

@@ -1,0 +1,36 @@
+<div class="lookbookMain container_24">
+	<div class="lookbookBanner grid_24">
+		<venda_block label=diffBanner1,invtref=abcdef></venda_block label=diffBanner1>
+		<venda_page page=lookstopbanner>	
+		<div class="counter">
+			<venda_category temp=counter,ref=<venda_curcatref>,rec=icat>
+		</div>
+		<venda_block label=31,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=31>
+	</div>
+	<!-- end lookbookBanner -->
+	<div class="lookbookContainer grid_24">
+		<div class="lookbookShots grid_5 alpha omega">
+			<venda_category temp=lookbookprods,ref=<venda_curcatref>,rec=icat>
+		</div>
+		<!-- end lookbookShots -->
+		<div class="lookbookImage grid_12 omega">
+			<venda_media rec=invt,type=pict,key=large,class=large>
+		</div>
+		<!-- end lookbookImage -->
+		<div class="lookbookAccessories grid_7 alpha">
+			<venda_invtsub template=lookbook12subs>
+		</div>
+		<!-- end lookbookAccessories -->
+	</div>
+	<!-- end lookbookContainer -->
+</div>
+<!-- end lookbookMain -->
+
+<venda_tpcomment>
+<!--
+This tpxt is used in Look Book products add to basket form(s) so as to keep user on lookbook parent sku when adding to basket
+Also used for showing the currently active SKU in the bottom nav
+Also used for showing the counter
+-->
+</venda_tpcomment>
+<venda_tpxt mode=set,name=lbparentsku,value=<venda_invtref>>

@@ -1,0 +1,47 @@
+<!-- use this template to display your user extended fields -->
+<venda_block label=1,param1!=survey>
+<!-- register -->
+
+<!-- legend><venda_text id=site.usxt.legend.example></legend>
+<div class="usxtgender"><label for="usxtgender"><venda_text id=site.usxt.example.2></label>
+<select name="usxtgender" id="usxtgender"><venda_usxtgender></select>
+</div -->
+</venda_block label=1>
+
+<venda_block label=2,param1=survey>
+
+<!-- my account / user profile -->
+<div class="box basketAlt"><h1 class="header">Change Profile</h1>
+<venda_form>
+<venda_zipc field=hidden>
+<input type="hidden" name="uslgemail" value="">
+<input type="hidden" name="page" value="myaccount">
+<input type="hidden" name="formusxtexample1" value="1">
+<input type="hidden" name="formusxtexample2" value="1">
+<input type="hidden" name="formusxtexample3" value="1">
+<input type="hidden" name="blkpost" value="<venda_blkpost>">
+<input type="hidden" name="blkemail" value="<venda_blkemail>">
+<input type="hidden" name="blksms" value="<venda_blksms>">
+<input type="hidden" name="blktrdcomm" value="<venda_blktrdcomm>">
+<input type="hidden" name="usmailform" value="<venda_usmailform>">
+
+<fieldset>
+<legend><venda_text id=site.usxt.legend.example></legend>
+
+<div class="checkboxWrapper">
+<input type="checkbox" name="usxtexample1" id="usxtexample1" class="dontFloat" value="1" <venda_block label=136,usxusxtexample1=1>checked="checked"</venda_block label=136>>
+<label for="usxtexample1" class="dontFloat"><venda_text id=site.usxt.example.1></label>
+</div>
+<div class="formSeparator"></div>
+<div><label for="usxtexample2"><venda_text id=site.usxt.example.2></label>
+<select name="usxtexample2" id="usxtexample2"><venda_usxselectusxusxtexample2></select>
+</div>
+<div class="order-summary-box-footer"></div>
+</fieldset>
+<div id="buttons" class="bottomButtons">
+	<a href="<venda_dispview page=myaccount>" class="button buttonAlt2"><venda_text id=site.button.back_to_my_account></a>
+	<input type="submit" value="<venda_text id=site.button.save_change>" class="button buttonAlt buttonArrow right submit">
+</div>
+</form>
+</div>
+</venda_block label=2>

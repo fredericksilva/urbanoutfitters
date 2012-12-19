@@ -1,0 +1,23 @@
+<div id="productlist" class="full">
+
+<!-- CATEGORY LIST TOP BANNER -->
+<center style="margin-left:5px;">
+<venda_block icxttopbannerlinkref=notnull>
+<a href="<venda_dispview icat=<venda_icxttopbannerlinkref>>"> <venda_media rec=icat,type=pict,key=categorybanner,border=0></a>
+</venda_block>
+<venda_block icxttopbannerlinkref=null>
+<venda_media rec=icat,type=pict,key=categorybanner,border=0>
+</venda_block>
+</center>
+
+
+<venda_detblock><venda_icatref1>:</venda_detblock>
+<venda_search parentCategoryRef=<venda_detail>,sort=manual,order=desc>
+
+<venda_tpxt mode=set,name=categoryTopBanner,value=<venda_page page=<venda_icxttopbannerlinkref>>>
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
+<venda_tpxt mode=set,name=icatHideRefine,value=<venda_icxthiderefine>>
+
+<div id="parentCatName" style="display:none;"><venda_icatname></div>
+<div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>
+<div id="parentCatRef" style="display:none;"><venda_icatref></div>

@@ -1,0 +1,67 @@
+<venda_media rec=invt,type=pict,key=thumb,class=left>
+<div class="details">
+	<h2><venda_invtname></h2>
+	<form id="form<venda_invtref>" name="form<venda_invtref>" action="<venda_codehttp>" method="get">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="log" value="22">
+		<input type="hidden" name="mode" value="add">
+		<input type="hidden" name="curpage" value="">
+		<input type="hidden" name="next" value="">
+		<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+		<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+		<input type="hidden" name="ex" value="co_disp-shopc">
+		<!-- "buy" defines sku to add if "ex" is "co_disp-shopc" -->
+		<input type="hidden" name="buy" value="<venda_invtref>">
+		<!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
+		<input type="hidden" name="invt" value="<venda_tpxt mode=get,name=lbparentsku>">
+		<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
+		<input type="hidden" name="ivref" value="<venda_invtref>">
+		<input type="hidden" name="qty" value="1">
+
+		<venda_block label=16,chkatt=null>
+			<p class="price"><venda_currsym><venda_invtsell><venda_block label=161,invtwas=notnull,invtwas!=0.00,invtwas1&gt;invtsell><span>Was: <venda_currsym><venda_invtwas></span></venda_block label=161></p>
+		</venda_block label=16>
+
+		<venda_block label=17,chkatt=notnull>
+			<p class="price"><venda_currsym><venda_invtatrmaxsubsell><venda_block label=171,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><span>Was: <venda_currsym><venda_invtwas></span></venda_block label=171></p>
+		<div class="lookbookattDetail">
+			<!-- SELECT COLOUR -->
+            <div class="productdetailatt">
+	            <venda_block label=21,selatt1=notnull>
+	            	<label for="att1" class="productdetaillabel">Colour</label>
+					<select name="att1" id="att1<venda_invtref>" class="lookbookAtt">
+						<option value="Select Colour">Select Colour</option>
+						<venda_selatt1>
+					</select>
+	            </venda_block label=21>
+            </div>	
+						
+            <!-- SELECT SIZE -->
+            <div class="productdetailatt">
+	            <venda_block label=22,selatt2=notnull>
+	            	<label for="att2" class="productdetaillabel">Size</label>
+					<select name="att2" id="att2<venda_invtref>" class="lookbookAtt">
+						<option value="Select Size">Select Size</option>
+						<venda_selatt2>
+					</select>
+	            </venda_block label=22>
+            </div>
+		</venda_block label=17>
+		
+		<input type="submit" name="submit" class="lbSubmit" value="Add To Bag">
+		</div>
+	</form>	
+</div><!-- end .details -->
+<script type="text/javascript">
+ jQuery(document).ready(function() {
+ 
+	//Make sure an attribute is selected when the form is submitted
+	jQuery("#form<venda_invtref>").submit(function() {
+		if ( (jQuery("#att1<venda_invtref>").val() == "Select Colour" ) || ( jQuery("#att2<venda_invtref>").val() == "Select Size" ) ) {
+			alert("Please select a Colour and Size")
+			return false;
+		} else {return true;}
+	});
+	
+});
+</script>

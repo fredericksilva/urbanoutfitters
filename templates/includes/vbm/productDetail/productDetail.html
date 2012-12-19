@@ -27,7 +27,7 @@ jQuery('#addtobasket,.buy,.preorder').click(function() {
 });
 
 function trackToVBM() {
-var vbmLinks = (jQuery("#vbmProds a"));
+var vbmLinks = (jQuery("#availUL a"));
 for (var i=0; i<vbmLinks.length; i++) {
 		vbmLinks[i].href = (vbmLinks[i].href+"?vbmrec=true");
 }};
@@ -35,7 +35,7 @@ for (var i=0; i<vbmLinks.length; i++) {
 var timer;
 
 function attachTrackToVBMProds() {
-	if(document.getElementById("vbmProds")) {
+	if(document.getElementById("availUL")) {
 		trackToVBM();
 		clearTimeout(timer);
 	} else {

@@ -530,7 +530,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	// Reset the UI.
 	EmwbisID.addClass("Re-paint-out");
 	stockFeedbackBox.removeClass("In_stock_box Out_of_stock_box");
-	addToBasketLinks.css({"opacity":"1", "cursor":"pointer"});
+	addToBasketLinks.css({"cursor":"pointer"}).addClass('activeBuyButton');
 	
 	switch(stockstatus) {
 	
@@ -580,7 +580,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 					}
 					else{
 						addproductID.addClass("Re-paint");
-						addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
+						addToBasketLinks.css({"cursor":"default"}).removeClass('activeBuyButton');
 					}
 				}
 		break;
@@ -599,7 +599,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		default:
 			// Not Available
 			addproductID.addClass("Re-paint");
-			addToBasketLinks.css({"opacity":"0.8", "cursor":"default"});
+			addToBasketLinks.css({"cursor":"default"}).removeClass('activeBuyButton');
 	}
 
 	jQuery('#oneProduct_' + uID + ' .attrFeedback  #stockstatus').hide().text(stockFeedback).addClass("Re-paint");
@@ -806,7 +806,7 @@ Venda.Attributes.SelectedValues = function (att1,att2,att3,att4, uID){
 				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').addClass("Re-paint-out");
 			}
 			else {
-				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').hide().text(productstatus.substring(0, productstatus.length-2)).addClass("Re-paint");
+				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').hide().text("").addClass("Re-paint");
 			}
 	
 		}
@@ -1202,15 +1202,17 @@ Venda.Attributes.ImageSwap = function(att) {
 	for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 		if(Venda.Attributes.storeImgsArr[i].param === att) {
 			obj = Venda.Attributes.storeImgsArr[i];
+			Venda.Attributes.imgParam = i;
 			if(obj.images.imgL.length == obj.images.imgM.length){
-  			Venda.Attributes.imgParam = i;
   			jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ");'>FULL IMAGE</a>");
+			} else {
+  			jQuery("#productdetail-viewlarge").html("");
 			}
 		}
 	}
 	if(obj) {
   	for(var i = 0; i < obj.images.imgM.length; i++) {
-      if(obj.images.imgL[i] && jQuery("#content-prodDetail").length){
+      if(obj.images.imgL.length == obj.images.imgM.length){
         sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
       } else {
         sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
@@ -1226,7 +1228,7 @@ Venda.Attributes.ImageSwap = function(att) {
         jQuery('.uo-product-slider .flex-control-nav li a').append('/' + slideTot);
       }
     });	
-    jQuery("#content-prodDetail .uo-product-slider").hover(function() {
+    jQuery(".uo-product-slider").hover(function() {
       if(!jQuery('.cloud-zoom, .cloud-zoom-gallery').data('zoom')){
         jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
       }

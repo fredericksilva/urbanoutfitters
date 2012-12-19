@@ -1,4 +1,4 @@
-<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+<venda_inctemplate name=htmlEmailDetblocks,type=includes/emailContents>
 
 <html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
@@ -9,7 +9,7 @@
 </head>
 <body style="width:500px; color:#000; background:#fff;">
 
-<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+<venda_inctemplate name=htmlEmailCssEtc,type=includes/emailContents>
 
 <br><br>
 <venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
@@ -29,7 +29,7 @@
 </venda_block label=1023>
 <br><br>
 
-<venda_inctemplate name=htmlEmailHeader,type=includes>
+<venda_inctemplate name=htmlEmailHeader,type=includes/emailContents>
 
 <!-- for standard orders -->
 <venda_block label=66,ohreplnbr=null>
@@ -45,9 +45,9 @@
 	<venda_block label=1043,ohusgrrf=guest_fr><p>Nous souhaitons vous faire savoir que votre <venda_block label=68,ohpaytype=6>échange </venda_block label=68>gratuit a été traité, et devrait être expédié sous peu. Votre numéro de commande est le <strong><venda_ohordnum></strong>.</p></venda_block label=1043>	
 </venda_block label=67>
 
-<!--venda_inctemplate name=htmlEmailMessage,type=includes-->
+<!--venda_inctemplate name=htmlEmailMessage,type=includes/emailContents-->
 
-<venda_inctemplate name=htmlEmailBody,type=includes>
+<venda_inctemplate name=htmlEmailBody,type=includes/emailContents>
 
 <venda_block label=1051,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
 <p>We are now going to get busy picking and packing your order, so that we can get it shipped out to you as soon as possible.</p>
@@ -107,7 +107,7 @@ Le prix des articles annulés n'est évidemment pas débité sur votre carte de créd
 <p>Merci d'avoir fait vos achats sur <a href="http://www.urbanoutfitters.fr/">http://www.urbanoutfitters.fr</a></p>
 </venda_block label=1053>
 
-<venda_inctemplate name=htmlEmailFooter,type=includes>
+<venda_inctemplate name=htmlEmailFooter,type=includes/emailContents>
 
 </body>
 </html>

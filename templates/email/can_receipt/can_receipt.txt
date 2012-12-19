@@ -1,4 +1,4 @@
-<venda_inctemplate name=textEmailDetblocksCancel,type=includes>
+<venda_inctemplate name=textEmailDetblocksCancel,type=includes/emailContents>
 
 ==============================================================================
 
@@ -12,7 +12,7 @@
 
 
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 
 <venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>Thank you for visiting UrbanOutfitters.co.uk. Unfortunately we were unable to despatch some or all the items in order number <venda_ohordnum>.</venda_block label=1021>
 <venda_block label=1022,ohusgrrf=guest_de>Vielen Dank für Ihren Besuch bei <venda_ebizname>. Leider können wir einige oder alle bestellten Artikel nicht versenden. Die Auftragsnummer lautet <venda_ohordnum>.</venda_block label=1022>
@@ -21,7 +21,7 @@
 
 
 
-<venda_inctemplate name=textEmailBodyCancel,type=includes>
+<venda_inctemplate name=textEmailBodyCancel,type=includes/emailContents>
 
 <venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>We apologise for any inconvenience this may have caused. If you have any questions regarding this order, please contact us at <venda_ebizemail> or ring us at <venda_ebizarea> <venda_ebizphone> Mon-Fri, 9:00-18:00.
 
@@ -40,4 +40,4 @@ Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr/.
 
 
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

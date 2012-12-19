@@ -1,4 +1,4 @@
-﻿<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+﻿<venda_inctemplate name=htmlEmailDetblocks,type=includes/emailContents>
 <html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
 <head>	
@@ -8,9 +8,9 @@
 <body style="width:500px; color:#000; margin:5px 20px; background:#fff;">
 <div id="emailBody" style="width:500px; margin:0; padding:0; font-size:12px; font-family:Arial; ">
 
-<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+<venda_inctemplate name=htmlEmailCssEtc,type=includes/emailContents>
 <div id="logo">
-	<venda_inctemplate name=htmlEmailLogo,type=includes>
+	<venda_inctemplate name=htmlEmailLogo,type=includes/emailContents>
 	<venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr><h1><venda_block label=76,ohreplnbr=null>Confirmation of your order OR Your subscription request</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Free</venda_block label=78> Replacement Order</venda_block label=77> - <venda_ohordnum></h1></venda_block label=1021>
 	<venda_block label=1022,ohusgrrf=guest_de><h1><venda_block label=76,ohreplnbr=null>Bestätigung Ihrer Bestellung ODER Ihres Abos Bestellung für</venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6> Kostenlose</venda_block label=78> Ersatzware</venda_block label=77> - <venda_ohordnum></h1></venda_block label=1022>	
 	<div class="clear">&nbsp;</div>
@@ -56,7 +56,7 @@
 <!-- ***************************************************************** -->
 
 
-<venda_inctemplate name=htmlEmailBody,type=includes>
+<venda_inctemplate name=htmlEmailBody,type=includes/emailContents>
 
 <venda_block label=68,ohreplnbr=null>
 <!-- for standard orders -->

@@ -4,6 +4,10 @@
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/tiny-scrollbar.js"></script>
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 <div id="content-search-body">
+<!-- PULL IN PRODUCT LIST EDITORIAL PAGE -->
+<div class="editorialPage"><venda_tpxt mode=get,name=categoryTopBanner></div>
+<!-- PRODUCT LIST TOP BANNER -->
+<div id="height10"></div>
 <div class="icxthiderefine" style="display:none;"><venda_tpxt mode=get,name=icatHideRefine></div>
 <venda_block label=151,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1><script type="text/javascript"><venda_inctemplate type=includes,name=powerreviewscripts></script></venda_block label=151>
     <a id="content-top"></a>
@@ -20,12 +24,12 @@
                 </div>
                 <venda_block label=345,totalresults!=0>
                     <div class="box boxSearchAlt">
-                        <div class="boxContent">
+                        <div class="boxContent pagnContents">
                             <div class="resultDetail">
                             <venda_pagination template=pagination1>
                             	<div class="perLine">
-	                            	<div class="threePerLine" style="display:none;"><span><a class="threePerLineLink" href="<venda_searchurl>">3 Per Line</a></span></div>
-	                            	<div class="fivePerLine"><span><a class="fivePerLineLink" href="<venda_searchurl>">5 Per Line</a></span></div>
+	                            	<div class="threePerLine" style="display:none;"><span><a class="threePerLineLink updatesearch" href="<venda_searchurl>">3 Per Line</a></span></div>
+	                            	<div class="fivePerLine"><span><a class="fivePerLineLink updatesearch" href="<venda_searchurl>">5 Per Line</a></span></div>
                             	</div>
                                 <div class="sort"><span class="sort-sprite"></span>
                                     <venda_detblock_sortedby>
@@ -72,7 +76,7 @@
                     <ul class="prods prodsFiveColumns prodsGrid">
                         <venda_detail_results>
                     </ul>
-                    <div class="boxContent">
+                    <div class="boxContent pagnContents">
                     <div class="pagn pagnBtm">
                     <div class="resultDetail">
                     	<venda_pagination template=pagination1>
@@ -84,7 +88,7 @@
 
             <venda_block label=346,totalresults=0>
     		<div class="box boxSearchAlt">
-    			<div class="boxContent">
+    			<div class="boxContent pagnContents">
                     <h4>
                         <venda_text id=desktop.info.search_your_search> <venda_block label=95,primarysearchtext=notnull><venda_text id=desktop.info.search_for> <span class="primarysearchtext">"<span class="keywordsearchtext"><venda_primarysearchtext></span>"</span> </venda_block label=95><venda_text id=desktop.info.search_no_results>
                     </h4>

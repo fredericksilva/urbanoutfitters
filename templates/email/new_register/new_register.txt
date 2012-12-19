@@ -102,4 +102,4 @@ Urban Outfitters Europe
 
 http://www.urbanoutfitters.fr
 </venda_block label=1013>
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

@@ -52,4 +52,4 @@ Thanks and we look forward to you visiting our site soon.
 
 
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

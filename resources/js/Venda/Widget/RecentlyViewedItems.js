@@ -60,9 +60,16 @@ Venda.Widget.RecentlyViewedItems.saveRecentlyViewedItems = function (item, cj, n
 Venda.Widget.RecentlyViewedItems.setRecentlyViewedItems = function (invtref,numberofrvi) {
 	var cj = new CookieJar({expires: 3600 * 24 * 7, path: '/'});
 	var rviCookie = cj.get(Venda.Widget.RecentlyViewedItems.COOKIE_NAME);
-		if(rviCookie) {
-			document.getElementById('showRVI').style.display="block";
-	 }
+	if(rviCookie) {
+		document.getElementById('showRVI').style.display="block";
+		if (rviCookie.indexOf(",") != -1) {
+			jQuery(".rviTab").show();
+		}
+	}
+	if (!rviCookie || rviCookie.indexOf(",") < 0) {
+		jQuery(".rviTab").hide();
+		jQuery(".vbmLine").hide();
+	}
 	Venda.Widget.RecentlyViewedItems.saveRecentlyViewedItems(invtref, cj,numberofrvi);
 };
 /**

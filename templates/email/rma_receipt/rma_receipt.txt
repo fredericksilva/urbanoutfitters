@@ -50,8 +50,8 @@ Les articles suivants ont été retournés :
 
 
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 
 <venda_detail1>
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

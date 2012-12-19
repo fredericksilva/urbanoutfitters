@@ -8,4 +8,4 @@ It's <venda_recfname>'s <venda_remtype> on <venda_remday> <venda_remmonth>. You 
 			
 Visit the <venda_ebizname> site now for some great gift ideas!<cr><cr>
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

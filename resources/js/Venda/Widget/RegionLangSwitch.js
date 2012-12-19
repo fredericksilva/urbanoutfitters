@@ -3,6 +3,7 @@
  *
  * @author Arunee Keyourawong (May) <mayk@venda.com>
  * @author Matt Wyatt <mwyatt@anthropologie.com>
+ * A little bit of a mess, this is in need of a reworking
  */
 Venda.namespace("Widget.RegionLangSwitch");
 var sURL = unescape(location.href);	
@@ -13,12 +14,27 @@ Venda.Widget.RegionLangSwitch.ebizURL = "";
 Venda.Widget.RegionLangSwitch.isSearch = "";
   
 jQuery(function(){
-	currRegion = Venda.Widget.RegionLangSwitch.currRegion;		
-	currLang = {
-  	"http://urbanoutfitters.uat.venda.com" : "en",
+  if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters5.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda") {
+    currLang = {
+  	"http://urbanoutfitters5.uat.venda.com" : "uk",
+  	"http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" : "fr",
+  	"http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda" : "de"
+  	}    
+  }
+  else if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters/sduat/dvenda"){
+  	currLang = {
+  	"http://urbanoutfitters.uat.venda.com" : "uk",
   	"http://www.urbanoutfitters.fr/sdurbanoutfitters/sduat/dvenda" : "fr",
   	"http://www.urbanoutfitters.de/sdurbanoutfitters/sduat/dvenda" : "de"
-	}
+  	}
+  } else {
+  	currLang = {
+  	"http://www.urbanoutfitters.co.uk" : "uk",
+  	"http://www.urbanoutfitters.fr" : "fr",
+  	"http://www.urbanoutfitters.de" : "de"
+  	}
+  }
+	currRegion = Venda.Widget.RegionLangSwitch.currRegion;		
 	jQuery("#language-sel #language").attr('class', currLang[Venda.Widget.RegionLangSwitch.ebizURL]).find(".lang-copy").text(currLang[Venda.Widget.RegionLangSwitch.ebizURL]);
 	jQuery(".region #" + currRegion + ", .lang #" + currLang[Venda.Widget.RegionLangSwitch.ebizURL]).hide();
 	jQuery(".switcher-sel > a").click(function(){ 
@@ -48,12 +64,27 @@ Venda.Widget.RegionLangSwitch.doURL = function(setType,selectedObj,currSelected)
 var redirectURL = "",
     removeThese = [Venda.Widget.RegionLangSwitch.ebizURL, "&setlocn=eur", "&setlocn=restofworld"],
     currentLoc = sURL,
-    changeValue = jQuery(selectedObj).attr("id"),
-    langOptions = {
-      "en" : "http://urbanoutfitters.uat.venda.com",
+    changeValue = jQuery(selectedObj).attr("id")
+  if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters5.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda") {
+    var langOptions = {
+      "uk" : "http://urbanoutfitters5.uat.venda.com",
+      "de" : "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda",
+      "fr" : "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda"
+    } 
+  }
+  else if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters/sduat/dvenda"){
+    var langOptions = {
+      "uk" : "http://urbanoutfitters.uat.venda.com",
       "de" : "http://www.urbanoutfitters.de/sdurbanoutfitters/sduat/dvenda",
       "fr" : "http://www.urbanoutfitters.fr/sdurbanoutfitters/sduat/dvenda"
     }
+  } else {
+    var langOptions = {
+      "uk" : "http://www.urbanoutfitters.co.uk",
+      "de" : "http://www.urbanoutfitters.de",
+      "fr" : "http://www.urbanoutfitters.fr"
+    }
+  }
     
   for(var i=0; i<removeThese.length; i++) {
     currentLoc = currentLoc.replace(removeThese[i], "")

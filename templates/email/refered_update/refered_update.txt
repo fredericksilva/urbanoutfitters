@@ -42,4 +42,4 @@ Terms and conditions of use:<cr>
 - Normal <venda_ebizname> terms and conditions for using the <venda_ebizname> website apply except when they conflict with these terms and conditions.<cr>
 - The voucher cannot be used to purchase gift certificates, or used against the value of postage and packing, delivery and gift wrap charges.<cr>
 - The voucher cannot be used to pay for orders that have aleady been placed online.<cr>
-<cr>Thanks and we look forward to you visiting our site soon.<cr><venda_ebizurl><cr><cr><cr><venda_inctemplate name=textEmailFooter,type=includes><cr>==============================================================================<cr>
+<cr>Thanks and we look forward to you visiting our site soon.<cr><venda_ebizurl><cr><cr><cr><venda_inctemplate name=textEmailFooter,type=includes/emailContents><cr>==============================================================================<cr>

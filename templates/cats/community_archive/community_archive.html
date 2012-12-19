@@ -32,31 +32,31 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	
 	//Show/hide sections when title clicked
-	$('.comFull h1').click(function() {
-			$(this).next().toggle();
-			$(this).toggleClass('active');
+	jQuery('.comFull h1').click(function() {
+			jQuery(this).next().toggle();
+			jQuery(this).toggleClass('active');
 			return false;
 		}).next().hide();
 	
 	//Show/hide all sections link
 	var flip = 0;
-	$('.showhideall').click(function() {
-			$('.commArchive').toggle( flip++ % 2 == 0 );
-			$('.comFull h1').removeClass('active');
+	jQuery('.showhideall').click(function() {
+			jQuery('.commArchive').toggle( flip++ % 2 == 0 );
+			jQuery('.comFull h1').removeClass('active');
 			return false;
 		})
 	
 	//Show section if location.hash is present else show all sections
 	if (location.hash) {
-		$('h1.'+location.hash.slice(1)).addClass('active');
-		$('h1.'+location.hash.slice(1)).next().show();	
+		jQuery('h1.'+location.hash.slice(1)).addClass('active');
+		jQuery('h1.'+location.hash.slice(1)).next().show();	
 	}
 	else {
-		$('.commArchive').show();
-		$('.comFull h1').addClass('active');
+		jQuery('.commArchive').show();
+		jQuery('.comFull h1').addClass('active');
 		var flip = 1;
 	};
 });

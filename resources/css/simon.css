@@ -1,0 +1,2456 @@
+/* layout for checkout css */
+
+/* @override http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/css/layout.css */
+
+
+
+/* form elements (mostly on checkout pages) */
+.myAccountTemplate h1 {
+    border-bottom: 2px solid #000000;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.myAccountTemplate h2,
+.checkoutTemplate h2  {
+    font-size: 1.4em;
+}
+.myAccountTemplate input[type="radio"], .myAccountTemplate input[type="checkbox"],
+.checkoutTemplate input[type="radio"], .checkoutTemplate input[type="checkbox"] {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+.myAccountTemplate input, .myAccountTemplate select, .containerpwrmthankyou .buttonArrow,
+.checkoutTemplate input, .checkoutTemplate select {
+    background-color: #FBF7F4;
+    border: 1px dotted #4C4C4C;
+    height: 31px;
+    line-height: 27px;
+    margin-left: 10px;
+    padding: 0 0 0 10px;
+    vertical-align: middle;
+}
+
+
+#yourbasket input, #yourbasket select
+{
+    background-color: #FFF;
+}
+.myAccountTemplate select
+{
+    width: 152px;
+    background-position: right -205px;
+    border: 1px dotted #4C4C4C;
+}
+.editcontactaddress span.select, .addcontactaddress span.select, .containeroradeditadd span.select
+{
+    background-position: 66px -202px;
+    width: 340px;
+}
+.myAccountTemplate span.select
+{
+    background-position: 0 -202px;
+    width: 272px;
+}
+.myAccountTemplate label {
+    display: block;
+    float: left;
+    font-weight: normal;
+    height: 33px;
+    line-height: 33px;
+    margin-left: 18px;
+    margin-right: 10px;
+    text-align: right;
+    width: 160px;
+}
+.myAccountTemplate label.dontFloat,
+.checkoutTemplate label.dontFloat {
+    display: inline-block;
+    float: none;
+    text-align: left;
+    width: 550px;
+}
+.myAccountTemplate input, .myAccountTemplate select, .containerpwrmthankyou .buttonArrow {
+    background-color: #FBF7F4;
+    border: 1px dotted #4C4C4C;
+    height: 31px;
+    line-height: 27px;
+    margin-left: 10px;
+    padding: 0 0 0 10px;
+    vertical-align: middle;
+}
+.myformcommoption span.select
+{
+    margin: 0 0 0 111px;
+}
+.standarditem .quantity .optionRight input
+{
+    height: 17px;
+    line-height: 17px;
+    margin: 0;
+    padding-left: 6px;
+    width: 17px;
+}
+.promofield label
+{
+    width: 150px;
+}
+.wizrtable label
+{
+    display: none;
+}
+.refrTerm
+{
+    margin-top: 20px;
+}
+.refrTerm label
+{
+    display: inline;
+    float: none;
+}
+#paymentdetails fieldset .credit label, #paymentdetails fieldset .paypal label
+{
+    text-align: left;
+    margin-left: 17px;
+    text-align: left;
+}
+#cctoggle input, #cctoggle select, .f-pwrmemail input
+{
+    width: 348px;
+}
+#cardtype
+{
+    display: inline;
+}
+.editcontactaddress select, .containeroradeditadd select, #cctoggle select
+{
+    width: 360px;
+}
+#cctoggle #startdateshow select, #cctoggle #expiryshow select
+{
+    float: left;
+    margin-left: 0;
+    width: 120px;
+}
+.myAccountTemplate select
+{
+    width: 292px;
+}
+#ohcccscshow input, #issuenumber input
+{
+    margin-right: 40px;
+    width: 108px;
+}
+#ohcccscshow a, #issuenumber a, #ccSave label a
+{
+    color: #FF0000;
+    text-decoration: none;
+}
+#ohcccscshow a:hover, #issuenumber a:hover, #ccSave label a:hover
+{
+    text-decoration: underline;
+}
+#cctoggle div
+{
+    overflow: hidden;
+    padding: 8px 0;
+}
+#cctoggle div div
+{
+    min-height: 37px;
+    padding: 0;
+}
+.cardDate
+{
+    display: inline;
+    width: 142px;
+    margin-left: 10px;
+}
+.cardDate span.select
+{
+    background-position: -173px -202px;
+    margin-left: 0;
+    min-height: 19px;
+    width: 100px;
+}
+.re-waiHide, .skipToContent
+{
+    display: none;
+}
+fieldset div div
+{
+    clear: none;
+    float: left;
+    width: 33%;
+}
+fieldset div div.formRow, fieldset div
+{
+    clear: both;
+}
+fieldset div div.formRow, .addressform fieldset div
+{
+    width: 100%;
+    margin-bottom: 16px;
+}
+#secondloginform fieldset div div.last,
+#loginform fieldset div div.last
+{
+    margin-bottom: 10px;
+}
+.checkoutLoginAlR { }
+.f-oradename div.nameAdvice
+{
+    font-style: italic;
+    text-align: right;
+    width: 557px;
+}
+.f-oradename div.formRow label
+{
+    font-style: normal;
+}
+.f-oradename div.addressName
+{
+    margin-bottom: 7px;
+}
+.addressform fieldset div div, .addressform fieldset div.order-summary-box-footer
+{
+    margin-bottom: 0;
+}
+fieldset.pay-option
+{
+    color: #999;
+    border: none;
+    clear: both;
+    padding: 0 6px 0 10px;
+}
+fieldset.pay-option label
+{
+    float: left;
+    width: 110px;
+    padding-top: 0 !important;
+    padding-top: /**/ 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+fieldset.pay-option a
+{
+    text-decoration: none;
+    color: #FA4667;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+/* other checkout classes */
+.required
+{
+    color: #4C4C4C;
+}
+/*.dontFloat {
+	float:none;
+	width:auto;
+	}
+.invisible {
+	color:#fff;
+	}*/
+/*Start checkout layout for ORDER SUMMARY*/
+/* checkout banner */
+
+.checkoutHeader {position: relative;}
+.checkoutHeaderLinks
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.checkoutHeaderLinks ul
+{
+    float: right;
+}
+.checkoutHeaderLinks li
+{
+    border-right: 1px dotted #656565;
+    float: left;
+    padding: 0 7px 4px;
+}
+.checkoutHeaderLinks li.home
+{
+    border: none;
+}
+.checkoutHeaderLinks li a
+{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.checkoutHeaderLinks ul, .checkoutHeader, .checkoutStepIndicators
+{
+    overflow: hidden;
+}
+.checkoutHeader
+{
+    padding-top: 20px;
+}
+.checkoutHeader #pcilogo
+{
+    float: left;
+}
+.checkoutHeader .checkoutlogo
+{
+    margin-left: 330px;
+}
+.stepWrapper
+{
+    background: url(../images/redesign/bg_checkoutStepsRepeat.png) repeat-x 0 50%;
+    margin-bottom: 29px;
+}
+.checkoutStepIndicators li
+{
+    float: left;
+}
+.checkoutStepIndicators li
+{
+    height: 25px;
+    border: solid 1px red;
+    margin-right: 30px;
+}
+.checkoutStepIndicators li.checkoutLogin
+{
+    background-position: 0 -366px;
+    width: 125px;
+    margin-left: 100px;
+}
+.checkoutStepIndicators li.checkoutLogin.onStep
+{
+    background-position: -127px -366px;
+}
+.checkoutStepIndicators li.checkoutStep1
+{
+    background-position: 0 -397px;
+    width: 105px;
+}
+.checkoutStepIndicators li.checkoutStep1.onStep
+{
+    background-position: -107px -397px;
+}
+.checkoutStepIndicators li.checkoutStep2
+{
+    background-position: 0 -428px;
+    width: 116px;
+}
+.checkoutStepIndicators li.checkoutStep2.onStep
+{
+    background-position: -118px -428px;
+}
+.checkoutStepIndicators li.checkoutStep3
+{
+    background-position: 0 -459px;
+    width: 178px;
+}
+.checkoutStepIndicators li.checkoutStep3.onStep
+{
+    background-position: -180px -459px;
+}
+.checkoutStepIndicators li.checkoutStep4
+{
+    background-position: 0 -490px;
+    width: 113px;
+}
+.checkoutStepIndicators li.checkoutStep4.onStep
+{
+    background-position: -115px -490px;
+    margin-right: 0;
+}
+.signinContent, .signinContent *, #yourbasket, #orderconfirmation
+{
+    color: #4C4C4C;
+}
+#orderconfirmation, .signinContent, #orderreceipt, #orderdetail, .checkoutTemplate .checkoutL
+{
+    margin: 0 auto;
+    width: 757px;
+}
+.myAccountTemplate .checkoutL
+{
+    width: 690px;
+    left: 0;
+}
+#col-two-three-full
+{
+    width: 930px;
+    background: #FFF;
+    float: left;
+    margin: 0 0 20px 0;
+}
+/*\*/
+html > body*#col-two-three-full
+{
+    width: 930px;
+    background: #FFF;
+    float: left;
+    margin: 0 0 20px 0;
+}
+/**/
+#col-two-order-summary
+{
+    background: #FFF;
+    width: 455px;
+    margin: 0 20px 0 0;
+    padding: 0;
+}
+#col-two-order-summary-inside
+{
+    margin: 0;
+}
+/*\*/
+html > body*#col-two-order-summary-inside
+{
+    margin: 0;
+}
+/**/
+#col-two-order-summary-box
+{
+    margin: 0;
+    padding: 0;
+}
+#col-three-order-summary
+{
+    background: #FFF;
+    width: 455px;
+    margin: 0;
+    padding: 0;
+}
+#col-three-order-summary-inside
+{
+    margin: 0;
+}
+#orcfcomment
+{
+    height: 218px;
+}
+#orderdetail #orcfcomment { display:none;}
+.order-summary-box, .signinContent .box, .addressform fieldset, #orderreceipt #paymentdetailSection, .ohSumDetail
+{
+    margin: 0 0 20px 0;
+    position: relative;
+}
+.order-summary-box p
+{
+    line-height: 1.5em;
+    margin: 18px 20px;
+    text-transform: capitalize;
+}
+#contactdetails p,
+.order-summary-shipping-to p 
+{
+    min-height: 94px;
+}
+.waitMsg img 
+{
+    margin: 83px 0 0 75px;
+}
+.order-summary-box p strong
+{
+    display: block;
+    margin: 10px 0 -14px;
+}
+.order-summary-box .edit
+{
+    margin: 16px 30px 19px;
+    margin: 0 30px 0;
+}
+
+#order-summary-order-total
+{
+}
+.order-summary-delivery-options
+{
+}
+.order-summary-delivery-options input
+{
+    float: left;
+    margin: 0 10px 0 0;
+}
+#orderdetail .order-summary-shipping-to .OrderSummaryHdr
+{
+    background-position: -1px -361px;
+}
+#orderdetail .order-summary-shipping-to
+{
+    width: 100%;
+}
+
+#orcfcomment p
+{
+    font-size: 0.9em;
+    margin-left: 100px;
+    margin-top: 5px;
+    text-align: right;
+    width: 447px;
+}
+.OrderSummaryHdr span
+{
+    background-position: 17px -524px;
+    float: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 28px;
+    padding: 0 2px;
+    width: 28px;
+}
+.OrderSummaryHdr span.expanded
+{
+    background-position: 17px -550px;
+}
+#standardLead .order-summary-shipping-to, .order-summary-shipping-to, #contactdetails
+{
+    background: url(../images/redesign/bg_orderSmlRepeat.png) repeat-y 0 0;
+}
+.special, .ohSumDetail, #orderreceipt #ordersummary, #extendedUserFields, .addressform fieldset, .signinContent .box, .order-summary-items, .order-summary-delivery-options, #orderTotals, #paymentdetailSection, #orcfcomment, #orderreceipt .order-summary-shipping-to, #orderdetail .order-summary-shipping-to
+{
+    background: url(../images/redesign/bg_orderLgeRepeat.png) repeat-y -1px 0;
+}
+.addressform fieldset.f-oradename
+{
+    background: url(../images/redesign/bg_orderLgeTanRepeat.png) repeat-y -1px 0;
+}
+.addressform fieldset.f-oradename input
+{
+    background-color: #EBDBCA;
+}
+.myAccountTemplate fieldset.f-oradename
+{
+    background: none;
+}
+.myAccountTemplate .addressform fieldset.f-oradename input
+{
+    background-color: #FBF7F4;
+}
+#orderreceipt #standardLead .order-summary-box-footer, .order-summary-box-footer, #orderreceipt .order-summary-shipping-to .order-summary-box-footer, #orderdetail .order-summary-shipping-to .order-summary-box-footer
+{
+    background-position: -1px -394px;
+    clear: both;
+    height: 12px;
+    background-color: #F7F0EA;
+}
+.f-oradename .order-summary-box-footer
+{
+    background-position: -1px -668px;
+}
+.f-oradename legend
+{
+    background-position: -1px -637px;
+}
+#standardLead .order-summary-shipping-to .order-summary-box-footer, #contactdetails .order-summary-box-footer, .order-summary-shipping-to .order-summary-box-footer
+{
+    background-position: -304px -313px;
+}
+.special .order-summary-box-footer
+{
+    background-position: -1px -394px;
+}
+#orderTotals
+{
+    overflow: hidden;
+}
+.order-summary-delivery-options ul
+{
+    margin-top: 20px;
+}
+.order-summary-delivery-options li .shipMethod
+{
+    border-bottom: 1px solid #656565;
+    border-top: 1px solid #656565;
+    overflow: hidden;
+    padding: 10px 0;
+}
+.order-summary-delivery-options li .shipMethod label
+{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.order-summary-delivery-options li li, .additionalInformation li
+{
+    background-position: -230px -45px;
+    font-size: 0.9em;
+    padding: 1px 0 1px 22px;
+    text-indent: 0 !important;
+}
+#ccSave label, #paymentdetails .credit label, #paymentdetails .paypal label, .order-summary-delivery-options li .shipMethod label
+{
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    text-align: left;
+}
+.order-summary-box table, #orderreceipt #paymentdetails table, #orderdetail #paymentdetails table, .ohSumDetail table
+{
+    margin: -20px 30px 0;
+    width: 710px;
+}
+.order-summary-box table table, .ohSumDetail table table
+{
+    margin: 0 0 16px;
+}
+.order-summary-box .item .items-product-name
+{
+}
+.order-summary-box .price, .order-summary-box .totalprice, .order-summary-box .quantity, .order-summary-box .priceeach, .order-summary-box .items-total, .order-summary-box .items-qty
+{
+    border-left: dotted 1px #656565;
+    padding-left: 20px;
+}
+
+.order-summary-box table td
+{
+    padding: 20px 0 0;
+    border-top: solid 1px #656565;
+}
+.order-summary-box table tr:first-child td
+{
+    border-top: none;
+}
+.order-summary-box table table td
+{
+    padding: 0;
+    border-top: none;
+    width: 104px;
+}
+.order-summary-box table table td img
+{
+    height: 127px;
+    width: 85px;
+}
+.order-summary-box .item
+{
+    width: auto;
+}
+.order-summary-box td.item,
+.order-summary-box td.priceeach,
+.order-summary-box td.items-qty,
+.order-summary-box td.items-total {
+    vertical-align: top;
+}
+.items-product-name,
+.items-product-colour,
+.items-product-size {
+    display:block;
+    margin-bottom:5px;
+}
+.items-product-size {
+    margin-bottom:0;
+}
+.order-summary-box .price, .order-summary-box .priceeach
+{
+    width: 147px;
+}
+.order-summary-box .quantity, .order-summary-box .items-qty
+{
+    width: 60px;
+}
+.order-summary-box .totalprice, .order-summary-box .items-total
+{
+    width: 105px;
+}
+.order-summary-box .totalprice
+{
+    text-align: left;
+}
+
+.order-summary-box th
+{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#orderdetail form a[onclick]
+{
+}
+#yourbasket #additionalservices, div.orscTotal, table.orderdetails
+{
+    margin: 0 20px;
+    width: 250px;
+    line-height: 37px;
+}
+div.orscTotal {
+    height: 54px;
+}
+#yourbasket #additionalservices
+{
+    line-height: normal;
+}
+.orscTotal
+{
+    border-bottom: 1px solid #656565;
+    border-top: 1px solid #656565;
+}
+.orscTotal span, .orscTotalFig
+{
+    display: inline-block;
+}
+.hdrSubTotal, .orscTotal span
+{
+    text-align: left;
+    width: 189px;
+}
+.hdrSubTotal, .orscTotal span, .hdrDiscount
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    position:relative;
+}
+.orscTotal span span {
+    font-size: 0.9em;
+    left: 0;
+    position: absolute;
+    text-transform: lowercase;
+    top: 18px;
+}
+span.orscTotalFig
+{
+    font-weight: normal;
+}
+.subtotal, .orscTotal span.orscTotalFig
+{
+    width: 57px;
+    text-align: right;
+    font-weight: bold;
+}
+#yourbasket #additionalservices label, #yourbasket #additionalservices input
+{
+    display: block;
+    float: left;
+    line-height: normal;
+    margin-bottom: 0;
+    padding: 0 0 0 10px;
+    width: 102px;
+}
+#yourbasket #additionalservices label
+{
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    width: 125px;
+}
+#yourbasket #additionalservices .promofield
+{
+    margin-top: 20px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+#yourbasket #additionalservices input#vcode_submit_shopcart
+{
+    float: right;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 49px;
+}
+
+.OrderSummaryHdr, .signinContent .box h2, .addressform legend
+{
+    background-color: #F7F0EA;
+    background-position: -1px -361px;
+    font-size: 1.1em;
+    height: 28px;
+    line-height: 2.3em;
+    margin: 0;
+    padding: 0 19px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+/* narrow panel */
+#ordersummary #leadPackage .order-summary-shipping-to, #ordersummary #leadPackage .order-summary-billing-to, #contactdetails
+{
+    float: right;
+    width: 374px;
+}
+/* narrow panel header */
+#orderconfirmation #leadPackage .order-summary-shipping-to .OrderSummaryHdr, #ordersummary #leadPackage .order-summary-shipping-to .OrderSummaryHdr, #ordersummary #leadPackage .order-summary-billing-to .OrderSummaryHdr, #contactdetails .OrderSummaryHdr
+{
+    background-position: -305px -278px;
+}
+.specialPackage .OrderSummaryHdr
+{
+    background-position: -1px -407px;
+}
+.order-summary-items .OrderSummaryHdr
+{
+    margin-bottom: 0;
+}
+#orderconfirmation .order-summary-items table
+{
+    margin-top: 0 !important;
+}
+#orderreceipt #orcfcomment
+{
+    display: none;
+}
+#orderTotals .OrderSummaryHdr, .ohSumDetail .OrderSummaryHdr
+{
+    background-position: -1px -438px;
+}
+#paymentdetailSection .OrderSummaryHdr
+{
+    background-position: -1px -469px;
+}
+#specialLead { }
+#orderconfirmation #leadPackage .order-summary-shipping-to
+{
+    width: 374px;
+    background: url(../images/redesign/bg_orderSmlRepeat.png) repeat-y 0 0;
+    float: left;
+}
+#orderconfirmation #leadPackage .special.order-summary-shipping-to .OrderSummaryHdr
+{
+    background-position: -304px -328px;
+}
+/**/
+#orderconfirmation #leadPackage .order-summary-shipping-to .order-summary-box-footer
+{
+    background-position: -304px -313px;
+}
+/**/
+.standardPackage
+{
+}
+.standardPackage .order-summary-shipping-to
+{
+    width: 100%;
+    background: url(../images/redesign/bg_orderLgeRepeat.png) repeat-y 0 0;
+    float: left;
+}
+/*.standardPackage .order-summary-shipping-to .OrderSummaryHdr {background-position: 0px -361px;}*/
+.standardPackage .order-summary-shipping-to .order-summary-box-footer
+{
+    background-position: 0px -395px;
+}
+.bagbanner, .ordersummessage, .recieptmessage
+{
+    background-color: #B3AEAB;
+    text-align: center;
+    padding: 20px;
+    margin: 0 5px 20px 1px;
+}
+.bagbanner h2, .ordersummessage h2, .recieptmessage h2
+{
+    font-size: 2.2em;
+    font-weight: normal;
+    color: #000;
+}
+.bagbanner p, .ordersummessage p, .recieptmessage p
+{
+    font-size: 1.2em;
+    color: #000;
+}
+.bagbanner {
+	margin:25px 5px 20px 1px;
+}
+.order-summary-delivery-options ul, #orderconfirmation #additionalservices, #orderconfirmation #ordersummary, .order-summary-box table, #paymentdetailSection .paymentdetail, .order-summary-delivery-options ul
+{
+    margin: 20px 26px 0 21px;
+    overflow: hidden;
+}
+.order-summary-delivery-options ul ul
+{
+    margin: 20px 0 0;
+}
+
+#orderconfirmation #additionalservices, #orderconfirmation #ordersummary, .order-summary-delivery-options li, #orderTotalsTable
+{
+    float: left;
+    width: 338px;
+}
+#ordersummary h2
+{
+    display: none;
+}
+#ordersummary table, #orderreceipt #orderTotals table, #orderreceipt #paymentdetails table, #orderdetail #paymentdetails table, #orderTotalsTable table, .ohSumDetail table
+{
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 308px;
+}
+#ordersummary table table, #orderreceipt #orderTotals table table, #orderreceipt #paymentdetails table table, #orderdetail #paymentdetails table table, #orderTotalsTable table table, .ohSumDetail table table
+{
+    margin-top: 18px;
+    border: none;
+    background-color: #FAEC20;
+    width: 100%;
+}
+#ordersummary table th, #ordersummary table td, #orderreceipt #orderTotals table th, #orderreceipt #orderTotals table td, #orderreceipt #paymentdetails table th, #orderreceipt #paymentdetails table td, #orderdetail #paymentdetails table th, #orderdetail #paymentdetails table td, #orderTotalsTable table th, #orderTotalsTable table td, .ohSumDetail table th, .ohSumDetail table td
+{
+    text-align: left;
+    border-top: 1px solid #656565;
+    padding: 7px 0;
+}
+td .vat
+{
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    margin: -8px 0 10px;
+    text-align: left;
+}
+#ordersummary table td, #orderreceipt #orderTotals table td, #orderreceipt #paymentdetails table td, #orderdetail #paymentdetails table td, #orderTotalsTable table td, .ohSumDetail table td
+{
+    text-align: right;
+}
+#ordersummary table table th, #ordersummary table table td, #orderreceipt #orderTotals table table th, #orderreceipt #orderTotals table table td, #orderreceipt #paymentdetails table table th, #orderreceipt #paymentdetails table table td, #orderdetail #paymentdetails table table th, #orderdetail #paymentdetails table table td, #orderTotalsTable table table th, #orderTotalsTable table table td, .ohSumDetail table table th, .ohSumDetail table table td
+{
+    border-top: none;
+    padding: 6px 10px 5px;
+}
+.totals td .pounds {
+    display: block;
+    text-align: right;
+}
+#ordersummary table table td[colspan], #orderreceipt #orderTotals table table td[colspan], #orderreceipt #paymentdetails table table td[colspan], #orderTotalsTable table table td[colspan], .ohSumDetail table table td[colspan], #orderdetail #paymentdetails table td[colspan]
+{
+    padding: 5px 10px 14px;
+    text-align: left;
+}
+
+#orderreceipt #paymentdetails table, #orderdetail #paymentdetails table, #orderreceipt #orderTotals table, #orderTotalsTable
+{
+    margin-bottom: 10px;
+}
+#orderconfirmation #additionalservices, .order-summary-delivery-options li
+{
+    padding-left: 0;
+    padding-right: 17px;
+}
+#ordersummary, .order-summary-delivery-options li.express
+{
+    padding-left: 17px;
+    padding-right: 0;
+}
+#orderreceipt #ordersummary
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+.paymentdetail
+{
+    margin: 0 34px;
+}
+.coupon
+{
+    overflow: hidden;
+}
+
+#orderTotals #ajax-error
+{
+    margin-top: 20px;
+}
+.ordersummery #promotions, .ordersummery .error, #additionalservices .error
+{
+    border: 1px solid #656565;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+#additionalservices .error p, .ordersummery .error p, .ordersummery #promotions h2
+{
+    background: none repeat scroll 0 0 transparent;
+    color: #0071BB;
+    font-size: 1.1em;
+    height: auto;
+    line-height: 1.1em;
+    margin: 0;
+    padding: 5px 10px;
+    text-transform: none;
+}
+#additionalservices .error p, .ordersummery .error p
+{
+    color: #F9786A;
+}
+#promotions
+{
+}
+#promotions .promotionsBar h2
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    border-bottom: 1px solid #656565;
+    padding: 0 0 7px;
+    margin: 0;
+}
+#promotions .promotionItem
+{
+    border-bottom: 1px solid #656565;
+    padding: 7px 0px 7px;
+}
+#ordersummery #promotions .promotionItem
+{
+    border-bottom: none;
+    color: #0071BB;
+    padding: 5px 10px;
+    text-align: left;
+}
+.ohListVoucher
+{
+    float: right;
+}
+/**/
+.hdr-subject
+{
+    border-bottom: 2px solid #333;
+    color: #666666;
+    font-size: 1.1em;
+    padding: 13px 0 0 0;
+    letter-spacing: 1px;
+}
+.hdr-subject2
+{
+    border-bottom: 2px solid #333;
+    color: #DE75B0;
+    font-size: 1.1em;
+    padding: 13px 0 0 0;
+    letter-spacing: 1px;
+    
+}
+.hdr-subject3
+{
+    border-bottom: 2px solid #333;
+    color: #1F7AA9;
+    font-size: 1.1em;
+    padding: 13px 0 0 0;
+    letter-spacing: 1px;
+    
+}
+.mb8
+{
+    margin-bottom: 8px;
+}
+.ml10
+{
+    margin-left: 10px;
+}
+.mt2
+{
+    margin-top: 2px;
+}
+.mt5
+{
+    margin-top: 5px;
+}
+.shipmethod
+{
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.ship-details
+{
+    text-decoration: none;
+    color: #FA4667;
+    text-transform: capitalize;
+    margin: 0 0 0 5px;
+}
+a.ship-details:hover
+{
+    text-decoration: underline;
+}
+div#additional-svc
+{
+    margin: 0;
+    padding: 8px 0 0 0;
+}
+div#additional-svc div
+{
+    display: inline;
+    float: left;
+    margin: 0 0 0 18px;
+}
+div#additional-svc div.first
+{
+    margin: 0 0 0 5px;
+}
+* html #btn-place-order
+{
+    clear: both;
+    float: right;
+}
+#btn-place-order
+{
+    clear: both;
+    float: right;
+}
+* html .order-summary-textbox
+{
+    width: 130px;
+}
+.order-summary-textbox
+{
+    width: 132px;
+}
+/*\*/
+html > body*.order-summary-textbox
+{
+    margin-top: -2px;
+}
+/**/
+.order-summary-textbox2
+{
+    width: 29px;
+}
+/*\*/
+html > body*.order-summary-textbox2
+{
+    width: 29px;
+    margin-top: -2px;
+}
+/**/
+.selectcard
+{
+    width: 136px;
+}
+/*\*/
+html > body*.selectcard
+{
+    width: 139px;
+    margin-top: -2px;
+}
+/**/
+.order-summary-combo select
+{
+    width: 61px;
+    margin: 0 14px 0 0;
+}
+div#promo-included
+{
+    margin: 10px;
+    padding: 0;
+}
+/*End checkout layout for ORDER SUMMARY*/
+
+/*Start basket*/
+/* elements */
+.signinContent .box h2, .ordersummery h2, .ordersummeryClose .delivery, .OrderSummaryHdr, .order-summary-box-footer, .addressform legend, .itemHeader, .itemFooter
+{
+    font-weight: bold;
+    background-image: url(../images/redesign/bg_sprite.png);
+    background-repeat: no-repeat;
+}
+/* buttons */
+.Lmyacccontactdetails li.last a, .signinContent .button, .standarditem .quantity .optionRight a, .standarditem .item a, .standarditem .remove a, #orderconfirmation .button, .order-summary-delivery-options li li, #yourbasket .button, .addressform .button, .additionalInformation li, .printPageIcon, a.button, #address_list .boxContent a, .signinContent .expresscheckout .checkoutLoginAlR .button, #postcodelookup .button, .checkoutStepIndicators li, .ui-dialog-titlebar-close, #orderreceipt #buttons .continue, .OrderSummaryHdr span
+{
+    cursor: pointer;
+    background-image: url(../images/redesign/bg_buttons.png);
+    background-repeat: no-repeat;
+    text-indent: -9999em;
+    display: block;
+    border: none;
+    background-color: transparent;
+}
+.checkoutStepIndicators li
+{
+    cursor:auto;
+}
+a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
+{
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}
+#yourbasket .basketButtons a.continue, #orderreceipt #buttons a.continue
+{
+    background-position: 0 -99px;
+    clear: both;
+    float: right;
+    height: 30px;
+    margin: 12px 0 0;
+    padding: 0;
+    width: 179px;
+}
+#orderreceipt #buttons a.continue
+{
+    float: none;
+    margin: 0 auto;
+}
+.ordertable
+{
+    margin-top: 8px;
+    width: 651px;
+    float: left;
+    min-height: 340px;
+}
+.summeryCol
+{
+    width: 294px;
+    float: right;
+    margin-left: 15px;
+    position: relative;
+}
+
+#ordersummery
+{
+    margin-top:-50px
+}
+.wizrtable
+{
+    width: 746px;
+}
+#cancelitems .wizrtable
+{
+    width: 100%;
+}
+
+.itemHeader
+{
+    background-position: 0 0;
+    width: 655px;
+    height: 11px;
+}
+.itemFooter
+{
+    background-position: 0 -185px;
+    height: 23px;
+    width: 655px;
+}
+.standarditem
+{
+    background-position: 0 0;
+    width: 655px;
+    min-height: 209px;
+    margin-bottom: 10px;
+    color: #4C4C4C;
+}
+.standarditem table
+{
+    background: transparent url(../images/redesign/bg_standardItemRepeat.png) repeat-y 0 0;
+    width: 654px;
+}
+.standarditem table table
+{
+    width: 631px;
+    background: none;
+}
+.standarditem table table th, .standarditem table table td
+{
+    padding: 0 0 0 5px;
+}
+.standarditem a
+{
+    text-decoration: none;
+}
+.standarditem a:hover
+{
+    text-decoration: underline;
+}
+
+.standarditem th.name, .standarditem th.item, .standarditem th.quantity, .standarditem th.totalprice
+{
+    height: 26px;
+    vertical-align: bottom;
+}
+.standarditem .itemName
+{
+    font-weight: bold;
+    min-height: 40px;
+    text-transform: capitalize;
+}
+.standarditem .name, .standarditem .item, .standarditem .quantity, .standarditem table table th, .standarditem table table th, .standarditem .totalprice, .ordersummery h2
+{
+    text-transform: uppercase;
+}
+.standarditem .totalprice
+{
+    text-align: left;
+}
+.standarditem .quantity,
+.standarditem .totalprice 
+{
+    vertical-align: top;
+}
+.standarditem .baskettotals  .totalprice 
+{
+    vertical-align: middle;
+}
+.standarditem .quantity .optionBox {
+    margin-top: 6px;
+}
+.standarditem .totalprice .pounds {
+    margin-top: 10px;
+    display: block;
+}
+table th, table th div
+{
+    text-align: left;
+}
+.totalprice, .orscTotal, .discount, .subtotal
+{
+    text-align: right;
+}
+.standarditem .totalprice span
+{
+    display: block;
+}
+.was
+{
+    font-style: italic;
+    text-transform: lowercase;
+    display: block;
+}
+.standarditem .totalprice .pounds
+{
+    font-weight: bold;
+}
+.standarditem .thumb, .standarditem .name, .standarditem .remove
+{
+    padding: 0 20px;
+}
+.thumb img
+{
+    border: none;
+}
+.standarditem .name, .standarditem .remove
+{
+    background: url("../images/redesign/standardItemUnderScore.gif") no-repeat scroll 20px bottom transparent;
+    height: 33px;
+}
+.standarditem .remove
+{
+    background-position: -498px bottom;
+}
+.standarditem .name a, .standarditem .remove a
+{
+    display: block;
+    font-size: 1.4em;
+    margin-top: -11px;
+}
+.standarditem .remove a
+{
+    background-position: 50px 0;
+    display: block;
+    float: right;
+    font-size: 0.9em;
+    line-height: 17px;
+    padding-right: 30px;
+    text-indent: 0;
+    width: 39px;
+}
+.standarditem .name
+{
+    width: 460px;
+}
+.standarditem .remove
+{
+    width: 100px;
+}
+.standarditem .thumb
+{
+    padding: 15px 0 0 21px;
+    width: 87px;
+}
+.standarditem .thumb a
+{
+    display: block;
+    height: 127px;
+    width: 75px;
+}
+.standarditem .item
+{
+    width: 185px;
+    vertical-align: bottom;
+}
+.standarditem .item .optionBox
+{
+    margin: 0 0 3px;
+    text-transform: capitalize;
+}
+.standarditem .quantity
+{
+    width: 190px;
+}
+.standarditem .quantity .optionRight
+{
+    position: relative;
+}
+.standarditem .baskettotals
+{
+    height: 36px;
+}
+.standarditem .basketdetails
+{
+    height: 84px;
+}
+.standarditem .baskettotals th, .standarditem .baskettotals td
+{
+    border-top: solid 1px #4C4C4C;
+    border-bottom: solid 1px #4C4C4C;
+}
+.ordersummery h2
+{
+    background-position: 0 -209px;
+    font-weight: normal;
+    height: 32px;
+    margin-bottom: 0; /*margin-top: -43px;*/
+    padding: 62px 0 0 19px;
+    width: 278px;
+}
+
+.ordersummeryWrapper
+{
+    width: 300px;
+    background: url("../images/redesign/bg_summaryRepeat.png") repeat-y 0 0;
+    overflow: hidden;
+}
+.ordersummeryClose .delivery
+{
+    background-position: -357px -217px;
+    display: block;
+    height: 48px;
+    width: 300px;
+    text-indent: -9999em;
+}
+/* buttons */
+.basketButtons *
+{
+    float: right;
+    margin-top: 15px;
+}
+.basketButtons input.button {
+	height:33px;
+}
+
+.basketHeader h1 {
+	font-size: 20pt;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+	margin: .5em 0;
+}
+.standarditem .quantity .optionRight a
+{
+    background-position: 0 -43px;
+    height: 13px;
+    left: 50px;
+    position: absolute;
+    top: 1px;
+    width: 75px;
+}
+#address_list .boxContent a, #yourbasket .edit, .Lmyacccontactdetails li.last a
+{
+    background-position: 0 -18px;
+    height: 23px;
+    width: 70px;
+}
+ #yourbasket .edit
+{
+    margin-top: 14px;
+
+}    
+.Lmyacccontactdetails li.last a
+{
+    margin-top: 10px;
+}
+#orderconfirmation .edit
+{
+    background-position: -77px -13px;
+    height: 28px;
+    width: 80px;
+    margin: 0 0 9px 20px;
+}
+.item .edit
+{
+    margin-top: 10px;
+}
+/*
+#yourbasket a.continue,
+.continue,
+a.continue { background-position: 0 -101px !important; float: right; height: 25px !important; margin-right: 0 !important; padding: 0 !important; width: 186px !important;}
+*/
+.checkout
+{
+    background-position: 0 -65px;
+    height: 33px;
+    width: 233px;
+}
+.placeOrder
+{
+    background-position: 0 -158px;
+    height: 39px;
+    width: 286px;
+    float: right;
+}
+#yourbasket .promofield .button
+{
+    background: none;
+    text-indent: 0;
+    text-decoration: underline;
+}
+#vcode_submit_shopcart, #applyCode
+{
+    background-position: 0 -130px;
+    height: 27px;
+    width: 93px;
+    float: right;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+}
+
+#giftcode
+{
+    margin-bottom: 15px;
+    width: 126px;
+}
+.promofield input, .promofield label
+{
+    height: 20px;
+    line-height: 20px;
+}
+#orderconfirmation .promofield #vcode
+{
+    width: 186px;
+}
+#orderconfirmation .promofield label
+{
+    margin: 0;
+    text-align: left;
+    width: 118px;
+}
+#vcode_submit_shopcart
+{
+    margin-top: 10px;
+}
+#postcodelookup .button
+{
+    background-position: 0 -335px;
+    display: block;
+    height: 27px;
+    width: 151px;
+    margin: 0;
+    padding: 0;
+}
+.addressform #buttons
+{
+    padding: 0;
+    width: 753px;
+    margin-top: 20px;
+}
+input.submit
+{
+    background-position: -127px -245px;
+    height: 36px;
+    width: 162px;
+}
+a.previous
+{
+    display: none;
+}
+.printPageIcon
+{
+    background-position: -121px -129px;
+    height: 27px;
+    width: 168px;
+    margin: 14px auto 0;
+}
+#orderreceipt #buttons a
+{
+    display: none;
+}
+#orderconfirmation #buttons .continue, #orderreceipt #buttons .continue
+{
+    display: block;
+    float: none;
+    width: 106px;
+}
+#orderconfirmation #buttons .continue
+{
+    background-position: 0 -97px;
+    display: none;
+    float: left;
+    width: 148px;
+}
+
+/* html buttons */
+/* your account, order history */
+.myAccountTemplate .content #buttons,
+.checkoutTemplate .content #buttons,
+#orderdetail #buttons,
+#cancelitems #buttons,
+#reminderslist .buttons
+{
+    margin: 18px 0 50px;
+    overflow: hidden;
+}
+#referfriend #buttons a, #pwrmprevious,
+.content a.button, #orderdetail a.button,
+#orderdetail form a[onclick],
+#reminderslist a.button,
+.containerpwrmthankyou a.button
+{
+    text-decoration: none;
+    text-indent: 0;
+    font-size: 1.0em;
+    line-height: 12px;
+    background: #4C4C4C;
+    color: #FFF;
+    height: auto;
+    display: block;
+    padding: 0;
+    float: left;
+    margin-right: 30px;
+}
+.myAccountTemplate .content a.button:hover,
+.checkoutTemplate .content a.button:hover,
+#orderdetail form a[onclick]:hover,
+#orderdetail a.button:hover,
+#reminderslist .buttons a.button:hover
+{
+    text-decoration: underline;
+}
+.content .buttonsHistory input, .content #buttons input
+{
+    cursor: pointer;
+    color: #333333;
+}
+#orders_list .buttonsHistory input { display:none;}
+#orders_list .buttonsHistory a { float:right;}
+#orderdetail form a[onclick]
+{
+    float: none;
+    width: 76px;
+    margin-bottom: 20px;
+}
+#orderconfirmation .continue
+{
+    float: left;
+}
+.containerpwrmthankyou a.button, #pwrmprevious, #referfriend #buttons a, #orderhistory a.button, #buttons a.button, .buttonsHistory a.button, #reminderslist a.button, #orderdetail form a[onclick]
+{
+    padding: 10px 20px;
+}
+.containerpwrmthankyou .buttonArrow
+{
+    border: 1px dotted #4C4C4C !important;
+    background-color: #FBF7F4 !important;
+    color: #4C4C4C !important;
+    float: right !important;
+}
+/*End basket*/
+/* login */
+.signinContent
+{
+}
+.notregistertxt, .registertxt, .msg2, #orderreceipt #contactdetails, #orderTotalsTable .OrderSummaryHdr, .ZZcheckoutTemplate .order-summary-box-footer, #orderTotalsTable .order-summary-box-footer, .buttonsHistory a, #orderdetail #contactdetails, #paymentdetailSection #contactdetails, .Lmyaccreferfriend, .deliverToStore, .checkoutTemplate .checkoutR, .signininstruction, .addcontactaddress #buttons .previous
+{
+    display: none;
+}
+.checkoutLoginEqH
+{
+    width: 100%;
+    margin-left: 25px;
+}
+.checkoutLoginEqH label
+{
+    float: left;
+}
+.checkoutLoginEqH input[type=text], .checkoutLoginEqH input[type=password]
+{
+    width: 350px;
+}
+.addressform div.usxtexampleCheck, .addressform div.receiveMail, .checkoutLoginEqH .newcusttxt, .checkoutLoginEqH p, .addressform fieldset div.differentaddress, .addressform div#ustandc
+{
+    padding: 20px;
+    background-color: #F6EFE9;
+    width: 667px;
+    margin-bottom: 20px;
+}
+.addressform div.differentaddress, .newcusttxt
+{
+    font-style: italic;
+}
+.expresscheckout .checkoutLoginAlR
+{
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.checkoutLoginAlR input
+{
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+}
+.notregister .checkoutLoginAlR input
+{
+}
+.forgottenpassword
+{
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 5px;
+    text-align: right;
+    width: 550px;
+}
+
+.signinContent #loginform .button
+{
+    background-position: 0 -245px;
+    height: 28px;
+    width: 122px;
+}
+.signinContent #secondloginform .button
+{
+    background-position: 0 -276px;
+    height: 28px;
+    width: 106px;
+}
+.signinContent .expresscheckout .button
+{
+    margin-bottom: 16px;
+    background-position: 0 -305px;
+    float: right;
+    height: 28px;
+    text-indent: -9999em;
+    width: 131px;
+    margin-right: 24px;
+}
+.expresscheckout .checkoutLoginEqH
+{
+    width: 667px;
+    font-style: italic;
+}
+.expresscheckout .checkoutLoginAlR
+{
+    text-align: right;
+}
+.signinContent .expresscheckout .checkoutLoginAlR .button
+{
+    background-position: 0 -307px;
+    float: right;
+    height: 28px !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 25px;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    width: 131px !important;
+}
+/* Billing */
+.myAccountTemplate .basketAlt
+{
+    margin-bottom: 20px;
+}
+.paymentInstructions, .hideScreenReaderSafe, #myacc-recommendations, #page_myaccount .crumbtrail, .orderThanks h1, .myAccountTemplate .order-summary-box-footer
+{
+    display: none;
+}
+
+.addressform #extendedUserFields
+{
+    margin-bottom: 20px;
+}
+#postcodelookup
+{
+    display: block;
+    float: right;
+    height: 27px;
+    margin: 5px 25px 0 0;
+    overflow: hidden;
+}
+.addressform legend
+{
+    display: block;
+    line-height: 32px;
+    width: 716px;
+}
+.addressform input[type=text]
+{
+    width: 347px;
+}
+.myAccountTemplate .addressform input[type=text]
+{
+    width: 280px;
+}
+.addcontactaddress select
+{
+    width: 359px;
+}
+div.usxtdob select
+{
+    width: 86px;
+}
+fieldset div.usxtdob 
+{
+    margin-left: 2px;
+    width: 380px;
+}
+#tlusermyform div.usxtDropdown { margin-top:10px;}
+fieldset div.usxtdob div
+{
+    display: inline;
+    overflow: hidden;
+    width: 102px;
+}
+div.usxtdob span.select {
+    background-position: -206px -204px;
+    height: 18px;
+    margin: 0 0 0 10px;
+    padding-right: 36px;
+    text-align: center;
+    width: 39px;
+}
+span.select {
+    background: url("../images/redesign/bg_buttons.png") no-repeat scroll -141px -204px #FBF7F4;
+    border: 1px dotted #4C4C4C;
+    color: #000000;
+    float: left;
+    font-size: 1.2em;
+    height: auto;
+    left: 0;
+    margin: 0 0 0 198px;
+    padding: 8px 8px 8px 10px;
+    position: absolute;
+    width: 132px;
+    z-index: 1;
+}
+#tlusermyform div.usxtdob span.select,
+div.usxtdob select:first-child {
+    margin: 0;
+}
+#extendedUserFields legend
+{
+    background-image: none;
+}
+#extendedUserFields legend
+{
+    display: none;
+}
+#statelist
+{
+    width: 173px;
+}
+.addressform div.differentaddress, .addressform div.usxtexampleCheck, .addressform div.receiveMail, .addressform fieldset div.differentaddress, .addressform div#ustandc
+{
+    margin: 10px 20px;
+    padding: 5px 20px;
+}
+.additionalInformation
+{
+    border: 1px solid #4C4C4C;
+    padding: 5px 19px;
+}
+.addressform .requiredText
+{
+    text-align: right;
+}
+/* My Account */
+.myAccountTemplate fieldset, .myAccountTemplate fieldset legend, .checkoutTemplate fieldset #extendedUserFields, .checkoutTemplate fieldset fieldset, .checkoutTemplate fieldset fieldset .order-summary-box-footer
+{
+    background: none;
+    margin-bottom: 0;
+}
+.myAccountTemplate fieldset legend,
+.checkoutTemplate fieldset legend
+{
+    display: none;
+}
+
+.myAccountTemplate .content
+{
+    background: none;
+    padding: 0;
+}
+.checkoutTemplate .content
+{
+    background: none repeat scroll 0 0 transparent;
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.contentWrapper .leftSidebar
+{
+    background: none;
+    float: none;
+    margin: 44px 0 0;
+    padding: 0;
+    width: 210px;
+}
+.leftSidebar .box
+{
+    background-color: #CCCCCC;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+.leftSidebar .box .header
+{
+    font-size: 1.0em;
+    text-transform: uppercase;
+}
+.leftSidebar .box .addrName
+{
+    font-weight: bold;
+}
+#page_myaccount .contentWrapper
+{
+    margin-left: 20px;
+    width: 930px;
+    overflow: hidden;
+}
+.myAccountTemplate .content #buttons,
+.checkoutTemplate .content #buttons
+{
+    width: auto;
+}
+#myformcommoption label
+{
+    text-align: left;
+    width: 100px;
+    margin-left: 0;
+}
+.myAccountTemplate .content label img,
+.checkoutTemplate .content label img
+{
+    margin: 10px 12px 0 0;
+}
+#myformcommoption .usrExtended .tick label
+{
+    width: 150px;
+    margin: 0;
+}
+.myAccountTemplate .content .usrExtended input[type=checkbox]
+.checkoutTemplate .content .usrExtended input[type=checkbox]
+{
+    margin: 10px 20px 0 0;
+}
+/* order receipt */
+.orderThanks
+{
+    background: url("../images/redesign/bg_orderReciept.png") no-repeat scroll 0 0 transparent;
+    margin: 0 auto 30px;
+    padding: 68px 50px;
+    text-align: center;
+    width: 426px;
+}
+#orderreceipt #buttons
+{
+    margin: 78px 0;
+}
+#orderreceipt #buttons .continue
+{
+    margin: 0 auto;
+}
+/* order History */
+#orderhistory
+{
+}
+#orders_list li, #address_list li
+{
+    border-bottom: 1px solid #4C4C4C;
+    clear: both;
+    float: none;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    display:block;
+    width:auto;
+}
+#orders_list table li
+{
+    border: none;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+#orders_list table th, #orders_list table td
+{
+    padding: 5px;
+}
+#orders_list table th
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Address Book */
+#address_list fieldset div div
+{
+    float: none;
+    padding: 5px;
+}
+#address_list fieldset div div label
+{
+    width: 200px;
+    margin-left: 10px;
+    width: auto;
+}
+
+#address_list .boxContent p.default
+{
+    color: #FA4667;
+}
+#address_list .boxContent label
+{
+    color: #4C4C4C;
+}
+/* reminders*/
+.reminderBox table td input, .reminderBox table td select, #editreminder table td input, #editreminder table td select
+{
+    margin: 0;
+}
+#tab1 label
+{
+    float: none;
+    clear: both;
+    display: inline;
+}
+#reminderslist table th, #reminderslist table td, #editreminder table th, .reminderBox table th
+{
+    padding: 5px 10px;
+}
+.reminderBox table td.flname
+{
+    width: 150px;
+}
+.content .reminderBox table select,
+.content .reminderBox table select,
+#editreminder table td select
+{
+    width: 125px;
+}
+.content .reminderBox table select#formremd_day-1
+{
+    width: 64px;
+}
+.reminderBox table td input,
+#editreminder table td input
+{
+    width: 100px;
+}
+/*Start more ideas*/
+ul#moreideas
+{
+    margin: 0;
+    padding: 0;
+    width: 201px;
+}
+ul#moreideas li
+{
+    display: inline;
+    list-style-type: none;
+    float: left;
+}
+ul#moreideas li a
+{
+}
+/*End more ideas*/
+
+/*Start ORDER RECEIPT*/
+.receipt-header
+{
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 20px 0 5px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #000000;
+}
+#order-receipt-payment-details
+{
+    width: 383px;
+    margin-right: 20px;
+}
+#order-receipt-contact-details
+{
+    width: 382px;
+}
+#order-receipt-order-totals
+{
+    width: 382px;
+}
+#order-receipt-shipping-to
+{
+    width: 383px;
+    margin-right: 20px;
+}
+.order-receipt-item-list
+{
+    width: 392px;
+    height: 115px;
+    padding: 0;
+    margin: 0;
+}
+.order-receipt-item-list div
+{
+    margin: 0;
+    padding: 0;
+}
+.order-receipt-item-list div img
+{
+    margin: 0 8px 0 0;
+    padding: 0;
+    border: 0;
+}
+* html .order-receipt-item-list div img
+{
+    margin: 0 5px 0 0;
+    padding: 0;
+    border: 0;
+}
+#btn-order-receipt-continue-shopping
+{
+    padding: 10px 0 10px 0;
+    margin: 0;
+}
+/*End ORDER RECEIPT*/
+
+.font2
+{
+    
+}
+.font1
+{
+    
+}
+.font1 div#buttons
+{
+    width: auto;
+}
+.row-text
+{
+    color: #333;
+}
+.green-text
+{
+    color: #23B181;
+}
+.yellow-text
+{
+    color: #89930E;
+}
+.red-basket
+{
+    color: #f30028;
+}
+.black
+{
+    color: #000;
+}
+/* Extra CSS for WYSIWYG */
+
+#static
+{
+    text-align: left;
+    margin: 0;
+    padding: 0px;
+}
+#static h1
+{
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 10px;
+    padding: 0;
+    font-weight: bold;
+    font-size: 13px;
+}
+#static .underline
+{
+    border-top: 2px solid #333;
+    height: 2px;
+}
+#static h5
+{
+    color: #333;
+    font-size: 1em;
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+#static a
+{
+    color: #6600cc;
+}
+#static a:hover
+{
+    color: #000000;
+}
+#static ul
+{
+    list-style: disc;
+    margin: 5px 0 5px 15px;
+}
+#static ul li
+{
+    line-height: 20px;
+}
+#static p
+{
+    margin: 0 0 20px 0;
+}
+#static h2
+{
+    color: #000000;
+    text-transform: capitalize;
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding: 0;
+    font-weight: bold;
+}
+/* for some page (paymentoptions,managingyouraccount and termsandconditions)*/
+
+#static2
+{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+#static2 h1
+{
+    text-transform: uppercase;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 18px;
+}
+#static2 .underline
+{
+    border-top: 2px solid #333;
+    height: 2px;
+}
+#static2 h5
+{
+    color: #333;
+    font-size: 1em;
+    margin: 0;
+    padding-bottom: 10px;
+}
+#static2 a
+{
+    color: #999;
+    text-decoration: none;
+    border-bottom: 1px solid #00CCFF;
+}
+#static2 ul
+{
+    color: #333;
+    margin: 5px 0 5px 30px;
+    list-style: disc;
+    line-height: 18px;
+}
+#static2 ul li
+{
+    line-height: 18px;
+    color: #666;
+}
+#static2 p
+{
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 18px;
+}
+#static2 h2
+{
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+div#col-two-three a.paypalbtn
+{
+    margin-left: 642px;
+}
+div#col-two-three div#paychoice
+{
+    margin-left: 700px;
+    margin-bottom: 10px;
+}
+
+#creditcard, #formpaypal, #fortis, div.paypal label, #dummycreditcard, #dummyelv
+{
+    float: left;
+}
+img#paypallogo
+{
+    margin: 0 8px;
+    float: left;
+}
+fieldset legend,
+.redeemgift
+{
+    display: none;
+}
+.paypal
+{
+    border-top: solid 1px #656565;
+    padding: 10px 0;
+}
+div#paymentdetails fieldset.f-payment_details img
+{
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+.f-payment_details img
+{
+    float: left;
+}
+
+
+#ohccissue
+{
+    margin-right: 2px;
+}
+fieldset.f-payment_details #dontsavecc
+{
+    margin-right: 5px;
+    width: auto;
+}
+#ccSave
+{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#paymentdetails #ccSave label, #paymentdetails #ccSave input
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+#paymentdetails #ccSave label
+{
+    margin-left: 18px;
+    width: 600px;
+}
+div.fortis
+{
+    height: 15px;
+}
+select#methodtype
+{
+    clear: both;
+}
+
+#paymentdetails
+{
+    *padding-bottom:20px;
+}
+p.payPalConf
+{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#paymentdetails p
+{
+    margin-left: 20px;
+}
+p.payPalConf span, p.payPalConf strong
+{
+    display: block;
+    float: left;
+    padding-top: 6px;
+}
+p.payPalConf strong
+{
+    margin-right: 10px;
+}
+.checkoutorcf #paymentdetails p
+{
+    display: none;
+}
+.tickbox_container
+{
+    margin: 0 0 20px 0;
+}
+
+.tickbox_container input
+{
+    float: left;
+    width: 20px;
+}
+.tickbox_container label { }
+.items-table { }
+.items-product-name
+{
+    font-weight: bold;
+}
+.items-product-colour { }
+.items-product-size { }
+.items-qty { }
+.items-pricing { }
+.items-price { }
+#order-totals-total
+{
+    background-color: #FFFF00;
+    padding: 1px;
+    font-weight: bold;
+}
+#order-totals-discount
+{
+    color: #FF0000;
+    font-weight: bold;
+}
+#order-totals-vat
+{
+    color: #999999;
+    font-size: 10.5px;
+}
+.order-summary-total-line
+{
+    border-top: 1px solid #000000;
+    margin: 5px 0;
+    width: 270px;
+    display: block;
+}
+#paymentdetails h2
+{
+    text-transform: uppercase;
+    margin: 10px;
+    font-weight: bold;
+    display: none;
+}
+#basket-delivery a
+{
+    font-weight: bold;
+}
+#basket_deliveryinfo
+{
+    display: none;
+    line-height: 18px;
+}
+
+/* elv payment */
+.paymenttype_card_de .credit
+{
+    display: none;
+}
+#cctoggle, #elvtoggle
+{
+    width: 100%;
+}
+.dummypaytype
+{
+    float: left;
+}
+fieldset.f-payment_details .dummypaytype label
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 140px;
+}
+fieldset#elv
+{
+    border-top: 1px solid black;
+    margin: 10px;
+    padding: 10px 0;
+}
+/* webkit only css */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    fieldset > div:first-of-type
+    {
+        /* because legends dont support margin */
+        -webkit-margin-top-collapse: separate;
+        margin-top: 20px;
+    }
+
+}

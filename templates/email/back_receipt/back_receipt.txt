@@ -1,4 +1,4 @@
-<venda_inctemplate name=textEmailDetblocks,type=includes>
+<venda_inctemplate name=textEmailDetblocks,type=includes/emailContents>
 
 ==============================================================================
 <cr>
@@ -7,14 +7,14 @@
 <cr>
 ==============================================================================<cr><cr>
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 
 <venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>We would like you to know that some of the items from your order number <venda_ohordnum>, placed on <venda_ohstmpen> have been placed on backorder.</venda_block label=1021>
 <venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de>Wir mšchten Ihnen mitteilen, dass einige der Artikel in Ihrer Bestellung Nr. <venda_ohordnum> vom <venda_ohstmpen> derzeit nicht am Lager sind und nachgeliefert werden.</venda_block label=1022>
 <cr><cr>
 
-<venda_inctemplate name=textEmailMessage,type=includes>
+<venda_inctemplate name=textEmailMessage,type=includes/emailContents>
 
-<venda_inctemplate name=textEmailBody,type=includes>
+<venda_inctemplate name=textEmailBody,type=includes/emailContents>
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

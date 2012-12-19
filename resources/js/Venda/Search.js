@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess', 'multiRefine','indicateLoading','hideLoading','filterRefinements','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller');
 };
 
 // Utility method.
@@ -73,14 +73,15 @@ Venda.Search.prototype = {
 
         // Facets links & checkboxes
         var refine = this.getNavHandler({ resetPrice: true });
-        jQuery('#content-search').delegate('#collate a.updatesearch, #term a.removesearch', 'click',  refine);
+        jQuery('#content-search').delegate('#collate a.updatesearch, #term a.removesearch, #collate a.removesearch', 'click',  refine);
         jQuery('#content-search').delegate('#collate input:checkbox', 'change', refine);
 
         // Pagination links & dropdown
         var pagination = this.getNavHandler({ pagination: true });
-        var pagnlinks = jQuery('#content-search .pagn a').not(".viewproduct");
-        jQuery('#content-search').delegate(pagnlinks, 'click',  pagination);
+        var pagnlinks = jQuery('#content-search .pagn a').not(".viewProduct");
+        jQuery('#content-search').delegate('#content-search .pagnContents a.updatesearch', 'click',  pagination);
         jQuery('#content-search').delegate('.pagn select', 'change', pagination);
+        
     },
 
     validSearchUrl: function(url) {
@@ -272,7 +273,7 @@ Venda.Search.Feature.viewMoreLess.prototype = {
     }
 };
 
-/*Venda.Search.Feature.multiRefine = function() {};
+Venda.Search.Feature.multiRefine = function() {};
 Venda.Search.Feature.multiRefine.prototype = {
     clickHandler: function(evt) {
         return false;
@@ -295,7 +296,7 @@ Venda.Search.Feature.multiRefine.prototype = {
         });
         return false;
     }
-};*/
+};
 
 Venda.Search.Feature.indicateLoading = function() {};
 Venda.Search.Feature.indicateLoading.prototype = {
@@ -322,7 +323,7 @@ Venda.Search.Feature.hideLoading.prototype = {
     }
 };
 
-/*Venda.Search.Feature.filterRefinements = function() {};
+Venda.Search.Feature.filterRefinements = function() {};
 Venda.Search.Feature.filterRefinements.prototype = {
     clickHandler: function(evt) {
 
@@ -354,7 +355,7 @@ Venda.Search.Feature.filterRefinements.prototype = {
         jQuery(".filterinput").bind('keyup', jQuery.proxy(this, 'clickHandler'));
         return false;
     } 
-}; */
+};
 
 Venda.Search.Feature.popListItems = function() {};
 Venda.Search.Feature.popListItems.prototype = {
@@ -400,15 +401,16 @@ Venda.Search.Feature.perLine.prototype = {
     display: function() {
     	var prodRef = jQuery(".prodRef").text();
     if (document.location.href.indexOf('&perline=3') > -1 ) {
-    	jQuery(".swatchContainer").show();
     	jQuery(".quickLinkBox").each( function () {
 	    	jQuery(this).addClass("qb-large");
 	    	jQuery(this).removeClass("qb-small");
     	});
+    	jQuery(".swatchIcon").hide();
+    	jQuery(".swatchContainer").show();
     	jQuery(".prodsFiveColumns li").css('width','33%');
         jQuery(".threePerLine").hide();
     	jQuery(".fivePerLine").show();
-    	jQuery(".roundels").show();
+    	jQuery(".onlineExLogo-underlay").show();
     		jQuery("a.moredetail img").each(function () {
     			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_l1.jpg');
     			jQuery(this).attr("src",ImageSrc);
@@ -421,15 +423,16 @@ Venda.Search.Feature.perLine.prototype = {
 
     }
     if (document.location.href.indexOf('&perline=5') > -1 ) {
-    	jQuery(".swatchContainer").hide();
     	jQuery(".quickLinkBox").each( function () {
 	    	jQuery(this).addClass("qb-small");
 	    	jQuery(this).removeClass("qb-large");
     	});
+    	jQuery(".swatchIcon").show();
+    	jQuery(".swatchContainer").hide();
     	jQuery(".prodsFiveColumns li").css('width','19.5%');
         jQuery(".threePerLine").show();
     	jQuery(".fivePerLine").hide();
-    	jQuery(".roundels").hide();
+    	jQuery(".onlineExLogo-underlay").hide();
     		jQuery("a.moredetail img").each(function () {
     			var ImageSrc = jQuery(this).attr("src").replace('_l1.jpg','_sm1.jpg');
     			jQuery(this).attr("src",ImageSrc);
@@ -467,29 +470,38 @@ Venda.Search.Feature.searchAccordion.prototype = {
     	jQuery(".accordion_slice").each(function (c) {
         	var b = "";
         	jQuery(this).find(".vendaField").each(function (f) {
-	        	b = jQuery(this).text()
+	        	b = jQuery(this).text();
 	        });
 	        var fa = "";
 	        jQuery('#'+b).click(function() {
-		        jQuery('#'+b+'results').slideToggle('slow', function() {
+		        jQuery('#'+b+'results').slideToggle('slow');	    
+		        jQuery('#'+b+'icon').toggleClass('iconMinus');
 		    });
-		    jQuery('#'+b+'icon').toggleClass('iconMinus');
-		});
-		
-		if (jQuery(this).find("div.chosen").length > 0) {
-		    jQuery(".clear"+b).show();
-		}
-
-		jQuery(function(){
-		    jQuery(this).find(".vendasearchURL").each(function (d) {
-	        	url = jQuery(this).text();
-	        });
-	        jQuery(".clear"+b+" a[href^='"+url+"']").each(function() {
-		    	var re = new RegExp('\&'+b+'='+'([^&]*)', "g");
-		    	this.href = this.href.replace(re, "");
-		    	});
-		    });
-		});
+		    if (jQuery(this).find("div.chosen").length > 0) {
+		    	jQuery(".clear"+b).show();
+		    	jQuery(".clear-"+b).show();
+		    }
+		    jQuery(function(){
+		    	jQuery(this).find(".vendasearchURL").each(function (d) {
+	        		url = jQuery(this).text();
+	        	});
+	        	jQuery(".clear-price a[href^='"+url+"']").each(function() {
+			    	var reP = new RegExp('\&price_from='+'([^&]*)'+'\&price_to='+'([^&]*)', "g");
+			    	this.href = this.href.replace(reP, "");
+			    })
+		        jQuery(".clear"+b+" a[href^='"+url+"']").each(function() {
+		        	var re = new RegExp('\&'+b+'='+'([^&]*)', "g");
+		        	this.href = this.href.replace(re, "");
+		        })
+			})
+			jQuery(this).find(".facet").each(function () {
+				var facet = jQuery(this);
+				var count = jQuery(this).find(".count").text();
+				if (facet.text().indexOf("ALL") >=0) {
+					facet.html("One Size <span class='count'>"+count+"</span>");
+				}
+			})
+		})
 	}
 };
 
@@ -524,8 +536,16 @@ Venda.Search.Feature.swatchHide.prototype = {
     		var n = jQuery(this).find(".sw_image").length;
     		if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
+    			var swatchIcon = jQuery(this).find(".swatchIcon");
     			jQuery(swatchCont).html("");
     			jQuery(swatchCont).hide();
+    			jQuery(swatchIcon).hide();
+    		}
+    		if (n > 8) {
+    			jQuery(this).find(".arrowDown").show();
+	    		jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
+	    		jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
+	    		//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
     		}
     	});
     }
@@ -536,7 +556,7 @@ Venda.Search.Feature.swatchCase.prototype = {
 	display: function() {
 		jQuery(".prodsFiveColumns li").each(function () {  
     		var imageUrl = jQuery(this).find(".imageUrl").text(); 
-    		jQuery(this).find(".sw_image span img").attr("src", function() {
+    		jQuery(this).find(".sw_image img.swatch").attr("src", function() {
 	    		return imageUrl+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
 	    	});
 	    })
@@ -566,35 +586,111 @@ Venda.Search.Feature.uiSelectmenu.prototype = {
 Venda.Search.Feature.icxtHideRefine = function() {};
 Venda.Search.Feature.icxtHideRefine.prototype= {
 	display: function() {
-		var icxthiderefine = jQuery('.icxthiderefine').text();
-		var icxt1 = icxthiderefine.split(' ')[0];
-		var icxt2 = icxthiderefine.split(' ')[1];
-		var icxt3 = icxthiderefine.split(' ')[2];
-		var icxt4 = icxthiderefine.split(' ')[3];
-		var icxt5 = icxthiderefine.split(' ')[4];
-		var icxt6 = icxthiderefine.split(' ')[5];
-		var caticxt = [icxt1,icxt2,icxt3,icxt4,icxt5,icxt6];
-		for (var i = 0; i < caticxt.length; i++) {
-			jQuery('.accordion'+caticxt[i]).hide();
+		var icxthiderefine = jQuery('.icxthiderefine').text(),
+			icxt = icxthiderefine.split(' ');
+		for (var i = 0; i < icxt.length; i++) {
+			jQuery('.accordion'+icxt[i]).hide();
 		}
 	}
 };
 
-Venda.Search.Feature.refineColours = function() {};
-Venda.Search.Feature.refineColours.prototype = {
+Venda.Search.Feature.refineColours3 = function() {};
+Venda.Search.Feature.refineColours3.prototype = {
 	display: function() {
-		var colourFacet = jQuery('.colourFacet').text();
-		var lastColour = colourFacet.substring(colourFacet.lastIndexOf(",") + 1);
-		jQuery(".swatchContainer").each(function() {
-			jQuery(this).find("a").each( function() {
-			var $this = jQuery(this);
-				var sCol = $this.data("color");
-				var pId = $this.find("img").attr("name");
-				if (lastColour.indexOf(sCol) >=0) {
-					$this.click();
-					$this.prependTo("#swatch"+pId);
+		var colourul = jQuery('.colourFacet ul > li'),
+			colourFacetLast = jQuery('.colourFacet ul > li:last').text(),
+			colourFacets = [];
+		colourul.each(function() { colourFacets.push(jQuery(this).text()) });
+		colourFacets.reverse();
+		jQuery(".prodsFiveColumns li").each( function() {
+			var $this = jQuery(this).find(".swatchContainer"),
+				a = $this.find("a"),
+				uniqueNames = jQuery(this).find(".att3value").text().split(","),
+				sku = jQuery(this).find('.productSku').text(),
+				att3Split = [];
+			jQuery.each(uniqueNames, function(d, el){
+				if(jQuery.inArray(el, att3Split) === -1) att3Split.push(el);
+			})
+			att3Split = jQuery.map(att3Split, jQuery.trim);
+			var i,
+				j,
+				attribute1val = [];
+			assignSwatch = function() {
+				var sCol = [];
+				$this.find("a").each(function() { sCol.push(jQuery(this).data("color")); });
+				for (j = 0; j < attribute1val.length; j++) {
+					if (sCol.indexOf(attribute1val[j]) >=0) {
+						$this.find("a."+attribute1val[j]).click();
+						$this.find("a."+attribute1val[j]).prependTo("#swatch"+sku);
+						return false;
+					}
 				}
+			}
+			for(var k = 0; k < colourFacets.length; k ++) {
+				for(i = 0; i < att3Split.length; i++) {
+					attribute3val = jQuery.trim(att3Split[i].split('=')[0]);
+					if (colourFacets.indexOf(attribute3val) === k) {
+						attribute1val.push(jQuery.trim(escape(att3Split[i].split('=')[1])));
+					}
+				}
+			}
+			assignSwatch();
+		})
+	}
+};
+
+Venda.Search.Feature.swatchScroller = function() {};
+Venda.Search.Feature.swatchScroller.prototype = {
+	display: function() {
+		jQuery(".prodsFiveColumns li").each(function () {
+        	var $this = jQuery(this).find(".swatchContainer"),
+			 	a = $this.find("a.sw_image"),
+			 	aImg = $this.find("a.sw_image img"),
+			 	aImgHeight = 21,
+			 	aFirst = $this.find("a.sw_image:first"),
+			 	x = $this.find(".swatchInvtref");
+			aFirst.addClass("current");
+			for (var i = 0; i < a.length; i++) {
+				jQuery(a[i]).attr("rel", [i]);
+			}			
+        	$this.find(".arrowDown").bind('click', function() {
+        		$this.find(".arrowUp").animate({opacity: 1}, 200);
+        		$active = $this.find(".current").next();
+        		if ($active.length === 0) {
+        			$active = aFirst;
+        		}
+        		var c = (aImgHeight + 9) * $active.attr("rel"),
+        			contH = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 8)) + "px",
+        			contN = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 9)) + "px",
+        			intTop = x.css("top");
+        		console.log(contH + " " + intTop + " " + x.height() + " " + (aImgHeight + 9) * 8);
+        		if (intTop !== contH || intTop === "auto" || intTop === "0px") {
+					a.removeClass("current");
+					$active.addClass("current");
+					x.animate({top: -c}, 200);
+					//$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))));
+				}
+				/*if (intTop === contN) {
+					$this.find(".arrowDown").animate({opacity: 0}, 200);
+					$this.find(".swatchNumber").animate({opacity: 0}, 200);
+				}*/
+			})
+			$this.find(".arrowUp").bind('click', function() {
+				$active = $this.find(".current").prev();
+				if ($active.length === 0) {
+        			$active = aFirst;
+        		}
+				var c = (aImgHeight + 9) * $active.attr("rel");
+				a.removeClass("current");
+				$active.addClass("current");
+				x.animate({top: -c}, 200);
+				/*$this.find(".arrowDown").animate({opacity: 1}, 200);
+				$this.find(".swatchNumber").animate({opacity: 1}, 200);
+				$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))))
+				if (aFirst.hasClass('current')) {
+	        		$this.find(".arrowUp").animate({opacity: 0}, 200);
+        		}*/
 			})
 		})
- 	}
+	}
 };

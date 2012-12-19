@@ -1,4 +1,4 @@
-<venda_inctemplate name=htmlEmailDetblocks,type=includes>
+<venda_inctemplate name=htmlEmailDetblocks,type=includes/emailContents>
 <html lang="<venda_block label=487,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>en</venda_block label=487><venda_block label=488,ohusgrrf=guest_de>de</venda_block label=488><venda_block label=489,ohusgrrf=guest_fr>fr</venda_block label=489>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1">
 <head>
@@ -7,7 +7,7 @@
 </head>
 <body style="width:500px; color:#000; margin:5px 20px; background:#fff;">
 
-<venda_inctemplate name=htmlEmailCssEtc,type=includes>
+<venda_inctemplate name=htmlEmailCssEtc,type=includes/emailContents>
 
 <br><br>
 <a href="<venda_ebizurl>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/logoemail.gif" alt="<venda_ebizname>" border="0"></a>
@@ -17,16 +17,16 @@
 <venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de><strong>Nachlieferung</strong></venda_block label=1022>
 <br><br>
 
-<venda_inctemplate name=htmlEmailHeader,type=includes>
+<venda_inctemplate name=htmlEmailHeader,type=includes/emailContents>
 
 <venda_block label=1031,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><p>We would like you to know that some of the items from your order number <venda_ohordnum>, placed on <venda_ohstmpen> have been placed on backorder.</p></venda_block label=1031>
 <venda_block label=1032,mode=value,<venda_ohusgrrf>=guest_de><p>Wir m&ouml;chten Ihnen mitteilen, dass einige der Artikel in Ihrer Bestellung Nr. <venda_ohordnum> vom <venda_ohstmpen> derzeit nicht am Lager sind und nachgeliefert werden.</p></venda_block label=1032>
 
-<venda_inctemplate name=htmlEmailMessage,type=includes>
+<venda_inctemplate name=htmlEmailMessage,type=includes/emailContents>
 
-<venda_inctemplate name=htmlEmailBody,type=includes>
+<venda_inctemplate name=htmlEmailBody,type=includes/emailContents>
 
-<venda_inctemplate name=htmlEmailFooter,type=includes>
+<venda_inctemplate name=htmlEmailFooter,type=includes/emailContents>
 
 </body>
 </html>

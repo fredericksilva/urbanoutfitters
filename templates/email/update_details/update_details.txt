@@ -59,4 +59,4 @@ Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
 
 </venda_block label=1023>
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

@@ -126,6 +126,6 @@
 .lookbook.main .terms {float: left; width: 100%;text-align: center;}
 /* @end */
 
-#solrsearch .searchTextField {background-color: #FFFFFF; border: 1px solid #C0C0C0; color: #ABABAB; font-family: Arial,Helvetica,sans-serif; font-size: 11px; height: 18px; margin-bottom: 2px; text-transform: capitalize;width: 130px;}
+#solrsearch .searchTextField {line-height:11px;background-color: #FFFFFF; border: 1px solid #C0C0C0; color: #ABABAB; font-family: Arial,Helvetica,sans-serif; font-size: 11px; height: 18px; margin-bottom: 2px; text-transform: capitalize;width: 130px;}
 #solrsearch #searchsubmit {background: url("/content/ebiz/urbanoutfitters/resources/images/bt_search_uk.png") no-repeat scroll 0 top transparent; clear: both; cursor: pointer; display: block; overflow: hidden; text-indent: -999px; width: 65px;border: 0 solid #000000; font: 11px Arial,Helvetica,sans-serif; height: 20px; left: 40px; margin: 3px 49px; padding: 1px; text-transform: lowercase;}
 #solrsearch #searchsubmit:hover {background-color:#FFF; color:#000; background:url("/content/ebiz/urbanoutfitters/resources/images/bt_search_uk.png") no-repeat scroll left bottom transparent; clear:both; cursor:pointer; display:block;overflow:hidden;text-indent: -999px; width:55px;}

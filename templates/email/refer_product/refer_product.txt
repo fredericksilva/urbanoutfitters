@@ -24,4 +24,4 @@ Please do not reply to this message
 
 
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

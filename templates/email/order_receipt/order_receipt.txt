@@ -1,4 +1,4 @@
-<venda_inctemplate name=textEmailDetblocks,type=includes>
+<venda_inctemplate name=textEmailDetblocks,type=includes/emailContents>
 
 ==============================================================================
 
@@ -10,7 +10,7 @@
 
 
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 
 <venda_block label=66,ohreplnbr=null>
 <venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>Thank you for placing an order with <venda_ebizname>. Your order number is <venda_ohordnum>.</venda_block label=1021>
@@ -34,7 +34,7 @@ Wir möchten Ihnen mitteilen, dass Ihre <venda_block label=68,ohpaytype=6>kostenl
 
 </venda_block label=67>
 
-<venda_inctemplate name=textEmailBody,type=includes>
+<venda_inctemplate name=textEmailBody,type=includes/emailContents>
 <venda_block label=1041,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
 We are now going to get busy picking and packing your order, so that we can get it shipped out to you as soon as possible.
 
@@ -116,4 +116,4 @@ Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
  
 
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

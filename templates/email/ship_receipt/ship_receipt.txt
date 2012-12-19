@@ -1,4 +1,4 @@
-<venda_inctemplate name=textEmailDetblocks,type=includes>
+<venda_inctemplate name=textEmailDetblocks,type=includes/emailContents>
 ==============================================================================
 
 
@@ -11,7 +11,7 @@
 
 
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 
 <venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
 Thank you for your order number <venda_ohordnum>. We thought you would like to know that your order has been authorised and despatched. Your credit/debit card has now been charged.
@@ -28,7 +28,7 @@ Nous vous remercions de votre commande numéro <venda_ohordnum>. Nous sommes heur
 
 
 </venda_block label=1023>
-<venda_inctemplate name=textEmailBody,type=includes>
+<venda_inctemplate name=textEmailBody,type=includes/emailContents>
 <venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
 Order Tracking - UK Standard Delivery.
 
@@ -176,4 +176,4 @@ Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour tout
 
 Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
 </venda_block label=1033>
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>

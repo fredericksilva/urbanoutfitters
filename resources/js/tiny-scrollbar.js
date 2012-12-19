@@ -19,7 +19,7 @@
     $.tiny.scrollbar = {
         options: {
                 axis         : 'y'    // vertical or horizontal scrollbar? ( x || y ).
-            ,   wheel        : 40     // how many pixels must the mouswheel scroll at a time.
+            ,   wheel        : 840     // how many pixels must the mouswheel scroll at a time.
             ,   scroll       : true   // enable or disable the mousewheel.
             ,   lockscroll   : true   // return scrollwheel to browser if there is no more content.
             ,   size         : 'auto' // set the size of the scrollbar to auto or a fixed number.

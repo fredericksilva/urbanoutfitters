@@ -9,7 +9,7 @@
 ==============================================================================
 
 
-<venda_inctemplate name=textEmailHeader,type=includes>
+<venda_inctemplate name=textEmailHeader,type=includes/emailContents>
 <venda_block label=1021,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>
 Your return from order <venda_ohordnum> was processed on <venda_nowdaymon>/<venda_nowmon>/<venda_nowyear>. A credit of <venda_currsym><venda_refamt> has been applied to your card. Please allow 3-5 working days for your refund to appear.
 
@@ -52,4 +52,4 @@ Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
 
 </venda_block label=1023>
 
-<venda_inctemplate name=textEmailFooter,type=includes>
+<venda_inctemplate name=textEmailFooter,type=includes/emailContents>
