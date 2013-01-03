@@ -14,10 +14,44 @@ body {
 	color:#444444;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	background-color: #F7F0EA;
+	background: url('../images/grid_tile.jpg') repeat scroll 0 0 white;
+	position:relative;
+}
+.admin {
+	background-color: white;
+	border-bottom: 1px solid #E66C09;
+	color: #E66C09;
+	font-size: 12px;
+	line-height: 18px;
+	min-width: 960px;
+	overflow: hidden;
+	padding: 5px 0;
+	text-align: center;
+	width: 100%;
+}
+.admin a {
+	color: #E66C09;
+	font-size: 12px;
+	font-weight: 700;
+}
+.container_24 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
 }
 /* display elements */
-
+.demo, .jsdisabled {
+	background-color: #F7F0F2;
+	border-bottom: 1px solid #B40F14;
+	color: #B40F14;
+	font-size: 12px;
+	line-height: 18px;
+	min-width: 960px;
+	overflow: hidden;
+	padding: 5px 0;
+	text-align: center;
+	width: 100%;
+}
 h1, h2, h3, p {
 	margin:.5em 0;
 	padding:0;
@@ -113,9 +147,9 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 150px;
-	margin-top: 28px;
+	margin-top: 15px;
 	text-align: left; /* left-aligns all sub-content */
-	width: 960px;
+	position:relative;
 	/*background:#fff;*/	
 }
 #contentwrapper {	
@@ -1292,9 +1326,7 @@ ul#footerlistlast {margin:0;}
 
 /* checkout footer */
 .checkoutFooter  {
-    border-top: 1px dotted #444;
-    margin-top: 25px;
-    padding-top: 25px;
+    padding: 20px 0;
     text-align: center;
     color:#4B4847;
 }

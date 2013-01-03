@@ -35,8 +35,9 @@
     padding: 0 0 0 10px;
     vertical-align: middle;
 }
-
-
+.myAccountTemplate input#uspswd, .myAccountTemplate input#uspswd2 {
+	display:block;
+}
 #yourbasket input, #yourbasket select
 {
     background-color: #FFF;
@@ -64,7 +65,7 @@
     height: 33px;
     line-height: 33px;
     margin-left: 18px;
-    margin-right: 10px;
+    margin-right: 20px;
     text-align: right;
     width: 160px;
 }
@@ -88,13 +89,13 @@
 {
     margin: 0 0 0 111px;
 }
-.standarditem .quantity .optionRight input
-{
-    height: 17px;
+.standarditem .quantity .optionRight input {
+    height: 21px;
     line-height: 17px;
     margin: 0;
-    padding-left: 6px;
-    width: 17px;
+    padding-left: 9px;
+    width: 16px;
+    padding-top: 4px;
 }
 .promofield label
 {
@@ -374,7 +375,7 @@ fieldset.pay-option a
 }
 .myAccountTemplate .checkoutL
 {
-    width: 690px;
+    width: 660px;
     left: 0;
 }
 #col-two-three-full
@@ -1139,10 +1140,10 @@ div#promo-included
     background-repeat: no-repeat;
 }
 /* buttons */
-.Lmyacccontactdetails li.last a, .signinContent .button, .standarditem .quantity .optionRight a, .standarditem .item a, .standarditem .remove a, #orderconfirmation .button, .order-summary-delivery-options li li, #yourbasket .button, .addressform .button, .additionalInformation li, .printPageIcon, a.button, #address_list .boxContent a, .signinContent .expresscheckout .checkoutLoginAlR .button, #postcodelookup .button, .checkoutStepIndicators li, .ui-dialog-titlebar-close, #orderreceipt #buttons .continue, .OrderSummaryHdr span
+.Lmyacccontactdetails li.last a, .signinContent .button, .standarditem .quantity .optionRight a, .standarditem .item a, .standarditem .remove a, #orderconfirmation .button, .order-summary-delivery-options li li, #yourbasket .button, .addressform .button, .additionalInformation li, .printPageIcon, a.button, #address_list .boxContent a, .signinContent .expresscheckout .checkoutLoginAlR .button, #postcodelookup .button, .checkoutStepIndicators li, .ui-dialog-titlebar-close, #orderreceipt #buttons .continue, .OrderSummaryHdr span, .myAccountTemplate input.submit
 {
     cursor: pointer;
-    background-image: url(../images/redesign/bg_buttons.png);
+    background-image: url('../images/Spring_Sprites_UK.png');
     background-repeat: no-repeat;
     text-indent: -9999em;
     display: block;
@@ -1161,13 +1162,16 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 }
 #yourbasket .basketButtons a.continue, #orderreceipt #buttons a.continue
 {
-    background-position: 0 -99px;
-    clear: both;
+    background-position: -31px -95px;
     float: right;
-    height: 30px;
+    height: 23px;
     margin: 12px 0 0;
     padding: 0;
-    width: 179px;
+    width: 186px;
+}
+#yourbasket .basketButtons a.continue:hover, #orderreceipt #buttons a.continue:hover
+{
+    background-position: -226px -95px;
 }
 #orderreceipt #buttons a.continue
 {
@@ -1183,15 +1187,19 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 }
 .summeryCol
 {
-    width: 294px;
+    width: 278px;
     float: right;
-    margin-left: 15px;
     position: relative;
+    background-color:#fff;
+    box-shadow: 1px 1px 3px #CCC;
+    border: 1px solid #CCC;
+    margin:8px 0 0;
+    right: -2px;
 }
 
 #ordersummery
 {
-    margin-top:-50px
+    /*margin-top:-50px*/
 }
 .wizrtable
 {
@@ -1206,12 +1214,12 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 {
     background-position: 0 0;
     width: 655px;
-    height: 11px;
+    height: 0;
 }
 .itemFooter
 {
     background-position: 0 -185px;
-    height: 23px;
+    height: 0;
     width: 655px;
 }
 .standarditem
@@ -1226,11 +1234,17 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 {
     background: transparent url(../images/redesign/bg_standardItemRepeat.png) repeat-y 0 0;
     width: 654px;
+    background-color: white;
+    box-shadow: 1px 1px 3px #CCC;
+    border: 1px solid #CCC;
+    padding-bottom: 12px;
 }
 .standarditem table table
 {
     width: 631px;
     background: none;
+    box-shadow: none;
+    border:none;
 }
 .standarditem table table th, .standarditem table table td
 {
@@ -1304,7 +1318,7 @@ table th, table th div
 }
 .standarditem .thumb, .standarditem .name, .standarditem .remove
 {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .thumb img
 {
@@ -1312,8 +1326,9 @@ table th, table th div
 }
 .standarditem .name, .standarditem .remove
 {
-    background: url("../images/redesign/standardItemUnderScore.gif") no-repeat scroll 20px bottom transparent;
+    /*background: url("../images/redesign/standardItemUnderScore.gif") no-repeat scroll 20px bottom transparent;*/
     height: 33px;
+    background-color: #ccc;
 }
 .standarditem .remove
 {
@@ -1322,19 +1337,31 @@ table th, table th div
 .standarditem .name a, .standarditem .remove a
 {
     display: block;
-    font-size: 1.4em;
-    margin-top: -11px;
+    font-size: 1.2em;
+    vertical-align:middle;
+    font-weight:bold;
 }
 .standarditem .remove a
 {
-    background-position: 50px 0;
     display: block;
     float: right;
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 17px;
-    padding-right: 30px;
+    padding-right: 5px;
     text-indent: 0;
-    width: 39px;
+    font-weight:normal;
+}
+.standarditem .remove .removeIcon {
+	background-position: -31px -569px;
+	background-image: url('../images/Spring_Sprites_UK.png');
+	background-repeat: no-repeat;
+	height: 14px;
+	width: 14px;
+	float: right;
+	cursor:pointer;
+}
+.standarditem .remove .removeIcon:hover {
+	background-position: -54px -569px;
 }
 .standarditem .name
 {
@@ -1389,25 +1416,34 @@ table th, table th div
 .ordersummery h2
 {
     background-position: 0 -209px;
-    font-weight: normal;
-    height: 32px;
+    font-weight: bold;
     margin-bottom: 0; /*margin-top: -43px;*/
-    padding: 62px 0 0 19px;
-    width: 278px;
+    /*padding: 62px 0 0 19px;*/
+    background-image: none;
+    background-color: #FAED00;
+    padding: 8px 0 9px 10px;
+    font-size: 14px;
 }
-
+.ordersummery .bagIcon {
+	background-position: -31px -593px;
+	width: 74px;
+	height: 81px;
+	background-repeat: no-repeat;
+	background-image: url('../images/Spring_Sprites_UK.png');
+	float: right;
+	margin-top: -90px;
+	margin-right: 5px;
+}
 .ordersummeryWrapper
 {
-    width: 300px;
-    background: url("../images/redesign/bg_summaryRepeat.png") repeat-y 0 0;
+    /*background: url("../images/redesign/bg_summaryRepeat.png") repeat-y 0 0;*/
     overflow: hidden;
 }
 .ordersummeryClose .delivery
 {
-    background-position: -357px -217px;
+    background-position: -359px -217px;
     display: block;
     height: 48px;
-    width: 300px;
     text-indent: -9999em;
 }
 /* buttons */
@@ -1416,32 +1452,39 @@ table th, table th div
     float: right;
     margin-top: 15px;
 }
+.basketButtons {
+	height: 65px;
+}
 .basketButtons input.button {
-	height:33px;
+	height:30px;
 }
 
 .basketHeader h1 {
-	font-size: 20pt;
+	font-size: 15pt;
 	font-style: normal;
 	font-weight: bold;
-	letter-spacing: 7px;
+	letter-spacing: 0;
 	text-transform: uppercase;
 	margin: .5em 0;
 }
 .standarditem .quantity .optionRight a
 {
-    background-position: 0 -43px;
-    height: 13px;
-    left: 50px;
+    background-position: -31px -692px;
+    height: 9px;
+    left: 35px;
     position: absolute;
-    top: 1px;
-    width: 75px;
+    top: 3px;
+    width: 12px;
 }
 #address_list .boxContent a, #yourbasket .edit, .Lmyacccontactdetails li.last a
 {
-    background-position: 0 -18px;
-    height: 23px;
-    width: 70px;
+    background-position: -31px -23px;
+    height: 22px;
+    width: 122px;
+}
+#address_list .boxContent a:hover, #yourbasket .edit:hover, .Lmyacccontactdetails li.last a:hover
+{
+    background-position: -162px -23px;
 }
  #yourbasket .edit
 {
@@ -1470,9 +1513,14 @@ a.continue { background-position: 0 -101px !important; float: right; height: 25p
 */
 .checkout
 {
-    background-position: 0 -65px;
-    height: 33px;
-    width: 233px;
+    background-position: -31px -55px;
+    height: 30px;
+    width: 274px;
+    margin-right: 2px;
+}
+.checkout:hover
+{
+    background-position: -314px -55px;
 }
 .placeOrder
 {
@@ -1523,14 +1571,16 @@ a.continue { background-position: 0 -101px !important; float: right; height: 25p
 {
     margin-top: 10px;
 }
-#postcodelookup .button
-{
-    background-position: 0 -335px;
-    display: block;
-    height: 27px;
-    width: 151px;
-    margin: 0;
-    padding: 0;
+#postcodelookup .button {
+	background-position: -31px -372px;
+	display: block;
+	height: 22px;
+	width: 176px;
+	margin: 0;
+	padding: 0;
+}
+#postcodelookup .button:hover {
+	background-position: -216px -372px;
 }
 .addressform #buttons
 {
@@ -1540,10 +1590,14 @@ a.continue { background-position: 0 -101px !important; float: right; height: 25p
 }
 input.submit
 {
-    background-position: -127px -245px;
-    height: 36px;
-    width: 162px;
+    background-position: -31px -128px;
+    height: 22px;
+    width: 97px;
 }
+/*input.submit:hover
+{
+    background-position: -137px -128px;
+}*/
 a.previous
 {
     display: none;
@@ -1581,7 +1635,7 @@ a.previous
 #cancelitems #buttons,
 #reminderslist .buttons
 {
-    margin: 18px 0 50px;
+    margin: 18px 0;
     overflow: hidden;
 }
 #referfriend #buttons a, #pwrmprevious,
@@ -1756,7 +1810,7 @@ a.previous
     display: block;
     float: right;
     height: 27px;
-    margin: 5px 25px 0 0;
+    margin: 10px 170px 0 0;
     overflow: hidden;
 }
 .addressform legend
@@ -1771,6 +1825,7 @@ a.previous
 }
 .myAccountTemplate .addressform input[type=text]
 {
+	display:block;
     width: 280px;
 }
 .addcontactaddress select
@@ -1790,7 +1845,6 @@ fieldset div.usxtdob
 fieldset div.usxtdob div
 {
     display: inline;
-    overflow: hidden;
     width: 102px;
 }
 div.usxtdob span.select {
@@ -1859,8 +1913,14 @@ div.usxtdob select:first-child {
 
 .myAccountTemplate .content
 {
-    background: none;
-    padding: 0;
+    background: white;
+    box-shadow: 1px 1px 3px #CCC;
+    border: 1px solid #CCC;
+    padding: 0 15px;
+    margin: 0 0 0 -27px;
+}
+.myAccountTemplate .leftSidebar {
+	margin: 0 0 0 10px;
 }
 .checkoutTemplate .content
 {
