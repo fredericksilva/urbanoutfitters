@@ -670,7 +670,7 @@ html > body*#col-two-order-summary-inside
 }
 #yourbasket #additionalservices, div.orscTotal, table.orderdetails
 {
-    margin: 0 20px;
+    margin: 0 13px;
     width: 250px;
     line-height: 37px;
 }
