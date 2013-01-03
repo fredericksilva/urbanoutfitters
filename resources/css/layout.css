@@ -1794,7 +1794,7 @@ a.previous
 }
 .checkoutLoginEqH input[type=text], .checkoutLoginEqH input[type=password]
 {
-    width: 350px;
+    width: 320px;
 }
 .addressform div.usxtexampleCheck, .addressform div.receiveMail, .checkoutLoginEqH .newcusttxt, .checkoutLoginEqH p, .addressform fieldset div.differentaddress, .addressform div#ustandc
 {
@@ -1828,7 +1828,7 @@ a.previous
     font-style: italic;
     margin-top: 5px;
     text-align: right;
-    width: 550px;
+    width: 528px;
 }
 
 .signinContent #loginform .button
