@@ -461,6 +461,9 @@ Venda.Search.Feature.perLine.prototype = {
         	}
         	return true;
         });
+        /*jQuery('img').error(function(){
+        	jQuery(this).attr('src', 'missing.png');
+        });*/
     }
 };
 
@@ -572,14 +575,17 @@ Venda.Search.Feature.uiSelectmenu.prototype = {
 		});
 		jQuery(".accordion_slice").each( function() {
 			var facetLength = jQuery(this).find(".termtext").length;
-			if (facetLength > 9) {
-				jQuery(this).find(".viewScroll .collatedresult").css('height','210px');
+			if (facetLength > 10) {
+				jQuery(this).find(".viewScroll .collatedresult").css('height','207px');
+				jQuery(this).find(".scrollerTrack").show();
 			}
 			else {
 				jQuery(this).find(".viewScroll .collatedresult").css('height','auto');
+				jQuery(this).find(".scrollerTrack").hide();
 			}
 		})
-		jQuery('.viewScroll').tinyscrollbar();
+		//jQuery('.viewScroll').tinyscrollbar();
+		jQuery('.collatedresult').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
 	}
 };
 

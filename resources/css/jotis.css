@@ -12,9 +12,9 @@
 }
 
 .editorialPage img {
-	-moz-box-shadow: 2px 3px 3px #888;
-	-webkit-box-shadow: 2px 3px 3px #888;
-	box-shadow: 2px 3px 3px #888;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#888888')";
 	/* For IE 5.5 - 7 */
@@ -54,6 +54,12 @@ a.sw_image img {
 
 .prodsFiveColumns .productlistinfo .productname {
 	padding-right: 25px;
+	line-height: 14px;
+	margin: 10px 0 0;
+}
+
+.prodsFiveColumns .productlistinfo .price, .prodsFiveColumns .productlistinfo .wasprice, .prodsFiveColumns .productlistinfo .price {
+	margin: 3px 0;
 }
 
 .prodsFiveColumns .wasprice {
@@ -196,6 +202,9 @@ body.search_body .ui-selectmenu-menu li:hover {
 	line-height: auto;
 	padding: 0;
 	color:#333;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 /* pagn numbers and links */
@@ -307,7 +316,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 .viewScroll .collatedresult {
-	width: 178px;
+	width: 190px;
 	overflow: hidden;
 	position: relative;
 }
@@ -318,7 +327,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 	color: #333;
 }
 
-.viewScroll .refineOverview {
+/*.viewScroll .refineOverview {
 	list-style: none;
 	position: relative;
 	left: 0;
@@ -333,13 +342,11 @@ body.search_body .ui-selectmenu-menu li:hover {
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	-moz-box-shadow: 1px 1px 5px #5C5C5C;
-	-webkit-box-shadow: 1px 1px 5px #5C5C5C;
-	box-shadow: 1px 1px 5px #5C5C5C;
-	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#5C5C5C');
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid #CCC;
+	margin:0 0 0 -1px;
 }
 
 .viewScroll .scrollbar {
@@ -358,7 +365,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 
 .viewScroll .disable {
 	display: none;
-}
+}*/
 
 .noSelect {
 	user-select: none;
@@ -366,6 +373,26 @@ body.search_body .ui-selectmenu-menu li:hover {
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+}
+
+.styled-v-bar{ /* sample CSS class for a different vertical scrollbar look */
+	background: #fff;
+	width: 10px;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid #CCC;
+	margin:0 0 4px -1px;
+	cursor: pointer;
+}
+
+.scrollerTrack {
+	background: url("../images/nav-fullbar-background.png") repeat scroll 0 0 transparent;
+	height: 205px;
+	width:8px;
+	position: absolute;
+	right: 2px;
+	display:none;
 }
 
 #collate .termtext {
@@ -416,6 +443,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 	-moz-opacity: .30 !important;
 	top: -10px;
 	padding: 0 0 10px;
+	z-index:1003;
 }
 
 /* css for search accordion */
@@ -655,10 +683,10 @@ a.quickBuyDetails {
 
 .quickBuyDetails {
 	background: url(../images/grid_tile.jpg) repeat scroll 0 0 white;
-	-moz-box-shadow: 3px 3px 5px #5C5C5C;
-	-webkit-box-shadow: 3px 3px 5px #5C5C5C;
-	box-shadow: 3px 3px 5px #5C5C5C;
-	border:0;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	border:1px solid #777;
 }
 
 .quickBuyDetails .productContent {
@@ -725,9 +753,9 @@ a.quickBuyDetails {
 }
 
 .quickBuyInputs .product-att .ui-state-default, .quickBuyInputs .product-att .ui-widget-content .ui-state-default, .quickBuyInputs .product-att .ui-widget-header .ui-state-default {
-	-moz-box-shadow: 1px 1px 5px #5C5C5C;
-	-webkit-box-shadow: 1px 1px 5px #5C5C5C;
-	box-shadow: 1px 1px 5px #5C5C5C;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	border:1px solid #999 \9;
 	height:
 }
@@ -739,9 +767,9 @@ a.quickBuyDetails {
 }
 
 .quickBuyQty #qtybox input#qty {
-	-moz-box-shadow: 1px 1px 5px #5C5C5C;
-	-webkit-box-shadow: 1px 1px 5px #5C5C5C;
-	box-shadow: 1px 1px 5px #5C5C5C;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	border:1px solid #999 \9;
 	padding:6px 2px 0 \9;
 	height:22px \9;

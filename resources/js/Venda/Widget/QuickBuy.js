@@ -28,7 +28,7 @@ var dialogOpts = {
         autoOpen: false,
 		closeOnEscape:true,
 		draggable: true,
-		zIndex:1,
+		zIndex:1003,
 		resizable: false,
 		width: 'auto',
 		position: [xPosition,'200'],

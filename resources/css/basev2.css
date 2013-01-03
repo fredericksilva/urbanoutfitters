@@ -1434,7 +1434,7 @@ ol.prods li {
 }
 
 #scrollDown {
-    margin: 0 10px 15px;
+    margin: 0 10px 10px;
 }
 
 .scroll-subtle {
@@ -1630,7 +1630,6 @@ fieldset {
     background: url("../images/uo-png-sprite.png") no-repeat scroll -124px -74px transparent;
     padding: 0;
     border-bottom: none;
-    margin-right: 20px;
 }
 .mm_ul .uoblog-link a:hover, .mm_ul .uoblog-link a:hover:before, .mm_ul .uocommunity-link a:hover, .mm_ul .uocommunity-link a:hover:before {
     border: 0;
@@ -1719,7 +1718,7 @@ fieldset {
     height: 6px;
     left: 0;
     position: absolute;
-    top: 129px;
+    top: 138px;
     width: 100%;
     z-index: -1;
 }
@@ -5221,9 +5220,9 @@ html[xmlns] .slides {
 
 .flexslider .slides {
   zoom: 1;
-  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .flexslider .slides > li {
@@ -5645,7 +5644,7 @@ ul#rvisitewidelist li a:hover div {
     border-top: 1px solid #444;
     border-bottom: 1px solid #444;
     float: left;
-    position: relative;
+    position: absolute;
     padding: 3px 4px 1px;
     font-size: 11px;
     text-transform: uppercase;
@@ -5814,6 +5813,12 @@ text-indent: -9000px;
 	height:34px;
 	margin:0 4px 0 0;
 	border:1px solid black;
+	background-color: white;
+}
+.getSocial li a:hover {
+	border: 2px solid black;
+	width: 32px;
+	height: 32px;
 }
 a.foot-fb { display: block; background: url("../images/footer/foot_social-sprite.png") no-repeat; }
 a.foot-tw { display: block; background: url("../images/footer/foot_social-sprite.png") 0px -15px;}
@@ -6124,6 +6129,7 @@ input#qty {
 	left: 0; 
 	width: 100%; 
 	height: 100%; 
+	z-index: 1002 !important;
 }
 
 /* Selectmenu

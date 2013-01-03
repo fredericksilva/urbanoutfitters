@@ -132,9 +132,11 @@
     z-index: -1;
 }
 .Zoompopup .flex-control-nav {
-    left: 0;
-    top: 10px;
-    display: none;
+    left: 20px;
+    top: 20px;
+    display: block;
+    z-index: 1003;
+    border: 1px solid #333;
 }
 .Zoompopup .flex-control-nav li, .uo-product-slider .flex-control-nav li {
     display: block;
@@ -174,19 +176,10 @@
 }
 .uo-product-slider .cloud-zoom-lens {
     cursor: crosshair;
-    background: url(../images/uo-slider-cursor.png) no-repeat;
-    background-position: 0 0 !important;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    height: 30px !important;
-    padding: 23px 0 0 33px;
-    width: 120px !important;
     z-index: 10000;
-    display: none;
-    margin: 69px 0 0 56px;
-    border: none;
-    color: #333;
-    text-decoration: none;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.6);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6FFFFFF, endColorstr=#9FFFFFF)";
 }
 .uo-product-slider .cloud-zoom-lens a {
     text-decoration: none;
@@ -219,11 +212,11 @@
 }
 
 .zoomPopupWrapper .ui-dialog-titlebar-close {
-  background: url("../images/zoompopup-close.gif") no-repeat transparent;
-  width: 36px;
-  height: 35px;
-  top: 10px;
-  right: 10px;
+  background: url("../images/uo-png-sprite.png") no-repeat scroll -205px -268px transparent;
+  width: 34px;
+  height: 34px;
+  top: 20px;
+  right: 20px;
   z-index: 2;
 }
 
@@ -231,31 +224,42 @@
   width: 100%
 }
 
-.zoomPopupWrapper .flex-direction-nav li a {
-  background: url("../images/zoompopup-arrows.png") no-repeat transparent;
-  width: 58px;
-  height: 57px;
-  margin-top: -29px;
+.zoomPopupWrapper .flex-direction-nav a {
+    width: 44px;
+    height: 45px;
+    margin-top: -22px;
+    display: block;
+    background: url("../images/uo-png-sprite.png") no-repeat scroll -79px -224px transparent;
+    cursor: pointer;
+    text-indent: -9999px;
+    z-index: 1000;
+    outline: none;
 }
-.zoomPopupWrapper .flex-direction-nav li a.flex-prev {
-  left: 14px;
+.zoomPopupWrapper .flex-direction-nav .flex-next {
+    background-position: -126px -219px;
+    right: 20px;
 }
-
-.zoomPopupWrapper .flex-direction-nav li a.flex-next {
-  right: 14px;
-  background-position: -58px 0;
+.zoomPopupWrapper .flex-direction-nav .flex-prev { 
+    background-position: -80px -219px;
+    left: 20px;
+}
+.zoomPopupWrapper a.flex-next:hover {
+    background-position: -130px -215px;
+}
+.zoomPopupWrapper a.flex-prev:hover {
+    background-position: -76px -215px;
 }
 
 #productdetail-viewlarge {
-  margin-bottom: 20px;
+  margin-top: -30px;
 }
 
 #productdetail-viewlarge a {
-  background: url("../images/zoompopup-reveal-bg.png") no-repeat transparent;
+  background: url("../images/uo-png-sprite.png") no-repeat -7px -224px transparent;
   display: block;
-  width: 40px;
+  width: 60px;
   height: 24px;
-  padding: 8px 15px;
+  padding: 8px 4px;
   line-height: 12px;
   font-size: 10px;
   font-weight: bold;
@@ -405,7 +409,7 @@
     -moz-transition: opacity 0.4s ease-out;
     width: 44px;
     height: 45px;
-    margin: -15px 0 0;
+    margin: -23px 0 0;
     display: block;
     background: url("../images/uo-png-sprite.png") no-repeat 0 0;
     position: absolute;
@@ -418,14 +422,14 @@
 }
 .homepage-slider .flex-direction-nav .flex-next {
     background-position: -126px -220px;
-    right: 10px;
+    right: 20px;
 }
 .homepage-slider .flex-direction-nav a.flex-next:hover {
     background-position: -130px -215px;
 }
 .homepage-slider .flex-direction-nav .flex-prev { 
     background-position: -80px -220px;
-    left: 10px;
+    left: 20px;
 }
 .homepage-slider .flex-direction-nav a.flex-prev:hover {
     background-position: -76px -215px;
@@ -443,11 +447,11 @@
     float: left;
     left: 50%;
     position: absolute;
-    bottom: 20px;
+    bottom: 3px;
     width: auto;
     background: none;
     padding: 1px 28px;
-    margin-left: -70px;
+    margin-left: -83px;
 }
 .homepage-slider .flex-control-paging li {
     display: block;
@@ -473,28 +477,32 @@
 .homepage-slider {
   border: none; 
   margin: 20px 0 25px 0;
-  width: 950px;
+  width: 948px;
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid #CCC;
 }
 .homepage-slider .homepage-slide {
   width: 950px;
   height: 500px;
 }
 .homepage-slider .hpslide1 {
-  background: #B1DAE2;
+  background: #fff;
 }
 .homepage-slider .hpslide2 {
-  background: #B4B3AC;
+  background: #fff;
 }
 .homepage-slider .hpslide3 {
-  background: #FFFACC;
+  background: #fff;
 }
 .homepage-slider .hpslide4 {
-  background: #78485D;
+  background: #fff;
 }
 .homepage-slider h2 {
   text-align: center;
   line-height: 510px;
-  color: #eee;
+  color: #000;
   font-size: 24px;
   letter-spacing: 20px;
 }
@@ -511,11 +519,14 @@
   margin-left: 0;
 }
 .homepage-slots .slot-image {
-  background-color: #444;
+  background-color: #fff;
   padding: 10px;
-  border: none;
   margin-bottom: 10px;
   height: 280px; 
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid #CCC;
 }
 
 .signuphome {
@@ -612,7 +623,7 @@
 
 
 .mm_ul {
-  margin-top: 16px;
+  margin-top: 25px;
 }
 .mm_fullwidth {
   zoom: 1;
@@ -648,8 +659,9 @@
 }
 
 div.zoomPopupWrapper {
-  width: 780px !important;
+  width: 680px !important;
   top: 20px !important;
+  z-index: 1003 !important;
 }
 
 #viewLargeImg {

@@ -1,7 +1,7 @@
 <venda_tpcomment><!-- Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.position.js"></script>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/jquery.ui.selectmenu.js"></script>
-<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/tiny-scrollbar.js"></script>
+<script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/external/facescroll.js"></script>
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 <div id="content-search-body">
 <!-- PULL IN PRODUCT LIST EDITORIAL PAGE -->
@@ -141,7 +141,7 @@ jQuery(function() {
     jQuery(Venda.Search.start);
 });
 
-    jQuery('#content-search').bind('search-loading-end', function(evt) {
+    jQuery('#content-search').bind('search-loading-end', function(evt) {	
 
         <venda_block label=CompareProductsInt,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
             // Compare - Product compare

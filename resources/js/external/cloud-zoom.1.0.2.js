@@ -129,8 +129,8 @@
                 }
 
                 lens.css({
-                    left: x,
-                    top: y
+                    left: x + 3,
+                    top: y + 3
                 });
                 lens.css('background-position', (-x) + 'px ' + (-y) + 'px');
 
@@ -277,7 +277,7 @@
                 ch = (sImg.outerHeight() / zoomImage.height) * zoomDiv.height();
 
                 // Attach mouse, initially invisible to prevent first frame glitch
-                lens = jWin.append(format("<div class = 'cloud-zoom-lens' style='display:none;z-index:98;position:absolute;width:%0px;height:%1px;'>CLICK TO ZOOM</div>", cw, ch)).find(':last');
+                lens = jWin.append(format("<div class = 'cloud-zoom-lens' style='display:none;z-index:98;position:absolute;width:%0px;height:%1px;'></div>", cw, ch)).find(':last');
 
                 $mouseTrap.css('cursor', lens.css('cursor'));
 
