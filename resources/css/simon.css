@@ -1188,6 +1188,10 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     float: left;
     min-height: 340px;
 }
+.summeryContainer {
+    position: fixed;
+    left:890px;
+}
 .summeryCol
 {
     width: 278px;
