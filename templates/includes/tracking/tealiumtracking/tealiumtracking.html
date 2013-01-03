@@ -235,7 +235,7 @@ page_type:"Checkout",
 </script>
 <!-- END TEALIUM -->
 </venda_block label=1110>
-<venda_block label=10890,mode=value,<venda_tpxt mode=get,name=track>=orcf-screen>
+<venda_block label=10890,mode=value,<venda_tpxt mode=get,name=track>=ordersummary>
 <!-- START TEALIUM - ORDERSUMMARY PAGE -->
 <script type="text/JavaScript">
 var utag_data={
@@ -263,6 +263,7 @@ var productwasprice=get_field(".orfn-detail .wasprice");
 var orderid=get_field(".orfn-order-sum .orderid");
 var orderdiscount=get_field(".orfn-order-sum .orderdiscount");
 var ordersubtotal=get_field(".orfn-order-sum .ordersubtotal");
+var ordersubincdisc=get_field(".orfn-order-sum .ordersubincdisc");
 var ordershipping=get_field(".orfn-order-sum .ordershipping");
 var ordertax=get_field(".orfn-order-sum .ordertax");
 var orderpaymenttype=get_field(".orfn-order-sum .orderpaymenttype");
@@ -283,6 +284,7 @@ product_quantity:productqty,
 order_id:orderid,
 order_discount:orderdiscount,
 order_subtotal:ordersubtotal,
+order_subincdisc:ordersubincdisc,
 order_shipping:ordershipping,
 order_tax:ordertax, 
 order_payment_type:orderpaymenttype,
@@ -341,7 +343,7 @@ page_type:"Communication Preferences"
 </script>
 <!-- END TEALIUM -->
 </venda_block label=1093>
-<venda_block label=1500,mode=value,<venda_tpxt mode=get,name=track>=orzc-screen>
+<venda_block label=1500,mode=value,<venda_tpxt mode=get,name=track>=orad-editadd>
 <venda_block label=1094,workflow=manageaddresses,param1=delivery>
 <!-- START TEALIUM - ADD DELIVERY ADDRESS -->
 <script type="text/JavaScript">
@@ -369,7 +371,7 @@ page_type:"Edit Delivery Address"
 <!-- END TEALIUM -->
 </venda_block label=1095>
 </venda_block label=1501>
-<venda_block label=1502,mode=value,<venda_tpxt mode=get,name=track>=orzc-screen>
+<venda_block label=1502,mode=value,<venda_tpxt mode=get,name=track>=orad-editadd>
 <venda_block label=1096,workflow=shopcart,param1=delivery>
 <!-- START TEALIUM - CHECK OUT - ADD DELIVERY ADDRESS -->
 <script type="text/JavaScript">
