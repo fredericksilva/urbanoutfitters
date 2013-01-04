@@ -1355,19 +1355,12 @@ table th, table th div
     font-size: 1em;
     line-height: 17px;
     padding-right: 5px;
-    text-indent: 0;
+    text-indent: -50px;
     font-weight:normal;
-}
-.standarditem .remove .removeIcon {
-	background-position: -31px -569px;
-	background-image: url('../images/Spring_Sprites_UK.png');
-	background-repeat: no-repeat;
-	height: 14px;
+    background-position: -31px -569px;
 	width: 14px;
-	float: right;
-	cursor:pointer;
 }
-.standarditem .remove .removeIcon:hover {
+.standarditem .remove a:hover {
 	background-position: -54px -569px;
 }
 .standarditem .name
