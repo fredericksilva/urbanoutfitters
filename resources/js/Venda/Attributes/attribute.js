@@ -797,7 +797,9 @@ Venda.Attributes.SelectedValues = function (att1,att2,att3,att4, uID){
 					productselected += Venda.Attributes.productArr[j].attSet[attNumber].selected + ', ';
 				}
 				else{
-					productstatus += Venda.Attributes.productArr[j].attSet[attNumber].name + ', ';
+					if (attNumber != 'att3') {
+						productstatus += Venda.Attributes.productArr[j].attSet[attNumber].name + ', ';
+					}
 				}
 			}
 	
@@ -811,15 +813,12 @@ Venda.Attributes.SelectedValues = function (att1,att2,att3,att4, uID){
 				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').addClass("Re-paint-out");
 			}
 			else {
-				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').hide().text("").addClass("Re-paint");
+				jQuery('#oneProduct_' + uID + ' .attrFeedback #productstatus').hide().text(productstatus.substring(0, productstatus.length-2));
 			}
-	
 		}
 	}
-	
 	// Updating the class for calculated values
 };
-
 
 /**
 * This is a function updates the element on the page that has the passed ID

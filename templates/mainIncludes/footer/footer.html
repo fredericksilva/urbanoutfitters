@@ -10,7 +10,17 @@
 
   </div>
   <div class="grid_8 omega">
-       <div class="signup-img"></div>
+  <!-- mp_trans_remove_start-->
+  	<div class="signup-img"></div>
+  <!-- mp_trans_remove_end-->
+  <!-- mp_trans_disable_start-->
+	<!-- mp_trans_add="FR" 
+		<div class="signup-img-fr"></div>		
+	-->
+	<!-- mp_trans_add="DE" 
+		<div class="signup-img-de"></div>
+	-->
+  <!-- mp_trans_disable_end-->
             <div class="foot-signUp">
             <!-- mp_trans_remove_start-->
             <iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=2068353000&n=2&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
@@ -57,6 +67,17 @@
       
       <ul>
         <li><a href="<venda_dispview page=emailsignup>">Email sign up</a><li>
+        <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
+        <li><a href="<venda_dispview page=catalogue_uk>">Catalogue Sign Up</a></li>
+        </venda_block label=1>
+		<!-- mp_trans_disable_start --> 
+        	<!-- mp_trans_add="DE"
+            <li><a href="<venda_dispview page=catalogue_de>">Katalog Anmeldung</a></li>
+            --> 
+        <!-- mp_trans_disable_end -->
+        <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
+        <li><a href="<venda_dispview page=unidays>">Students! 10% Off</a></li>
+        </venda_block label=1>
       </ul>
     </div>
   </div>
@@ -64,17 +85,29 @@
     <h4 class="foot">Let's get social</h4>
     <div class="footer-details clearfix social">
     	<ul class="getSocial">
-    		<li><a target="_blank" href="http://twitter.com/uoeurope" class="foot-tw"></a></li>
+    		<!-- mp_trans_remove_start-->
+            <li><a target="_blank" href="http://twitter.com/uoeurope" class="foot-tw"></a></li>
 			<li><a target="_blank" href="http://www.facebook.com/urbanoutfitterseurope" class="foot-fb"></a></li>
-			<li><a target="_blank" href="" class="foot-pt"></a></li>
+			<!-- mp_trans_remove_end-->
+			<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<li><a target="_blank" href="http://twitter.com/uofrance" class="foot-tw"></a></li>
+				<li><a target="_blank" href="https://www.facebook.com/urbanoutfittersfrance" class="foot-fb"></a></li>
+			-->
+			<!-- mp_trans_add="DE" 
+				<li><a target="_blank" href="http://twitter.com/UODeutschland" class="foot-tw"></a></li>
+				<li><a target="_blank" href="https://www.facebook.com/UrbanOutfittersDeutschland" class="foot-fb"></a></li>
+			-->
+			<!-- mp_trans_disable_end-->
+			<li><a target="_blank" href="http://pinterest.com/uoeurope/" class="foot-pt"></a></li>
 			<li><a target="_blank" href="" class="foot-in"></a></li>
 			<li><a target="_blank" href="http://www.flickr.com/photos/urbanoutfitterseurope/" class="foot-fl"></a></li>
 			<li><a target="_blank" href="http://www.youtube.com/urbanoutfitterscouk" class="foot-yt"></a></li>
-		    <li><a target="_blank" href="" class="foot-vm"></a></li>
+		    <li><a target="_blank" href="http://vimeo.com/user8503565" class="foot-vm"></a></li>
 			<li><a target="_blank" href="" class="foot-sp"></a></li>
 			<li><a class="foot-blog" href="http://urbanoutfitters-blog.co.uk" target="_blank"></a></li>
-		    <li><a class="foot-comm" href="http://urbanoutfitters.uat.venda.com/scat/community/"></a></li>			
-			<li><a class="foot-uotv" href="http://urbanoutfitters.uat.venda.com/scat/community/"></a></li>	
+		    <li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>			
+			<li><a class="foot-uotv" href="<venda_dispview scat=community>&temp=community_archive#uotv"></a></li>	
 		</ul>
     </div>
   </div>

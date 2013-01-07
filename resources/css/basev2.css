@@ -1968,7 +1968,11 @@ fieldset {
     font-weight: bold;
     font-size: 21px;
 }
-
+.oneProduct .priceField .priceNowSale {
+    font-weight: bold;
+    font-size: 21px;
+    color:red;
+}
 .oneProduct .priceField .priceWas {
     font-size: 1em;
     font-weight: bold;

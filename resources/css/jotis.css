@@ -51,7 +51,9 @@ a.sw_image img {
 	font-weight:bold;
 	margin: 0 0 10px 0;
 }
-
+.prodsFiveColumns .productlistinfo .saleprice {
+	color:red;
+}
 .prodsFiveColumns .productlistinfo .productname {
 	padding-right: 25px;
 	line-height: 14px;
@@ -784,8 +786,7 @@ a.quickBuyDetails {
 
 /* We Recommend, Boutique Style, Recently Viewed  */
 #bottomtab {
-	margin: 20px 0;
-	border-bottom: 1px solid #333;
+	margin: 20px 0 0;
 	display:none;
 }
 
@@ -862,7 +863,9 @@ a.quickBuyDetails {
 	margin:10px 0 0 0;
 	font-weight:bold;
 }
-
+.liwrapper .productlistinfo .price .saleprice {
+	color:red;
+}
 .liwrapper .productlistinfo .price .wasprice {
 	font-weight: normal;
 }
@@ -1033,7 +1036,6 @@ a.quickBuyDetails {
 .onlineExLogo {
 	width: 120px;
 }
-
 /* mainFooter margin */
 .mainFooter {
 	margin-top: 30px;

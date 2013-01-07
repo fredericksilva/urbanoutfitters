@@ -2068,11 +2068,12 @@ div.usxtdob select:first-child,
 /* order receipt */
 .orderThanks
 {
-    background: url("../images/redesign/bg_orderReciept.png") no-repeat scroll 0 0 transparent;
+    background: url('../images/Spring_Sprites_UK.png') no-repeat scroll 0 0 transparent;
     margin: 0 auto 30px;
     padding: 68px 50px;
     text-align: center;
     width: 426px;
+    background-position: -31px -732px;
 }
 #orderreceipt #buttons
 {

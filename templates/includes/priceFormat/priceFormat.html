@@ -9,7 +9,7 @@
 	<venda_tpcomment><!-- savings --></venda_tpcomment>
 	<venda_block label=noatt_savings,mode=value,<venda_invtsavingonwas>!=>
 		<p class="priceField">
-			<span class="priceNow"><span></span> <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span></span>
+			<span class="priceNowSale"><span></span> <span class="price" itemprop="price"><venda_currsym><venda_invtsell></span></span></span>
 			<span class="priceWas"><span>was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
 		</p>
 	</venda_block label=noatt_savings>
@@ -29,7 +29,7 @@
 				</venda_block label=att_nosavings_basic_nowas>
 
 				<venda_block label=att_nosavings_basic_was,mode=value,<venda_invtsavingonwas>!=>
-					<span class="priceNow"></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span>
+					<span class="priceNowSale"></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtsell></span>
 					<span class="priceWas">was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtwas></span>
 				</venda_block label=att_nosavings_basic_was>
 
@@ -62,7 +62,7 @@
 			
 				<venda_tpcomment><!-- same price --></venda_tpcomment>
 				<venda_block label=att_savings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
-					<span class="priceNow"><span></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>
+					<span class="priceNowSale"><span></span> <span class="price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>
 					<venda_block label=att_savings_adv_sameprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
 						<span class="priceWas"><span>was</span> <span class="price" id="atrwas"><venda_currsym><venda_invtatrminsubwas></span></span>
 					</venda_block label=att_savings_adv_sameprice_single>
@@ -73,7 +73,7 @@
 				
 				<venda_tpcomment><!-- different price --></venda_tpcomment>
 				<venda_block label=att_savings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
-				<span class="priceNow"><span id="price" itemprop="price"><span class="price"> <venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span>
+				<span class="priceNowSale"><span id="price" itemprop="price"><span class="price"> <venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span>
 					<venda_block label=att_savings_adv_diffprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
 						<span class="priceWas"><span>was</span> <span id="atrwas"><span class="price"><venda_currsym><venda_invtatrminsubwas></span></span></span>
 					</venda_block label=att_savings_adv_diffprice_single>

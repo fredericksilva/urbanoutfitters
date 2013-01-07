@@ -14,7 +14,7 @@
 <div id="attributes-stockNA" style="display:none;">Not available </div>
 <div id="attributes-stockOut" style="display:none;">Out of stock </div>
 <div id="attributes-productselected" style="display:none;">You have selected </div>
-<div id="attributes-productstatus" style="display:none;"></div>
+<div id="attributes-productstatus" style="display:none;">Please select </div>
 <div id="attributes-only" style="display:none;"> only </div>
 <div id="attributes-left" style="display:none;"> left </div>
 <div id="attributes-optionDefault" style="display:none;">Select </div>
@@ -263,7 +263,17 @@ jQuery(function(){
 				<venda_block label=502,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=502>
 				<p id="compbutton"><a href="#" onclick="AddtoCompare('<venda_invtivtype>','<venda_invtref>','comp-name<venda_invtref>','image_<venda_invtuuid>'); return false;"><venda_text id=site.button.title.compare.invt></a></p>
 			</venda_block label=41>
-			
+			<script>
+			jQuery(".buy-box input[type='submit']").click(function() {
+				if (jQuery(".buy-box input[type='submit']").hasClass("activeBuyButton")) {
+					return true;
+				}
+				else {
+					alert(jQuery("#productstatus").text());
+					return false;
+				}
+			});
+			</script>
 
 			<venda_block label=30,invtpreorder=notnull>
 			<venda_tpcomment><!-- if future release date --></venda_tpcomment>
