@@ -536,12 +536,14 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	
 		case "In stock":
 			stockFeedbackBox.addClass("In_stock_box");
+			stockFeedbackBox.removeClass("lowStock");
 			addproductID.addClass("Re-paint");
 	
 		break;
 		
 		case "Stock is low":
 			stockFeedbackBox.addClass("In_stock_box");
+			stockFeedbackBox.addClass("lowStock");
 			addproductID.addClass("Re-paint");
 			
 			var stockFeedback = stockstatus + jQuery('#attributes-only').text() + Venda.Attributes.Get('atronhand') + jQuery('#attributes-left').text();
@@ -550,6 +552,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		
 		case "Pre-order":
 			stockFeedbackBox.addClass("In_stock_box Pre-order_box");
+			stockFeedbackBox.removeClass("lowStock");
 			addproductID.addClass("Re-paint");
 			addproductID.val("Pre-order");
 			
@@ -560,6 +563,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		case "Out of stock":
 			
 			stockFeedbackBox.addClass("Out_of_stock_box");
+			stockFeedbackBox.removeClass("lowStock");
 			
 				if (emwbisType == 'none'){
 					addproductID.addClass("Re-paint-out");
@@ -588,6 +592,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 		case "Backorder":
 		
 			stockFeedbackBox.addClass("In_stock_box Backorder_box");
+			stockFeedbackBox.removeClass("lowStock");
 			addproductID.addClass("Re-paint");
 			addproductID.val("Backorder");
 			

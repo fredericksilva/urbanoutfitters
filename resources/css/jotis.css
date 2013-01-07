@@ -523,15 +523,20 @@ body.search_body .ui-selectmenu-menu li:hover {
 	left: 10px;
 }
 
-.swatchIcon {
+.image .swatchIcon {
 	display:none;
-	background: url("../images/uo-png-sprite.png") no-repeat;
-	background-position: -184px -268px;
+	background: url("../images/uo-png-sprite.png") no-repeat !important;
+	background-position: -184px -268px !important;
 	width:20px;
 	height:20px;
 	position: absolute;
 	top: 11px;
 	left: 11px;
+	padding: 0 !important;
+	box-shadow: 0 !important;
+	-moz-box-shadow: 0 !important;
+	-webkit-box-shadow: 0 !important;
+	border: none;
 }
 
 /*.swatchContainer::before {

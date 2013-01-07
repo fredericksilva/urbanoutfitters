@@ -36,7 +36,7 @@ var dialogOpts = {
 };
 jQuery("body").append('<div id="quickBuy" class="quickBuy"><div class="productContent"></div></div>');
 
-jQuery(".quickLinkBox a").live("click", function(e) {
+jQuery(".quickLinkBox a,a.swatchIcon").live("click", function(e) {
 	var dialogClass = jQuery(this).attr("class");
 	var reg = new RegExp('[?&]colour=([^&]+)');
 	var attColour = (jQuery(this).attr("href").match(reg)) ? jQuery(this).attr("href").match(reg)[1] : "";

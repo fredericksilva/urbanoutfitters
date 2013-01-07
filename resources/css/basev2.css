@@ -4228,7 +4228,9 @@ div.quickshop div.remove {
 .In_stock_box {
     background: #95e85f;
 }
-
+.lowStock {
+	color:red;
+}
 .Out_of_stock_box {
     background: rgba(255,84,75,0.6);
 }
@@ -5790,7 +5792,7 @@ h4.foot {
 .footer-details ul.getSocial {
   display: block;
   list-style-type: none;
-  width: 286px;
+  width: 312px;
 }
 
 .footer-details ul.getSocial li {
@@ -5809,25 +5811,39 @@ float: left;
 text-indent: -9000px;
 }
 .getSocial  li a {
-	width:34px;
-	height:34px;
+	width:33px;
+	height:32px;
 	margin:0 4px 0 0;
 	border:1px solid black;
-	background-color: white;
+	background: url("../images/uo-png-sprite.png") no-repeat white;
 }
 .getSocial li a:hover {
 	border: 2px solid black;
-	width: 32px;
-	height: 32px;
+	width: 31px;
+	height: 30px;
 }
-a.foot-fb { display: block; background: url("../images/footer/foot_social-sprite.png") no-repeat; }
-a.foot-tw { display: block; background: url("../images/footer/foot_social-sprite.png") 0px -15px;}
-a.foot-fl { display: block; background: url("../images/footer/foot_social-sprite.png") 114px 0px; }
-a.foot-yt { display: block; background: url("../images/footer/foot_social-sprite.png") 116px -15px;}
-a.foot-pt { display: block; background: url("../images/footer/foot_social-sprite.png") 0px -35px;}
-a.foot-uotv { display: block; background: url("../images/footer/foot_social-sprite.png") -70px -37px; }
-a.foot-comm { display: block; background: url("../images/footer/foot_social-sprite.png") 234px 0px; }
-a.foot-blog { display: block; background: url("../footer/foot_social-sprite.png") 230px -18px;}
+.getSocial  li a.foot-fb { display: block;background-position:-7px -311px;}
+.getSocial  li a.foot-tw { display: block;background-position:-40px -311px;}
+.getSocial  li a.foot-pt { display: block;background-position:-73px -311px;}
+.getSocial  li a.foot-yt { display: block;background-position:-172px -311px;}
+.getSocial  li a.foot-fl { display: block;background-position:-139px -311px;}
+.getSocial  li a.foot-in { display: block;background-position:-106px -311px;}
+.getSocial  li a.foot-vm { display: block;background-position:-205px -311px;}
+.getSocial  li a.foot-sp { display: block;background-position:-7px -344px;}
+.getSocial  li a.foot-fb:hover { display: block;background-position:-8px -378px;}
+.getSocial  li a.foot-tw:hover { display: block;background-position:-41px -378px;}
+.getSocial  li a.foot-pt:hover { display: block;background-position:-74px -378px;}
+.getSocial  li a.foot-yt:hover { display: block;background-position:-173px -378px;}
+.getSocial  li a.foot-fl:hover { display: block;background-position:-140px -378px;}
+.getSocial  li a.foot-in:hover { display: block;background-position:-107px -378px;}
+.getSocial  li a.foot-vm:hover { display: block;background-position:-206px -378px;}
+.getSocial  li a.foot-sp:hover { display: block;background-position:-8px -411px;}
+.getSocial  li a.foot-blog { display: block;background-position:-40px -346px;width:67px;height:29px;margin:4px 4px 0 0; }
+.getSocial  li a.foot-uotv { display: block;background-position:-111px -346px;width:67px;height:29px;margin:4px 4px 0 0;  }
+.getSocial  li a.foot-comm { display: block;background-position:-183px -346px;width:67px;height:29px;margin:4px 4px 0 0; }
+.getSocial  li a.foot-blog:hover { display: block;background-position:-41px -413px;width:65px;height:27px; }
+.getSocial  li a.foot-uotv:hover { display: block;background-position:-112px -413px;width:65px;height:27px;  }
+.getSocial  li a.foot-comm:hover { display: block;background-position:-184px -413px;width:65px;height:27px; }
 .foot-devider { 
 	height: 2px; 
 	background: none;
