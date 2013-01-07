@@ -6,14 +6,16 @@
 <head>
     <venda_menu template=title>
     <venda_page page=metainformation>
-    <venda_block,mode=value,<venda_tpxt mode=get,name=orsc>!=1>
+    <venda_block label=checkout,mode=value,<venda_tpxt mode=get,name=orsc>!=1>
     <venda_inctemplate name=css_co,type=mainIncludes>
     <venda_inctemplate name=js_co,type=mainIncludes>
-    </venda_block>
-    <venda_block,mode=value,<venda_tpxt mode=get,name=orsc>=1>
+    <!-- hey -->
+    </venda_block label=checkout>
+    <venda_block label=basket,mode=value,<venda_tpxt mode=get,name=orsc>=1>
     <venda_inctemplate name=css,type=mainIncludes>
     <venda_inctemplate name=js,type=mainIncludes>
-    </venda_block>
+    <!-- hello -->
+    </venda_block label=basket>
 <!-- Web Trends tag -->
 <venda_inctemplate name=webtrendsFooter,type=includes/webtrends>
 <!-- Web Trends tag -->
@@ -46,8 +48,10 @@
 	</div><!-- end subFooter -->
     </venda_block>
     <venda_block,mode=value,<venda_tpxt mode=get,name=orsc>!=1>
+    <div class="footerWrap">
     <div class="mainFooter container_24 clearfix">
     <venda_inctemplate name=checkoutFooter,type=mainIncludes>
+    </div>
     </div><!-- end mainFooter -->
     </venda_block>
 </div><!-- end wrapper -->
