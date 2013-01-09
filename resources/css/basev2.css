@@ -1040,7 +1040,7 @@ ol.prods li {
 }
 
 .crumbtrail {
-    font-size: 12px;
+    font-size: 11px;
     margin: 0;
     padding: 10px 0;
     clear: both;
@@ -1407,8 +1407,10 @@ ol.prods li {
     font-size: inherit;
     line-height: inherit;
     text-indent: inherit;
-    border: 1px solid #333;
-    background-image:none;
+    background: url("../images/uo-png-sprite.png") no-repeat transparent;
+    background-position: -8px -444px;
+    height:23px;
+    width:127px;
 }
 
 /* IE7 needs this */
@@ -1714,7 +1716,7 @@ fieldset {
     margin: 0 0 0 -475px;
 }
 .mm_fullbar {
-    background: #444;
+    background: #808080;
     height: 6px;
     left: 0;
     position: absolute;
@@ -5948,7 +5950,7 @@ span.sku {
 .minicartDetailDialog .buy-box {
   display: block;
   float: right;
-  margin-right: 7px;
+  margin:0;
 }
 .minicartDetailDialog .buy-left {
   top: 0;
@@ -6155,7 +6157,7 @@ input#qty {
 /* Selectmenu
 ----------------------------------*/
 #attributeInputs .product-att  { 
-	margin-right:  38px;
+	margin-right:  33px;
 	margin-top: 16px;
 }
 

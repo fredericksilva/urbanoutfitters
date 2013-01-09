@@ -34,6 +34,11 @@ jQuery(function(){
   	"http://www.urbanoutfitters.de" : "de"
   	}
   }
+  if (currLang[Venda.Widget.RegionLangSwitch.ebizURL] == "de" || currLang[Venda.Widget.RegionLangSwitch.ebizURL] == "fr"){
+    jQuery("#region-content").hide();
+  } else {
+    jQuery("#region-content").show();
+  }
 	currRegion = Venda.Widget.RegionLangSwitch.currRegion;		
 	jQuery("#language-sel #language").attr('class', currLang[Venda.Widget.RegionLangSwitch.ebizURL]).find(".lang-copy").text(currLang[Venda.Widget.RegionLangSwitch.ebizURL]);
 	jQuery(".region #" + currRegion + ", .lang #" + currLang[Venda.Widget.RegionLangSwitch.ebizURL]).hide();
@@ -90,10 +95,10 @@ var redirectURL = "",
     currentLoc = currentLoc.replace(removeThese[i], "")
   }  
   if (setType == "setlocn"){
-    if(Venda.Widget.RegionLangSwitch.ebizURL != sURL) {
-      redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + currentLoc + "&setlocn=" + changeValue
+    if((Venda.Widget.RegionLangSwitch.ebizURL + "/") != sURL) {
+      redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "/" + currentLoc + "&setlocn=" + changeValue
     } else {
-      redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "page/home" + "&setlocn=" + changeValue
+      redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "/page/home" + "&setlocn=" + changeValue
     }
   } else {
       redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en) + currentLoc

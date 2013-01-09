@@ -365,20 +365,21 @@
     background: none;
     border: 1px solid #333;
     margin: 0;
-    padding: 7px 20px 6px !important;
+    padding: 7px 0 0 !important;
     text-align: center;
     color: #333;  
 }
 .minicartDetailBottom .buttonArrow {
-    background: #444;
+    background: url("../images/uo-png-sprite.png") no-repeat transparent;
+    background-position: -8px -477px;
     color: #ffffff;
     border: none;
     float: none;
-    border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
     line-height: inherit;
     font-size: inherit;
     text-indent: inherit;
+    height:30px;
+    width:127px;
 }
 .mm_sub:after {
   font-size: 0px; line-height: 0%; width: 100px;

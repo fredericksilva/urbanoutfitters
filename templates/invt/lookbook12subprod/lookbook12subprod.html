@@ -1,19 +1,23 @@
 <venda_media rec=invt,type=pict,key=thumb,class=left>
 <div class="details">
 	<h2><venda_invtname></h2>
-	<form id="form<venda_invtref>" name="form<venda_invtref>" action="<venda_codehttp>" method="get">
+	<form name="form" action="<venda_codehttp>" method="get" name="form<venda_invtref>" id="form<venda_invtref>">
 		<input type="hidden" name="bsref" value="<venda_bsref>">
 		<input type="hidden" name="log" value="22">
 		<input type="hidden" name="mode" value="add">
 		<input type="hidden" name="curpage" value="">
 		<input type="hidden" name="next" value="">
+		<input type="hidden" name="layout">
+
 		<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
 		<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
 		<input type="hidden" name="ex" value="co_disp-shopc">
+
 		<!-- "buy" defines sku to add if "ex" is "co_disp-shopc" -->
 		<input type="hidden" name="buy" value="<venda_invtref>">
 		<!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
 		<input type="hidden" name="invt" value="<venda_tpxt mode=get,name=lbparentsku>">
+
 		<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
 		<input type="hidden" name="ivref" value="<venda_invtref>">
 		<input type="hidden" name="qty" value="1">

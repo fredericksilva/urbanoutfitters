@@ -243,7 +243,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 .pagnNumbers .pagnNumber, .pagnNumLast, .pagnNumFirst {
-	width:19px;
+	width:23px;
 	height:17px;
 	text-align:center;
 	margin:0 2px;
@@ -263,7 +263,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 .pagnNumbers .pagnNumCurrent, .pagnNumbers .pagnNumber:hover, .pagnNumLast:hover, .pagnNumFirst:hover {
-	width:19px;
+	width:23px;
 	height:17px;
 	text-align:center;
 	background-color:#bdffff;
@@ -1158,7 +1158,7 @@ a.quickBuyDetails {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 106px;
 	background: #57BAC9;
 	opacity: .7;
 	filter: alpha(opacity=70);

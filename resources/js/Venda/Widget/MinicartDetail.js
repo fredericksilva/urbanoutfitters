@@ -35,7 +35,7 @@ Venda.Widget.MinicartDetail.Create = function () {
 		enable : true,
 		
 		topPad : 48,
-		leftPad : 175,
+		leftPad : 191,
 		
 		fade : false,
 		scroll : true,
@@ -445,7 +445,8 @@ Venda.Widget.MinicartDetail.PopupMinicart = function () {
 		modal : false,
 		closeOnEscape : false,
 		draggable : Venda.Widget.MinicartDetail.settings.draggable,
-		dialogClass : "minicartDetailDialog"
+		dialogClass : "minicartDetailDialog",
+		width: 285
 	};
 	Venda.Widget.MinicartDetail.popupMinicartObj.dialog(dialogOpts);
 	
