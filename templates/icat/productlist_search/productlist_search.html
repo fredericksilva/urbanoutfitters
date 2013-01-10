@@ -11,12 +11,13 @@
 </center>
 
 <!-- venda_search tag starts - parentCategoryRef <venda_icatref> -->
-<venda_search parentCategoryRef=<venda_icatref>,sort=sequence_<venda_icatref>:name,order=asc:asc,perpage=<venda_itemsperpage>>
+<venda_search parentCategoryRef=<venda_icatref>,sort=<venda_icatsort>,order=<venda_icatordersort>,perpage=<venda_itemsperpage>>
 <!-- venda_search tag ends -->
 
 <venda_tpxt mode=set,name=categoryTopBanner,value=<venda_page page=<venda_icxttopbannerlinkref>>>
 <venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
 <venda_tpxt mode=set,name=icatHideRefine,value=<venda_icxthiderefine>>
+<venda_tpxt mode=set,name=icatSort,value=<venda_icatsort>>
 
 <div id="parentCatName" style="display:none;"><venda_icatname></div>
 <div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>

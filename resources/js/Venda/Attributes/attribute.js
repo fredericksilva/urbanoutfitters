@@ -1162,10 +1162,10 @@ Venda.Attributes.initViewLargeImagePopup = function() {
 		var el;
 		if(e==null) el = event.srcElement;
 		else	el = e.target;
-		if(el.className == "mousetrap") Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam);
+		if(el.className == "mousetrap" && jQuery('.quickBuy-Details').length == 0) Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam);
 	}
 	
-	if(typeof is_touch_device == 'function' && is_touch_device()) {
+	if(typeof is_touch_device == 'function' && is_touch_device() && jQuery('.quickBuy-Details').length == 0) {
 		jQuery(".cloud-zoom").click(function() {
 			Venda.Attributes.ViewLargeImg(Venda.Attributes.imgParam); return false;
 		});
@@ -1214,6 +1214,12 @@ Venda.Attributes.ImageSwap = function(att) {
 	var obj;
 	var sliderHTML = "";
 	
+	if(jQuery('.quickBuy-Details').length >= 1) {
+  	var cloudZoomOpts = {"czWidth":"400","czXadjust":"10"}
+	} else {
+  	var cloudZoomOpts = {"czWidth":"460","czXadjust":"90"}
+	}
+	
 	for(var i = 0; i < Venda.Attributes.storeImgsArr.length; i++) {
 		if(Venda.Attributes.storeImgsArr[i].param === att) {
 			obj = Venda.Attributes.storeImgsArr[i];
@@ -1228,7 +1234,7 @@ Venda.Attributes.ImageSwap = function(att) {
 	if(obj) {
   	for(var i = 0; i < obj.images.imgM.length; i++) {
       if(obj.images.imgL.length == obj.images.imgM.length){
-        sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX: 90, zoomWidth: 460, lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
+        sliderHTML += "<li id=\"slide-id-" + i + "\"><a href=\"" + obj.images.imgL[i] + "\" class=\"cloud-zoom\" rel=\"adjustX:" + cloudZoomOpts.czXadjust + ", zoomWidth:" + cloudZoomOpts.czWidth + ", lensOpacity: 1\"><img src=\"" + obj.images.imgM[i] + "\" /></a></li>"
       } else {
         sliderHTML += "<li id=\"slide-id-" + i + "\"><img src=\"" + obj.images.imgM[i] + "\" /></li>"
       }

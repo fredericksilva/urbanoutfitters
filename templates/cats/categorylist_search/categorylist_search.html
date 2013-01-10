@@ -12,11 +12,12 @@
 
 
 <venda_detblock><venda_icatref1>:</venda_detblock>
-<venda_search parentCategoryRef=<venda_detail>,sort=manual,order=desc>
+<venda_search parentCategoryRef=<venda_detail>,sort=sequence_<venda_icatref>:<venda_icatsort>,order=<venda_icatordersort>:<venda_icatordersort>>
 
 <venda_tpxt mode=set,name=categoryTopBanner,value=<venda_page page=<venda_icxttopbannerlinkref>>>
 <venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
 <venda_tpxt mode=set,name=icatHideRefine,value=<venda_icxthiderefine>>
+<venda_tpxt mode=set,name=icatSort,value=<venda_icatref>>
 
 <div id="parentCatName" style="display:none;"><venda_icatname></div>
 <div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>

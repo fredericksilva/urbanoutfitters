@@ -16,6 +16,7 @@ body {
 	font-size: 12px;
 	background: url('../images/grid_tile.jpg') repeat scroll 0 0 white;
 	position:relative;
+	min-width:960px;
 }
 .admin {
 	background-color: white;
@@ -150,7 +151,6 @@ body {
 	margin-top: 15px;
 	text-align: left; /* left-aligns all sub-content */
 	position:relative;
-	min-height: 500px;
 	/*background:#fff;*/	
 }
 #contentwrapper {	

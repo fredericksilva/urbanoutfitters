@@ -738,8 +738,8 @@ a.quickBuyDetails {
 .quickBuyDetails .ui-dialog-titlebar {
 	background: none;
 	position: absolute;
-	right: 15px;
-	top: 15px;
+	right: 16px;
+	top: 16px;
 }
 
 .quickBuyDetails .ui-dialog-titlebar a {
@@ -748,7 +748,7 @@ a.quickBuyDetails {
 	cursor:pointer;
 	width: 24px;
 	height: 24px;
-	z-index: 50;
+	z-index: 1;
 }
 
 .quickBuyDetails .ui-dialog-titlebar a:hover {

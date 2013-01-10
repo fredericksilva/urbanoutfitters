@@ -162,6 +162,9 @@ fieldset
 {
     width: 348px;
 }
+#cctoggle select {
+	background: url("../images/redesign/bg_buttons.png") no-repeat scroll 68px -205px white;
+}
 #cardtype
 {
     display: inline;
@@ -169,12 +172,13 @@ fieldset
 .editcontactaddress select, .containeroradeditadd select, #cctoggle select
 {
     width: 360px;
-}
+}	
 #cctoggle #startdateshow select, #cctoggle #expiryshow select
 {
     float: left;
     margin-left: 0;
     width: 120px;
+    background: url("../images/redesign/bg_buttons.png") no-repeat scroll -173px -205px white;
 }
 .myAccountTemplate select
 {
@@ -308,7 +312,7 @@ table
 {
 }
 .mm_fullbar {
-	background: #444;
+	background: #808080;
 	height: 6px;
 	left: 0;
 	position: absolute;

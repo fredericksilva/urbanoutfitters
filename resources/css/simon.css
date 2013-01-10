@@ -501,6 +501,12 @@ html > body*#col-two-order-summary-inside
     padding: 0 2px;
     width: 28px;
 }
+.orscSummary.grid_12.push_1.omega {
+	width: auto;
+	left: 0;
+	margin: 0;
+	float: none;
+}
 .OrderSummaryHdr span.expanded
 {
     background-position: 17px -550px;
@@ -1201,7 +1207,8 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 }
 .summeryContainer {
 	position:fixed;
-	left:890px;
+	left:50%;
+	margin-left:193px;
 }
 #ordersummery
 {
@@ -1975,6 +1982,7 @@ div.usxtdob select:first-child {
 .checkoutTemplate .content label img
 {
     margin: 10px 12px 0 0;
+    display:none;
 }
 #myformcommoption .usrExtended .tick label
 {

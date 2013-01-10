@@ -1,4 +1,5 @@
 <venda_detblock>
+<venda_block label=nobikes,icatref1!=allbikes>
 <li><a href="<venda_dispview icat=<venda_icatref1>>"><span <venda_block label=noicxten,icxtcatnameen1!=>style="display:none;"</venda_block label=noicxten><venda_block label=noicxtfr,icxtcatnamefr1!=>style="display:none;"</venda_block label=noicxtfr><venda_block label=noicxtde,icxtcatnamede1!=>style="display:none;"</venda_block label=noicxtde>><venda_icatname1></span>
 <!-- mp_trans_remove_start-->
 <venda_block label=isicxten,icxtcatnameen1!=><venda_icxtcatnameen1></venda_block label=isicxten>
@@ -12,6 +13,18 @@
 		-->
 <!-- mp_trans_disable_end-->
 </a></li>
+</venda_block label=nobikes>
+<venda_block label=bikes,icatref1=allbikes>
+<!-- mp_trans_remove_start-->
+<li><a href="<venda_dispview icat=<venda_icatref1>>"><venda_icatname1></a></li>
+<!-- mp_trans_remove_end-->
+<!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="DE" 
+		-->
+		<!-- mp_trans_add="FR" 
+		-->
+<!-- mp_trans_disable_end-->
+</venda_block label=bikes>
 </venda_detblock>
 
 <ul class="subsub-cats">
