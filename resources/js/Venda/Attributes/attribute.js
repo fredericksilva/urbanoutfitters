@@ -67,6 +67,10 @@ Venda.Attributes.Initialize = function() {
   				}
   				
   				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attName].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '</option>';
+  				
+  				if(attName == 'att1'){
+    				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attName].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attName].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attName].transValues[t] + '</option>';
+  				}
   			}
   			
   			jQuery("select[id='"+ attName +"_" + uID + "']").html(options).val(Venda.Attributes.productArr[i].attSet[attName].selectedValue);
@@ -223,12 +227,12 @@ Venda.Attributes.Declare = function() {
 
 
 // Merges two objects into one and stores data within an array
-Venda.Attributes.StoreJSON = function(attrObj, attrValObj) {
+Venda.Attributes.StoreJSON = function(attrObj, attrValObj, attrTrans) {
 	for(var prop in attrObj) { if(attrObj[prop] == null) attrObj[prop] = ""; }
 	for(var prop in attrValObj) { if(attrValObj[prop] == null) attrValObj[prop] = ""; }
 	var newAttrObj = jQuery.extend({}, attrObj);
 	Venda.Attributes.firstObj.push(newAttrObj);
-	Venda.Attributes.attsJSON = jQuery.extend(attrObj, attrValObj);
+	Venda.Attributes.attsJSON = jQuery.extend(attrObj, attrValObj, attrTrans);
 	Venda.Attributes.attsArray.push(Venda.Attributes.attsJSON);
 };
 
@@ -654,6 +658,7 @@ Venda.Attributes.GenerateOptionsJSON = function (index, uID) {
 				name:	'',
 				options:	[],
 				optionValues:	[],
+				transValues: [],
 				selected:	'',
 				selectedValue:	'',
 				imageRef:	'' 
@@ -717,8 +722,10 @@ Venda.Attributes.GenerateOptionsJSON = function (index, uID) {
 
 			// /[^0-9]/g The values being checked and pushed at this point could be sorted using nat-sort
 		}
+		if (jQuery.inArray(val.translatedatt1, newattributes.attSet.att1.transValues) == -1){
+				newattributes.attSet.att1.transValues.push(val.translatedatt1);
+		}	
 	}); 
-	
 	return newattributes;
 	
 }
@@ -934,7 +941,11 @@ Venda.Attributes.generateDropDowns = function(attributeNumber, uID) {
 		if (Venda.Attributes.productArr[i].attSet.id == uID) {
 			var options = '<option value="">'+ optionDefault + '</option>';
 			for (var t = 0; t < Venda.Attributes.productArr[i].attSet[attributeNumber].options.length; t++) {
-				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attributeNumber].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '</option>';
+			  if(attributeNumber == 'att1'){
+    				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attributeNumber].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attributeNumber].transValues[t] + '</option>';
+    		} else {
+    				options += '<option data-attText="' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '" value="'+ Venda.Attributes.productArr[i].attSet[attributeNumber].optionValues[t] +'">' + Venda.Attributes.productArr[i].attSet[attributeNumber].options[t] + '</option>';
+				}
 			}
 			var selectName = "select[name='" + attributeNumber + "']";
 			jQuery("#oneProduct_" + uID + " " + selectName).html(options);

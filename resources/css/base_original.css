@@ -150,6 +150,7 @@ body {
 	margin-top: 15px;
 	text-align: left; /* left-aligns all sub-content */
 	position:relative;
+	min-height: 500px;
 	/*background:#fff;*/	
 }
 #contentwrapper {	

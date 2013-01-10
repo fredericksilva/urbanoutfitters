@@ -609,6 +609,7 @@ input {
 
 .wrapper {
     font-size: 12px;
+    min-height:500px;
 }
 
 .wrapper p {
@@ -1411,6 +1412,7 @@ ol.prods li {
     background-position: -8px -444px;
     height:23px;
     width:127px;
+    font-size:11px;
 }
 
 /* IE7 needs this */
@@ -5828,16 +5830,16 @@ text-indent: -9000px;
 	width: 31px;
 	height: 30px;
 }
-.getSocial  li a.foot-fb { display: block;background-position:-7px -311px;}
-.getSocial  li a.foot-tw { display: block;background-position:-40px -311px;}
+.getSocial  li a.foot-fb { display: block;background-position:-40px -311px;}
+.getSocial  li a.foot-tw { display: block;background-position:-7px -311px;}
 .getSocial  li a.foot-pt { display: block;background-position:-73px -311px;}
 .getSocial  li a.foot-yt { display: block;background-position:-172px -311px;}
 .getSocial  li a.foot-fl { display: block;background-position:-139px -311px;}
 .getSocial  li a.foot-in { display: block;background-position:-106px -311px;}
 .getSocial  li a.foot-vm { display: block;background-position:-205px -311px;}
 .getSocial  li a.foot-sp { display: block;background-position:-7px -344px;}
-.getSocial  li a.foot-fb:hover { display: block;background-position:-8px -378px;}
-.getSocial  li a.foot-tw:hover { display: block;background-position:-41px -378px;}
+.getSocial  li a.foot-fb:hover { display: block;background-position:-41px -378px;}
+.getSocial  li a.foot-tw:hover { display: block;background-position:-8px -378px;}
 .getSocial  li a.foot-pt:hover { display: block;background-position:-74px -378px;}
 .getSocial  li a.foot-yt:hover { display: block;background-position:-173px -378px;}
 .getSocial  li a.foot-fl:hover { display: block;background-position:-140px -378px;}
@@ -5926,11 +5928,13 @@ span.sku {
 	display: none;	
 }
 .submit.addproduct {
+  font-size:11px;
   height: 30px;
   width: 130px;
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -76px 0 transparent;
 	border: 0 none;	
-  padding: 3px 18px 2px;
+  padding: 3px 0 2px 0 !important;
+  text-align: center;
   text-transform: uppercase;	
   margin-left: 0;
   position: relative;

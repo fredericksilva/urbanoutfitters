@@ -225,12 +225,12 @@ jQuery(function(){
 				<label for="qty"><venda_text id=site.quantity></label><input name="qty" id="qty" type="text" value="1" size="3" maxlength="3" class="qty textInput" >
 				<!-- if product doesn't have attributes -->
 				<venda_block label=34,invtpreorder!=1>
-				<input type="submit" class="button buttonAlt buttonArrow add submit addproduct" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket">
+				<input type="submit" class="button buttonAlt buttonArrow add submit addproduct" value="Add To Bag" data-track="addtobasket">
 				<input type="submit" class="button buttonAlt buttonArrow buy submit buynow" value="<venda_text id=site.button.buy_now>" data-track="buynow">
 				</venda_block label=34>
 				<venda_block label=35,invtpreorder=1>
 				<!-- pre-order with add to basket functionality (stay on the same page) -->
-				<input type="submit" value="<venda_text id=site.button.preorder>" class="button buttonAlt buttonArrow preorder submit addproduct" data-track="addtobasket">
+				<input type="submit" value="Add To Bag>" class="button buttonAlt buttonArrow preorder submit addproduct" data-track="addtobasket">
 				<!-- use this instead if you want pre-order with buy now functionality (go to basket page)
 				<input type="submit" value="<venda_text id=site.button.preorder>" class="preorder submit"> -->
 				</venda_block label=35>
@@ -245,7 +245,7 @@ jQuery(function(){
 
 					<venda_tpcomment><!-- Add to basket, PreOrder --></venda_tpcomment>
 					<div class="buy-box">
-  					<input type="submit" value="<venda_text id=site.button.add_to_basket>" data-track="addtobasket" class="button buttonAlt buttonArrow add submit addproduct">
+  					<input type="submit" value="Add To Bag" data-track="addtobasket" class="button buttonAlt buttonArrow add submit addproduct">
 					</div>
 					<venda_tpcomment><!-- Buy Now --></venda_tpcomment>
 					<input type="submit" value="<venda_text id=site.button.buy_now>" data-track="buynow" class="button buttonAlt buttonArrow buy submit buynow">
