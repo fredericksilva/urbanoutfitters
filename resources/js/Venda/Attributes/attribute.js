@@ -1209,8 +1209,8 @@ Venda.Attributes.ViewLargeImg = function(param) {
 Venda.Attributes.StoreImageSwaps = function(obj) {
 	  var toAdd = obj.param
 	  Venda.Attributes.objImageNum[toAdd] = 0
-		for(var i = 0; i < obj.images.imgS.length; i++) {
-			if(obj.images.imgS[i]) Venda.Attributes.objImageNum[toAdd]+=1;
+		for(var i = 0; i < obj.images.imgM.length; i++) {
+			if(obj.images.imgM[i]) Venda.Attributes.objImageNum[toAdd]+=1;
 		}
 		Venda.Attributes.storeImgsArr.push(obj);
 };
@@ -1280,9 +1280,9 @@ Venda.Attributes.imageAssigner = function(imgAtt) {
       imgStart = jQuery('#tag-invtref').text() + "_",
       imgRoot = jQuery('#tag-ebizurl').text(),
       imgChoice = {
-        "imgS" : "_t",
+        "imgS" : "_sm",
         "imgM" : "_l",
-        "imgL" : "_h"
+        "imgL" : "_z"
       }
   for(var size in imgChoice) {
     var images = []
