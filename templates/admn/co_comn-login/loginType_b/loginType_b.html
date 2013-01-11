@@ -1,0 +1,40 @@
+<venda_category rec=elementcat,ref=signinintro>
+<div class="signin_2cols<venda_block label=69,workflow=shopcart> signinCheckout</venda_block label=69>">
+	<form name="loginform" id="loginform" method="post" action="<venda_codehttps>" onSubmit="return passEmail(this);">
+	<venda_inctemplate type=admn/co_comn-login,name=hidden_fields>
+	<div class="grid_24 alpha">
+	<fieldset class="f-loginemail boxNoBorder">
+		<legend class="loginemail hide"><venda_text id=site.sign_in.legend.enter_email_address></legend>
+		<div class="boxContent"><label for="email" id="lLoginEmail"><venda_text id=site.sign_in.label.email_address></label>
+		<venda_block label=152,usgrref!=instore><input type="text" name="email" id="email" value="<venda_block label=pwrm,param2=notnull><venda_param2></venda_block label=pwrm><venda_block label=notpwrm,param2=null><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=notpwrm>" size="20" maxlength="150" onblur="checkUser();" class="textInput"></venda_block label=152>
+		<venda_block label=153,usgrref=instore><input type="text" name="emailinstore" id="emailinstore" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" size="20" maxlength="150" disabled="disabled" onblur="checkUser();"><input type="hidden" name="email" id="email" class="textInput" value="<venda_block label=pwrm,param2=notnull><venda_param2></venda_block label=pwrm><venda_block label=notpwrm,param2=null><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=notpwrm>"></venda_block label=153>
+		</div>
+	</fieldset>
+	</div>
+	<div class="grid_12 alpha box">
+		<fieldset class="dontFloat f-loginiam notregister">
+		<h2 class="header"><venda_text id=site.sign_in.heading.newcustomer></h2>
+		<div class="boxContent">
+		<div class="checkoutLoginEqH">
+			<div class="notregisterinput dontFloat"><input type="radio" name="registered" id="notRegistered" value="0" checked> <label for="notRegistered" class="dontFloat"><venda_text id=site.sign_in.label.not_registered> <venda_setting type=ebiz,name=name></label></div>
+			<div class="notregistertxt dontFloat"><venda_text id=site.sign_in.create_password_later></div>
+		</div>
+		</div>
+		</fieldset>
+	</div>
+	<div class="grid_12 omega alpha box">
+		<fieldset class="dontFloat f-loginiam registered">
+			<h2 class="header"><venda_text id=site.sign_in.heading.returningcustomer></h2>
+			<div class="boxContent">
+			<div class="checkoutLoginEqH">
+				<div class="dontFloat">
+				<input type="radio" name="registered" id="alreadyRegistered" value="1"> <label for="alreadyRegistered" class="dontFloat"><venda_text id=site.sign_in.label.registered_with> <venda_setting type=ebiz,name=name></label> <label for="password" id="lLoginPassword" title="<venda_text id=site.password.label.title_text>"><venda_text id=site.sign_in.label.my_password> </label> <input type="password" name="password" id="password" size="25" maxlength="30" class="textInput" autocomplete="off" onchange="document.loginform.registered[1].checked=true;">
+				<div class="forgottenpassword dontFloat"><a id="passwordReminder" href="<venda_passcode>&param1=<venda_workflow>"><venda_text id=site.sign_in.forgotten_password></a></div>
+				</div>
+			</div>
+			</div>
+		</fieldset>
+	</div>
+	<div class="checkoutLoginAlR grid_24 alpha boxNoBorder"><input type="submit" data-track="" value="<venda_text id=site.button.login>" class="button buttonAlt submit"></div>
+	</form>
+</div>

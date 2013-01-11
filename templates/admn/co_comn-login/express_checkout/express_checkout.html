@@ -1,0 +1,24 @@
+<venda_block label=69,mode=value,<venda_workflow>=shopcart>
+<venda_block label=47,mode=value,<venda_setting type=ebiz,name=expresscheckout>=1>
+<div class="<venda_block label=471,mode=value,<venda_setting type=ebiz,name=setlogindisplaytype>=a,<venda_setting type=ebiz,name=setlogindisplaytype>=b,operator=or>grid_24 omega</venda_block label=471><venda_block label=472,mode=value,<venda_setting type=ebiz,name=setlogindisplaytype>!=a,<venda_setting type=ebiz,name=setlogindisplaytype>!=b>grid_8</venda_block label=472> alpha">
+<div class="box expresscheckout">
+	<h2 class="header"><venda_text id=site.sign_in.express_checkout.heading></h2>
+	<div class="boxContent">
+		<div class="checkoutLoginEqH">
+			<p><venda_text id=site.sign_in.express_checkout.para1></p>
+			<p class="msg2"><venda_text id=site.sign_in.express_checkout.para2></p>
+		</div>
+		<div class="checkoutLoginAlR">
+			<venda_block label=129,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+			<a class="button buttonAlt" data-track="checkout-guest" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=zipcode&param1=<venda_param1>&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>"><venda_text id=site.button.continuewithoutreg></a>
+			</venda_block label=129>
+			<venda_block label=130,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+			<a class="button buttonAlt" data-track="checkout-guest" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=billto&param1=details&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>"><venda_text id=site.button.continuewithoutreg></a>
+			</venda_block label=130>
+		</div>
+	</div>
+    <div class="order-summary-box-footer"></div>
+</div>
+</div>
+</venda_block label=47>
+</venda_block label=69>

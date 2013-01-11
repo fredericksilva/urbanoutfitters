@@ -1,0 +1,84 @@
+<input type="hidden" name="page" value="myaccount"> 
+<!-- Hit Ext fields need be passed again, if errors are not null -->
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,comm=change>">
+<venda_title field=hidden>
+<venda_fname field=hidden>
+<venda_mname field=hidden>
+<venda_lname field=hidden>
+<venda_usemail field=hidden>
+<venda_uspswd field=hidden>
+<venda_uspswd2 field=hidden>
+<venda_zipc field=hidden>
+<div class="box basketAlt"><h1 class="header myformeditcomm"><venda_text id=site.my_account.edit_user_details.change_communication_options.heading></h1></div>
+<venda_block label=3,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=3>
+<p><venda_text id=site.my_account.edit_user_details.update_instructions></p>
+
+<venda_tpcomment><!-- Start: Your Communication Options --></venda_tpcomment>
+	<fieldset id="myformcommoption" class="myformcommoption">
+	<legend class="myformcommunication"><venda_text id=site.my_account.edit_user_details.change_communication_options.legend.your_communication_options></legend>
+	<p><venda_text id=site.my_account.edit_user_details.change_communication_options.check_boxes></p>
+	<p><venda_text id=site.my_account.edit_user_details.change_communication_options.dont_miss_out></p>
+	<div class="postbox"><label for="blkpostform"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/icon_post.gif" width="19" height="13" alt="<venda_text id=site.my_account.edit_user_details.change_communication_options.label.by_post>" class="alignM"> <venda_text id=site.my_account.edit_user_details.change_communication_options.label.by_post></label> <venda_blkpostform></div>
+
+	<div class="emailbox"><label for="blkemailform"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/icon_email.gif" width="15" height="14" alt="<venda_text id=site.my_account.edit_user_details.change_communication_options.label.by_email>" class="alignM"> <venda_text id=site.my_account.edit_user_details.change_communication_options.label.by_email></label> <venda_blkemailform></div>
+
+	<div class="emailformat"><label for="usmailform"><venda_text id=site.my_account.edit_user_details.change_communication_options.label.email_format></label> <select name="usmailform" size="1" class="dropDown"><venda_selectmailform></select></div>
+
+	<p class="dataprotection"><venda_text id=site.my_account.edit_user_details.change_communication_options.data_protection></p>
+	
+    <div class="usrExtended">
+        <h2><venda_text id=site.accountdetails.commoptions.title></h2>
+        <p>Please select the areas that interest you (optional)</p>
+        <div class="tick">
+            <input type="checkbox" name="usxtwmapparel" id="usxtwmapparel" value="1"><label for="usxtwmapparel"
+                class="prefer">Women's Apparel</label><input type="hidden" name="formusxtwmapparel"
+                    value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtwmaccess" id="usxtwmaccess" value="1"><label for="usxtwmaccess"
+                class="prefer">Women's Accessories</label><input type="hidden" name="formusxtwmaccess"
+                    value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtwmshoes" id="usxtwmshoes" value="1"><label for="usxtwmshoes"
+                class="prefer">Women's Shoes</label><input type="hidden" name="formusxtwmshoes" value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtmnapparel" id="usxtmnapparel" value="1"><label for="usxtmnapparel"
+                class="prefer">Men's Apparel</label><input type="hidden" name="formusxtmnapparel"
+                    value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtmnaccess" id="usxtmnaccess" value="1"><label for="usxtmnaccess"
+                class="prefer">Men's Accessories</label><input type="hidden" name="formusxtmnaccess"
+                    value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtmnshoes" id="usxtmnshoes" value="1"><label for="usxtmnshoes"
+                class="prefer">Men's Shoes</label><input type="hidden" name="formusxtmnshoes" value="1">
+        </div>
+        <div class="tick">
+            <input type="checkbox" name="usxtapartment" id="usxtapartment" value="1"><label for="usxtapartment"
+                class="prefer">Home</label><input type="hidden" name="formusxtapartment" value="1">
+        </div>
+        <div class="dob usxtText">
+        <label for="usxtdobstrday"><venda_text id=site.usxt.dob></label>
+        <input type="hidden" name="usxtdobstr" id="usxtdobstr" <venda_block usxusxtdobstr!=>value="<venda_usxusxtdobstr>"</venda_block> />
+        </div>
+        <div class="gender usxtDropdown">
+            <label for="usxusxtgender">Your gender?</label>
+            <select name="usxusxtgender" class="ml4">
+                <venda_usxselectusxtgender>
+            </select>
+        </div>
+    </div>
+    <div class="order-summary-box-footer"></div>
+    </fieldset>
+<venda_tpcomment><!-- End: Your Communication Options --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<div id="buttons" class="bottomButtons">
+	<a href="<venda_dispview page=myaccount>" class="button buttonAlt2"><venda_text id=site.button.back_to_my_account></a>
+	<input type="submit" value="<venda_text id=site.button.save_change>" class="button buttonAlt right submit">
+	</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>

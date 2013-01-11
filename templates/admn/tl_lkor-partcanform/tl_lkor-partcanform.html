@@ -1,0 +1,62 @@
+<div id="cancelitems">
+<h1><venda_text id=site.cancel_order_items.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<venda_block label=31,preverrors=notnull><h2 class="error"><venda_preverrors></h2></venda_block label=31>
+<venda_form>
+<input type="hidden" name="usercan" value="1">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="ohrfnbr" value="<venda_ohrfnbr>">
+
+<venda_tpcomment><!-- Start: Cancel Order Items Table --></venda_tpcomment>
+<venda_detblock1>
+<venda_detail2>
+</venda_detblock1>
+
+<venda_detblock2>
+<tr>
+	<input type="hidden" name="oirfnbr" value="<venda_oirfnbr>">
+	<input type="hidden" name="oiivref" value="<venda_oiivref>">
+	<td><venda_oiivname></td>
+	<td>
+		<venda_block label=8,oiitype=3>
+		<input type="checkbox" name="can<venda_oirfnbr>" value="1">
+		</venda_block label=8>
+		<venda_block label=9,oiitype!=3>
+    		<venda_block label=16,oistatus=On Hold,oistatus=Backordered,operator=or>
+    		<input type="checkbox" name="can<venda_oirfnbr>" value="1">
+    		</venda_block label=16>
+		</venda_block label=9>
+	</td>
+	<td>
+		<venda_block label=10,oistatus=2,oistatus=On Hold,operator=or><venda_text id=site.order_status.in_progress></venda_block label=10>
+		<venda_block label=11,oistatus=3><venda_text id=site.order_status.released_for_delivery></venda_block label=11>
+		<venda_block label=12,oistatus=4><venda_text id=site.order_status.backordered></venda_block label=12>
+		<venda_block label=13,oistatus=5><venda_text id=site.order_status.delivered></venda_block label=13>
+		<venda_block label=14,oistatus=6><venda_text id=site.order_status.returned></venda_block label=14>
+		<venda_block label=15,oistatus!=2,oistatus!=3,oistatus!=4,oistatus!=5,oistatus!=6,oistatus!=On Hold><venda_oistatus></venda_block label=15>
+	</td>	
+</tr>
+</venda_detblock2>
+
+<table summary="<venda_text id=site.cancel_order.table_summary>" title="<venda_text id=site.cancel_order.table_title>" class="wizrtable">
+<thead>
+<tr>
+	<th scope="col"><venda_text id=site.cancel_order_items.column_heading.item></th>
+	<th scope="col"><venda_text id=site.cancel_order_items.column_heading.cancel></th>
+	<th scope="col"><venda_text id=site.cancel_order_items.column_heading.status></th>
+</tr>
+</thead>
+<tbody>
+<venda_detail1>
+</tbody>
+</table>
+<venda_tpcomment><!-- End: Cancel Order Items Table --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<div id="buttons">
+<input type="submit" value="<venda_text id=site.button.cancel_items>" class="right submit">
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</div>

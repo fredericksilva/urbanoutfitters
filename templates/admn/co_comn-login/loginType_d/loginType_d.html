@@ -1,0 +1,41 @@
+<venda_category rec=elementcat,ref=signinintro>
+
+<div class="<venda_block label=50,mode=value,<venda_workflow>!=shopcart>grid_12</venda_block label=50><venda_block label=60,mode=value,<venda_workflow>=shopcart><venda_block label=601,mode=value,<venda_setting type=ebiz,name=expresscheckout>=1>grid_8</venda_block label=601></venda_block label=60> box alpha">
+	<form name="loginform" id="loginform" method="post" action="<venda_codehttps>" onSubmit="return passEmail(this);">
+	<venda_inctemplate type=admn/co_comn-login,name=hidden_fields>
+	<input type="hidden" name="registered" value="0">
+	<fieldset class="dontFloat f-loginiam notregister">
+	<h2 class="header"><venda_text id=site.sign_in.heading.newcustomer></h2>
+		<div class="boxContent">
+		<div class="checkoutLoginEqH">
+			<p class="newcusttxt"><venda_text id=site.sign_in.newregister_text></p>
+			<p class="notregistertxt"><venda_text id=site.sign_in.create_password_later></p>
+		</div>
+		<div class="notregisterbtn checkoutLoginAlR"><input type="submit"<venda_block label=691,workflow=shopcart> data-track="checkout-newuser"</venda_block label=691> value="<venda_text id=site.button.register>" class="button buttonAlt submit"></div>
+		</div>
+	</fieldset>
+	</form>
+</div>
+
+<div class="<venda_block label=70,mode=value,<venda_workflow>!=shopcart>grid_12 omega</venda_block label=70><venda_block label=80,mode=value,<venda_workflow>=shopcart><venda_block label=801,mode=value,<venda_setting type=ebiz,name=expresscheckout>=1>grid_8</venda_block label=801></venda_block label=80> box alpha">
+	<form name="secondloginform" id="secondloginform" class="secondlogin" method="post" action="<venda_codehttps>" onSubmit="return passEmail(this);">
+	<venda_tpcomment><!-- include file for hidden fields used in form 1 & 2 --></venda_tpcomment> 
+	<venda_inctemplate type=admn/co_comn-login,name=hidden_fields>
+	<input type="hidden" name="registered" value="1">
+	<fieldset class="dontFloat f-loginiam registered">
+		<h2 class="header"><venda_text id=site.sign_in.heading.returningcustomer></h2>
+		<div class="boxContent">
+		<div class="checkoutLoginEqH">
+			<p class="registertxt"><venda_text id=site.sign_in.registered_text></p>
+			<venda_tpcomment><!-- Login Type D, E : show email field in form two (returning customer box) --></venda_tpcomment> 
+			<label for="email" id="lLoginEmail"><venda_text id=site.sign_in.label.email_address></label>
+			<venda_block label=152,usgrref!=instore><input type="text" class="textInput" name="email" id="email" value="<venda_block label=pwrm,param2=notnull><venda_param2></venda_block label=pwrm><venda_block label=notpwrm,param2=null><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=notpwrm>" size="20" maxlength="150" onblur="checkUser();"></venda_block label=152>
+			<venda_block label=153,usgrref=instore><input type="text" class="textInput" name="emailinstore" id="emailinstore" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" size="20" maxlength="150" disabled="disabled" onblur="checkUser();"><input type="hidden" name="email" id="email" value="<venda_block label=pwrm,param2=notnull><venda_param2></venda_block label=pwrm><venda_block label=notpwrm,param2=null><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=notpwrm>"></venda_block label=153>
+			<label for="password" id="lLoginPassword" title="<venda_text id=site.password.label.title_text>"><venda_text id=site.sign_in.label.my_password></label> <input type="password" class="textInput" name="password" id="password" size="20" maxlength="30" autocomplete="off">
+			<div class="forgottenpassword"><a id="passwordReminder" href="<venda_passcode>&param1=<venda_workflow>"><venda_text id=site.sign_in.forgotten_password></a></div>
+		</div>
+		<div class="checkoutLoginAlR"><input type="submit"<venda_block label=692,workflow=shopcart> data-track="checkout-existinguser"</venda_block label=692> value="<venda_text id=site.button.login>" class="button buttonAlt submit"></div>
+		</div>
+	</fieldset>
+	</form>
+</div>

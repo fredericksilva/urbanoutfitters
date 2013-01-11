@@ -1,0 +1,72 @@
+<venda_esat>
+<venda_block label=11,errors=notnull>
+<input type="hidden" name="param1" value="<venda_param1>">
+</venda_block label=11>
+
+<venda_tpcomment><!-- common values --></venda_tpcomment>
+<input type="hidden" name="PrimaryForm">
+<input type="hidden" name="log" value="1">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="trrfext" value="1">
+<input type="hidden" name="htxt" value="<venda_htxt mode=get,name=foo>"><venda_tpcomment><!-- used by sign in popup - not detrimental as part of standard sign in --></venda_tpcomment>
+
+<venda_block label=20,workflow!=shopcart,workflow!=giftcertificates,workflow!=refer>
+<venda_block label=23,workflow!=giftlist,workflow!=newsletter>
+<venda_tpcomment><!-- values for workflow=register, or view if you have errors --></venda_tpcomment>
+<input type="hidden" name="page" value="myaccount">
+<input type="hidden" name="ex" value="co_disp-view">
+<input type="hidden" name="curlayout" value="checkout">
+<input type="hidden" name="layout" value="myaccount">
+</venda_block label=23>
+
+<venda_block label=21,workflow=giftlist,step!=glstmang>
+<venda_tpcomment><!-- values for workflow=giftlist create --></venda_tpcomment>
+<input type="hidden" name="step" value="glstcreate">
+<input type="hidden" name="curstep" value="glstcreate">
+<input type="hidden" name="ex" value="co_wizr-giftlist">
+<input type="hidden" name="curlayout" value="default">
+<input type="hidden" name="layout" value="default">
+<input type="hidden" name="glstlogout" value="1">
+</venda_block label=21>
+
+<venda_block label=22,workflow=giftlist,step=glstmang>
+<venda_tpcomment><!-- values for workflow=giftlist mang --></venda_tpcomment>
+<input type="hidden" name="step" value="glstmang">
+<input type="hidden" name="ex" value="co_wizr-giftlist">
+<input type="hidden" name="curlayout" value="default">
+<input type="hidden" name="layout" value="default">
+</venda_block label=22>
+</venda_block label=20>
+
+<venda_block label=12,workflow=shopcart,workflow=giftcertificates,operator=or>
+<venda_tpcomment><!-- values for workflow=shopcart or giftcertificates (and co_comn-login shopcart) only --></venda_tpcomment>
+<venda_block label=13,usgrref!=instore><input type="hidden" name="step" value="confirm"></venda_block label=13>
+<venda_block label=14,usgrref=instore>
+<input type="hidden" name="step" value="searchuser">
+<input type="hidden" name="wizard" value="instore">
+<input type="hidden" name="param1" value="details">
+<input type="hidden" name="log" value="2">
+<input type="hidden" name="copysc" value="0">
+</venda_block label=14>
+<input type="hidden" name="ex" value="co_wizr-shopcart">
+<input type="hidden" name="curlayout" value="checkout">
+</venda_block label=12>
+
+<venda_block label=13,workflow=refer>
+<venda_tpcomment><!-- values for workflow=refer (and co_comn-login refer) only --></venda_tpcomment>
+<input type="hidden" name="step" value="refer">
+<input type="hidden" name="ex" value="co_wizr-refer">
+<input type="hidden" name="curlayout" value="checkout">
+<input type="hidden" name="layout" value="myaccount">
+</venda_block label=13>
+
+<venda_block label=newsletter_block,workflow=newsletter>
+<venda_tpcomment><!-- values for workflow=newsletter --></venda_tpcomment>
+<input type="hidden" name="step" value="<venda_step>">
+<input type="hidden" name="ex"   value="co_wizr-newsletter">
+<input type="hidden" name="curlayout" value="default">
+<input type="hidden" name="layout" value="default">
+<input type='hidden' name='param1' value='<venda_param1>'>
+</venda_block label=newsletter_block>
+
+<venda_block label=15,usgrref!=instore><input type="hidden" name="glxt" value="<venda_glxt mode=make,addsnotdone=1,glxtusertype=>"></venda_block label=15>

@@ -1,0 +1,22 @@
+<venda_category rec=elementcat,ref=signintopcontent>
+
+<div class="container signinContent loginType_<venda_setting type=ebiz,name=setlogindisplaytype>">
+<h1 class="hide"><venda_text id=site.sign_in.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<venda_block label=402,workflow=shopcart><p class="signininstruction"><venda_text id=site.sign_in.select_option.instruction.checkout></p></venda_block label=402>
+<venda_inctemplate type=admn/co_comn-login,name=loginType_<venda_setting type=ebiz,name=setlogindisplaytype>>
+<venda_inctemplate type=admn/co_comn-login,name=express_checkout>
+<venda_inctemplate type=admn/co_comn-login,name=js_buttons>
+</div>
+
+<venda_category rec=elementcat,ref=signincontent>
+
+<!-- 
+step:<venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: co_comn-login
+ -->
+<venda_tpxt mode=set,name=co_comn-login,value=1>
+<venda_tpxt mode=set,name=co_comn-workflow,value=<venda_workflow>>
