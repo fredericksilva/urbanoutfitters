@@ -1,0 +1,51 @@
+<div id="storelocatorresults" class="box mainAlt">
+        <venda_block label=2402,param1!=instore,param2!=delivertostore>
+                <h1 class="header"><venda_text id=site.store_locator_results.header></h1>
+        </venda_block label=2402>
+        <venda_block label=2403,param1=instore,param2=delivertostore,operator=or>
+                <h1 class="header"><venda_text id=site.deliver_to_store_results.header></h1>
+        </venda_block label=2403>
+	<venda_tpcomment><!-- Start: stores found --></venda_tpcomment>
+	<venda_detblock1>
+		<!-- spotlight for store no <venda_itemcount> -->
+		<venda_block label=3,itemcount=1>
+			<venda_featstory template=neareststore,key1=<venda_pref>>
+			<!-- orderdesk & orderdesksesid are needed if we are into instore workflow, do not remove them -->
+			<venda_block label=2401,param1=instore,param2=delivertostore,operator=or>
+			<input type="hidden" name="orderdesksesid" value="<venda_orderdesksesid>">
+			<input type="hidden" name="orderdesk" value="<venda_orderdesk>">
+			<input type="submit" name="sdsubmit" id="sdsubmit" value="<venda_text id=site.button.storedelivery>" class="right submit button buttonAlt buttonArrow">
+			</venda_block label=2401>
+			</form>
+			<venda_block label=5,distmiles&gt;0><p class="distmiles"><venda_text id=site.store_locator.store_distance><venda_block label=401,distmiles!=1>s</venda_block label=401> <venda_text id=site.store_locator.away_from_postcode></p></venda_block label=5>
+			<venda_block label=6,distmiles&lt;1><p class="distmiles"><venda_text id=site.store_locator.search_based_on></p></venda_block label=6>
+		</venda_block label=3>
+		<venda_block label=4,itemcount&gt;1>
+			<venda_block label=51,itemcount=2>
+			<h3 class="nearby"><venda_text id=site.store_locator.other_nearby_stores></h3>
+			</venda_block label=51>
+			<ul><li><a href="#" onclick="document.storefinderMain.zipc.value='<venda_pref>'; document.storefinderMain.submit(); return false;"><venda_address> (<venda_text id=site.store_locator.distance_miles><venda_block label=402,distmiles!=1>s</venda_block label=402>)</a></li></ul>
+		</venda_block label=4>
+	</venda_detblock1>
+	
+	<venda_block label=3,found=1>
+		<div class="storecontent boxContent">
+		<h2><venda_text id=site.store_locator.heading></h2>
+		<venda_detail1>
+		</div>
+	</venda_block label=3>
+	<venda_tpcomment><!-- End: stores found --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: postcode not found --></venda_tpcomment>
+		<venda_block label=2,found=0><p id="storenotfound"><venda_text id=site.store_locator.postcode_not_found></p></venda_block label=2>
+	<venda_tpcomment><!-- End: postcode not found --></venda_tpcomment>
+
+	<venda_page page=storelocator>
+</div>
+
+<!--
+page: wz_orzc-postcodedistance.html
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow> -->
+<venda_tpxt mode=set,name=track,value=orzc-postcodedistance>

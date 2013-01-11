@@ -1,0 +1,190 @@
+<div>
+<div class="container addressform<venda_block label=12,param1!=delivery> pclookupcontact</venda_block label=12><venda_block label=13,param1=delivery> pclookupdelivery</venda_block label=13>">
+<div class="box basketAlt">
+<venda_block label=38,param1!=delivery><h1 class="header"><venda_text id=site.postcode_lookup.contact_address.heading></h1></venda_block label=38>
+<venda_block label=39,param1=delivery><h1 class="header"><venda_text id=site.postcode_lookup.delivery_address.heading></h1></venda_block label=39>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+</div>
+<venda_form>
+<input type="hidden" name="PrimaryForm">
+<venda_block label=47,instore!=1><input type="hidden" name="ustype" value="P"></venda_block label=47>
+<venda_block label=42,param1!=delivery>
+<input type="hidden" name="glxt" value="<venda_glxt mode=make,addsnotdone=>">
+<venda_block label=48,instore=1>
+<!-- if you're in instore workflow create a new account and copy basket to new user -->
+<input type="hidden" name="log" value="2">
+<input type="hidden" name="copysc" value="0">
+</venda_block label=48>
+</venda_block label=42>
+<input type="hidden" name="layout" value="checkout">
+
+<venda_block label=37,param1=delivery>
+<input type="hidden" name="zipcodelookup" value="1">
+</venda_block label=37>
+<venda_block label=36,param2=multiple><input type="hidden" name="htxt" value="<venda_htxt mode=make,changeaddby=multipledeliveryaddresses>"></venda_block label=36>
+
+<venda_tpcomment><!-- Start: Enter Postcode --></venda_tpcomment>
+<fieldset class="f-orzcpostcode">
+<legend class="orzcpostcode"><venda_text id=site.postcode_lookup.legend.enter_postcode></legend>
+<div><label for="zipc"><venda_text id=site.postcode_lookup.label.postcode></label> <venda_zipc field=text,size=10,maxlength=20,required=yes></div>
+</fieldset>
+
+<script type="text/javascript">
+<!-- 
+document.wizform.zipc.value='';
+// -->
+</script>
+<venda_tpcomment><!-- End: Enter Postcode --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Email Address --></venda_tpcomment>
+<venda_block label=50,instore!=1>
+<venda_block label=40,param1=delivery,ustype=P><venda_usemail field=hidden></venda_block label=40>
+<venda_block label=44,param1!=delivery>
+	<venda_block label=41,workflow=shopcart,workflow=instore,workflow=refer,workflow=register,operator=or>
+	<fieldset class="f-orzcemail">
+	<legend class="orzcemail"><venda_text id=site.postcode_lookup.legend.email_address></legend>
+	<div><label for="usemail"><venda_text id=site.postcode_lookup.label.email_address></label> <venda_usemail field=text,size=25,maxlength=150,required=yes></div>
+	</fieldset>
+	
+	<script type="text/javascript">
+	<!-- 
+	// pass along email address from previous page
+	function checkemail(str) {
+		var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+		return (filter.test(str));
+	}
+	
+	urlArray = location.href.split('&');
+	for (i=0; i<urlArray.length; i++) {
+		test=urlArray[i];
+		testArray=test.split('=');
+		test=testArray[1];
+		if (checkemail(test)) {
+			document.wizform.usemail.value=test;
+		}
+	}
+	// -->
+	</script>
+	</venda_block label=41>
+</venda_block label=44>
+</venda_block label=50>
+
+<venda_tpcomment><!-- End: Email Address --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+
+	<div id="buttons">
+	<div class="button buttonAlt2 previous">
+	<venda_block label=7,workflow=shopcart,workflow=recurring,workflow=instore,operator=or>	
+		<venda_block label=251,param1=delivery,param3!=addgiftwrap>
+		<a href="#" onClick='document.wizform.zipcodelookup.value=""; <venda_wizbutton step=newadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+		</venda_block label=251>
+		<venda_block label=252,param1=delivery,param3=addgiftwrap>
+		<a href="#" onClick='document.wizform.zipcodelookup.value=""; <venda_wizbutton step=newadd,mode=process,param1=delivery,param2=add,callonly=yes,param3=addgiftwrap> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+		</venda_block label=252>
+		<venda_block label=261,param1!=delivery>
+		<a href="#" onClick='<venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+		</venda_block label=261>
+	</venda_block label=7>
+
+	<venda_block label=21,workflow=manageaddresses>
+	<a href="#" onClick='document.wizform.zipcodelookup.value=""; <venda_wizbutton step=newadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+	</venda_block label=21>
+
+	<venda_block label=31,workflow=register,workflow=refer,operator=or>
+	<a href="#" onClick='<venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+	</venda_block label=31>
+
+	<venda_block label=41,workflow=giftlist>
+	<a href='#' onClick='<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;'><venda_text id=site.postcode_lookup.dont_know_postcode></a>
+	</venda_block label=41>	
+	</div>
+	<input type="submit" onClick="doContinue(); return false;" value="<venda_text id=site.button.continue>" class="button buttonAlt buttonArrow right  submit">
+	</div>
+    
+	<script type="text/javascript">
+    <!--
+	function doContinue() {
+        if (document.wizform.zipc.value ==""){
+			alert('<venda_text id=site.postcode_lookup.legend.enter_postcode>');
+			document.wizform.zipc.focus();
+			return false;
+		}
+		if (!Venda.Ebiz.europePostalCheck(document.wizform.cntry.value)){ return false; }	
+	<venda_block label=1,workflow=shopcart,workflow=instore,operator=or>
+	<venda_block label=25,param1=delivery,param3!=addgiftwrap>
+	<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=uk,callonly=yes>
+	</venda_block label=25>
+	<venda_block label=250,param1=delivery,param3=addgiftwrap>
+	<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=uk,callonly=yes,param3=addgiftwrap>
+	</venda_block label=250>
+        
+        <venda_block label=26,workflow=shopcart,param1!=delivery>
+        if (checkemail(document.wizform.usemail.value)){
+        <venda_wizbutton step=billto,mode=process,param1=details,param2=uk,callonly=yes>
+		} else {
+			alert('<venda_text id=site.sign_in.js_validation.valid_email_address>');
+			document.wizform.usemail.focus();
+			return false;
+		}
+        </venda_block label=26>
+		
+		<venda_block label=27,workflow=instore,param1!=delivery>
+        <venda_wizbutton step=billto,mode=process,param1=details,param2=uk,callonly=yes>
+        </venda_block label=27>
+        </venda_block label=1>
+        			
+        <venda_block label=2,workflow=manageaddresses>
+        <venda_wizbutton step=editadd,mode=process,param1=delivery,param2=uk,callonly=yes>
+        </venda_block label=2>
+        			
+        <venda_block label=3,workflow=register,workflow=refer,operator=or>
+        if (checkemail(document.wizform.usemail.value)){
+			<venda_wizbutton step=billto,mode=process,param1=details,param2=uk,callonly=yes>
+        } else {
+			alert('<venda_text id=site.sign_in.js_validation.valid_email_address>');
+			document.wizform.usemail.focus();
+			return false;
+		}
+        </venda_block label=3>
+        			
+        <venda_block label=4,workflow=giftlist>
+        <venda_wizbutton step=editadd,mode=process,param1=delivery,param2=uk,callonly=yes>
+        </venda_block label=4>
+
+	}
+    // -->
+    </script>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+<venda_block label=564,workflow!=instore>
+<venda_tpcomment><!-- Start: Store Delivery --></venda_tpcomment>
+<venda_block label=57,param1=delivery>
+<venda_block label=58,mode=value,<venda_setting type=ebiz,name=delivertostore>=1>
+<script type="text/javascript">
+// for image map if you use one
+function mapsearch(zipcode) {
+	document.storefinderP.zipc.value=zipcode;
+	document.storefinderP.submit();
+}
+</script>
+
+<div id="storelocator" class="storefinder">
+		<div class="box basketAlt">
+			<h2 class="header"><venda_text id=site.store_locator.search_again></h2>
+		<div class="boxContent">
+			<p>Alternatively you could get this item delivered to store.</p>
+		</div>
+		<div id="buttons">
+			<a href="<venda_codehttps>?ex=co_wizr-shopcart&step=newadd&mode=display&param1=delivery&param2=storeadd" class="right submit button buttonAlt buttonArrow"><venda_text id=site.store_locator.search_again></a>
+		</div>
+	</div>
+</div>
+</venda_block label=58>
+</venda_block label=57>
+<venda_tpcomment><!-- End: Store Delivery --></venda_tpcomment>
+</venda_block label=564>
+</div>
+<venda_category rec=elementcat,ref=orzccontent>
+</div>

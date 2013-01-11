@@ -1,0 +1,118 @@
+<venda_block label=31,ustype=R>
+<div id="referfriend">
+<h1><venda_text id=site.refer_friend.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<venda_form>
+<input type="hidden" name="ex" value="wz_orcp-refer">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="subject" value=" A message from <venda_sesname>">
+<input type="hidden" name="subjectref" value=" Your refered friends ">
+<input type="hidden" name="emailfrom" value="<venda_setting type=ebiz,name=email>">
+<input type="hidden" name="layout" value="myaccount">
+<venda_tpcomment>
+<!--
+If your curlayout doesn't myacount, you must do two things:
+1. Custom this template by changing curlayout value.
+2. Change a layout for refer workflow via VCP.
+-->
+</venda_tpcomment>
+<input type="hidden" name="curlayout" value="myaccount">
+
+<venda_tpcomment><!-- Start: Voucher Info --></venda_tpcomment>
+	<venda_userinfo>
+	<p class="earnVoucher"><venda_sesname>, <venda_text id=site.refer_friend.earn_vouchers></p>
+	</venda_userinfo>
+
+	<p class="sendFriendVoucher"><venda_text id=site.refer_friend.send_friend_voucher></p>
+	<p class="sendYouVoucher"><venda_text id=site.refer_friend.send_you_voucher></p>
+	<p class="tellFriends"><venda_text id=site.refer_friend.tell_friends></p>
+
+	<p class="terms">* <a href="<venda_dispview page=terms>?layout=empty" rel="popup console 550 450" target="_blank" title="<venda_text id=site.refer_friend.terms_and_conditions.title>"><venda_text id=site.refer_friend.terms_and_conditions> </a><venda_text id=site.refer_friend.apply></p>
+	<p class="privacy"><a href="<venda_dispview page=securityandprivacy>&layout=empty#privacy" target="_blank" title="<venda_text id=site.refer_friend.privacy_policy.title>"><venda_text id=site.refer_friend.privacy_policy></a></p>
+<venda_tpcomment><!-- End: Voucher Info --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Friends Told --></venda_tpcomment>
+	<h3><venda_block label=24,qty=0><venda_text id=site.refer_friend.not_referred_friends></venda_block label=24><venda_block label=25,qty!=0><venda_text id=site.refer_friend.friends_told><venda_block label=26,qty!=1>s</venda_block label=26></venda_block label=25></h3>
+	<venda_block qty&gt;0><p class="recommended"><a href="<venda_codehttp>?ex=co_disp-refer&bsref=<venda_bsref>&page=referlist&layout=myaccount"><venda_text id=site.refer_friend.view_recommended_friends></a></p></venda_block>
+<venda_tpcomment><!-- End: Friends Told --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Your Details --></venda_tpcomment>
+	<h2><venda_text id=site.refer_friend.your_details></h2>
+	<p class="refrEditname"><venda_text id=site.refer_friend.edit_your_name></p>
+	<fieldset class="f-refrname">
+	<legend class="refrname"><venda_text id=site.refer_friend.legend.your_name></legend>
+	<div><label for="fromname"><venda_text id=site.refer_friend.label.from></label> <input type="text" name="fromname" id="fromname" value="<venda_fname> <venda_lname>" size="30" maxsize="150"></div>
+	</fieldset>
+<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Friends Details --></venda_tpcomment>
+	<h2><venda_text id=site.refer_friend.friends_details></h2>
+
+	<fieldset class="f-refrfriend">
+	<legend class="refrfriend"><venda_text id=site.refer_friend.legend.friends_details></legend>
+
+	<div><label for="name1"><venda_text id=site.refer_friend.label.friends_name></label> <input type="text" name="name" id="name1" value="" size="30" maxsize="100"></div>
+	<div><label for="email1"><venda_text id=site.refer_friend.label.friends_email_address></label> <input type="text" name="email" id="email1" value="" size="30" maxsize="100"></div>
+	<br>
+	<div><label for="name2"><venda_text id=site.refer_friend.label.friends_name></label> <input type="text" name="name" id="name2" value="" size="30" maxsize="100"></div>
+	<div><label for="email2"><venda_text id=site.refer_friend.label.friends_email_address></label> <input type="text" name="email" id="email2" value="" size="30" maxsize="100"></div>
+	<br>
+	<div><label for="name3"><venda_text id=site.refer_friend.label.friends_name></label> <input type="text" name="name" id="name3" value="" size="30" maxsize="100"></div>
+	<div><label for="email3"><venda_text id=site.refer_friend.label.friends_email_address></label> <input type="text" name="email" id="email3" value="" size="30" maxsize="100"></div>
+	<br>
+	<div><label for="name4"><venda_text id=site.refer_friend.label.friends_name></label> <input type="text" name="name" id="name4" value="" size="30" maxsize="100"></div>
+	<div><label for="email4"><venda_text id=site.refer_friend.label.friends_email_address></label> <input type="text" name="email" id="email4" value="" size="30" maxsize="100"></div>
+	<br>
+	<div><label for="name5"><venda_text id=site.refer_friend.label.friends_name></label> <input type="text" name="name" id="name5" value="" size="30" maxsize="100"></div>
+	<div><label for="email5"><venda_text id=site.refer_friend.label.friends_email_address></label> <input type="text" name="email" id="email5" value="" size="30" maxsize="100"></div>
+
+	</fieldset>
+<venda_tpcomment><!-- End: Friends Details --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Preview Terms --></venda_tpcomment>
+	<!-- <p><a href="<venda_dispview page=referpreview>&layout=empty" target="_blank">Preview Email</a></p> -->
+	<div class="refrTerm"><input type="checkbox" name="agree" id="agree"> <label for="agree"><venda_text id=site.refer_friend.label.read_and_agree> <a href="<venda_dispview page=terms>?layout=empty" rel="popup console 550 450" target="_blank" title="<venda_text id=site.refer_friend.label.terms_and_conditions.title>"><venda_text id=site.refer_friend.label.terms_and_conditions></a> <venda_text id=site.refer_friend.label.refer_a_friend></label></div>
+<venda_tpcomment><!-- End: Preview Terms --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<script type="text/javascript">
+<!-- 
+function validateFields() {
+	if (document.wizform.agree.checked == '') {
+		alert('<venda_text id=site.refer_friend.js_validation.terms_and_conditions>');
+	}
+	else {
+		<venda_wizbutton step=next,mode=process,param1=<venda_bsref>,callonly=yes>;
+	}
+}
+// -->
+</script>
+
+<div id="buttons">
+<a href="<venda_dispview page=myaccount>"><venda_text id=site.button.back_to_my_account></a>
+<input type="submit" onClick="validateFields(); return false;" value="<venda_text id=site.button.continue>" class="right submit">
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</div>
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_refr-names.html
+ -->
+<venda_tpxt mode=set,name=track,value=refr-names> 
+</venda_block label=31>
+
+
+<venda_block label=33,ustype!=R>                
+<script type="text/javascript">
+// forward to log in page   
+location.href="<venda_codehttps>?ex=co_wizr-refer&bsref=<venda_bsref>&step=referlogin";
+</script> 
+</venda_block label=33>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+<venda_inctemplate name=cm-wz_refr-names,type=includes/tracking/coremetrics>

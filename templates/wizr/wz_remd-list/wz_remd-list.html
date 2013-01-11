@@ -1,0 +1,54 @@
+<div id="reminderslist" class="box basketAlt">
+<h1 class="header"><venda_text id=site.view_reminders.heading></h1>
+<p><venda_text id=site.view_reminders.introduction></p>
+<venda_tpcomment><!-- Start: Instructions --></venda_tpcomment>
+<venda_block label=1352,results=0><p class="noreminder"><venda_text id=site.view_reminders.noreminder></p></venda_block label=1352> 
+<venda_block label=135,results!=0,results=notnull><p><venda_text id=site.view_reminders.reminders_listed_below></p></venda_block label=135>
+<p><venda_text id=site.view_reminders.add_reminder_instructions></p>
+
+<venda_tpcomment><!-- End: Instructions --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: View Reminders Table --></venda_tpcomment>
+	<venda_detblock>
+	<tr>
+		<td class="edit"><a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&step=editusext&remdgroup=<venda_remdgroup>"><venda_text id=site.button.edit_reminder></a></td>
+		<td class="occasion"><venda_recfname> <venda_reclname><venda_text id=site.view_reminders.occasion_name.recname_suffix> 
+<venda_block label=890,mode=value,<venda_remtype>!=<venda_text id=site.add_reminder.remtypeother>><venda_remtype></venda_block label=890>
+<venda_block label=891,mode=value,<venda_remtype>=<venda_text id=site.add_reminder.remtypeother>><venda_remtypeother></venda_block label=891></td>
+		<td class="date"><venda_block label=88,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1><venda_remday> <venda_remmonth> <venda_remyear></venda_block label=88><venda_block label=89,mode=value,<venda_setting type=ebiz,name=mmdddates>=1><venda_remmonth> <venda_remday> <venda_remyear></venda_block label=89></td>
+		<td class="delete"><a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&step=delusext&remdgroup=<venda_remdgroup>&order1=remmonth&order2=remday&subgroup=4"><venda_text id=site.button.delete_reminder></a></td>
+	</tr>
+	</venda_detblock>
+
+<venda_block label=134,results!=0,results=notnull>
+<div class="reminderBox">
+	<table summary="<venda_text id=site.view_reminders.table_summary>" title="<venda_text id=site.view_reminders.table_title>" cellspacing="0" cellpadding="0" class="wizrtable remindersTable">
+		<thead>
+			<tr>
+				<th scope="col" class="hdrEdit"><venda_text id=site.view_reminders.column_heading.edit></th>
+				<th scope="col" class="hdrOccasion"><venda_text id=site.view_reminders.column_heading.occasion></th>
+				<th scope="col" class="hdrDate"><venda_text id=site.view_reminders.column_heading.date></th>
+				<th scope="col" class="hdrDelete"><venda_text id=site.view_reminders.column_heading.delete></th>
+			</tr>
+		</thead>
+		<tbody>
+		<venda_detail>
+		</tbody>
+	</table>
+</div>
+</venda_block label=134>
+<venda_tpcomment><!-- End: View Reminders Table --></venda_tpcomment>
+<div class="buttons bottomButtons">
+<a class="button buttonAlt2" href="<venda_dispview page=myaccount>"><venda_text id=site.button.back_to_my_account></a>
+<a class="button buttonAlt buttonArrow addreminder" href="<venda_codehttps>?ex=co_wizr-reminder&step=addusext&bsref=<venda_bsref>"><venda_text id=site.button.add_reminder></a>
+</div>
+</div>
+
+<!--
+workflow:<venda_workflow>
+param1:<venda_param1>
+param2:<venda_param2>
+page:wz_remd-list.html
+-->
+<venda_tpxt mode=set,name=track,value=remd-list> 
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>

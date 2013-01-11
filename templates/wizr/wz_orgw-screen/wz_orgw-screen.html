@@ -1,0 +1,143 @@
+<div id="giftwrap">
+<venda_tpcomment><!-- venda_form shows hidden field values as empty and lets JS input the required values. So for JS-free checkout we hardcode the form with the correct field values. --></venda_tpcomment>
+<form method="post" enctype="multipart/form-data" name="wizform" action="<venda_codehttps>" />
+<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+<input type="hidden" name="step" value="confirm" />
+<input type="hidden" name="mode" value="process" />
+<input type="hidden" name="param1" value="<venda_bsref>" />
+<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+<input type="hidden" name="curstep" value="<venda_curstep>" />
+<input type="hidden" name="workflowid" value="<venda_workflow>" />
+<input type="hidden" name="bsref" value="<venda_bsref>" />
+<venda_tpcomment><!-- ACE2 NOTE: We need these blank fields for the wizbutton JS on submit button onclick. If we remove the wizbutton from the submit button onclick attribute, we can also remove these 4 fields below. --></venda_tpcomment>
+<input type="hidden" name="wizard" value="" />
+<input type="hidden" name="param2" value="" />
+<input type="hidden" name="param3" value="" />
+<input type="hidden" name="check" value="" />
+<h1><venda_text id=site.gift_wrap.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<venda_tpcomment><!-- Start: Available Styles --></venda_tpcomment>
+	<venda_detblock1>
+	<tr class="wrapdetail">	
+			<td class="<venda_gwname>"><venda_gwname></td>
+			<td class="sell<venda_gwname>"><venda_gwsell></td>
+			<td class="img<venda_gwname>"><venda_media rec=gwrp></td>
+	</tr>
+	</venda_detblock1>
+	<div class="wrapstyles hide">
+	<h2><venda_text id=site.gift_wrap.column_heading.available_styles></h2>
+	<table summary="<venda_text id=site.gift_wrap.table_summary1>" title="<venda_text id=site.gift_wrap.table_title1>" class="wizrtable">
+		<thead>
+		<tr>
+			<th scope="col"><venda_text id=site.gift_wrap.column_heading.name></th>
+			<th scope="col"><venda_text id=site.gift_wrap.column_heading.cost></th>
+			<th scope="col"><venda_text id=site.gift_wrap.column_heading.image></th>
+		</tr>
+		</thead>
+		<tbody>
+		<venda_detail1>
+		</tbody>
+	</table>
+	</div>
+<venda_tpcomment><!-- End: Available Styles --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: Messages --></venda_tpcomment>
+	<p><venda_text id=site.gift_wrap.instructions></p>
+	<p><venda_text id=site.gift_wrap.personal_message></p>
+	<p><venda_text id=site.gift_wrap.note></p>
+<venda_tpcomment><!-- End: Messages --></venda_tpcomment>
+<script>
+jQuery(function(){
+	jQuery(".wrapdetail td").each(function(){
+		var newClass = jQuery(this).attr("class");
+		newClass = newClass.replace(/\s/g,"-");
+		jQuery(this).addClass(newClass); 
+	});
+});
+showGiftwrap = function(wrapselect){
+	var selectText = jQuery("select[id=form"+wrapselect+"] option:selected").text();
+	selectText = selectText.replace(/\s/g,"-");
+	jQuery("."+wrapselect).find(".gwsell").html(jQuery(".sell"+selectText).html()); 
+	jQuery("."+wrapselect).find(".gwimg").html(jQuery(".img"+selectText).html()); 		
+}
+</script>
+<venda_tpcomment><!-- Start: Wrapped Items --></venda_tpcomment>
+	<venda_detblock2>
+	<venda_detail3>
+	</venda_detblock2>
+
+	<venda_detblock3>
+	<tr class="gw-<venda_oirfnbr>">
+		<td class="productname">
+		<strong><venda_invtname><venda_block label=111,invtatt1=notnull> <venda_text id=site.basket.product_name.attribute_start><venda_invtatt1><venda_block label=112,invtatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt2></venda_block label=112><venda_block label=113,invtatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt3></venda_block label=113><venda_block label=114,invtatt4=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt4></venda_block label=114><venda_text id=site.basket.product_name.attribute_end></venda_block label=111></strong><br>
+		<venda_title> <venda_fname> <venda_lname><br>
+		<venda_block label=71,num=notnull><venda_num> </venda_block label=71><venda_addr1><venda_block label=72,addr2=notnull> <venda_addr2></venda_block label=72><br>
+		<venda_city> <venda_state> <venda_zipc> <venda_cntry>
+		</td>	
+		<venda_block label=81,mode=value,<venda_setting type=ebiz,name=giftmessageonly>!=1>
+		<td class="wrapitem">
+		<venda_block label=4,invtnogw!=1>
+		<label for="formgw-<venda_oirfnbr>" class="hide"><venda_text id=site.gift_wrap.column_heading.wrap_item></label><select name="gw-<venda_oirfnbr>" id="formgw-<venda_oirfnbr>" onchange="showGiftwrap('gw-<venda_oirfnbr>');"><venda_selectgiftwrap></select>						
+		<venda_block label=41,oigwref!=1><script>jQuery(function(){showGiftwrap('gw-<venda_oirfnbr>'); });</script></venda_block label=41>
+		</venda_block label=4>
+		<venda_block label=5,invtnogw=1>
+		<venda_text id=site.gift_wrap.not_available>
+		</venda_block label=5>
+		</td>		
+		<td class="gwimgTD"><div class="gwimg"></div></td>
+		<td class="gwsellTD"><div class="gwsell"></div></td>
+		</venda_block label=81>
+		<!--td class="productprice"><venda_oisub></td-->
+		<td class="giftmessage"><venda_block label=7,invtnogwmsg=null><label for="formcm-<venda_oirfnbr>" class="hide"><venda_text id=site.gift_wrap.column_heading.message></label><textarea name="cm-<venda_oirfnbr>" id="formcm-<venda_oirfnbr>" rows="3" cols="20" class="message" ><venda_oicmt></textarea></venda_block label=7><venda_block label=8,invtnogwmsg=1><venda_text id=site.gift_wrap.not_available></venda_block label=8>
+		<p><venda_text id=site.characters_remaining> [ <span class="textMsgCount-<venda_oirfnbr> textMsgCount">80</span> ]</p></td>
+		<script type="text/javascript">jQuery(function(){
+			jQuery("#formcm-<venda_oirfnbr>").textboxCount(".textMsgCount-<venda_oirfnbr>",{
+				maxChar: 80,
+				countStyle: 'down',
+				alert: ""
+			});	
+		});
+	</script>
+	</tr>
+	</venda_detblock3>
+
+	<input type="hidden" name="textcount">
+	<table summary="<venda_text id=site.gift_wrap.table_summary2>" cellpadding="0" cellspacing="0" title="<venda_text id=site.gift_wrap.table_title2>" class="orderDetblocksTable gwTable">
+		<thead>
+		<tr>
+			<th scope="col" class="productname"><venda_text id=site.gift_wrap.column_heading.product></th>	
+			<venda_block label=80,mode=value,<venda_setting type=ebiz,name=giftmessageonly>!=1>
+			<th scope="col" class="wrapitem"><venda_text id=site.gift_wrap.column_heading.wrap_item></th>
+			<th scope="col"><div class="gwimg"><venda_text id=site.gift_wrap.column_heading.image></div></th>
+			<th scope="col"><div class="gwsell"><venda_text id=site.gift_wrap.column_heading.cost></div></th>
+			</venda_block label=80>
+			<!--th scope="col" class="productprice"><venda_text id=site.gift_wrap.column_heading.price></th-->
+			<th scope="col" class="giftmessage"><venda_text id=site.gift_wrap.column_heading.message></th>
+		</tr>
+		</thead>
+		<tbody>
+		<venda_detail2>
+		</tbody>
+	</table>
+<venda_tpcomment><!-- End: Wrapped Items --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<div id="buttons" class="bottomButtons">
+	<a href='#' onClick='<venda_wizbutton step=confirm,mode=display,param1=<venda_bsref>,callonly=yes> return false;' class="button buttonAlt2"><venda_text id=site.button.cancel></a>
+	<input type="submit" onClick='<venda_wizbutton step=confirm,mode=process,param1=<venda_bsref>,callonly=yes> return false;' value="<venda_text id=site.button.continue>" class="button buttonAlt buttonArrow right submit">
+	</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+</form>
+</div>
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_orgw-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=orgw-screen> 
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

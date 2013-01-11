@@ -1,0 +1,19 @@
+<div class="grid_24 alpha omega basketR">
+	<div class="box basketAlt">
+	<h1 class="header"><venda_text id=site.empty_basket.heading></h1>
+	<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+	<p><venda_text id=site.empty_basket.basket_is_empty></p>
+	</div>
+	<div id="buttons" class="bottomButtons">
+		<a href="<venda_dispview page=home>" class="button buttonAlt buttonArrow right"><venda_text id=site.button.continue_shopping></a>
+	</div>
+</div>
+<venda_inctemplate name=hbxlocalvars6,type=includes/tracking>
+<venda_inctemplate name=trackingBasket,type=includes>
+<venda_tpxt mode=set,name=orsc,value=1>
+<!--
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orsc-shopcartempty.html
+ -->

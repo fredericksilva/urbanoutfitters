@@ -1,0 +1,144 @@
+<script type='text/javascript'>
+
+/**
+ * Runs when the pages is loaded. Arranges the correct display of the page
+ * where we have 1 package div, a few address divs inside it, and inside of each address div
+ * a few products divs. It also calls a function to create a gift message per package.
+ */
+
+jQuery(document).ready(function () {
+	var products = Venda.Widget.AddGiftMessages.products;
+
+	jQuery('select').each(function() {
+	// "this" is the SELECT element.
+	if (this.id.search(/formoiabsel\-[\d]+/i) != -1) {
+		var productId = this.id.toLowerCase().split('formoiabsel-')[1];
+		if (this.selectedIndex != -1 )
+			products[productId] = this.options[this.selectedIndex].value;
+
+			// Fill the array only once
+			if(Venda.Widget.AddGiftMessages.addresses === null) {
+				Venda.Widget.AddGiftMessages.addresses = {};
+				for(var x=0; x<this.options.length; x++) {
+					Venda.Widget.AddGiftMessages.addresses[this.options[x].value] = this.options[x].text;
+				}
+			}
+		}
+	});
+
+	for(var a in Venda.Widget.AddGiftMessages.addresses) {
+		for ( var p in products ) {
+			if ( a == products[p] ) {
+				// if a div for address is not existing yet, create it
+				if ( jQuery('#div-address-' + a).length == 0) {
+					Venda.Widget.AddGiftMessages.createPackageDiv(a);
+				}
+				jQuery('#itemid-' + p).remove().prependTo(jQuery('#div-address-' + a));
+				jQuery('#formoiabsel-' + p).change(Venda.Widget.AddGiftMessages.onAddressChange);
+			}
+		}
+	}
+});
+</script>
+
+<div class="multideladdress box">
+<h1 class="header"><venda_text id=site.multiple_delivery_addresses_gift_messages.heading></h1>
+<div class="headingintrotext">
+	<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+	<p><venda_text id=site.multiple_delivery_addresses.instructions></p>
+</div>
+<venda_form>
+<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><input type="hidden" name="htxt" value="<venda_htxt mode=make,changeaddby=multipledeliveryaddresses>"></venda_block label=33>
+<venda_detblock>
+	<venda_block label=331,oiitype!=3>
+	<div id="itemid-<venda_oirfnbr>" class="item" name="itemid-<venda_oirfnbr>">
+	<venda_oirfnbr field=hidden>
+		
+		<div class="productname">
+			<p><venda_oiivname> 
+			<venda_block label=1,oiatt1=notnull><venda_text id=site.basket.product_name.attribute_start><venda_oiatt1>
+		<venda_block label=2,oiatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt2></venda_block label=2>
+		<venda_block label=3,oiatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt3></venda_block label=3>
+		<venda_block label=4,oiatt4=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt4></venda_block label=4>
+		<venda_text id=site.basket.product_name.attribute_end>
+		</venda_block label=1></p>
+		</div>
+		
+		<div class="productqty">
+			<label for="formoiqty-<venda_oirfnbr>" class="hide"><venda_text id=site.multiple_delivery_addresses.column_heading.quantity></label>
+			<p>Qty: <venda_oiqty></p>
+		</div>
+		
+		<div class="address">
+			<label for="formoiabsel-<venda_oirfnbr>" class="hide"><venda_text id=site.multiple_delivery_addresses.column_heading.address></label>
+			<select name="oiabsel-<venda_oirfnbr>" id="formoiabsel-<venda_oirfnbr>"><venda_address template=address,selectaddr=<venda_oiabnbr>></select>
+		</div>
+	
+		<venda_block label=4,invtnogw!=1>
+		
+			<venda_block label=2001,invtnogw=null>
+				<div class="giftwrap">
+				   <venda_block label=2005,hasgw=1>
+					   <label for="formgw-<venda_oirfnbr>" class="hide"><venda_text id=site.gift_wrap.column_heading.wrap_item></label><select name="gw-<venda_oirfnbr>" id="formgw-<venda_oirfnbr>" <venda_inventory ref=<venda_oiivref>,temp=checkgiftwrap> class="giftwrapAvai">><venda_giftwrap template=giftwrap,selectgw=<venda_oigwref>></select>
+				   </venda_block label=2005>
+				</div>
+				<div class="giftwrapMessage">
+					<label for="formgw-<venda_oirfnbr>" class="hide"></label>
+					<TEXTAREA NAME="gwmessage-<venda_oirfnbr>" COLS=40 ROWS=6><venda_gwmessage></TEXTAREA>
+				</div>	
+			</venda_block label=2001>
+		</venda_block label=4>
+	
+		<INPUT TYPE=hidden NAME="oilist" VALUE="<venda_oirfnbr>-<venda_oisub>">
+		<INPUT TYPE=hidden NAME="oilist-<venda_oirfnbr>" VALUE="<venda_oirfnbr>-<venda_oisub>">
+		<INPUT TYPE=hidden NAME="oioqty-<venda_oirfnbr>" VALUE="1">
+		<INPUT TYPE=hidden NAME="oiivref-<venda_oirfnbr>" VALUE="<venda_oiivref>">
+		<INPUT TYPE=hidden NAME="oiclnbr-<venda_oirfnbr>" VALUE="<venda_oiclnbr>">
+		<INPUT TYPE=hidden NAME="oiitype-<venda_oirfnbr>" VALUE="<venda_oiitype>">
+		<INPUT TYPE=hidden NAME="oigwclnbr-<venda_oirfnbr>" VALUE="<venda_oigwclnbr>">
+		<INPUT TYPE=hidden NAME="oigwref-<venda_oirfnbr>" VALUE="<venda_oigwref>">
+		<INPUT TYPE=hidden NAME="oicmt-<venda_oirfnbr>" VALUE="<venda_oicmt>">
+		<INPUT TYPE=hidden NAME="oicmt-<venda_oiabnbr>" VALUE="<venda_oicmt>">
+		
+	</div>
+	</venda_block label=331>
+</venda_detblock>
+
+<venda_detblockmain>
+     <venda_detail>
+</venda_detblockmain>
+
+<div class ="wizrtable multiaddressGiftwrap">
+
+	<div class="item itemHeader" id="">
+		<div class="productname"><venda_text id=site.basket.column_heading.product_name></div>
+		<div class="productqty"><venda_text id=site.multiple_delivery_addresses.column_heading.quantity></div>
+		<div class="address"><venda_text id=site.multiple_delivery_addresses.column_heading.address></div>
+		<div class="giftwrap"><venda_text id=site.gift_wrap.column_heading.wrap_item></div>
+		<div class="giftwrapMessage"><venda_text id=site.basket.gift_certificate_message></div>	
+	</div>
+	<div class="packages" name="packages">
+		<venda_detailmain>
+	</div>
+</div>
+
+<div id="buttons">
+<venda_block label=32,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+<venda_block label=40,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1><a href="#" onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=multiple,value=Address Book,callonly=yes,param3=addgiftwrap>return false;'><venda_text id=site.button.add_new_address></a></venda_block label=40>
+<venda_block label=41,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1><input type="hidden" name="htxt" value=""><a href="#" class="submit button buttonAlt buttonArrow" onClick='document.wizform.htxt.value="<venda_htxt mode=make,prevbtn=multiple>";<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=multiple,value=Address Book,callonly=yes,param3=addgiftwrap>;return false;'><venda_text id=site.button.add_new_address></a></venda_block label=41>
+</venda_block label=32>
+<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="submit button buttonAlt buttonArrow" onClick='<venda_wizbutton step=newadd,param1=delivery,param2=add,param3=addgiftwrap,value=Address Book,callonly=yes> return false;'><venda_text id=site.button.add_new_address></a></venda_block label=33>
+<a href="#" class="right submit button buttonAlt buttonArrow" onClick='<venda_wizbutton step=confirm,mode=process,value=Continue,callonly=yes> return false;'><venda_text id=site.button.continue></a>              
+</div>
+</form>
+</div>
+
+<!--
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: oradgw-addgiftwrap.html
+-->
+<venda_tpxt mode=set,name=track,value=orad-editadd>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

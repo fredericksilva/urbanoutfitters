@@ -1,0 +1,179 @@
+<venda_form>
+<venda_zones type=countries,template=countrySelect>
+<input type="hidden" name="PrimaryForm">
+<input type="hidden" name="nolookup" value="">
+<input type="hidden" name="editadd" value="<venda_param1>">
+<input type="hidden" name="default" value="1">
+<input type="hidden" name="zipcodelookup" value="1">
+<venda_block label=33,workflow=shopcart,workflow=instore,operator=or>
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,step=2>">
+</venda_block label=33>
+
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<p class="requiredText"><venda_text id=site.delivery_address.required_fields></p>
+
+<venda_tpcomment><!-- Start: Personal Details --></venda_tpcomment>
+	<fieldset>
+	<legend class="orzcdaddr-personal"><venda_text id=site.contact_address.delevery_details></legend>
+	<div><label for="title"><venda_text id=site.contact_address.label.title><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label>
+	<select name="title" id="title">
+		<option value="Mr" <venda_block label=121,title=Mr>selected</venda_block label=121>>Mr</option>
+		<option value="Mrs" <venda_block label=111,title=Mrs>selected</venda_block label=111>>Mrs</option>
+		<option value="Miss" <venda_block label=101,title=Miss>selected</venda_block label=101>>Miss</option>
+		<option value="Ms" <venda_block label=121,title=Ms>selected</venda_block label=121>>Ms</option>
+		<option value="" <venda_block label=131,title=Other>selected</venda_block label=131>>Other</option>
+	</select></div>
+	<div class="formSeparator"></div><div><label for="fname"><venda_text id=site.contact_address.label.first_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_fname field=text,size=25,maxlength=30></div>
+	<venda_block label=123,mode=value,<venda_setting type=ebiz,name=showmname>=1>
+	<div class="formSeparator"></div><div><label for="mname"><venda_text id=site.contact_address.label.middle_name></label> <venda_mname field=text,size=25,maxlength=30></div>
+	</venda_block label=123>
+	<div class="formSeparator"></div><div><label for="lname"><venda_text id=site.contact_address.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30></div>
+	<venda_block label=50,param2!=storeadd>
+	<div class="formSeparator"></div><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20></div>
+	</venda_block label=50>
+    <venda_block label=51,param2=storeadd>
+	<div class="formSeparator"></div><div><label for="phone"><venda_text id=site.delivery_address.label.telephone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20,required=yes></div>
+	</venda_block label=51>
+	<venda_block label=125,mode=value,<venda_setting type=ebiz,name=showfax>=1>
+	<div class="formSeparator"></div><div><label for="fax"><venda_text id=site.contact_address.label.fax_number></label><venda_fax field=text,size=18,maxlength=20></div>
+	</venda_block label=125>
+    <div class="order-summary-box-footer"> </div>
+    </fieldset>
+<venda_tpcomment><!-- End: Personal Details --></venda_tpcomment>
+		<div class="formSeparator"></div>
+        
+<venda_tpcomment><!-- Start: Address Details --></venda_tpcomment>
+<fieldset>
+	<legend class="orzcdaddr-adddetail"><venda_text id=site.contact_address.legend.address_details></legend>
+	<venda_block label=565,curstep=zipcoderesults,param1=notnull>
+	<input type="hidden" name="copybillto" value="1" /><venda_tpcomment><!--if you're filling out your delivery address and you've clicked lookup write it to the same delivery address--></venda_tpcomment>     
+	</venda_block label=565>
+		<venda_block label=566,curstep=zipcodedelivery,param1=notnull>
+		<input type="hidden" name="deliveryAddress" value="1" />
+		</venda_block label=566>
+	<venda_block label=11,param2!=uk,errors=notnull,operator=or>
+		<div class="formSeparator"></div><div id="zipcDiv">
+        <label for="zipc" id="zipcLabel"><venda_text id=site.delivery_address.label.postcode><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_zipc field=text,size=25,maxlength=20><span id="postcodelookup" class="pclookup"><a href="#" data-track="find-address" onclick="lookUp('delivery'); return false;" class="button"><span></span><venda_text id=site.singlesteppc_lookup.delivery_address.address_details.lookuppostcode></a></span></div>
+		<venda_block label=124,mode=value,<venda_setting type=ebiz,name=showcompany>=1><div class="formSeparator"></div><div><label for="company"><venda_text id=site.contact_address.label.company></label> <venda_company field=text,size=25,maxlength=60></div></venda_block label=124>
+		<venda_block label=88,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1><div class="formSeparator"></div><div id="houseNum"><label for="num"><venda_text id=site.contact_address.label.house_name_flat_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_num field=text,size=25,maxlength=20></div></venda_block label=88>
+        
+        <div class="formSeparator"></div><div><label for="addr1"><venda_text id=site.contact_address.label.address><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+		<div class="formSeparator"></div><div><label for="addr2" class="invisible"><venda_text id=site.contact_address.label.address2></label> <venda_addr2 field=text,size=25,maxlength=50></div>
+		<div class="formSeparator"></div>
+       
+        <div class="formSeparator"></div><div><label for="city"><venda_text id=site.contact_address.label.city><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_city field=text,size=25,maxlength=30></div>
+    <div id="stateDiv">
+		<label for="state" id="stateLabel"><venda_text id=site.address.label.county></label> 
+        <span id="statelistbox">
+		<select id="statelist" name="statelist"></select>
+		</span>
+		<span id="statetextbox">
+		<input type="text" id="statetext" name="state" value="<venda_state>" class="admn_fieldsLarge" size="15" maxlength="20" />
+		</span>
+		</div>
+
+		<div class="formSeparator"></div>
+        <div id="countryDiv"><label for="cntry" id="countryLabel"><venda_text id=site.contact_address.label.country><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_cntry field=combo,class=admn_fieldsLarge,required=yes,ship=1> <span id="cntry_error" class="formerror"></span></div>   
+	</venda_block label=11>
+    <div class="order-summary-box-footer"> </div>
+</fieldset>
+<venda_tpcomment><!-- End: Address Details --></venda_tpcomment>		
+
+<venda_tpcomment><!-- Start: Address Name --></venda_tpcomment>
+	<venda_block label=47,workflow!=instore>
+	<venda_block label=48,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p>
+	<div class="formSeparator"></div>
+	<fieldset class="f-oradename">
+	<legend class="orzcdaddr-ename"><venda_text id=site.delivery_address.legend.address_name></legend>
+	<div><label for="addrname"><venda_text id=site.delivery_address.label.address_name></label> <venda_addrname field=text,size=25,maxlength=30></div>
+    <div class="formRow  nameAdvice"><venda_text id=site.delivery_address.advice></div>
+    <div class="order-summary-box-footer"> </div>
+	</fieldset>
+	</venda_block label=48>
+	</venda_block label=47>
+<venda_tpcomment><!-- End: Address Name --></venda_tpcomment>		
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<script type="text/javascript">
+	<!-- 
+	function nextPage() {
+		if (validateFields()) {
+			document.wizform.curstep.value='newadd'; //Set curstep=newadd so delivery address can be added on this template (wz_orzc-screen)
+			<venda_block label=14,workflow!=shopcart,workflow!=instore> //not shopcart
+				<venda_block label=142,curstep=zipcodedelivery> //if didnt click lookup
+					document.wizform.nolookup.value='1';
+					<venda_wizbutton step=shipadd,mode=process,param1=delivery,callonly=yes>
+				</venda_block label=142>
+				<venda_block label=145,curstep=zipcoderesults,param1=notnull> //if did click lookup
+					document.wizform.editadd.value="<venda_param1>";
+					<venda_wizbutton step=shipadd,mode=process,param1=delivery,param2=editadd,callonly=yes>
+				</venda_block label=145>
+			</venda_block label=14>
+			<venda_block label=15,workflow=shopcart,workflow=instore,operator=or> //in shopcart
+				<venda_block label=152,curstep=zipcodedelivery> //if didnt click lookup
+					document.wizform.nolookup.value='1';
+					document.wizform.htxt.value='<venda_htxt mode=make,step=3>';
+				</venda_block label=152>
+					<venda_block label=41,param3!=addgiftwrap>
+						<venda_block label=410,param2=multiple> // if in shopcart workflow - multipledeliveryaddresses no param3
+							<venda_wizbutton step=itemship,mode=process,check=yes,callonly=yes>
+						</venda_block label=410>
+						<venda_block label=411,param2!=multiple> // if in shopcart workflow - edit button, no giftwrap
+							<venda_wizbutton step=confirm,mode=process,check=yes,callonly=yes>
+						</venda_block label=411>
+					</venda_block label=41>
+					<venda_block label=40,param3=addgiftwrap>
+						<venda_block label=400,param2=multiple> // if in shopcart workflow - multipledeliveryaddresses param3
+							<venda_wizbutton step=addgiftwrap,mode=process,check=yes,param3=addgiftwrap,callonly=yes>
+						</venda_block label=400>
+						<venda_block label=401,param2!=multiple> // if in shopcart workflow - edit button, giftwrap
+							<venda_wizbutton step=confirm,mode=process,check=yes,param3=addgiftwrap,callonly=yes>
+						</venda_block label=401>
+					</venda_block label=40>
+			</venda_block label=15>
+		}
+	}
+	<venda_block label=259,curstep=zipcodedelivery,errors=null>
+		blankFields('delivery');
+	</venda_block label=259>
+	<venda_block label=270,curstep=zipcodedelivery,errors=notnull>
+		blankFields('address');
+	</venda_block label=270>
+
+	<venda_block label=291,curstep=zipcoderesults>
+		//if address found then focus on address name else focus on address line 1
+		if (document.wizform.addr1.value!='') {
+			if (document.wizform.addrname) {
+				document.wizform.addrname.focus();
+			}
+		} else {
+			document.wizform.addr1.focus();
+		}
+		</venda_block label=291>
+	// -->
+	</script>
+	<div id="buttons">
+	<venda_block workflow=manageaddresses>
+		<a href="<venda_codehttps>?ex=co_wizr-manageaddresses&bsref=<venda_bsref>" class="previous button buttonAlt2"><venda_text id=site.button.previous></a>
+	</venda_block>
+	<venda_block label=321,workflow=shopcart>
+		<venda_block label=322,mode=value,<venda_htxt mode=get,name=prevbtn>=adbook>
+		<a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=shipadd,param2=adbook,mode=display,callonly=yes> return false;'><venda_text id=site.button.previous></a>
+		</venda_block label=322>
+		<venda_block label=323,mode=value,<venda_htxt mode=get,name=prevbtn>=multiple>
+			<venda_block label=324,param3!=addgiftwrap>
+			<a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=itemship,mode=display,callonly=yes> return false;'><venda_text id=site.button.previous></a>
+			</venda_block label=324>
+			<venda_block label=325,param3=addgiftwrap>
+				<a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=addgiftwrap,mode=display,param3=addgiftwrap,callonly=yes> return false;'><venda_text id=site.button.previous></a>
+			</venda_block label=325>
+		</venda_block label=323>
+	</venda_block label=321>
+	<input type="submit" onClick="nextPage(); return false;" value="<venda_text id=site.button.continue>" class="right submit button buttonAlt buttonArrow">
+	</div>
+
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+<venda_tpxt mode=set,name=track,value=orad-editadd>

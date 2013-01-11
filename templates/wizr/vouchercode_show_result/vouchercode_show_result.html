@@ -1,0 +1,14 @@
+<venda_tpcomment><!-- 
+If the promotion code input is valid then 'venda_vouchercode_first' will translate so we look for the page that matches the code and show in the media code box area.
+--></venda_tpcomment>
+<venda_block label=10,mode=value,<venda_vouchercode_first>=notnull>
+<div class="promotion">
+<venda_vouchercode_first>
+</div>
+</venda_block label=10>
+<venda_tpcomment><!-- 
+If the promotion code input is valid then 'venda_vouchercoderesponse' will translate telling the user their code was valid. Edit these messages by adding a dictionary entry in to the ebiz dict.
+If this is not possible suggest remove 'venda_vouchercoderesponse' from inside label=3 condition and hard code own success response message.
+If the promotion code input is not valid then 'venda_vouchercoderesponse' will not translate, 'venda_errors' will translate instead.
+--></venda_tpcomment>
+<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><h3 class="vouchercoderesponse"><venda_errors></h3></venda_block label=1>

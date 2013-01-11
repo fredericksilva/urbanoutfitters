@@ -1,0 +1,24 @@
+<fieldset class="inpform">
+<legend class="hide">Please complete your delivery address</legend>
+<div id="pinkHeader">Please complete your delivery address</div>
+<venda_block label=2,param2=uk>
+	<div><label for="zcdropdown">Addresses Found: <span class="required">*</span></label> <venda_zcdropdown></div>
+	<div>If the address was not found or is incorrectly listed, <a href='#' onClick='<venda_wizbutton step=editadd,mode=process,param1=delivery,param2=add,callonly=yes> return false;'>please enter it manually</a>.</div>
+	<venda_city field=hidden><venda_state field=hidden><venda_zipc field=hidden><venda_cntry field=hidden>
+</venda_block label=2>
+<venda_block label=3,param2!=uk>
+	<!-- fully editable if address couldn't be found -->
+	<div><label for="company">Company:</label> <venda_company field=text,size=25,maxlength=20></div>
+	<div><label for="num">House Name/Flat Number: <span class="required">*</span></label> <venda_num field=text,size=25,maxlength=20,required=yes></div>
+	<div><label for="addr1">Address: <span class="required">*</span></label> <venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+	<div><label for="addr2" class="invisible">Address Line 2:</label> <venda_addr2 field=text,size=25,maxlength=50></div>
+	<div><label for="city">City: <span class="required">*</span></label> <venda_city field=text,size=25,maxlength=30,required=yes></div>
+	<div><label for="state">County:  <span class="required">*</span></label> <venda_state field=text,size=25,maxlength=20></div>
+	<div><label for="zipc">Post Code:  <span class="required">*</span></span></label> <venda_zipc field=text,size=25,maxlength=20>
+	<venda_block label=1776,workflow=shopcart><span id="postcodelookup" class="pclookup"><a href="#" onclick="lookUp('delivery'); return false;"><span></span><venda_text id=site.singlesteppc_lookup.contact_address.address_details.lookuppostcode></a></span></venda_block label=1776></div>
+	<venda_block label=1777,workflow=manageaddresses>
+	<div><label for="lookup">&nbsp;</label><span id="postcodelookup" class="pclookup"><a href="#" onclick="lookUp('delivery'); return false;"><span></span><venda_text id=site.singlesteppc_lookup.contact_address.address_details.lookuppostcode></a></span></div>
+	</venda_block label=1777>
+	<div><label for="cntry">Country: <span class="required">*</span></label> <venda_cntry field=combo,required=yes,ship=1></div>
+</venda_block label=3>
+</fieldset>

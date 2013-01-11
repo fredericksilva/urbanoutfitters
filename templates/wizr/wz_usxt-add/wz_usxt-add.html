@@ -1,0 +1,171 @@
+<div id="addreminder">
+<h1><venda_text id=site.add_reminder.heading></h1>
+<p><venda_text id=site.add_reminder.introduction></p>					
+<venda_block label=1,errors=notnull><h3 class="error"><venda_errors></h3></venda_block label=1>
+
+<venda_form>
+<!-- order fields used to sort the display order when you view reminders -->
+<input type="hidden" name="order1" value="remmonth">
+<input type="hidden" name="order2" value="remday">
+<input type="hidden" name="subgroup" value="4">
+
+<venda_tpcomment><!-- Start: Add Reminder Table --></venda_tpcomment>
+<div class="reminderBox">
+<table summary="<venda_text id=site.add_reminder.table_summary>" title="<venda_text id=site.add_reminder.table_title>" class="wizrtable">
+	<thead class="header">
+		<tr>
+			<th scope="col" class="hdrFname"><venda_text id=site.add_reminder.column_heading.first_name></th>
+			<th scope="col" class="hdrLname"><venda_text id=site.add_reminder.column_heading.last_name></th>
+			<th scope="col" class="hdrOccasion"><venda_text id=site.add_reminder.column_heading.occasion></th>
+			<venda_block label=88,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1>
+			<th scope="col" class="hdrDay"><venda_text id=site.add_reminder.column_heading.day></th>
+			<th scope="col" class="hdrMonth"><venda_text id=site.add_reminder.column_heading.month></th>
+			</venda_block label=88>
+			<venda_block label=89,mode=value,<venda_setting type=ebiz,name=mmdddates>=1>
+			<th scope="col" class="hdrMonth"><venda_text id=site.add_reminder.column_heading.month></th>
+			<th scope="col" class="hdrDay"><venda_text id=site.add_reminder.column_heading.day></th>
+			</venda_block label=89>
+			<th scope="col" class="hdrYear"><venda_text id=site.add_reminder.column_heading.year></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="fname"><label for="form<venda_recfnameudufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.first_name></label><input type="text" name="<venda_recfnameudufnbr>-1" id="form<venda_recfnameudufnbr>-1" size="10" maxlength="20" value=""></td>
+			<td class="lname"><label for="form<venda_reclnameudufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.last_name></label><input type="text" name="<venda_reclnameudufnbr>-1" id="form<venda_reclnameudufnbr>-1" size="10" maxlength="20" value=""></td>
+			<td class="occasion"><label for="form<venda_remtype1udufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.occasion></label><select name="<venda_remtype1udufnbr>-1" id="form<venda_remtype1udufnbr>-1" onchange="remvalueother()"><venda_usxselectremtype1></select><venda_defaultusxselectremtype1start name=<venda_text id=site.reminder.remtype.option.select>>
+					<div id="remother" style="display:none;">
+					<label for="form<venda_remtypeotherudufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.occasion></label><input type="text" name="<venda_remtypeotherudufnbr>-1" id="form<venda_remtypeotherudufnbr>-1" size="10" maxlength="20" value=" ">
+					</div></td>
+			<venda_block label=90,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1>
+			<td class="day"><label for="form<venda_remday1udufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.day></label><select name="<venda_remday1udufnbr>-1" id="form<venda_remday1udufnbr>-1"><venda_usxselectremday1></select><venda_defaultusxselectremday1start name=<venda_text id=site.reminder.remday.option.select>></td>
+			<td class="month"><label for="form<venda_remmonth1udufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.month></label><select name="<venda_remmonth1udufnbr>-1" id="form<venda_remmonth1udufnbr>-1"><venda_usxselectremmonth1></select><venda_defaultusxselectremmonth1start name=<venda_text id=site.reminder.remmonth.option.select>></td>
+			</venda_block label=90>
+			<venda_block label=91,mode=value,<venda_setting type=ebiz,name=mmdddates>=1>
+			<td class="month"><label for="form<venda_remmonth1udufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.month></label><select name="<venda_remmonth1udufnbr>-1" id="form<venda_remmonth1udufnbr>-1"><venda_usxselectremmonth1></select><venda_defaultusxselectremmonth1start name=<venda_text id=site.reminder.remmonth.option.select>></td>
+			<td class="day"><label for="form<venda_remday1udufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.day></label><select name="<venda_remday1udufnbr>-1" id="form<venda_remday1udufnbr>-1"><venda_usxselectremday1></select><venda_defaultusxselectremday1start name=<venda_text id=site.reminder.remday.option.select>></td>
+			</venda_block label=91>
+			<td class="year"><label for="form<venda_remyearudufnbr>-1" class="re-waiHide"><venda_text id=site.add_reminder.column_heading.year></label><input type="text" name="<venda_remyearudufnbr>-1" id="form<venda_remyearudufnbr>-1" size="4" maxlength="4" value=""></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<venda_tpcomment><!-- End: Add Reminder Table --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<script type="text/javascript">						
+var stopclick=0;
+
+	//display textbox
+function remvalueother() {
+	var remtype1 = '<venda_remtype1udufnbr>-1';
+	var remtypeother = '<venda_remtypeotherudufnbr>-1';
+	if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value =="<venda_text id=site.add_reminder.remtypeother>"){
+		document.getElementById('remother').style.display="";
+	}
+	else {
+		document.getElementById('remother').style.display="none";
+		document.wizform.elements[remtypeother].value = " ";
+	}
+}
+
+
+function validateFields(){
+	var fname = '<venda_recfnameudufnbr>-1';
+	var lname = '<venda_reclnameudufnbr>-1';
+	var remday1 = '<venda_remday1udufnbr>-1';
+	var remmonth1 = '<venda_remmonth1udufnbr>-1';
+	var remtype1 = '<venda_remtype1udufnbr>-1';
+	var remyear = '<venda_remyearudufnbr>-1';
+	var remtypeother = '<venda_remtypeotherudufnbr>-1';	
+	
+	//validation
+	if (document.wizform.elements[fname].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.first_name>");
+		document.wizform.elements[fname].focus();
+		return;
+	}
+	if (document.wizform.elements[lname].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.last_name>");
+		document.wizform.elements[lname].focus();
+		return;
+	}
+	if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.occasion>");
+		document.wizform.elements[remtype1].focus();
+		return;
+	}				
+	if (document.wizform.elements[remtypeother].value ==""||document.wizform.elements[remtypeother].value ==" ") {
+		if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value == "<venda_text id=site.add_reminder.remtypeother>"){	
+		alert("<venda_text id=site.add_reminder.js_validation.otheroccasion>");
+		document.wizform.elements[remtypeother].value = "";
+		document.wizform.elements[remtypeother].focus();
+		return;
+		}
+	}	
+	if (document.wizform.elements[remday1].options[document.wizform.elements[remday1].selectedIndex].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.day>");
+		document.wizform.elements[remday1].focus();
+		return;
+	}
+	if (document.wizform.elements[remmonth1].options[document.wizform.elements[remmonth1].selectedIndex].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.month>");
+		document.wizform.elements[remmonth1].focus();
+		return;
+	}
+
+	if (document.wizform.elements[remyear].value =="") {
+		alert("<venda_text id=site.add_reminder.js_validation.year>");
+		document.wizform.elements[remyear].focus();
+		return;
+	}
+	
+	var yeartxt = document.wizform.elements[remyear].value;
+	if (yeartxt.length < 4) {
+		alert("<venda_text id=site.add_reminder.js_validation.year_digits>");
+		document.wizform.elements[remyear].focus();
+		return;
+	}
+	// only allow numbers to be entered
+	var checkOK = "0123456789";
+	var allValid = true;
+	var allNum = "";
+	for (i = 0;  i < yeartxt.length;  i++){
+		ch = yeartxt.charAt(i);
+		for (j = 0;  j < checkOK.length;  j++)
+		if (ch == checkOK.charAt(j))
+		break;
+		if (j == checkOK.length){
+			allValid = false;
+			break;
+		}
+			if (ch != ",")
+			allNum += ch;
+	}
+		if (!allValid){
+			alert("<venda_text id=site.add_reminder.js_validation.year_digits_only>");
+			document.wizform.elements[remyear].focus();
+			return;
+	}
+	<venda_wizbutton step=usext,mode=process,wizard=reminder,callonly=yes>
+}
+</script>
+
+<div id="buttons">
+<a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&order1=remmonth&order2=remday&subgroup=4&step=usext"><venda_text id=site.button.previous></a>
+<input type="submit" onclick="validateFields(); return false;" value="<venda_text id=site.button.add_reminder>" class="right submit">
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</div>
+<venda_tpxt mode=set,name=track,value=usxt-add>
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+<venda_inctemplate name=cm-wz_usxt-add,type=includes/tracking/coremetrics> 
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_usxt-add.html
+-->

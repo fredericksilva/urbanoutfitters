@@ -1,0 +1,69 @@
+<div class="box basketAlt redeemgiftcert"> 
+<h1 class="header"><venda_text id=site.redeem_gift_certificate.heading></h1> 
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1> 
+ 
+<venda_tpcomment><!-- venda_form shows hidden field values as empty and lets JS input the required values. So for JS-free checkout we hardcode the form with the correct field values. --></venda_tpcomment> 
+<form method="post" enctype="multipart/form-data" name="wizform" action="<venda_codehttps>"> 
+<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" /> 
+<input type="hidden" name="step" value="confirm" /> 
+<input type="hidden" name="mode" value="process" /> 
+<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" /> 
+<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" /> 
+<input type="hidden" name="curstep" value="redeemgift" /> 
+<input type="hidden" name="workflowid" value="<venda_workflow>"> 
+<input type="hidden" name="bsref" value="<venda_bsref>" /> 
+<venda_tpcomment><!-- ACE2 NOTE: We need these blank fields for the validate JS on submit button onclick. If we remove the wizbutton from the validate JS, we can also remove these 5 fields below. --></venda_tpcomment> 
+<input type="hidden" name="wizard" value="" /> 
+<input type="hidden" name="param1" value="" /> 
+<input type="hidden" name="param2" value="" /> 
+<input type="hidden" name="param3" value="" /> 
+<input type="hidden" name="check" value="" /> 
+ 
+<fieldset class="f-giftcertcode"> 
+<legend><venda_text id=site.redeem_gift_certificate.legend.enter_code></legend> 
+<div><label for="gccode"><venda_text id=site.redeem_gift_certificate.label.gift_certificate_code></label> <input type="text" name="gccode" id="gccode" value="" size="20"></div> 
+</fieldset> 
+ 
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment> 
+<script type="text/javascript"> 
+<!--
+// disable enter
+var handleKeyPress = function(e) {
+	var keyPressed = e.charCode || e.keyCode;
+	if (keyPressed == 13) { 
+		validate();
+		return false;
+	}
+};
+ 
+function validate(){
+	if (document.wizform.gccode.value == ''){
+		alert('<venda_text id=site.redeem_giftcertificate_code.js_validation.enter_code>');
+		document.wizform.gccode.focus();
+		return false;
+	}
+	<venda_wizbutton step=confirm,mode=process,callonly=yes>
+}
+// -->
+</script> 
+<!--[if IE]>
+<script type="text/javascript">if (document.getElementById("gccode")) {addEvent(document.getElementById("gccode"), 'keydown', handleKeyPress, false);}</script>
+<![endif]--> 
+<div id="buttons"> 
+<a href="#" onClick='<venda_wizbutton step=confirm,mode=display,callonly=yes> return false;' alt="<venda_text id=site.button.cancel>"><venda_text id=site.button.cancel></a> 
+<input type="submit" onClick='validate(); return false;' value="<venda_text id=site.button.apply>" class="right submit"> 
+</div> 
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment> 
+ 
+</form> 
+</div> 
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_gift-screen.html
+ --> 
+<venda_tpxt mode=set,name=track,value=gift-screen> 
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking> 
+<venda_inctemplate name=hitboxOthers,type=includes/tracking> 
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

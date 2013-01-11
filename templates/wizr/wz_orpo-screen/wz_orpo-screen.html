@@ -1,0 +1,106 @@
+<venda_block label=34,ustype=R>
+<div id="orderhistory" class="box basketAlt">
+<h1 class="header"><venda_text id=site.my_account.order_history.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<p><venda_text id=site.my_account.order_history.instructions></p>
+<p><venda_text id=site.my_account.order_history.note> <venda_setting type=ebiz,name=area> <venda_setting type=ebiz,name=phone> <venda_text id=site.my_account.order_history.email> <a href="mailto:<venda_setting type=ebiz,name=email>"><venda_setting type=ebiz,name=email></a><venda_text id=site.my_account.order_history.afteremail></p>
+<h2 class="balance"><venda_text id=site.my_account.order_history.account_balance></h2><br />
+
+<venda_tpcomment><!-- Start: Recent Orders --></venda_tpcomment>
+	<venda_detblock4>
+	<li class="box">
+	<venda_tpcomment><!-- venda_form removed for JS-free compatible checkout --></venda_tpcomment>
+	<form method="post" enctype="multipart/form-data" name="wizform<venda_ohrfnbr>" action="<venda_codehttp>" class="boxContent">
+	<input type="hidden" name="ex" value="co_wizr-ordlookup" />
+	<input type="hidden" name="step" value="--shopcart" />
+	<input type="hidden" name="param1" value="reorder" />
+	<input type="hidden" name="param2" value="<venda_ohrfnbr>" />
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="trrfext" value="<venda_block label=115,mode=value,<venda_protocol>=https>1</venda_block label=115>" />
+	<input type="hidden" name="curstep" value="ordwishlist" />
+	<input type="hidden" name="workflowid" value="<venda_workflow>" />
+	<input type="hidden" name="curlayout" value="checkout" />
+	<input type="hidden" name="bsref" value="<venda_bsref>" />
+	<table summary="<venda_text id=site.my_account.order_history.table_summary>" title="<venda_text id=site.my_account.order_history.table_title>" class="wizrtable">
+	<tr>
+		<th scope="row" class="hdrOrderDate" align="right" valign="top"><venda_text id=site.my_account.order_history.order_date></th>
+		<td class="orderDate"><venda_block label=88,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1><venda_ohodateen></venda_block label=88><venda_block label=89,mode=value,<venda_setting type=ebiz,name=mmdddates>=1><venda_ohodatemonth>-<venda_ohodateday>-<venda_ohodateyear></venda_block label=89></td>
+	</tr>
+	<tr>
+		<th scope="row" class="hdrOrderNum" align="right" valign="top"><venda_text id=site.my_account.order_history.order_number></th>
+		<td class="orderNum"><venda_ohordnum></td>
+	</tr>
+	<tr>
+		<th scope="row" class="hdrOrderStatus" align="right" valign="top"><venda_text id=site.my_account.order_history.order_status></th>
+		<td class="orderStatus">
+		<venda_block label=10,ohstatus=2><venda_text id=site.order_status.in_progress></venda_block label=10>
+		<venda_block label=11,ohstatus=3><venda_text id=site.order_status.released_for_delivery></venda_block label=11>
+		<venda_block label=12,ohstatus=4><venda_text id=site.order_status.backordered></venda_block label=12>
+		<venda_block label=13,ohstatus=5><venda_text id=site.order_status.delivered></venda_block label=13>
+		<venda_block label=14,ohstatus=6><venda_text id=site.order_status.returned></venda_block label=14>
+		<venda_block label=15,ohstatus=7><venda_text id=site.order_status.cancelled></venda_block label=15>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row" class="hdrItems" align="right" valign="top"><venda_text id=site.my_account.order_history.items></th>
+		<td class="items">
+		<ul>
+			<venda_order ref=<venda_ohrfnbr>,shopcart=1,template=orderHistoryItemDisplay,formfields=true>
+		</ul>
+		</td>
+	</tr>
+	</table>
+	<div class="buttonsHistory">
+		<venda_tpcomment><!-- when wizurl tag available, replace this href value with < venda_wizurl step=dispord,workflow=ordlookup,param1=< venda_ohrfnbr>,param2=user>&formid=< venda_ohrfnbr> --></venda_tpcomment>
+		<a href="<venda_codehttps>?ex=co_wizr-ordlookup&bsref=<venda_bsref>&step=dispord&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>&layout=checkout" class="button buttonAlt vieworder"><venda_text id=site.button.view_order> <venda_ohordnum></a>
+		<venda_block label=1500,mode=value,<venda_setting type=ebiz,name=disablereorderbutton>!=1><input type="submit" value="<venda_text id=site.button.reorder> <venda_ohordnum>" class="button buttonAlt buttonArrow submit right"></venda_block label=1500>
+	</div>
+	</form>
+	</li>
+	</venda_detblock4>
+
+	<venda_block label=20,ohorders!=0>
+	<div class="box basketAlt ordersListBox">
+	<h2 class="header"><venda_text id=site.my_account.order_history.recent_orders></h2><br />
+	<ul id="orders_list">
+	<venda_detail4>
+	</ul>
+	</div>
+	</venda_block label=20>
+<venda_tpcomment><!-- End: Recent Orders --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: No Orders --></venda_tpcomment>
+	<venda_block label=21,ohorders=0>
+	<p><venda_text id=site.my_account.order_history.no_orders></p>
+	</venda_block label=21>
+<venda_tpcomment><!-- End: No Orders --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<div id="buttons" class="bottomButtons">
+	<a href="<venda_dispview page=myaccount>" class="button buttonAlt2"><venda_text id=site.button.back_to_my_account></a>
+	</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</div>
+</venda_block label=34>
+
+<venda_block label=33,ustype!=R>    
+<script type="text/javascript">
+// forward to log in page
+location.href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>";
+</script>
+<div id="orderhistory" class="box basketAlt">
+<h1 class="header"><venda_text id=site.my_account.order_history.heading></h1>
+<p><venda_text id=site.my_account.order_history.login></p>
+</div>
+</venda_block label=33>
+<!-- 
+workflow: <venda_workflow>
+step: <venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orpo-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=orpo-screen> 
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

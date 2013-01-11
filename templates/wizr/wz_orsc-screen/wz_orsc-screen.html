@@ -1,0 +1,177 @@
+	<div id="tag-qtymsg" style="display:none;"><venda_text id=site.productdetail.validate.qty></div>
+	<script type="text/javascript">
+		var classtoset = new Array ('#vbmProds li','#vbmProds li .details','#vbmProds li .details h2','#vbmProds li .details .invtdesc2','#vbmProds li .details .priceDetails','#vbmProds li .details .price','#vbmProds li .details .release','#vbmProds li .details .moreInfo');
+		var bottomtab = new Venda.Widget.createTab("#bottomtab");
+		Venda.Platform.EqualHeight.init(classtoset);
+		bottomtab.init();
+		jQuery(document).ready(function() {
+			jQuery('.summeryContainer').scrollToFixed({
+				marginTop:
+				jQuery('.mainHeader').outerHeight() + jQuery('#yourbasket').outerHeight() + 29 + jQuery('.bagbanner').outerHeight() + 45 + jQuery('.demo').outerHeight(),
+				limit:
+				jQuery('.mainFooter').offset().top - jQuery('.summeryContainer').outerHeight() - 75
+			});
+		});
+	</script>
+	<venda_tpcomment><!-- end: Tab bottom --></venda_tpcomment>
+<venda_page page=bagbanner>
+<div class="grid_24 basketR">
+	<div id="yourbasket">
+		<venda_form>
+			<input type=hidden name=ohrfnbr value=<venda_ohrfnbr>>
+			<venda_block label=45,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2><input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=p>"></venda_block label=45>
+			<input type="hidden" name="log" value="0">
+			<input type="hidden" name="layout" value="0">
+			
+			<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<div>
+		<div class="basketHeader">
+		<h1><venda_text id=site.basket.heading></h1>
+		</div>
+        	
+		<!-- class="basketButtons" removed -->
+
+		<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>					
+	</div>
+			<venda_paymenttemplate template=paypal_express,templatetype=paytype/frontend,paymenttype=paypal>
+			<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+			
+			<venda_tpcomment><!-- Start: Items Table --></venda_tpcomment>
+			<venda_inctemplate type=wizr/wz_orsc-screen,name=standard_items>
+			<venda_inctemplate type=wizr/wz_orsc-screen,name=bundle_items>
+				
+			<div id="basket" class="ordertable">
+				<ul class="wizrtable">
+					<venda_detail5><venda_tpcomment><!-- normal products --></venda_tpcomment>
+					<venda_detail11><venda_tpcomment><!-- bundle products --></venda_tpcomment>
+				</ul>
+   		</div>
+
+			<venda_tpcomment><!-- End: Items Table --></venda_tpcomment>
+	<div id="summeryContainer" class="summeryContainer">
+        <div class="summeryCol">
+            <div id="ordersummery" class="ordersummery">
+                <h2><venda_text id=order.summaryTitle></h2>
+                <div class="bagIcon"></div>
+                <div class="ordersummeryWrapper">
+                    <div class="grid_11 alpha">
+                       <venda_page page=basketdeliveryinformation>
+                    </div>
+			           <div class="orscSummary grid_12 push_1 omega">						
+				           <div class="box">
+                           
+					           <table summary="<venda_text id=site.order_details_summary.table_summary>" title="<venda_text id=site.order_details_summary.table_title>" class="orderdetails" cellpadding="0" cellspacing="0">
+						           <tbody>
+							           <tr>
+   							           <th class="hdrSubTotal" scope="row"><div><venda_text id=site.basket.sub_total> (<venda_productqty>)</div></th>
+   								        <td colspan="1" class="subtotal"><div><venda_currsym><venda_extsub></div></td>
+   							        </tr>
+   							        <venda_block label=10,totaldisc&gt;0.00,totaldisc!=null>
+   							        <tr>
+   								        <th class="hdrDiscount" scope="row"><div><venda_text id=site.basket.discount></div></th>
+   								        <td colspan="1" class="discount"><div><venda_currsym><venda_totaldisc></div></td>
+   							        </tr>
+   							        </venda_block label=10>
+   						        </tbody>
+   					        </table>
+   					        <div class="orscTotal"><span><venda_text id=site.basket.total><span><venda_text id=site.basket.total.ex.delivery></span></span> <span class="orscTotalFig"><venda_currsym><venda_esttotal></span></div>
+   				        </div>
+   			        </div>
+			        <venda_paymenttemplate template=paypal_express,templatetype=paytype/frontend,paymenttype=paypal>
+			        <venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+                    <venda_tpcomment><!-- Start: Promotions --></venda_tpcomment>
+                      <venda_tpcomment><!-- Promotion error display --></venda_tpcomment>
+                      <div class="waitMsg loadingImg" style="display:none"><span style="display:none"><venda_text id=site.message.apply_promotion_code></span><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/redesign/loading_spinner.gif" alt="Loading"></div>
+                      <div id="additionalservices" class="redeemPromotionCode">
+                        <div class="coupon">
+                          <venda_tpcomment><!-- Promotion code input --></venda_tpcomment>
+                          <venda_inctemplate name=mediacodeinput,type=wizr/wz_orsc-screen>
+                          <venda_tpcomment><!-- Promotion code display --></venda_tpcomment>
+                          <venda_inctemplate name=mediacode,type=wizr/wz_orsc-screen>
+                        </div>
+                        <div id="ajax-error"></div>
+                        <venda_detblock9>
+                          <div class="promotionItem"><venda_codesc></div>
+	                      <venda_tpcomment><!-- Comment out the 'estimated discount' shows to three decimal places but the same promotion shows correctly on order summary to two decimal places.
+	                      <venda_text id=site.basket.estimated_discount--></venda_tpcomment>
+                          <venda_tpcomment><!-- Comment out the ability to remove promotions as per RT#162128:
+	                       <a href="?ex=co_wizr-shopcart&curstep=handle_vouchercode&step=handle_vouchercode&mode=process&action=delete"><venda_text id=site.order_confirmation.promotion_delete></a-->
+                          </venda_tpcomment>
+                        </venda_detblock9>
+
+                        <venda_block label=43,totaldisc&gt;0.00>
+                          <div id="promotions" class="promotionsBar">
+                            <h2 class="header headerPromo"><venda_text id=site.basket.promotions_included></h2>
+                            <venda_detail9>
+                          </div>
+                        </venda_block label=43>
+                      </div>
+                    <venda_tpcomment><!-- End: Promotions --></venda_tpcomment>
+                
+                </div>
+                <venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+			    <div class="basketButtons">
+			        <venda_block label=46,mode=value,<venda_setting type=ebiz,name=expresscheckout>!=2>
+				        <venda_block label=100,ustype=R>
+                            <venda_block label=210,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1>
+                                <input type="submit" onclick='<venda_wizbutton step=confirm,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' value="<venda_text id=site.button.checkout>" class="button checkout">
+                            </venda_block label=210>
+                            <venda_block label=211,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1>
+                                <input type="submit" onclick='<venda_wizbutton step=billtologin,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' value="<venda_text id=site.button.checkout>" class="button checkout">
+                            </venda_block label=211>
+                        </venda_block label=100>
+				        <venda_block label=101,ustype!=R>
+                            <input type="submit" onclick='<venda_wizbutton step=billtologin,mode=process,param1=login,callonly=yes,wizard=shopcart> return false;' value="<venda_text id=site.button.checkout>" class="button checkout">
+                        </venda_block label=101>
+			        </venda_block label=46>
+			        <venda_block label=47,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2>
+			        <!-- if site provides express checkout option only -->
+				        <venda_block label=129,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+				            <!-- with postcode lookup -->
+				            <input type="submit" onclick='<venda_wizbutton step=zipcode,mode=process,param1=login,log=2,callonly=yes,wizard=shopcart> return false;' value="<venda_text id=site.button.checkout>" class="button checkout">
+				        </venda_block label=129>
+				        <venda_block label=130,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1>
+				            <!-- without postcode lookup -->
+				            <input type="submit" onclick='<venda_wizbutton step=billto,mode=process,param1=login,log=2,callonly=yes,wizard=shopcart> return false;' value="<venda_text id=site.button.checkout>" class="button checkout">
+				        </venda_block label=130>
+			        </venda_block label=47>
+			    </div>
+			    <div class="ordersummeryClose">
+                    		<venda_page page=deliveryinfolink>
+                	    </div>
+            </div>
+        </div>
+        <div class="basketButtons">
+        	<a href="<venda_dispview page=home>" class="button continue"><venda_text id=site.button.continue_shopping></a>
+        </div>
+        </div>
+		</form>
+	</div>
+</div>
+<venda_page page=bottombasket>
+<!--
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orsc-screen.html
+ -->
+<venda_block label=815,mode=value,<venda_setting type=ebiz,name=tracktaghitbox>=1><!--HBX tracking if business field checked-->
+<script type="text/javascript">
+<!--
+<venda_inctemplate name=hbxjsvars1,type=includes/tracking>
+
+// set var for hitbox
+c1=hitboxFriendlyChars("<venda_hitbox_ivname>");
+c2=hitboxFriendlyChars("<venda_hitbox_brand>");
+c3=hitboxFriendlyChars("<venda_hitbox_pcat>");
+c4="<venda_hitbox_price>";
+c5="<venda_hitbox_qty>";
+//-->
+</script>
+</venda_block label=815>
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOrsc,type=includes/tracking>
+<venda_inctemplate name=trackingBasket,type=includes>
+<venda_inctemplate name=cmDisplayShop5s,type=includes/tracking/coremetrics>
+<venda_tpxt mode=set,name=orsc,value=1>
+<venda_tpxt mode=set,name=track,value=orsc-screen>

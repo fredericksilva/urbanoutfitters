@@ -1,0 +1,73 @@
+<div id="comingsoon">
+<venda_block label=58,curstep=details>
+<h1><venda_text id=site.coming_soon.heading></h1>
+<venda_block label=100,errors=notnull><p class="error"><venda_errors></p></venda_block label=100>
+<p><venda_text id=site.coming_soon.enter_details></p>
+<venda_form>
+<input type="hidden" name="PrimaryForm">
+<input type="hidden" name="ustype" value="E">
+
+<venda_tpcomment><!-- Start: Your Details--></venda_tpcomment>	
+<fieldset class="f-orzccomesoon">
+<legend class="orzccomesoon"><venda_text id=site.coming_soon.legend.your_details></legend>
+<div><label for="fname"><venda_text id=site.coming_soon.label.first_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_fname field=text,size=25,maxlength=30,required=yes></div>
+<div><label for="lname"><venda_text id=site.coming_soon.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30,required=yes></div>
+<div><label for="usemail"><venda_text id=site.coming_soon.label.email><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_usemail field=text,size=25,required=yes></div>
+</fieldset>
+<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>	
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<script type="text/javascript">
+<!-- 
+function validateFields() {
+	var filterNumber = /[0-9]/;
+	if (document.wizform.fname.value == '') {
+		alert('<venda_text id=site.coming_soon.js_validation.first_name>');
+		document.wizform.fname.focus();
+		return;
+	}
+	if (document.wizform.lname.value == '') {
+		alert('<venda_text id=site.coming_soon.js_validation.last_name>');
+		document.wizform.lname.focus();
+		return;
+	}
+	if (document.wizform.usemail.value == '') {
+		alert('<venda_text id=site.coming_soon.js_validation.email>');
+		document.wizform.usemail.focus();
+		return;
+	}
+	var checkUserEmail = document.wizform.usemail.value;
+	if (checkUserEmail != '') {
+		if ((checkUserEmail.indexOf('@') < 0) || ((checkUserEmail.charAt(checkUserEmail.length-4) != '.') && (checkUserEmail.charAt(checkUserEmail.length-3) != '.'))) {
+			alert('<venda_text id=site.coming_soon.js_validation.valid_email>');
+			document.wizform.usemail.focus();
+			return;
+		}
+	}
+	<venda_wizbutton step=confirm,mode=process,check=yes,callonly=yes>
+}
+// -->
+</script>
+<div id="buttons">
+<input type="submit" onclick="validateFields(); return false;" value="<venda_text id=site.button.continue>" class="right submit">
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</venda_block label=58>
+
+<venda_block label=59,curstep=confirm>
+
+<venda_tpcomment><!-- Start: Confirmation --></venda_tpcomment>
+<h1><venda_text id=site.coming_soon.heading></h1>
+<venda_block label=101,errors=notnull><p class="error"><venda_errors></p></venda_block label=101>
+<p><venda_text id=site.coming_soon.thank_you></p>
+<dl>
+	<dt><venda_text id=site.coming_soon.your_details></dt>
+		<dd><strong><venda_text id=site.coming_soon.name></strong> <venda_fname> <venda_lname></dd>
+		<dd><strong><venda_text id=site.coming_soon.email></strong> <venda_usemail></dd>
+</dl>
+<venda_tpcomment><!-- End: Confirmation --></venda_tpcomment>
+
+</venda_block label=59>
+</div>

@@ -53,21 +53,21 @@ var urbanRedesign = {
     stickyBasket: function () {
         this.basket = jQuery('#basket').position();
         if (this.basket) {
-            jQuery('#basket').css({ 'min-height': (100 + parseInt(jQuery("#ordersummery").height(), 10)) + 'px' })
-            jQuery('#ordersummery').css({ 'position': 'fixed' });
+            jQuery('#basket').css({ 'min-height': (100 + parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
+            jQuery('.summeryContainer').css({ 'position': 'fixed' });
             this.setMenuOffset.initialPos = this.basket.top;
             window.onscroll = document.documentElement.onscroll = this.setMenuOffset;
             this.setMenuOffset();
         }
         //#ajax-error
-        jQuery('#ordersummery').bind('resize', function () {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery("#ordersummery").height() - 50, 10)) + 'px' })
+        jQuery('.summeryContainer').bind('resize', function () {
+            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height() - 50, 10)) + 'px' })
         });
         //jQuery('#ordersummery').trigger('resize');
 
     },
     setMenuOffset: function () {
-        this.header = document.getElementById('ordersummery');
+        this.header = document.getElementById('#summeryContainer');
         if (!this.header) { return; }
         this.currentOffset = document.documentElement.scrollTop || document.body.scrollTop; // body for Safari
         this.startPos = parseInt(urbanRedesign.setMenuOffset.initialPos, 10) || 190;

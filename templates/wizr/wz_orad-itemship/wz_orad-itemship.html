@@ -1,0 +1,69 @@
+<div id="tag-qtymsg" style="display:none;"><venda_text id=site.productdetail.validate.qty></div>
+<div id="multideladdress">
+<h1><venda_text id=site.multiple_delivery_addresses.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<p><venda_text id=site.multiple_delivery_addresses.instructions></p>
+<p><venda_text id=site.multiple_delivery_addresses.choose_instructions></p>
+
+<venda_form>
+<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><input type="hidden" name="htxt" value="<venda_htxt mode=make,changeaddby=multipledeliveryaddresses>"></venda_block label=33>
+
+<venda_tpcomment><!-- Start: Multiple Delivery Address Table --></venda_tpcomment>
+<venda_detblock>
+<tr>
+	<venda_oirfnbr field=hidden>
+	<td class="productname">
+		<venda_oiivname> <venda_block label=1,oiatt1=notnull><venda_text id=site.basket.product_name.attribute_start><venda_oiatt1><venda_block label=2,oiatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt2></venda_block label=2><venda_block label=3,oiatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt3></venda_block label=3><venda_block label=4,oiatt4=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_oiatt4></venda_block label=4><venda_text id=site.basket.product_name.attribute_end></venda_block label=1>
+	</td>
+	<td class="quantity">
+		<label for="formoiqty-<venda_oirfnbr>" class="hide"><venda_text id=site.multiple_delivery_addresses.column_heading.quantity></label>
+		<input type="text" name="oiqty-<venda_oirfnbr>" id="formoiqty-<venda_oirfnbr>" size="3" maxlength="3" value="<venda_oiqty>" class="qty" onkeypress="if(event.keyCode==13){jQuery('#update').click(); return false;}">
+	</td>
+	<td class="address">
+		<label for="formoiabsel-<venda_oirfnbr>" class="hide"><venda_text id=site.multiple_delivery_addresses.column_heading.address></label>
+		<select name="oiabsel-<venda_oirfnbr>" id="formoiabsel-<venda_oirfnbr>"><venda_address template=address,selectaddr=<venda_oiabnbr>></select>
+	</td>
+</tr>
+</venda_detblock>
+
+
+<table summary="<venda_text id=site.multiple_delivery_addresses.table_summary>" title="<venda_text id=site.multiple_delivery_addresses.table_title>" class="orderDetblocksTable" cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+		<th scope="col" class="productname"><venda_text id=site.multiple_delivery_addresses.column_heading.description></th>
+		<th scope="col" class="quantity"><venda_text id=site.multiple_delivery_addresses.column_heading.quantity></th>
+		<th scope="col" class="address"><venda_text id=site.multiple_delivery_addresses.column_heading.address></th>
+		</tr>
+	</thead>
+	<tbody>
+		<venda_detail>
+	</tbody>
+</table>
+
+<venda_tpcomment><!-- End: Multiple Delivery Address Table --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<div id="buttons" class="bottomButtons">
+<venda_block label=32,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1>
+<venda_block label=40,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1><a href="#" onClick='<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=multiple,value=Address Book,callonly=yes>;return false;' class="button buttonAlt"><venda_text id=site.button.add_new_address></a></venda_block label=40>
+<venda_block label=41,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1><input type="hidden" name="htxt" value=""><a href="#" onClick='document.wizform.htxt.value="<venda_htxt mode=make,prevbtn=multiple>";<venda_wizbutton step=zipcodedelivery,param1=delivery,param2=multiple,value=Address Book,callonly=yes>;return false;' class="button buttonAlt"><venda_text id=site.button.add_new_address></a></venda_block label=41>
+</venda_block label=32>
+<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" onClick='<venda_wizbutton step=newadd,param1=delivery,param2=add,value=Address Book,callonly=yes> return false;' class="button buttonAlt"><venda_text id=site.button.add_new_address></a></venda_block label=33>
+<a id="update" href="#" onClick='if(Venda.Ebiz.validateQty()){<venda_wizbutton step=itemship,mode=process,value=Update Quantities,callonly=yes> } return false;' class="button buttonAlt"><venda_text id=site.button.update_quantities></a>
+<a href="#" onClick='<venda_wizbutton step=confirm,mode=process,value=Done,callonly=yes> return false;' class="button buttonAlt buttonArrow"><venda_text id=site.button.done></a>
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</div>
+
+<!--
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orad-itemship.html
+-->
+<venda_tpxt mode=set,name=track,value=orad-editadd>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

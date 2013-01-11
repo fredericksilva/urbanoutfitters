@@ -1,6 +1,26 @@
 <venda_detblock>
 	<li class="nav<venda_icatref1> mm_toplevel">
-		<a href="<venda_dispview icat=<venda_icatref1>>" class="mm_sub<venda_icatref1>"><venda_icatname1></a><venda_category rec=icat,ref=<venda_icatref1>,temp=subsubtopnav,itemsperpage=100>
+		<a href="<venda_dispview icat=<venda_icatref1>>" class="mm_sub<venda_icatref1>">
+<!-- mp_trans_remove_start-->
+			<venda_block label=isicxten,icxtcatnameen1!=><venda_icxtcatnameen1></venda_block label=isicxten>
+			<venda_block label=noicxten,icxtcatnameen1=><venda_icatname1></venda_block label=noicxten>
+		<!-- mp_trans_remove_end-->
+		<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<venda_block label=isicxtfr,icxtcatnamefr1!=><venda_icxtcatnamefr1></venda_block label=isicxtfr>
+			-->
+			<!-- mp_trans_add="DE" 
+				<venda_block label=isicxtde,icxtcatnamede1!=><venda_icxtcatnamede1></venda_block label=isicxtde>
+			-->
+		<!-- mp_trans_disable_end-->
+		<!-- mp_trans_add="FR" 
+				<venda_block label=noicxtfr,icxtcatnamefr1=><venda_icatname1></venda_block label=noicxtfr>
+		-->
+			<!-- mp_trans_add="DE" 
+				<venda_block label=noicxtde,icxtcatnamede1=><venda_icatname1></venda_block label=noicxtde>
+		-->
+		</a>
+		<venda_category rec=icat,ref=<venda_icatref1>,temp=subsubtopnav,itemsperpage=100>
 	</li>
 </venda_detblock>
 

@@ -1,0 +1,8 @@
+<div class="promofield">
+    <label for="vcode"><venda_text id=site.basket.promocode_label></label>
+    <input type="text" id="vcode" name="vcode" value="<venda_text id=site.basket.promocode_value>" class="textInput" onkeypress="if(event.keyCode==13){document.getElementById('vcode_submit_shopcart').click(); return false; }" onclick="if (this.value=='<venda_text id=site.basket.promocode_value>'){this.value='';}" /> 
+    <input type="button" id="vcode_submit_shopcart" class="button" value="<venda_text id=site.button.apply>" data-track="apply-promo-code" onclick="Venda.Ebiz.checkVoucherForm('<venda_text id=site.basket.promocode_value>','<venda_tpxt mode=get,name=track>'); return false;">
+</div>
+<venda_tpcomment><!-- Tags to pass to JS --></venda_tpcomment>
+<div id="tag-alert" style="display:none;"><venda_text id=site.redeem_promotion_code.js_validation.enter_code></div>
+<div id="tag-protocol" style="display:none;"><venda_block label=330,mode=value,<venda_tpxt mode=get,name=track>!=orcf-screen><venda_codehttp></venda_block label=330><venda_block label=329,mode=value,<venda_tpxt mode=get,name=track>=orcf-screen><venda_codehttps></venda_block label=329></div>

@@ -1,0 +1,211 @@
+<venda_tpcomment>
+<!-- 
+Bundle Types:
+Default = 0
+Product bundle = 1
+Customisationcost = 2
+-->
+</venda_tpcomment>	
+
+<venda_block label=367,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=button>
+<venda_tpcomment><!-- JS required for delete button, not required for checkbox. Development is required to remove this --></venda_tpcomment>	
+<script type="text/javascript">
+<!-- //
+function deletebundle( bundle ) {
+document.getElementById(bundle).value = "1";
+<venda_wizbutton step=shopcart,mode=process,param2=updated,callonly=yes,wizard=shopcart>
+}			
+// -->			
+</script>
+</venda_block label=367>
+
+<venda_detblock11>
+   <venda_detblock17>  
+   	<venda_block label=115,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=button>
+		<input type="hidden" name="<venda_bundledelfield>" value="" id="<venda_bundledelfield>">	
+	</venda_block label=115>
+	
+	<venda_block label=496,mode=value,<venda_setting type=ebiz,name=bundletype>!=2,<venda_oiivtype>!=customisationcost,operator=or>
+	<venda_tpcomment><!-- Will show the bundle items for bundle type: default, product bundle and only the main product for customisationcost --></venda_tpcomment>
+        <li class="bundleitem<venda_block label=913,mode=value,<venda_setting type=ebiz,name=bundletype>=0> defaultbundle</venda_block label=913>" >
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="name">
+                        <td class="name">
+                            <a href="<venda_dispview invt=<venda_invtparef>>"><venda_invtname></a>
+                            <venda_text id=site.basket.product_name.attribute_start>
+                            <venda_invtatt1><venda_block label=7,invtatt2=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt2></venda_block label=7>
+                            <venda_block label=8,invtatt3=notnull><venda_text id=site.basket.product_name.attribute_separator><venda_invtatt3></venda_block label=8>
+                            <venda_block label=9,invtatt4=notnull><venda_text id=site.basket.product_name.attribute_separator>
+                            <venda_invtatt4></venda_block label=9>
+                            <venda_text id=site.basket.product_name.attribute_end><venda_extflds exfldtype=orderitem,group=1,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1><venda_extflds exfldtype=orderitem,group=2,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1>
+                            <span class="sku"><venda_text id=site.basket.product_sku><venda_invtref></span>
+                        </td>
+                    </td>
+                    <td class="remove">
+			            <venda_block label=589,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=button,<venda_setting type=ebiz,name=bundletype>=0>
+				            <input type="submit" title="<venda_text id=site.button.remove> <venda_invtname>" value="<venda_text id=site.button.remove> <venda_invtname>" data-track="remove-item-basket" onClick="deletebundle('<venda_bundledelfield>'); return false;" class="submit">
+			            </venda_block label=589>
+			            <venda_block label=544,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=checkbox,<venda_setting type=ebiz,name=bundletype>=0>
+				            <input type="checkbox" name="<venda_bundledelfield>" value="1" id="Checkbox1">
+			            </venda_block label=544>
+			            <venda_block label=590,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=button,<venda_setting type=ebiz,name=bundletype>=2>
+				            <input type="submit" title="<venda_text id=site.button.remove> <venda_invtname>" value="<venda_text id=site.button.remove>" data-track="remove-item-basket" onClick="deletebundle('<venda_bundledelfield>'); return false;" class="submit">
+			            </venda_block label=590>
+			            <venda_block label=545,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=checkbox,<venda_setting type=ebiz,name=bundletype>=2>
+				            <input type="checkbox" name="<venda_bundledelfield>" value="1" id="Checkbox2">
+			            </venda_block label=545>
+			        </td>
+                </tr>
+                <tr>
+                    <td colspan="0">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr>
+			                    <td rowspan="3" class="thumb gcimage">
+                                    <venda_block label=111,invtatt1=notnull>
+			                            <venda_tpcomment><!--product has attributes--></venda_tpcomment>
+			                            <venda_block label=21,med-set<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
+				                            <venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,img=no,medatr=yes>=notnull>
+					                            <venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
+					                            <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,medatr=yes></a></td>
+				                            </venda_block label=22>
+				                            <venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,img=no,medatr=yes>=null>
+					                            <venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
+					                            <venda_block label=231,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
+						                            <venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+						                            <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setshoppingbasketimagekey>></a></td>
+					                            </venda_block label=231>
+					                            <venda_block label=232,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
+						                            <venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+						                            <td rowspan="3" class="thumb noimage"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setshoppingbasketimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a></td>
+					                            </venda_block label=232>
+				                            </venda_block label=23>
+			                            </venda_block label=21>
+			                            <venda_block label=24,med-set<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
+				                            <venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+				                            <venda_block label=25,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
+					                            <venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+					                            <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setshoppingbasketimagekey>></a></td>
+				                            </venda_block label=25>
+				                            <venda_block label=26,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
+					                            <venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+					                            <td rowspan="3" class="thumb noimage"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setshoppingbasketimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a></td>
+				                            </venda_block label=26>
+			                            </venda_block label=24>
+			                        </venda_block label=111>
+			
+			                        <venda_block label=113,invtatt1=null>
+				                        <venda_tpcomment><!--product doesn't has attributes--></venda_tpcomment>
+				                        <venda_block label=31,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
+					                        <venda_tpcomment><!--if not 'set' prefix - no alt. images functionality --></venda_tpcomment>
+					                        <td class="thumb"><a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setshoppingbasketimagekey>></a></td>
+				                        </venda_block label=31>
+				                        <venda_block label=32,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
+					                        <venda_tpcomment><!--without key=xsmall--></venda_tpcomment>
+					                        <td class="thumb noimage"><a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setshoppingbasketimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a></td>
+				                        </venda_block label=32>
+			                        </venda_block label=113>
+                                </td>		
+                                <th class="item"><venda_text id=order.item></th>
+	                            <th class="quantity"><venda_text id=order.quantity></th>
+	                            <th class="totalprice"><venda_text id=order.price></th>
+			                </tr>
+                            <tr>
+			                    <td class="quantity">
+				                    <venda_block label=513,mode=value,<venda_setting type=ebiz,name=bundletype>=0,<venda_setting type=ebiz,name=bundletype>=2,operator=or>
+					                    <label for="form<venda_bundleqtyfield>" class="re-waiHide"><venda_text id=site.basket.column_heading.quantity></label>
+                                        <input type="text" name="<venda_bundleqtyfield>" id="form<venda_bundleqtyfield>" size="2" maxlength="3" value="<venda_bundlequantity>">
+				                    </venda_block label=513>
+				                    <venda_block label=514,mode=value,<venda_setting type=ebiz,name=bundletype>=1>
+				                        <venda_oiqty>
+				                    </venda_block label=514>
+			                    </td>
+                                <td class="priceeach"><venda_currsym><venda_invtsell></td>
+                            </tr>
+                            <tr>			
+			                    <td class="totalprice">
+				                    <venda_block label=633,mode=value,<venda_setting type=ebiz,name=bundletype>=0,mode=value,<venda_setting type=ebiz,name=bundletype>=1,operator=or>
+					                    <venda_currsym><venda_oiextprice>
+				                    </venda_block label=633>
+				                    <venda_block label=634,mode=value,<venda_setting type=ebiz,name=bundletype>=2>
+					                    <venda_currsym><venda_bundletotal>
+				                    </venda_block label=634>
+			                    </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </li>
+	</venda_block label=496>
+	
+	<venda_block label=886,mode=value,<venda_setting type=ebiz,name=bundletype>=2,<venda_oiivtype>=customisationcost>
+	<venda_tpcomment><!-- Customisationcost ivtype display - will only show if bundle type is 2 (customisationcost) and ivtype is customisationcost, the ivtype should be considered as an ebiz switch and everything inside label 886 might be better off in an include due to a very high chance of it being customised --></venda_tpcomment>	
+	<li class="customisationitem">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+			    <td class="thumb"></td>
+			    <td class="name"><venda_invtname></td>
+			    <td class="priceeach"><venda_currsym><venda_invtsell></td>
+			    <td class="quantity"></td>
+			    <td class="totalprice"></td>
+			    <td class="remove"></td>
+            </tr>
+        </table>
+	</li>
+	</venda_block label=886>	
+	<venda_inctemplate name=cmCreateShopAction5Tag,type=includes/tracking/coremetrics>
+	<venda_inctemplate name=siteCatalystBasket,type=includes/tracking/siteCatalyst>
+	</venda_detblock17>
+	
+	<venda_block label=586,mode=value,<venda_setting type=ebiz,name=bundletype>=1>
+	<venda_tpcomment><!-- Top table row for product bundle --></venda_tpcomment>
+	<li class="productbundlestartrow">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+		        <td class="productbundleheading" colspan="6"><venda_text id=site.basket.product_bundle.heading></td>
+            </tr>
+        </table>
+	</li>
+	</venda_block label=586>
+	
+<venda_detail17>
+   
+   	<venda_block label=256,mode=value,<venda_setting type=ebiz,name=bundletype>=1>
+	<venda_tpcomment><!-- Bottom table row for product bundle - Bundle Qty, Total Price and delete --></venda_tpcomment>
+	<li class="productbundleendrow">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+	   	        <td class="thumb"></td>
+	   	        <td class="name"></td>
+	   	        <td class="priceeach"><venda_text id=site.basket.product_bundle.bundle_total></td>
+	   	        <td class="quantity">
+			        <label for="form<venda_bundleqtyfield>" class="re-waiHide"><venda_text id=site.basket.column_heading.quantity></label><input type="text" name="<venda_bundleqtyfield>" id="form<venda_bundleqtyfield>" size="2" maxlength="3" value="<venda_bundlequantity>">
+		        </td>
+	   	        <td class="totalprice">
+			        <venda_currsym><venda_bundletotal>
+		        </td>
+	   	        <td class="remove">
+			        <venda_block label=599,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=button,<venda_setting type=ebiz,name=bundletype>=1>
+				        <input type="submit" value="<venda_text id=site.button.remove>" data-track="remove-item-basket" onClick="deletebundle('<venda_bundledelfield>'); return false;" class="submit">
+			        </venda_block label=599>
+			        <venda_block label=517,mode=value,<venda_setting type=ebiz,name=setdeletecartitems>=checkbox,<venda_setting type=ebiz,name=bundletype>=1>
+				        <input type="checkbox" name="<venda_bundledelfield>" value="1" id="<venda_bundledelfield>">
+			        </venda_block label=517>
+		        </td>
+            </tr>
+        </table>
+	</li>	
+	</venda_block label=256>
+	
+	<venda_block label=255,mode=value,<venda_setting type=ebiz,name=bundletype>=2>
+	<venda_tpcomment><!-- End table row for Customisationcost --></venda_tpcomment>
+	<li class="customisationcostendrow">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+		        <td class="bottomrow" colspan="6"></td>
+            </tr>
+        </table>
+	</li>
+	</venda_block label=255>
+</venda_detblock11>	

@@ -1,0 +1,31 @@
+<div class="checkoutL containerpwrmthankyou">
+	<div class="box mainAlt">
+		<h1 class="header"><venda_text id=site.password_reminder_thank_you.heading></h1>
+		<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+		<p><venda_text id=site.password_reminder_thank_you.email_shortly></p>
+		<p><venda_text id=site.password_reminder_thank_you.change_password></p>
+
+		<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+		<div id="buttons" class="bottomButtons">
+		<a href="<venda_passcode>&param1=<venda_param1>&param2=<venda_param2>" class="button buttonAlt2"><venda_text id=site.button.previous></a>
+		
+		<venda_block label=shopcart,param1=shopcart><venda_tpcomment><!-- Continue with checkout --></venda_tpcomment>
+		<a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&wizard=shopcart&step=billtologin&param1=login&param2=<venda_param2>"><venda_text id=site.password_reminder_thank_you.bt_checkout></a>
+		</venda_block label=shopcart>
+		<venda_block label=register,param1!=shopcart><venda_tpcomment><!-- Continue to My Account --></venda_tpcomment>
+		<a class="button buttonAlt buttonArrow" href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>&param2=<venda_param2>"><venda_text id=site.password_reminder_thank_you.bt_myaccount></a>
+		</venda_block label=register>
+		
+		</div>
+		<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+	</div>
+</div>
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_pwrm-thankyou.html
+ -->
+<venda_tpxt mode=set,name=track,value=pwrm-thankyou> 
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>

@@ -696,7 +696,7 @@ button::-moz-focus-inner {
   border: 0;
 }
 .error {
-    background-color: #ff8b48;
+    background-color: #444;
     border-bottom: 1px solid #444;
     color: #333;
     font-size: 12px;

@@ -1,0 +1,21 @@
+<div class="referfriendthankyou box basketAlt">
+<h1 class="header"><venda_text id=site.refer_friend_thank_you.heading></h1>
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+<venda_userinfo>	
+<p class="refrThank"><venda_text id=site.refer_friend_thank_you.thank_you></p>
+</venda_userinfo>
+<p class="refrReceiveMail"><venda_text id=site.refer_friend_thank_you.friends_will_receive_email></p>
+<p class="refrThankEarn"><venda_text id=site.refer_friend_thank_you.keep_earning_vouchers></p>
+<div id="buttons">
+<a href="<venda_dispview page=myaccount>" class="button"><venda_text id=site.button.back_to_my_account></a>
+</div>
+</div>
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_refr-thankyou.html
+ -->
+<venda_tpxt mode=set,name=track,value=refr-thankyou> 
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+<venda_inctemplate name=cm-wz_refr-thankyou,type=includes/tracking/coremetrics> 

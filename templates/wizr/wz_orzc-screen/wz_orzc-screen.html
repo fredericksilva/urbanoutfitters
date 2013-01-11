@@ -1,0 +1,46 @@
+<venda_block label=8801,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1>
+
+	<venda_tpcomment><!-- Start: Coming Soon --></venda_tpcomment>
+	<venda_block label=57,workflow=comingsoon><venda_inctemplate type=wizr/wz_orzc-screen,name=coming_soon></venda_block label=57>
+	<venda_tpcomment><!-- End: Coming Soon --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: Postcode Lookup --></venda_tpcomment>
+	<venda_block label=56,workflow!=comingsoon><venda_inctemplate type=wizr/wz_orzc-screen,name=postcode_lookup></venda_block label=56>
+	<venda_tpcomment><!-- End: Postcode Lookup --></venda_tpcomment>
+
+</venda_block label=8801>
+
+<venda_tpcomment><!-- Start: Singlestep Lookup --></venda_tpcomment>
+<venda_block label=8800,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1>
+<venda_block label=2202,mode=value,<venda_htxt mode=get,name=dts>!=1><venda_inctemplate type=wizr/wz_orzc-screen,name=singlestep_lookup></venda_block label=2202>
+<venda_block label=2203,mode=value,<venda_htxt mode=get,name=dts>=1><venda_inctemplate type=wizr/wz_orzc-screen,name=postcode_lookup></venda_block label=2203>
+</venda_block label=8800>
+<venda_tpcomment><!-- End: Singlestep Lookup --></venda_tpcomment>
+
+<venda_block label=620,workflow=instore><venda_tpxt mode=set,name=instore,value=1></venda_block label=620>
+
+<!-- 
+step:<venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_orzc-screen.html
+ -->
+
+<venda_tpxt mode=set,name=track,value=orzc-screen>  
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+
+<!-- Venda vars to be passed to JS -->
+<div id="venda_cntry" style="display: none;"><venda_cntry></div>
+<div id="venda_state" style="display: none;"><venda_state></div>
+<div id="venda_locn" style="display: none;"><venda_sessionlocation></div>
+
+<!-- Localisation to be passed to JS -->
+<div id="user_details_label_required" style="display: none;"><venda_text id=site.accessible.label.required></div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=site.contact_address.label.us_state></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=site.contact_address.zipc.us_zipcode></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=site.contact_address.label.uk_county></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=site.contact_address.zipc.non_us_postcode></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=site.contact_address.label.non_us_uk_region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>

@@ -1,0 +1,11 @@
+<venda_tpcomment><!-- 
+This 'entermediacode' div gets updated by the AJAX, to show the promotion offers in the associated page (except when on shopcart workflow).
+The page reference matches the promotion code. The build team will not be creating these pages.--></venda_tpcomment>
+
+<venda_tpcomment><!-- Note: according to the template limitation that we coundn't merge this section with the information in 'detblock9' together.
+So we comment it out as generally users will be interested in seeing the information about saving money
+<venda_block label=10,mode=value,<venda_vouchercode_first>=notnull>
+<div class="promocodepending">
+<span><venda_text id=site.basket.promocodetext_before> <venda_text id=site.basket.promocodetext_after></span> <venda_vouchercode template=pending>
+</div>
+</venda_block label=10>--></venda_tpcomment>

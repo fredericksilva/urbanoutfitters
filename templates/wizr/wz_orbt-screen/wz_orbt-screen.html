@@ -1,0 +1,58 @@
+<venda_zones type=countries,template=countrySelect>
+<venda_block label=100,workflow=shopcart,workflow=instore,operator=or>
+
+	<venda_block label=152,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>=1>
+		<venda_tpcomment><!-- login and password --></venda_tpcomment>
+		<venda_block label=59,param1=login,param2!=singlestep><venda_inctemplate type=admn,name=co_comn-login></venda_block label=59>
+		
+		<venda_tpcomment><!-- remain on wz_orzc-screen when system errors occur --></venda_tpcomment>
+		<venda_block label=1423,workflow=shopcart,param2=singlestep><venda_inctemplate type=wizr,name=wz_orzc-screen></venda_block label=1423>
+	</venda_block label=152>
+
+	<venda_block label=153,mode=value,<venda_setting type=ebiz,name=singlesteppclookup>!=1>
+		<venda_tpcomment><!-- login and password --></venda_tpcomment>
+		<venda_block label=51,param1=login><venda_inctemplate type=admn,name=co_comn-login></venda_block label=51>
+	</venda_block label=153>
+
+	<venda_tpcomment><!-- Start: Edit Contact Address --></venda_tpcomment>
+		<venda_block label=25,param2=edit><venda_inctemplate type=wizr/wz_orbt-screen,name=edit_contact_address></venda_block label=25>
+	<venda_tpcomment><!-- End: Edit Contact Address --></venda_tpcomment>
+</venda_block label=100>
+
+<venda_tpcomment><!-- Start: Contact Address and search form --></venda_tpcomment>
+	<venda_block label=200,param1=details><venda_inctemplate type=wizr/wz_orbt-screen,name=contact_address></venda_block label=200>
+<venda_tpcomment><!-- End: Contact Address and search form --></venda_tpcomment>
+
+<venda_block label=251,workflow!=shopcart,workflow!=instore,curstep=billtologin><venda_inctemplate type=admn,name=co_comn-login></venda_block label=251>
+
+<venda_block label=56,workflow=refer,curstep=referlogin><venda_inctemplate type=admn,name=co_comn-login></venda_block label=56>
+
+<venda_block label=57,workflow=login><venda_inctemplate type=admn,name=co_comn-login></venda_block label=57>
+
+<venda_block label=20,workflow=instore><venda_tpxt mode=set,name=instore,value=1></venda_block label=20>
+
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orbt-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=orbt-screen>
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+
+
+<!-- Venda vars to be passed to JS -->
+<div id="venda_cntry" style="display: none;"><venda_cntry></div>
+<div id="venda_state" style="display: none;"><venda_state></div>
+<div id="venda_locn" style="display: none;"><venda_sessionlocation></div>
+
+<!-- Localisation to be passed to JS -->
+<div id="user_details_label_required" style="display: none;"><venda_text id=site.accessible.label.required></div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=site.contact_address.label.us_state></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=site.contact_address.zipc.us_zipcode></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=site.contact_address.label.uk_county></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=site.contact_address.zipc.non_us_postcode></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=site.contact_address.label.non_us_uk_region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>

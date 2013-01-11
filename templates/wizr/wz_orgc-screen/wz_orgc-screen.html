@@ -1,0 +1,130 @@
+<div id="giftcertificate" class="box mainAlt addressform">
+	<h1 class="header"><venda_text id=site.gift_certificates.heading></h1>
+	<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+	<div class="boxContent">
+	<p><venda_text id=site.gift_certificates.instructions></p>
+	<p><venda_text id=site.gift_certificates.note></p>
+	<p><venda_text id=site.gift_certificates.required_fields></p>
+	<venda_form>
+	<input type="hidden" name="layout" value="checkout">
+	<input type="hidden" name="textcount" value="">
+
+	<venda_tpcomment><!-- Start: Recipient Details --></venda_tpcomment>
+		<fieldset class="f-orgcrecdetail formFill">
+		<legend class="orgcrecdetail"><venda_text id=site.gift_certificates.legend.recipient_details></legend>
+		<h4><venda_text id=site.gift_certificates.legend.recipient_details></h4>
+		<div><label for="to"><venda_text id=site.gift_certificates.label.recipient_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" name="to" id="to" value="<venda_to>" size="25" maxlength="50" class="textInput"></div>
+		<div class="formSeparator"></div>
+		<div><label for="email"><venda_text id=site.gift_certificates.label.recipient_email><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" name="email" id="email" value="<venda_email>" size="25" maxlength="50" class="textInput"></div>
+		<div class="formSeparator"></div>
+		<div><label for="amount"><venda_text id=site.gift_certificates.label.amount><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" name="amount" id="amount" value="<venda_amount>" size="3" maxlength="3" class="textInput"></div>
+		</fieldset>
+		<venda_inventory ref=giftcert,temp=giftcertpricing>
+		<p><venda_text id=site.gift_certificates.check_recipient_email></p>
+	<venda_tpcomment><!-- End: Recipient Details --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: Your Details --></venda_tpcomment>
+		<fieldset class="f-orgcydetail formFill">
+		<legend class="orgcydetail"><venda_text id=site.gift_certificates.legend.your_details></legend>
+		<h4><venda_text id=site.gift_certificates.legend.your_details></h4>
+		<div><label for="comment"><venda_text id=site.gift_certificates.label.message><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <textarea name="comment" id="comment" cols="25" rows="5"><venda_comment></textarea><p class="charRemain"><venda_text id=site.characters_remaining> [ <span class="textMsgCount">200</span> ]</p></div>	
+		<div class="formSeparator"></div>
+		<div><label for="from"><venda_text id=site.gift_certificates.label.from><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" name="from" id="from" value="<venda_from>" size="25" maxlength="50" class="textInput"></div>
+		</fieldset>
+	<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: Terms and Conditions --></venda_tpcomment>
+		<fieldset class="f-orgcydetail terms">
+		<div><input type="checkbox" name="giftcerttandc" id="giftcerttandc" value="1" <venda_block label=81,errors=notnull>checked</venda_block label=81>> <label for="giftcerttandc"><venda_text id=site.gift_certificates.label.read_and_agree> <a href="<venda_dispview page=giftcertificate>" class="doDialog" rel="550,450,gift" target="_blank" title="<venda_text id=site.gift_certificates.label.terms_and_conditions.title>"><venda_text id=site.gift_certificates.label.terms_and_conditions></a></label></div>
+		</fieldset>
+	<venda_tpcomment><!-- End: Terms and Conditions --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+		<script type="text/javascript">
+		<venda_inventory ref=giftcert,temp=giftcertvariables>
+		var maxP = maxprice.toString();
+		var splitGiftcert = maxP.split(".");
+		var maxlengthGiftcert = splitGiftcert[0].length;
+		document.wizform.amount.maxLength = maxlengthGiftcert;
+		document.wizform.amount.size = maxlengthGiftcert;
+
+		jQuery(function(){
+			jQuery("#comment").textboxCount(".textMsgCount",{
+					maxChar: 200,
+					countStyle: 'down',
+					alert: ""
+				});	
+			});
+		function checkemail(str) {
+			var filter =/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,7}|\d+)$/i;
+			return (filter.test(str));
+		}
+
+		function validateFields() {
+			if (document.wizform.to.value=='') {
+				alert("<venda_text id=site.gift_certificates.js_validation.recipient_name>");
+				document.wizform.to.focus();
+				return;
+			}
+			else if (document.wizform.email.value=='') {
+				alert("<venda_text id=site.gift_certificates.js_validation.recipient_email>");
+				document.wizform.email.focus();
+				return;
+			}
+			else if (!checkemail(document.wizform.email.value)) {	
+				alert("<venda_text id=site.gift_certificates.js_validation.valid_email>");
+				document.wizform.email.focus();
+				return;
+			}
+			else if (document.wizform.amount.value=='') {
+				alert("<venda_text id=site.gift_certificates.js_validation.value>");
+				document.wizform.amount.focus();
+				return;
+			}
+			var filterNumber = /^[0-9]*$/;
+			if (filterNumber.test(document.wizform.amount.value) == false) {
+				alert("<venda_text id=site.gift_certificates.js_validation.valid_value>");
+				document.wizform.amount.focus();
+				return;
+			}
+			else if ((document.wizform.amount.value < minprice) || (document.wizform.amount.value > maxprice)) {
+				alert("<venda_text id=site.gift_certificates.js_validation.greater_than_less_than>");
+				document.wizform.amount.focus();
+				return;
+			}
+			else if (document.wizform.comment.value=='') {
+				alert("<venda_text id=site.gift_certificates.js_validation.message>");
+				document.wizform.comment.focus();
+				return;
+			}
+			else if (document.wizform.from.value=='') {
+				alert("<venda_text id=site.gift_certificates.js_validation.name>");
+				document.wizform.from.focus();
+				return;
+			}
+			else if (!document.wizform.giftcerttandc.checked) {
+				alert("<venda_text id=site.gift_certificates.js_validation.terms_and_conditions>");
+				document.wizform.giftcerttandc.focus();
+				return;
+			}
+			document.wizform.wizard.value="shopcart";
+			<venda_wizbutton step=next,mode=process,callonly=yes>
+		}
+		</script>
+		<div class="bottomButtons">
+		<input type="submit" onClick="validateFields(); return false;" value="<venda_text id=site.button.continue>" class="button buttonAlt buttonArrow submit">
+		</div>
+	<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+	</form>
+	</div>
+</div>
+
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_orgc-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=orgc-screen>
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>

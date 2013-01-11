@@ -3,7 +3,7 @@
 		<div class="pagnNumCurrent"><span class="pagnCurrent"><venda_number></span></div>
 	</venda_block label=1111>	
 	<venda_block label=1112,mode=value,<venda_currentpage>!=<venda_number>>           
-		<div class="pagnNumber"><a href="<venda_baseurl>&setpagenum=<venda_number><venda_block label=1128,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1128>&perpage=<venda_perpage>" class="updatesearch" title="<venda_text id=desktop.info.pagn_go_to_page>"><venda_number></a></div>
+		<div class="pagnNumber"><a href="<venda_baseurl>&setpagenum=<venda_number><venda_block label=1128,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1128>&perpage=<venda_perpage>" class="updatesearch" title="Go to page <venda_number>"><venda_number></a></div>
 	</venda_block label=1112>
 </venda_detblock_pageslist>
 
@@ -20,7 +20,7 @@
 			<venda_block label=4,mode=value,<venda_pgn_totalpages>&gt;1>
 				<!-- show the previous link-->
 				<venda_block label=1117,mode=value,<venda_pgn_currentpage>&gt;1>
-				<span class="pagnPrev"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_previouspage><venda_block label=1129,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1129>&perpage=<venda_pgn_perpage>" title="<venda_text id=desktop.info.pagn_page_go_previous>">< </a></span>
+				<span class="pagnPrev"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_previouspage><venda_block label=1129,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1129>&perpage=<venda_pgn_perpage>" title="Previous page">< </a></span>
 				</venda_block label=1117>
 				<venda_block label=11171,mode=value,<venda_pgn_currentpage>=1>
 					<span class="pagnPrev-off">< </span>
@@ -28,7 +28,7 @@
 				
 				<!-- show the first page link-->
 				<venda_block label=1115,mode=value,<venda_pgn_windowstartpage>&gt;1>	
-					<div class="pagnNumFirst"><span class="pagnFirst"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=1<venda_block label=1130,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1130>&perpage=<venda_pgn_perpage>" title="<venda_text id=desktop.info.pagn_page_go_first>">1</a></span></div>
+					<div class="pagnNumFirst"><span class="pagnFirst"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=1<venda_block label=1130,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1130>&perpage=<venda_pgn_perpage>" title="Go to first page">1</a></span></div>
 				</venda_block label=1115>
 						
 				<venda_block label=1113,mode=value,<venda_pgn_leftgap>&gt;1>
@@ -45,12 +45,12 @@
 		
 				<!-- show the last link -->	
 				<venda_block label=1118,mode=value,<venda_pgn_windowendpage>&lt;<venda_pgn_totalpages>>			
-					<div class="pagnNumLast"><span class="pagnLast"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_totalpages><venda_block label=1131,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1131>&perpage=<venda_pgn_perpage>" title="<venda_text id=desktop.info.pagn_page_go_last>"><venda_pgn_totalpages></a></span></div>
+					<div class="pagnNumLast"><span class="pagnLast"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_totalpages><venda_block label=1131,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1131>&perpage=<venda_pgn_perpage>" title="Go to last page"><venda_pgn_totalpages></a></span></div>
 				</venda_block label=1118>
 				
 				<!--show the next page -->	
 				<venda_block label=1116,mode=value,<venda_pgn_currentpage>&lt;<venda_pgn_totalpages>>	
-					<span class="pagnNext"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_nextpage><venda_block label=1132,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1132>&perpage=<venda_pgn_perpage>" title="<venda_text id=desktop.info.pagn_page_go_next>"> ></a></span>
+					<span class="pagnNext"><a class="updatesearch" href="<venda_pgn_baseurl>&setpagenum=<venda_pgn_nextpage><venda_block label=1132,mode=value,<venda_pgn_isviewall>=1>&isviewall=1</venda_block label=1132>&perpage=<venda_pgn_perpage>" title="Next page"> ></a></span>
 				</venda_block label=1116>
 				<venda_block label=11161,mode=value,<venda_pgn_currentpage>=<venda_pgn_totalpages>>
 					<span class="pagnNext-off"> ></span>

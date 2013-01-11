@@ -1,0 +1,102 @@
+<venda_tpcomment><!-- venda_form shows hidden field values as empty and lets JS input the required values. So for JS-free checkout we hardcode the form with the correct field values. --></venda_tpcomment>
+<form method="post" enctype="multipart/form-data" name="wizform" action="<venda_codehttps>">
+<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+<input type="hidden" name="step" value="confirm" />
+<input type="hidden" name="mode" value="process" />
+<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+<input type="hidden" name="curstep" value="coupon" />
+<input type="hidden" name="workflowid" value="<venda_workflow>" />
+<input type="hidden" name="bsref" value="<venda_bsref>" />
+<venda_tpcomment><!-- ACE2 NOTE: We need these blank fields for the validate JS on submit button onclick. If we remove the wizbutton from the validate JS, we can also remove these 5 fields below. --></venda_tpcomment>
+<input type="hidden" name="wizard" value="" />
+<input type="hidden" name="param1" value="" />
+<input type="hidden" name="param2" value="" />
+<input type="hidden" name="param3" value="" />
+<input type="hidden" name="check" value="" />
+<div class="box basketAlt redeempromocode">
+<h1 class="header"><venda_text id=site.redeem_promotion_code.heading></h1>
+
+
+<venda_tpcomment><!-- Start: Enter Code --></venda_tpcomment>
+	<venda_detblock1><div><input <venda_coinput>> <venda_coname> <venda_codesc> <venda_invtname1> <venda_invtname2></div></venda_detblock1>
+	<venda_detblock2><div><input <venda_coinput>> <venda_coname> <venda_codesc> <venda_invtname1></div></venda_detblock2>
+	<venda_detblock3><div><input <venda_coinput>> <venda_coname></div></venda_detblock3>
+	<venda_detblock4><div><venda_ckname> <venda_text id=site.redeem_promotion_code.discount><venda_ckamt>.</div></venda_detblock4>
+
+	<venda_block label=32,conflict!=prompt>
+	<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+	<p><label for="promo"><venda_text id=site.redeem_promotion_code.label.enter_code></label> <input type="text" name="promo" class="textInput" id="promo" value="<venda_copromo>" size="25" maxlength="30"></p>
+	<p><venda_text id=site.redeem_promotion_code.not_gift_certificates></p>
+	<venda_block label=1,freecoup=notnull><venda_detail1><!-- buy a product and get a product at a discount --></venda_block label=1>
+	<venda_block label=2,prodcoup=notnull><venda_detail2></venda_block label=2>
+	<venda_block label=3,ordcoup=notnull><venda_detail3></venda_block label=3>
+	</venda_block label=32>
+
+	<venda_block label=31,conflict=prompt>
+	<input type="hidden" name="promo" value="<venda_promocode>">
+	<h2 class="error"><venda_text id=site.redeem_promotion_code.clash></h2>
+	<p><venda_text id=site.redeem_promotion_code.discount_new></p>	
+
+	<div><input checked type="radio" name="coupnum" value="<venda_ckconbrnew>" id="other"> <label for="other"><venda_conamenew>.</label></div>
+	<p><venda_text id=site.redeem_promotion_code.discount_existing></p>
+	<div>
+		<div class="left"><input type="radio" name="coupnum" value="auto" id="formexisting"></div>
+		<div class="left"><label for="formexisting"><venda_detail4></label></div>
+	</div>
+	<div class="totaldiscount left"><venda_text id=site.redeem_promotion_code.total_discount> <venda_autototal>.</div>
+	</venda_block label=31>
+<venda_tpcomment><!-- End: Enter Code --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+	<script type="text/javascript">
+	<!--
+	// disable enter
+	var handleKeyPress = function(e) {
+		var keyPressed = e.charCode || e.keyCode;
+		if (keyPressed == 13) { 
+			validate();
+			return false;
+		}
+	};
+
+	function validate(){
+		if (document.wizform.promo.value == ''){
+			alert('<venda_text id=site.redeem_promotion_code.js_validation.enter_code>');
+			document.wizform.promo.focus();
+			return false;
+		}
+		<venda_wizbutton step=confirm,mode=process,callonly=yes>
+	}
+
+	function clearPromoValue(){
+		document.wizform.promo.value = '';
+		<venda_wizbutton step=confirm,mode=display,callonly=yes>
+	}
+	// -->
+	</script>
+	<!--[if IE]>
+	<script type="text/javascript">if (document.getElementById("promo")) {addEvent(document.getElementById("promo"), 'keydown', handleKeyPress, false);}</script>
+	<![endif]-->
+	<div id="buttons" class="bottomButtons">
+	<a href="#" onclick="clearPromoValue(); return false;" alt="<venda_text id=site.button.cancel>" class="button buttonAlt2"><venda_text id=site.button.cancel></a>
+	<input type="submit" onclick="validate(); return false;" value="<venda_text id=site.button.apply>" class="button buttonAlt buttonArrow right submit">
+	</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+<venda_coupjava>
+</div>
+</form>
+
+<venda_block label=20,workflow=instore><venda_tpxt mode=set,name=instore,value=1></venda_block label=20>
+
+<!-- 
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+page: wz_orcp-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=orcp-screen> 
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>

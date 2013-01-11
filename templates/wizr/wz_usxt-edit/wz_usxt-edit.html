@@ -1,0 +1,155 @@
+<div id="editreminder">
+<h1><venda_text id=site.edit_reminder.heading></h1>
+<p><venda_text id=site.edit_reminder.introduction></p>										
+<venda_block label=1,errors=notnull><h3 class="error"><venda_errors></h3></venda_block label=1>
+
+<venda_form>
+<input type="hidden" name="usxtgroup" value="<venda_usxtgroup>">
+<input type="hidden" name="order1" value="remmonth">
+<input type="hidden" name="order2" value="remday">
+<input type="hidden" name="subgroup" value="4">
+
+<venda_tpcomment><!-- Start: Edit Reminder Table --></venda_tpcomment>
+<div class="reminderBox">
+<table summary="<venda_text id=site.edit_reminder.table_summary>" title="<venda_text id=site.edit_reminder.table_title>" class="wizrtable">
+	<thead>
+		<tr>
+			<th scope="col" class="hdrBlank"><venda_text id=site.edit_reminder.column_heading.blank></th>
+			<th scope="col" class="hdrOccasion"><venda_text id=site.edit_reminder.column_heading.occasion></th>
+			<venda_block label=88,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1>
+			<th scope="col" class="hdrDay"><venda_text id=site.edit_reminder.column_heading.day></th>
+			<th scope="col" class="hdrMonth"><venda_text id=site.edit_reminder.column_heading.month></th>
+			</venda_block label=88>
+			<venda_block label=89,mode=value,<venda_setting type=ebiz,name=mmdddates>=1>
+			<th scope="col" class="hdrMonth"><venda_text id=site.edit_reminder.column_heading.month></th>
+			<th scope="col" class="hdrDay"><venda_text id=site.edit_reminder.column_heading.day></th>
+			</venda_block label=89>
+			<th scope="col" class="hdrYear"><venda_text id=site.edit_reminder.column_heading.year></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="flname"><venda_recfname> <venda_reclname><venda_text id=site.view_reminders.occasion_name.recname_suffix></td>
+			<td class="occasion"><label for="form<venda_remtype1udufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.occasion></label><select name="<venda_remtype1udufnbr>" id="form<venda_remtype1udufnbr>" onchange="remvalueother()"><venda_usxselectremtype1> </select><venda_defaultusxselectremtype1start name=<venda_text id=site.reminder.remtype.option.select>>
+					<div id="remother" <venda_block label=121,mode=value,<venda_remtype1>!=<venda_text id=site.add_reminder.remtypeother>>style="display:none;"</venda_block label=121>>
+					<label for="form<venda_remtypeotherudufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.occasion></label><input type="text" name="<venda_remtypeotherudufnbr>" id="form<venda_remtypeotherudufnbr>" size="10" maxlength="20" value="<venda_remtypeother>">
+					</div></td>									
+			<venda_block label=90,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1>
+			<td class="day"><label for="form<venda_remday1udufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.day></label><select name="<venda_remday1udufnbr>" id="form<venda_remday1udufnbr>"><venda_usxselectremday1></select><venda_defaultusxselectremday1start name=<venda_text id=site.reminder.remday.option.select>></td>
+			<td class="month"><label for="form<venda_remmonth1udufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.month></label><select name="<venda_remmonth1udufnbr>" id="form<venda_remmonth1udufnbr>"><venda_usxselectremmonth1></select><venda_defaultusxselectremmonth1start name=<venda_text id=site.reminder.remmonth.option.select>></td>
+			</venda_block label=90>
+			<venda_block label=91,mode=value,<venda_setting type=ebiz,name=mmdddates>=1>
+			<td class="month"><label for="form<venda_remmonth1udufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.month></label><select name="<venda_remmonth1udufnbr>" id="form<venda_remmonth1udufnbr>"><venda_usxselectremmonth1></select><venda_defaultusxselectremmonth1start name=<venda_text id=site.reminder.remmonth.option.select>></td>
+			<td class="day"><label for="form<venda_remday1udufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.day></label><select name="<venda_remday1udufnbr>" id="form<venda_remday1udufnbr>"><venda_usxselectremday1></select><venda_defaultusxselectremday1start name=<venda_text id=site.reminder.remday.option.select>></td>
+			</venda_block label=91>
+			<td class="year"><label for="form<venda_remyearudufnbr>" class="re-waiHide"><venda_text id=site.edit_reminder.column_heading.year></label><input type="text" name="<venda_remyearudufnbr>" id="form<venda_remyearudufnbr>" size="4" maxlength="4" value="<venda_remyear>"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<venda_tpcomment><!-- End: Edit Reminder Table --></venda_tpcomment>
+
+<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+<script type="text/javascript">
+function remvalueother() {
+	var stopclick=0;
+	var remtype1 = '<venda_remtype1udufnbr>';
+	var remtypeother = '<venda_remtypeotherudufnbr>';
+	if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value =="<venda_text id=site.add_reminder.remtypeother>"){
+	document.getElementById('remother').style.display="";
+	}
+	else{
+	document.getElementById('remother').style.display="none";
+	document.wizform.elements[remtypeother].value = " ";
+	}
+}
+
+
+function validateFields() {					
+	var stopclick=0;
+	var remtype1 = '<venda_remtype1udufnbr>';	
+	var remday1 = '<venda_remday1udufnbr>';
+	var remmonth1 = '<venda_remmonth1udufnbr>';
+	var remyear = '<venda_remyearudufnbr>';
+	var remtypeother = '<venda_remtypeotherudufnbr>';	
+	
+	if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value == "") {
+		alert("<venda_text id=site.edit_reminder.js_validation.occasion>");						
+		document.wizform.elements[remtype1].focus();
+		return;
+	}						
+	if (document.wizform.elements[remtypeother].value ==""||document.wizform.elements[remtypeother].value ==" ") {
+		if (document.wizform.elements[remtype1].options[document.wizform.elements[remtype1].selectedIndex].value == "<venda_text id=site.add_reminder.remtypeother>"){	
+		alert("<venda_text id=site.edit_reminder.js_validation.otheroccasion>");
+		document.wizform.elements[remtypeother].value = "";
+		document.wizform.elements[remtypeother].focus();
+		return;
+		}
+	}			
+	if (document.wizform.elements[remday1].options[document.wizform.elements[remday1].selectedIndex].value == "") {
+		alert("<venda_text id=site.edit_reminder.js_validation.day>");						
+		document.wizform.elements[remday1].focus();
+		return;
+	}
+	if (document.wizform.elements[remmonth1].options[document.wizform.elements[remmonth1].selectedIndex].value == "") {
+		alert("<venda_text id=site.edit_reminder.js_validation.month>");						
+		document.wizform.elements[remmonth1].focus();
+		return;
+	}
+	if (document.wizform.elements[remyear].value =="") {
+		alert("<venda_text id=site.edit_reminder.js_validation.year>");
+		document.wizform.elements[remyear].focus();
+	return;
+	}
+	
+	var yeartxt = document.wizform.elements[remyear].value;
+	
+	if (yeartxt.length < 4) {
+		alert("<venda_text id=site.edit_reminder.js_validation.year_digits>");
+		document.wizform.elements[remyear].focus();
+		return;
+	}
+	
+	// only allow numbers to be entered
+	var checkOK = "0123456789";
+	var allValid = true;
+	var allNum = "";
+	for (i = 0;  i < yeartxt.length;  i++){
+		ch = yeartxt.charAt(i);
+		for (j = 0;  j < checkOK.length;  j++)
+			if (ch == checkOK.charAt(j))
+				break;
+			if (j == checkOK.length){
+				allValid = false;
+				break;
+			}
+			if (ch != ",")
+			allNum += ch;
+		}
+		if (!allValid){
+			alert("<venda_text id=site.edit_reminder.js_validation.year_digits_only>");
+			document.wizform.elements[remyear].focus();
+			return;
+	}
+	<venda_wizbutton step=usext,mode=process,callonly=yes>
+}
+</script>
+
+<div id="buttons">
+<a href="<venda_codehttps>?ex=co_wizr-reminder&bsref=<venda_bsref>&order1=remmonth&order2=remday&subgroup=4&step=usext"><venda_text id=site.button.previous></a>
+<input type="submit" onclick="validateFields(); return false;" value="<venda_text id=site.button.continue>" class="right submit">
+</div>
+<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+</form>
+</div>
+
+<!-- 
+page: wz_usxt-edit.html
+param1: <venda_param1>
+param2: <venda_param2>
+workflow: <venda_workflow>
+ -->
+<venda_tpxt mode=set,name=track,value=usxt-edit> 
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+<venda_inctemplate name=cm-wz_usxt-edit,type=includes/tracking/coremetrics>

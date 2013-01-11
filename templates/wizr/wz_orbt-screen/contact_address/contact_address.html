@@ -1,0 +1,460 @@
+<venda_block label=26,workflow=instore>
+<venda_tpcomment><!-- Start: Search Form --></venda_tpcomment>
+	<script type="text/javascript">
+	<!-- Hide
+	function check_search(formName) {
+		if( formName.serlname.value == "" && formName.serusemail.value == "" && formName.serzipc.value == "" ) {
+			alert('<venda_text id=site.instore.search_user.js_alert>');
+			return;
+		}
+		<venda_wizbutton formid=search,step=searchuser,param1=details,param2=search_results,mode=display,check=no,callonly=yes>
+	}
+	//End Javascript-->
+	</script>
+	<div id="searchUser" class="box basketAlt addressform">
+	<h2 class="header"><venda_text id=site.instore.search_user.search_customer></h2>
+	<p><venda_text id=site.instore.search_user.enter_terms></p>
+	<venda_form formid=search>
+	<fieldset class="f-orbtwessearch">
+	<legend class="orbtwessearch"><venda_text id=site.instore.search_user.legend></legend>
+	<div><label for="serlname"><venda_text id=site.contact_address.label.last_name></label> <venda_serlname field=text,size=25,maxlength=30></div>
+	<div class="formSeparator"></div><div><label for="serusemail"><venda_text id=site.contact_address.label.email_address></label> <venda_serusemail field=text,size=25,maxlength=150></div>
+	<div class="formSeparator"></div><div><label for="serzipc"><venda_text id=site.contact_address.label.postcode></label> <venda_serzipc field=text,size=25,maxlength=20></div>
+	<div id="buttons">
+	<input type="submit" onclick='check_search(document.wizformsearch); return false;' value="<venda_text id=site.button.continue>" class="right submit button buttonAlt buttonArrow">
+	</div>
+	</fieldset>
+	</form>
+	</div>
+<venda_tpcomment><!-- End: Search Form --></venda_tpcomment>
+</venda_block label=26>
+
+<venda_block label=300,operator=or,workflow!=instore,param2=search_results>
+<venda_block label=301,param2=search_results>
+<venda_tpcomment><!-- Start: Search Results --></venda_tpcomment>
+	<venda_detblock_result>
+		<tr>
+			<td class="name"><a title="<venda_text id=site.instore.results_link.title>" onclick="fillForm(document.wizform,'<venda_resulttitle>','<venda_resultfname>','<venda_resultlname_escaped>','<venda_resultnumber>','<venda_resultaddress1_escaped>','<venda_resultaddress2_escaped>','<venda_resultcity>','<venda_resultstate>','<venda_resultcountry>','<venda_resultzipcode>','<venda_resultarea>','<venda_resultphone>','<venda_resultemail>','<venda_resultextflds>',true);return false;"><venda_resulttitle> <venda_resultfname> <venda_resultlname></a></td>
+			<td class="email"><a title="<venda_text id=site.instore.results_link.title>" onclick="fillForm(document.wizform,'<venda_resulttitle>','<venda_resultfname>','<venda_resultlname_escaped>','<venda_resultnumber>','<venda_resultaddress1_escaped>','<venda_resultaddress2_escaped>','<venda_resultcity>','<venda_resultstate>','<venda_resultcountry>','<venda_resultzipcode>','<venda_resultarea>','<venda_resultphone>','<venda_resultemail>','<venda_resultextflds>',true);return false;"><venda_resultemail></a></td>
+			<td class="address"><a title="<venda_text id=site.instore.results_link.title>" onclick="fillForm(document.wizform,'<venda_resulttitle>','<venda_resultfname>','<venda_resultlname_escaped>','<venda_resultnumber>','<venda_resultaddress1_escaped>','<venda_resultaddress2_escaped>','<venda_resultcity>','<venda_resultstate>','<venda_resultcountry>','<venda_resultzipcode>','<venda_resultarea>','<venda_resultphone>','<venda_resultemail>','<venda_resultextflds>',true);return false;"><venda_resultnumber> <venda_resultaddress1>, <venda_resultzipcode>, <venda_resultcountry></a></td>
+		</tr>
+	</venda_detblock_result>
+	<script type="text/javascript">
+	<!-- 
+	function fillForm(formName,title,fname,lname,num,addr1,addr2,city,state,cntry,zipc,area,phone,email,extflds,existingUser) {
+		formName.title.value=title;
+		formName.fname.value=fname;
+		formName.lname.value=lname;
+		if(formName.num){formName.num.value=num;}
+		formName.addr1.value=addr1;
+		formName.addr2.value=addr2;
+		formName.city.value=city;
+		formName.state.value=state;
+		formName.cntry.value=cntry;
+		formName.zipc.value=zipc;
+		if(formName.area){formName.area.value=area;}
+		formName.phone.value=phone;
+		formName.usemail.value=email;
+		jQuery(".addcontactInstore").show();
+
+		if(existingUser){
+			// disable email text field and registration checkbox
+			jQuery(".registercustomer").hide();
+			formName.registercustomer.checked=false;
+			formName.newuser.value=0;
+		}else{
+			// enable email text field and registration checkbox
+			jQuery(".registercustomer").show();
+			formName.registercustomer.checked=true;
+			formName.newuser.value=1;
+		}
+		//jump down to a form
+		jQuery("html,body").animate({"scrollTop": jQuery(".addcontactaddress.addressform").offset().top}, "slow");
+
+		// extended fields
+		var fields = new Array();
+		fields = extflds.split(",");
+		// for each extended fields
+		for (i = 0 ; i < fields.length ; i++) {
+			// taking tagName and tagValue
+			var field = fields[i];
+			var tagValue = new Array();
+			temp2 = field.split(":");
+			var exttag = temp2[0];
+			var extvalue = temp2[1];
+			//if the tag is defined within the template settinng the value
+			if (document.getElementById(exttag) != null) {
+				// checkbox/radio: setting checked true/false
+				if( document.getElementById(exttag).type == 'checkbox' || document.getElementById(exttag).type == 'radio' ) {
+					if(extvalue && extvalue.length && extvalue != '0') {
+						document.getElementById(exttag).checked=true;
+					} else {
+						document.getElementById(exttag).checked=false;
+					}
+				} else {
+					document.getElementById(exttag).value = extvalue;
+				}
+			}
+		}
+	}
+	// -->
+	</script>
+
+	<div id="searchResults" class="box basketAlt addressform">
+	<h2 class="header"><venda_text id=site.instore.results_header></h2>
+	<p><venda_text id=site.instore.results_instructions></p>
+	<p><a class="addnewuser button buttonAlt" onclick="fillForm(document.wizform,'','','','','','','','','<venda_default_country>','','','','','<venda_list_extflds>',false);return false;"><venda_text id=site.instore.search_user.add_new_user_link></a></p>
+
+	<venda_block label=100,instore_user_results=0>
+	<p><venda_text id=site.instore.results_message.noresults></p>
+	</venda_block label=100>
+
+	<div class="searchResultsTable">
+	<venda_block label=101,instore_user_results&gt;0>
+	<table summary="<venda_text id=site.instore.results_summary>" title="<venda_text id=site.instore.results_title>" class="searchresults" cellspacing="0" cellpadding="0">
+		<thead>
+		<tr>
+			<th scope="col" class="name"><span><venda_text id=site.instore.results_column_heading.name></span></th>
+			<th scope="col" class="email"><span><venda_text id=site.instore.results_column_heading.email></span></th>
+			<th scope="col" class="address"><span><venda_text id=site.instore.results_column_heading.address></span></th>
+		</tr>
+		</thead>
+		<tbody>
+		<venda_detail_result>
+		<tbody>
+	</table>
+	</venda_block label=101>
+	</div>
+	</div>
+<venda_tpcomment><!-- End: Search Results --></venda_tpcomment>
+</venda_block label=301>
+
+<venda_block label=303,workflow=shopcart><div class="grid_6 push_18 alpha checkoutR"><venda_inctemplate name=minicart_detail,type=includes></div></venda_block label=303>
+
+<div class=<venda_block label=304,workflow=shopcart>"grid_18 omega pull_6 checkoutL"</venda_block label=304><venda_block label=305,workflow=instore>"grid_24 alpha addcontactInstore" style="<venda_block label=3051,param3=postcodelookup>display:block;</venda_block label=3051><venda_block label=3052,param3!=postcodelookup>display:none;</venda_block label=3052>"</venda_block label=305>>
+	<div class="box basketAlt">
+		<h1 class="header"><venda_text id=site.contact_address.heading></h1>
+		<div class="boxContent">
+		<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+		<p class="requiredText"><venda_text id=site.contact_address.required_fields></p>
+		<p><venda_text id=site.contact_address.instructions></p>
+		<p><venda_text id=site.contact_address.alternative_delivery_address></p>
+		</div>
+	</div>
+	<div class="container addcontactaddress addressform">
+	<!-- register -->
+	<venda_form>
+	<input type="hidden" name="PrimaryForm">
+	<input type="hidden" name="layout" value="">
+	<input type="hidden" name="lang" value="<venda_sessionlanguage>">
+	<input type="hidden" name="zipcodelookup" value="">
+	<venda_block label=17,workflow!=instore>
+	<venda_block label=18,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p><input type="hidden" name="ustype" value="R"></venda_block label=18>
+	<venda_block label=19,mode=value,<venda_glxt mode=get,name=glxtusertype>=p><input type="hidden" name="ustype" value="P"></venda_block label=19>
+	</venda_block label=17>
+
+	<venda_tpcomment><!-- Start: Personal Details --></venda_tpcomment>
+		<fieldset class="f-orbtpersonal">
+		<legend class="orbtpersonal"><venda_text id=site.contact_address.personal_details></legend>
+		<div><label for="title"><venda_text id=site.contact_address.label.title><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label>
+		<select name="title" id="title">
+			<option value="Mr"<venda_block label=121,title=Mr> selected</venda_block label=121>>Mr</option>
+			<option value="Mrs"<venda_block label=111,title=Mrs> selected</venda_block label=111>>Mrs</option>
+			<option value="Miss"<venda_block label=101,title=Miss> selected</venda_block label=101>>Miss</option>
+			<option value="Ms"<venda_block label=121,title=Ms> selected</venda_block label=121>>Ms</option>
+			<option value=" "<venda_block label=131,title= > selected</venda_block label=131>>Other</option>
+		</select>
+		</div>
+		<div class="formSeparator"></div>
+		<div><label for="fname"><venda_text id=site.contact_address.label.first_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_fname field=text,size=25,maxlength=30,required=yes></div>
+		<venda_block label=123,mode=value,<venda_setting type=ebiz,name=showmname>=1>
+		<div class="formSeparator"></div>
+		<div><label for="mname"><venda_text id=site.contact_address.label.middle_name></label> <venda_mname field=text,size=25,maxlength=30></div>
+		</venda_block label=123>
+		<div class="formSeparator"></div>
+		<div><label for="lname"><venda_text id=site.contact_address.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30,required=yes></div>
+		<div class="order-summary-box-footer"></div>
+        </fieldset>
+	<venda_tpcomment><!-- End: Personal Details --></venda_tpcomment>
+	<div class="formSeparator"></div>
+	<venda_tpcomment><!-- Start: Address Details --></venda_tpcomment>
+		<fieldset class="f-orbtadddetail">
+		<legend class="orbtadddetail"><venda_text id=site.contact_address.legend.address_details></legend>
+		<venda_block label=10,param2=uk,errors=null>
+		<div class="orbtaddfound"><label for="zcdropdown"><venda_text id=site.contact_address.label.addresses_found><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_zcdropdown></div>
+		<div class="formSeparator"></div>
+		<div class="ukLink"><a href="#" onClick='<venda_block label=48,instore!=1>document.wizform.ustype.value="P"; </venda_block label=48><venda_wizbutton step=billto,mode=process,param1=details,callonly=yes> return false;'><venda_text id=site.contact_address.enter_address_manually></a></div>
+		<div class="formSeparator"></div>
+		<div><label for="phone"><venda_text id=site.contact_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20,required=yes></div>
+		<venda_company field=hidden><venda_city field=hidden><venda_state field=hidden><venda_zipc field=hidden><venda_cntry field=hidden>
+		</venda_block label=10>
+
+		<venda_block label=11,param2!=uk,errors=notnull,operator=or>
+		<venda_block label=124,mode=value,<venda_setting type=ebiz,name=showcompany>=1>
+		<div><label for="company"><venda_text id=site.contact_address.label.company></label> <venda_company field=text,size=25,maxlength=60></div><div class="formSeparator"></div>
+		</venda_block label=124>
+		<div id="countryDiv"><label for="cntry" id="countryLabel"><venda_text id=site.contact_address.label.country><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_cntry field=combo,class=admn_fieldsLarge,required=yes,ship=1></div>
+		<div class="formSeparator"></div><div id="houseNum"><venda_block label=88,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1><label for="num"><venda_text id=site.contact_address.label.house_name_flat_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_num field=text,size=25,maxlength=20></venda_block label=88></div>
+		<div class="formSeparator"></div><div><label for="addr1"><venda_text id=site.contact_address.label.address><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+		<div class="formSeparator"></div><div><label for="addr2" class="invisible"><venda_text id=site.contact_address.label.address2></label> <venda_addr2 field=text,size=25,maxlength=50></div>
+		<div class="formSeparator"></div><div><label for="city"><venda_text id=site.contact_address.label.city><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_city field=text,size=25,maxlength=30,required=yes></div>
+		<venda_block label=123,mode=value,<venda_setting type=ebiz,name=showfax>=1>
+		<div class="formSeparator"></div><div><label for="fax" class="dontFloat"><venda_text id=site.contact_address.label.fax_number></label><venda_fax field=text,size=18,maxlength=20></div>
+		</venda_block label=123>
+		<div class="formSeparator"></div>
+		
+		<div id="stateDiv">
+		<label for="state" id="stateLabel"><venda_text id=site.address.label.county></label> <span id="statelistbox">
+		<select id="statelist" name="statelist"></select>
+		</span>
+		<span id="statetextbox">
+		<input type="text" id="statetext" name="state" value="<venda_state>" class="admn_fieldsLarge" size="15" maxlength="20" />
+		</span>
+		</div>
+		
+		<div class="formSeparator"></div>
+        <div id="zipcDiv"><label for="zipc" id="zipcLabel"><venda_text id=site.delivery_address.label.postcode><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_zipc field=text,size=25,maxlength=20>
+		<venda_block label=100,instore=1>
+		<input type="submit" value="<venda_text id=site.contact_address.button.lookup>" onclick='<venda_wizbutton step=searchuser,param1=details,param2=search_results,param3=postcodelookup,mode=display,check=no,callonly=yes> return false;' class="postcodelookup button" class="submit"/>
+		<venda_tpcomment><!-- bringing search params for 'previous' buttons --></venda_tpcomment>
+		<input type="hidden" name="serlname" value="<venda_serlname>" />
+		<input type="hidden" name="serusemail" value="<venda_serusemail>" />
+		<input type="hidden" name="serzipc" value="<venda_serzipc>" />
+		</venda_block label=100>
+		</div>
+		<div class="formSeparator"></div><div><label for="phone"><venda_text id=site.contact_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20,required=yes></div>
+		
+		<venda_tpcomment><!-- tags to send to checkout.js for JS detection --></venda_tpcomment>
+
+		</venda_block label=11>
+	<venda_tpcomment><!-- Start: Different Delivery Address --></venda_tpcomment>
+		<venda_block label=2199,<venda_setting type=ebiz,name=billingdeliveryonly>!=1,mode=value>
+		<venda_block label=15,workflow=shopcart,workflow=instore,operator=or>
+		<venda_block label=16,workflow!=instore>
+		<div class="formSeparator"></div>
+		<div class="differentaddress"><input type="checkbox" name="differentaddress" id="differentaddress" class="dontFloat"> <label for="differentaddress" class="dontFloat"><venda_text id=site.contact_address.different_delivery_address></label></div>
+		</venda_block label=16>
+		<venda_block label=17,workflow=instore>
+		<div class="registercustomer"><input type="checkbox" name="registercustomer" id="registercustomer" class="dontFloat"> <label for="registercustomer" class="dontFloat"><venda_text id=site.contact_address.label.registercustomer></label> <venda_text id=site.contact_address.registercustomer></div>
+		<div class="differentaddress"><input type="checkbox" name="differentaddress" id="differentaddress" class="dontFloat"> <label for="differentaddress" class="dontFloat"><venda_text id=site.contact_address.label.different_delivery_address></label><venda_text id=site.contact_address.different_delivery_address></div>
+		<input type="hidden" name="zipc2list" value="<venda_category rec=scat,ref=storelocator,temp=storepostcodes,cacheall=1>">
+		<input type="hidden" name="itemsperpage" value="4">
+		</venda_block label=17>
+		</venda_block label=15>
+		</venda_block label=2199>
+		<venda_block label=2200,<venda_setting type=ebiz,name=billingdeliveryonly>=1,mode=value>
+		<input type="hidden" name="differentaddress" id="differentaddress">
+		</venda_block label=2200>
+	<venda_tpcomment><!-- End: Different Delivery Address --></venda_tpcomment>
+        <div class="order-summary-box-footer"></div>		
+		</fieldset>
+	<venda_tpcomment><!-- End: Address Details --></venda_tpcomment>
+<div class="formSeparator"></div>
+	<venda_tpcomment><!-- Start: Further Account Details --></venda_tpcomment>
+		<fieldset class="f-orbtfaccdetail">
+		<legend class="orbtfaccdetail"><venda_text id=site.contact_address.legend.further_account_details></legend>
+		<venda_block label=50,instore!=1>
+		<div><label for="usemail"><venda_text id=site.contact_address.label.email_address><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_usemail field=text,size=25,required=yes></div>
+		<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><script type="text/javascript">
+			<!-- 
+			// pass along email address from previous page
+			urlArray = location.href.split('&');
+			for (i=0; i<urlArray.length; i++) {
+				test=urlArray[i];
+				testArray=test.split('=');
+				test=testArray[1];
+				if (Venda.Ebiz.checkemail(test)) {
+					document.wizform.usemail.value=test;
+				}
+			}
+			// -->
+		</script></venda_block label=33>
+		<input type="hidden" name="usmailform" value="3">
+		</venda_block label=50>
+		<venda_block label=124,instore=1>
+		<!-- additional instore information--> 
+		<div id='usemail'><label for="usemail"><venda_text id=site.contact_address.label.email_address></label> <venda_usemail field=text,size=25,maxlength=150></div>
+		<venda_block label=126,newuser=null>
+		<input type=hidden id=newuser name=newuser value=1>
+		</venda_block label=126>
+		<venda_block label=127,newuser=notnull>
+		<input type=hidden id=newuser name=newuser value=<venda_newuser>>
+		<venda_block label=128,newuser=0>
+		<script type="text/javascript">
+		document.wizform.usemail.readOnly=true;
+		</script>
+		</venda_block label=128>
+		</venda_block label=127>
+		</venda_block label=124>
+        <div class="order-summary-box-footer"></div>
+		</fieldset>
+	<venda_tpcomment><!-- End: Further Account Details --></venda_tpcomment>
+	
+	<venda_tpcomment><!-- Start: Choose Password --></venda_tpcomment>
+		<venda_block label=151,instore!=1>
+		<venda_block label=16,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p>
+		<div class="formSeparator"></div>
+		<fieldset class="f-orbtpwd">
+		<legend class="orbtpwd"><venda_text id=site.contact_address.legend.choose_password></legend>
+		<div><label for="uspswd"><venda_text id=site.contact_address.label.password><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_uspswd field=password,size=25></div>
+		<div class="formSeparator"></div>
+		<div><label for="uspswd2"><venda_text id=site.contact_address.label.verify_password><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_uspswd2 field=password,size=25></div>
+		<div class="order-summary-box-footer"></div>
+        </fieldset>
+		</venda_block label=16>
+		</venda_block label=151>
+	<venda_tpcomment><!-- End: Choose Password --></venda_tpcomment>
+	<div class="formSeparator"></div><venda_inctemplate name=usxtSet,type=exfields/user><!-- remains here for backwards compatibility -->
+	<venda_block label=540,instore!=1><div class="receiveMail"><input type="checkbox" name="blkemail" id="blkemail" value="1" class="dontFloat checkboxNoLabel" <venda_block label=124,blkemail=1> checked</venda_block label=124>> <label for="blkemail" class="dontFloat"><venda_text id=site.contact_address.label.email_updates></label></div></venda_block label=540>
+		
+	<venda_block label=54,instore=1><venda_uspswd field=hidden><venda_uspswd2 field=hidden></venda_block label=54>
+	<venda_tpcomment><!-- Start: Terms and Conditions --></venda_tpcomment>
+	<!-- <venda_ustandc required=yes> -->
+	<div id="ustandc"><input type="checkbox" class="hide" name="ustandc" id="ustandc" value="1" checked> <label for="ustandc" class="dontFloat"><strong><venda_text id=site.contact_address.label.read_and_agreed> <a href="<venda_dispview page=terms>" class="doDialog" rel="550,450,terms" target="_blank" title="<venda_text id=site.contact_address.label.terms_and_conditions.title>"><venda_text id=site.contact_address.label.terms_and_conditions></a> <venda_text id=site.contact_address.label.read_and_agreed.extra> <a href="<venda_dispview page=securityandprivacy>" class="doDialog" rel="550,450,secutity" target="_blank" title="<venda_text id=site.contact_address.label.privacy_and_policy.title>"><venda_text id=site.contact_address.label.privacy_and_policy></a></strong></label></div>
+	<venda_tpcomment><!-- End: Terms and Conditions --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+		<script type="text/javascript">
+		<!--
+		// isRequiredField - this param is set to 'true' when country field is 'US', for validating State and Zipcode
+		var isRequiredField = false;
+		function nextPage () {
+			if(isRequiredField){
+				if (document.wizform.statelist.value == "") { 
+					alert("<venda_text id=site.contact_address.js_validation.state>");
+					return ; 
+				}
+				if (document.wizform.zipc.value == "") { 
+					alert("<venda_text id=site.contact_address.js_validation.zipc.us>");
+					return ; 
+				}
+			}else{
+			<venda_block label=111,param2!=uk,errors=notnull,operator=or>
+				<venda_block label=188,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1>
+				if ((document.wizform.num.value == "") && (document.getElementById('houseNum').style.display != 'none')) {
+					alert("<venda_text id=site.my_account.edit_user_details.edit_contact_details.js_validation.num>");
+					document.wizform.num.focus();
+					return;
+				}
+				</venda_block label=188>	
+			</venda_block label=111>		
+			}
+			if (!Venda.Ebiz.europePostalCheck(document.wizform.cntry.value)){ return false; }	
+			<venda_block label=34,param2=uk,errors=null>
+			if (document.wizform.zcdropdown.selectedIndex==0) {
+				alert("<venda_text id=site.contact_address.js_validation.select_address>");
+				document.wizform.zcdropdown.focus();
+			}
+			else {
+			</venda_block label=34>
+				<venda_block label=341,workflow!=instore>
+				//validate email address
+				if (Venda.Ebiz.checkemail(document.wizform.usemail.value)){
+					// express checkout
+					<venda_block label=21,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p>
+					//if full reg then carryout following validation, could not use 'required=yes' as the uspswd/uspswd2 do not exist on partial reg
+					if (document.wizform.uspswd.value == "") {
+						alert("<venda_text id=site.contact_address.js_validation.enter_password>");
+						document.wizform.uspswd.focus();
+						return;
+					}
+					if (document.wizform.uspswd2.value == "") {
+						alert("<venda_text id=site.contact_address.js_validation.verify_password>");
+						document.wizform.uspswd2.focus();
+						return;
+					}
+					</venda_block label=21>
+				</venda_block label=341>
+					<venda_block label=35,workflow=shopcart>
+					if (document.wizform.differentaddress.checked) {
+						// different delivery address
+						<venda_block label=29,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><venda_wizbutton step=zipcodedelivery,mode=process,param1=delivery,callonly=yes,check=yes></venda_block label=29>
+						<venda_block label=30,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><venda_wizbutton step=newadd,mode=process,param1=delivery,param2=add,callonly=yes,check=yes></venda_block label=30>
+					}
+					else {
+						// same delivery address
+							<venda_wizbutton step=confirm,mode=process,callonly=yes,check=yes>
+					}
+					</venda_block label=35>
+					<venda_block label=36,workflow=instore>
+					if (document.wizform.registercustomer.checked && document.wizform.usemail.value=="") {
+						alert("<venda_text id=site.contact_address.js_validation.email_address>");
+						document.wizform.usemail.focus();
+						return;
+					}
+					if (document.wizform.differentaddress.checked) {
+						// different delivery address (instore workflow)
+						document.wizform.zipcodelookup.value="";
+						<venda_wizbutton step=newadd,mode=process,param1=delivery,param2=add,callonly=yes,check=yes>
+					}
+					else {
+						// same delivery address (instore workflow)
+						<venda_wizbutton step=confirm,mode=process,callonly=yes,check=yes>
+					}
+					</venda_block label=36>
+					<venda_block label=39,workflow=register>
+					// if in register workflow
+						/* this script use for validate the user extended field
+						if(Venda.Ebiz.validateUserExtendedFields) {
+							if(Venda.Ebiz.validateUserExtendedFields(document.wizform)) {
+								 <venda_wizbutton step=--page-myaccount,mode=process,param1=details,param2=uk,check=yes,callonly=yes,secure=yes>
+							} 
+						} else{
+							<venda_wizbutton step=--page-myaccount,mode=process,param1=details,param2=uk,check=yes,callonly=yes,secure=yes>
+						}*/
+						
+						<venda_wizbutton step=--page-myaccount,mode=process,param1=details,param2=uk,check=yes,callonly=yes,secure=yes>
+					</venda_block label=39>
+					<venda_block label=38,workflow=refer>
+						// in refer a friend workflow
+						document.wizform.layout.value="myaccount";
+						<venda_wizbutton step=refer,mode=process,check=yes,callonly=yes>
+					</venda_block label=38>
+				<venda_block label=342,workflow!=instore>
+				} else {
+					alert('<venda_text id=site.contact_address.js_validation.valid_email_address>');
+					document.wizform.usemail.focus();
+				}
+				</venda_block label=342>
+			}
+		<venda_block label=37,param2=uk,errors=null>}</venda_block label=37>
+		// -->
+		</script>
+
+		<venda_block label=78,workflow=register>
+			<div id="buttons">
+			<venda_block label=40,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=zipcode,mode=display,callonly=yes> return false;'><venda_text id=site.button.previous></a></venda_block label=40>
+			<venda_block label=41,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=billtologin,mode=display,callonly=yes> return false;'><venda_text id=site.button.previous></a></venda_block label=41>
+			<input type="submit" onclick="nextPage(); return false;" value="<venda_text id=site.contact_address.button.agree_and_continue>" class="right submit button buttonAlt buttonArrow">
+			</div>
+		</venda_block label=78>
+		<venda_block label=79,workflow=shopcart>
+			<div id="buttons" class="bottomButtons">
+			<venda_block label=42,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=zipcode,mode=display,callonly=yes> return false;' alt="<venda_text id=site.button.previous>"><venda_text id=site.button.previous></a></venda_block label=42>
+			<venda_block label=43,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=billtologin,param1=login,mode=display,callonly=yes> return false;'><venda_text id=site.button.previous></a></venda_block label=43>
+			<input type="submit" onclick="nextPage(); return false;" value="<venda_text id=site.contact_address.button.agree_and_continue>" class="right submit button buttonAlt buttonArrow">
+			</div>
+		</venda_block label=79>
+		<venda_block label=80,workflow=instore>
+			<div id="buttons" class="bottomButtons">
+			<a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=searchuser,param1=details,mode=display,callonly=yes> return false;' alt="<venda_text id=site.button.previous>"><venda_text id=site.button.previous></a>
+			<input type="submit" onclick="nextPage(); return false;" value="<venda_text id=site.contact_address.button.agree_and_continue>" class="right submit button buttonAlt buttonArrow">
+			</div>
+		</venda_block label=80>
+		<venda_block label=76,workflow=refer>
+			<div id="buttons" class="bottomButtons">
+			<input type="submit" onclick="nextPage(); return false;" value="<venda_text id=site.contact_address.button.agree_and_continue>" class="right submit button buttonAlt buttonArrow">
+			</div>
+		</venda_block label=76>
+		<venda_block label=77,workflow=reminder>
+			<div id="buttons" class="bottomButtons">
+			<input type="submit" onclick='<venda_wizbutton step=usext,mode=process,check=yes,callonly=yes> return false;' value="<venda_text id=site.contact_address.button.agree_and_continue>" class="right submit button buttonAlt buttonArrow">
+			</div>
+		</venda_block label=77>
+
+	<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+
+	</form>
+	</div>
+</div>
+</venda_block label=300>

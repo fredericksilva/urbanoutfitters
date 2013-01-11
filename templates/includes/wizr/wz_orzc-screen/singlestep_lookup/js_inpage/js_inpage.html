@@ -1,0 +1,172 @@
+<script type="text/javascript">
+<!--
+//check if textbox form element is empty and put focus on that element if empty
+//form: form name
+//elm: element to check
+//errMsg: error message - only appears if an error parameter is passed
+function chkField(form, elm, errMsg) {	
+	var curElm = document.forms[form].elements[elm];	
+	if (curElm.value != '' && curElm.value.length != 0) {
+		return true; 
+	} else {
+		if (arguments[2] != undefined) {
+			alert(errMsg);
+			curElm.focus();
+		}
+		return false;
+	}
+}
+
+//check if textbox form element is a number, all white spaces are removed
+//form: form name
+//elm: element to check
+//errMsg: error message - only appears if an error parameter is passed
+function isNum(form, elm, errMsg) {
+	var numOnly =/^\d+$/;
+	var curElm = document.forms[form].elements[elm];
+	var strpdField = curElm.value.replace(/\s+/g,'');
+	if (numOnly.test(strpdField)) {  
+		return true;
+	} else {
+		if (arguments[2] != undefined) {
+			alert(errMsg);
+			curElm.focus();
+		}
+		return false;
+	}
+}
+
+//check if select form element is empty and put focus on that element if empty
+//form: form name
+//elm: element to check
+//errMsg: error message
+function chkDropdown(form, elm, errMsg) {
+	var objDropdown = document.forms[form].elements[elm];
+	var objSelectValue = objDropdown.options[objDropdown.selectedIndex].value; 
+	if (objSelectValue != "") {
+		return true;
+	} else {
+		if (arguments[2] != undefined) {
+			alert(errMsg);
+			objDropdown.focus();
+		}
+		return false;
+	}
+}
+
+//clear form elements - specified in an array
+function clearFrmItems(itemsToClear) {
+	for (i=0; i<itemsToClear.length; i++) {
+		document.wizform.elements[itemsToClear[i]].value='';
+	}
+}
+//::::::::::::::: ABOVE FUNCTIONS CAN BE MOVED TO AN EXTERNAL JS FILE :::::
+
+	//clear different form fields for billing/delivery address
+	function blankFields(which) {	
+		switch (which) {
+			case 'address':
+				clearItems = new Array('addr1', 'addr2', 'city', 'state'); 
+				break;
+			case 'delivery':
+				clearItems = new Array('fname', 'lname','phone',<venda_block label=190,mode=value,<venda_setting type=ebiz,name=showfax>=1>'fax',</venda_block label=190><venda_block label=188,mode=value,<venda_ebiznohousenum>!=1> 'num', </venda_block label=188>'addr1', 'addr2', 'city', 'state', 'zipc');
+				document.wizform.cntry.options[0].selected == true;
+				break;
+		}
+		clearFrmItems(clearItems);
+	}
+
+	//Execute postcode lookup
+	function lookUp(addrType) {
+        curFrm = "wizform";
+        if (chkField(curFrm, 'zipc', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.zipc_lookup>')) {
+            blankFields("address");
+            if (addrType=='billing') {
+                <venda_block label=90,ustype!=R>document.wizform.ustype.value="P";</venda_block label=90>
+                <venda_wizbutton step=zipcoderesults,mode=process,param1=nopswdlookup,callonly=yes>
+            } else {
+                <venda_block label=95,mode=value,<venda_htxt mode=get,name=prevbtn>=multiple>document.wizform.htxt.value='<venda_htxt mode=make,prevbtn=multiple>';</venda_block label=95>
+                <venda_block label=95,mode=value,<venda_htxt mode=get,name=prevbtn>=adbook>document.wizform.htxt.value='<venda_htxt mode=make,prevbtn=adbook>';</venda_block label=95>
+                <venda_block label=97,param3!=addgiftwrap>
+                    <venda_block label=971,param2=multiple> // if in shopcart workflow - multipledeliveryaddresses no param3
+                        <venda_wizbutton step=zipcoderesults,mode=process,param1=delivery,param2=multiple,callonly=yes>
+                    </venda_block label=971>
+                    <venda_block label=972,param2!=multiple> // if in shopcart workflow - edit button, no giftwrap
+                        <venda_wizbutton step=zipcoderesults,mode=process,param1=delivery,callonly=yes>
+                    </venda_block label=972>
+                </venda_block label=97>
+                <venda_block label=96,param3=addgiftwrap>
+                    <venda_block label=961,param2=multiple> // if in shopcart workflow - multipledeliveryaddresses param3
+                        <venda_wizbutton step=zipcoderesults,mode=process,param1=delivery,param2=multiple,param3=addgiftwrap,callonly=yes>
+                    </venda_block label=961>
+                    <venda_block label=962,param2!=multiple> // if in shopcart workflow - edit button, giftwrap
+                        <venda_wizbutton step=zipcoderesults,mode=process,param1=delivery,param3=addgiftwrap,callonly=yes>
+                    </venda_block label=962>
+                </venda_block label=96>
+            }
+        }
+    }
+	// isRequiredField - this param is set to 'true' when country field is 'US', for validating State and Zipcode
+	var isRequiredField = false;
+	function validateFields() {
+		var curFrm = "wizform"; //set form name
+		var isValid=0;
+		if (!chkField(curFrm, 'fname', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.first_name>')) { isValid=1; return false; }
+		if (!chkField(curFrm, 'lname', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.last_name>')) { isValid=1; return false; }
+	    
+        if(isRequiredField){
+			if (!chkField(curFrm, 'statelist', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.state>')) { isValid=1; return false; }
+			if (!chkField(curFrm, 'zipc', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.zipc.us>')) { isValid=1; return false; }
+		} else {
+            if (!chkField(curFrm, 'zipc', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.zipc.uk>')) { isValid=1; return false; }
+        }
+    if (!Venda.Ebiz.europePostalCheck(document.wizform.cntry.value)){ return false; }	    
+        <venda_block label=88,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1>
+		if(!isRequiredField  && (document.getElementById('houseNum').style.display != 'none') ){
+			if (!chkField(curFrm, 'num', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.num>')) { isValid=1; return false; }
+		}
+		</venda_block label=88>
+       
+		if (!chkField(curFrm, 'addr1', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.addr1>')) { isValid=1; return false; }
+        if (!chkField(curFrm, 'city', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.city>')) { isValid=1; return false; }
+        //if(jQuery('#stateDiv').is(":visible")){
+            //if (!chkField(curFrm, 'statetext', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.statetext>')) { isValid=1; return false; }
+        //}
+        
+		if (!chkDropdown(curFrm, 'cntry', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.cntry>')) { isValid=1; return false; }
+		if (chkField(curFrm, 'phone')) {
+			if (!isNum(curFrm, 'phone', 'Your phone number field can only contain 0-9')) { isValid=1; return false; }
+		}
+		<venda_block label=73,workflow=param2!=delivery,param1!=delivery,curstep!=zipcodedelivery> 
+		// password validation is only performed when password fields are present
+		if (!chkField(curFrm, 'phone', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.phone>')) { isValid=1; return false; }
+		if( !isNum(curFrm, 'phone', 'Your phone number field can only contain 0-9')){ isValid=1; return false; }
+		if (!Venda.Ebiz.checkemail(document.wizform.usemail.value)) { 
+			alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.usemail>'); 
+			document.wizform.usemail.focus();
+			isValid=1;
+			return false; 
+		} 
+		if (document.wizform.varmail.value == '') {	alert("<venda_text id=site.contact_address.error.val.email_address>"); document.wizform.varmail.focus(); return false; }
+        if (document.wizform.usemail.value != document.wizform.varmail.value) {	alert("<venda_text id=site.contact_address.error.no.val.email_address>"); document.wizform.varmail.focus(); return false; }
+		<venda_block label=21,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p> 
+		//if full reg then carryout following validation, could not use 'required=yes' as the uspswd/uspswd2 do not exist on partial reg
+		if (!chkField(curFrm, 'uspswd', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.uspswd>')) { document.wizform.uspswd.focus(); isValid=1; return false; }
+		if (!chkField(curFrm, 'uspswd2', '<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.uspswd2>')) { document.wizform.uspswd2.focus(); isValid=1; return false; }
+		if (document.wizform.uspswd.value != document.wizform.uspswd2.value) {
+			alert("<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.uspswd_missmatch>");
+			document.wizform.uspswd.focus();
+			isValid=1;
+			return false;
+		} 
+		</venda_block label=21>
+        if (document.wizform.ustandc.checked != true) {	alert("<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.ustandc>"); return false; }
+		</venda_block label=73>
+		if(isValid===0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// -->
+</script>

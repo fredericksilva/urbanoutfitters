@@ -1,0 +1,434 @@
+<venda_block label=10,param2=storeadd>
+	<div class="dtsStorelocator">
+		<div class="box">
+			<h1 class="header">Deliver to Store</h1>
+		</div>
+		<!-- Store locator include -->
+		<venda_inctemplate name=storeLocator,type=includes>
+	</div>
+</venda_block label=10>
+
+<div class="grid_6 push_18 alpha checkoutR checkoutRoradeditadd">
+	<venda_block label=40,workflow=shopcart,workflow=singleadbook,operator=or>
+	<venda_block label=401,mode=value,<venda_param2>!=storeadd>
+	<venda_inctemplate name=minicart_detail,type=includes>
+	<venda_inctemplate name=contactAddress,type=includes>
+	</venda_block label=401>
+	</venda_block label=40>
+	<venda_block label=40b,workflow!=shopcart>&nbsp;</venda_block label=40b>
+</div>
+
+<div class="omega checkoutL<venda_block label=110,mode=value,<venda_param2>!=storeadd> grid_18 pull_6</venda_block label=110><venda_block label=111,mode=value,<venda_param2>=storeadd> grid_24 alpha</venda_block label=111>">
+
+<venda_block label=11,mode=value,<venda_param1>=delivery,<venda_param2>=add,<venda_delivertostore>=1>
+	<div class="grid_18 alpha deliverToStore">
+		<div class="box basketAlt">
+		<h1 class="header hide"><venda_text id=site.store_locator.search_again></h1>
+
+			<div class="boxContent">
+				<p><venda_text id=site.dts.altmethod></p>
+			</div>
+
+			<div id="buttons" class="bottomButtons">
+				<a href="<venda_codehttps>?ex=co_wizr-<venda_workflow>&step=newadd&mode=display&param1=delivery&param2=storeadd&param3=<venda_orderdesksesid>&htxt=<venda_htxt mode=make,workflowid=<venda_workflowid>>" class="right submit button buttonAlt buttonArrow"><venda_text id=site.store_locator.search_again></a>
+			</div>
+		</div>
+	</div>
+</venda_block label=11>
+	<div class="alpha<venda_block label=110,mode=value,<venda_param2>!=storeadd> grid_18</venda_block label=110><venda_block label=111,mode=value,<venda_param2>=storeadd> grid_24</venda_block label=111>">
+	<div class="container containeroradeditadd addressform">
+        <div class="box basketAlt">
+		    <venda_zones type=countries,template=countrySelect>
+            <div class="hide">
+		        <venda_block label=22,param2=uk,param2=add,operator=or><h1 class="header"><venda_text id=site.delivery_address.add.heading></h1></venda_block label=22>
+		        <venda_block label=23,param2=storeadd,fname=null><h1 class="header"><venda_text id=site.delivery_address.add_store.heading></h1></venda_block label=23>
+		        <venda_block label=24,param2=storeadd,fname=notnull><h1 class="header"><venda_text id=site.delivery_address.edit_store.heading></h1></venda_block label=24>
+		        <venda_block label=25,param2!=uk,param2!=add,param2!=storeadd><h1 class="header"><venda_text id=site.delivery_address.edit.heading></h1></venda_block label=25>
+            </div>
+		    <div class="boxContent">
+			    <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			    <p class="hide"><venda_text id=site.delivery_address.instructions></p>
+			    <p class="requiredText"><venda_text id=site.delivery_address.required_fields></p>
+		    </div>
+	    </div>
+	
+	    <venda_form>
+	    <input type="hidden" name="PrimaryForm">
+	    <input type="hidden" name="default" value="1">
+	    <input type="hidden" name="abrfnbr" value="<venda_abrfnbr>">
+	    <input type="hidden" name="orderdesksesid" value="<venda_param3>">
+	    <venda_block label=134,workflow=singleadbook><input type=hidden name="copybilltodel" value="1"></venda_block label=134>
+
+
+<venda_userinfo>
+
+	<venda_tpcomment><!-- Start: Contact Details --></venda_tpcomment>
+		<fieldset class="f-oradedetail">
+		<legend class="oradedetail"><venda_text id=site.delivery_address.legend.contact_details></legend>
+		<div><label for="title"><venda_text id=site.delivery_address.label.title><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> 
+		<select name="title" id="title">
+				<option value="Mr"<venda_block label=101,mode=value,<venda_sestitle>=Mr> selected</venda_block label=101>>Mr</option>
+				<option value="Mrs"<venda_block label=111,mode=value,<venda_sestitle>=Mrs> selected</venda_block label=111>>Mrs</option>
+				<option value="Miss"<venda_block label=121,mode=value,<venda_sestitle>=Miss> selected</venda_block label=121>>Miss</option>
+				<option value="Ms"<venda_block label=131,mode=value,<venda_sestitle>=Ms> selected</venda_block label=131>>Ms</option>
+				<option value=" "<venda_block label=1481,param1!=delivery,mode=value,<venda_sestitle>= > selected</venda_block label=1481><venda_block label=141,param1!=delivery,mode=value,<venda_sestitle>=> selected</venda_block label=141>>Other</option>
+			</select></div>
+		<div class="formSeparator"></div><div><label for="fname"><venda_text id=site.delivery_address.label.first_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" maxlength="30" size="25" value="<venda_sesfname>" name="fname" id="fname"></div>
+		<venda_block label=123,mode=value,<venda_setting type=ebiz,name=showmname>=1><div class="formSeparator"></div><div><label for="mname"><venda_text id=site.contact_address.label.middle_name></label> <venda_mname field=text,size=25,maxlength=30></div></venda_block label=123>
+		<div class="formSeparator"></div><div><label for="lname"><venda_text id=site.delivery_address.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" maxlength="30" size="25" value="<venda_seslname>" name="lname" id="lname"></div>
+		
+		<venda_block label=50,param2!=storeadd><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_phone field=text,size=18,maxlength=20></div></venda_block label=50>
+		<venda_block label=51,param2=storeadd><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20,required=yes></div></venda_block label=51>
+		<venda_block label=125,mode=value,<venda_setting type=ebiz,name=showfax>=1><div><label for="fax"><venda_text id=site.contact_address.label.fax_number></label><venda_fax field=text,size=18,maxlength=20></div></venda_block label=125>	
+			<div class="formSeparator"></div>
+        <div class="order-summary-box-footer"></div>
+        </fieldset><div class="formSeparator"></div>
+	<venda_tpcomment><!-- End: Contact Details --></venda_tpcomment>
+
+
+</venda_userinfo>
+		
+	<venda_block label=52,param2!=storeadd>
+	<venda_tpcomment><!-- Start: Complete Delivery Address --></venda_tpcomment>
+		<fieldset class="f-oradeadd">
+		<legend class="oradeadd"><venda_text id=site.delivery_address.legend.complete_delivery_address></legend>
+		
+			<venda_block label=124,mode=value,<venda_setting type=ebiz,name=showcompany>=1>
+			<div><label for="company"><venda_text id=site.contact_address.label.company></label> <venda_company field=text,size=25,maxlength=60></div>
+			<div class="formSeparator"></div>
+			</venda_block label=124>
+		<venda_block label=3,param2!=uk>
+			<venda_tpcomment><!-- fully editable if address couldn't be found --></venda_tpcomment>
+			<venda_block label=88,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1><div id="houseNum"><label for="num"><venda_text id=site.delivery_address.label.house_name_flat_number> <span class="hide"> (required)</span><span class="required">*</span></label> <venda_num field=text,size=25,maxlength=20></div></venda_block label=88>
+			<div class="formSeparator"></div>
+			<div><label for="addr1"><venda_text id=site.delivery_address.label.address> <span class="hide"> (required)</span><span class="required">*</span></label> <venda_addr1 field=text,size=25,maxlength=50,required=yes></div>
+			<div class="formSeparator"></div>
+			<div><label for="addr2" class="invisible"><venda_text id=site.contact_address.label.address2></label> <venda_addr2 field=text,size=25,maxlength=50></div>
+			<div class="formSeparator"></div>
+			<div><label for="city"><venda_text id=site.delivery_address.label.city> <span class="hide"> (required)</span><span class="required">*</span></label> <venda_city field=text,size=25,maxlength=30,required=yes></div>
+			<div class="formSeparator"></div>
+			
+		<div id="stateDiv">
+		<label for="state" id="stateLabel"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.county></label> <span id="statelistbox">
+		<select id="statelist" name="statelist"></select>
+		</span>
+		<span id="statetextbox">
+		<input type="text" id="statetext" name="state" value="<venda_state>" class="admn_fieldsLarge" size="15" maxlength="20" />
+		</span>
+		</div>
+			<div class="formSeparator"></div>
+			<div id="zipcDiv"><label for="zipc" id="zipcLabel"><venda_text id=site.delivery_address.label.postcode><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_zipc field=text,size=25,maxlength=20></div>
+            <venda_block label=2,param2=uk>
+			<venda_block label=887,mode=value,<venda_htxt mode=get,name=changeaddby>=multipledeliveryaddresses><input type="hidden" name="htxt" value="<venda_htxt mode=make,changeaddby=multipledeliveryaddresses>"></venda_block label=887>
+			<div class="oradaddfound"><label for="zcdropdown"><venda_text id=site.delivery_address.label.addresses_found> <span class="hide"> (required)</span><span class="required">*</span></label> <venda_zcdropdown></div>
+			<venda_block label=888,param3!=addgiftwrap>
+			<div class="ukLink"><a href='#' onClick='<venda_wizbutton step=newadd,mode=display,param1=delivery,param2=add,callonly=yes> return false;'>
+			<venda_text id=site.delivery_address.enter_address_manually></a>.</div>
+		</venda_block label=888>
+		<venda_block label=889,param3=addgiftwrap>
+			<a href='#' onClick='<venda_wizbutton step=newadd,mode=display,param1=delivery,param2=add,callonly=yes,param3=addgiftwrap> return false;'>
+			<venda_text id=site.delivery_address.enter_address_manually></a>.
+		</venda_block label=889>
+			<venda_city field=hidden><venda_state field=hidden><venda_zipc field=hidden><venda_cntry field=hidden>
+			<div class="formSeparator"></div>
+		</venda_block label=2>
+		<venda_block label=4,param2!=uk>
+		<venda_tpcomment><!-- fully editable if address couldn't be found --></venda_tpcomment>
+			<div id="countryDiv"><label for="cntry" id="countryLabel"><venda_text id=site.delivery_address.label.country> <span class="hide"> (required)</span><span class="required">*</span></label> <venda_cntry  field=combo,class=admn_fieldsLarge,required=yes,ship=1></div>
+			<div class="formSeparator"></div>
+		</venda_block label=4>	
+
+			
+
+		</venda_block label=3>
+        <div class="order-summary-box-footer"></div>
+		</fieldset>
+	<venda_tpcomment><!-- End: Complete Delivery Address --></venda_tpcomment>
+		
+	<venda_tpcomment><!-- Start: Address Name --></venda_tpcomment>
+		<venda_block label=48,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p,<venda_ustype>!=P>
+		<div class="formSeparator"></div><fieldset class="f-oradename">
+		<legend class="oradename"><venda_text id=site.delivery_address.legend.address_name></legend>
+		<div class="addressName formRow"><label for="addrname"><venda_text id=site.delivery_address.label.address_name></label> <venda_addrname field=text,size=25,maxlength=30></div>
+        <div class="formRow nameAdvice"><venda_text id=site.delivery_address.advice></div>
+		<div class="order-summary-box-footer"></div>
+        </fieldset>
+		</venda_block label=48>	
+	<venda_tpcomment><!-- End: Address Name --></venda_tpcomment>
+		
+	</venda_block label=52>
+
+	<venda_block label=53,param2=storeadd>
+
+		<venda_tpcomment><!-- Start: Store Delivery Address --></venda_tpcomment>
+		<fieldset class="f-storedeliveryaddress">
+		<legend class="storedelivery"><venda_text id=site.delivery_address.legend.store_address></legend>
+			<div><label for="company"><venda_text id=site.delivery_address.label.company></label>c/o <venda_setting type=ebiz,name=name> <input type="hidden" name="company" value="c/o <venda_setting type=ebiz,name=name>"></div>
+			<div class="formSeparator"></div><div><label for="num"><venda_text id=site.delivery_address.label.house_name_flat_number></label><span> <venda_num></span><input type="hidden" name="num" value="<venda_num>"></div>
+			<div class="formSeparator"></div><div><label for="addr1"><venda_text id=site.delivery_address.label.address></label><span> <venda_addr1></span><input type="hidden" name="addr1" value="<venda_addr1>"></div>
+			<div class="formSeparator"></div><div><label for="addr2" class="invisible"><venda_text id=site.delivery_address.label.address2></label><span> <venda_addr2></span><input type="hidden" name="addr2" value="<venda_addr2>"></div>
+			<div class="formSeparator"></div><div><label for="city"><venda_text id=site.delivery_address.label.city> </label><span> <venda_city></span><input type="hidden" name="city" value="<venda_city>"></div>
+			<div class="formSeparator"></div><div><label for="zipc"><venda_text id=site.delivery_address.label.postcode></label><span> <venda_zipc></span><input type="hidden" name="zipc" value="<venda_zipc>"></div>
+			<div class="formSeparator"></div><div><label for="cntry"><venda_text id=site.delivery_address.label.country></label><span> United Kingdom</span><input type="hidden" name="cntry" value="United Kingdom"></div>
+		    <div class="order-summary-box-footer"></div>
+        </fieldset>
+
+		<fieldset class="f-storedeliveryname">
+		<legend class="hide"><venda_text id=site.delivery_address.legend.store_name></legend>
+		<div><label for="addrname"><venda_text id=site.delivery_address.label.store_name></label> <span><venda_addrname></span><a class="DTSchangeStore" href="#">Change store</a><input type="hidden" name="addrname" value="<venda_addrname>"></div>
+		<div class="order-summary-box-footer"></div>
+        </fieldset>
+		<venda_tpcomment><!-- End: Store Delivery Address --></venda_tpcomment>	
+	</venda_block label=53>
+
+	<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+		<script type="text/javascript">
+		<!--
+		// isRequiredField - this param is set to 'true' when country field is 'US', for validating State and Zipcode
+		var isRequiredField = false;
+        function nextPage () {
+			<venda_block label=33,param2!=uk>	
+			if(isRequiredField){
+				if (document.wizform.statelist.value == "") { 
+					alert('<venda_text id=site.delivery_address.js_validation.state>');
+                    document.wizform.statelist.focus();
+					return ; 
+				}
+				if (document.wizform.zipc.value == "") { 
+					alert('<venda_text id=site.delivery_address.js_validation.zipc.us>');
+                    document.wizform.zipc.focus();
+					return ; 
+				}
+                if (document.wizform.cntry.value == "") { 
+                    alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.cntry>');
+                    document.wizform.zipc.focus();
+                    return ; 
+                }
+			}else{
+                if (document.wizform.fname.value == "") { 
+					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.first_name>');
+                    document.wizform.fname.focus();
+					return ; 
+				}
+                if (document.wizform.lname.value == "") { 
+					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.last_name>');
+                    document.wizform.lname.focus();
+					return ; 
+				}
+                if (document.wizform.phone.value == "") { 
+					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.phone>');
+                    document.wizform.phone.focus();
+					return ; 
+				}
+		        if( String(document.wizform.phone.value).search(/^\s*\d+\s*$/)){
+                    alert('Your phone number field can only contain 0-9')
+                    document.wizform.phone.focus();
+					return ; 
+                }
+                if(jQuery('#houseNum').is(":visible")){
+                    if (document.wizform.num.value == "") { 
+					    alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.num>');
+                        document.wizform.num.focus();
+					    return ; 
+				    }
+                }
+                if (document.wizform.addr1.value == "") { 
+					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.addr1>');
+                    document.wizform.addr1.focus();
+					return ; 
+				}
+                if (document.wizform.city.value == "") { 
+					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.city>');
+                    document.wizform.city.focus();
+					return ; 
+				}
+                //if(jQuery('#stateDiv').is(":visible")){
+                    //if (document.wizform.statetext.value == "") { 
+					    //alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.statetext>');
+					    //return ; 
+				    //}
+                //}
+                if (document.wizform.zipc.value == "") { 
+                    alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.zipc.uk>');
+                    document.wizform.zipc.focus();
+                    return ; 
+                }
+                if (!Venda.Ebiz.europePostalCheck(document.wizform.cntry.value)){ return false; }		
+                if (document.wizform.cntry.value == "") { 
+                    alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.cntry>');
+                    document.wizform.zipc.focus();
+                    return ; 
+                }
+			    <venda_block label=53,param2!=storeadd>
+				    <venda_block label=188,mode=value,<venda_setting type=ebiz,name=nohousenum>!=1>
+				    if ((document.wizform.num.value == "") && (document.getElementById('houseNum').style.display != 'none')) {
+					    alert("<venda_text id=site.my_account.edit_user_details.edit_contact_details.js_validation.num>");
+					    document.wizform.num.focus();
+					    return;
+				    }
+				    </venda_block label=188>
+			    </venda_block label=53>
+			}
+			</venda_block label=33>
+			<venda_block label=34,param2=uk>
+			if (document.wizform.zcdropdown.selectedIndex==0) {
+				alert("<venda_text id=site.delivery_address.js_validation.select_address>");
+				document.wizform.zcdropdown.focus();
+			}
+			else {
+			</venda_block label=34>
+				<venda_block label=36,workflow=manageaddresses>
+				// if in manageaddresses workflow
+				<venda_wizbutton step=shipadd,mode=process,check=yes,param2=password,callonly=yes>
+				</venda_block label=36>
+				<venda_block label=37,workflow=giftlist>
+				// if in giftlist workflow
+				<venda_wizbutton step=shipadd,mode=process,check=yes,param2=password,callonly=yes>
+				</venda_block label=37>
+				<venda_block label=38,workflow=shopcart,workflow=instore,operator=or>
+
+				<venda_block label=400,param3!=addgiftwrap>
+					<venda_block label=40,mode=value,<venda_htxt mode=get,name=changeaddby>=multipledeliveryaddresses>
+					// if in shopcart workflow - multipledeliveryaddresses no param3
+					<venda_wizbutton step=itemship,mode=process,check=yes,param2=password,callonly=yes>
+					</venda_block label=40>
+					<venda_block label=41,mode=value,<venda_htxt mode=get,name=changeaddby>!=multipledeliveryaddresses>
+					// if in shopcart workflow - edit button, no giftwrap
+					<venda_block label=411,mode=value,<venda_htxt mode=get,name=workflowid>!=>
+					document.wizform.workflowid.value='<venda_htxt mode=get,name=workflowid>';
+					document.wizform.curparam2.value='add';
+					</venda_block label=411>
+					<venda_wizbutton step=confirm,mode=process,check=,param2=password,callonly=yes>
+					</venda_block label=41>
+				</venda_block label=400>
+				<venda_block label=401,param3=addgiftwrap>
+					<venda_block label=40,mode=value,<venda_htxt mode=get,name=changeaddby>=multipledeliveryaddresses>
+					// if in shopcart workflow - multipledeliveryaddresses param3
+					<venda_wizbutton step=addgiftwrap,mode=process,check=yes,param2=password,callonly=yes>
+					</venda_block label=40>
+					<venda_block label=41,mode=value,<venda_htxt mode=get,name=changeaddby>!=multipledeliveryaddresses>
+					// if in shopcart workflow - edit button, giftwrap
+					<venda_wizbutton step=addgiftwrap,mode=process,check=yes,param2=password,callonly=yes>
+					</venda_block label=41>
+				</venda_block label=401>
+
+				</venda_block label=38>
+				<venda_block label=139,workflow=singleadbook>
+				//express checkout
+				<venda_wizbutton step=confirm,mode=process,param1=copybillto,check=yes,wizard=shopcart,callonly=yes>
+				</venda_block label=139>
+				<venda_block label=39,workflow!=shopcart,workflow!=manageaddresses,workflow!=giftlist,workflow!=instore,workflow!=singleadbook>
+				// if in none of those workflows
+				<venda_wizbutton step=next,mode=process,check=yes,param2=password,callonly=yes>
+				</venda_block label=39>
+				
+			}
+		<venda_block label=440,param2=uk>}</venda_block label=440>
+		// -->
+		</script>
+
+		<div id="buttons" class="bottomButtons">
+
+		<venda_block label=716,workflow=giftlist>
+		<venda_block label=811,param2=edit>
+				<a href="#" class="previous button buttonAlt2" onClick='<venda_wizbutton step=shipadd,mode=display,callonly=yes> return false;'><venda_text id=site.button.cancel></a>
+				</venda_block label=811>
+				<venda_block label=812,param2!=edit>
+				<venda_block label=29,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><a href="#" class="previous button buttonAlt2" onClick='<venda_wizbutton step=zipcodedelivery,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.cancel></a></venda_block label=29>
+				<venda_block label=30,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="previous button buttonAlt2" onClick='<venda_wizbutton step=shipadd,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.cancel></a></venda_block label=30>
+				</venda_block label=812>
+		</venda_block label=716>
+
+		<venda_block label=714,workflow=manageaddresses>
+		<venda_block label=14,param1=delivery>
+			<venda_tpcomment><!--Adding new address--></venda_tpcomment>
+			<venda_block label=32,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><a href="#" class="previous button buttonAlt2" onClick='<venda_wizbutton step=zipcodedelivery,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.cancel></a></venda_block label=32>
+			<venda_block label=33,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="previous button buttonAlt2" onClick='<venda_wizbutton step=shipadd,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.cancel></a></venda_block label=33>
+		</venda_block label=14>
+		<venda_block label=15,param1!=delivery>
+			<venda_tpcomment><!--Editing existing address--></venda_tpcomment>
+			<a href="<venda_codehttps>?ex=co_wizr-manageaddresses&bsref=<venda_bsref>" class="previous button buttonAlt2"><venda_text id=site.button.cancel></a>
+		</venda_block label=15>
+		</venda_block label=714>
+
+		<venda_block label=313,workflow=shopcart>
+			<venda_block label=78,param2!=adbook>
+			<venda_tpcomment><!-- if you were previously at the zipcode screen you are not allowed to go back as you would add an incomplete entry to your addresses --></venda_tpcomment>
+			<venda_tpcomment><!-- if you were previously at the billto screen you are not allowed to go back as you cannot resubmit the form - it has already been processed --></venda_tpcomment>
+			</venda_block label=78>
+			<venda_block label=79,param2=adbook>
+			<venda_tpcomment><!-- ie you were previously at the address book screen --></venda_tpcomment>
+			<a href="#" class="previous button buttonAlt2" onclick='<venda_wizbutton step=shipadd,mode=display,param2=adbook,callonly=yes> return false;'><venda_text id=site.button.cancel></a>
+			</venda_block label=79>
+			<venda_block label=80,param2=storeadd,fname=null>
+			<venda_tpcomment><!-- ie you were previously at the address book screen --></venda_tpcomment>
+			<a href='#' onClick='<venda_wizbutton step=confirm,mode=display,param1=<venda_bsref>,callonly=yes> return false;' class="button buttonAlt2"><venda_text id=site.button.cancel></a>
+			</venda_block label=80>			
+		</venda_block label=313>
+
+		<venda_block label=31,workflow=singleadbook>
+				<venda_tpcomment><!-- ie has no address book so this will go back to the order confirmation--></venda_tpcomment>
+				<a href="#" onclick='<venda_wizbutton step=confirm,mode=display,wizard=shopcart,callonly=yes> return false;' class="button buttonAlt2"><venda_text id=site.button.cancel></a>
+		</venda_block label=31>
+
+		<venda_block label=314,workflow!=shopcart,workflow!=manageaddresses,workflow!=giftlist,workflow!=singleadbook,workflow!=instore>
+		<venda_block label=24,param2=uk,param2=add,param2=storeadd,operator=or>
+				<venda_tpcomment><!-- try another postcode --></venda_tpcomment>
+				<venda_block label=40,mode=value,<venda_setting type=ebiz,name=bypasspclookup>!=1><a href="#" class="button buttonAlt2" onClick='<venda_wizbutton step=zipcodedelivery,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.previous></a></venda_block label=40>
+				<venda_block label=35,mode=value,<venda_setting type=ebiz,name=bypasspclookup>=1><a href="#" class="button buttonAlt2" onClick='<venda_wizbutton step=shipadd,mode=display,param1=delivery,callonly=yes> return false;'><venda_text id=site.button.previous></a></venda_block label=35>
+			</venda_block label=24>
+			<venda_block label=25,param2!=uk,param2!=add,param2!=storeadd>
+				<venda_tpcomment><!-- back to my account --></venda_tpcomment>
+				<a href="<venda_dispview page=myaccount>" class="button buttonAlt2"><venda_text id=site.button.cancel></a>
+			</venda_block label=25>
+		</venda_block label=314>
+
+			<venda_block label=225,param2!=storeadd>
+			<input type="submit" onClick="nextPage(); return false;" value="<venda_text id=site.button.add_address>" class="right submit button buttonAlt buttonArrow">
+			</venda_block label=225>
+			<venda_block label=226,param2=storeadd>
+			<input type="submit" onClick="nextPage(); return false;" value="<venda_text id=site.button.confirm_address>" class="right submit button buttonAlt buttonArrow dtsSubmit">
+			</venda_block label=226>			
+		</div>
+
+		<venda_block label=244,param2!=uk>
+		
+		</venda_block label=244>
+	<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+		
+	</form>
+	</div>
+	</div>
+</div>
+
+<venda_block label=20,workflow=instore><venda_tpxt mode=set,name=instore,value=1></venda_block label=20>
+
+<!-- 
+step: <venda_curstep>
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: orad-editadd
+ -->
+<venda_tpxt mode=set,name=track,value=orad-editadd>
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
+<venda_inctemplate name=cmCreateRegistrationTag,type=includes/tracking/coremetrics>
+<venda_inctemplate name=cm-wz_orad-editadd,type=includes/tracking/coremetrics>
+
+<venda_inctemplate name=googleTrackingWorkflows,type=includes>
+
+
+<!-- Venda vars to be passed to JS -->
+<div id="venda_cntry" style="display: none;"><venda_cntry></div>
+<div id="venda_state" style="display: none;"><venda_state></div>
+<div id="venda_locn" style="display: none;"><venda_sessionlocation></div>
+
+<!-- Localisation to be passed to JS -->
+<div id="user_details_label_required" style="display: none;"><venda_text id=site.accessible.label.required></div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=site.contact_address.label.us_state></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=site.contact_address.zipc.us_zipcode></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=site.contact_address.label.uk_county></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=site.contact_address.zipc.non_us_postcode></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=site.contact_address.label.non_us_uk_region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>

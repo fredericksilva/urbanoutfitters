@@ -535,8 +535,10 @@ Venda.Search.Feature.removePrice.prototype = {
 Venda.Search.Feature.swatchHide = function() {};
 Venda.Search.Feature.swatchHide.prototype = {
 	display: function() {
-    	jQuery(".prodsFiveColumns li").each(function () {    	
-    		var n = jQuery(this).find(".sw_image").length;
+    	jQuery(".prodsFiveColumns li").each(function () {   
+    		var swatch = jQuery(this).find("a.sw_image"),
+    			swatchImg = jQuery(this).find("img.swatch"),
+    			n = jQuery(this).find(".sw_image").length;
     		if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
     			var swatchIcon = jQuery(this).find(".swatchIcon");
@@ -550,6 +552,11 @@ Venda.Search.Feature.swatchHide.prototype = {
 	    		jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
 	    		//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
     		}
+    		swatch.each(function () {
+    			swatchImg.error(function () {
+	    			swatch.hide();
+	    		})
+	    	})
     	});
     }
 };

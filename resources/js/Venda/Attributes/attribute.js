@@ -204,6 +204,12 @@ Venda.Attributes.Initialize = function() {
       jQuery(this).find('.social-button').hide();
     }
   );
+  
+	jQuery(".buy-box input[type='submit']").on('click', function(){
+		if (jQuery(".buy-box input[type='submit']").hasClass("activeBuyButton") === false) {
+			alert(jQuery("#productstatus").text());
+		}
+	});
 
 }
 

@@ -1,0 +1,19 @@
+<!-- YOU ARE ONLY PERMITTED TO CHANGE THE ORDER OF THE INCTEMPLATE TAGS WITHIN THIS TEMPLATE. YOU MAY NOT ADD OR CHANGE ANY OTHER CODE. -->
+<venda_form>
+<venda_zones type=countries,template=zoneJs>
+<input type="hidden" name="PrimaryForm">
+<input type="hidden" name="nolookup" value="">
+<input type="hidden" name="editadd" value="<venda_param1>">
+<input type="hidden" name="default" value="1">
+<input type="hidden" name="zipcodelookup" value="1">
+<input type="hidden" name="abrfnbr" value="<venda_abrfnbr>">
+<venda_block label=33,workflow=shopcart>
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,step=2>">
+</venda_block label=33>
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup/delivery_address,name=heading_intro>  
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup/delivery_address,name=personal_details>        
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup/delivery_address,name=address_details> 
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup/delivery_address,name=address_name>
+<venda_inctemplate type=includes/wizr/wz_orzc-screen/singlestep_lookup/delivery_address,name=js_buttons>
+</form>
+<venda_tpxt mode=set,name=track,value=orad-editadd>

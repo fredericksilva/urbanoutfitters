@@ -1,0 +1,46 @@
+<div class="passwordReminder">
+	<div class="box mainAlt">
+		<h1 class="header"><venda_text id=site.password_reminder.heading></h1>
+		<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+		<p><venda_text id=site.password_reminder.instructions></p>
+
+		<form method="post" name="wizform" action="<venda_codehttps>">
+		<input type="hidden" name="ex" value="co_wizr-passwordreminder">
+		<input type="hidden" name="step" value="thankyou">
+		<input type="hidden" name="mode" value="process">
+		<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+		<input type="hidden" name="workflowid" value="<venda_workflowid>">
+		<input type="hidden" name="curstep" value="reminder">
+		<input type="hidden" name="param1" value="<venda_param1>">
+		<input type="hidden" name="param2" value="<venda_param2>">
+		<input name="layout" value="" type="hidden">
+		<input type="hidden" name="curlayout" value="">
+		
+
+		<venda_tpcomment><!-- Start: Email Address --></venda_tpcomment>
+			<fieldset class="f-pwrmemail">
+			<!--<legend class="pwrm"><venda_text id=site.password_reminder.legend.email_address></legend>-->
+			<label for="usemail"><venda_text id=site.password_reminder.label.email_address></label> <input id="usemail" type="text" name="usemail" value="<venda_param2>" size="20" maxlength="150" />
+			</fieldset>
+		<venda_tpcomment><!-- End: Email Address --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+			<div id="buttons" class="bottomButtons">
+			<venda_block label=1,param1!=shopcart><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>" id="pwrmprevious" class="button buttonAlt2"></venda_block label=1><venda_block label=2,param1=shopcart><a href="<venda_codehttps>?ex=co_wizr-shopcart&bsref=<venda_bsref>&step=billtologin&param1=login" id="pwrmprevious" class="button buttonAlt2"></venda_block label=2><venda_text id=site.button.previous></a>
+						
+			<input type="submit" id="pwrmcontinue" value="<venda_text id=site.button.email_password>" class="button buttonAlt buttonArrow right submit">
+			
+			</div>	
+		<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+		</form>
+	</div>
+</div>
+<!-- 
+workflow: <venda_workflow>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_pwrm-screen.html
+ -->
+<venda_tpxt mode=set,name=track,value=pwrm-screen>  
+<venda_inctemplate name=hbxlocalvars1,type=includes/tracking>
+<venda_inctemplate name=hitboxOthers,type=includes/tracking>
