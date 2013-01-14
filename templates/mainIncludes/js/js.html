@@ -5,12 +5,19 @@
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/modernizr.custom.52423.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery-ui-1.8.14.custom.min.js"></script>
+<venda_block label=nocheckout,workflow!=shopcart,workflow!=register,workflow!=manageaddresses>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.ui.position.js"></script>
-<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.ui.selectmenu.js"></script>	
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.ui.selectmenu.js"></script>
+</venda_block label=nocheckout>
+<venda_block label=isbasket,mode=value,<venda_tpxt mode=get,name=orsc>=1>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.ui.position.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.ui.selectmenu.js"></script>
+</venda_block label=isbasket>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/cookiejar.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/UOBiz.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/MinicartDetail.js"></script>
 
+<venda_block label=checkouts,workflow!=shopcart,workflow!=register,workflow!=manageaddresses>
 <!-- product detail -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.flexslider.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/cloud-zoom.1.0.2.js"></script>
@@ -24,8 +31,13 @@
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.viewport.mini.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jsuri-1.1.1.min.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Search.js"></script>
+</venda_block label=checkouts>
 
-<!-- search, productlist, catergorylist --> 
+<venda_block label=baskets,mode=value,<venda_tpxt mode=get,name=orsc>=1>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/CreateTab.js"></script>
+</venda_block label=baskets>
+
+<!-- search, productlist, catergorylist -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/EqualHeight.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/ViewStyle.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/Compare.js"></script>

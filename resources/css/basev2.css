@@ -1341,7 +1341,7 @@ ol.prods li {
 }
 
 .minicartDetailTotals .discount {
-    border-left: 1px solid #444;
+	border-top:none;
 }
 
 .minicart-viewer {

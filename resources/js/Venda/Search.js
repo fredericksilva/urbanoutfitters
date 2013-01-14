@@ -581,13 +581,15 @@ Venda.Search.Feature.uiSelectmenu.prototype = {
 			jQuery(".sort select").selectmenu({ style: 'dropdown' });
 		});
 		jQuery(".accordion_slice").each( function() {
-			var facetLength = jQuery(this).find(".termtext").length;
+			jQuery(this).find(".viewScroll .collatedresult").css('height','auto');
+			var collateHeight = jQuery(this).find(".viewScroll .collatedresult").height(),
+				facetLength = jQuery(this).find(".termtext").length;
 			if (facetLength > 10) {
 				jQuery(this).find(".viewScroll .collatedresult").css('height','207px');
 				jQuery(this).find(".scrollerTrack").show();
 			}
 			else {
-				jQuery(this).find(".viewScroll .collatedresult").css('height','auto');
+				jQuery(this).find(".viewScroll .collatedresult").css('height', collateHeight);
 				jQuery(this).find(".scrollerTrack").hide();
 			}
 		})

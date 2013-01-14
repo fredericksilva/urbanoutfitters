@@ -1568,9 +1568,13 @@ table th, table th div
 }
 .addressBookList .boxContent a, #yourbasket .edit, .Lmyacccontactdetails li.last a
 {
-    background-position: 0 -18px;
+    background-position: -31px -23px;
     height: 23px;
-    width: 70px;
+    width: 122px;
+}
+
+.addressBookList .boxContent a:hover {
+	background-position: -162px -23px;
 }
  #yourbasket .edit
 {
@@ -2597,6 +2601,13 @@ p.payPalConf strong
 #cctoggle, #elvtoggle
 {
     width: 100%;
+}
+#cctoggle input#ustandc{
+	width: auto;
+	margin:0px;
+}
+#cctoggle label.dontFloat {
+	margin-left: 15px;
 }
 .dummypaytype
 {

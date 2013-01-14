@@ -125,7 +125,7 @@ function CheckFields(form1) {
                 return ; 
             }
         }
-        if (!Venda.Ebiz.europePostalCheck(document.wizform.cntry.value)){ return false; }
+        if (!Venda.Ebiz.europePostalCheck(document.form.cntry.value)){ return false; }
 		if (form1.cntry.value == "") {
                 alert("<venda_text id=site.my_account.edit_user_details.edit_contact_details.js_validation.cntry>");
                 return;

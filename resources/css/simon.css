@@ -27,7 +27,7 @@
 }
 .myAccountTemplate input, .myAccountTemplate select, .containerpwrmthankyou .buttonArrow,
 .checkoutTemplate input, .checkoutTemplate select {
-    background-color: #FBF7F4;
+    background-color: #fff;
     border: 1px dotted #4C4C4C;
     height: 31px;
     line-height: 27px;
@@ -65,7 +65,7 @@
     height: 33px;
     line-height: 33px;
     margin-left: 18px;
-    margin-right: 20px;
+    margin-right: 9px;
     text-align: right;
     width: 160px;
 }
@@ -77,13 +77,16 @@
     width: 550px;
 }
 .myAccountTemplate input, .myAccountTemplate select, .containerpwrmthankyou .buttonArrow {
-    background-color: #FBF7F4;
+    background-color: #fff;
     border: 1px dotted #4C4C4C;
     height: 31px;
     line-height: 27px;
-    margin-left: 10px;
+    margin-left: 12px;
     padding: 0 0 0 10px;
     vertical-align: middle;
+}
+.myAccountTemplate select,  x:-moz-any-link, x:default {
+	margin-left: 2px !important;
 }
 .myformcommoption span.select
 {
@@ -131,6 +134,12 @@
 .editcontactaddress select, .containeroradeditadd select, #cctoggle select
 {
     width: 360px;
+}
+.containeroradeditadd select {
+	-webkit-appearance: none;
+	border-radius: 0;
+	display: block;
+	background: url("../images/redesign/bg_buttons.png") no-repeat scroll 0px -205px white;
 }
 #cctoggle #startdateshow select, #cctoggle #expiryshow select
 {
@@ -751,10 +760,11 @@ span.orscTotalFig
 {
     float: right;
     font-size: 1em;
-    margin: 0;
+    margin: 10px 0 0;
     padding: 0;
     text-transform: uppercase;
-    width: 49px;
+    width: 101px;
+    height:22px;
 }
 
 .OrderSummaryHdr, .signinContent .box h2, .addressform legend
@@ -855,7 +865,7 @@ span.orscTotalFig
     color: #000;
 }
 .bagbanner {
-	margin:25px 5px 20px 1px;
+	margin:25px 5px 20px 5px;
 }
 .order-summary-delivery-options ul, #orderconfirmation #additionalservices, #orderconfirmation #ordersummary, .order-summary-box table, #paymentdetailSection .paymentdetail, .order-summary-delivery-options ul
 {
@@ -1537,13 +1547,12 @@ a.continue { background-position: 0 -101px !important; float: right; height: 25p
 }
 #yourbasket .promofield .button
 {
-    background: none;
-    text-indent: 0;
+    text-indent: -9000px;
     text-decoration: underline;
 }
 #vcode_submit_shopcart, #applyCode
 {
-    background-position: 0 -130px;
+    background-position: -28px -128px;
     height: 27px;
     width: 93px;
     float: right;
@@ -1551,6 +1560,9 @@ a.continue { background-position: 0 -101px !important; float: right; height: 25p
     padding: 0;
     position: relative;
     z-index: 100;
+}
+#vcode_submit_shopcart:hover {
+	background-position: -134px -128px;
 }
 
 #giftcode
@@ -1871,8 +1883,7 @@ span.select {
     float: left;
     font-size: 1.2em;
     height: auto;
-    left: 0;
-    margin: 0 0 0 198px;
+    left: 187px;
     padding: 8px 8px 8px 10px;
     position: absolute;
     width: 132px;
@@ -1893,6 +1904,7 @@ div.usxtdob select:first-child {
 #statelist
 {
     width: 173px;
+    display: none;
 }
 .addressform div.differentaddress, .addressform div.usxtexampleCheck, .addressform div.receiveMail, .addressform fieldset div.differentaddress, .addressform div#ustandc
 {

@@ -1,0 +1,89 @@
+<table summary="Summary of your order including tax, discounts, postage and packing etc">
+	<tr>
+		<th scope="row" style="width:45%;text-align:left;">SUBTOTAL</th>
+		<td><span id="order-totals-items"><venda_currsym><venda_ohsub></span></td>
+	</tr>
+	<tr>
+		<th scope="row" style="text-align:left;">DELIVERY</th>
+		<td><span id="order-totals-pandp"><venda_currsym><venda_ohship></span></td>
+	</tr>
+	<venda_block label=64,showdiscount=1>
+	<!-- start discount -->
+	<tr>
+		<th scope="row" style="text-align:left;">DISCOUNT</th>
+		<td><span id="order-totals-discount">- <venda_currsym><venda_ohdisc></span></td>
+	</tr>
+	<!-- end discount -->
+	</venda_block label=64>
+	<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+	<tr>
+		<th scope="row" style="text-align:left;">ESTIMATED TAX</th>
+		<td><span id="order-totals-tax"><venda_currsym><venda_ohtax></span></td>
+	</tr>
+	</venda_block label=91>
+	<venda_block label=68,ohgwtot&gt;0>
+		<tr>
+			<th scope="row" style="text-align:left;">GIFT BOX</th>
+			<td><span id="order-totals-giftbox"><venda_currsym><venda_ohgwtot></span></td>
+		</tr>
+	</venda_block label=68>
+	<venda_block label=65,showaccount=1,storecreditused&gt;0.00,creditused&gt;0.00,operator=or>
+		<venda_block label=82,enablestorecredit=1,creditused&gt;0.00,operator=or>
+			<venda_block label=80,showpayments=null>
+				<input type="hidden" name="ohpaytype" value="4">
+			</venda_block label=80>
+			<input type="hidden" name="usestorecredit" value="1">
+			<venda_block label=180,storecredit=notnull>
+				<tr>
+					<th scope="row" style="text-align:left;">STORE CREDIT</th>
+					<td class="veryImportant"><venda_currsym><venda_storecredit></td>
+				</tr>
+			</venda_block label=180>
+				
+			<venda_block label=821,storecreditremain&gt;0.00>
+				<tr>
+					<th scope="row" style="text-align:left;">STORE CREDIT REMAINING</th>
+					<td class="veryImportant"><venda_currsym><venda_storecreditremain></td>
+				</tr>
+			</venda_block label=821>
+			
+			<venda_block label=70,creditused&gt;0.00>
+				<tr>
+					<th scope="row" style="text-align:left;">STORE CREDIT USED</th>
+					<td class="veryImportant">- <venda_currsym><venda_creditused></td>
+				</tr>
+			</venda_block label=70>
+			<!--
+			<venda_block label=40,ohftitle=notnull>
+			<tr>
+				<th scope="row">Balance Paid:</th>
+				<td><venda_currsym><venda_ohbal></td>
+			</tr>
+			</venda_block label=40>
+			-->
+			<venda_block label=181,balance=notnull>
+				<tr class="totals">
+					<th scope="row" style="text-align:left;">BALANCE TO PAY</th>
+					<td class="veryImportant"><venda_currsym><venda_balance></td>
+				</tr>
+			</venda_block label=181>
+		</venda_block label=82>
+	</venda_block label=65>
+    
+    <tr class="totals">
+		<td colspan="2">
+            <table>
+                <tr>
+                    <th>TOTAL</th>
+                    <td><span class="pounds"><venda_currsym><venda_ohtot></span></td>
+                </tr>
+                <tr>
+		            <td colspan="2">
+                        <span class="vat">(including <venda_currsym><venda_ohtaxinc> VAT)</span>
+                    </td>
+	            </tr>
+            </table>
+        
+        </td>
+	</tr>
+</table>

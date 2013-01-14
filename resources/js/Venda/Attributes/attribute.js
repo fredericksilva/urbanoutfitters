@@ -392,20 +392,33 @@ var compareObject = function(o1, o2){
 };
 
 Venda.Attributes.GetPriceRange = function(uID) {
-		var currsym = jQuery('#tag-currsym').text();
-		var priceRangeArr = [];
+		var currsym = jQuery('#tag-currsym').text(),
+			attUrl = location.href,
+			priceRangeArr = [];
 		for(var i=0; i<Venda.Attributes.attsArray.length; i++) {
 			if(Venda.Attributes.attsArray[i].invtuuid == uID) {
 				priceRangeArr.push(Venda.Attributes.attsArray[i].atrsell);
 			}
 		}
-		if(Venda.Attributes.Settings.priceRangeFormat == "from") return currsym + Math.min.apply(Math, priceRangeArr);
-		if(Venda.Attributes.Settings.priceRangeFormat == "to") return currsym + Math.max.apply(Math, priceRangeArr);
-		if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
-			return currsym + Math.min.apply(Math, priceRangeArr) + " - " + currsym + Math.max.apply(Math, priceRangeArr);
+		if (attUrl.indexOf("urbanoutfitters.fr" || "urbanoutfitters.de")) {
+			if(Venda.Attributes.Settings.priceRangeFormat == "from") return Math.min.apply(Math, priceRangeArr) + " " + currsym;
+			if(Venda.Attributes.Settings.priceRangeFormat == "to") return Math.max.apply(Math, priceRangeArr) + " " + currsym;
+			if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
+				return Math.min.apply(Math, priceRangeArr) + " " + currsym + " - " + Math.max.apply(Math, priceRangeArr) + " " + currsym;
+			}
+			else {
+				return Venda.Attributes.attsArray[0].atrsell + " " + currsym;
+			}
 		}
 		else {
-			return currsym + Venda.Attributes.attsArray[0].atrsell;
+			if(Venda.Attributes.Settings.priceRangeFormat == "from") return currsym + Math.min.apply(Math, priceRangeArr);
+			if(Venda.Attributes.Settings.priceRangeFormat == "to") return currsym + Math.max.apply(Math, priceRangeArr);
+			if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
+				return currsym + Math.min.apply(Math, priceRangeArr) + " - " + currsym + Math.max.apply(Math, priceRangeArr);
+			}
+			else {
+				return currsym + Venda.Attributes.attsArray[0].atrsell;
+			}
 		}
 };
 
