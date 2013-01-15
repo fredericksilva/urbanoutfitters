@@ -47,6 +47,9 @@ select
     background-position: right -205px;
     border: 1px dotted #4C4C4C;
 }
+select#title, select#cntrylist, x:-moz-any-link, x:default {
+	background:none;
+}
 select#title, select#cntrylist {
     background: url("../images/redesign/bg_buttons.png") no-repeat scroll 63px -204px #fff;
     color: #000000;
@@ -117,7 +120,7 @@ label
     margin-left: 18px;
     margin-right: 10px;
     text-align: right;
-    width: 160px;
+    width: 164px;
 }
 label.dontFloat
 {
