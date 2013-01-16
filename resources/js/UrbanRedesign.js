@@ -101,7 +101,7 @@ var urbanRedesign = {
                 }
                 if (jQuery(this).css('display') !== 'none' && jQuery(this).parent().is('div')) {
                     jQuery(this)
-                .css({ 'z-index': 10, 'opacity': 0, 'position': 'relative', '-khtml-appearance': 'none' })
+                .css({ 'z-index': 10, 'opacity': 0, 'position': 'relative', '-khtml-appearance': 'none'})
                 .after('<span class="select">' + title + '</span>')
                 .change(function () {
                     val = jQuery('option:selected', this).text();

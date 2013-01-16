@@ -40,7 +40,8 @@ jQuery(function(){
     jQuery("#region-content").show();
   }
 	currRegion = Venda.Widget.RegionLangSwitch.currRegion;		
-	jQuery("#language-sel #language").attr('class', currLang[Venda.Widget.RegionLangSwitch.ebizURL]).find(".lang-copy").text(currLang[Venda.Widget.RegionLangSwitch.ebizURL]);
+	jQuery("#language-sel #language").attr('class', currLang[Venda.Widget.RegionLangSwitch.ebizURL]);
+	jQuery("#language-sel #language").find(".lang-copy").text(currLang[Venda.Widget.RegionLangSwitch.ebizURL]);
 	jQuery(".region #" + currRegion + ", .lang #" + currLang[Venda.Widget.RegionLangSwitch.ebizURL]).hide();
 	jQuery(".switcher-sel > a").click(function(){ 
 		jQuery(this).next(".switcher-content").slideDown("fast"); 
@@ -67,7 +68,7 @@ jQuery(function(){
 Venda.Widget.RegionLangSwitch.doURL = function(setType,selectedObj,currSelected){
 
 var redirectURL = "",
-    removeThese = [Venda.Widget.RegionLangSwitch.ebizURL, "&setlocn=eur", "&setlocn=restofworld"],
+    removeThese = [Venda.Widget.RegionLangSwitch.ebizURL, Venda.Widget.RegionLangSwitch.ebizURL.replace("http://","https://"), "&setlocn=eur", "&setlocn=restofworld", "http://", new RegExp("bin\/venda.*", "i"), new RegExp("^\/*", "i")],
     currentLoc = sURL,
     changeValue = jQuery(selectedObj).attr("id")
   if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters5.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda") {
@@ -90,18 +91,17 @@ var redirectURL = "",
       "fr" : "http://www.urbanoutfitters.fr"
     }
   }
-    
   for(var i=0; i<removeThese.length; i++) {
     currentLoc = currentLoc.replace(removeThese[i], "")
   }  
   if (setType == "setlocn"){
-    if((Venda.Widget.RegionLangSwitch.ebizURL + "/") != sURL) {
+    if((Venda.Widget.RegionLangSwitch.ebizURL + "/") != sURL && currentLoc != "") {
       redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "/" + currentLoc + "&setlocn=" + changeValue
     } else {
       redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "/page/home" + "&setlocn=" + changeValue
     }
   } else {
-      redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en) + currentLoc
+      redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en) + "/" + currentLoc
   }
 	window.location.href = redirectURL;
 	return false;

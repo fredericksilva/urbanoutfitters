@@ -1846,8 +1846,10 @@ a.previous
 }
 .myAccountTemplate .addressform input[type=text]
 {
-	display:block;
     width: 280px;
+}
+.addressform span.select {
+	left:199px !important;
 }
 .addcontactaddress select
 {
@@ -1888,6 +1890,7 @@ span.select {
     position: absolute;
     width: 132px;
     z-index: 1;
+    top: 0;
 }
 #tlusermyform div.usxtdob span.select,
 div.usxtdob select:first-child {
@@ -1989,6 +1992,9 @@ div.usxtdob select:first-child {
     text-align: left;
     width: 100px;
     margin-left: 0;
+}
+#myformcommoption span.select {
+	left:0 !important;
 }
 .myAccountTemplate .content label img,
 .checkoutTemplate .content label img

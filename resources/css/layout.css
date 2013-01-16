@@ -47,22 +47,18 @@ select
     background-position: right -205px;
     border: 1px dotted #4C4C4C;
 }
-select#title, select#cntrylist, x:-moz-any-link, x:default {
-	background:none;
-}
-select#title, select#cntrylist {
+.editcontactaddress span.select, .addcontactaddress span.select, .containeroradeditadd span.select
+{
+    width: 339px;
     background: url("../images/redesign/bg_buttons.png") no-repeat scroll 63px -204px #fff;
     color: #000000;
     float: left;
     font-size: 1.2em;
-    left: 0;
+    left: 202px;
     padding: 8px 8px 8px 10px;
     z-index: 1;
-}
-.editcontactaddress span.select, .addcontactaddress span.select, .containeroradeditadd span.select
-{
-    background-position: 66px -202px;
-    width: 340px;
+    border:1px solid #4c4c4c;
+    position:absolute;
 }
 .myAccountTemplate span.select
 {
@@ -217,12 +213,27 @@ fieldset
     width: 142px;
     margin-left: 10px;
 }
-.cardDate span.select
+.cardDate span.select {
+	width:100px !important;
+	left:0 !important;
+	background: url("../images/redesign/bg_buttons.png") no-repeat scroll -173px -204px #fff !important;
+}
+
+.cardDate span.select, #cctoggle div span.select
 {
     background-position: -173px -202px;
     margin-left: 0;
     min-height: 19px;
-    width: 100px;
+    left:202px;
+	width:340px;
+    background: url("../images/redesign/bg_buttons.png") no-repeat scroll 63px -204px #fff;
+    color: #000000;
+    float: left;
+    font-size: 1.2em;
+    padding: 8px 8px 8px 10px;
+    z-index: 1;
+    border:1px solid #4c4c4c;
+    position:absolute;
 }
 .re-waiHide, .skipToContent
 {
@@ -916,8 +927,8 @@ span.orscTotalFig
 #specialLead { }
 #orderconfirmation #leadPackage .order-summary-shipping-to
 {
-    width: 374px;
-    background: url(../images/redesign/bg_orderSmlRepeat.png) repeat-y 0 0;
+    width: 371px;
+    background: url(../images/redesign/bg_orderSmlRepeat.png) repeat-y 0 0 #fff;
     float: left;
 }
 #orderconfirmation #leadPackage .special.order-summary-shipping-to .OrderSummaryHdr
@@ -1954,12 +1965,19 @@ fieldset div.usxtdob div
     width: 102px;
 }
 div.usxtdob span.select {
-    background-position: -206px -202px;
     height: 18px;
     margin: 0 0 0 10px;
-    padding-right: 36px;
     text-align: center;
     width: 39px;
+    background: url("../images/redesign/bg_buttons.png") no-repeat scroll -206px -204px #fff;
+    color: #000000;
+    float: left;
+    font-size: 1.2em;
+    left: 202px;
+    padding: 8px 36px 8px 10px;
+    z-index: 1;
+    border:1px solid #4c4c4c;
+    position:absolute;
 }
 #tlusermyform div.usxtdob span.select,
 div.usxtdob select:first-child,
@@ -2618,14 +2636,13 @@ p.payPalConf strong
 }
 fieldset.f-payment_details .dummypaytype label
 {
+	text-align:left;
     font-weight: bold;
-    text-transform: uppercase;
-    width: 140px;
+    width: 200px;
 }
 fieldset#elv
 {
     border-top: 1px solid black;
-    margin: 10px;
     padding: 10px 0;
 }
 /* webkit only css */

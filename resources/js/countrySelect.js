@@ -239,7 +239,7 @@ Venda.CountrySelect.ShowHide = function(act, el) {
 		 switch(act) {
 		
 			case 'show':
-				jQuery('#' + el.attr('id') + ' :input').css('display','block');
+				jQuery('#' + el.attr('id') + ' :input').css('display','inline-block');
 				el.show();
 			break;
 		
