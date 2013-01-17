@@ -780,6 +780,3 @@ button::-moz-focus-inner {
 .wrapper .gw-container #slides { height: 530px !important; }
 .wrapper .gw-container .gw-left { width: 22px; height: 45px; position: absolute; left: 0px; top: 245px; z-index: 110; }
 .wrapper .gw-container .gw-right { width: 22px; height: 45px; position: absolute; right: 0px; top: 245px; z-index: 110; }
-.wrapper .gw-container .gw-promo { display: none; !important; position: absolute; z-index: 100;  left: 797px;  top: 10px; }
-.wrapper .gw-container .gw-promo2 { display: block; }
-.wrapper .gw-container #next,#prev { display: block !important; }
