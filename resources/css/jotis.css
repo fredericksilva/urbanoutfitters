@@ -1659,3 +1659,10 @@ margin: 0 0 20px 0;
 #productlist.full div.copy a:hover { color:#00ccff; }
 
 #banner div.copy ul li { display: inline; }
+
+.mm_ul li a.mm_icatsale {
+	color: #cc0000;
+}
+.mm_ul > li > div > div > ul > li > a.mm_subviewallpromo {
+	color: #009999;
+}
