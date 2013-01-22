@@ -1217,8 +1217,11 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 }
 .summeryContainer {
 	position:fixed;
+	position: relative\9;
 	left:50%;
+	left: 0\9;
 	margin-left:193px;
+	margin-left: 0\9;
 }
 #ordersummery
 {

@@ -53,8 +53,8 @@ var urbanRedesign = {
     stickyBasket: function () {
         this.basket = jQuery('#basket').position();
         if (this.basket) {
-            jQuery('#basket').css({ 'min-height': (100 + parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
-            jQuery('.summeryContainer').css({ 'position': 'fixed' });
+            jQuery('#basket').css('min-height','500px')
+            //jQuery('.summeryContainer').css({ 'position': 'fixed' });
             this.setMenuOffset.initialPos = this.basket.top;
             window.onscroll = document.documentElement.onscroll = this.setMenuOffset;
             this.setMenuOffset();

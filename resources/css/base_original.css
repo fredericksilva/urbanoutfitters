@@ -3259,15 +3259,17 @@ a:hover.quickBuyDetails {
 .ui-widget-overlay { background:#000; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: .3; filter:Alpha(Opacity=30); }
 .ui-dialog { position:absolute; width:auto; text-align:left; border: none; background-color:transparent; }
 .ui-dialog-titlebar { padding: 5px; background-color: #ebebeb; overflow: hidden;}
-.ui-dialog-titlebar-close { background-position: 0 0; display: block; float: right; height: 18px; overflow: hidden; text-indent: -9999px; width: 18px;}
+.ui-dialog-titlebar-close { background-position: -31px -569px; display: block; float: right; height: 14px; overflow: hidden; text-indent: -9999px; width: 14px;}
+.ui-dialog-titlebar-close:hover {background-position: -54px -569px;}
 .ui-dialog-content { overflow:auto; padding: 10px; zoom: 1 }
 .ui-dialog h1{font-size: 1.2em;top:6px; }
 
 .ui-dialog .ui-dialog-content {
     height: auto !important;
-    min-height: 300px !important;
+    min-height: 100px !important;
     padding: 10px;
     width: 708px !important;
+    background-color:#fff;
 }
 #deliveryrateMessage {width: auto !important;}
 #loadhere.loadhere { background: none repeat scroll 0 0 #FFFFFF;

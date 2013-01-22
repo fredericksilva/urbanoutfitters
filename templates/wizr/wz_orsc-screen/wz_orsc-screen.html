@@ -4,15 +4,19 @@
 		var bottomtab = new Venda.Widget.createTab("#bottomtab");
 		Venda.Platform.EqualHeight.init(classtoset);
 		bottomtab.init();
-		jQuery(document).ready(function() {
-			jQuery('.summeryContainer').scrollToFixed({
-				marginTop:
-				jQuery('.mainHeader').outerHeight() + jQuery('#yourbasket').outerHeight() + 29 + jQuery('.bagbanner').outerHeight() + 45 + jQuery('.demo').outerHeight(),
-				limit:
-				jQuery('.mainFooter').offset().top - jQuery('.summeryContainer').outerHeight() - 75
-			});
+		</script>
+	<![if !IE]>
+	<script type="text/javascript">
+	jQuery(document).ready(function() {
+		jQuery('.summeryContainer').scrollToFixed({
+			marginTop:
+			jQuery('.mainHeader').outerHeight() + jQuery('#yourbasket').outerHeight() + 29 + jQuery('.bagbanner').outerHeight() + 45 + jQuery('.demo').outerHeight(),
+			limit:
+			jQuery('.mainFooter').offset().top - jQuery('.summeryContainer').outerHeight() - 75
 		});
+	});
 	</script>
+	<![endif]>
 	<venda_tpcomment><!-- end: Tab bottom --></venda_tpcomment>
 <venda_page page=bagbanner>
 <div class="grid_24 basketR">
