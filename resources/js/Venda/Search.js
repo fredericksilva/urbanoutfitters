@@ -541,7 +541,7 @@ Venda.Search.Feature.swatchHide.prototype = {
     			n = jQuery(this).find(".sw_image").length;
     		swatch.each(function () {
     			swatchImg.error(function () {
-	    			swatch.hide();
+	    			jQuery(this).hide();
 	    		})
 	    	})
     		if (n < 2) {
