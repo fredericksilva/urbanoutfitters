@@ -393,32 +393,19 @@ var compareObject = function(o1, o2){
 
 Venda.Attributes.GetPriceRange = function(uID) {
 		var currsym = jQuery('#tag-currsym').text(),
-			attUrl = location.href,
 			priceRangeArr = [];
 		for(var i=0; i<Venda.Attributes.attsArray.length; i++) {
 			if(Venda.Attributes.attsArray[i].invtuuid == uID) {
 				priceRangeArr.push(Venda.Attributes.attsArray[i].atrsell);
 			}
 		}
-		if (attUrl.indexOf("urbanoutfitters.fr" || "urbanoutfitters.de")) {
-			if(Venda.Attributes.Settings.priceRangeFormat == "from") return Math.min.apply(Math, priceRangeArr) + " " + currsym;
-			if(Venda.Attributes.Settings.priceRangeFormat == "to") return Math.max.apply(Math, priceRangeArr) + " " + currsym;
-			if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
-				return Math.min.apply(Math, priceRangeArr) + " " + currsym + " - " + Math.max.apply(Math, priceRangeArr) + " " + currsym;
-			}
-			else {
-				return Venda.Attributes.attsArray[0].atrsell + " " + currsym;
-			}
+		if(Venda.Attributes.Settings.priceRangeFormat == "from") return currsym + Math.min.apply(Math, priceRangeArr);
+		if(Venda.Attributes.Settings.priceRangeFormat == "to") return currsym + Math.max.apply(Math, priceRangeArr);
+		if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
+			return currsym + Math.min.apply(Math, priceRangeArr) + " - " + currsym + Math.max.apply(Math, priceRangeArr);
 		}
 		else {
-			if(Venda.Attributes.Settings.priceRangeFormat == "from") return currsym + Math.min.apply(Math, priceRangeArr);
-			if(Venda.Attributes.Settings.priceRangeFormat == "to") return currsym + Math.max.apply(Math, priceRangeArr);
-			if((Venda.Attributes.Settings.priceRangeFormat == "range") && (Math.min.apply(Math, priceRangeArr)) != (Math.max.apply(Math, priceRangeArr))) {
-				return currsym + Math.min.apply(Math, priceRangeArr) + " - " + currsym + Math.max.apply(Math, priceRangeArr);
-			}
-			else {
-				return currsym + Venda.Attributes.attsArray[0].atrsell;
-			}
+			return currsym + Venda.Attributes.attsArray[0].atrsell;
 		}
 };
 
@@ -783,8 +770,15 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 * @author Alby Barber <abarber@venda.com>
 */
 Venda.Attributes.Price = function (uID){
-	if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
-	else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+	var currentCurrency = Venda.Ebiz.CookieJar.get("locn") || "restofworld";
+	if (currentCurrency == "eur") {
+		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint");
+		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+	}
+	else {
+		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
+		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+	}
 };
 
 /**
@@ -891,11 +885,9 @@ Venda.Attributes.updateCalcItem = function (id, textValue, uID){
 Venda.Attributes.updateCalcItemPrice = function (id, textValue, uID){
 
 	var currsym = jQuery('#tag-currsym').text();
-	
-	if (textValue.length > 2) {
+	if (textValue.length > 2) {			
 		textValue = currsym + textValue;
 	}
-
 	jQuery('#oneProduct_' + uID + ' .attrFeedback  ' + id).hide().text(textValue).addClass("Re-paint");
 };
 

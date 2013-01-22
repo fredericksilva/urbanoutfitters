@@ -539,6 +539,11 @@ Venda.Search.Feature.swatchHide.prototype = {
     		var swatch = jQuery(this).find("a.sw_image"),
     			swatchImg = jQuery(this).find("img.swatch"),
     			n = jQuery(this).find(".sw_image").length;
+    		swatch.each(function () {
+    			swatchImg.error(function () {
+	    			swatch.hide();
+	    		})
+	    	})
     		if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
     			var swatchIcon = jQuery(this).find(".swatchIcon");
@@ -552,11 +557,6 @@ Venda.Search.Feature.swatchHide.prototype = {
 	    		jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
 	    		//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
     		}
-    		swatch.each(function () {
-    			swatchImg.error(function () {
-	    			swatch.hide();
-	    		})
-	    	})
     	});
     }
 };
