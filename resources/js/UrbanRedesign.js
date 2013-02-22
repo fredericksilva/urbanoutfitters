@@ -53,7 +53,7 @@ var urbanRedesign = {
     stickyBasket: function () {
         this.basket = jQuery('#basket').position();
         if (this.basket) {
-            jQuery('#basket').css('min-height','500px')
+            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
             //jQuery('.summeryContainer').css({ 'position': 'fixed' });
             this.setMenuOffset.initialPos = this.basket.top;
             window.onscroll = document.documentElement.onscroll = this.setMenuOffset;
@@ -61,7 +61,7 @@ var urbanRedesign = {
         }
         //#ajax-error
         jQuery('.summeryContainer').bind('resize', function () {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height() - 50, 10)) + 'px' })
+            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
         });
         //jQuery('#ordersummery').trigger('resize');
 

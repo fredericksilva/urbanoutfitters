@@ -1,0 +1,28 @@
+<div class="<venda_workflow> <venda_curstep>">
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header borderBt">
+				<h1><venda_text id=mobile.heading.order_receipt><venda_block label=2,workflow=checkoutmobile><a href="http://www.venda.com/pci-compliance-certificate?referer=<venda_serveradd>" rel="external" target="_blank"><span class="hdr-pci"></span></a></venda_block label=2></h1>
+							<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			</div>
+			<div class="checkoutmobile-content-inner">
+				<p class="thankyou">Thankyou for your order.</p>
+				<p class="ordernumbertext"><venda_text id=mobile.info.order_number>:</p> <p class="ordernumberreceipt"> <venda_ohordnum></p>			
+				<p><venda_text id=mobile.info.order_email_message></p>
+			</div>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+	<hr/>
+	<div class="submitButton">
+		<venda_block label=83,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p,<venda_ohpaytype>!=12>
+		<a href="<venda_dispview page=myaccount>" data-role="button" data-icon="arrow-r" data-iconpos="right"><venda_text id=mobile.button.my_account></a>
+		</venda_block label=83>	
+	</div>
+	<div class="submitButton">
+		<a class="continue" href="<venda_dispview page=home>" data-role="button" data-icon="arrow-r" data-iconpos="right"><venda_text id=mobile.button.continue_shopping></a>
+	</div>	
+</div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_inctemplate name=orderReceipt,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=curstep,value=step5>

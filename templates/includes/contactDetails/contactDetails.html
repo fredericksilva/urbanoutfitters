@@ -1,0 +1,21 @@
+<p>
+<strong><venda_ohtitle> <!-- mp_trans_disable_start --><venda_ohfname> <venda_ohlname></strong><br>
+<venda_block label=76,ohcompany=notnull><venda_ohcompany><br></venda_block label=76>
+<venda_ohnum> <venda_ohaddr1><br>
+<venda_block label=74,ohaddr2=notnull><venda_ohaddr2></venda_block label=74>
+<venda_ohcity>
+<venda_block label=75,ohstate=notnull><venda_ohstate></venda_block label=75>
+<venda_ohzipc><br>
+<venda_ohcntry>
+
+
+<venda_block label=501,workflow!=ordlookup,curstep=finish>
+	<br>
+	<venda_block label=46,workflow!=instore>
+	<venda_usemail><br>
+	</venda_block label=46>
+	<venda_oharea> <venda_ohphone>
+</venda_block label=501>
+<!-- mp_trans_disable_end -->
+</p>
+<!-- tpxt cccntry --><venda_tpxt mode=set,name=cccntry,value=<venda_ohcntry>>

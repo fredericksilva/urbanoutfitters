@@ -20,7 +20,7 @@ Thank you for updating the details in your <venda_ebizname> account.
 
 
 
-For any questions, please contact us at <venda_ebizemail> or ring us at <venda_ebizphone> Mon-Fri, 9:00 - 18:00.
+For any questions, please <a href="<venda_dispview page=contactus>"><b>email us</b></a> or ring us at <venda_ebizphone> 24 hours a day Mon-Fri, 9:00 - 18:00 Sat and Sun.
 
 
 
@@ -36,7 +36,7 @@ Sehr geehrte/r <venda_fname>,
 Vielen Dank für die Aktualisierung Ihrer Informationen in Ihrem <venda_ebizname> Konto.
 
 
-Bei Fragen kontaktieren Sie uns bitte unter service@urbanoutfitters.de oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.
+Bei Fragen kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>"><b>schick uns eine e-mail</b></a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 09:00 bis 19:00 Uhr.
 
 
 Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
@@ -45,13 +45,13 @@ Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
 </venda_block label=1022>
 
 <venda_block label=1023,mode=value,<venda_usgrref>=guest_fr>
-Ch&#232;re/Cher <venda_fname>,
+Chère/Cher <venda_fname>,
 
 
 Nous vous remercions d'avoir mis à jour les informations contenues dans votre <venda_ebizname> compte.
 
 
-Pour toute question, contactez-nous à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+Pour toute question, <a href="<venda_dispview page=contactus>"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 19h00.
 
 
 Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr

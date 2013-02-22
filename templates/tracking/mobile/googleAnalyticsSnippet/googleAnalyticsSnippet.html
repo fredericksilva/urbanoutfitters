@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-<venda_block mode=value,<venda_islive>=1><venda_setting type=ebiz,name=tracktaggoogleanalyticsid>-<venda_setting type=ebiz,name=tracktaggooglesuffix></venda_block><venda_block mode=value,<venda_islive>!=1><venda_setting type=ebiz,name=tracktaggoogleanalyticstestid>-<venda_setting type=ebiz,name=tracktaggooglesuffixtest></venda_block>']);
+	_gaq.push(['_setCustomVar',1,'Device','Mobile',2]);
+	if(typeof Venda.Widget.Tracking != 'undefined'){<venda_tpcomment>/*Check resources/js/Venda/Widget/Tracking.js is loaded*/</venda_tpcomment>
+		if((typeof Venda.Widget.Tracking.workflowStep != 'undefined')&&(Venda.Widget.Tracking.workflowStep != "")&&(Venda.Widget.Tracking.workflowStep!="locayta: ")){<venda_tpcomment>/*Track workflow steps using var set in includes/workflowSteps. Don't track search as a work flow as it has unique urls.*/</venda_tpcomment>
+			_gaq.push(['_trackPageview', Venda.Widget.Tracking.workflowStep]); 
+		}
+		else{<venda_tpcomment>/*Track standard Pageviews (pages with unique urls) if not on a workflow step*/</venda_tpcomment>
+			_gaq.push(['_trackPageview']);
+		}
+		if(typeof Venda.Widget.Tracking.orderNum != 'undefined'){<venda_tpcomment>/*Ecommerce tracking on order receipt uses vars set in includes/orderDetails*/</venda_tpcomment>
+			_gaq.push(['_addTrans',Venda.Widget.Tracking.orderNum,Venda.Widget.Tracking.storeName,Venda.Widget.Tracking.orderTotal,Venda.Widget.Tracking.orderTax,Venda.Widget.Tracking.orderShip,Venda.Widget.Tracking.userCity,Venda.Widget.Tracking.userState,Venda.Widget.Tracking.userCountry]);
+			for (var i=0; i < Venda.Widget.Tracking.sku.length; i++){			_gaq.push(['_addItem',Venda.Widget.Tracking.orderNum,Venda.Widget.Tracking.sku[i],Venda.Widget.Tracking.oiname[i],Venda.Widget.Tracking.ptype[i],Venda.Widget.Tracking.price[i],Venda.Widget.Tracking.qty[i]]);
+			}
+			_gaq.push(['_trackTrans']);
+		}
+	}
+	else{<venda_tpcomment>/*Track standard Pageviews - fallback in case resources/js/Venda/Widget/Tracking.js is not present*/</venda_tpcomment>
+		_gaq.push(['_trackPageview']);
+	}
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>

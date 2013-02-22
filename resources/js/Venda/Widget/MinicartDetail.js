@@ -530,6 +530,8 @@ Venda.Widget.MinicartDetail.AddProduct = function (formID) {
 			
 			Venda.Widget.MinicartDetail.WrapBasket();
 			
+			if(typeof(Venda.Ebiz.fixEuroSign) != "undefined"){Venda.Ebiz.fixEuroSign("#updateTotal, #minicartDetail .price, #minicartDetail");}
+			
 			var headeHeight = 0;
 			if (Venda.Widget.MinicartDetail.settings.header === true) {
 				headeHeight = jQuery('.ui-dialog-titlebar').outerHeight();
@@ -817,6 +819,7 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 							}
 						};
 					});
+					if(typeof(Venda.Ebiz.fixEuroSign) != "undefined"){Venda.Ebiz.fixEuroSign("#updateTotal, #minicartDetail .price, #minicartDetail");}
 				});
 			} else {
 				if(Venda.Widget.MinicartDetail.mouseOver == false) {
@@ -858,7 +861,6 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 			jQuery('#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()});
 		}
 	}
-	
 };
 
 /**

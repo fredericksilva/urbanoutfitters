@@ -522,6 +522,7 @@ html > body*#col-two-order-summary-inside
 #orcfcomment
 {
     height: 218px;
+    display: none;
 }
 #orderdetail #orcfcomment { display:none;}
 #orderreceipt .order-summary-box, #orderreceipt .signinContent .box, #orderreceipt .addressform fieldset, #orderreceipt #paymentdetailSection, #orderreceipt .ohSumDetail
@@ -719,7 +720,9 @@ html > body*#col-two-order-summary-inside
     border-left: 1px solid #333;
     padding-left: 20px;
 }
-
+.priceeach .saleprice {
+	color:red;
+}
 .order-summary-box table td
 {
     padding: 20px 0 0;
@@ -2645,6 +2648,30 @@ fieldset#elv
     border-top: 1px solid black;
     padding: 10px 0;
 }
+.tandc {
+	width: 695px;
+	overflow: hidden;
+	padding: 0 0 0 20px;
+	margin: 0 0 20px 20px;
+	background-color: #FFFEA4;
+	font-size: 11px;
+    font-style: italic;
+	letter-spacing: 0.1px;
+}
+.tandc a {
+	text-decoration: none;
+}
+.tandc input {
+	float: left;
+	height: 31px;
+}
+.tandc label {
+	width: auto;
+	margin-left: 10px;
+}
+.shipMethod input, input#creditcard, input#formpaypal, input#tandc, input#dontsavecc {border: 0 !important;}
+input#tandc {background: none;}
+
 /* webkit only css */
 @media screen and (-webkit-min-device-pixel-ratio:0)
 {

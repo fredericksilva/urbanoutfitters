@@ -78,11 +78,28 @@
                                 </div>
 		                    </td>
                             <td class="totalprice">
-                                <span class="pounds"><venda_currsym><venda_invtsell></span>
-                                <venda_block label=17,invtwas=notnull>
-                                    <span class="was">(Was <venda_currsym><venda_invtwas>)</span>	
-                                </venda_block label=17>
-
+	                        	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+	                                <venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+		                                <p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
+			                        </venda_block label=211>
+			                        <venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+				                        <p class="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></p>
+					                </venda_block label=221>
+					            </venda_block label=555>
+					            <venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+									<p class="price">
+										<span class="saleprice">
+											<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=211>
+											<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=221>
+										</span>
+										<span class="was">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+									</p>
+								</venda_block label=666>
+							</venda_block label=20>
                             </td>
 		                </tr>
                         <tr class="baskettotals">
@@ -104,7 +121,7 @@
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td class="name">
-                    <a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a>
+                    <a href="#"><venda_invtname></a>
                     <venda_extflds exfldtype=orderitem,group=1,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1><venda_extflds exfldtype=orderitem,group=2,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1>
                 </td>
                 <td class="remove">
@@ -122,34 +139,21 @@
                         <tr>
                             <venda_block label=111,invtatt1=notnull>
                                 <venda_tpcomment><!--product has attributes--></venda_tpcomment>
-                                <venda_block label=21,med-set<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
-                                    <venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,img=no,medatr=yes>=notnull>
-                                        <venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
-                                        <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,medatr=yes></a></td>
-                                    </venda_block label=22>
-                                    <venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setshoppingbasketimagekey>,img=no,medatr=yes>=null>
-                                        <venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
-                                        <venda_block label=231,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
-                                            <venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
-                                            <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setshoppingbasketimagekey>></a></td>
-                                        </venda_block label=231>
-                                        <venda_block label=232,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
-                                            <venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
-                                            <td rowspan="3" class="thumb noimage"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setshoppingbasketimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a></td>
-                                        </venda_block label=232>
-                                    </venda_block label=23>
-                                </venda_block label=21>
-                                <venda_block label=24,med-set<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
-                                    <venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
-                                    <venda_block label=25,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=notnull>
-                                        <venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
-                                        <td rowspan="3" class="thumb"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setshoppingbasketimagekey>></a></td>
-                                    </venda_block label=25>
-                                    <venda_block label=26,med-<venda_setting type=ebiz,name=setshoppingbasketimagekey>=null>
-                                        <venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
-                                        <td rowspan="3" class="thumb noimage"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setshoppingbasketimagekey>.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a></td>
-                                    </venda_block label=26>
-                                </venda_block label=24>
+                                	<td rowspan="3" class="thumb">
+                                		<a href="<venda_dispview invt=<venda_invtparef>>">
+	                                        <!-- mp_trans_remove_start-->
+	                                        	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+	                                        <!-- mp_trans_remove_end-->
+	                                        <!-- mp_trans_disable_start-->
+	                                        	<!-- mp_trans_add="FR"
+		                                        	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+		                                        -->
+		                                        <!-- mp_trans_add="DE"
+			                                        <img src="<venda_protocol>://dsa-www.urbanoutfitters.co.uk/content/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+			                                    -->
+			                                <!-- mp_trans_disable_end-->
+                                        </a>
+                                    </td>
                             </venda_block label=111>
 		
                             <venda_block label=113,invtatt1=null>
@@ -201,11 +205,28 @@
                                 </div>
 		                    </td>
                             <td class="totalprice">
-                                <span class="pounds"><venda_currsym><venda_invtsell></span>
-                                <venda_block label=17,invtwas=notnull>
-                                    <span class="was">(Was <venda_currsym><venda_invtwas>)</span>	
-                                </venda_block label=17>
-
+	                        	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+	                                <venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+		                                <p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
+			                        </venda_block label=211>
+			                        <venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+				                        <p class="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></p>
+					                </venda_block label=221>
+					            </venda_block label=555>
+					            <venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+									<p class="price">
+										<span class="saleprice">
+											<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=211>
+											<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=221>
+										</span>
+										<span class="was">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+									</p>
+								</venda_block label=666>
+							</venda_block label=20>
                             </td>
 		                </tr>
                         <tr class="baskettotals">

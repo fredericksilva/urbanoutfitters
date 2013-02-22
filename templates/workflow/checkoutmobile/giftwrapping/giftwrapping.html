@@ -1,0 +1,88 @@
+<venda_tpcomment>
+<!-- 
+Removed the inline JS from this page, structure and JS free fallback needs to be considered
+I've deleted the addgiftwrap step, I'm not adding combined giftwrap by default
+-->
+</venda_tpcomment>
+
+<div class="<venda_workflow> <venda_curstep>">
+
+<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" />
+	<venda_tpcomment><!-- Core parameters --></venda_tpcomment>
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="curstep" value="<venda_curstep>" /> 
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="mode" value="process" />
+	<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+	<input type="hidden" name="step" value="ordersummary" />
+	<input type="hidden" name="textcount">
+	<div class="checkoutmobile-wrapper">
+	<div class="checkoutmobile-content">
+		<div class="checkoutmobile-header">
+			<h1><venda_text id=mobile.heading.giftwrapping></h1>
+			<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+		</div>
+		<div>
+		<venda_tpcomment><!-- Start: Available Styles --></venda_tpcomment>
+			<venda_detblock1>
+			<div class="wrapdetail">	
+				<div class="img<venda_gwname>"><venda_media rec=gwrp></div>
+				<div class="<venda_gwname>"><venda_gwname> <span class="sell<venda_gwname>"> <venda_gwsell></span></div>
+			</div>
+			
+			</venda_detblock1>
+			<div class="wrapstyles">
+			<h2><venda_text id=mobile.info.giftwrapping_style_available></h2>
+				<venda_detail1>
+			</div>
+		<venda_tpcomment><!-- End: Available Styles --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: Wrapped Items --></venda_tpcomment>
+			<venda_detblock2>
+			<venda_detail3>
+			</venda_detblock2>
+
+			<venda_detblock3>
+			<div class="gw-<venda_oirfnbr> giftwrapping-content">
+				<div class="productname">
+				<strong><venda_invtname><venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>,&nbsp;<venda_invtatt2></venda_block label=112><venda_block label=113,invtatt3=notnull>,&nbsp;<venda_invtatt3></venda_block label=113><venda_block label=114,invtatt4=notnull>,&nbsp;<venda_invtatt4></venda_block label=114>)</venda_block label=111></strong><br>
+				<div class="gwAddress">
+				<venda_title> <venda_fname> <venda_lname><br>
+				<venda_block label=71,num=notnull><venda_num> </venda_block label=71><venda_addr1><venda_block label=72,addr2=notnull> <venda_addr2></venda_block label=72><br>
+				<venda_city> <venda_state> <venda_zipc> <venda_cntry></div>
+				</div>	
+				<div class="wrapitem ui-hide-label"><strong><venda_text id=mobile.info.giftwrapping_wrap_item></strong>
+				<venda_block label=4,invtnogw!=1>
+				<label for="formgw-<venda_oirfnbr>"><venda_text id=mobile.info.giftwrapping_wrap_item></label><select name="gw-<venda_oirfnbr>" id="formgw-<venda_oirfnbr>"><venda_selectgiftwrap></select>
+				</venda_block label=4>
+				<venda_block label=5,invtnogw=1>
+				<venda_text id=mobile.info.giftwrapping_not_available>
+				</venda_block label=5>
+				</div>		
+				<!--td class="productprice"><venda_oisub></td-->
+				<div class="giftmessage ui-hide-label"><venda_block label=7,invtnogwmsg=null>
+				<label for="formcm-<venda_oirfnbr>"><venda_text id=mobile.info.message></label>
+				<textarea name="cm-<venda_oirfnbr>" id="formcm-<venda_oirfnbr>" rows="3" cols="20" class="message" maxlength="80" placeholder="<venda_text id=mobile.info.message>"><venda_oicmt></textarea></venda_block label=7><venda_block label=8,invtnogwmsg=1><venda_text id=mobile.info.giftwrapping_not_available></venda_block label=8>
+				<p>(Maximum characters: 80)</p>				
+				</div>
+			</div>
+			</venda_detblock3>
+
+			<venda_detail2>
+				
+			
+		<venda_tpcomment><!-- End: Wrapped Items --></venda_tpcomment>
+		</div>
+	</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+	
+	<div class="submitButton">	<a href='<venda_wizbutton step=ordersummary,mode=display,param1=<venda_bsref>,callonly=yes>' data-role="button"><venda_text id=mobile.button.cancel></a></div>
+	<div class="submitButton">	<input type="submit" value="<venda_text id=mobile.button.continue>"></div>
+
+
+</form>
+</div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=curstep,value=step4>

@@ -1,0 +1,52 @@
+/***************************************/
+/* PRODUCTDETAIL RECENTLY VIEWED ITEMS */
+/***************************************/
+/* hide showrvi div by default */ /*display:none;*/ 
+/*RT101216*/
+#tabrecentlyview .rviwrapper{width:425px;float:left;margin:0pt;overflow:hidden;padding:0pt;position:relative;}
+#tabrecentlyview #showRVI{float:left; width:500px; margin: 10px 0 10px 0; padding:0;overflow:hidden;min-height:130px;}
+* html #tabrecentlyview #showRVI{height:180px;}
+#tabrecentlyview #showRVI img.slide {cursor:pointer;float:left;margin-top:38px;}
+#tabrecentlyview .LshowRVI h2 {border-bottom:2px solid;}
+#tabrecentlyview .LshowRVI ul#rvilist {list-style-type:none; margin:15px 0 0 0;padding:0;float:left;width:1500px;}
+#tabrecentlyview .LshowRVI ul#rvilist li {float:left;text-align:center;width:82px; min-height:130px;}
+* html #tabrecentlyview .LshowRVI ul#rvilist li {float:left;text-align:center;width:82px; height:170px;}
+#tabrecentlyview #rvidiv {font-size:1.0em;float:left; padding-left:15px;}
+/*RT101216*/
+#tabrecentlyview #rvidiv h3 {margin:0; padding:0; border-bottom:none;}
+#tabrecentlyview #rvidiv h3 a { font-size:0.8em; font-weight:bold; color:#999;}
+#tabrecentlyview #rvidiv h3 a:hover { text-decoration:none;color:#001B31;}
+#tabrecentlyview #rvidiv .image { margin:0 0 5px 0; padding:0; min-height:115px; float:left;}
+* html #tabrecentlyview #rvidiv .image {height:115px;}
+#tabrecentlyview #rvidiv .price , 
+#tabrecentlyview #rvidiv .priceatt { height:14px; color: #001B31; margin:0 0 0 0 !important; margin/**/:1px 0 0 0; padding:0;font-size : 0.9em; font-weight:bold;}
+#tabrecentlyview #rvidiv .rvisku {font-weight:bold; color:#666;}
+#tabrecentlyview #rvidiv .pricered , 
+#tabrecentlyview #rvidiv .priceattred { height:14px; color: red; margin:0 0 0 0 !important; margin/**/:1px 0 0 0; padding:0;font-size : 0.9em; font-weight:bold;}
+#tabrecentlyview #rvidiv .priceform { height:14px; color: #001B31; font-weight:normal;text-transform:lowercase;margin:0;padding:0;}
+#tabrecentlyview #rvidiv .was , 
+#tabrecentlyview #rvidiv .wasattr { color: #001B31;margin:0 !important; margin/**/:1px 0 0 0;padding:0;font-size : 0.9em; font-weight:normal;text-transform:lowercase;}
+#tabrecentlyview #rvidiv .overlay {margin-top:-115px !important; margin-top/**/:-115px; margin-left:73px; height:120px !important; height/**/:123px;}
+* html #tabrecentlyview #rvidiv .overlay {position:relative;}
+#tabrecentlyview #rvidiv .overlay { behavior: url(/content/ebiz/mackays/resources/js/iepngfix.htc);}
+
+#tabrecentlyview .rviwrapper .details {float:left;padding-left:10px;width:180px;text-align:left; display:none;}
+#tabrecentlyview .rviwrapper #rvidiv .image a img {border: none; height:102px;}
+/*************************/
+/* RECENTLY VIEWED ITEMS */
+/*************************/
+.Lcat_basketcontent #showRVISiteWide {float:left; margin:35px 0 0 0; *margin:35px 0 0 0; padding:0; width:360px;}
+#myaccountpage #showRVISiteWide {float:left; margin:32px 0 0 0; padding:0;width:360px;}
+#showRVISiteWide h2 {background:url(../images/hdr_recentlyview.gif) no-repeat left top; width:126px; height:20px; text-indent:-5000px; text-decoration:none; margin: 0; border: 0; color: #fff;}
+.Lcat_basketcontent  #showRVISiteWide h2, #myaccountpage #showRVISiteWide h2 {margin-bottom:9px !important; margin-bottom/**/:14px;}
+#showRVISiteWide ol {list-style-type:none; margin:0; padding:11px 0 0 0 !important; *padding:10px 0 0 0; padding/**/:14px 0 0 0; width:357px;}
+#showRVISiteWide li {float:left !important; width:112px; *width:112px; width/**/:110px; margin:5px 5px 0 2px; padding:0; text-align:center; line-height:13px; height:175px;}
+
+#slider {border:1px solid #000; float:left; width:100%; margin-top:10px;}
+ #slider h2 {padding:5px;}
+ #slider #sliderlist {/*set ul width to high number so we are able to "slide" using overflow:hidden*/ width:1700px;}
+ #slider .slidewrapper {width:348px; margin:0; position:relative; float:left; overflow:hidden;}
+ #slider ul#sliderlist li {float:left; width:120px;}
+ ul#sliderlist h2 {background:none; border:none;}
+ #slider .slide {float:left; top:70px; position:relative; cursor:pointer;}
+ #slider .btn {width: 16px; float: left; border: solid 1px white;}

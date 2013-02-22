@@ -1,0 +1,31 @@
+<form name="searchform" id="searchform" method="get" action="<venda_codehttp>" onSubmit="validateQuery(); return false;">
+<input type="hidden" name="ex" id="ex" value="co_wizr-xapian">
+<input type="hidden" name="bsref" id="bsref" value="<venda_bsref>">
+<!-- edit includes/searchFields to change search parameters-->
+<venda_inctemplate name=searchFields,type=includes>
+
+<fieldset>
+<legend>Search by keyword</legend>
+<label for="searchex">Search:</label> <input type="text" name="searchex" id="searchex" size="20">
+<input type="image" name="searchsubmit" id="searchsubmit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_go.gif" alt="Search">
+<p><a href="<venda_dispview page=advancedsearch>">Advanced Search</a></p>
+</fieldset>
+
+	<script language="javascript" type="text/javascript">
+		<!-- 
+		<venda_block label=110,pageref=notnull>
+		document.searchform.searchex.focus();
+		</venda_block label=110>
+		
+		function validateQuery() {
+			if (document.searchform.searchex.value == '') {
+				alert('Please enter a search query.');
+				document.searchform.searchex.focus();
+				return;
+			}
+			document.searchform.submit();
+		}
+		// -->
+	</script>
+
+</form>

@@ -1,0 +1,17 @@
+<venda_detblock>
+	<venda_order ref=<venda_ohrfnbr>,shopcart=0,template=orderOverviewMobile>
+</venda_detblock>
+
+<venda_block cartcount!=0>
+	<h2 class="hdr-order bgDark"><venda_text id=mobile.heading.recent_order></h2>
+	<div data-role="fieldcontain" class="orderList">
+		<ul data-role="listview">
+		<venda_detail>
+		</ul>
+	</div>
+</venda_block>
+
+<venda_block cartcount=0>
+<!-- no results found -->
+<h2 class="noOrders bgDark"><venda_text id=mobile.heading.no_recent_order></h2>
+</venda_block>

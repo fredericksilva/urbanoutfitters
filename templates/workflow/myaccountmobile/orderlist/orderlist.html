@@ -1,0 +1,57 @@
+<div id="orderhistory" class="<venda_workflow> orderlist">
+	<venda_block label=34,ustype=R>
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<h1><venda_text id=mobile.button.order_history></h1>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			</div>
+			
+			<h2 class="balance hdr-order bgDark"><venda_text id=mobile.info.account_balance></h2>
+			<venda_tpcomment><!-- Start: Recent Orders --></venda_tpcomment>
+			<venda_detblock4>
+				<hr/>
+				<venda_order ref=<venda_ohrfnbr>,shopcart=0,template=orderOverviewMobile>
+			</venda_detblock4>
+			<div data-role="fieldcontain" class="orderList">
+				<venda_block label=20,ohorders!=0>
+					<ul data-role="listview"><venda_detail4></ul>
+				</venda_block label=20>
+				<venda_tpcomment><!-- End: Recent Orders --></venda_tpcomment>
+
+				<venda_tpcomment><!-- Start: No Orders --></venda_tpcomment>
+				<venda_block label=21,ohorders=0>
+					<p><venda_text id=mobile.info.no_orders></p>
+				</venda_block label=21>
+				<venda_tpcomment><!-- End: No Orders --></venda_tpcomment>
+			</div>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+	<hr/>
+		<div class="backToMyAccount">
+				<a href="<venda_dispview page=myaccountmobile>" data-ajax="false"> <venda_text id=mobile.button.back_to_my_account></a>
+			</div>	
+	<hr/>		
+	</venda_block label=34>
+
+	<venda_block label=33,ustype!=R>
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<h1><venda_text id=mobile.button.order_history></h1>
+			</div>
+			<div class="submitButton"><a href="<venda_codehttps>?ex=co_wizr-registermobile&bsref=<venda_bsref>&step=login" data-ajax="false" data-role="button"><venda_text id=mobile.button.please_login_to_view></a></div>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+	</venda_block label=33>
+</div>
+
+
+ <!-- 
+workflow: <venda_workflow>
+workflow step: <venda_curstep>
+template: templates/workflow/<venda_workflow>/orderlist/orderlist.html
+param1: <venda_param1>
+param2: <venda_param2>
+param3: <venda_param3>
+-->

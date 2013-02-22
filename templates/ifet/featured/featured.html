@@ -1,0 +1,30 @@
+<venda_detblock>
+<ul>
+	<li><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></li>
+	<li><venda_block label=4,med-thumb=notnull>
+		<venda_media rec=invt,type=movie-swf-pict,key=thumb,jump=yes,border=0>
+		</venda_block label=4>
+		<venda_block label=5,med-thumb=null>
+		<a href="<venda_dispview invt=<venda_invtref>>">Sorry - No Image Available</a>
+		</venda_block label=5>
+	</li>
+	<li><venda_invtdesc2></li>
+	<venda_block label=10,invtatrtot&lt;1>
+	<!-- if product doesn't have attributes -->
+	<li><venda_currsym><venda_invtsell></li>
+	</venda_block label=10>
+	<venda_block label=20,invtatrtot&gt;0>
+	<!-- if product does have attributes -->
+	<li>
+        <venda_block invtatrminsubsell&gt;0.00>From <venda_currsym><venda_invtatrminsubsell></venda_block>
+        <venda_block invtatrminsubsell=0.00><venda_invtsymsell></venda_block>
+    </li>
+	</venda_block label=20>
+	<li><a href="<venda_dispview invt=<venda_invtref>>">More Info</a></li>
+</ul>
+</venda_detblock>
+
+<div id="featured">
+<h2>Featured Products</h2>
+<venda_detail>
+</div>

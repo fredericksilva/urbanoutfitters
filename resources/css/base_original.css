@@ -3911,7 +3911,21 @@ a:hover.quickBuyDetails {
 
 /* @end */
 
+.promoLoading .loadingImg {
+    background: url("../images/uo-loading.gif") no-repeat scroll center center #fff;
+    display: block;
+    border: 1px solid #ccc;
+}
+.promoLoading .waitMsg {
+  width: auto !important;
+}
 
+.waitMsg img {
+  display: none !important;
+}
 
+#ustandc label {
+  width: auto;
+}
 
 	

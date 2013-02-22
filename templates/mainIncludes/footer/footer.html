@@ -72,17 +72,19 @@
       <ul>
         <li><a href="<venda_dispview page=storelocator>">UO Stores</a></li>
         <li><a href="<venda_dispview page=joblist>">Careers</a></li>
-        <li><a href="http://us.urbanoutfitters.com/urban/index.jsp">US site</a></li>
       </ul>
       
       <ul>
         <li><a href="<venda_dispview page=emailsignup>">Email sign up</a><li>
-        <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
-        <li><a href="<venda_dispview page=catalogue_uk>">Catalogue Sign Up</a></li>
-        </venda_block label=1>
-		<!-- mp_trans_disable_start --> 
+        <!-- mp_trans_remove_start-->
+        <li><a href="<venda_dispview page=spring_signup>">Catalogue Sign Up</a></li>
+        <!-- mp_trans_remove_end-->
+		<!-- mp_trans_disable_start -->
+			<!-- mp_trans_add="FR"
+            <li><a href="<venda_dispview page=spring_signup>">Recevez notre catalogue</a></li>
+            -->
         	<!-- mp_trans_add="DE"
-            <li><a href="<venda_dispview page=catalogue_de>">Katalog Anmeldung</a></li>
+            <li><a href="<venda_dispview page=spring_signup>">Katalog Anmeldung</a></li>
             --> 
         <!-- mp_trans_disable_end -->
         <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
@@ -95,6 +97,10 @@
     <h4 class="foot">Let's get social</h4>
     <div class="footer-details clearfix social">
     	<ul class="getSocial">
+      <li><a target="_blank" href="http://open.spotify.com/user/urbanoutfitterseurope/playlist/296jRH3W0cibUDnQIUTGRW" class="foot-sp"></a></li>
+			<li><a class="foot-blog" href="http://blog.urbanoutfitters.co.uk/" target="_blank"></a></li>
+			<li><a class="foot-uotv" href="<venda_dispview scat=community>&temp=community_archive#uotv"></a></li>	
+		  <li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>			
     		<!-- mp_trans_remove_start-->
             <li><a target="_blank" href="http://twitter.com/uoeurope" class="foot-tw"></a></li>
 			<li><a target="_blank" href="http://www.facebook.com/urbanoutfitterseurope" class="foot-fb"></a></li>
@@ -114,10 +120,6 @@
 			<li><a target="_blank" href="http://www.flickr.com/photos/urbanoutfitterseurope/" class="foot-fl"></a></li>
 			<li><a target="_blank" href="http://www.youtube.com/urbanoutfitterscouk" class="foot-yt"></a></li>
 		    <li><a target="_blank" href="http://vimeo.com/user8503565" class="foot-vm"></a></li>
-			<li><a target="_blank" href="http://open.spotify.com/user/urbanoutfitterseurope/playlist/296jRH3W0cibUDnQIUTGRW" class="foot-sp"></a></li>
-			<li><a class="foot-blog" href="http://blog.urbanoutfitters.co.uk/" target="_blank"></a></li>
-		    <li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>			
-			<li><a class="foot-uotv" href="<venda_dispview scat=community>&temp=community_archive#uotv"></a></li>	
 		</ul>
     </div>
   </div>

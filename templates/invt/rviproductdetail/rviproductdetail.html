@@ -1,0 +1,34 @@
+<li>
+<!-- include spotlight template or customise below -->
+<div class="featprods" id="rvidiv">
+	<div class="image">	
+		<venda_block label=141,med-thumb=notnull>
+			<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=thumb></a>
+		</venda_block label=141>
+		<venda_block label=142,med-thumb=null>
+			<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_thumb.gif" alt="<venda_text id=site.link.alt.no_image.invt>"></a>
+		</venda_block label=142>
+	</div>
+	<venda_block label=52460,pdxtdeptimage=notnull>
+			<venda_story template=overlay_t,story=<venda_pdxtdeptimage>>
+	</venda_block label=52460>
+
+	<div class="details">
+		<h3><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></h3>
+		<venda_block label=10,invtatrtot&lt;1>
+		<!-- if product doesn't have attributes -->
+		<p class="<venda_block label=171,invtwas=null>price</venda_block label=171><venda_block label=172,invtwas=notnull>pricered</venda_block label=172>"><venda_currsym><venda_invtsell></p>
+		<p class="was"><venda_block label=173,invtwas=notnull><venda_text id=site.was><span><venda_currsym><venda_invtwas></span></venda_block label=173></p>
+		</venda_block label=10>
+		
+		<venda_block label=20,invtatrtot&gt;0>
+		<!-- if product does have attributes -->
+		<p class="<venda_block label=1001,invtatrminsubwas=0.00,invtatrminsubwas=null,operator=or>priceatt priceDiv</venda_block label=1001><venda_block label=1002,invtatrminsubwas&gt;0.00>priceattred priceDiv</venda_block label=1002>"><venda_block invtatrminsubsell&gt;0.00><venda_currsym><venda_invtatrminsubsell></venda_block><venda_block label=1200,invtatrminsubsell=0.00><venda_currsym><venda_invtsell></venda_block label=1200></p>
+		<venda_block invtatrminsubwas&gt;0.00>
+		<div class="was"><span id="wasDiv_<venda_invtuuid>Label"><venda_text id=site.was> </span><span id="wasDiv_<venda_invtuuid>"><venda_currsym><venda_invtatrminsubwas></span></div>
+		</venda_block>
+		</venda_block label=20>		
+	</div>	
+	<div class="clear-all"></div>
+</div>
+</li>

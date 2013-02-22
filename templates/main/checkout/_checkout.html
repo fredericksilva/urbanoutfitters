@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="<venda_block label=10,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=10><venda_block label=11,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=11>" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="<venda_block label=20,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=20><venda_block label=21,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=21>" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="<venda_block label=30,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=30><venda_block label=31,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=31>" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<venda_block label=40,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=40><venda_block label=41,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=41>" class="no-js"> <!--<![endif]-->
+<head>
+    <venda_menu template=title>
+    <venda_page page=metainformation>
+    <venda_menu template=css>
+    <venda_menu template=js>
+<!-- Web Trends tag -->
+<venda_inctemplate name=webtrendsFooter,type=includes/webtrends>
+<!-- Web Trends tag -->
+</head>
+<body id="<venda_rtype>_<venda_ref>">
+<venda_menu template=admin>
+<venda_menu template=demo>
+<div class="wrapper">
+    <!-- Webtrends Optimize -->
+    <script type="text/javascript">
+        window.onload = function () {
+            WTOptimize.setup({ s_pageTimeout: 8000 });
+        }
+    </script> 
+    <!-- Webtrends Optimize End -->
+	<a href="#content" class="hide"><venda_text id=site.skip_to_content></a>
+	<div class="mainHeader container_24">
+	<venda_block label=111,workflow=shopcart,workflow=instore,workflow=singleadbook,operator=or>
+	<venda_block label=102,mode=value,<venda_tpxt mode=get,name=orsc>=1><venda_inctemplate name=header,type=mainIncludes><venda_inctemplate name=topNavigation,type=mainIncludes></venda_block label=102>
+	<venda_block label=103,mode=value,<venda_tpxt mode=get,name=orsc>!=1,<venda_param1>=instore,operator=or><venda_inctemplate name=checkoutHeader,type=mainIncludes></venda_block label=103>
+	</venda_block label=111>
+	<venda_block label=222,workflow!=shopcart,workflow!=instore,workflow!=singleadbook>
+	<venda_block label=201,param1!=instore,param2!=delivertostore><venda_inctemplate name=header,type=mainIncludes><venda_inctemplate name=topNavigation,type=mainIncludes></venda_block label=201>
+	<venda_block label=202,param1=instore,param2=delivertostore,operator=or><venda_inctemplate name=checkoutHeader,type=mainIncludes></venda_block label=202>
+	</venda_block label=222>
+    <div class="clear-all"></div>
+	</div><!-- end mainHeader -->
+	<div class="checkoutTemplate contentWrapper container_24 clearfix">
+		<div class="content grid_24"><a name="content" id="content"></a><venda_content></div>
+	</div><!-- end content container -->
+	<div class="mainFooter container_24 clearfix">
+	<venda_block label=888,workflow=shopcart,workflow=instore,workflow=singleadbook,operator=or>
+	<venda_block label=801,mode=value,<venda_tpxt mode=get,name=orsc>=1><venda_inctemplate name=footer,type=mainIncludes></venda_block label=801>
+	<venda_block label=802,mode=value,<venda_tpxt mode=get,name=orsc>!=1,<venda_param1>=instore,operator=or><venda_inctemplate name=checkoutFooter,type=mainIncludes></venda_block label=802>
+	</venda_block label=888>
+	<venda_block label=999,workflow!=shopcart,workflow!=instore,workflow!=singleadbook>
+	<venda_block label=901,param1!=instore,param2!=delivertostore><venda_inctemplate name=footer,type=mainIncludes></venda_block label=901>
+	<venda_block label=902,param1=instore,param2=delivertostore,operator=or><venda_inctemplate name=checkoutFooter,type=mainIncludes></venda_block label=902>
+	</venda_block label=999>		</div><!-- end mainFooter -->
+</div><!-- end wrapper -->
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_inctemplate name=bodyBottom,type=tracking/shared>
+<venda_inctemplate name=tealiumtracking,type=includes/tracking>
+</body>
+</html>

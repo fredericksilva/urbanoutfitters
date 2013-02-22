@@ -1,0 +1,204 @@
+/* @override http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/resources/css/styleguide.css */
+
+
+@charset "UTF-8";
+
+/* ##########################################
+   * DO NOT DELETE @group and @end COMMENTS * 
+   ########################################## */
+   
+/* @group GENERAL STYLES */
+
+/* **styles for v5+ browsers** */
+
+body {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-size:100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* display elements */
+
+h1, h2, h3, p {
+	margin:.5em 0;
+	padding:0;
+}
+h1 {font-size:1.6em;}
+h2 {font-size:1.4em;color:#000000;}
+h3 {font-size:1.2em; border-bottom:1px solid #000000;
+}
+p {font-size:0.75em;}
+a {
+	text-decoration: underline;
+	color:#000000;
+}
+a:hover {text-decoration:none;}
+
+.error {color:#1f79ac;background:#fff;}
+
+.bold {font-weight:bold;}
+
+.normal {font-weight:normal;}
+
+/* list elements */
+ul { margin:0; padding:0; list-style:none; }
+
+
+ul.bullet li{ padding:2px; list-style: disc outside; margin:0 18px; }
+
+/* admin elements */
+#admin, #admin a {	position:absolute; margin:0; background:#f00; color:#fff; display:none;}
+#admin {text-align:center;}
+
+/* hidden elements */
+.hide {display:none;}
+.left {float:left;}
+.right {float:right;}
+.clear-all { clear:both; height:0;	line-height:0;	font-size:0;}
+
+/* start styles to centre content (remove these styles if site should be left-aligned) */
+
+body {	text-align:left; /* centres content in ie4/5 */}
+
+#buttons {	overflow:hidden; width: 620px;	padding:5px; }
+
+/* @end */
+
+/* @group STRUCTURE */
+
+/* structural elements */
+#wrapper {	
+	margin: 0;	
+	text-align:center; 
+	width:100%;
+	}
+#contentwrapper {	
+	width:96%;
+	width:960px;
+	min-width: 960px;
+	padding:0 20px 0 20px;
+	margin: 0 auto;
+	}
+
+
+#col-one {
+	width:190px;
+	float:left;
+	padding-left:10px;
+	padding-right:20px;
+}
+#col-two {
+	width:700px;
+	padding-right:10px;
+	float:right;
+	margin:0 0 20px 0;
+}
+#col-two-searchresults {
+	width:660px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#col-two-three { 
+	width:785px;
+	float:right;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	margin-bottom:20px;
+	text-align:left;
+}
+#col-three {
+	width:150px;
+	float:right;
+}
+#static-wrapper{
+	width:930px;
+	background:#FFFFFF;
+	padding:0 0 0 20px;
+}
+
+/* @end */
+
+/* @group HEADER */
+
+    
+/* LOGO */
+
+#headerlogo {	
+	margin:10px auto 8px;
+	padding-top: 5px;
+}
+
+
+/* ** SIMPLE TOP NAV ** */
+
+#maintopnav {	
+	clear:both;
+}	
+
+
+#menutopnav ul li{display: inline;}	
+
+#menutopnav ul li.noml{
+	margin:0 0 0 0;
+	float:left;
+}
+		
+#topnav {	
+	color:#000000;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;	
+	line-height:27px;
+	text-transform:uppercase;
+	margin: 0 auto 5px auto;
+}
+
+
+#topnav li { display: inline; margin-right: 2%; }
+
+
+#topnav a{
+	color:#000000;
+	text-decoration:none;
+	padding:1px;
+}
+#topnav a:hover{ color:#00ccff;}
+#topnav a.current{/*background-color:#FFFF00;*/}
+#topnav a.Sale{color:#000000;}
+#topnav a.Sale:hover{color:#00ccff;}
+
+/* ** SIMPLE TOP NAV END ** */
+
+/* @end */
+
+/* @group SS 2012 LookBook */
+
+#SS12LB { 
+    position: relative;
+	border-top: 4px solid #FC2D28; 
+	border-bottom: 4px solid #FC2D28;
+	/*background: #f1efed; */
+	margin-bottom: 20px;
+	}
+	
+#SS12LB .title-top { height: 2em;}
+#SS12LB .title-top img { margin: 0.625em auto; }
+
+#SS12LB .title-bottom { height: 1.875em;}
+#SS12LB .title-bottom img { margin: 0.625em auto; }
+
+#SS12LB ul#wshots img { width:192px; border: 0; padding: 0; margin: 0; }
+#SS12LB ul#mshots img { width:192px; border: 0; padding: 0; margin: 0; }
+
+
+#SS12LB ul#wshots li { float: left; display: inline; margin: 0; padding: 0; border: 0; letter-spacing:0; line-height:0; }
+
+#SS12LB ul#mshots li { float: left; display: inline; margin: 0; padding: 0; border: 0; letter-spacing:0; line-height:0; }
+
+
+/* @end */
+
+
+

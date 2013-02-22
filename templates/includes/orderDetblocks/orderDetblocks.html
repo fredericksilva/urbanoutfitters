@@ -78,15 +78,16 @@
 	<venda_block label=36,allgiftcert!=1></venda_block label=36>
 	<!-- start Return Request -->
 	<venda_block label=308,pkstatus=5,allgiftcert!=1>
-		<p>To return item(s), select a reason from the dropdown below and enter your comments in the space provided, then click 'Return'.</p>
+		<!-- <p>To return item(s), select a reason from the dropdown below and enter your comments in the space provided, then click 'Return'.</p>
 		<p>Then please wait for Customer Service to contact you.</p>
 		<p>If you have any problems, please send an email to <a href="mailto:<venda_ebizemail>"><venda_ebizemail></a></p>
 		<script language="javascript" type="text/javascript">
 		function popup(theURL,winName,features) {
 			window.open(theURL,winName,features);
 		}
-		// -->
+		//
 		</script>
+		
 		<p><a href="#" onClick="popup('<venda_dispview page=privacy#returns>','popup','scrollbars=yes,resizable=yes,width=420,height=260'); return false;" class="blacklink">Please see our full Returns Policy here.</a></p>
 		<p><strong>Please complete a reason for return below:</strong><br>
 			<select name="field3">
@@ -96,7 +97,7 @@
 			<br>
 			<textarea cols="40" rows="3" wrap="soft" name="field4"></textarea>
 		</p>
-		<a href="javascript:showValues()"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_return.gif" border="0" alt="return items" class="right"></a>
+		<a href="javascript:showValues()"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_return.gif" border="0" alt="return items" class="right"></a> -->
 	</venda_block label=308>
 	<!-- end Return Request -->
 </div>
@@ -125,12 +126,17 @@
 		                </td>
 	                </venda_block label=310>
 		            <td rowspan="2">
-			            <venda_block label=119,med-thumb=notnull>
-				            <venda_media rec=invt,type=movie-swf-pict,key=thumb,alt=<venda_invtname>,width=67,height=103>
-			            </venda_block label=119>
-			            <venda_block label=120,med-thumb=null>
-				            <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_thu.jpg" alt="Image Not Available" style="width:67px;height:93px;">
-			            </venda_block label=120>
+			            <!-- mp_trans_remove_start-->
+		            		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+		            	<!-- mp_trans_remove_end-->
+		            	<!-- mp_trans_disable_start-->
+		            		<!-- mp_trans_add="FR"
+		            			<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+			            	-->
+			            	<!-- mp_trans_add="DE"
+				            	<img src="<venda_protocol>://dsa-www.urbanoutfitters.co.uk/content/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" style="width:73px;height:110px;" />
+			            	-->
+			            <!-- mp_trans_disable_end-->
 		            </td>
                     <th class="item"><venda_text id=order.item></th>
 	                <th class="price"><venda_text id=order.price></th>
@@ -176,10 +182,28 @@
                         <input type="hidden" class="venda_oishipname" value="<venda_oishipname>" />
 		            </td>
                     <td class="priceeach">
-                        <span class="pounds"><venda_currsym><venda_invtsell></span>
-                        <venda_block label=19,invtwas=notnull>
-                            <span class="was">(Was <venda_currsym><venda_invtwas>)</span>	
-                        </venda_block label=19>
+                                <venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
+	                                <venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+		                                <span><venda_currsym><venda_invtatrmaxsubsell></span>
+			                        </venda_block label=211>
+			                        <venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+				                        <span><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></span>
+					                </venda_block label=221>
+					            </venda_block label=555>
+					            <venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
+									<span>
+										<span class="saleprice">
+											<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=211>
+											<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
+												<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+											</venda_block label=221>
+										</span>
+										<span class="was">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+									</span>
+								</venda_block label=666>
+							</venda_block label=20>
 
                         <div style="display:none;" class="invtref"><venda_block label=1001,invtparef=notnull><venda_invtparef></venda_block label=1001><venda_block label=1002,invtparef=null><venda_invtref></venda_block label=1002></div>
                         <div style="display:none;" class="invtname"><venda_invtname></div>

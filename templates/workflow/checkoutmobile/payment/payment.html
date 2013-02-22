@@ -1,0 +1,18 @@
+<venda_paymenttypes ohrfnbr=<venda_ohrfnbr>,template=paymenttypes_wz_orpayment,templatetype=paytype/frontend>
+
+<div id="wizard_confirm_button">
+	<venda_form>
+	<venda_wizbutton step=next,mode=process,value=<venda_text id=mobile.button.confirm_payment>,check=yes>
+	</form>
+</div>
+
+<!-- 
+workflow: <venda_workflow>
+step: <venda_curstep>
+param1: <venda_param1>
+param2: <venda_param2>
+page: wz_orpayment-empty.html
+-->
+ 
+<venda_tpxt mode=set,name=track,value=orpayment-empty>
+<venda_tpxt mode=set,name=curstep,value=step4>

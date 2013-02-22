@@ -1,0 +1,86 @@
+<script type="text/javascript">
+var validator;
+jQuery(function() {
+	<venda_block label=addressbookaddedit,curstep=addressbookadd,curstep=addressbookedit,operator=or>
+	validator = jQuery("form[name='<venda_curstep>form-address']").formValidator();
+	</venda_block label=addressbookaddedit>
+
+	<venda_block label=Notaddressbookaddedit,curstep!=addressbookadd,curstep!=addressbookedit>
+	validator = jQuery("form[name='<venda_curstep>form']").formValidator();
+	</venda_block label=Notaddressbookaddedit>	
+	<venda_block label=169,curstep!=paymentoptions>
+	validator.validateFields([{id: "title", rules:{
+													required: "<venda_text id=mobile.validation.title>"
+													}},
+							{ id: "fname", rules: {
+													required: "<venda_text id=mobile.validation.fname>",
+													onlyLetter: ""
+													}},
+							{ id: "lname", rules: {
+													required: "<venda_text id=mobile.validation.lname>",
+													onlyLetter: ""
+													}},
+							{ id: "cntrylist", rules: {
+													required: "<venda_text id=mobile.validation.country>",
+													onlyLetter: ""
+													}},
+							{ id: "num", rules: {
+													required: "<venda_text id=mobile.validation.house_num>"
+													}},
+							{ id: "addr1", rules: {
+													required: "<venda_text id=mobile.validation.addr1>"
+													}},
+							{ id: "city", rules: {
+													required: "<venda_text id=mobile.validation.city>"
+													}},
+							{ id: "state", rules: {
+													required: "<venda_text id=mobile.validation.state>"
+													}},
+							{ id: "zipc", rules: {
+													required: "<venda_text id=mobile.validation.postcode>"
+													}},
+							{ id: "zcdropdown", rules: {
+													required: ""
+													}},
+							{ id: "phone", rules: {
+													required: "<venda_text id=mobile.validation.phone>",
+													phone: ""
+													}},
+							{ id: "usemail", rules: {
+													required: "<venda_text id=mobile.validation.email>",
+													email: ""
+													}},
+							{ id: "uspswd", rules: {
+													required: "<venda_text id=mobile.validation.password>",
+													length: {min:5, max:0, msg:"<venda_text id=mobile.validation.verify_password_length>"}
+													}},
+							{ id: "uspswd2", rules: {
+													required: "<venda_text id=mobile.validation.verify_password>",
+													matched: {fMatched:"uspswd", msg:"<venda_text id=mobile.validation.verify_password_match>"}
+													}}
+							
+	]);
+	</venda_block label=169>
+	<venda_block label=170,curstep=paymentoptions>
+	validator.validateFields([{id: "ohccnum", rules:{
+													required: "<venda_text id=mobile.validation.credit_card_number>"
+													}},
+							{ id: "ohccname", rules: {
+													required: "<venda_text id=mobile.validation.credit_card_name>"
+													}},
+							{ id: "ohcccsc", rules: {
+													required: "<venda_text id=mobile.validation.security_code_required>",
+													onlyNumber: "",
+													length: {min:3, max:4, msg:"<venda_text id=mobile.validation.security_code_length>"}
+													}},
+							{ id: "cardtype", rules: {
+													required: ""
+													}}
+	]);
+	/*validator.validateCustom({ id1: "month", id2: "year", validator: "cardExpiredValidator", nowDate: "<venda_dateformat type=digit,format=mm/dd/yyyy,suffix=0,date=now>", msg: "<venda_text id=mobile.validation.credit_card_expired>"});*/
+	</venda_block label=170>
+});
+
+</script>
+<venda_tpcomment><!-- start: tag values used for inline validation --></venda_tpcomment>
+<venda_inctemplate name=defaultErrorMessagesMobile,type=includes>

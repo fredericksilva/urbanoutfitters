@@ -1,0 +1,110 @@
+	<div class="paybycredit bgDark">
+	<h3><input type="radio" name="ohpaytype" value="0" id="creditcard" <venda_block label=18,paymentselected=notnull>checked="checked"</venda_block label=18> onclick="autoSelect(this)"> 
+		<label for="creditcard">
+			<span class="creditCard"><venda_text id=mobile.heading.credit_card></span>
+			<span><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/creditcards_opt.png" alt="<venda_text id=mobile.info.payment_accepted_credit_cards>" class="creditcardsimg"/></span>
+		</label>
+		
+	</h3>
+
+		
+	<venda_block label=12,paymentavailable=notnull>
+	  <!-- credit card payment -->
+		<venda_tpcomment><!--div data-role="fieldcontain" class="credit<venda_block label=14,paymenttypestot=1> hide</venda_block label=14>">
+			<input type="radio" name="ohpaytype" value="0" id="creditcard" <venda_block label=18,paymentselected=notnull>checked="checked"</venda_block label=18> onclick="autoSelect(this)"> <label for="creditcard"><span><venda_text id=mobile.form.pay_by_credit></span></label>
+			<p class="paypalinfo"><venda_text id=mobile.info.payment_info></p>
+		</div--></venda_tpcomment>
+
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<label for="cardtype"><venda_text id=mobile.form.card_type></label> 
+			<select name="cardtype" id="cardtype">
+				<option value="" selected>CARD TYPE</option>
+				<option><venda_paymentselectmethod></option>
+			</select>
+		</div>
+
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<label for="ohccnum" id="ohccnum-label"><venda_text id=mobile.form.card_number></label> 		
+			<input id="ohccnum" type="number" name="ohccnum" value="<venda_ohccnum>" placeholder="<venda_text id=mobile.form.card_number> <venda_text id=mobile.form.required>" required/>
+		</div>
+
+		<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="ohccname"><venda_text id=mobile.form.card_name></label>
+		<input id="ohccname" type="text" name="ohccname" value="<venda_ohccname>" size="16" placeholder="<venda_text id=mobile.form.card_name> <venda_text id=mobile.form.required>" maxlength="50" required />
+		</div>
+		<div class="carddates">
+		<venda_block label=124,mode=value,<venda_setting type=ebiz,name=disablecreditcardstartdate>!=1>
+			
+		<script>
+			jQuery(document).bind('pageinit',function(){
+				jQuery("#startdateshow div.ui-select .ui-btn").each(function(){
+					if(jQuery(this).find("#startmonth").size()>0) { 
+						jQuery(this).find("#startmonth option").each(function(){if(jQuery(this).val()=="") jQuery(this).remove();});
+						if(jQuery(this).find(".ui-btn-text").text()== "") jQuery(this).find(".ui-btn-text").text("Month");
+					}
+					if(jQuery(this).find("#startyear").size()>0) { 
+						jQuery(this).find("#startyear option").each(function(){if(jQuery(this).val()=="") jQuery(this).remove();});
+						if(jQuery(this).find(".ui-btn-text").text()== "") jQuery(this).find(".ui-btn-text").text("Year");
+					}
+				});
+				jQuery("#expiryshow div.ui-select .ui-btn").each(function(){
+					if(jQuery(this).find("#month").size()>0) { 
+						jQuery(this).find("#month option").each(function(){if(jQuery(this).val()=="") jQuery(this).remove();});
+						if(jQuery(this).find(".ui-btn-text").text()== "") jQuery(this).find(".ui-btn-text").text("Month");
+					}
+					if(jQuery(this).find("#year").size()>0) { 
+						jQuery(this).find("#year option").each(function(){if(jQuery(this).val()=="") jQuery(this).remove();});
+						if(jQuery(this).find(".ui-btn-text").text()== "") jQuery(this).find(".ui-btn-text").text("Year");
+					}
+				});
+			});
+		</script>
+		<div data-role="fieldcontain" id="startdateshow" class="startdate">
+		<fieldset data-type="horizontal" data-role="controlgroup">
+		<legend><venda_text id=mobile.form.start_date></legend>
+		<div class="cardstartmonth"><label for="startmonth"><venda_text id=mobile.form.month></label><venda_startmonth field=combo></div>
+		<div class="cardstartyear"><label for="startyear"><venda_text id=mobile.form.year></label><venda_startyear field=combo></div>
+		</fieldset>
+		</div>
+		</venda_block label=124>
+		<div data-role="fieldcontain" id="expiryshow" class="expiredate">
+		<fieldset data-type="horizontal" data-role="controlgroup">
+		<legend><venda_text id=mobile.form.expiry_date></legend>
+		<div class="cardstartmonth"><label for="month"><venda_text id=mobile.form.month></label><venda_month field=combo></div>
+		<div class="cardstartyear"><label for="year"><venda_text id=mobile.form.year></label><venda_year field=combo></div>
+		</fieldset>
+		</div>
+		</div>
+
+		<div data-role="fieldcontain" id="ohcccscshow" class="ui-hide-label bgLight">
+		<label for="ohcccsc"><venda_text id=mobile.form.security_code> <venda_text id=mobile.form.required></label>
+		<input id="ohcccsc" type="text" pattern="[0-9]*" name="ohcccsc" value="<venda_ohcccsc>" size="4" placeholder="<venda_text id=mobile.form.security_code>" maxlength="4" required/>
+		<div class="securitycode"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/securitycode.png" alt="" border="0" /></div>
+		</div>
+
+		<venda_block label=125,mode=value,<venda_setting type=ebiz,name=disablecreditcardissuenumber>!=1>
+		<div data-role="fieldcontain" id ="issuenumber" class="ui-hide-label">
+		<label for="ohccissue"><venda_text id=mobile.form.card_issue></label> 
+		 <input id="ohccissue" type="text" name="ohccissue" value="<venda_ohccissue>" size="4" placeholder="<venda_text id=mobile.form.card_issue> <venda_text id=mobile.form.switch_solo>" maxlength="3" />
+		</div>
+		</venda_block label=125>
+
+		<venda_block label=190,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p>
+		<div data-role="fieldcontain" class="dontsave">
+		<venda_block label=151,dontsavecc=null>
+		<input type="checkbox" name="dontsavecc" id="dontsavecc" value="1"> <label for="dontsavecc"><venda_text id=mobile.form.dont_save_card></label>
+		</venda_block label=151>
+
+		<venda_block label=153,dontsavecc=notnull>
+		<input type="checkbox" name="dontsavecc" id="dontsavecc" value="1" checked="checked"> <label for="dontsavecc"><venda_text id=mobile.form.dont_save_card></label>
+		</venda_block label=153>
+		</div>
+		</venda_block label=190>
+
+		<venda_block label=191,mode=value,<venda_glxt mode=get,name=glxtusertype>=p>
+		<!-- do not show during express checkout as payment details are not saved anyway -->
+		<input type="hidden" name="dontsavecc" value="1">
+		</venda_block label=191>
+
+	</venda_block label=12>
+</div>

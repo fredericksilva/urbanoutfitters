@@ -1,0 +1,22 @@
+<venda_detblock_package>
+	<venda_detblock_packageitem><p><span class="qtyofproduct"><venda_oiqty> x </span><span class="nameofproduct"> <venda_oiivname> <venda_tpcomment><!--- <venda_oiextsub>--></venda_tpcomment></span></p></venda_detblock_packageitem>
+	
+	<venda_detail_packageitem>
+</venda_detblock_package>
+
+<li data-role="list-divider"><venda_text id=mobile.info.order_number>: <span><venda_ohordnum></span></li>
+<li data-corners="false" data-icon="arrow-r" data-iconpos="right">
+<a href="<venda_codehttps>?ex=co_wizr-myaccountmobile&bsref=<venda_bsref>&step=displayorder&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>" data-ajax="false">
+<venda_detail_package>
+<p class="status"><venda_text id=mobile.info.order_item_status>: <span><venda_ohstatus></span></p>
+</a>
+</li>
+
+<venda_tpcomment> <!-- Need to replace ohstatus with conditions as it prints text not a numerical value in venda_order
+<venda_block label=10,ohstatus=2><venda_text id=mobile.info.order_status_in_progress></venda_block label=10>
+	<venda_block label=11,ohstatus=3><venda_text id=mobile.info.order_status_released_for_delivery></venda_block label=11>
+	<venda_block label=12,ohstatus=4><venda_text id=mobile.info.order_status_backordered></venda_block label=12>
+	<venda_block label=13,ohstatus=5><venda_text id=mobile.info.order_status_delivered></venda_block label=13>
+	<venda_block label=14,ohstatus=6><venda_text id=mobile.info.order_status_returned></venda_block label=14>
+	<venda_block label=15,ohstatus=7><venda_text id=mobile.info.order_status_cancelled></venda_block label=15> -->
+</venda_tpcomment>	

@@ -1,0 +1,240 @@
+<venda_block label=mobile,workflow=checkoutmobile>
+	<venda_tpcomment><!-- content for mobile site version of 3dsecure --></venda_tpcomment>
+	<script type="text/javascript">
+		<venda_tpcomment>/* XXX Copy of functions in sitewide.js. */</venda_tpcomment>
+
+		function threedsecure_addEvent(elm, evType, fn, useCapture){if(elm.addEventListener){elm.addEventListener(evType, fn, useCapture);return true;}else if (elm.attachEvent){var r = elm.attachEvent('on' + evType, fn);return r;}else{elm['on' + evType] = fn;}}
+
+		//hide element
+		function threedsecure_hideThis(id){
+			var ele = document.getElementById(id);
+			if (ele){
+			ele.style.visibility = "hidden";
+			ele.style.display = "none";
+			}
+		}
+	</script>
+
+	<venda_block label=40,11,paymentredirect=notnull>
+	<!--
+	This block serves as a workaround to Ogone's multiple redirect submissions to the Venda site.
+	The process step is invoked via the display step to avoid getting 'Multiple Hit' errors.
+	-->
+			<script type="text/javascript">
+				threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+				function loadReceipt() {
+					NextStep2(document.wizform,"process","","","_self","yes","","","");
+				}
+				threedsecure_addEvent(window, 'load', loadReceipt, false);      
+			</script>
+			<p><venda_text id=daca-interstitialwait></p>
+
+			<noscript>
+				<h2><venda_text id=adm_2227></h2>
+				<h3><venda_text id=adm_2228></h3>
+				<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+			</noscript>
+	</venda_block label=40>
+
+	<venda_block label=1,paymentinterstitial=null>
+	<venda_block label=11,paymentredirect=null>
+	<venda_tpcomment><!-- Submitting this form loads 3D secure in the iFrame --></venda_tpcomment>
+	<div id="content-3dsecure">
+		<div id="secure">
+			<a name="content" id="content"></a>
+			<venda_block label=22,payment3dsecureframe=notnull>
+			<h1><venda_text id=daca-redirect1></h1> 
+			<ul>
+				<li><venda_text id=daca-redirect2></li> 
+				<li><venda_text id=daca-redirect3></li> 
+				<li><venda_text id=daca-redirect4></li> 
+				<li><venda_text id=daca-redirect5></li>
+			</ul>
+			</venda_block label=22>
+			<venda_block label=23,payment3dsecureframe=null>
+				<h1><venda_text id=3dsecure_redirecting></h1>
+			</venda_block label=23>
+		
+			<venda_block label=24,paymenthtml=null>	
+				<form name="downloadForm" action="<venda_paymentbankurl>" method="POST" <venda_block payment3dsecureframe=notnull>target="bank" </venda_block>>			
+				<textarea name="PaReq" style="display:none"><venda_paymentpareq></textarea>
+				<!-- NEED TO CREATE NEW LAYOUT FOR RETURN URL, OR HIDE CLOSE WINDOW BUTTON WITH CSS-->
+				<input type="hidden" name="TermUrl" value="<venda_paymentreturnurl>&layout=child">
+				<input type="hidden" name="MD" value="<venda_paymentohrfnbr>">
+
+				<script type="text/javascript">
+					//hide paypal confirm button
+					threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+
+					function load3DSecure() {
+						document.downloadForm.submit();
+					}
+					threedsecure_addEvent(window, 'load', load3DSecure, false);
+				</script>
+			
+				<noscript>
+					<h2><venda_text id=adm_2227></h2>
+					<h3><venda_text id=adm_2228></h3>
+					<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+				</noscript>
+			
+				</form>
+			</venda_block label=24>
+
+			<venda_block label=25,paymenthtml=notnull>
+				<venda_paymenthtml>
+			</venda_block label=25>
+			
+			<venda_block label=21,payment3dsecureframe=notnull>
+				<iframe src="/page/3dsecure" frameborder="0" width="480" height="480" name="bank" id="bank" title="3D Secure Authentication"></iframe>
+			</venda_block label=21>
+			<div class="clear-all"><!-- ns6 hack --></div>
+		</div>
+	</div>
+	</venda_block label=11>
+	</venda_block label=1>
+
+	<venda_block label=2,paymentinterstitial=notnull>
+	<venda_tpcomment><!-- This loads in the iframe after 3d secure authentication. Form submits to break out of iframe --></venda_tpcomment>
+	<div id="authenticated">
+		<form name="interstitial" action="<venda_paymentinterstitial>" method="POST" target="_top">
+		<script type="text/javascript">
+			threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+			function loadReceipt() {
+				document.interstitial.submit();
+			}
+			threedsecure_addEvent(window, 'load', loadReceipt, false);	
+		</script>
+		<p><venda_text id=daca-interstitialwait></p>
+
+		<noscript>
+		<h2><venda_text id=adm_2227></h2>
+		<h3><venda_text id=adm_2228></h3>
+			<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+		</noscript>
+
+		</form>
+	</div>	
+	</venda_block label=2>
+<venda_tpxt mode=set,name=track,value=3dsecure>	<!-- do not remove, use for google analytics on mobile -->
+</venda_block label=mobile>
+
+<venda_block label=notmobile,workflow!=checkoutmobile>
+	<venda_tpcomment><!-- content for desktop site version of 3dsecure --></venda_tpcomment>
+	<script type="text/javascript">
+		<venda_tpcomment>/* XXX Copy of functions in sitewide.js. */</venda_tpcomment>
+
+		function threedsecure_addEvent(elm, evType, fn, useCapture){if(elm.addEventListener){elm.addEventListener(evType, fn, useCapture);return true;}else if (elm.attachEvent){var r = elm.attachEvent('on' + evType, fn);return r;}else{elm['on' + evType] = fn;}}
+
+		//hide element
+		function threedsecure_hideThis(id){
+			var ele = document.getElementById(id);
+			if (ele){
+			ele.style.visibility = "hidden";
+			ele.style.display = "none";
+			}
+		}
+	</script>
+
+	<venda_block label=40,11,paymentredirect=notnull>
+	<!--
+	This block serves as a workaround to Ogone's multiple redirect submissions to the Venda site.
+	The process step is invoked via the display step to avoid getting 'Multiple Hit' errors.
+	-->
+			<script type="text/javascript">
+				threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+				function loadReceipt() {
+					NextStep2(document.wizform,"process","","","_self","yes","","","");
+				}
+				threedsecure_addEvent(window, 'load', loadReceipt, false);      
+			</script>
+			<p><venda_text id=daca-interstitialwait></p>
+
+			<noscript>
+				<h2><venda_text id=adm_2227></h2>
+				<h3><venda_text id=adm_2228></h3>
+				<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+			</noscript>
+	</venda_block label=40>
+
+	<venda_block label=1,paymentinterstitial=null>
+	<venda_block label=11,paymentredirect=null>
+	<venda_tpcomment><!-- Submitting this form loads 3D secure in the iFrame --></venda_tpcomment>
+	<div id="content-3dsecure">
+		<div id="secure">
+			<a name="content" id="content"></a>
+			<venda_block label=22,payment3dsecureframe=notnull>
+			<h1><venda_text id=daca-redirect1></h1> 
+			<ul>
+				<li><venda_text id=daca-redirect2></li> 
+				<li><venda_text id=daca-redirect3></li> 
+				<li><venda_text id=daca-redirect4></li> 
+				<li><venda_text id=daca-redirect5></li>
+			</ul>
+			</venda_block label=22>
+			<venda_block label=23,payment3dsecureframe=null>
+				<h1><venda_text id=3dsecure_redirecting></h1>
+			</venda_block label=23>
+		
+			<venda_block label=24,paymenthtml=null>	
+				<form name="downloadForm" action="<venda_paymentbankurl>" method="POST" <venda_block payment3dsecureframe=notnull>target="bank" </venda_block>>
+				<input type="hidden" name="PaReq" value="<venda_paymentpareq>">
+				<!-- NEED TO CREATE NEW LAYOUT FOR RETURN URL, OR HIDE CLOSE WINDOW BUTTON WITH CSS-->
+				<input type="hidden" name="TermUrl" value="<venda_paymentreturnurl>&layout=child">
+				<input type="hidden" name="MD" value="<venda_paymentohrfnbr>">
+
+				<script type="text/javascript">
+					//hide paypal confirm button
+					threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+
+					function load3DSecure() {
+						document.downloadForm.submit();
+					}
+					threedsecure_addEvent(window, 'load', load3DSecure, false);
+				</script>
+			
+				<noscript>
+					<h2><venda_text id=adm_2227></h2>
+					<h3><venda_text id=adm_2228></h3>
+					<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+				</noscript>
+			
+				</form>
+			</venda_block label=24>
+
+			<venda_block label=25,paymenthtml=notnull>
+				<venda_paymenthtml>
+			</venda_block label=25>
+			
+			<venda_block label=21,payment3dsecureframe=notnull>
+				<iframe src="/page/3dsecure" frameborder="0" width="480" height="480" name="bank" id="bank" title="3D Secure Authentication"></iframe>
+			</venda_block label=21>
+			<div class="clear-all"><!-- ns6 hack --></div>
+		</div>
+	</div>
+	</venda_block label=11>
+	</venda_block label=1>
+
+	<venda_block label=2,paymentinterstitial=notnull>
+	<venda_tpcomment><!-- This loads in the iframe after 3d secure authentication. Form submits to break out of iframe --></venda_tpcomment>
+	<div id="authenticated">
+		<form name="interstitial" action="<venda_paymentinterstitial>" method="POST" target="_top">
+		<script type="text/javascript">
+			threedsecure_addEvent(window, 'load', function() { threedsecure_hideThis('wizard_confirm_button') }, false);
+			function loadReceipt() {
+				document.interstitial.submit();
+			}
+			threedsecure_addEvent(window, 'load', loadReceipt, false);	
+		</script>
+		<p><venda_text id=daca-interstitialwait></p>
+
+		<noscript>
+		<h2><venda_text id=adm_2227></h2>
+		<h3><venda_text id=adm_2228></h3>
+			<input type="submit" value="<venda_text id=adm_3>" id="3dsubmit">
+		</noscript>
+
+		</form>
+	</div>	
+	</venda_block label=2>
+</venda_block label=notmobile>

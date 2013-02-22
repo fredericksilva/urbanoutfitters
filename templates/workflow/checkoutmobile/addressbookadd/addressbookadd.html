@@ -1,0 +1,140 @@
+<div class="<venda_workflow> <venda_curstep>">
+
+<form method="post" name="<venda_curstep>form-address" action="<venda_codehttps>">
+<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+<input type="hidden" name="step" value="addressbook" />
+<input type="hidden" name="mode" value="process" />
+<input type="hidden" name="workflowid" value="<venda_workflowid>"> 
+<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+<input type="hidden" name="trrfnbr" value="<venda_trrfnbr>" />
+<input type="hidden" name="curstep" value="addressbookadd" />
+<input type="hidden" name="PrimaryForm">
+<input type="hidden" name="abrfnbr" value="<venda_abrfnbr>">
+<input type="hidden" name="param2" value="add">
+<input type="hidden" name="default" id="addrdefault" value="1" />
+
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<h1><venda_text id=mobile.heading.add_address><venda_block label=2,workflow=checkoutmobile><a href="http://www.venda.com/pci-compliance-certificate?referer=<venda_serveradd>" rel="external" target="_blank"><span class="hdr-pci"></span></a></venda_block label=2></h1>
+				<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+			</div>
+			
+			<venda_block label=48,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p,<venda_ustype>!=P>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="addrname"><venda_text id=mobile.form.addrname></label> 
+				<input type="text" name="addrname" id="addrname" class="firstLetter" value="<venda_addrname>" placeholder="<venda_text id=mobile.form.addrname>">
+			</div>
+			</venda_block label=48>
+			
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="title" class="select"><venda_text id=mobile.form.title></label>
+				<select name="title" id="title">
+					<option value="Mr"><venda_text id=mobile.form.title.mr></option>
+					<option value="Mrs"><venda_text id=mobile.form.title.mrs></option>
+					<option value="Miss"><venda_text id=mobile.form.title.miss></option>
+					<option value="Ms"><venda_text id=mobile.form.title.ms></option>
+					<option value=" " selected><venda_text id=mobile.form.title.other></option>
+				</select>
+			</div>
+					
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="fname"><venda_text id=mobile.form.fname></label> 	
+				<input type="text" name="fname" id="fname" class="firstLetter" value="<venda_sesfname>" placeholder="<venda_text id=mobile.form.fname> <venda_text id=mobile.form.required>" required />
+			</div>
+
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="lname"><venda_text id=mobile.form.lname></label> 	
+				<input type="text" name="lname" id="lname" class="firstLetter" value="<venda_seslname>" placeholder="<venda_text id=mobile.form.lname> <venda_text id=mobile.form.required>" required />
+			</div>
+			<hr>
+			<div data-role="fieldcontain" class="ui-hide-label chdropdown">
+				<label for="cntrylist"><venda_text id=mobile.form.country></label>
+				<venda_cntry field=combo,id=cntrylist>
+			</div>
+			<div data-role="fieldcontain" id="zipcDiv" class="ui-hide-label">
+				<label for="zipc" id="zipcLabel"><venda_text id=mobile.form.zipc></label> 
+				<input type="text" name="zipc" id="zipc" value="<venda_zipc>" placeholder="<venda_text id=mobile.form.zipc> <venda_text id=mobile.form.required>" required />
+			</div>
+			<div data-role="fieldcontain" id="zipcode" class="ui-hide-label">
+				<label for="zipc" id="zipcLabel"><venda_text id=mobile.form.zipc></label> 
+				<input type="text" name="zipc" id="zipcode" value="<venda_zipc>" placeholder="<venda_text id=mobile.form.zipc>" />
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label addresslookup" id="addresslookup">
+				<div class="ui-grid-a">
+				<div class="block-a">
+				<div id="lookupbutton"><input type="button"  value="<venda_text id=mobile.button.lookup>" id="lookupBtn" onClick="addressList(); return false;" data-inline="true" />
+				</div>
+				</div>				
+				<div class="block-b" id="block-b">
+					<a href="#" id="enterManually" onclick="Venda.CountrySelect.enterManually(); return false;"><venda_text id=mobile.button.enter_address_manually></a></div>  
+				</div>
+				<div class="loadpostcode"><span class="loading" style="display:none"></span></div>
+				<span id="error" class="ajaxerror"></span>
+				<div id="uklist" class="uklist"></div>
+				<div id="ukaddress" class="ukaddress"></div>
+			</div>
+			<div id="hideOrShowUkAddress">		
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="company"><venda_text id=mobile.form.company></label>
+					<input type="text" name="company" id="company" class="firstLetter" value="<venda_company>" placeholder="<venda_text id=mobile.form.company>" />
+				</div>
+				
+				<div data-role="fieldcontain" id="houseNum" class="ui-hide-label">
+					<label for="num"><venda_text id=mobile.form.house_num></label>
+					<input type="text" name="num" id="num" value="<venda_num>" placeholder="<venda_text id=mobile.form.house_num> <venda_text id=mobile.form.required>"/>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="addr1"><venda_text id=mobile.form.addr1></label>
+					<input type="text" name="addr1" id="addr1" class="firstLetter" value="<venda_addr1>" placeholder="<venda_text id=mobile.form.addr1> <venda_text id=mobile.form.required>" required />
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="addr2"><venda_text id=mobile.form.addr2></label>
+					<input type="text" name="addr2" id="addr2" class="firstLetter" value="<venda_addr2>" placeholder="<venda_text id=mobile.form.addr2>" />
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="city"><venda_text id=mobile.form.city></label>
+					<input type="text" name="city" id="city" class="firstLetter" value="<venda_city>" placeholder="<venda_text id=mobile.form.city> <venda_text id=mobile.form.required>" required />
+				</div>
+				
+				<div data-role="fieldcontain" id="stateDiv" class="ui-hide-label">
+					<label for="statetext" id="stateLabel"><venda_text id=mobile.form.state></label>
+					<input type="text" name="state" id="statetext" class="firstLetter" value="<venda_state>" placeholder="<venda_text id=mobile.form.state>" required />
+					<venda_tpcomment><!--select name="state" id="statelist" required /><select--></venda_tpcomment>
+				</div>
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label phoneDiv">
+				<label for="phone"><venda_text id=mobile.form.phone></label>
+				<input type="tel" name="phone" id="phone" value="<venda_phone>" placeholder="<venda_text id=mobile.form.phone> <venda_text id=mobile.form.required>" required />
+			</div>
+				
+			
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+	<div class="submitButton">
+		<input type="submit" value="<venda_text id=mobile.button.continue>" data-ajax="false" data-icon="arrow-r" data-iconpos="right" >
+	</div>
+	<hr/>
+	<div class="backToMyAccount">
+		<a href="<venda_dispview page=myaccountmobile>" data-ajax="false"> <venda_text id=mobile.button.back_to_my_account></a>
+	</div>	
+	<hr/>
+	</form>
+</div>
+<venda_inctemplate name=validationRulesScript,type=workflow/checkoutmobile>
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=curstep,value=step3>
+<venda_tpxt mode=set,name=track,value=addressbookadd>
+<venda_zones type=countries,template=countrySelectMobile>
+
+<!-- Localisation to be passed to JS -->
+<div id="zipcodeUrl" style="display: none;"><venda_codehttps>?ex=co_wizr-addresslookup&curstep=addresssubmit&step=addressdropdown&trrfnbr=<venda_userinfo><venda_sesid></venda_userinfo>&trrfext=1&mode=display&amp;param1=delivery&ustype=p&amp;param2=uk&amp;param3=&zipcodelookup=1&&zipc=</div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=mobile.form.state_us></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=mobile.form.zipc_us></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=mobile.form.state></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=mobile.form.zipc></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=mobile.form.region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=mobile.form.please_select_multi_dot></div>

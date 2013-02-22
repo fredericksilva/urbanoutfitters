@@ -1,0 +1,35 @@
+<div class="static-wrapper">
+<div class="static-content">
+	<div id="thankyouMobile" class="thankyouMobile">
+		<venda_block label=12,mode=value,<venda_htxt mode=get,name=foo>=writereview>
+		<div id="writereviewthankyou" class="writereviewthankyou">
+			<div class="static-header borderBt"><h1><venda_text id=mobile.heading.write_review></h1></div>
+			<div class="boxContent"><p><venda_text id=mobile.info.write_review_thankyou></p>
+			<a href="<venda_dispview invt=<venda_invtref>>" id="backLink" class="backLink" data-role="button" data-ajax="false" data-mini="true"><venda_text id=mobile.button.close></a>
+			</div>
+		</div>
+		</venda_block label=12>
+		
+		<venda_block label=14,mode=value,<venda_htxt mode=get,name=foo>=tellafriend>
+		<div id="tellafriendthankyou" class="tellafriendthankyou">
+			<div class="static-header borderBt"><h1><venda_text id=mobile.heading.tellafriend></h1></div>
+			<div class="boxContent"><p><venda_text id=mobile.info.tell_friend_thankyou></p>
+			<a href="<venda_dispview invt=<venda_invtref>>" id="backLink" class="backLink" data-role="button" data-ajax="false" data-mini="true"><venda_text id=mobile.button.close></a>
+			</div>
+		</div>
+		</venda_block label=14>
+		
+		<venda_block label=13,mode=value,<venda_htxt mode=get,name=foo>=emailinstock>
+		<div id="emailinstockthankyou" class="emailinstockthankyou">
+			<div class="static-header borderBt"><h1><venda_text id=mobile.heading.email_when_in_stock></h1></div>
+			<div class="boxContent"><p><venda_text id=mobile.info.email_when_in_stock_thankyou></p>
+			<a href="<venda_dispview invt=<venda_invtref>>" id="backLink" class="backLink" data-role="button" data-ajax="false" data-mini="true"><venda_text id=mobile.button.close></a>
+			</div>
+		</div>
+		</venda_block label=13>
+	</div>
+</div>
+</div>
+<!-- tpxt used for crumbtrail -->
+<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+<venda_tpxt mode=set,name=track,value=thankyou>

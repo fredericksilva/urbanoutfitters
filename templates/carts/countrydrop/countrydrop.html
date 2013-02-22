@@ -1,0 +1,56 @@
+
+<ul id="Langdropdown">
+
+  <li class="headlink">
+      <a href="#"><span id="countryname">Change Country</span></a>
+  
+	  <ul id="langDD">
+
+		  <li id="UK" class="DDgrey">
+			  <a id="uklink" mpdisurl href="http://www.urbanoutfitters.co.uk/page/home?cm_sp=Dropdown-_-GBP-_-Uk">
+				  <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/uk_flag.gif" alt="UK" border="0" /><span class="countxt"> UK</span>
+			  </a>
+		  </li>
+  
+		  <li id="FR" class="DDgrey">
+				<a id="francelink" href="http://www.urbanoutfitters.fr/page/home&setlocn=eur&log=4?cm_sp=Dropdown-_-EURO-_-France">
+					<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/fr_flag.gif" alt="France" border="0" /><span class="countxt"> FR</span>
+				</a>
+		  </li>
+		  
+		  <li id="DE" class="DDgrey">
+				<a id="germanylink" href="http://www.urbanoutfitters.de/page/home&setlocn=eur&log=4?cm_sp=Dropdown-_-EURO-_-Germany">
+					<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/elements/de_flag.gif" alt="Germany" border="0"/><span class="countxt"> DE</span>
+				</a>
+		  </li>
+
+	  </ul> 
+
+  </li>
+  
+</ul> 
+
+
+<script language="javascript" type="text/javascript">
+
+	jQuery(document).ready(function(){
+	
+	    jQuery('#langDD').css('display', 'none');
+	
+		jQuery('#Langdropdown .headlink').click(function() {
+			
+			jQuery('#langDD').slideDown("fast"); 
+		});
+		
+		jQuery('#langDD').hover(function() {			
+			jQuery(this).show();
+		},
+		
+            function() { 
+			  jQuery(this).slideUp("fast");
+			});      
+	});
+
+</script>
+
+

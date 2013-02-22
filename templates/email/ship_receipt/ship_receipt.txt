@@ -71,12 +71,12 @@ http://www.urbanoutfitters.co.uk/page/whereismyorder
 
 
 Got a question about your order?  You can contact us via:
-EMAIL: UrbanEuropeCS@urbanout.com
-PHONE: +44 (0) 845 330 1288 – We’re open 7 days a week 9am – 2am (GMT)
+EMAIL: <a href="<venda_dispview page=contactus>"><b>Email us</b></a>
+PHONE: +44 (0) 845 330 1288 – 24 hours a day Mon-Fri, 9-6 Sat and Sun (GMT)
  
-If you placed your order via: www.urbanoutfitters.de <http://www.urbanoutfitters.de>  
-EMAIL: service@urbanoutfitters.de
-PHONE: 06 93 80 78 93 39 - We’re open Monday – Friday 10am – 6pm (MEZ)
+If you placed your order via: www.urbanoutfitters.fr <http://www.urbanoutfitters.fr>  
+EMAIL: <a href="<venda_dispview page=contactus>"><b>schick uns eine e-mail</b></a>
+PHONE: 06 93 80 78 93 39 - We’re open Monday – Friday 9am – 7pm (MEZ)
 
 
 
@@ -123,7 +123,7 @@ http://www.urbanoutfitters.de/page/whereismyorder
 
 
 
-Für Fragen zu Ihrer Bestellung kontaktieren Sie uns bitte per E-Mail an service@urbanoutfitters.de oder rufen Sie uns von Montag bis Freitag, 10.00-18.00 Uhr unter 06 93 80 78 93 39 an.
+Für Fragen zu Ihrer Bestellung kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>"><b>schick uns eine e-mail</b></a> oder rufen Sie uns von Montag bis Freitag, 09.00-19.00 Uhr unter 06 93 80 78 93 39 an.
 
 
 
@@ -170,7 +170,7 @@ http://www.urbanoutfitters.fr/page/whereismyorder
 
 
 
-Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, veuillez nous contacter à l'adresse service@urbanoutfitters.fr ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, <a href="<venda_dispview page=contactus>"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 19h00.
 
 
 

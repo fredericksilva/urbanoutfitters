@@ -1,0 +1,39 @@
+<div class="headerTop">
+	<input type="hidden" name="currencyTitle" value="CHANGE CURRENCY">
+	<input type="hidden" name="countryTitle" value="CHANGE SITE">
+	<div id="tag-ustype" style="display:none;"><venda_ustype></div>
+	
+	<div class="headerLangSwitch">
+		<div class="ui-block-a regionLangLink">
+				<a href="javascript:;" class="regionLangSwitch" rel="tooltip" >
+					<div class="selectedlang <venda_sessionlocation>"></div>
+					<div class="selectedlocn <venda_sessionlocation>"><venda_currsym></div>
+				</a>
+		</div>
+	</div>
+	<div class="headerTopLogo">
+		<a href="<venda_dispview page=home>"><img class="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/mobile_logo.png" alt="<venda_ebizname>" /></a>
+	</div>
+	<div class="headerTopLink">
+		<div class="headerTopCart"><venda_minicart template=cartMobile></div>
+	</div>
+</div><!-- /headertop -->
+
+<div class="ui-grid-a keywordsearch">
+	<venda_inctemplate name=searchMobile,type=includes>
+</div><!-- /keyword -->
+
+<div class="ui-grid-b headerBottom">
+	<div id="hiddenHeader">
+		<a href="<venda_dispview page=home>"><img class="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/home.png" alt="<venda_ebizname>" /></a>
+		<span class="headertop-back"><a href="#" data-rel="back"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/back.png" alt="Back" /></a></span>
+	</div>	
+	
+	<venda_block label=112,mode=value,<venda_tpxt mode=get,name=mybagtpxt>=hidebuttons>
+			<style>#hiddenHeader {display:none !important;}</style>
+	</venda_block label=112>	
+	<venda_block label=999,pageref=homemobile>
+		<style>#hiddenHeader {display:none !important;}</style>
+		<venda_inctemplate name=buttonsHeaderMobile,type=mainIncludes>
+	</venda_block label=999>
+</div><!-- /headerBottom -->

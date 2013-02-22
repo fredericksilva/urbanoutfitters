@@ -1,0 +1,26 @@
+<venda_tpcomment>
+<!-- Used to pass workflow and current step tag values to tracking JS / Promotions
+Included in every workflow template -->
+</venda_tpcomment>
+
+<!-- template: templates/workflow/<venda_workflow>/<venda_curstep>/<venda_curstep>.html -->
+<div id="tag-workflow" style="display:none;"><venda_workflow></div>
+<venda_tpcomment><!-- Curstep does not translate in wz_orad (new delivery address / edit delivery address etc), as a workaround a tpxt will be used on the pages where this fails --></venda_tpcomment>
+<div id="tag-curstep" style="display:none;"><venda_block label=1010,curstep=notnull><venda_curstep></venda_block label=1010><venda_block label=1011,curstep=null><venda_tpxt mode=get,name=track></venda_block label=1011></div>
+<div id="tag-param1" style="display:none;"><venda_param1></div>
+<div id="tag-param2" style="display:none;"><venda_param2></div>
+<div id="tag-param3" style="display:none;"><venda_param3></div>
+<div id="tag-glxtusertype" style="display:none;"><venda_glxt mode=get,name=glxtusertype></div>
+<div id="tag-protocol" style="display:none;"><venda_codehttps></div>
+
+<!-- Venda vars to be passed to JS -->
+<div id="venda_cntry" style="display: none;"><venda_cntry></div>
+<div id="venda_state" style="display: none;"><venda_state></div>
+<div id="venda_locn" style="display: none;"><venda_sessionlocation></div>
+
+<venda_block mode=value,<venda_errors mode=boolean>=1><div id="tag-errorsboolean" style="display:none;">1</div></venda_block>
+<script type="text/javascript"><venda_tpcomment>/*Workflow steps JS variables created using function in Tracking.js*/</venda_tpcomment>
+if(typeof Venda.Widget.Tracking != 'undefined'){
+	Venda.Widget.Tracking.WorkflowSteps();
+}
+</script>

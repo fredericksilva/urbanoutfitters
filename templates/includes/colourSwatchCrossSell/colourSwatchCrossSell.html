@@ -1,0 +1,9 @@
+<venda_tpcomment><!-- This template is used by product detail when the product has attributes, it cycles through and stores the image paths to the various attribute 1 association values (e.g. xsmall,medium,large image path for Red Shirt) --></venda_tpcomment>
+
+<venda_detblock_mediagridrow><venda_detail_mediagridcell></venda_detblock_mediagridrow>
+<venda_detblock_mediagridcell>
+	<venda_block label=1,emptycell!=1,medatrvalue!=>
+	<a class="sw_image" href="<venda_dispview invt=<venda_invtref>>&colour=<venda_medatrvalue>" title="<venda_medatrvalue>" data-prodid="comp-image<venda_invtref>" data-uuid="<venda_invtuuid>" data-color="<venda_medatrvalue>" data-setimage="<venda_block label=notsearch,mode=value,<venda_tpxt mode=get,name=activekeyword>=null><venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtref>/<venda_invtref>_<venda_medatrvalue>_m1.jpg</venda_block label=notsearch><venda_block label=search,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull><venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtref>/<venda_invtref>_<venda_medatrvalue>_m1.jpg</venda_block label=search>" data-setimagehover=""><span><!-- mp_trans_disable_start --><img src="" name="<venda_invtref>" title="<venda_medatrvalue>" width="18px" height="18px" /><!-- mp_trans_disable_end --></span></a>
+	</venda_block label=1>
+</venda_detblock_mediagridcell>
+<div class="swatchContainer" style="display:none;"><div id="swatch<venda_invtref>"><venda_detail_mediagridrow></div></div>

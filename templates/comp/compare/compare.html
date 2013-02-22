@@ -1,0 +1,95 @@
+<venda_detblock1>
+	<th scope="col" valign="top">
+		<h3><venda_invtname></h3>
+		<venda_block label=10,invtref=notnull>
+		<venda_block label=101,med-thumb=notnull>
+			<a href="#" onclick="doMainWindow('<venda_dispview invt=<venda_invtref>>');"><venda_media rec=invt,type=pict,border=0,key=thumb></a>
+		</venda_block label=101>
+		<venda_block label=102,med-thumb=null>
+			<a href="#" onclick="doMainWindow('<venda_dispview invt=<venda_invtref>>');">View Product</a>
+		</venda_block label=102>
+
+<venda_block label=126,invtavail&gt;0>
+<p><a href="javascript:;" onclick="doMainWindow('<venda_serveradd>/bin/venda?ex=co_wizr-shopcart&mode=add&log=22&ivref=<venda_invtref>&bsref=<venda_bsref>&layout=default');">Buy</a></p>
+</venda_block label=126>
+
+<!-- if out of stock -->
+<venda_block label=127,invtavail&lt;1>
+<p>Sorry - Out of stock</p>
+<a href="javascript:;" onclick="doMainWindow('<venda_serveradd>/invt/<venda_invtref>&temp=emailinstock');">Email me when this item is back in stock</a>
+</venda_block label=127>
+
+		</venda_block label=10>
+	<p><venda_currsym><venda_invtsell></p>
+	</th>
+</venda_detblock1>
+
+<venda_detblock2>
+<tr>
+	<th scope="row"><strong><venda_fldname></strong></th>
+	<venda_detail3>
+</tr>
+</venda_detblock2>
+
+<venda_detblock3>
+	<td>
+	<venda_block label=70,data=notnull>
+		<venda_block label=30,rectype=0>
+		<venda_data>
+		</venda_block label=30>
+
+		<venda_block label=31,rectype=1>
+		<venda_block label=32,showdata=notnull>
+		<venda_block label=33,data=1>Yes</venda_block label=33>
+		<venda_block label=34,data=null>No</venda_block label=34>
+		</venda_block label=32>
+		</venda_block label=31>
+	</venda_block label=70>
+	<venda_block label=71,data=null>
+	&nbsp;
+	</venda_block label=71>
+	</td>
+</venda_detblock3>
+
+<!-- There's currently a bug where compare doesn't work on prod. See rt #4644 -->
+
+<!--N.B YOU WILL HAVE TO SET UP COMPARE/CONFIG under PRODUCTS/COMPARE TYPES in the Venda control panel-->
+
+<script language="javascript" type="text/javascript">
+<!--
+function highlight(who) {
+	if (document.layers==null) {
+	// only if not netscape 4
+		who.className='compareHighlight';
+	}
+}
+function clearHighlight(who) {
+	if (document.layers==null) {
+	// only if not netscape 4
+		who.className='comparetr';
+	}
+}
+function doMainWindow(url) {
+	window.close();
+	window.opener.location.href=url; 
+	window.opener.focus();
+}
+
+var count = 0; 
+//-->
+</script>
+
+<h1>Compare Products</h1>
+
+<table cellpadding="0" cellspacing="0" border="0" id="compare">
+
+<thead>
+<tr>
+	<td>&nbsp;</td>
+	<venda_detail1>
+</tr>
+</thead>
+<tbody>
+	<venda_detail2>
+</tbody>
+</table>

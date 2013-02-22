@@ -1,0 +1,18 @@
+<venda_tpcomment>/*
+This template loads some JS in the background to check whether there are errors with the promotion code.
+If there are errors, the error message will appear in the span with id 'ajax-error' and the screen will not reload.
+If there are no errors the form will submit and the basket screen will reload so that all the order totals can update.
+*/</venda_tpcomment>
+var jq = jQuery.noConflict();
+var errors = "<venda_errors>";
+var errorsboolean = "<venda_errors mode=boolean>";
+if (errorsboolean === "1"){
+	jq(".vouchercoderesponse").html(""); //makes sure the success response is removed if it is there
+	jq("#ajax-error").html("<div class=\"error\"><p class=\"vouchercoderesponse\">"+errors+"</p></div>");
+} else { //no errors > refresh basket
+	if (jQuery("#tag-curstep").html() == "ordersummary"){
+		document.location.href = "<venda_codehttps>?ex=co_wizr-checkoutmobile&display=1&step=ordersummary";
+	} else {
+		document.location.href = "<venda_codehttp>?ex=co_wizr-shopcartmobile&bsref=<venda_bsref>&log=22";
+	}
+}

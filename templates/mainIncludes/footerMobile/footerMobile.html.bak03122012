@@ -1,0 +1,105 @@
+<ul class="footer-links">
+	<div class="joinus_area">
+		<div class="joinus">
+		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/join-us-white.png" height="186 px" width="100%"/>
+		
+		  <a id="urban" href="http://www.urbanoutfitters.co.uk/scat/community/" target="blank" ><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/UO-com.png"/></a>
+		  <a id="facebook" href="http://www.facebook.com/" target="blank" ><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/facebook.png"/></a>
+		  <a id="twitter" href="https://twitter.com/" target="blank" ><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/twitter.png"/></a>
+		</div>
+
+	<venda_tpcomment> <!-- <li><a href="<venda_dispview page=emailsignupmobile>">Newsletter</a></li> --> </venda_tpcomment>
+		<li id="joinusbg">
+			<span class="join_us">JOIN US</span>
+			<br/>
+			<div class="join_us">Sign up for exclusive news, events and more!</div>
+				<div class="emailSignup boxContent">
+				<iframe src ="http://ebm.cheetahmail.com/r/regf2?aid=2068353000&eid=40520&n=3&a=1"width="100%" marginheight="0" marginwidth="0" scrolling="no" frameborder="0">
+</iframe>
+				</div>
+	
+</ul>
+
+	<div class="footerLinksArea">
+	
+			<ul class="footerstorelocator" data-role="listview">
+			<li class="login">
+				<a href="<venda_dispview page=storelocatormobile>" class="findStoreLink">
+					<h3><venda_text id=mobile.button.find_store></h3>
+				</a>
+			</li>
+			</ul>
+			
+			<venda_block label=21,ustype!=R>
+				<ul class="footerlistview" data-role="listview">
+					<li class="login">
+						<a href="<venda_codehttps>?ex=co_wizr-registermobile&bsref=<venda_bsref>">
+							<h3><venda_text id=mobile.button.log_in></h3>
+						</a>
+					</li>
+				</ul>
+			</venda_block label=21>
+			
+				
+			<venda_block label=22,ustype=R>
+				<ul class="footerlistview" data-role="listview">
+					<li class="login">
+						<a href="<venda_dispview page=myaccount>">
+							<h3><venda_text id=mobile.button.my_account></h3>
+						</a>
+					</li>
+					<li class="login">
+						<a href="<venda_dispview page=home>&log=4">
+							<h3><venda_text id=mobile.button.logout></h3>
+						</a>
+					</li>
+				</ul>
+			</venda_block label=22>
+
+			
+			<div class="footercollaps info2" data-role="collapsible" data-collapsed="true" data-iconpos="right">
+				<h3><venda_text id=mobile.button.about_us></h3>
+					<ul>
+						<li><a href="<venda_dispview page=contactusmobile>">Contact Us</a></li>
+						<li><a href="<venda_dispview page=joblistmobile>">Careers</a></li>
+					</ul>
+			
+			</div>
+			
+			
+			<div class="footercollaps" data-role="collapsible" data-collapsed="true" data-iconpos="right">
+				<h3><venda_text id=mobile.button.delivery_rate></h3>
+					<ul>
+						<li><a href="<venda_dispview page=deliveryinformationmobile>">Delivery Information</a></li>
+						<li><a href="<venda_dispview page=returnsmobile>">Returns Policy</a></li>
+						<li><a href="<venda_dispview page=paymentoptionsmobile>">Payment Options</a></li>
+						<li><a href="<venda_dispview page=faqsmobile>">FAQs</a></li>
+						<li><a href="<venda_dispview page=termsandconditionsmobile>">T&Cs </a></li>
+						<li><a href="<venda_dispview page=cookiesmobile>">Cookies </a></li>
+						<li><a href="<venda_dispview page=privacypolicymobile>">Privacy Policy</a></li>
+						<li><a href="<venda_dispview page=weeecompliancemobile>">WEEE Compliance</a></li>
+					</ul>
+			</div>
+			
+	</div>		
+
+<venda_tpcomment><!--div class="currency">
+	<div class="footerLangSwitch">
+		<div class="ui-block-a regionLangLink">
+				<a href="#" id="regionLangSwitch" class="regionLangSwitch">
+					<span class="selectedlocn <venda_sessionlocation>"><venda_currsym></span>
+					<span class="selectedlang <venda_sessionlocation>"></span>
+					<span>(Change) </span>
+				</a>
+		</div>
+	</div--></venda_tpcomment>
+
+	<div class="fullsite"> <a class="fullsite" id="desktop" href="<venda_dispview page=home>">View full site</a></div>
+
+
+<div class="footer-logo" align="center">
+	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/creditcard_opt_black.png" alt="<venda_text id=mobile.info.creditcards>" />
+	<hr/>
+</div>
+
+<div class="copyright pos"><venda_text id=mobile.info.copyright> <venda_dateformat date=now,format=yyyy> <venda_ebizname> Europe</div>

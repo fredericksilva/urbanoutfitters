@@ -1,0 +1,122 @@
+<!-- 
+Need to add:
+- conditionals if discontinued
+- was/saving for attributes?
+- sortings
+ -->
+
+<venda_detblock>
+<li>
+<h2><venda_invtname1></h2>
+
+<venda_block label=4,med-thumb1=notnull>
+<venda_media rec=invt1,type=movie-swf-pict,key=thumb,jump=yes,border=0>
+</venda_block label=4>
+<venda_block label=5,med-thumb1=null>
+<a href="<venda_dispview invt=<venda_invtref1>>"><p>Sorry - No Image Available</p></a>
+</venda_block label=5>
+
+<p><venda_invtdesc11></p>
+
+<venda_block label=10,invtatrtot1&lt;1>
+<!-- if product doesn't have attributes -->
+<p><venda_currsym><venda_invtsell1></p>
+	<venda_block label=11,invtsavingonwas1=notnull,invtwas1!=0.00>
+	<p>Was <venda_currsym><venda_invtwas1></p>
+	<p>Save <venda_currsym><venda_invtsavingonwas1></p>
+	</venda_block label=11>
+</venda_block label=10>
+
+<venda_block label=20,invtatrtot1&gt;0>
+<!-- if product does have attributes -->
+<p>
+    <venda_block invtatrminsubsell1&gt;0.00>From <venda_currsym><venda_invtatrminsubsell1></venda_block>
+    <venda_block invtatrminsubsell1=0.00><venda_invtsymsell1></venda_block>
+</p>
+</venda_block label=20>
+
+<venda_block label=30,invtavail1&gt;0,invtatrtot1&lt;1>
+<!-- if in stock and product doesn't have attributes -->
+<venda_jump type=addshop,rtype=invt,value=invtref1,label=31><p>Buy Now</p></venda_jump label=31> 
+<venda_jump type=addshop2,rtype=invt,value=invtref1,label=32><p>Add to Basket</p></venda_jump label=32>
+</venda_block label=30>
+
+<venda_block label=40,invtavail1&lt;1>
+<!-- if out of stock -->
+<p>Sorry - Out of stock</p>
+<venda_block label=167,etadate1=notnull><p>Expected back in stock on: <venda_invtetadatey1>/<venda_invtetadatemn1>/<venda_invtetadateyr1></p></venda_block label=167>
+<p><a href="<venda_dispview invt=<venda_invtref1>>&temp=emailinstock">Email me when this item is back in stock</a></p>
+</venda_block label=40>
+
+<p><a href="<venda_dispview invt=<venda_invtref1>>">Details</a></p>
+<p><input type="checkbox" name="compare" value='<venda_shopcompbox1>'> COMPARE</p>
+</li>
+</venda_detblock>
+
+<script language="javascript" type="text/javascript">
+<!--
+function openWindow() {				
+	compareWindow = window.open('','compare','width=670,height=590,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=yes,top=0,left=0');		
+	document.formcompare.target="compare";
+	document.formcompare.submit;
+	compareWindow.focus();
+}
+
+function checkAll(field) {
+	for (i = 0; i < field.length; i++) {
+		field[i].checked=true;
+	}
+	document.formcompare.submit;
+}
+
+function checkTotal(field){
+	if (field.length > 1){ //make sure it has at least 2 products to compare
+		checkAll(field);
+		openWindow();
+		document.formcompare.submit();
+	}else{
+		alert("Sorry, there are not enough products to compare.");
+	}
+}
+
+function compareNow(field) {
+	var k = 0; // counting how many checkboxes are checked
+	if (field.length > 1){ //make sure it has at least 2 products to compare
+		for (i = 0; i < field.length; i++) {
+			if (field[i].checked == true) {
+				document.formcompare.submit;
+				k++;
+			}
+		}
+		if (k >= 2) { // only open the compare window if more then 2 checkboxes are checked
+			openWindow(); 
+			document.formcompare.submit();
+		}else{
+			alert("Please select a minimum of 2 products to compare.");
+		}
+	}else{
+		alert("Sorry, there are not enough products to compare.");
+	}
+}
+//-->
+</script>
+
+
+<h1><venda_icatname></h1>
+<venda_block label=12,icatldesc=notnull><p><venda_icatldesc></p></venda_block label=12>
+
+<p><venda_addedmsg msg=You have added addedqty of addedname to your basket></p>
+
+
+<form name="formcompare" action="<venda_codehttp>" method="post" onSubmit="compareNow(document.formcompare.compare);" target="_blank">
+<input type="hidden" name="ex" value="co_disp-comp">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="layout" value="popups">
+<p><a href="#" onClick="checkTotal(document.formcompare.compare);">Compare All</a>	<a href="#" onClick="compareNow(document.formcompare.compare);">Compare Selected</a></p>
+<ul id="productlist">
+<venda_detail>
+</ul>
+</form>
+
+<!-- pagination -->
+<venda_pagesel template=pageselect>

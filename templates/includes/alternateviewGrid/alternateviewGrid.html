@@ -1,0 +1,41 @@
+<script type="text/javascript">
+Venda.Attributes.imageAssigner = function(imgAtt) {
+  var imageURLs = {},
+      imgNumber = 6,
+      imgPath = "<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtref>/<venda_invtref>_",
+      imgChoice = {
+        "imgS" : "_t",
+        "imgM" : "_m",
+        "imgL" : "_l"
+      }
+  for(var size in imgChoice) {
+    var images = []
+    for(var j = 1; j < imgNumber; j++) {
+        images.push(imgPath + imgAtt + imgChoice[size] + j + ".jpg") 
+    }  
+    imageURLs[size] = images           
+  }
+  return imageURLs
+}
+
+Venda.Attributes.ImageMediaAssignment = function() {
+  var uniqueAtt1 = []
+  for (var i = 0; i < Venda.Attributes.attsArray.length; i++) {
+      var currAtt1 = Venda.Attributes.attsArray[i].att1
+      if(jQuery.inArray(currAtt1,uniqueAtt1) == -1) { 
+        var currImages = Venda.Attributes.imageAssigner(currAtt1)
+        uniqueAtt1.push(currAtt1);
+        Venda.Attributes.StoreImageSwaps({
+          "param": currAtt1,
+          "images": currImages     
+          });
+        Venda.Attributes.SwatchURL[currAtt1] =  "<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtref>/<venda_invtref>_" + currAtt1.toLowerCase() + "_sw.jpg";  
+      }
+  }
+
+}
+
+jQuery(function() {
+	Venda.Attributes.ImageMediaAssignment();
+});
+</script>

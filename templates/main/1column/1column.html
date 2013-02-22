@@ -18,6 +18,11 @@
 <venda_inctemplate name=demo,type=mainIncludes>
 <div class="errors"><venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block></div>
 <div class="wrapper">
+<venda_block label=homepopup,pageref=home>
+	<venda_block label=reg,ustype!=R>
+		<venda_inctemplate name=signupPopup,type=includes>
+	</venda_block label=reg>
+</venda_block label=homepopup>
 	<a href="#content" class="skipToContent"><venda_text id=site.skip_to_content></a>
 	<div class="mainHeader container_24 clearfix">
 		<venda_inctemplate name=header,type=mainIncludes>

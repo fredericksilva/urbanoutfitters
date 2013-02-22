@@ -1,0 +1,129 @@
+
+<div class="deliveryimg">
+	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/delivery.png" alt="Delivery" />
+</div>
+
+<div id="catname"><venda_tpxt mode=get,name=categoryName></div>
+
+<div id="content-search">
+	<div id="searchResults" class="searchResults">
+		<venda_tpcomment><!-- start: results found content --></venda_tpcomment>
+		<venda_block label=345,mode=value,<venda_totalresults>!=0>
+		<div class="searchOptions searchTop">
+		<venda_tpcomment><!-- start: refine list --></venda_tpcomment>
+			<div class="refine" data-role="collapsible" data-iconpos="right">		
+			<h3><venda_text id=mobile.heading.refine></h3>
+			<venda_inctemplate name=refineListMobile,type=search>
+			</div>
+		<venda_tpcomment><!-- end: refine list --></venda_tpcomment>		
+			
+			<venda_tpcomment><!-- start: sort by options --></venda_tpcomment>
+			<div class="sortby sortbyTop ui-hide-label">
+				<div id="sortby">
+					<form name="sortformTop">
+				         <label for="sortby"><venda_text id=mobile.form.sort_by>:</label>
+				         <select name="sortby" id="sortby" onchange="window.location = document.sortformTop.sortby.options[document.sortformTop.sortby.selectedIndex].value;">
+					        
+					         <venda_block label=12,mode=value,<venda_setting type=ebiz,name=sortrelevantfirst>=1><option value="<venda_searchurl sort=,setpagenum=1>"><venda_text id=mobile.form.sort_by></option></venda_block label=12>
+							 <option value="<venda_searchurl sort=,setpagenum=1>" selected><venda_text id=mobile.form.sort_by></option>
+					         <venda_detail_sortedby options=price~desc:asc;name~asc:desc;>
+				         </select>
+				         <venda_detblock_sortedby>
+					         <option value="<venda_url>"<venda_block sortedon=notnull> selected="selected"</venda_block>><venda_option></option>
+				         </venda_detblock_sortedby>		
+				   </form>
+					
+					<venda_tpcomment><!-- end: sort by options --></venda_tpcomment>		
+				</div>
+				<div class="viewStyle">
+					<a href="#"><span class="viewProduct iconGrid" data-viewstyle="Grid" title="Grid View"></span></a>
+					<a href="#"><span class="viewProduct iconList" data-viewstyle="List" title="List View"></span></a>
+				</div>
+				<!-- Grid/List view switch: Disabled by default -->
+			</div>
+			
+			
+			<venda_tpcomment><!-- start: search results - product - pagination --></venda_tpcomment>
+			<div class="pagn pagnTop">
+				<venda_pagination template=searchPaginationMobile>
+							
+			</div>
+			<venda_tpcomment><!-- end: search results - product/page/story - pagination --></venda_tpcomment>	
+			
+			
+			
+		</div>
+
+		<venda_detblock_results>
+			<venda_inventory ref=<venda_ref>,temp=productPanelMobile,displayunpublished=1>
+		</venda_detblock_results>
+
+		<ul data-role="listview" class="prods"><venda_detail_results></ul>
+		<div class="searchOptions searchBottom">
+			
+			<venda_tpcomment><!-- start: sort by options --></venda_tpcomment>	
+			<div class="sortby sortbyTop ui-hide-label">
+				<div id="sortby">
+					<form name="sortformBottom">
+						<label for="sortby"><venda_text id=mobile.form.sort_by>:</label>
+				         <select name="sortby" id="sortby" onchange="window.location = document.sortformTop.sortby.options[document.sortformTop.sortby.selectedIndex].value;">
+					        
+					         <venda_block label=12,mode=value,<venda_setting type=ebiz,name=sortrelevantfirst>=1><option value="<venda_searchurl sort=,setpagenum=1>"><venda_text id=mobile.form.sort_by></option></venda_block label=12>
+							 <option value="<venda_searchurl sort=,setpagenum=1>" selected><venda_text id=mobile.form.sort_by></option>
+					         <venda_detail_sortedby options=price~desc:asc;name~asc:desc;>
+				         </select>
+				         <venda_detblock_sortedby>
+					         <option value="<venda_url>"<venda_block sortedon=notnull> selected="selected"</venda_block>><venda_option></option>
+				         </venda_detblock_sortedby>		
+					</form>
+					<venda_detblock_sortedby>
+						<option value="<venda_url>"<venda_block sortedon=notnull></venda_block>><venda_option></option>
+					</venda_detblock_sortedby>			
+				</div>							
+				<div class="viewStyle">
+					<a href="#"><span class="viewProduct iconGrid" data-viewstyle="Grid" title="Grid View"></span></a>
+					<a href="#"><span class="viewProduct iconList" data-viewstyle="List" title="List View"></span></a>
+				</div>
+			</div>
+			<venda_tpcomment><!-- end: sort by options --></venda_tpcomment>		
+			
+			<!-- Grid/List view switch: Disabled by default -->
+			
+			<venda_tpcomment><!-- start: search results - product - pagination --></venda_tpcomment>
+				<div class="pagn pagnBottom">
+					<venda_pagination template=searchPaginationMobile>
+				</div>
+				<venda_tpcomment><!-- end: search results - product/page/story - pagination --></venda_tpcomment>		
+		</div>
+		</venda_block label=345>
+		<venda_tpcomment><!-- end: results found content --></venda_tpcomment>
+
+		<venda_tpcomment><!-- start: results not found query text --></venda_tpcomment>	
+		<venda_block label=346,totalresults=0>
+		<div class="noResults">
+		<venda_block label=3461,mode=value,<venda_tpxt mode=get,name=parentCatRef>=>
+		<h4><venda_text id=mobile.info.your_search> <venda_block label=95,primarysearchtext=notnull><venda_text id=mobile.info.for> <span class="primarysearchtext">"<span class="keywordsearchtext"><venda_primarysearchtext></span>"</span> </venda_block label=95><venda_text id=mobile.info.returned_no_results>.</h4>
+		</venda_block label=3461>
+
+		<venda_block label=3462,mode=value,<venda_tpxt mode=get,name=parentCatRef>!=>
+		<h4><venda_text id=mobile.info.returned_no_results> <venda_text id=mobile.info.in> <span class="parentCatRefSearchtext"><venda_category rec=icat,ref=<venda_tpxt mode=get,name=parentCatRef>,temp=categoryname,cacheall=1></span>.
+		</venda_block label=3462>
+		</div>
+		</venda_block label=346>
+		<venda_tpcomment><!-- end: results not found query text --></venda_tpcomment>
+	</div>
+
+	<!-- <venda_glxt mode=set,name=searchurl,value=<venda_searchurl>> -->
+	<venda_tpcomment><!-- TPXTs are set for webtrends meta tag --></venda_tpcomment>
+	<venda_tpxt mode=set,name=totalresults,value=<venda_totalresults>>
+	<venda_tpxt mode=set,name=primarysearchtext,value=<venda_primarysearchtext>>
+
+	<venda_tpcomment><!-- Tags for JS --></venda_tpcomment>
+	<div style="display:none;" id="tag-error"><venda_text id=mobile.info.ajaxerror></div>
+</div>
+<script type="text/javascript">
+
+	jQuery(document).bind('pageshow',function() {
+		jQuery(".pagnNumList").wrap("<div class='pagnNumListWrap'></div>");
+	});
+</script>

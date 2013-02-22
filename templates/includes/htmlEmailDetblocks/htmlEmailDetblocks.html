@@ -1,0 +1,143 @@
+<venda_detblock1>
+<!-- start delivery details -->
+<div id="box">
+<venda_block label=1011,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">DELIVERY DETAILS</div>
+<div id="address" style="padding:5px 0 20px 10px;">
+	<div><strong>Recipient:</strong> <venda_pkfname> <venda_pklname></div>
+	<div><strong>Delivery Address:</strong> <venda_block label=71,pkcompany=notnull><venda_pkcompany> </venda_block label=71><venda_pknum> <venda_pkaddr1> 
+	<venda_block label=72,pkaddr2=notnull><venda_pkaddr2> </venda_block label=72><venda_pkcity> 
+	<venda_block label=73,pkstate=notnull><venda_pkstate> </venda_block label=73><venda_pkzipc> <venda_pkcntry></div>
+
+	<venda_block label=41,pkshipmthd=notnull>
+		<div><strong>Delivery Method:</strong> <venda_pkshipmthd></div>
+	<venda_block label=51,num=notnull>
+		<div><strong>Consignment Number:</strong> <venda_num></div>
+	</venda_block label=51>
+	</venda_block label=41>
+</div>
+</venda_block label=1011>
+<venda_block label=1012,mode=value,<venda_ohusgrrf>=guest_de>
+<div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">VERSANDINFORMATIONEN</div>
+<div id="address" style="padding:5px 0 20px 10px;">
+	<div><strong>Empf&auml;nger:</strong> <venda_pkfname> <venda_pklname></div>
+	<div><strong>Versandadresse:</strong> <venda_block label=71,pkcompany=notnull><venda_pkcompany> </venda_block label=71><venda_pknum> <venda_pkaddr1> 
+	<venda_block label=72,pkaddr2=notnull><venda_pkaddr2> </venda_block label=72><venda_pkcity> 
+	<venda_block label=73,pkstate=notnull><venda_pkstate> </venda_block label=73><venda_pkzipc> <venda_pkcntry></div>
+
+	<venda_block label=41,pkshipmthd=notnull>
+		<div><strong>Versandmethode:</strong> <venda_pkshipmthd></div>
+	<venda_block label=51,num=notnull>
+		<div><strong>Sendungsnummer:</strong> <venda_num></div>
+	</venda_block label=51>
+	</venda_block label=41>
+</div>
+</venda_block label=1012>
+</div>
+<!-- end delivery details -->
+
+<div id="box">
+<venda_block label=1021,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr><div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">ORDER SUMMARY</div></venda_block label=1021>
+<venda_block label=1022,mode=value,<venda_ohusgrrf>=guest_de><div id="header" style=" font-size:1.2em; border-bottom:1px solid #00CCFF; margin:0; padding:0;">BESTELL&Uuml;BERSICHT</div></venda_block label=1022>
+<div id="address" style="padding:5px 0 20px 10px;">
+<!-- start items loop -->
+<table border="0" cellspacing="0" summary="Details for your <venda_ebizname> order">
+<venda_block label=1031,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<thead>
+<tr>
+	<th scope="col" width="175px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Product Name</th>
+	<th scope="col" width="85px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Price Each</th>
+	<th scope="col" width="35px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Qty</th>
+	<th scope="col" width="90px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Total Price</th>
+	<th scope="col" width="125px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Item Status</th>
+</tr>
+</thead>
+</venda_block label=1031>
+<venda_block label=1032,mode=value,<venda_ohusgrrf>=guest_de>
+<thead>
+<tr>
+	<th scope="col" width="175px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Produktname</th>
+	<th scope="col" width="85px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">St&uuml;ckpreis</th>
+	<th scope="col" width="35px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Menge</th>
+	<th scope="col" width="90px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Gesamtpreis</th>
+	<th scope="col" width="125px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">Artikelstatus</th>
+</tr>
+</thead>
+</venda_block label=1032>
+<tbody>
+<venda_detail2>
+</tbody>
+</table>
+</div>
+</div>
+<!-- end items loop -->
+</venda_detblock1>
+
+
+<venda_detblock2>
+<venda_block label=1041,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<tr>
+	<td width="175px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_block label=450,oiitype=3>Gift Certificate</venda_block label=450><venda_block label=460,oiitype!=3><venda_oiivname></venda_block label=460><venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111><venda_block label=221,oigwref=notnull> (gift wrapped)</venda_block label=221></td>
+	<td width="85px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_ohcursym><venda_oisub></td>
+	<td width="35px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_oiqty></td>
+	<td width="90px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_ohcursym><venda_oiextsub></td>
+	<td width="125px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">
+	<venda_block label=19,oistatus!=5,oistatus!=6,oistatus!=8,oistatus!=3><venda_status></venda_block label=19>
+	<venda_block label=20,oistatus=5,oistatus=6,oistatus=8,oistatus=3,operator=or>
+		<venda_block label=11,oistatus=3>Ready to despatch</venda_block label=11>
+		<venda_block label=112,oistatus=6>Despatched <venda_stmp></venda_block label=112>
+		<venda_block label=113,oistatus=5><venda_block label=114,num=notnull>Tracking #: <venda_num></venda_block label=114><br>Despatched <venda_stmp></venda_block label=113>
+		<venda_tpxt mode=set,name=number,value=<venda_num>>
+		<venda_block label=115,oistatus=7,oistatus=8,operator=or>RMA #: <venda_num> Despatched <venda_stmp></venda_block label=115>
+	</venda_block label=20>
+	</td>
+</tr>
+</venda_block label=1041>
+<venda_block label=1042,mode=value,<venda_ohusgrrf>=guest_de>
+<tr>
+	<td width="175px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_block label=450,oiitype=3>Geschenkgutschein</venda_block label=450><venda_block label=460,oiitype!=3><venda_oiivname></venda_block label=460><venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111><venda_block label=221,oigwref=notnull> (als Geschenk verpackt)</venda_block label=221></td>
+	<td width="85px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_ohcursym><venda_oisub></td>
+	<td width="35px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_oiqty></td>
+	<td width="90px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;"><venda_ohcursym><venda_oiextsub></td>
+	<td width="125px" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">
+	<venda_block label=19,oistatus!=5,oistatus!=6,oistatus!=8,oistatus!=3><venda_status></venda_block label=19>
+	<venda_block label=20,oistatus=5,oistatus=6,oistatus=8,oistatus=3,operator=or>
+		<venda_block label=11,oistatus=3>Versandbereit</venda_block label=11>
+		<venda_block label=112,oistatus=6>Versendet <venda_stmp></venda_block label=112>
+		<venda_block label=113,oistatus=5><venda_block label=114,num=notnull>Nachverfolgungsnr.: <venda_num></venda_block label=114><br>Versendet <venda_stmp></venda_block label=113>
+		<venda_tpxt mode=set,name=number,value=<venda_num>>
+		<venda_block label=115,oistatus=7,oistatus=8,operator=or>RMA-Nr.: <venda_num> Versendet <venda_stmp></venda_block label=115>
+	</venda_block label=20>
+	</td>
+</tr>
+</venda_block label=1042>
+<venda_block label=45,oiitype=3>
+<tr>
+<td colspan="5" height="5" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">&nbsp;</td>
+</tr>
+<venda_block label=1051,mode=value,<venda_ohusgrrf>!=guest_de,<venda_ohusgrrf>!=guest_fr>
+<tr>
+	<td colspan="5" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">
+	Sent to: <venda_gcto> at <venda_gcemail><br>
+	Expiry date: <venda_gcexpires><br>
+	Message: <venda_oicmt>
+	</td>
+</tr>
+</venda_block label=1051>
+<venda_block label=1052,mode=value,<venda_ohusgrrf>=guest_de>
+<tr>
+	<td colspan="5" style="text-align:left; padding:0 5px 0 0; font-size:12px; vertical-align:top;">
+	Gesendet an: <venda_gcto> unter <venda_gcemail><br>
+	G&uuml;ltig bis: <venda_gcexpires><br>
+	Nachricht: <venda_oicmt>
+	</td>
+</tr>
+</venda_block label=1052>
+</venda_block label=45>
+
+</venda_detblock2>
+
+
+<venda_detblock3>
+<venda_ckname> (-<venda_ohcursym><venda_cktotal>)&nbsp;
+</venda_detblock3>

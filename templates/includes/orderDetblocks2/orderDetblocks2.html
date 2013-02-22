@@ -1,0 +1,168 @@
+<venda_detblock1>
+	
+	<venda_block label=601,workflow=shopcart,curstep=confirm>
+		<script language="javascript" type="text/javascript">
+		<!-- 
+		numberAddresses = numberAddresses+1;
+		// -->
+		</script>
+	</venda_block label=601>
+	
+	<venda_block label=471,pkshipreq!=1>
+		<p>Note: Services and Gift Certificates do not require delivery and have no delivery costs.</p>
+	</venda_block label=471>
+
+	<div style="width:785px;float:left;">
+	<div class="receipt-header">Items In Your Order</div>
+		<venda_detail2>
+	</div>
+
+	<venda_block label=47,pkshipreq=1>
+	<div id="order-receipt-shipping-to" class="left">
+		<div class="receipt-header">Shipping To</div>
+		<!-- start delivery address -->
+		<p style="padding-left:5px;">
+		<strong><venda_pktitle> <!-- mp_trans_disable_start --><venda_pkfname> <venda_pklname></strong><br>
+		<venda_block label=71,pkcompany=notnull><venda_pkcompany><br></venda_block label=71>
+		<venda_pknum> <venda_pkaddr1><br>
+		<venda_block label=72,pkaddr2=notnull> <venda_pkaddr2> </venda_block label=72>
+		<venda_pkcity>
+		<venda_block label=73,pkstate=notnull><venda_pkstate> </venda_block label=73><venda_pkzipc><br>
+		<venda_pkcntry>
+		</p>
+		<!-- mp_trans_disable_end -->
+		
+		<venda_block label=502,workflow!=ordlookup,curstep=confirm>
+		    <a href="#" onClick='<venda_wizbutton step=shipadd,param2=adbook,mode=process,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_edit.gif" alt="Edit delivery address" border="0"></a>
+		</venda_block label=502>
+		<!-- end delivery address -->
+	</div>
+	</venda_block label=47>
+	
+	<venda_block label=36,allgiftcert!=1></venda_block label=36>
+	<!-- start Return Request -->
+	<venda_block label=308,pkstatus=5,allgiftcert!=1>
+		<p>To return item(s), select a reason from the dropdown below and enter your comments in the space provided, then click 'Return'.</p>
+		<p>Then please wait for Customer Service to contact you.</p>
+		<p>If you have any problems, please send an email to <a href="mailto:<venda_ebizemail>"><venda_ebizemail></a></p>
+		<script language="javascript" type="text/javascript">
+		function popup(theURL,winName,features) {
+			window.open(theURL,winName,features);
+		}
+		// -->
+		</script>
+		<p><a href="#" onClick="popup('<venda_dispview page=privacy#returns>','popup','scrollbars=yes,resizable=yes,width=420,height=260'); return false;" class="blacklink">Please see our full Returns Policy here.</a></p>
+		<p><strong>Please complete a reason for return below:</strong><br>
+			<select name="field3">
+			<option value="">Please select...</option>
+			<venda_page page=reasonsforreturn>
+			</select>
+			<br>
+			<textarea cols="40" rows="3" wrap="soft" name="field4"></textarea>
+		</p>
+		<a href="javascript:showValues()"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_return.gif" border="0" alt="return items" class="right"></a>
+	</venda_block label=308>
+	<!-- end Return Request -->
+	<venda_block label=305,pkstatus=2,pkstatus=4,operator=or>
+		<p>If you want to cancel a part of this order, click the 'Cancel Items' button. On the next page you will be able to choose which items you wish to cancel.</p>
+	</venda_block label=305>
+	<venda_block label=303,pkstatus=2,pkstatus=4,operator=or>
+		<a href="#" onClick='cancel(<venda_ohrfnbr>); return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_cancelitems.gif" alt="Cancel Items" border="0"></a>
+	</venda_block label=303>
+	<venda_block label=306,pkstatus=5,allgiftcert=1>
+		<a href="#" onClick='cancel(<venda_ohrfnbr>); return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_cancelitems.gif" alt="Cancel Items" border="0"></a>
+	</venda_block label=306>
+</venda_detblock1>
+<script type="text/javascript">
+var vbmParentTrack = "";
+var vbmParentPrices = "";
+var vbmParentQty = "";
+</script>
+<venda_detblock2>
+<!-- Avail -->
+<script type="text/javascript">
+for(var i=0;i<<venda_oiqty>;i++) {
+	vbmParentTrack += "<venda_block label=606,invtparef!=null><venda_invtparef></venda_block label=606><venda_block label=607,invtparef=null><venda_invtref></venda_block label=607>,";
+}
+
+for(var i=0;i<<venda_oiqty>;i++) {
+	vbmParentPrices += "<venda_oisub>,";
+	vbmParentQty += "<venda_oiqty>,";
+}
+</script>
+<!-- Avail -->
+	<div class="order-receipt-item-list left">
+		<venda_block label=310,oistatus=5,oiitype!=3>
+		    <script language="JavaScript">
+		    <!--
+		    function check<venda_oirfnbr>(){
+			    if (document.wizform.can<venda_oirfnbr>.checked){
+			    	document.wizform.can<venda_oirfnbr>.value = "<venda_oiivname> (<venda_oiivref>), ";
+			    	}
+			    else {
+			    	document.wizform.can<venda_oirfnbr>.value = "";
+			    	}
+			    }
+		    //-->
+		    </script>
+			<span class="hide"><input type="hidden" name="can<venda_oirfnbr>" value="" onChange="javascript:check<venda_oirfnbr>()"></span>
+		</venda_block label=310>
+
+		<div class="left">
+			<venda_block label=119,med-thumb=notnull>
+				<venda_media rec=invt,type=movie-swf-pict,key=thumb,alt=<venda_invtname>,width=67,height=103>
+			</venda_block label=119>
+			<venda_block label=120,med-thumb=null>
+				<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_thu.jpg" alt="Image Not Available" style="width:67px;height:93px;">
+			</venda_block label=120>
+		</div>
+	
+		<div>
+			<venda_block label=115,oiitype=3>
+				<div>
+					<span class="bold"><venda_oiivname></span><br>
+		
+					<span class="row-text"><venda_invtref></span><br>
+		
+					<venda_oiqty> x <venda_symoisub> <span class="lightgray">(<venda_currsym><venda_oiextsub>)</span>
+				</div>
+				<div>
+					Sent To: <venda_gcto> at <venda_gcemail><br>
+					Expiry date: <venda_gcexpires><br>
+					Message: <venda_oicmt>
+					<!-- <br>From: <strong><venda_gcfrom></strong> -->
+					<venda_block label=312,status=notnull> </venda_block label=312>
+				</div>
+			</venda_block label=115>
+			
+			<venda_block label=116,oiitype!=3>
+				<div>
+					<span class="bold"><venda_oiivname></span><br>
+					<venda_block label=111,invtatt1=notnull><venda_invtatt1><venda_block label=112,invtatt2=notnull> / <venda_invtatt2></venda_block label=112><br></venda_block label=111>
+		
+					<venda_block label=112,invtatt1=notnull><span class="row-text"><venda_invtparef></span><br></venda_block label=112>
+					<venda_block label=113,invtatt1=null><span class="row-text"><venda_invtref></span><br></venda_block label=113>
+
+					</span>
+		
+					<venda_oiqty> x <venda_symoisub>
+				</div>
+			</venda_block label=116>
+
+		</div>
+	</div>
+
+			<script type="text/javascript">
+				oicount++;
+				orddetail +=  <venda_oiivref>+"@"+<venda_oiqty>+"@"+<venda_oiextsub>+"|";
+			</script>
+			
+<div style="display:none;" class="orfn-detail">
+<div style="display:none;" class="invtref"><venda_block label=1001,invtparef=notnull><venda_invtparef></venda_block label=1001><venda_block label=1002,invtparef=null><venda_invtref></venda_block label=1002></div>
+<div style="display:none;" class="invtname"><venda_oiivname></div>
+<div style="display:none;" class="invtqty"><venda_oiqty></div>
+<div style="display:none;" class="invtbrand"><venda_invtbrand></div>
+<div style="display:none;" class="sellprice"><venda_block label=1111,invtatt1=null><venda_invtsell></venda_block label=1111><venda_block label=1112,invtatt1=notnull><venda_invtatrsell></venda_block label=1112></div>
+<div style="display:none;" class="wasprice"><venda_block label=1113,invtatt1=null><venda_invtwas></venda_block label=1113><venda_block label=1114,invtatt1=notnull><venda_invtatrwas></venda_block label=1114></div>
+</div>
+</venda_detblock2>

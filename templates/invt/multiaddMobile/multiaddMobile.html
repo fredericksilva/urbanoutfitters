@@ -1,0 +1,303 @@
+<venda_block label=50,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+<venda_tpcomment><!-- Required for PowerReviews --></venda_tpcomment>
+<script type="text/javascript">
+<venda_inctemplate type=includes,name=powerreviewscriptsMobile>
+var pr_page_id = '<venda_invtref>'; 
+//var pr_write_review='<venda_dispview invt=<venda_invtref>>&temp=submitpowerreviewMobile&pageId=<venda_invtref>&layout=mobile';
+var pr_read_review='javascript:readReview()';
+function readReview(){
+	jQuery("#readreviewdisplay").toggle();
+	location.hash = '#readreview';
+}
+</script>
+</venda_block label=50>
+
+<div id="productdetailWrapper" class="productdetail productdetailMulti">
+	<h1 id="comp-name<venda_invtref>"><venda_invtname></h1>
+	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+	
+	<venda_block label=20,mode=value,<venda_addedmsg msg=You have added addedqty of addedname to your basket>=notnull>
+	<div id="addedmsg" class="addedmessage">
+		<p class="message"><venda_addedmsg msg=<venda_text id=mobile.info.addedmsg>></p>
+		<p class="vieworcheckout"><a class="viewBasket" href="<venda_codehttp>?ex=co_wizr-shopcartmobile&bsref=<venda_bsref>&log=22" title="View Basket"><venda_text id=mobile.button.view_basket></a> | <a class="checkout" href="<venda_block label=noLoginUser,ustype!=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&log=22</venda_block label=noLoginUser><venda_block label=loginUser,ustype=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&step=ordersummary</venda_block label=loginUser>" data-ajax="false"><venda_text id=mobile.button.checkout></a></p>
+	</div>
+	</venda_block label=20>	
+	<div id="multiaddedmsg" class="addedmessage hide">
+		<p class="multiaddedmessage"><venda_text id=mobile.info.multi_addedmsg></p>
+		<p class="vieworcheckout"><a class="viewBasket" href="<venda_codehttp>?ex=co_wizr-shopcartmobile&bsref=<venda_bsref>&log=22" title="View Basket"><venda_text id=mobile.button.view_basket></a> | <a class="checkout" href="<venda_block label=noLoginUser,ustype!=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&log=22</venda_block label=noLoginUser><venda_block label=loginUser,ustype=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&step=ordersummary</venda_block label=loginUser>" data-ajax="false"><venda_text id=mobile.button.checkout></a></p>
+	</div>
+	<venda_tpcomment><!-- Start: Product Image --></venda_tpcomment>
+	<div class="prodImages">
+		<div id="productdetail-image" class="preload mainImage">
+			<venda_block label=10,med-medium=notnull>
+				<venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=medium>
+			</venda_block label=10>
+			<venda_block label=11,med-medium=null>
+				<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/no_image_medium.gif" alt="<venda_text id=mobile.info.no_product_image>">
+			</venda_block label=11>
+		</div>
+		<p class="enlarge"><venda_text id=mobile.info.swipe_to_view></p>
+	</div>
+	<venda_tpcomment><!-- End: Product Image --></venda_tpcomment>
+
+	<venda_tpcomment><!-- Start: prodContents (price, description, etc) --></venda_tpcomment>
+	<div class="prodContents">
+		<form name="form" action="<venda_codehttp>" method="get" name="addproductform" id="addproductform" data-ajax="false">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="log" value="22">
+		<input type="hidden" name="curpage" value="">
+		<input type="hidden" name="next" value="">
+		<input type="hidden" name="ex" value="co_disp-shopc">
+		<input type="hidden" name="buy" value="<venda_invtref>">
+		<input type="hidden" name="invt" value="<venda_invtref>">
+		<input type="hidden" name="ivref" value="<venda_invtref>">
+		<venda_tpcomment><!-- hidden fields specific for multi add --></venda_tpcomment>
+		<input type="hidden" name="mode" value="addmul">
+		<input type="hidden" name="param1" value="bulk">
+		<input type="hidden" name="param2" value="invt">
+
+		<venda_tpcomment><!-- Start: oneProduct --></venda_tpcomment>
+		<div class="oneProduct" id="oneProduct_<venda_invtuuid>">	
+			<div class="oneProductContent hide">
+				<venda_tpcomment><!-- start: attributes dropdown --></venda_tpcomment>
+				<div id="attributeInputs" class="attributeInputs">
+					<venda_block label=21,selatt1=notnull>
+						<div>
+							<label for="att1"><venda_text id=mobile.form.choose> <venda_att1></label> 
+							<div class="att1"><select name="att1" id="att1_<venda_invtuuid>"><option value="" data-placeholder="true"><venda_text id=mobile.form.choose> <venda_att1></option><venda_selatt1></select></div>
+						</div>
+					</venda_block label=21>
+					<venda_block label=22,selatt2=notnull>
+						<div style="display: none;">
+							<label for="att2"><venda_text id=mobile.form.choose> <venda_att2></label>
+							<div class="att2"><select name="att2" id="att2_<venda_invtuuid>"><option value="" data-placeholder="true"><venda_text id=mobile.form.choose> <venda_att2></option><venda_selatt2></select></div>
+						</div>
+					</venda_block label=22>
+					<venda_block label=23,selatt3=notnull>
+						<div style="display: none;">
+							<label for="att3"><venda_att3></label>
+							<div class="att3"><select name="att3" id="att3_<venda_invtuuid>"><option value="" data-placeholder="true"><venda_text id=mobile.form.choose> <venda_att3></option><venda_selatt3></select></div>
+						</div>
+					</venda_block label=23>
+					<venda_block label=24,selatt4=notnull>
+						<div style="display: none;">
+							<label for="att4"><venda_att4></label>
+							<div class="att4"><select name="att4" id="att4_<venda_invtuuid>"><option value="" data-placeholder="true"><venda_text id=mobile.form.choose> <venda_att4></option><venda_selatt4></select></div>
+						</div>
+					</venda_block label=24>
+				</div>
+				<venda_tpcomment><!-- end: attributes dropdown --></venda_tpcomment>
+				
+				<div id="productdetail-altview" class="altview"></div>
+				<venda_inctemplate name=alternateviewScriptMobile,type=invt>
+
+				<div class="priceandreview">
+					<venda_block label=52,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+						<div class="powerreview">
+						<script type="text/javascript" src="<venda_serveradd>/partners/pwr/engine/js/full.js"></script>
+						<!-- power reviews snippet for product reviews -->
+						<script type="text/javascript">snippet(document);</script>
+						</div>
+					</venda_block label=52>
+				</div>
+				<venda_block label=703,chkatt=null>
+					<venda_tpcomment><!-- start: buyControl div for non attribute --></venda_tpcomment>
+					<div class="productDetailGradientBox buyControlsMultiAttr">
+						<venda_block label=25,invtavail&gt;0>
+							<venda_tpcomment><!-- start: button link image --></venda_tpcomment>
+							<venda_block label=700,chkatt=null>
+								<div id="qtybox" class="qtybox ui-hide-label">
+									<label for="qtylist"><venda_text id=mobile.form.qty>:</label>
+									<select name="qtylist" class="qty" id="qtylist_<venda_atrsku>">
+										<option value="" data-placeholder="true"><venda_text id=mobile.form.choose_qty></option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+									</select>
+								</div>
+							</venda_block label=700>
+						</venda_block label=25>
+
+						<venda_block label=30,invtpreorder=notnull>
+							<!-- if future release date -->
+							<p class="release" style="display:none;"><venda_text id=mobile.info.not_yet_released></p>
+							<p class="release" style="display:none;"><venda_text id=mobile.info.release_date></p>
+						</venda_block label=30>
+
+						<venda_block label=26,invtavail&lt;1>
+							<!-- if out of stock -->
+							<div class="defaultstockindicator">
+								<venda_block label=166,etadyleft&lt;0><span class="nostock"><venda_text id=mobile.info.out_of_stock></span></venda_block label=166>
+								<venda_block label=167,etadyleft&gt;0><span class="nostock"><venda_text id=mobile.info.out_of_stock>,</span><p class="eta"><venda_text id=mobile.info.expected> <venda_atretady>/<venda_atretamn>/<venda_atretayr></p></venda_block label=167>
+								<a id="emwbis_link" href="<venda_dispview invt=<venda_invtref>>&temp=emailinstockMobile" title="<venda_text id=mobile.button.email_when_in_stock>" class="emwbisLink" data-role="button" data-inline="true"><venda_text id=mobile.button.emwbis></a>
+							</div>
+						</venda_block label=26>
+					</div><venda_tpcomment><!-- end: buyControl div for non attribute--></venda_tpcomment>
+				</venda_block label=703>
+
+				<venda_block label=701,chkatt=notnull>
+					<div class="multiList">
+						<div class="prodMultiLabel"><venda_text id=mobile.info.att_option_default> <venda_att2></div>
+						<venda_detail_attribute>
+						
+						<venda_block label=29,invtsubtot&gt;0><venda_invtsub template=substituesMultiMobile></venda_block label=29>
+					</div>
+
+					<div id="addedmsg"><venda_block label=32,mode=value,<venda_addedmsg msg=<venda_text id=mobile.info.addedmsg>>=notnull><p><venda_addedmsg msg=<venda_text id=mobile.info.addedmsg>></p><venda_inctemplate name=trackingProdAdd,type=includes></venda_block label=32></div>
+					
+					<div class="share_add">
+						<venda_tpcomment><!-- start: buyControl div for attribute--></venda_tpcomment>
+						<div class="productDetailGradientBox buyControlsMultiAll">
+							<venda_block label=25,invtavail&gt;0>
+								<input type="submit" class="addproductmulti btnGreen" value="Add to Basket" data-track="addtobasket">
+							</venda_block label=25>
+							<venda_block label=26,invtavail&lt;1>
+								<!-- if out of stock -->
+								<venda_block label=166,etadyleft&lt;0><span class="nostock"><venda_text id=mobile.info.out_of_stock></span></venda_block label=166>
+								<venda_block label=167,etadyleft&gt;0><span class="nostock"><venda_text id=mobile.info.out_of_stock>,</span><p class="eta"><venda_text id=mobile.info.expected> <venda_atretady>/<venda_atretamn>/<venda_atretayr></p></venda_block label=167>
+								<a id="emwbis_link" href="<venda_dispview invt=<venda_invtref>>&temp=emailinstockMobile" title="<venda_text id=mobile.button.email_when_in_stock>" class="emwbisLink" data-role="button" data-inline="true"><venda_text id=mobile.button.emwbis></a>
+							</venda_block label=26>
+						</div>
+					</div>
+					<venda_tpcomment><!-- end: buyControl div for attribute--></venda_tpcomment>
+				</venda_block label=701>
+				</div><venda_tpcomment><!-- End: oneProductContent --></venda_tpcomment>
+			</div><venda_tpcomment><!-- End: oneProduct --></venda_tpcomment>
+			</form>
+
+			<venda_detblock_attribute>
+				<script type="text/javascript">
+					Venda.Attributes.StoreJSON(<venda_atts>,<venda_data>);
+				</script>
+
+				<venda_mediagrid template=alternateviewGridMobile> <venda_tpcomment><!-- Used to load attribute media image and image data --></venda_tpcomment>
+
+				<div class="prodMulti prodMulti<venda_atrsku>" data-atr1="<venda_atr1>" data-atr2="<venda_atr2>" data-atr3="<venda_atr3>" data-atr4="<venda_atr4>">
+					<div class="attributeDetail">
+						<p class="attrTitle"><span class="attrName"><venda_atr2></span><span class="attrSku"><venda_atrsku></span></p>
+						<venda_inctemplate type=includes,name=priceFormatMultiMobile>
+						
+						<venda_block label=131,atronhand&gt;0>
+						<input type="hidden" name="itemlist" class="itemlist" value="<venda_atrsku>" id="itemlist_<venda_atrsku>">
+
+						<div class="productDetailGradientBox buyControlsMultiAttr">
+							<div id="qtybox" class="qtybox ui-hide-label">
+								<label for="qtylist"><venda_text id=mobile.form.qty>:</label>
+								<select name="qtylist" class="qty" id="qtylist_<venda_atrsku>">
+									<option value="" data-placeholder="true"><venda_text id=mobile.form.choose_qty></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+								</select>
+							</div>
+						</div>
+						<venda_block label=120,atrreleaseyr=notnull>
+							<p class="release" style="display:none;"><venda_text id=mobile.info.not_yet_released></p>
+							<p class="release" style="display:none;"><venda_text id=mobile.info.release_date></p>
+						</venda_block label=120>
+						</venda_block label=131>
+						
+						<venda_block label=132,atronhand&lt;1>
+						<div class="defaultstockindicator">				
+						<venda_block label=166,atretayr=null><span class="nostock"><venda_text id=mobile.info.out_of_stock></span></venda_block label=166>
+						<venda_block label=167,atretayr=notnull><span class="nostock"><venda_text id=mobile.info.out_of_stock>,</span><p class="eta"><venda_text id=mobile.info.expected> <venda_atretady>/<venda_atretamn>/<venda_atretayr></p></venda_block label=167>
+						<a id="emwbis_link" href="<venda_dispview invt=<venda_invtref>>&temp=emailinstockMobile" title="<venda_text id=mobile.button.email_when_in_stock>" class="emwbisLink" data-role="button" data-inline="true"><venda_text id=mobile.button.emwbis></a>
+						</div>
+						</venda_block label=132>
+					</div>
+				</div><venda_tpcomment><!-- end: div class="prodMulti" --></venda_tpcomment>
+			</venda_detblock_attribute>
+
+			<venda_tpcomment><!-- Start: ATTRIBUTES SETTINGS --></venda_tpcomment>
+			<venda_block label=1000,chkatt=notnull>
+				<div style="display: none;">
+					<div class="attributesForm" id="productdetailMult">multiAdd2</div><venda_tpcomment><!-- dropdown, halfswatch, swatch, grid, multiAdd2 --></venda_tpcomment>
+					<div id="invtref"><venda_invtref></div>
+					<div id="attributeNames">
+						<div class="att1"><venda_att1></div>
+						<div class="att2"><venda_att2></div>
+						<div class="att3"><venda_att3></div>
+						<div class="att4"><venda_att4></div>
+					</div>
+					<div id="invtrelease"><venda_invtrelease></div>
+				</div>
+			</venda_block label=1000>
+			<venda_tpcomment><!-- End: ATTRIBUTES SETTINGS --></venda_tpcomment>
+	</div><venda_tpcomment><!-- End: prodContents (price, description, etc) --></venda_tpcomment>
+
+	<venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
+	<div id="infotab" class="tabs productDetailTabs">
+		<div class="tabheader">
+			<ul class="nav">
+			<li><a href="#infotab1" data-ajax="false" title="Description"><venda_text id=mobile.info.tab1></a></li>
+			<li><a href="#infotab2" data-ajax="false" title="Specification"><venda_text id=mobile.info.tab2></a></li>
+			<li><a href="#infotab3" data-ajax="false" title="Delivery"><venda_text id=mobile.info.tab3></a></li>
+			</ul>
+		</div>
+		<div class="tabcontent">
+			<!-- description -->
+			<div id="infotab1" class="tab">
+				<venda_block label=12,invtdesc1=notnull><p class="invtdesc1"><venda_invtdesc1></p></venda_block label=12>
+				<venda_block label=13,invtdesc2=notnull><p class="invtdesc2"><venda_invtdesc2></p></venda_block label=13>
+				<venda_block label=14,invtdesc3=notnull><p class="invtdesc3"><venda_invtdesc3></p></venda_block label=14>
+				<venda_block label=15,invtdesc4=notnull><p class="invtdesc4"><venda_invtdesc4></p></venda_block label=15>
+				<table class="info" summary="<venda_text id=mobile.info.tab_summary>" title="<venda_text id=mobile.info.tab_summary>" cellspacing="0" cellpadding="0">
+					<tbody>
+					<tr>
+                    	<td class="invtname" valign="top"><venda_text id=mobile.info.product_code></td>
+                    	<td class="invtdetail" valign="top"><venda_invtref></td>
+                	</tr>
+					<venda_extflds hideempty=1,template=pdxtfields_display,group=1,ref=<venda_invtref>,ivtype=<venda_invtivtype>></tbody>
+				</table>
+			</div>
+			<div id="infotab2" class="tab"><venda_page page=<venda_pdxtdelivery>></div>
+			<div id="infotab3" class="tab"><venda_page page=<venda_pdxtreturnspu>></div>
+		</div>
+	</div><venda_tpcomment><!-- end: product details tab --></venda_tpcomment>
+	<script type="text/javascript">
+		var infotab = new Venda.Widget.createTab("#infotab");
+		infotab.init();
+	</script>
+</div><venda_tpcomment><!-- end: productdetailWrapper --></venda_tpcomment>
+
+<venda_block label=568,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1>
+	<!-- power review engine function call to read reviews -->
+	<div id="readreviewdisplay" style="display: none;"><a name="readreview"></a>
+		<script type="text/javascript">engine(document);</script>
+		<div id="#readReview"></div>
+	</div>
+</venda_block label=568>

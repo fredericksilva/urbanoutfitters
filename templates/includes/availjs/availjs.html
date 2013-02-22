@@ -1,0 +1,196 @@
+<script type="text/javascript" src="<venda_protocol>://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script>
+<script type="text/javascript">
+function availTrackingCode(sku){
+	//alert(sku);
+}
+function showAvailH2(ref){	
+	//Use in case of different headers
+	var h2="h2"+ref;
+	if (document.getElementById(h2)) {
+		aHeader=document.getElementById(h2);
+		aHeader.style.display='block';
+	} 
+}
+function recallCookie(){
+	//return the borrowed recently viewed items cookie
+	var cj = new CookieJar({expires:'',path: '/'});
+	var listOfRVIs=cj.get("customRVI");
+	cj.put("RVI",listOfRVIs);
+	cj.remove("customRVI");
+	if(Venda.Platform.EqualHeight){
+		var classtoset = new Array ('#avail li .name_equal', '#avail li .price_equal', '#avail li .was_equal');
+		Venda.Platform.EqualHeight.init(classtoset);
+	}
+	countLi();
+	var productsliderSlide = Venda.Widget.Slider('Sliderlist',30,4,1,'SliderLeft','SliderRight',0.3,0); 
+	YAHOO.util.Event.onAvailable('Slider', productsliderSlide.init, productsliderSlide, true); 
+}
+function vendaRecsDisplay(elementref){
+	var panelref= ("avail-panel-"+elementref);
+	//display recs
+	ajaxFunction('/page/irecsdisplay',panelref,null,recallCookie);
+}
+function vendaRecsDisplaySearch(elementref){
+	var panelref= ("avail-panel-"+elementref);
+	//display recs
+	ajaxFunction('/page/irecsdisplaysearch',panelref,null,recallCookie);
+}
+function populateProductRecs(elref) {
+	if (document.getElementById('tag-invtref')) {
+		var emark = new Emark();
+		var prodid = document.getElementById('tag-invtref').innerHTML;
+		var cj = new CookieJar({expires:'',path: '/'});
+		var elementref = elref;
+		var trackingcodeHTXT = '<venda_htxt mode=get,name=avail>';
+		if(cj.get("AvailTracker")){
+			var trackCode = cj.get("AvailTracker").split(',');//COUcd LD GET THIS VALUE VIA URL PARAM
+		}
+		var addToBasket ="<venda_block label=3212,mode=value,<venda_addedmsg msg=<venda_text id=site.addedmsg>>!=>1</venda_block label=3212>";
+		var prodRecs = emark.getProductsPredictions([prodid], 'ProductDetailRecs');
+		if (addToBasket!= "1") {
+		//For Tracking 'logClickedOn' fuction, check if a tracking-code has been passed to this page from the previous page (e.g. in a htxt), if it has, then we need to track logClickedOn.
+			if (trackingcodeHTXT == 'true'){
+				emark.logClickedOn(prodid, trackCode[0]);
+				//alert('now calling logClickedOn for a recommended product where the tracking code is: '+trackCode[0]+' and the product id is: '+prodid);
+			}
+		//For Tracking 'logAddedToCart function
+		}
+		if (addToBasket== "1") {
+			if (trackingcodeHTXT == 'true'){
+				emark.logAddedToCart(prodid, trackCode[1]);
+				//alert('now calling logAddedToCart for a recommended product where the tracking code is: '+trackCode[1]+' and the product id is: '+prodid);
+			}
+			if (trackingcodeHTXT == ''){
+				emark.logAddedToCart(prodid);
+				//alert('now calling logAddedToCart for a Non-recommended product where the product id is: '+prodid+' Note we do not pass a trackingcode in this case');
+			}	
+		}
+		emark.commit(function() {     
+			//alert('Products: '+recommendedProducts.values+'\nTracking code:'+recommendedProducts.trackingcode);
+			cj.put("RVI",prodRecs.values);
+			cj.put("AvailTracker",prodRecs.trackingcode+','+trackCode);
+			vendaRecsDisplay(elref);
+			if (prodRecs!="") {showAvailH2(elref);}
+			//alert(prodRecs);
+		});
+	}
+}
+function populateBasketRecs(elref){
+	if (document.getElementById('tag-basketitems'))	{
+		//only do anything if the product data is available on the page
+		var cj = new CookieJar({expires:'',path: '/'});
+		var prodid = document.getElementById('tag-basketitems').innerHTML;
+		prodid = prodid.split(",");
+		//You code to process each item of array 
+		var emarkid = document.getElementById('avail-emarkid').innerHTML;
+		var emark = new Emark(emarkid);
+		var elementref = elref;
+		var prodRecs = emark.getProductsPredictions(prodid, 'ShoppingCartRecs');
+		
+		if (cj.get("RVI")!=null) {
+			//alert("cj.get(RVI)= "+cj.get("RVI"));
+			var listOfRVIs = cj.get("RVI");
+			//copy the list of recently viewed items to the "Custom RVI Cookie"
+			cj.put("customRVI",listOfRVIs);
+			//	cj.remove("RVI");
+		}else {
+			//alert("cj.get(RVI)=null");
+		}
+		
+		//copy product recs from Avail to the RVI cookie
+		emark.commit(function() { 
+			cj.put("RVI",prodRecs.values);
+			cj.put("AvailTracker",prodRecs.trackingcode);
+			vendaRecsDisplay(elref);
+		});
+	}
+}
+function populateSearchRecs(elref){
+	if (document.getElementById('tag-searchterm')) {
+		var cj = new CookieJar({expires:'',path: '/'});
+		var searchTerm = document.getElementById('tag-searchterm').innerHTML;
+		var emarkid = document.getElementById('avail-emarkid').innerHTML;
+		var emark = new Emark(emarkid);
+		var elementref = elref;
+		//alert(elref);
+		var prodRecs = emark.getSearchPredictions(searchTerm, 'SearchResultRecs');
+		if (cj.get("RVI")!=null) {
+		//alert("cj.get(RVI)= "+cj.get("RVI"));
+			var listOfRVIs = cj.get("RVI");
+			//copy the list of recently viewed items to the "Custom RVI Cookie"
+			cj.put("customRVI",listOfRVIs);
+			//	cj.remove("RVI");
+		}else {
+			//alert("cj.get(RVI)=null");
+		}
+		//copy product recs from Avail to the RVI cookie
+		emark.commit(function() {
+		
+		//availDoubleCheck = availDoubleCheck.substring(0, availDoubleCheck.length-1);//Get from accesory template
+                //var accessorySKUArray = availDoubleCheck.split(",");
+                var accessorySKUArray = [];
+		jQuery('.productSku').each(function(){
+			accessorySKUArray.push(jQuery(this).text());
+		});
+		var prodRecsList=prodRecs.values;
+                var prodsSelected = "";
+                for (var i=0; i<prodRecsList.length; i++) {
+                        DuplicatedSKU = "";
+                        for (var j=0; j<accessorySKUArray.length; j++){
+                                if (accessorySKUArray[j]==prodRecsList[i]){
+                                        DuplicatedSKU =accessorySKUArray[j];
+                                        break;
+                        }}
+                        if (DuplicatedSKU==""){
+                                prodsSelected = prodsSelected == "" ? prodRecsList[i] : prodsSelected + "," + prodRecsList[i];
+                }}
+
+
+                cj.put("RVI",prodsSelected);
+                        //alert("set availtracker");
+                        cj.put("AvailTracker",prodRecs.trackingcode);
+                        vendaRecsDisplaySearch(elref);
+                        //if (prodRecs!="") {showAvailH2(elref);}
+                });	
+	}
+	
+}
+function populateUserRecs(elref){
+	if (document.getElementById('tag-useremail'))
+	{
+		var userID = document.getElementById('tag-useremail').innerHTML;
+		userID = userID.replace(/@/,"_AT_");
+		userID = userID.replace(/\./,"_DOT_");
+		emarkid = document.getElementById('avail-emarkid').innerHTML;
+		var emark = new Emark(emarkid);
+		var elementref = elref;
+		//alert(elref);
+		var prodRecs = emark.getUserPredictions(userID, 'UserRecs');
+		//emark.commit(function() { 
+		vendaRecsDisplay(prodRecs,elref);
+		//if (prodRecs!="") {showAvailH2(elref);}
+	}
+}
+function populateClickRecs(elref){
+	var cjavail = new CookieJar({expires:'',path: '/'});
+	if(cjavail.get("RVIcustom")!=null){
+		var RVIcustomValue = cjavail.get("RVIcustom");
+			var emark = new Emark();
+			var elementref = elref;
+			//alert(clickStream);
+			var prodRecs = emark.getProductsPredictions(RVIcustomValue, 'ClickStreamRecs');
+			//alert(prodRecs);
+			//emark.commit(function() { 
+			var removeCookie = cjavail.remove("RVI");
+			var trackingCookie = cjavail.put("RVI",prodRecs);
+			vendaRecsDisplay(elref);
+			//if (prodRecs!="") {showAvailH2(elref);}
+	}
+}
+function countLi(){
+	//If all products are unpublished
+	  if(jQuery('#avail li').length == 0){
+			jQuery('#avail').hide();
+	  }
+}
+</script>

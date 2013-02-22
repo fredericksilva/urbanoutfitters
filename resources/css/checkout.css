@@ -1,0 +1,613 @@
+/* form elements (mostly on checkout pages) */
+form {
+	display:inline;
+	}
+input, select {
+	font-size:90%;
+	vertical-align:middle;
+	}
+radio, checkbox {
+	vertical-align:middle;
+	float:left;
+	width:10%;
+	}
+textarea {
+	font-size:90%;
+	}
+legend {
+	font-weight:bold;
+	padding-bottom:6px;
+	margin-left:-6px;
+	}
+/*   IE  7    */
+*:first-child+html fieldset.areaBox legend {
+ 	margin-left:-6px !important;
+}
+label {
+	font-weight:normal;
+	}
+fieldset {
+	border:none;
+	/*margin-bottom:1em;*/
+	clear:both;
+	/*padding:0 6px 6px 10px;*/
+	padding:0 6px 0 10px;
+	}
+fieldset label {
+	float:left;
+	width:36%;
+	}
+fieldset div div {
+	clear:none;
+	float:left;
+	width:33%;
+	}
+fieldset div {
+	clear:both;
+	height:30px;
+	}
+fieldset.pay-option {
+	color:#999;
+	border:none;
+	clear:both;
+	padding:0 6px 0 10px;
+	font:10.5px Arial;	
+	}
+fieldset.pay-option label {
+	float:left;
+	width:110px;
+	padding-top:0 !important;
+	padding-top/**/:2px;
+	font-weight:bold;
+	text-transform: uppercase;
+	}
+fieldset.pay-option a {
+	text-decoration:none;
+	color:#FA4667;
+	font-weight:bold;
+	text-transform: capitalize;
+	}
+/* other checkout classes */
+.required {
+	color:#f00;
+		}
+/*.dontFloat {
+	float:none;
+	width:auto;
+	}*/
+.invisible {
+	color:#fff;
+	}
+
+/*Start checkout layout for ORDER SUMMARY*/
+#col-two-three-full{
+	width:830px; /* #wrapper = #col-one + 10px + #col-two-three */
+	background:#FFF;
+	padding:20px 0 0 30px;
+	margin:0;
+	}
+/*\*/
+html>body*#col-two-three-full{
+	width:830px; /* #wrapper = #col-one + 10px + #col-two-three */
+	background:#FFF;
+	padding:10px 0 0 30px;
+	margin:0;
+	}
+/**/
+#col-two-order-summary{
+	background:#FFF;
+	width:480px;
+	margin:0;
+	padding:0;
+	}
+#col-two-order-summary-inside{
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg1.jpg);
+	background-repeat: no-repeat;
+	background-color: #f3f3f3;
+	margin:0;
+	padding:2px 15px 0 12px;
+	}
+/*\*/
+html>body*#col-two-order-summary-inside{
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg1.jpg);
+	background-repeat: no-repeat;
+	background-color: #f0f0f0;
+	margin:0;
+	padding:2px 15px 0 12px;
+	}
+/**/
+#col-two-order-summary-box{
+	background-color: #f3f3f3;
+	margin:0;
+	padding:0;
+	}
+#col-three-order-summary{
+	background:#FFF;
+	width:320px;
+	margin:0;
+	padding:0;
+	}
+#col-three-order-summary-inside{
+	margin:0;
+	padding:2px 0 0 10px;
+	}
+#order-summary-shipping-to{
+	margin:0;
+	padding:0 10px 0 10px;
+	font:12px Arial;
+	line-height:16px;
+	color:#333;
+	}
+#order-summary-order-total{
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg2.jpg);
+	background-color: #f3f3f3;
+	padding:0 15px 0 12px;
+	border-top:2px solid #FFF;
+	}
+#order-summary-order-total-bottom{
+	width:480px;
+	height:83px;
+	background-image:url(/content/ebiz/urbanoutfitters/resources/images/img_order-summary_bg2-bottom.jpg);
+	background-color: #f3f3f3;
+	}
+#order-summary-delivery-options{
+	font:14px Arial;
+	}
+#order-summary-delivery-options p {
+	marging:0;
+	}
+.hdr-subject{
+	border-bottom: 2px solid #333;
+	color: #666666;
+	font-size: 1.1em;
+	padding:13px 0 0 0;
+    letter-spacing:1px;
+	font-family: Arial;
+	}
+.hdr-subject2{
+	border-bottom: 2px solid #333;
+	color: #DE75B0;
+	font-size: 1.1em;
+	padding:13px 0 0 0;
+	letter-spacing:1px;
+	font-family: Arial;
+	}
+.hdr-subject3{
+	border-bottom: 2px solid #333;
+	color: #1F7AA9;
+	font-size: 1.1em;
+	padding:13px 0 0 0;
+	letter-spacing:1px;
+	font-family: Arial;
+	}
+.img-hdr-gray{
+	border-bottom: 2px solid #333;
+	padding:25px 0 0 0;
+	height:13px
+	}
+.img-hdr-pink{
+	border-bottom: 2px solid #333;
+	padding:25px 0 0 0;
+	margin-bottom:5px;
+	height:13px
+	}
+.img-hdr-blue{
+	border-bottom: 2px solid #333;
+	padding:25px 0 0 0;
+	margin-bottom:5px;
+	height:13px
+	}
+.mb8{margin-bottom:8px;}
+.ml10{margin-left:10px;}
+.mt2{margin-top:2px;}
+.mt5{margin-top:5px;}
+.shipmethod{
+	font:14px Arial;
+	line-height:18px;
+	color:#333;
+	font-weight:bold;
+	}
+.ship-details {
+	text-decoration:none;	
+	color:#FA4667;	
+	}
+div#additional-svc {
+	margin:0;
+	padding:8px 0 0 0;
+	}
+div#additional-svc div{
+	display: inline;
+	float:left;
+	margin:0 0 0 18px;
+	}
+div#additional-svc div.first{
+	margin:0 0 0 5px;
+	}
+* html #btn-place-order{
+	margin:0;
+	}
+#btn-place-order{
+	margin: 5px 0 0 0;
+	}
+* html .order-summary-textbox{
+	width:130px;
+	}
+.order-summary-textbox{
+	width:132px;
+	}
+/*\*/
+html>body*.order-summary-textbox{margin-top:-2px;}
+/**/
+.order-summary-textbox2{
+	width:29px;
+	}
+/*\*/
+html>body*.order-summary-textbox2{width:29px;margin-top:-2px;}
+/**/
+.selectcard{width:136px;}
+/*\*/
+html>body*.selectcard{width:139px;margin-top:-2px;}
+/**/
+.order-summary-combo select{
+	width:61px;
+	margin:0 14px 0 0;
+	}
+div#promo-included{
+	margin:0;
+	padding:0;
+	height:70px;
+	}
+/*End checkout layout for ORDER SUMMARY*/
+
+/*Start basket*/
+div.basket-thumb {
+	float: left;
+	width: 93px;
+	height: 111px;
+	background: url(/content/ebiz/urbanoutfitters/resources/images/basket-bg.jpg) top;
+	padding: 0;
+	margin: 0;
+	}
+div.basket-thumb img {
+	border: 2px #FFF solid;
+	margin: 5px 0 0 7px;
+	padding: 0;
+	}
+td.col-qty input{
+	width:21px; /*25*/
+	height:15px; /*19*/
+	margin:0;
+	/*padding:0 0 0 4px;*/
+	}
+.basket-small-text{
+	font: 10.5px Arial;
+	color:#333;	
+	}
+.box-invt{
+	float: left;
+	width: 203px;
+	margin: 0;
+	padding: 0 0 10px 10px;
+	}
+.box-invt p{
+	margin: 0;
+	padding: 0;
+	line-height:16px;
+	}
+.basket-invt a{
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;
+	font-weight:bold;
+	font: 12px Arial;
+	}
+.btn-remove{
+	font: 10.5px Arial;
+	color: #333;
+	}
+.tr-basket td{
+	vertical-align: top;
+	border-bottom: 2px solid #333;
+	padding: 10px 0 10px 0;
+	}
+.price-text {
+	padding:0 5px 0 0;
+	font: 12px Arial;
+	}
+.total-amount{
+	color:#999;
+	line-height:21px;
+	margin:5px 3px 5px 0;
+	padding:0 5px 0 7px;
+	border:0;
+	font:12px Arial;
+	font-weight:bold;
+	}
+/*End basket*/
+
+/*Start more ideas*/
+ul#moreideas {
+	margin:0;
+	padding:0;
+	width:201px;
+	}
+ul#moreideas li{
+	display: inline;
+	list-style-type: none;
+	float:left;
+	}
+ul#moreideas li a{
+/*	background: #F00;*/
+	}
+/*End more ideas*/
+
+/*Start ORDER RECEIPT*/
+#order-receipt-payment-details{
+	width:310px;
+	}
+#order-receipt-contact-details{
+	width:310px;
+	}
+#order-receipt-order-totals{
+	width:310px;
+	}
+#order-receipt-shipping-to{
+	width:310px;
+	margin-right:10px;
+	}
+.order-receipt-item-list{
+	width:310px;
+	height:115px;
+	padding:6px 0 0 3px;
+	margin:0;
+/*	background:#FAA;*/
+/*	border:1px solid #00F;*/
+	}
+.order-receipt-item-list div{
+	margin:0;
+	padding:0;
+	}
+.order-receipt-item-list div img{
+	margin:0 8px 0 0;
+	padding:0;
+	border:0;
+	}
+* html .order-receipt-item-list div img{
+	margin:0 5px 0 0;
+	padding:0;
+	border:0;
+	}
+#btn-order-receipt-continue-shopping{
+/*	border-top:1px solid #40BD95;*/
+	padding:10px 0 10px 0;
+	margin:0;
+	}
+/*End ORDER RECEIPT*/
+
+.font2{
+	font-family: Arial;
+	}
+.font1{
+	font-family: Arial;
+	}
+.row-text{
+	color: #333;
+	}
+.green-text{
+	color: #23B181;	
+	}
+.yellow-text{
+	color: #89930E;
+	}
+.red-basket{
+	color:#f30028;
+	}
+.black{
+	color:#000;
+	}
+	/* Extra CSS for WYSIWYG */
+
+#static{
+text-align:left;
+margin:0;
+padding:0px;
+}	
+#static h1{
+	text-transform: uppercase;
+	color:#000000;
+	margin-bottom:10px;
+	padding:0;
+	font-weight:bold;
+	font:13px Arial;
+	letter-spacing:1.5px;
+	}
+	#static .underline{
+	border-top:2px solid #333;
+	height:2px;
+	}
+#static h5{
+	color:#333; 
+	font-size:1em;
+	margin:0;
+	padding-bottom:10px;
+	font-weight:normal;
+	}
+#static a{
+	color:#6600cc;	
+	}
+#static a:hover{
+	color:#000000;
+}	
+#static ul{
+	list-style:disc;
+   margin:5px 0 5px 15px ;
+	}
+	#static ul li{
+	line-height:20px;
+	} 
+	#static p{
+	margin:0 0 20px 0;	
+	}
+	#static h2{
+	color:#000000;
+	text-transform:capitalize;
+	font:12px Arial;
+	margin-bottom:5px;
+	padding:0;
+	font-weight:bold;
+	}
+/* for some page (paymentoptions,managingyouraccount and termsandconditions)*/	
+	
+#static2{
+text-align:left;
+margin:0;
+padding:0;
+}	
+#static2 h1{
+	text-transform: uppercase;
+	color:#333;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font:18px arial;
+	letter-spacing:1.5px;
+	}
+	#static2 .underline{
+	border-top:2px solid #333;
+	height:2px;
+	}
+#static2 h5{
+	color:#333; 
+	font-size:1em;
+	margin:0;
+	padding-bottom:10px;
+	}
+#static2 a{
+	color:#999;
+	text-decoration:none;
+	border-bottom:1px solid #00CCFF;	
+	}
+#static2 ul{
+	color:#333; 
+	  margin:5px 0 5px 30px ;
+	  	list-style:disc;
+	line-height:18px;
+	}
+	#static2 ul li{
+	line-height:18px;
+	color:#666;
+	} 
+	#static2 p{
+    margin:0 0 20px 0;	
+	color:#666; 
+	line-height:18px;
+	} 
+#static2 h2{
+	color:#333;
+	font:12px Arial;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	text-transform: uppercase;
+	}
+div#col-two-three a.paypalbtn{
+	margin-left:642px;
+	}
+div#col-two-three div#paychoice{
+	margin-left:700px;
+	margin-bottom:10px;
+	}
+
+#creditcard,#formpaypal,div.paypal label{
+	float:left;
+}
+img#paypallogo{
+	clear:both;
+	float:left;
+	margin:5px 0 5px 0;
+}
+div#paymentdetails p{
+padding:0px;
+}
+div.credit{
+	height:20px;
+}
+div#paymentdetails fieldset.f-payment_details img{
+	margin-bottom:10px;
+}
+div.paypal{
+height:80px;
+padding-top:20px;
+}
+div#paymentdetails p{
+clear:both;
+float:left;
+width:285px;
+}
+fieldset.f-payment_details {
+	color:#999;
+	border:none;
+	clear:both;
+	padding:0 6px 0 10px;
+	font:10.5px Arial;	
+	}
+fieldset.f-payment_details a {
+	text-decoration:none;
+	color:#FA4667;
+	font-weight:bold;
+	text-transform: capitalize;
+	}
+fieldset.f-payment_details label {
+	float:left;
+	width:110px;
+	padding-top:0 !important;
+	padding-top/**/:2px;
+	font-weight:bold;
+	text-transform: uppercase;
+	}
+/* For Opera   */	
+select#startyear,select#year{
+position:relative;
+left:0px;
+}
+/* For Opera   */
+fieldset.f-payment_details label.re-waiHide{
+display:none;
+}
+	
+fieldset.f-payment_details legend{
+color:#000000;
+}
+
+fieldset.f-payment_details select#month, fieldset.f-payment_details select#startmonth{
+margin-right:14px;
+}
+/* For Opera   */
+fieldset.f-payment_details div.credit label,fieldset.f-paypal div.paypal label{
+color:#000000;
+font-weight:bold;
+font-size:11px;
+text-transform: uppercase;
+}
+
+fieldset.f-payment_details div.credit label{
+width:120px;
+}
+
+fieldset.f-paypal div.paypal label{
+width:110px;
+}
+
+fieldset.f-paypal{
+font:10.5px Arial;
+}
+fieldset.f-paypal legend{
+display:none;
+}
+
+#ohccissue{
+margin-right:2px;
+}
+fieldset.f-payment_details #dontsavecc{
+/* display:none; */
+}

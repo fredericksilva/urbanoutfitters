@@ -1,0 +1,34 @@
+<script language="JavaScript" type="text/javascript">
+<!--// set var for coremetrics
+stepName="<venda_curstep>";
+<!-- venda_block label=505,mode=value,<venda_islive>=1 --> 
+           cmSetProduction(); 
+<!-- /venda_block label=505 --> 
+cmDisplayShop9s();
+<!-- venda_block label=600,mode=value,<venda_islive>=1 --> 
+           cmSetProduction(); 
+<!-- /venda_block label=600 --> 
+/*var curCurrency = ["Pounds", "Dollars", "Euros", "Australian Dollars", "Swedish Krona"];
+		var curCode = ["GBP", "USD", "EUR", "AUD", "SEK"];
+		var checkCur = "<venda_currency>";
+		
+		var cmCurCode = function(){
+		for(var i = 0; i < curCurrency.length ; i++){
+			if(curCurrency[i] == checkCur){
+				return curCode[i];
+			}
+			return "GBP";
+		}};*/
+		var curCode = "GBP";
+		if("<venda_sessionlocation>"=="restofworld"){
+			curCode = "GBP";
+		}else if("<venda_sessionlocation>"=="eur"){
+			curCode = "EUR";
+		}
+		cmSetCurrencyCode(curCode);
+names=new Array("orderId", "orderSubtot", "orderShipping", "custId", "custCity", "custState", "custZip","custCntry");
+values=new Array("<venda_ohordnum>", "<venda_ohsub>", "<venda_ohship>", "<venda_ohemail>", "<venda_ohcity>", "<venda_ohstate>", "<venda_ohzipc>", "<venda_ohcntry>");
+cmCreateOrderTag(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7]);
+// -->
+</script>
+<!-- cmDisplayShop9s cmCreateOrderTag -->

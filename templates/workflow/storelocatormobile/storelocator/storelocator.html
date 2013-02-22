@@ -1,0 +1,77 @@
+<venda_detblock1>
+        <!-- spotlight for store no <venda_itemcount> -->
+        <venda_block label=3,itemcount=1>
+        <venda_featstory template=neareststore,key1=<venda_pref>>
+        <venda_block label=5,distmiles&gt;0><p><venda_text id=mobile.info.store_distance2><venda_block label=401,distmiles!=1>s</venda_block label=401> <venda_text id=mobile.info.away_from_postcode></p></venda_block label=5>
+        <venda_block label=6,distmiles&lt;1><p><venda_text id=mobile.info.store_based_on></p></venda_block label=6>
+        </venda_block label=3>
+
+        <venda_block label=4,itemcount&gt;1>
+        <venda_block label=51,itemcount=2>
+		<hr>
+        <h2><venda_text id=mobile.heading.other_nearby_stores></h2>
+        </venda_block label=51>
+        <ul>
+			<li><a href="#" onclick="document.storefinder2.zipc.value='<venda_pref>'; document.storefinder2.submit(); return false;"><venda_address> (<venda_text id=mobile.info.store_distance><venda_block label=402,distmiles!=1>s</venda_block label=402>)</a></li>
+        </ul>
+        </venda_block label=4>
+</venda_detblock1>
+
+
+
+<div class="static-wrapper">
+	<div class="static-content">
+		<div class="static-header borderBt">
+                <h1><venda_text id=mobile.heading.store_locator></h1>
+        </div>
+		
+		<venda_block label=3,found=1>
+				<div id="storecontent" class="storelocator boxContent"><venda_detail1></div>
+		</venda_block label=3>
+		<div class="boxContent storelocatormobile">
+        <form id="storefinder2" name="storefinder2" method="post" action="<venda_codehttp>">
+        <input type="hidden" name="ex" value="co_wizr-storelocatormobile">
+        <input type="hidden" name="threshold" value="1">
+        <input type="hidden" name="bsref" value="<venda_bsref>">
+        <input type="hidden" name="itemsperpage" value="4">
+        <input type="hidden" name="zipc2list" value="<venda_category rec=scat,ref=storelocator,temp=storeslocatorList,cacheall=1>">
+        
+        <div data-role="fieldcontain" class="ui-hide-label">
+			<label for="zipc"><venda_text id=mobile.form.zipc></label>
+			<input type="text" name="zipc" id="zipc" value="" placeholder="<venda_text id=mobile.form.enter_zipc> <venda_text id=mobile.form.required>" required maxlength="11" />
+        </div>
+                
+        <div class="storeSubmit"><input type="submit" id="submitStorelocator" value="<venda_text id=mobile.button.find>" class="submit"></div>    
+
+        <div data-role="fieldcontain" class="ui-hide-label">
+			<label for="bytown" class="select"><venda_text id=mobile.form.store_by_town></label>
+			<select name="bytown" id="bytown" onchange="changezipcode();">
+					<option selected value="postcode"><venda_text id=mobile.form.store_by_town></option>
+					<venda_category rec=scat,ref=storelocator,temp=storebytown,cacheall=1>
+			</select>
+        </div>
+        </form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var validator;
+function changezipcode() {
+	document.storefinder2.zipc.value=document.storefinder2.elements["bytown"].options[document.storefinder2.elements["bytown"].selectedIndex].value;
+	document.storefinder2.submit();
+}
+
+jQuery(document).bind("pageinit", function(event) {
+	validator = jQuery("form[name='storefinder2']").formValidator();
+	validator.validateFields([{ id: "zipc", rules: {
+													required: "<venda_text id=mobile.validation.postcode>"
+													}}
+							]);
+	
+	jQuery('#submitStorelocator').bind("click",function(e) {
+		if(validator.validate()){
+			document.storefinder2.submit();
+		}
+	});		
+});
+</script>

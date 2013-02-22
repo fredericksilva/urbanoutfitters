@@ -77,7 +77,7 @@
 		<venda_block label=123,mode=value,<venda_setting type=ebiz,name=showmname>=1><div class="formSeparator"></div><div><label for="mname"><venda_text id=site.contact_address.label.middle_name></label> <venda_mname field=text,size=25,maxlength=30></div></venda_block label=123>
 		<div class="formSeparator"></div><div><label for="lname"><venda_text id=site.delivery_address.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <input type="text" maxlength="30" size="25" value="<venda_seslname>" name="lname" id="lname"></div>
 		
-		<venda_block label=50,param2!=storeadd><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_phone field=text,size=18,maxlength=20></div></venda_block label=50>
+		<venda_block label=50,param2!=storeadd><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number></label> <venda_phone field=text,size=18,maxlength=20></div></venda_block label=50>
 		<venda_block label=51,param2=storeadd><div><label for="phone"><venda_text id=site.delivery_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label><venda_phone field=text,size=18,maxlength=20,required=yes></div></venda_block label=51>
 		<venda_block label=125,mode=value,<venda_setting type=ebiz,name=showfax>=1><div><label for="fax"><venda_text id=site.contact_address.label.fax_number></label><venda_fax field=text,size=18,maxlength=20></div></venda_block label=125>	
 			<div class="formSeparator"></div>
@@ -215,16 +215,13 @@
                     document.wizform.lname.focus();
 					return ; 
 				}
-                if (document.wizform.phone.value == "") { 
-					alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.phone>');
-                    document.wizform.phone.focus();
-					return ; 
-				}
-		        if( String(document.wizform.phone.value).search(/^\s*\d+\s*$/)){
-                    alert('Your phone number field can only contain 0-9')
-                    document.wizform.phone.focus();
+                if (document.wizform.phone.value != "") { 
+					if( String(document.wizform.phone.value).search(/^\s*\d+\s*$/)){
+						alert('Your phone number field can only contain 0-9')
+						document.wizform.phone.focus();
 					return ; 
                 }
+				}
                 if(jQuery('#houseNum').is(":visible")){
                     if (document.wizform.num.value == "") { 
 					    alert('<venda_text id=site.singlesteppc_lookup.contact_address.delivery_address.js_validation.num>');

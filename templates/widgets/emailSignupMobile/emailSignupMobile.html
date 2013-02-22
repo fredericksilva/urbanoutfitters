@@ -1,0 +1,29 @@
+<div class="static-wrapper">
+<div class="static-content">
+	<div class="static-header borderBt">
+		<h1>Sign Up For Emails</h1>
+	</div>
+	<div class="boxContent">
+		<form name="emailsignupform" action="<venda_codehttp>" method="get" data-ajax="false">
+		<input type="hidden" name="ex" value="co_disp-view">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="page" value="signupforemailsmobile">
+			<div data-role="fieldcontain" class="ui-hide-label" data-theme="f">
+				<label for="email"><venda_text id=mobile.form.email></label>
+				<input type="email" name="email" id="email" value="" placeholder="<venda_text id=mobile.form.email>" required />
+			</div>
+		<div class="submitButton"><input type="submit" value="Continue" id="newslettersubmit" class="submit"></div>
+		</form>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+var validator;
+jQuery(document).bind("pageinit", function(event) {
+	validator = jQuery("form[name='emailsignupform']").formValidator();
+	validator.validateFields([{ id: "email", rules: {
+											required: "<venda_text id=mobile.validation.email>",
+											email: "<venda_text id=mobile.validation.default.email>"
+											}}]);
+});
+</script>

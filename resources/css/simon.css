@@ -1320,6 +1320,9 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     margin-top: 10px;
     display: block;
 }
+.price .saleprice {
+	color: red;
+}
 table th, table th div
 {
     text-align: left;

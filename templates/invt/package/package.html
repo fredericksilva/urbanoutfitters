@@ -1,0 +1,55 @@
+<h1><venda_invtname></h1>
+
+<venda_block label=32,mode=value,addedmsg=notnull><p><venda_addedmsg msg=You have added addedqty of addedname to your basket></p></venda_block label=32>
+
+<venda_block label=10,med-medium=notnull>
+	<venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=medium><!-- show "medium" key by default -->
+</venda_block label=10>
+<venda_block label=11,med-medium=null>
+	<p>Sorry - No image available</p>
+</venda_block label=11>
+
+<p><venda_invtdesc1></p>
+
+<p>Package price: <venda_currsym><venda_invtsell></p>
+
+<venda_block label=82,invtwas=notnull>
+	<p>(Was: <venda_currsym><venda_invtwas>)</p>
+</venda_block label=82>
+
+<venda_block label=80,invtavail&lt;1>
+	<p>Sorry - Out of stock</p>
+</venda_block label=80>
+
+<venda_block label=81,invtavail&gt;0>
+<form name="form" action="<venda_codehttp>" method="get">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="log" value="22">
+<input type="hidden" name="mode" value="add">
+<input type="hidden" name="curpage" value="">
+<input type="hidden" name="next" value="">
+
+<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+<input type="hidden" name="ex" value="co_wizr-shopcart">
+
+<!-- "buy" defines sku to add if "ex" is "co_disp-shopc" -->
+<input type="hidden" name="buy" value="<venda_invtref>">
+<!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
+<input type="hidden" name="invt" value="<venda_invtref>">
+
+<!-- "ivref" defines sku to add if "ex" is "co_wizr-shopcart" -->
+<input type="hidden" name="ivref" value="<venda_invtref>">
+
+<label for="qty">Qty:</label> <input name="qty" id="qty" type="text" value="1" size="3" maxlength="3">
+
+<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif" alt="Add to Basket" onClick="document.form.ex.value='co_disp-shopc';" onMouseOver="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket_r.gif'" onMouseOut="this.src='<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtobasket.gif'">
+<input type="image" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_buynow.gif" alt="Buy Now">
+
+</form>
+</venda_block label=81>
+
+
+<p>Total number of products in this package: <venda_invtqtytot></p>
+<!-- display details of sub-skus -->
+<venda_invtsku template=subsku>

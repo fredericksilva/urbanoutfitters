@@ -123,7 +123,7 @@ Venda.Attributes.Initialize = function() {
   				}
   			}
   		}
-  	jQuery(".attributeInputs select").selectmenu({ style: 'dropdown' });	
+  	jQuery(".attributeInputs select").selectmenu({ style:'dropdown', maxHeight: 2000, positionOptions: { collision: 'none' } });
   	
   };
 

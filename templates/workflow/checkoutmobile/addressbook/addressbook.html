@@ -1,0 +1,109 @@
+<div id="addressbook" class="<venda_workflow> <venda_curstep>">
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header"><h1><venda_text id=mobile.heading.address_book></h1>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+				<venda_block label=2,param2=add,errors=null><h2 class="error"><venda_text id=mobile.heading.address_added></h2></venda_block label=2>
+				<venda_block label=3,param2=edit,param1=notnull,errors=null><h2 class="error"><venda_text id=mobile.heading.address_editing></h2></venda_block label=3>
+				<venda_block label=4,param2=edit,param1=null,errors=null><h2 class="error"><venda_text id=mobile.heading.address_edited></h2></venda_block label=4>
+			</div>
+		</div><!--/checkout-content-->
+	</div><!--/checkout-wrapper-->
+	
+
+	<venda_detblock>
+		<li id="Addr<venda_abrfnbr1>" class="<venda_block adtype1=1>billing</venda_block><venda_block adtype1=0>delivery</venda_block><venda_block default1=1> default</venda_block>">
+			<venda_block label=10,abrfnbr1&gt;0>
+				<h3>
+					<venda_block label=101,adtype1=1>
+						<venda_text id=mobile.heading.billing_address>
+					</venda_block label=101>
+
+					<venda_block label=102,adtype1=0>
+						<venda_block label=11,mode=value,<venda_company1>=c/o <venda_setting type=ebiz,name=name>><venda_text id=mobile.info.dts></venda_block label=11>
+						<venda_block label=12,mode=value,<venda_company1>!=c/o <venda_setting type=ebiz,name=name>><venda_text id=mobile.heading.delivery_address></venda_block label=12>
+						<venda_block label=13,addrname1=notnull> - <venda_addrname1></venda_block label=13>
+					</venda_block label=102>
+				</h3>
+				<div class="details">
+					<div class="addressAndMessages">
+						<p class="address">
+							<span class="addrName"><venda_title1> <venda_fname1><venda_block label=77,mname1=notnull> <venda_mname1></venda_block label=77> <venda_lname1></span><br>
+							<venda_block label=31,company1=notnull><venda_company1><br></venda_block label=31>
+							<venda_block label=41,num1=notnull><venda_num1> </venda_block label=41><venda_addr11><venda_block label=3,addr21=notnull><br><venda_addr21></venda_block label=3><br>
+
+							<venda_tpcomment><!-- if country is US or US Non-48 display this formatting --></venda_tpcomment>
+
+							<venda_block label=999,mode=value,<venda_cntry1>=United States,<venda_cntry1>=United States Non-48,<venda_cntry1>=United States Armed Forces,operator=or>
+							<venda_city1>, <venda_block label=42,state1=notnull><venda_state1> </venda_block label=42><venda_zipc1><br>
+							</venda_block label=999>
+
+							<venda_tpcomment><!-- if country is NOT US or US entities display this formatting --></venda_tpcomment>
+							<venda_block label=9991,mode=value,<venda_cntry1>!=United States,<venda_cntry1>!=United States Non-48,<venda_cntry1>!=United States Armed Forces,operator=and>
+							<venda_city1><br>
+
+							<venda_block label=42,state1=notnull><venda_state1> </venda_block label=42><venda_zipc1><venda_block label=1234,state1=notnull,zipc1=notnull,operator=or><br></venda_block label=1234>
+							</venda_block label=9991>
+
+							<venda_cntry1>
+							<venda_block label=12,phone1=notnull><venda_phone1></venda_block label=12>
+						</p>
+						
+						<venda_block label=101,adtype1=1>
+							<br/>
+							<p class="message">
+								<venda_text id=mobile.heading.billing_address_message>
+							</p>
+						</venda_block label=101>
+
+						<venda_tpcomment><!-- if it's a delivery address --></venda_tpcomment>
+						<venda_block label=330,mode=value,<venda_company1>!=c/o <venda_setting type=ebiz,name=name>>
+							<venda_tpcomment><!-- Not Deliver to Store --></venda_tpcomment>
+							<venda_block label=63,default1=1>
+								<venda_tpcomment><!-- if it's the current default address --></venda_tpcomment>
+								<p class="default"><strong><venda_text id=mobile.info.default_delivery_address></strong></venda_block label=47></p>
+							</venda_block label=63>
+						</div>	
+						<div class="addrButton">
+							<venda_block label=132,adtype1=0>
+								<a class="edit" href='<venda_wizurl step=addressbookedit,param1=<venda_abrfnbr1>,param2=edit>' data-role="button" data-ajax="false" data-inline="true"><venda_text id=mobile.button.edit></a>
+							</venda_block label=132>
+							<venda_block label=5,default1=0>
+								<a class="default makeDefault" href='<venda_wizurl step=addressbook,mode=process>&abrfnbr=<venda_abrfnbr1>&update=<venda_abrfnbr1>&trrfnbr=<venda_trrfnbr1>&trrfext=1&curstep=addressbook' data-role="button" data-ajax="false" data-inline="true"><venda_text id=mobile.button.make_default_address></a>
+							</venda_block label=5>
+						</div>
+					</venda_block label=330>
+				</div>
+			</venda_block label=10>
+		</li>
+	</venda_detblock>
+
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<ul class="addrList" data-theme="c">
+				<venda_detail>
+			</ul>
+		</div><!--/checkout-content-->
+	</div><!--/checkout-wrapper-->
+	<div class="submitButton">
+		<venda_block workflow=checkoutmobile>
+			<venda_tpcomment><!-- Checkout workflow --></venda_tpcomment>
+			<a href='<venda_wizurl step=ordersummary>' data-role="button" data-ajax="false" data-icon="arrow-r" data-iconpos="right"><venda_text id=mobile.button.back_to_order_summary></a>
+		</venda_block> 	
+		
+		<a href='<venda_wizurl step=addressbookadd,param1=null>' data-role="button" data-ajax="false" data-icon="arrow-r" data-iconpos="right"><venda_text id=mobile.heading.add_address></a>
+		
+		<venda_block workflow=myaccountmobile> 	
+			<venda_tpcomment><!-- My Account workflow --></venda_tpcomment>
+			<hr/>
+			<div class="backToMyAccount">
+				<a href="<venda_dispview page=myaccountmobile>" data-ajax="false"> <venda_text id=mobile.button.back_to_my_account></a>
+			</div>	
+			<hr/>
+		</venda_block> 
+	</div>
+	</form>
+</div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=curstep,value=step3>

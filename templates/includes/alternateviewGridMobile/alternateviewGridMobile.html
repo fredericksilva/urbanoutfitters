@@ -1,0 +1,34 @@
+<venda_tpcomment><!-- This template is used by product detail when the product has attributes, it cycles through and stores the image paths to the various attribute 1 association values (e.g. xsmall,medium,large image path for Red Shirt) --></venda_tpcomment>
+
+<venda_detblock_mediagridrow>
+	<venda_detail_mediagridcell>
+</venda_detblock_mediagridrow>
+
+
+<venda_detblock_mediagridcell>
+        <venda_block label=1,emptycell!=1,medatrvalue!=>
+        var src = jQuery("#tag-ebizurl").text() + "/content/ebiz/" + jQuery("#tag-ebizref").text() + "/invt/" + jQuery("#tag-invtref").text() + "/" + jQuery("#tag-invtref").text();
+		Venda.Attributes.StoreImageSwaps({
+			"param": "<venda_medatrvalue>",
+			"images": {
+				imgS: [ src + "_<venda_medatrvalue>_t1.jpg",
+						src + "_<venda_medatrvalue>_t2.jpg",
+						src + "_<venda_medatrvalue>_t3.jpg",
+						src + "_<venda_medatrvalue>_t4.jpg",
+						src + "_<venda_medatrvalue>_t5.jpg"],
+				imgM: [ src + "_<venda_medatrvalue>_m1.jpg",
+						src + "_<venda_medatrvalue>_m2.jpg",
+						src + "_<venda_medatrvalue>_m3.jpg",
+						src + "_<venda_medatrvalue>_m4.jpg",
+						src + "_<venda_medatrvalue>_m5.jpg"],
+				imgL: ["<venda_media rec=invt,type=pict,key=large,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlarge,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlalt1,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlalt2,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlalt3,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlalt4,medatr=yes,img=no>","<venda_media rec=invt,type=pict,key=setlalt5,medatr=yes,img=no>"]
+				}
+			});
+		Venda.Attributes.SwatchURL["<venda_medatrvalue>"] = "<venda_media rec=invt,type=pict,key=setswatch,medatr=yes,img=no>";
+        </venda_block label=1>
+</venda_detblock_mediagridcell>
+
+<script type="text/javascript">
+<venda_detail_mediagridrow>
+</script>
+

@@ -1,0 +1,28 @@
+<venda_detblock>
+	<venda_block paymenthidden=notnull><div style="display: none;"></venda_block>
+	<venda_paymenttemplate paymenttype=<venda_paymentname>,templatetype=paytype/frontend,template=paymenttype_<venda_paymentname>_mobile,capture=1,ohrfnbr=<venda_paymentohrfnbr>,entry=1>
+	<venda_block paymenthidden=notnull></div></venda_block>
+</venda_detblock>
+
+<div id="paymentdetails" class="paymentdetails">
+<venda_detail>
+</div>
+
+<script type="text/javascript">
+var paylocate;
+for (var i=0; i<document.paymentoptionsform.ohpaytype.length; i++) {
+		if (document.paymentoptionsform.ohpaytype[i].value == 2) {
+			paylocate = i;
+		}
+}
+function autoSelect(objPay) {
+	if (typeof document.paymentoptionsform.payall!="undefined") {
+		if (objPay.checked == true && objPay.value != 2) {
+			document.paymentoptionsform.payall.checked = false;
+			document.paymentoptionsform.sendpaypaid.readOnly = false;
+			document.paymentoptionsform.sendpaypaid.value = "";
+		}
+	}
+}
+/*<venda_curstep> hardcode as it's null value on this step*/
+</script>

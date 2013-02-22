@@ -1,0 +1,22 @@
+<!-- tracking tag when view product -->
+<form style="display:none;" name="productViewform">
+<textarea id="productView">ProductView|<venda_invtref>|<venda_invtname>|<venda_invtsell>|<venda_invtcatref0>|</textarea>
+</form>
+<script type="text/javascript">
+	var appendText = function(elementTarget,strAppend){
+		if(document.getElementById(elementTarget).value.indexOf(strAppend)==-1){
+			document.getElementById(elementTarget).value += strAppend;
+		}
+	}
+	var cj = new CookieJar({expires:'',path: '/'});
+	if(Venda.Platform.getUrlParam(window.location.href,'source')!=""){
+		var paramValue = Venda.Platform.getUrlParam(window.location.href,'source');
+		var trackingCookie = cj.put("source",paramValue);
+	}
+	if(cj.get("source")!=null){
+		var value = cj.get("source");
+		appendText("productView",value);
+	}
+</script>
+<!-- end Venda tracking -->
+<script type="text/javascript" src="/venda-support/js/tracking/prod_stats_counter.js"></script>

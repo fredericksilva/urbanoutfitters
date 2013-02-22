@@ -1,0 +1,230 @@
+<venda_form>
+
+<venda_block label=671,curstep=glstcreate>
+<!-- creating new list -->
+<input type="hidden" name="glstcreatortitle" value="<venda_userinfo><venda_sestitle></venda_userinfo>" id="glstcreatortitle">
+<input type="hidden" name="glstcreatorfname" value="<venda_fname>" id="glstcreatorfname">
+<input type="hidden" name="glstcreatorlname" value="<venda_lname>" id="glstcreatorlname">
+<input type="hidden" name="formglstviewablelist" value="1" id="formglstviewablelist">
+<input type="hidden" name="glstviewablelist" value="1" id="glstviewablelist">
+<input type="hidden" name="formglstpubliclist" value="1" id="formglstpubliclist">
+<input type="hidden" name="glstpubliclist" value="1" id="glstpubliclist">
+<input type="hidden" name="layout" value="default">
+<input type="hidden" name="nopastdate" value="1">
+<input type="hidden" name="mindate" value="14">
+</venda_block label=671>
+
+<venda_block label=672,curstep=glstedit>
+<!-- editing existing list -->
+<input type="hidden" name="glstcreatortitle" value="<venda_glstcreatortitle>" id="glstcreatortitle">
+<input type="hidden" name="glstcreatorfname" value="<venda_glstcreatorfname>" id="glstcreatorfname">
+<input type="hidden" name="glstcreatorlname" value="<venda_glstcreatorlname>" id="glstcreatorlname">
+<venda_block label=306,editgiftlist!=1>
+<!-- 
+NOT TESTED/USED YET
+<input type="hidden" name="formglstviewablelist" value="<venda_formglstviewablelist>" id="formglstviewablelist">
+<input type="hidden" name="glstviewablelist" value="<venda_glstviewablelist>" id="glstviewablelist">
+<input type="hidden" name="formglstpubliclist" value="<venda_formglstpubliclist>" id="formglstpubliclist">
+<input type="hidden" name="glstpubliclist" value="<venda_glstpubliclist>" id="glstpubliclist">
+ -->
+</venda_block label=306>
+<input type="hidden" name="glstownerrelation" value="<venda_glstownerrelation>" id="glstownerrelation">
+</venda_block label=672>
+
+<script language="javascript" type="text/javascript">
+function validate() {
+	if ((document.wizform.glsteventtypeother.value=="") && (document.wizform.glsteventtype.options[document.wizform.glsteventtype.selectedIndex].value=="")) {
+		alert("Please select your occasion or enter it into the box below");
+		document.wizform.glsteventtype.focus();
+	    return;
+	}
+	if (document.wizform.glsteventday.options[document.wizform.glsteventday.selectedIndex].value=="") {
+		alert("Please select your occasion date");
+		document.wizform.glsteventday.focus();
+		return;
+	}
+	if (document.wizform.glsteventmonth.options[document.wizform.glsteventmonth.selectedIndex].value=="") {
+		alert("Please select your occasion date");
+		document.wizform.glsteventmonth.focus();
+		return;
+	}
+	if (document.wizform.glsteventyear.options[document.wizform.glsteventyear.selectedIndex].value=="") {
+		alert("Please select your occasion date");
+		document.wizform.glsteventyear.focus();
+		return;
+	}
+	
+	if (document.wizform.glstpswd.value == "") {
+		alert("Please enter a Gift List password so guests can access your Gift List");
+		document.wizform.glstpswd.focus();
+	    return;
+	}
+	if (document.wizform.glstpswdconf.value == "") {
+		alert("Please confirm your Gift List password");
+		document.wizform.glstpswdconf.focus();
+	    return;
+	}
+	if (document.wizform.glstpswd.value != document.wizform.glstpswdconf.value) {
+		alert("Please make sure your confirmed password is correct");
+		document.wizform.glstpswdconf.focus();
+	    return;
+	}
+	
+	if (document.wizform.glsttcs.checked==false) {
+		alert("Please read the Gift List Terms and Conditions");
+		document.wizform.glsttcs.focus();
+		return;
+	}
+	<venda_block label=673,curstep=glstcreate>
+	<venda_wizbutton step=glstcreated,param1=create,param2=,mode=process,callonly=yes>
+	</venda_block label=673>
+	<venda_block label=674,curstep=glstedit>
+	<venda_wizbutton step=glstlist,param1=,param2=,mode=process,callonly=yes>
+	</venda_block label=674>
+}
+
+function checktype() {
+	if(document.wizform.glsteventtype.options[document.wizform.glsteventtype.selectedIndex].value=="") {
+		document.wizform.glsteventtypeother.disabled=false;
+	}
+	if(document.wizform.glsteventtype.options[document.wizform.glsteventtype.selectedIndex].value!="") {
+		document.wizform.glsteventtypeother.value="";
+		<venda_block label=675,curstep=glstcreate>
+		document.wizform.glsteventtypeother.disabled=true;
+		</venda_block label=675>
+	}
+}
+</script>
+
+<venda_block label=676,curstep=glstcreate>
+<h1>Create a Gift List</h1>
+<venda_block label=34,errors=notnull><p class="error"><venda_errors></p></venda_block label=34>
+<p>Registering your interest in <venda_ebizname>'s Gift List Service is simple and convenient. Please take a few moments to complete the form below.</p>
+<h2>Occasion Details for <venda_userinfo><venda_sestitle> <venda_sesname></venda_userinfo></h2>
+<p>Fields with an asterisk (<span class="required">*</span>) must be completed.</p>
+</venda_block label=676>
+
+<venda_block label=677,curstep=glstedit>
+<h1>Edit Your Gift List</h1>
+<venda_block label=34,errors=notnull><p class="error"><venda_errors></p></venda_block label=34>
+<h2>Details for Gift List ID <venda_glstrfnbr></h2>
+<p>Fields with an asterisk (<span class="required">*</span>) must be completed.</p>
+</venda_block label=677>
+
+<fieldset>
+<legend class="invisible">Occasion Type</legend>
+<div>
+<label for="glsteventtype">Occasion<span class="required">*</span></label>
+<select name="glsteventtype" id="glsteventtype" onChange="checktype();">
+	<option value="">Please Select...</option>
+		<option value="New Arrivals" <venda_block label=5,glsteventtype=New Arrivals>selected</venda_block label=5>>New Arrivals</option>
+		<option value="Birthday" <venda_block label=6,glsteventtype=Birthday>selected</venda_block label=6>>Birthday</option>
+		<option value="Christening" <venda_block label=7,glsteventtype=Christening>selected</venda_block label=7>>Christening</option>
+		<option value="Christmas" <venda_block label=8,glsteventtype=Christmas>selected</venda_block label=8>>Christmas</option>
+		<option value="Maternity Leave" <venda_block label=9,glsteventtype=Maternity Leave>selected</venda_block label=9>>Maternity Leave</option>
+		<option value="" <venda_block label=10,glsteventtypeother=notnull,glsteventtype=null>selected</venda_block label=10>>Other</option>
+	</select>
+</div>
+<div><label for="glsteventtypeother">If other please specify</label><input type="text" name="glsteventtypeother" id="glsteventtypeother" maxlength="50" value="<venda_glsteventtypeother>" disabled>	</div>
+</fieldset>
+
+<!-- 
+ONLY USED FOR WEDDING LISTS
+<fieldset>   		
+<legend>Partner's Details (if applicable)</legend>
+<div> 
+<label for="glstpartnerrelation">Relationship (Weddings Only):</label>
+<select name="glstpartnerrelation" id="glstpartnerrelation" maxlength="50" disabled>
+	<option value=""></option>
+	<option value="groom">Groom</option>
+	<option value="bride">Bride</option>
+</select>
+</div>
+<div><label for="glstpartnertitle">Title:</label><venda_dropdowntitle dropdown=glstpartnertitle,selected=<venda_glstpartnertitle>></div>    
+<div><label for="glstpartnerfname">First Name:*</label><input type="text" name="glstpartnerfname" maxlength="50" value='<venda_glstpartnerfname>'></div>    
+<div><label for="glstpartnerlname">Last Name:*</label><input type="text" name="glstpartnerlname" maxlength="50" value='<venda_glstpartnerlname>'></div>
+</fieldset>
+ -->
+
+<fieldset>
+<legend>Occasion Date<span class="required">*</span></legend>
+<label for="glsteventday" class="invisible">Day</label><venda_dropdownday dropdown=glsteventday,selected=<venda_glsteventday>>&nbsp;
+<label for="glsteventyear" class="invisible">Month</label><venda_dropdownmonth dropdown=glsteventmonth,selected=<venda_glsteventmonth>>&nbsp;
+<label for="dropdownyear" class="invisible">Year</label><venda_dropdownyear dropdown=glsteventyear,start=2004,end=2010,selected=<venda_glsteventyear>>
+</fieldset>
+
+<!-- 
+STORE FIELD NOT NEEDED
+<fieldset>
+<legend class="invisible">Choose a Store</legend>
+<label for="glststore">Store Name</label>
+<select name="glststore" id="glststore">
+<venda_page page=stores>
+</select>
+</fieldset>
+ -->
+
+<fieldset>
+<legend>Welcome Message</legend>
+<label for="glstmessage" class="invisible">Welcome Message</label></h3>
+<p>If you would like to leave a welcome message for people viewing your Gift List, pleases enter it below.</p>
+<p>This message is your greeting to your guest and will appear at the top of your Gift List when the guest logs on to buy from your Gift List (you can edit this later).</p>
+<p><textarea cols="35" rows="5" name="glstmessage" id="glstmessage"><venda_glstmessage></textarea></p>
+</fieldset>
+
+<!-- 
+DELIVERED TO BUYER CURRENTLY
+DELIVERY IS IMMEDIATE
+<fieldset>
+<legend>Delivery Details</legend>
+<p>Please select the address where you would like all the gifts to be delivered.</p>
+<p>Any addresses you have already created are shown below. At the checkout your guests can choose to send gifts to the address you select or to their own address.</p>
+<p>If you would prefer the gifts to be delivered to you personally, by them, please select "No Delivery" from the dropdown menu below.</p>
+<p>Your list will close 14 days before your occasion date.</p>
+<div><label for="useraddress">Delivery Address:</label><venda_useraddress dropdown=glstdefdeladdr,selected=<venda_glstdefdeladdr>,header=No Delivery,glstowner=<venda_glstowner>></div>
+
+Delivery Date:
+<label for="glstdelday" class="invisible">Day</label><venda_dropdownday dropdown=glstdelday,selected=<venda_glstdelday>>&nbsp;
+<label for="glstdelmonth" class="invisible">Month</label><venda_dropdownmonth dropdown=glstdelmonth,selected=<venda_glstdelmonth>>&nbsp;
+<label for="glstdelyear" class="invisible">Year</label><venda_dropdownyear dropdown=glstdelyear,start=2004,end=2010,selected=<venda_glstdelyear>>
+</fieldset>
+ -->
+ 
+<fieldset>    
+<legend>Security For Guests</legend>
+
+<venda_block label=678,curstep=glstedit>
+<venda_block label=303,editgiftlist=1>
+<!-- 
+NOT TESTED/USED YET
+<fieldset>
+<legend class="invisible">Permissions</legend>
+<p><input type="hidden" name="formglstviewablelist" value="1" id="formglstviewablelist">
+<input type="checkbox" name="glstviewablelist" value="1" id="glstviewablelist"<venda_block label=304,glstviewablelist=1> checked</venda_block label=304>> <label for="glstviewablelist">Guests can view this list</label>.</p>
+<p><input type="hidden" name="formglstpubliclist" value="1" id="formglstpubliclist">
+<input type="checkbox" name="glstpubliclist" value="1" id="glstpubliclist"<venda_block label=305,glstpubliclist=1> checked</venda_block label=305>> <label for="glstpubliclist">Guests can buy from this list</label>.</p>
+</fieldset>
+ -->
+</venda_block label=303>
+<input type="hidden" name="noglstpswd" value="1">
+</venda_block label=678>
+
+<p>You may also set a password (at least 5 characters), of which you will notify guests by email.</p>
+<div><label for="glstpswd">Create password:<span class="required">*</span></label><input type="password" name="glstpswd" maxlength="12"></div>
+<div><label for="glstpswdconf">Confirm password:<span class="required">*</span></label><input type="password" name="glstpswdconf" maxlength="12"></div>
+</fieldset>
+
+<fieldset>  
+<legend class="invisible">Terms</legend>
+<p><input type="checkbox" name="glsttcs" id="glsttcs" value="1" <venda_block label=9,glsttcs=1>checked</venda_block label=9>><label for="glsttcs">I have read and agreed to be bound by the Gift Registry <a href="<venda_dispview page=termsconditions>" title="terms and conditions" target="_blank">terms and conditions</a></label> (once you have read these please click to close the window to come back to the Gift List).</p>
+</fieldset>
+
+<p><a href="#" onClick="validate(); return false;"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_continue.gif" alt="CONTINUE" border="0" class="right"></a></p>
+
+</form>
+
+<!--
+page: wz_glst-createlist.html
+workflow: <venda_workflow>
+step: <venda_curstep>
+-->

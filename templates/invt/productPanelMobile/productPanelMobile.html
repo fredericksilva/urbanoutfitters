@@ -1,0 +1,46 @@
+<hr/>
+<li>
+<a href="<venda_dispview invt=<venda_invtref>>" data-ajax="false">
+	
+	<venda_block label=10,med-small=notnull><venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=small></venda_block label=10>
+	<venda_block label=11,med-small=null><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/no_image_small.gif" class="ui-li-thumb"></venda_block label=11>
+	<div class="toprated img">
+	<!-- product checkbox toprated - show image -->
+	<venda_block label=3331,invtpdxtjustadded=notnull><img class="toprated" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/toprated.png"/></venda_block label=3331>
+	<!-- product checkbox boutiqueimg - end -->
+	</div>
+	<div class="prodcontainer ui-field-contain">
+	<div class="productinformation">
+		<h3><venda_invtname></h3>
+		<venda_inctemplate type=includes,name=priceFormatMobile>
+		<p class="swatch"><venda_mediagrid template=swatchMobile></p>
+	</div>	
+	<div class="productmorecolours">
+		<venda_block label=morecolours,med-colour1=notnull,med-colour2=notnull,med-colour3=notnull,med-colour4=notnull,med-colour5=notnull,med-colour6=notnull,med-colour7=notnull,med-colour8=notnull,med-colour9=notnull,med-colour10=notnull,med-colour11=notnull,med-colour12=notnull,operator=or>
+			<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/more_colours.png"/>
+			<span class="morecolours"><venda_text id=mobile.info.more_colours></span>
+		</venda_block label=morecolours>
+	</div>
+	<div class="boutique">
+		<!-- invt type boutique - show image -->
+	<venda_block label=323,invtivtype=boutique><img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.gif"/></venda_block label=323>
+	<!-- invt type boutique - end -->
+	<!-- product checkbox boutiqueimg - show image -->
+	<venda_block label=333,invtpdxtboutiqueimg=notnull><img class="boutique" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/boutique.gif"/></venda_block label=333>
+	<!-- product checkbox boutiqueimg - end -->
+	</div>
+	</div>
+</a>
+
+</li>
+
+
+<script>
+jQuery(document).live('pageshow', function() {
+	jQuery('.prodsList li span.priceWas').each(function(i) {
+		var exist=jQuery(this);
+		jQuery(this).siblings().css('color','#FF0000');
+		});
+});
+
+</script>

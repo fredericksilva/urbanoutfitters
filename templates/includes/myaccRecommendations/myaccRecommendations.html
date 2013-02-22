@@ -1,0 +1,25 @@
+<venda_block label=221,pageref=myaccount>
+<venda_tpcomment><!-- start: bottom tab, one wide column --></venda_tpcomment>
+	<div id="bottomtab" class="tabs noBorderTabs grid_18 alpha omega bottomtab">
+		<div class="boxNoBorder">
+		<div class="tabheader">
+			<ul class="nav">
+				<venda_block label=221a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><li class="vbmTab"><a href="#contentTab1" title="<venda_text id=site.product_detail.vbm_title>"><venda_text id=site.product_detail.vbm></a></li></venda_block label=221a>
+				<venda_block label=221b,mode=value,<venda_setting type=ebiz,name=tracktagvbm>!=1><li><a href="#contentTab1" title="<venda_text id=site.product_detail.related_title>"><venda_text id=site.product_detail.related></a></li></venda_block label=221b>
+			</ul>
+		</div>
+		<div class="tabcontent">
+			<!-- related products (predictor or VBM) -->
+			<venda_block label=222a,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="tab vbmTab"><venda_inctemplate type=vbm,name=myAccount></div></venda_block label=222a>
+			<venda_block label=222b,mode=value,<venda_setting type=ebiz,name=tracktagvbm>!=1><div class="tab"><venda_invtrelated limit=4,threshold=2,template=related></div></venda_block label=222b>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var classtoset = new Array ('#vbmProds li','#vbmProds li .details','#vbmProds li .details h2','#vbmProds li .details .invtdesc2','#vbmProds li .details .priceDetails','#vbmProds li .details .price','#vbmProds li .details .release','#vbmProds li .details .moreInfo');
+		var bottomtab = new Venda.Widget.createTab("#bottomtab");
+		Venda.Platform.EqualHeight.init(classtoset);
+		bottomtab.init();
+	</script>
+<venda_tpcomment><!-- end: Tab bottom --></venda_tpcomment>
+</venda_block label=221>

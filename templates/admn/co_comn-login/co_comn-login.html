@@ -1,3 +1,98 @@
+<venda_tpcomment><!--
+Form param notes:
+- param1: used to pass email address between this step and password reminder
+- param2: used to determine if previous step was password reminder
+Known issues:
+- On error, layout is lost, unless passed through as a hidden field
+- On error co_comn-login is used directly instead of as an include
+- On error venda_wizurl tags are untranslated
+--></venda_tpcomment>
+<venda_block label=mobile,workflow=checkoutmobile,workflow=registermobile,operator=or>
+	<venda_tpcomment><!-- content for mobile site version of login --></venda_tpcomment>
+	<div class="<venda_workflow> <venda_curstep> checkoutmobile-wrapper loginForm">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<venda_block label=750,workflow=checkoutmobile><h1><venda_text id=mobile.heading.checkout><a href="http://www.venda.com/pci-compliance-certificate?referer=<venda_serveradd>" rel="external" target="_blank"><span class="hdr-pci"></span></a></h1></venda_block label=750>
+				<venda_block label=751,workflow=registermobile><h1><venda_text id=mobile.heading.register></h1></venda_block label=751>
+				<venda_block label=errors,errors=notnull><div class="error"><venda_errors></div></venda_block label=errors>
+			</div>
+			<venda_block label=850,workflow=checkoutmobile><p class="instruction"><venda_text id=mobile.info.checkout_options></p><hr></venda_block label=850>
+			<div class="forms-content">
+				<venda_block label=sent,param2=passwordsent>
+					<div class="passwordsent"><p><venda_text id=mobile.info.password_sent_msg></p></div>
+				</venda_block label=sent>
+
+				<form method="post" name="<venda_curstep>form-existing" id="<venda_curstep>form-existing" action="<venda_codehttps>" data-ajax="false" class="<venda_curstep>form-existing">
+				<venda_esat>
+				<input type="hidden" name="ex" value="co_wizr-<venda_workflow>">
+				<input type="hidden" name="workflowid" value="<venda_workflowid>">
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+				<input type="hidden" name="log" value="1">
+				<input type="hidden" name="trrfext" value="1">
+				<input type="hidden" name="registered" value="1">
+				<input type="hidden" name="layout" value="checkoutmobile"><venda_tpcomment><!-- Preserve layout on error --></venda_tpcomment>
+					<venda_block label=register,workflow=registermobile>
+						<venda_tpcomment><!-- Step selection for register workflow --></venda_tpcomment>
+						<input type="hidden" name="step" value="--page-myaccountmobile">
+					</venda_block label=register>
+					<venda_block label=checkout,workflow!=registermobile>
+						<venda_tpcomment><!-- Step selection for checkout workflow --></venda_tpcomment>
+						<input type="hidden" name="step" value="ordersummary">
+					</venda_block label=checkout>
+
+					<div data-role="collapsible"<venda_block label=111,param2=passwordsent> data-collapsed="false"</venda_block label=111>>
+						<h3 class="existing"><venda_text id=mobile.heading.existing_user></h3>
+						<div class="existingLoginContent">
+							<div data-role="fieldcontain">
+								<label for="email"><venda_text id=mobile.form.email>:</label>
+								<input type="email" name="email" placeholder="<venda_text id=mobile.form.enter_email>" value="<venda_block param1=notnull><venda_param1></venda_block><venda_block param1=null><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block>" id="email">
+							</div>
+							<div data-role="fieldcontain">
+								<label for="password" id="password"><venda_text id=mobile.form.password>: </label>
+								<input type="password" name="password" id="password" placeholder="<venda_text id=mobile.form.enter_password>">
+							</div>
+							<div class="loginButtonDiv"><input type="submit" value="<venda_text id=mobile.button.login>" data-ajax="false" class="submit"></div>
+							<div class="forgottenpassword"><a href="<venda_codehttps>?ex=co_wizr-<venda_workflow>&bsref=<venda_bsref>&step=passwordreminder" id="passwordreminder"><venda_text id=mobile.button.forgotten_password></a></div>
+						</div><!--/ existingLoginContent-->
+					</div>
+				</form>
+				<hr>
+
+				<form method="post" name="<venda_curstep>form-register" id="<venda_curstep>form-register" action="<venda_codehttps>" data-ajax="false" class="<venda_curstep>form-register">
+				<venda_esat>
+				<input type="hidden" name="ex" value="co_wizr-<venda_workflow>">
+				<input type="hidden" name="workflowid" value="<venda_workflowid>">
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+				<input type="hidden" name="log" value="2">
+				<input type="hidden" name="trrfext" value="1">
+				<input type="hidden" name="registered" value="0">
+				<input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=>"><venda_tpcomment><!-- To reset the glxt if the user was partially registered (guest checkout) --></venda_tpcomment>
+
+					<input type="hidden" name="step" value="billingaddressadd">
+					<div class="newCustomerbuttonDiv<venda_block label=113,param2=passwordsent> greyButton</venda_block label=113>"><input type="submit" value="<venda_text id=mobile.heading.new_user>" data-ajax="false" data-icon="arrow-r" data-iconpos="right" class="submit"></div>
+				</form>
+				<hr>
+				<venda_block label=77,workflow=checkoutmobile>
+					<div class="guestCheckoutWrapper">
+						<div class="guestCheckout" data-role="button" data-icon="arrow-r" data-iconpos="right">
+							<a href="<venda_wizurl step=billingaddressadd,secure=yes>&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>" data-ajax="false"><venda_text id=mobile.button.guest_checkout></a>
+						</div>
+					</div>
+					<hr>
+				</venda_block label=77>
+
+				<div class="cancelButtonDiv">
+					<a href="<venda_dispview page=home>" ><venda_text id=mobile.button.continue_shopping></a>
+				</div>
+			</div><venda_tpcomment><!-- End: forms-content --></venda_tpcomment>
+		</div><!--end checkoutmobile-content -->
+	</div>
+	<script type="text/javascript">cleanUp('<venda_curstep>form-existing');</script>
+
+	<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+</venda_block label=mobile>
+
+<venda_block label=notmobile,workflow!=checkoutmobile,workflow!=registermobile>
 <venda_category rec=elementcat,ref=signintopcontent>
 
 <div class="container signinContent loginType_<venda_setting type=ebiz,name=setlogindisplaytype>">
@@ -11,7 +106,7 @@
 
 <venda_category rec=elementcat,ref=signincontent>
 
-<!-- 
+<!--
 step:<venda_curstep>
 param1: <venda_param1>
 param2: <venda_param2>
@@ -20,3 +115,4 @@ page: co_comn-login
  -->
 <venda_tpxt mode=set,name=co_comn-login,value=1>
 <venda_tpxt mode=set,name=co_comn-workflow,value=<venda_workflow>>
+</venda_block label=notmobile>

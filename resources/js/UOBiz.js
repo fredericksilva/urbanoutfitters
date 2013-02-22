@@ -68,14 +68,17 @@ jQuery(function () {
 			'modal' : true
 		}
 	});
-	
-	var infotab = new Venda.Widget.createTab("#infotab");
-	infotab.init();
+	if(document.getElementById('infotab')){
+		var infotab = new Venda.Widget.createTab("#infotab");
+		infotab.init();
+	}
 	
 	// FROM ./templates/includes/myaccRecommendations/myaccRecommendations.html
 	// FROM ./templates/invt/vbmDetblock/vbmDetblock.html
-	var bottomtab = new Venda.Widget.createTab("#bottomtab");
-	bottomtab.init();
+	if(document.getElementById('bottomtab')){
+		var bottomtab = new Venda.Widget.createTab("#bottomtab");
+		bottomtab.init();
+	}
 });
 
 
@@ -506,7 +509,8 @@ Venda.Ebiz.checkVoucherForm = function (defaulttext, workflow) {
             jq("#vcode").val(str);
             jq(".waitMsg").dialog({
                 modal: true,
-                autoOpen: false
+                autoOpen: false,
+                dialogClass: "promoLoading"
             });
             jq(".waitMsg").dialog("open");
             jq(".ui-dialog-titlebar").hide();
@@ -718,7 +722,8 @@ Venda.Ebiz.checkVoucherForm = function(defaulttext, workflow) {
 			jq("#vcode").val(str);
 			jq(".waitMsg").dialog({
 				modal: true,
-				autoOpen: false
+				autoOpen: false,
+				dialogClass: "promoLoading"
 			});
 			jq(".waitMsg").dialog("open");
 			jq(".ui-dialog-titlebar").hide();
@@ -1233,6 +1238,20 @@ jQuery(function() {
 });
 
 /**
+* hotfix euro sign, prevent missing euro sign if use ajax on IE
+* @requires jQuery v1.5 or greater
+* @param {string} - jQuery selector
+* @author - sakp@venda.com
+*/
+Venda.Ebiz.fixEuroSign = function(selector){
+	var euroSign=new RegExp(String.fromCharCode(128), "igm");
+	jQuery(selector).each(function(){
+		 var price = jQuery(this).html();
+		jQuery(this).html(price.replace(euroSign, '&euro;'));
+	});
+};
+
+/**
 * simple color swatch on productlist/searchresult
 * @requires jQuery v1.7.1 or greater
 * @param {object} - configutation
@@ -1283,11 +1302,19 @@ jQuery(document).ready(function () {
     jQuery('.mm_sub > ul').masonry({
       itemSelector: '.mm_toplevel'
     });
-	
-    jQuery( ".accordion-panels" ).accordion({
-			collapsible: true,
-			autoHeight: false
-		});
+    if (jQuery("#accordion .tab1").length === 0){
+      jQuery( ".accordion-panels" ).accordion({
+  			collapsible: true,
+  			autoHeight: false,
+  			active: false
+  		});
+		} else {
+      jQuery( ".accordion-panels" ).accordion({
+  			collapsible: true,
+  			autoHeight: false
+  		});
+  		
+		}
     
 });
 
@@ -1396,3 +1423,103 @@ if (!('some' in Array.prototype)) {
         return false;
     };
 }
+
+// Urban Valentines Twitter Feed
+// jmoore@urbanoutfitters.com
+// original concept by ArtisTutor
+Venda.Ebiz.Valentines = {
+	ValentineTwitterFeed: function () {
+		function twitterRefresh() {
+			var Twitter = {
+				init: function () {
+					// Pass in the urban hashtag or username you want to display feeds for
+					this.insertLatestTweets('UOLOVEFEST');
+				}, 
+				// https://api.twitter.com/1/statuses/user_timeline.json?screen_name= 
+				// has been replaced with http://search.twitter.com/search.json?q=%23
+				// due to us looking for a hashtag - use previous for username
+				// This replaces the <p>Loading...</p> with the tweets
+				insertLatestTweets: function (username) {
+					var limit = 15; // number of uo feeds to display
+					var url = 'http://search.twitter.com/search.json?q=%23' + username + '&count=' + limit + '&result_type=recent&callback=?'; 
+					// Now ajax in the feeds from twitter.com
+					jQuery.getJSON(url, function (data) {
+						// create a normal marquee-element for the tweets
+						var html = '<marquee behavior="scroll" scrollamount="2" direction="left">';
+ 
+						// Loop through all the tweets and create a link for each
+						for (var i in data.results) {
+							html += '<a href="http://twitter.com/' + username + '/status/' + data.results[i].id_str + '" target="_blank" >' + data.results[i].text + ' <b>' + data.results[i].from_user_name + '</b> <i>' + Twitter.daysAgo(data.results[i].created_at) + '</i></a>';
+						}
+						html += '</marquee>';
+ 
+						// Replace the <p> with our <marquee>-element
+						if (jQuery('#ValentinesTwitter p').is('*')) {
+							jQuery('#ValentinesTwitter p').replaceWith(html);
+						}
+						else {
+							jQuery('#ValentinesTwitter .pointer').replaceWith(html);
+						}
+ 
+						// Because the marquee element isn't very attractive I've used Remy Sharp's plug-in to replace it - added via the VCP
+						Twitter.fancyMarquee();
+					});
+				}, 
+ 
+				// Action fancy marquee
+				fancyMarquee: function () {
+					jQuery('#ValentinesTwitter marquee').marquee('pointer')
+					.mouseover(function () {
+						jQuery(this).trigger('stop');
+					})
+					.mouseout(function () {
+						jQuery(this).trigger('start');
+					})
+					.mousemove(function (event) {
+						if (jQuery(this).data('drag') == true) {
+							this.scrollLeft = jQuery(this).data('scrollX') + (jQuery(this).data('x') - event.clientX);
+						}
+					})
+					.mousedown(function (event) {
+						jQuery(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+					})
+					.mouseup(function () {
+						jQuery(this).data('drag', false);
+					});
+				},
+					
+				// Takes the date from Twitter and displays time in minutes
+				// ignore the fact it says days ago and think of this as minutes ago
+				daysAgo: function (date) {
+					// TODO: Fix date for IE... didn't get very far with this
+					if (jQuery.browser.msie) {
+						return '1 day ago';
+					}
+ 
+					var d = new Date(date).getTime(),
+						n = new Date().getTime(),
+						numDays = Math.round(Math.abs(n - d) / (1000 * 60)),
+						daysAgo = numDays + ' minutes ago';
+					// conditions for changing the text displayed
+					if (numDays == 0) {
+						daysAgo = 'just now';
+					}
+					if (numDays == 1) {
+						daysAgo = numDays + ' minute ago';
+					}
+					if (numDays >= 60 && numDays < 120) {
+						daysAgo = '1 hour ago'
+					}
+					else if (numDays >= 120) {
+						daysAgo = 'over an hour ago'
+					}
+					return daysAgo;
+				}
+			};
+ 
+			Twitter.init();
+			setTimeout(twitterRefresh, 183000);
+		}
+		twitterRefresh();
+	}
+};

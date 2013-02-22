@@ -1,0 +1,48 @@
+<venda_detblock>
+
+<li>
+		<venda_block label=1,icatstyle1!=searchproductlist>	
+			<venda_block label=71,icatref1=womenscollections,icatref1=womensclothing,icatref1=shoes,icatref1=womensaccessories,icatref1=menscollections,icatref1=mensclothing,icatref1=mshoesgw,icatref1=mensaccessories,icatref1=mensbrands,icatref1=housecollections,icatref1=homecategories,icatref1=musicdept,icatref1=christmasbrands,icatref1=christmascategories,icatref1=womensbrands,icatref1=salechristmasw,icatref1=salechristmaswacc,icatref1=salechristmasb,icatref1=salechristmasm,icatref1=salechristmash,operator=or>
+					<div class="leftnavcatopen"><a href="<venda_dispview icat=<venda_icatref1>>&bklist=icat,4,shop,<venda_icatref>,<venda_icatref1>" title="<venda_icatname1>" id="wrap<venda_icatref1>"><span style="color:#000000;" id="nav<venda_icatref1>"><venda_icatname1></span></a></div><br class="clear-all">
+			</venda_block label=71>
+			<venda_block label=72,icatref1!=womenscollections,icatref1!=womensclothing,icatref1!=shoes,icatref1!=womensaccessories,icatref1!=menscollections,icatref1!=mensclothing,icatref1!=mshoesgw,icatref1!=mensaccessories,icatref1!=mensbrands,icatref1!=housecollections,icatref1!=homecategories,icatref1!=musicdept,icatref1!=christmasbrands,icatref1!=womensbrands,icatref1!=christmascategories,icatref1!=salechristmasw,icatref1!=salechristmaswacc,icatref1!=salechristmasb,icatref1!=salechristmasm,icatref1!=salechristmash,operator=and>
+					<div class="leftnavcat"><a href="<venda_dispview icat=<venda_icatref1>>&bklist=icat,4,shop,<venda_icatref>,<venda_icatref1>" title="<venda_icatname1>" id="wrap<venda_icatref1>" style="cursor:hand;"><span id="nav<venda_icatref1>" style="width:200px;float:left;"><venda_icatname1></span></a></div><br class="clear-all">
+			</venda_block label=72>
+            
+		</venda_block label=1>
+	
+		<venda_block label=2,icatstyle1=searchproductlist>
+			<div class="leftnavcat"><a title="<venda_icatname1>" href="<venda_serveradd>/search?q=*&categories=<venda_icatref1>" id="nav<venda_icatref1>" style="cursor:hand;"><span id="nav<venda_icatref1>" style="width:200px;float:left;"><venda_icatname1></span></a></div><br class="clear-all">
+		</venda_block label=2>
+		
+		<venda_block label=250,icatref1=womenscollections,icatref1=womensclothing,icatref1=shoes,icatref1=womensaccessories,icatref1=menscollections,icatref1=mshoesgw,icatref1=mensclothing,icatref1=mensaccessories,icatref1=mensbrands,icatref1=housecollections,icatref1=homecategories,icatref1=musicdept,icatref1=christmasbrands,icatref1=christmascategories,icatref1=womensbrands,icatref1=salechristmasw,icatref1=salechristmaswacc,icatref1=salechristmasb,icatref1=salechristmasm,icatref1=salechristmash,operator=or>				
+			<venda_category ref=<venda_icatref1>,rec=icat,temp=sub_shop>
+		</venda_block label=250>
+		
+		<venda_block label=251,icatref1!=womenscollections,icatref1!=womensclothing,icatref1!=shoes,icatref1!=womensaccessories,icatref1!=menscollections,icatref1!=mensclothing,icatref1!=mshoesgw,icatref1!=mensaccessories,icatref1!=mensbrands,icatref1!=housecollections,icatref1!=homecategories,icatref1!=musicdept,icatref1!=christmasbrands,icatref1!=christmascategories,icatref1!=womensbrands,icatref1!=salechristmasw,icatref1!=salechristmaswacc,icatref1!=salechristmasb,icatref1!=salechristmasm,icatref1!=salechristmash,operator=and>									
+			<venda_category ref=<venda_icatref1>,rec=icat,temp=sub_shop,incattree=1>
+		</venda_block label=251>
+	</li>
+    <div class="catsep"></div>
+
+</venda_detblock>
+
+<div id="leftnav">
+        <ul id="<venda_icatref>">
+				<venda_detail>
+		</ul>
+
+</div>
+
+
+<script>
+function showit(id) {
+	if (document.getElementById(id)) {
+		document.getElementById(id).style.display = 'block';
+		var navcat = "nav"+id;
+		document.getElementById(navcat).style.color = '#000000'; 
+	}
+}
+</script>
+
+<script>showit('<venda_cattree index=2,value=catref>');</script>

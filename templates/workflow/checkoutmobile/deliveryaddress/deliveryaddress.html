@@ -1,0 +1,139 @@
+<div class="<venda_workflow> <venda_curstep>">
+
+<h1>Delivery</h1>
+
+<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" data-ajax="false">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="curstep" value="<venda_curstep>" /> 
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="mode" value="process" />
+	<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+	<input type="hidden" name="exgroup" value="all" /><venda_tpcomment><!-- Required for user extended fields --></venda_tpcomment>
+	<input type="hidden" name="lang" value="<venda_sessionlanguage>"><venda_tpcomment><!-- Save the current language against the user --></venda_tpcomment>
+	<input type="hidden" name="log" value="2"><venda_tpcomment><!-- To register a new user --></venda_tpcomment>
+	<venda_tpcomment><!-- For express checkout the user is partially registered 'P', 'R' for full registration - the glxt is set in the login form --></venda_tpcomment>
+	<venda_block label=18,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p><input type="hidden" name="ustype" value="R"></venda_block label=18>
+	<venda_block label=19,mode=value,<venda_glxt mode=get,name=glxtusertype>=p><input type="hidden" name="ustype" value="P"></venda_block label=19>
+
+<div data-role="fieldcontain"> 
+	<fieldset data-role="controlgroup"> 
+	<legend><venda_text id=mobile.form.deliver_to></legend> 
+		<input type="radio" name="step" id="usebillingaddress" value="ordersummary" checked="checked" /> 
+		<label for="usebillingaddress"><venda_text id=mobile.form.billing_address></label> 
+		<input type="radio" name="step" id="deliveryaddressadd" value="deliveryaddressadd" /> 
+		<label for="deliveryaddressadd"><venda_text id=mobile.form.different_address></label>
+		<input type="radio" name="step" id="delivertostore" value="delivertostore" /> 
+		<label for="delivertostore"><venda_text id=mobile.form.deliver_to_store></label>  			
+	</fieldset> 
+</div> 
+
+<input type="submit" value="Agree and Continue" data-ajax="false" data-role="button" data-theme="e" />	
+
+</form>
+
+
+<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" data-ajax="false">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="curstep" value="deliveryaddressadd" /> <venda_tpcomment><!-- curstep doesn't translate, so hardcoding --></venda_tpcomment>
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="mode" value="process" />
+	<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+	<input type="hidden" name="default" value="1" />
+	<input type="hidden" name="step" value="ordersummary" /> 
+
+	
+	<div data-role="fieldcontain" class="ui-hide-label">	
+		<label for="addrname"><venda_text id=mobile.form.addrname></label> 
+		<input type="text" name="addrname" id="addrname" value="" placeholder="<venda_text id=mobile.form.addrname>" />
+	</div>
+	
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="title" class="select"><venda_text id=mobile.form.title></label>
+		<select name="title" id="title">
+			<option value="Mr"<venda_block label=121,title=Mr> selected</venda_block label=121>>Mr</option>
+			<option value="Mrs"<venda_block label=111,title=Mrs> selected</venda_block label=111>>Mrs</option>
+			<option value="Miss"<venda_block label=101,title=Miss> selected</venda_block label=101>>Miss</option>
+			<option value="Ms"<venda_block label=121,title=Ms> selected</venda_block label=121>>Ms</option>
+			<option value=" "<venda_block label=131,title= > selected</venda_block label=131>>Other</option>
+		</select>
+	</div>
+			
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="fname"><venda_text id=mobile.form.fname></label> 	
+		<input type="text" name="fname" id="fname" value="<venda_fname>" placeholder="<venda_text id=mobile.form.fname>" required autofocus />
+	</div>
+
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="lname"><venda_text id=mobile.form.lname></label> 	
+		<input type="text" name="lname" id="lname" value="<venda_lname>" placeholder="<venda_text id=mobile.form.lname>" required />
+	</div>
+
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="cntrylist"><venda_text id=mobile.form.country></label>
+		<venda_cntry field=combo,id=cntrylist>
+	</div>
+	
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="company"><venda_text id=mobile.form.company></label>
+		<input type="text" name="company" id="company" value="<venda_company>" placeholder="<venda_text id=mobile.form.company>" />
+	</div>
+	
+	<div data-role="fieldcontain" id="houseNum" class="ui-hide-label">
+		<label for="num"><venda_text id=mobile.form.house_num></label>
+		<input type="text" name="num" id="num" value="<venda_num>" placeholder="<venda_text id=mobile.form.house_num>" />
+	</div>
+
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="addr1"><venda_text id=mobile.form.addr1></label>
+		<input type="text" name="addr1" id="addr1" value="<venda_addr1>" placeholder="<venda_text id=mobile.form.addr1>" required />
+	</div>
+
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="addr2"><venda_text id=mobile.form.addr2></label>
+		<input type="text" name="addr2" id="addr2" value="<venda_addr2>" placeholder="<venda_text id=mobile.form.addr2>" />
+	</div>
+
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="city"><venda_text id=mobile.form.city></label>
+		<input type="text" name="city" id="city" value="<venda_city>" placeholder="<venda_text id=mobile.form.city>" required />
+	</div>
+	
+	<div data-role="fieldcontain" id="stateDiv" class="ui-hide-label">
+		<label for="statetext" id="stateLabel"><venda_text id=mobile.form.state></label>
+		<input type="text" name="state" id="statetext" value="<venda_state>" placeholder="<venda_text id=mobile.form.state>" required />
+		<select name="state" id="statelist" required /><select>
+	</div>
+
+	<div data-role="fieldcontain" id="zipcDiv" class="ui-hide-label">
+		<label for="zipc" id="zipcLabel"><venda_text id=mobile.form.zipc></label> 
+		<input type="text" name="zipc" id="zipc" value="<venda_zipc>" placeholder="<venda_text id=mobile.form.zipc>" />
+	</div>
+	
+	<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="phone"><venda_text id=mobile.form.phone></label>
+		<input type="tel" name="phone" id="phone" value="<venda_phone>" placeholder="<venda_text id=mobile.form.phone>" required />
+	</div>
+
+	<input type="submit" value="<venda_text id=mobile.button.continue>" data-ajax="false" data-role="button" data-theme="e">	
+							
+</form>
+
+</div>
+<venda_inctemplate name=validationRulesScript,type=workflow/checkoutmobile>
+
+<venda_tpxt mode=set,name=curstep,value=deliveryaddressadd><venda_tpcomment><!-- tpxt workaround due to curstep failing to translate on this template --></venda_tpcomment>
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+
+<venda_zones type=countries,template=countrySelectMobile>
+
+<!-- Localisation to be passed to JS -->
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=mobile.form.state_us></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=mobile.form.zipc_us></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=mobile.form.state></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=mobile.form.zipc></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=mobile.form.region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=mobile.form.please_select_multi_dot></div>

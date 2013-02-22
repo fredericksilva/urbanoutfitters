@@ -5,4 +5,29 @@
 </div>
 <venda_tpcomment><!-- Tags to pass to JS --></venda_tpcomment>
 <div id="tag-alert" style="display:none;"><venda_text id=site.redeem_promotion_code.js_validation.enter_code></div>
-<div id="tag-protocol" style="display:none;"><venda_block label=330,mode=value,<venda_tpxt mode=get,name=track>!=orcf-screen><venda_codehttp></venda_block label=330><venda_block label=329,mode=value,<venda_tpxt mode=get,name=track>=orcf-screen><venda_codehttps></venda_block label=329></div>
+<venda_block label=330,mode=value,<venda_tpxt mode=get,name=track>!=orcf-screen>
+<!-- mp_trans_remove_start -->
+<div id="tag-protocol" style="display:none;"><venda_codehttp></div>
+<!-- mp_trans_remove_end -->
+<!-- mp_trans_disable_start -->
+<!-- mp_trans_add="DE"
+<div id="tag-protocol" style="display:none;">http://www.urbanoutfitters.de/bin/venda</div>
+-->
+<!-- mp_trans_add="FR"
+<div id="tag-protocol" style="display:none;">http://www.urbanoutfitters.fr/bin/venda</div>
+-->
+<!-- mp_trans_disable_end -->
+</venda_block label=330>
+<venda_block label=329,mode=value,<venda_tpxt mode=get,name=track>=orcf-screen>
+<!-- mp_trans_remove_start -->
+<div id="tag-protocol" style="display:none;"><venda_codehttps></div>
+<!-- mp_trans_remove_end -->
+<!-- mp_trans_disable_start -->
+<!-- mp_trans_add="DE"
+<div id="tag-protocol" style="display:none;">https://www.urbanoutfitters.de/bin/venda</div>
+-->
+<!-- mp_trans_add="FR"
+<div id="tag-protocol" style="display:none;">https://www.urbanoutfitters.fr/bin/venda</div>
+-->
+<!-- mp_trans_disable_end -->
+</venda_block label=329>

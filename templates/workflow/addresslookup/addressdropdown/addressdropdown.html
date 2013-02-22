@@ -1,0 +1,25 @@
+<venda_block label=10,param2=uk,errors=null>
+<venda_zcdropdown>
+</venda_block label=10>
+
+<script type="text/javascript">
+<!--
+jQuery(function(){
+	addressUrl = "<venda_codehttps>?ex=co_wizr-<venda_workflow>&workflowid=<venda_workflowid>&step=addressdisplay&curstep=addressdropdown&mode=process&param1=delivery&ustype=p";
+});
+
+loadAddress = function(){
+	var field = { 
+	  'company': "<venda_company>", 
+	  'num': "<venda_num>",
+	  'addr1': "<venda_addr1>", 
+	  'addr2': "<venda_addr2>",
+	  'city': "<venda_city>", 
+	  'statetext': "<venda_state>"
+	}; 
+	jQuery.each(field, function(key, value) {
+	 	jQuery("#"+key).val(value);
+	});
+};
+// -->
+</script>

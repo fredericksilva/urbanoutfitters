@@ -1,0 +1,62 @@
+<venda_block label=701,chkatt=notnull>
+	<venda_detail_attribute>
+	
+	<venda_detblock_attribute>
+		<script type="text/javascript">
+			Venda.Attributes.StoreJSON(<venda_atts>,<venda_data>);
+		</script>
+
+		<venda_mediagrid template=alternateviewGridMobile>
+		<div class="prodMulti prodMulti<venda_atrsku>" data-atr1="<venda_atr1>" data-atr2="<venda_atr2>" data-atr3="<venda_atr3>" data-atr4="<venda_atr4>">
+			<div class="attributeDetail">
+				<p class="attrTitle"><span class="attrName"><venda_atr2></span><span class="attrSku"><venda_atrsku></span></p>
+				<venda_inctemplate type=includes,name=priceFormatMultiMobile>
+				
+				<venda_block label=131,atronhand&gt;0>
+					<input type="hidden" name="itemlist" class="itemlist" value="<venda_atrsku>" id="itemlist_<venda_atrsku>">
+
+					<div class="productDetailGradientBox buyControlsMultiAttr">
+						<div id="qtybox" class="qtybox greyDropdown ui-hide-label">
+							<label for="qtylist"><venda_text id=mobile.form.qty>:</label>
+							<select name="qtylist" class="qty" id="qtylist_<venda_atrsku>">
+								<option value="" data-placeholder="true"><venda_text id=mobile.form.choose_qty></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+							</select>
+						</div>
+					</div>
+					<venda_block label=120,atrreleaseyr=notnull>
+						<p class="release" style="display:none;"><venda_text id=mobile.info.not_yet_released></p>
+						<p class="release" style="display:none;"><venda_text id=mobile.info.release_date></p>
+					</venda_block label=120>
+				</venda_block label=131>
+				
+				<venda_block label=132,atronhand&lt;1>
+					<div class="defaultstockindicator">
+					<venda_block label=166,atretayr=null><span class="nostock"><venda_text id=mobile.info.out_of_stock></span></venda_block label=166>
+					<venda_block label=167,atretayr=notnull><span class="nostock"><venda_text id=mobile.info.out_of_stock>,</span><p class="eta"><venda_text id=mobile.info.expected> <venda_atretady>/<venda_atretamn>/<venda_atretayr></p></venda_block label=167>
+					<a id="emwbis_link" href="<venda_dispview invt=<venda_invtref>>&temp=emailinstockMobile" title="<venda_text id=mobile.button.email_when_in_stock>" class="emwbisLink" data-role="button" data-inline="true"><venda_text id=mobile.button.emwbis></a>
+					</div>
+				</venda_block label=132>
+			</div>
+		</div><venda_tpcomment><!-- end: div class="prodMulti" --></venda_tpcomment>
+	</venda_detblock_attribute>
+</venda_block label=701>

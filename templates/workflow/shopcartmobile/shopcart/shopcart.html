@@ -1,0 +1,270 @@
+<venda_block label=1111,mode=value,<venda_emptytemplate>=1>
+<div class="<venda_workflow> <venda_curstep> shopcartempty">
+	<div class="shopcartmobile-header"><h1><venda_text id=mobile.heading.shopping_cart></h1></div>
+	<venda_block label=91,mode=value,<venda_errors mode=boolean>=notnull><h2 class="error"><venda_errors></h2></venda_block label=91>
+	<div class="cartemptyText">
+		<p><venda_text id=mobile.info.shopping_cart_empty></p>
+	</div>
+	<div class="submitButton"><a href="<venda_dispview page=home>" data-role="button"><venda_text id=mobile.button.continue_shopping></a></div>
+</div>
+</venda_block label=1111>
+
+<venda_block label=1112,mode=value,<venda_emptytemplate>!=1>
+<div class="<venda_workflow> <venda_curstep>">
+	<h1 class="hide"><venda_text id=mobile.heading.shopping_cart></h1>
+	<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+
+	<form method="get" name="form" id="<venda_curstep>form" action="<venda_codehttps>" data-ajax="false">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="step" value="<venda_curstep>" />
+	<input type="hidden" name="mode" id="mode" value="process" />
+	<input type="hidden" name="param1" id="param1" value="" />
+	<input type="hidden" name="param2" id="param2" value="" />
+	<input type="hidden" name="param3" id="param3" value="" />
+	<input type="hidden" name="trrfnbr" id="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="wizard" id="wizard" value="<venda_workflow>" />
+	<input type="hidden" name="trrfext" id="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+	<input type="hidden" name="curstep" id="curstep" value="<venda_curstep>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="ohrfnbr" value="<venda_ohrfnbr>">
+	<input type="hidden" name="bsref" id="bsref" value="<venda_bsref>" />
+	<input type="hidden" name="log" id="log" value="" />
+	<input type="hidden" name="layout" id="layout" value="mobile" />
+	<venda_block label=45,mode=value,<venda_setting type=ebiz,name=expresscheckout>=2><input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=p>"></venda_block label=45>
+
+	
+	<div class="submitButton ckBtnTop" data-icon="arrow-r" data-iconpos="right" data-role="button">
+	<a href="<venda_block label=noLoginUser,ustype!=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&log=22</venda_block label=noLoginUser><venda_block label=loginUser,ustype=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&step=ordersummary</venda_block label=loginUser>" data-ajax="false"><venda_text id=mobile.button.checkout_securely></a>
+	</div>
+	<venda_tpcomment><!-- Start: Items Table --></venda_tpcomment>
+	<venda_tpcomment><!-- standard products detblock include --></venda_tpcomment>
+	<venda_detblock5><div class="itemlist <venda_block label=1234,oiitype=5>itemlistMTO</venda_block label=1234>">
+		<venda_block label=41,oiwizcode=null>
+		<input type="hidden" name="oiord" value="<venda_invtref>">	
+		<input type="hidden" name="<venda_cartfield name=deleteline>" value="">
+
+		<venda_block label=115,oiitype=3>
+		<div class="image">
+			<input type="hidden" name="<venda_cartfield name=setqty>" id="form<venda_cartfield name=setqty>" value="<venda_oiqty>">
+			<!-- if product is gift certificate -->
+			<a class="productimage" href="<venda_codehttp>?ex=co_wizr-giftcertificatesmobile&bsref=<venda_bsref>" title="<venda_invtname>">
+			<venda_block label=150,med-small=notnull><venda_media rec=invt,type=movie-swf-pict,key=small></venda_block label=150>
+			<venda_block label=151,med-small=null><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="Sorry, no image available for <venda_invtname>"></venda_block label=151>
+			</a>
+		</div>
+		<div class="info infoGiftcert">
+			<a href="<venda_codehttp>?ex=co_wizr-giftcertificatesmobile&bsref=<venda_bsref>" title="Buy another <venda_invtname>"><venda_oiqty> x <venda_invtname></a>
+			<p class="giftCertificateDetails">
+				<span class="giftCertificatePrice"><venda_currsym><venda_oiextprice><br>
+				<span class="giftCertificateSentTo">Sent to: <venda_gcto> at <venda_rpemail></span><br>
+				<span class="giftCertificateMessage">Message: <venda_oicmt></span>				
+			</p>
+			<p class="priceeach"><venda_currsym><venda_oiextprice></p>
+			<div class="qtyDiv">
+				<label for="form<venda_cartfield name=setqty>" class="lblQtyInput"><venda_text id=mobile.info.qty>: </label><span><venda_oiqty></span>
+			</div>
+		</div>
+		<div class="remove">
+			<a href="#" onclick="jQuery('#<venda_curstep>form input[name=<venda_cartfield name=deleteline>]').val(1); jQuery('#<venda_curstep>form input[name=step]').val('<venda_curstep>'); jQuery('#<venda_curstep>form').submit();"><venda_text id=mobile.button.remove></a>
+		</div>
+		</venda_block label=115>
+
+		<venda_block label=116,oiitype!=3>
+		<!-- if product is not gift certificate -->
+		<venda_tpcomment><!-- ATTRIBUTE --></venda_tpcomment>
+		<venda_block label=111,invtatt1=notnull>
+			<div class="image">
+				<a class="productimage" href="<venda_block label=149,invtatt1=notnull><venda_dispview invt=<venda_invtparef>></venda_block label=149><venda_block label=159,invtatt1=null><venda_dispview invt=<venda_invtref>></venda_block label=159>">
+				<venda_tpcomment><!-- IMAGES --></venda_tpcomment>
+				<venda_block label=21,med-setsmall=notnull>
+						<venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setsmall,img=no,medatr=yes>=notnull>
+							<venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
+							<venda_media rec=invt,type=movie-swf-pict,key=setsmall,medatr=yes>
+						</venda_block label=22>
+						<venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setsmall,img=no,medatr=yes>=null>
+							<venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
+							<venda_block label=231,med-small=notnull>
+								<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+								<venda_media rec=invt,type=movie-swf-pict,key=small>
+							</venda_block label=231>
+							<venda_block label=232,med-small=null>
+								<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+								<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=mobile.info.no_product_image>">
+							</venda_block label=232>
+						</venda_block label=23>
+					</venda_block label=21>
+					<venda_block label=24,med-setsmall=null>
+						<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+						<venda_block label=25,med-small=notnull>
+							<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+							<venda_media rec=invt,type=movie-swf-pict,key=small>
+						</venda_block label=25>
+						<venda_block label=26,med-small=null>
+							<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+							<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=mobile.info.no_product_image>">
+						</venda_block label=26>
+					</venda_block label=24>
+				</a>
+			</div>
+
+			<div class="info">
+				<venda_tpcomment><!-- INFO --></venda_tpcomment>
+				<p class="productname"><venda_invtname> <venda_extflds exfldtype=orderitem,group=1,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1><venda_extflds exfldtype=orderitem,group=2,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1></p>
+				<p class="priceeach"><venda_currsym><venda_oiextprice></p>
+				<p class="attributeColor"><venda_text id=mobile.info.colour><span><venda_invtatt1></span></p>
+				<p class="attributeSize"><venda_text id=mobile.info.size><span><venda_invtatt2></span></p>
+				
+				<venda_tpcomment><!-- +/- version 
+				<label for="form<venda_cartfield name=setqty>" class="lblQtyInput">Qty</label>
+				<a href="#" data-role="button" data-icon="minus" data-iconpos="notext" class="qtyPlusMinus minus" onclick="if(validateQty()){jQuery('#form<venda_cartfield name=setqty>').val(parseInt(jQuery('#form<venda_cartfield name=setqty>').val())-1); return false;}">Remove Qty</a>
+				<input class="qty" type="number" name="<venda_cartfield name=setqty>" id="form<venda_cartfield name=setqty>" size="2" maxlength="3" value="<venda_oiqty>">
+
+				<a href="#" data-role="button" data-icon="plus" data-iconpos="notext" class="qtyPlusMinus plus" onclick="if(validateQty()){jQuery('#form<venda_cartfield name=setqty>').val(parseInt(jQuery('#form<venda_cartfield name=setqty>').val())+1); return false;}">Add Qty</a>
+
+				<a id="update<venda_cartfield name=setqty>" href="#" onclick="if(validateQty()){updateQTYBasket('#form<venda_cartfield name=setqty>', this); return false;}" title="Update <venda_invtname>">Update</a>
+				--></venda_tpcomment>
+				
+				<venda_tpcomment><!-- dropdown version --></venda_tpcomment>
+				<div class="qtyDiv">
+					<label for="<venda_cartfield name=setqty>" class="lblQtyDropdown">Qty</label>
+					<select name="<venda_cartfield name=setqty>" id="form<venda_cartfield name=setqty>" class="qtyDropdown" onchange="updateQTYBasket('#form<venda_cartfield name=setqty>', this); return false;" data-inline="true">
+						<option value="1"<venda_block label=41,oiqty=1> selected</venda_block label=41>>1</option>
+						<option value="2"<venda_block label=42,oiqty=2> selected</venda_block label=42>>2</option>
+						<option value="3"<venda_block label=43,oiqty=3> selected</venda_block label=43>>3</option>
+						<option value="4"<venda_block label=44,oiqty=4> selected</venda_block label=44>>4</option>
+						<option value="5"<venda_block label=45,oiqty=5> selected</venda_block label=45>>5</option>
+						<option value="6"<venda_block label=46,oiqty=6> selected</venda_block label=46>>6</option>
+						<option value="7"<venda_block label=47,oiqty=7> selected</venda_block label=47>>7</option>
+						<option value="8"<venda_block label=48,oiqty=8> selected</venda_block label=48>>8</option>
+						<option value="9"<venda_block label=49,oiqty=9> selected</venda_block label=49>>9</option>
+						<option value="10"<venda_block label=50,oiqty=10> selected</venda_block label=50>>10</option>
+						<option value="11"<venda_block label=51,oiqty=11> selected</venda_block label=51>>11</option>
+						<option value="12"<venda_block label=52,oiqty=12> selected</venda_block label=52>>12</option>
+						<option value="13"<venda_block label=53,oiqty=13> selected</venda_block label=53>>13</option>
+						<option value="14"<venda_block label=54,oiqty=14> selected</venda_block label=54>>14</option>
+						<option value="15"<venda_block label=55,oiqty=15> selected</venda_block label=55>>15</option>
+						<option value="16"<venda_block label=56,oiqty=16> selected</venda_block label=56>>16</option>
+						<option value="17"<venda_block label=57,oiqty=17> selected</venda_block label=57>>17</option>
+						<option value="18"<venda_block label=58,oiqty=18> selected</venda_block label=58>>18</option>
+						<option value="19"<venda_block label=59,oiqty=19> selected</venda_block label=59>>19</option>
+						<option value="20"<venda_block label=60,oiqty=20> selected</venda_block label=60>>20</option>
+					</select>
+				</div>
+			</div>
+		</venda_block label=111>
+
+		<venda_tpcomment><!-- NON- ATTRIBUTE --></venda_tpcomment>
+		<venda_block label=113,invtatt1=null>
+			<div class="image">
+				<a class="productimage" href="<venda_dispview invt=<venda_invtref>>">
+				<venda_tpcomment><!-- IMAGES --></venda_tpcomment>
+				<venda_block label=31,med-small=notnull>
+					<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality --></venda_tpcomment>
+					<venda_media rec=invt,type=movie-swf-pict,key=small>
+				</venda_block label=31>
+				<venda_block label=32,med-small=null>
+					<venda_tpcomment><!--without key=xsmall--></venda_tpcomment>
+					<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="Sorry, no image available for <venda_invtname>">
+				</venda_block label=32>
+				</a>
+			</div>
+
+			<div class="info">
+				<venda_tpcomment><!-- INFO --></venda_tpcomment>	
+				<p class="productname"><venda_invtname> <venda_extflds exfldtype=orderitem,group=1,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1><venda_extflds exfldtype=orderitem,group=2,template=oixtDisplay,type=exfields/orderItem,ref=<venda_invtref>,displayonly=1></p>
+				<p class="priceeach"><venda_currsym><venda_oiextprice></p>		
+				
+				<venda_tpcomment><!-- +/- version 
+				<label for="form<venda_cartfield name=setqty>" class="lblQtyInput">Qty</label>
+				<a href="#" data-role="button" data-icon="minus" data-iconpos="notext" class="qtyPlusMinus minus" onclick="if(validateQty()){jQuery('#form<venda_cartfield name=setqty>').val(parseInt(jQuery('#form<venda_cartfield name=setqty>').val())-1); return false;}">Remove Qty</a>
+				<input class="qty" type="number" name="<venda_cartfield name=setqty>" id="form<venda_cartfield name=setqty>" size="2" maxlength="3" value="<venda_oiqty>">
+
+				<a href="#" data-role="button" data-icon="plus" data-iconpos="notext" class="qtyPlusMinus plus" onclick="if(validateQty()){jQuery('#form<venda_cartfield name=setqty>').val(parseInt(jQuery('#form<venda_cartfield name=setqty>').val())+1); return false;}">Add Qty</a>
+
+				<a id="update<venda_cartfield name=setqty>" href="#" onclick="if(validateQty()){updateQTYBasket('#form<venda_cartfield name=setqty>', this); return false;}" title="Update <venda_invtname>">Update</a>
+				--></venda_tpcomment>
+
+				<venda_tpcomment><!-- dropdown version --></venda_tpcomment>
+				<div class="qtyDiv">
+					<label for="<venda_cartfield name=setqty>" class="lblQtyDropdown">Qty</label>
+					<select name="<venda_cartfield name=setqty>" id="form<venda_cartfield name=setqty>" class="qtyDropdown" onchange="updateQTYBasket('#form<venda_cartfield name=setqty>', this); return false;" data-inline="true">
+						<option value="1"<venda_block label=41,oiqty=1> selected</venda_block label=41>>1</option>
+						<option value="2"<venda_block label=42,oiqty=2> selected</venda_block label=42>>2</option>
+						<option value="3"<venda_block label=43,oiqty=3> selected</venda_block label=43>>3</option>
+						<option value="4"<venda_block label=44,oiqty=4> selected</venda_block label=44>>4</option>
+						<option value="5"<venda_block label=45,oiqty=5> selected</venda_block label=45>>5</option>
+						<option value="6"<venda_block label=46,oiqty=6> selected</venda_block label=46>>6</option>
+						<option value="7"<venda_block label=47,oiqty=7> selected</venda_block label=47>>7</option>
+						<option value="8"<venda_block label=48,oiqty=8> selected</venda_block label=48>>8</option>
+						<option value="9"<venda_block label=49,oiqty=9> selected</venda_block label=49>>9</option>
+						<option value="10"<venda_block label=50,oiqty=10> selected</venda_block label=50>>10</option>
+						<option value="11"<venda_block label=51,oiqty=11> selected</venda_block label=51>>11</option>
+						<option value="12"<venda_block label=52,oiqty=12> selected</venda_block label=52>>12</option>
+						<option value="13"<venda_block label=53,oiqty=13> selected</venda_block label=53>>13</option>
+						<option value="14"<venda_block label=54,oiqty=14> selected</venda_block label=54>>14</option>
+						<option value="15"<venda_block label=55,oiqty=15> selected</venda_block label=55>>15</option>
+						<option value="16"<venda_block label=56,oiqty=16> selected</venda_block label=56>>16</option>
+						<option value="17"<venda_block label=57,oiqty=17> selected</venda_block label=57>>17</option>
+						<option value="18"<venda_block label=58,oiqty=18> selected</venda_block label=58>>18</option>
+						<option value="19"<venda_block label=59,oiqty=19> selected</venda_block label=59>>19</option>
+						<option value="20"<venda_block label=60,oiqty=20> selected</venda_block label=60>>20</option>
+					</select>
+				</div>
+			</div>
+		</venda_block label=113>
+
+		<div class="remove">
+			<a href="#"  onclick="jQuery('#<venda_curstep>form input[name=<venda_cartfield name=deleteline>]').val(1); jQuery('#<venda_curstep>form input[name=step]').val('<venda_curstep>'); jQuery('#<venda_curstep>form').submit();"><venda_text id=mobile.button.remove></a>
+		</div>
+		</venda_block label=116>
+		</venda_block label=41>
+		</div>
+	</venda_detblock5>
+
+	<div class="standarditem">
+		<div class="shopcartmobile-header"><h2><venda_text id=mobile.info.shopping_cart_items></h2></div>
+		<venda_detail5><venda_tpcomment><!-- normal products --></venda_tpcomment>
+	</div><venda_tpcomment><!-- End: Stand Item --></venda_tpcomment>
+	</form>
+
+	<venda_tpcomment><!-- End: Items Table --></venda_tpcomment>
+
+	<venda_block label=10,totaldisc&gt;0.00,totaldisc!=null>
+	<div class="subtotal">
+		<span class="labeltext"><venda_text id=mobile.info.subtotal>:</span>
+		<span class="value"><venda_currsym><venda_extsub></span>
+	</div>
+	<div class="discount">		
+		<span class="labeltext"><venda_text id=mobile.info.discount>:</span>
+		<span class="value"><venda_currsym><venda_totaldisc></span>
+	</div>
+	<div class="total">			
+		<span class="labeltext"><venda_text id=mobile.info.order_total>:</span>
+		<span class="value"><venda_currsym><venda_esttotal></span>
+	</div>			
+	</venda_block label=10>
+
+	<venda_block label=11,totaldisc=0.00,totaldisc=null,operator=or>
+	<div class="subtotal">
+		<span class="labeltext"><venda_text id=mobile.info.subtotal>:</span>
+		<span class="value"><venda_currsym><venda_extsub></span>
+	</div>		
+	<div class="staticmessagebox">
+		<venda_page page=staticmessage>
+	</div>	
+	</venda_block label=11>
+
+	<venda_tpcomment><!-- End: Items Table --></venda_tpcomment>
+	<div class="submitButton" data-icon="arrow-r" data-iconpos="right" data-role="button">
+	<a href="<venda_block label=noLoginUser,ustype!=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&log=22</venda_block label=noLoginUser><venda_block label=loginUser,ustype=R><venda_codehttps>?ex=co_wizr-checkoutmobile&bsref=<venda_bsref>&step=ordersummary</venda_block label=loginUser>"  data-ajax="false"><venda_text id=mobile.button.checkout_securely></a>
+	</div>
+	<venda_tpcomment><!--<a href="<venda_dispview page=home>&layout=mobile" data-role="button"><venda_text id=mobile.button.continue_shopping></a>
+	<div class="ui-block-b"><input type="button" onclick="document.<venda_curstep>form.step.value='<venda_curstep>';document.<venda_curstep>form.submit();" value="Update"></div>--></venda_tpcomment>
+</div> 
+</venda_block label=1112>
+
+<venda_tpcomment><!-- Tags to pass to JS --></venda_tpcomment>
+<div id="tag-alert" style="display:none;"><venda_text id=mobile.validation.enter_promo_code></div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=mybagtpxt,value=hidebuttons>

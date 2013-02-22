@@ -1,0 +1,63 @@
+<form action="<venda_codehttp>" method="post" id="emailmebackform" name="emailmebackform" data-ajax="false">
+<input type="hidden" name="ex" value="tl_emlinstock-emailme">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="invtref" value="<venda_invtref>">
+<input type="hidden" name="dispviewref" value="<venda_invtref>">
+<input type="hidden" name="invt" value="<venda_invtref>">
+<input type="hidden" name="layout" id="layout" value="noheaders">
+<input type="hidden" name="temp" value="thankyouMobile">
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,foo=emailinstock>">
+
+	<div class="static-wrapper emailmeback">
+		<div class="static-content">
+			<div class="static-header borderBt">
+				<h1><venda_text id=mobile.heading.email_when_in_stock></h1>
+			</div>
+			<div id="emailmeback" class="boxContent">
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="bisemail"><venda_text id=mobile.form.email></label>
+					<input type="email" name="bisemail" value="<venda_userinfo><venda_sesusemail></venda_userinfo>" id="bisemail" maxlength="150" placeholder="<venda_text id=mobile.form.email> <venda_text id=mobile.form.required>" required />
+				</div>
+
+				<div class="ui-grid-a submitButton">
+					<div class="ui-block-a"><a class="cancel" href="<venda_dispview invt=<venda_invtref>>&temp=mobile" data-theme="c" data-mini="true" data-role="button"><venda_text id=mobile.button.cancel></a></div>
+					<div class="ui-block-b"><a class="submit" href="#" id="submitEMWBIS" data-mini="true" data-role="button"><venda_text id=mobile.button.continue></a></div>
+				</div>
+			</div><!-- /boxContent -->
+		</div><!-- /static-content -->
+	</div><!-- /static-wrapper -->
+</form>
+<script type="text/javascript">
+// blank email if it contains user
+var bisemail = jQuery("#bisemail").val();
+if ((bisemail.substring(0,1)=='<') || (bisemail.substring(0,4)=='user')) {
+	jQuery("#bisemail").val('');
+}
+
+var validator;
+jQuery(document).bind("pageinit", function(event) {
+	validator = jQuery("form[name='emailmebackform']").formValidator();
+	validator.validateFields([{ id: "bisemail", rules: {
+											required: "Please enter the email address",
+											email: "Please enter a valid email address."
+											}}]);
+	jQuery("#bisemail").keypress(function(event) {
+		if (event.which == 13) {
+			event.preventDefault();
+			jQuery("#submitEMWBIS").trigger("click");
+		}
+	});
+	jQuery("#submitEMWBIS").bind("click",function(e) {
+		if(validator.validate()){
+			/* ajax disabled
+			jQuery("#emailmebackform").submitForm();*/
+			jQuery("#layout").val("mobile");
+			jQuery("#emailmebackform").submit();
+		}
+	});		
+});
+</script>
+
+<!-- tpxt used for crumbtrail -->
+<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+<venda_tpxt mode=set,name=track,value=emailinstock>

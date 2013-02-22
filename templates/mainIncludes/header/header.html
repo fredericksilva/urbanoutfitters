@@ -7,17 +7,26 @@
 <div id="tag-vbmsrchhtxt" style="display:none;"><venda_htxt mode=get,name=searchadd></div>
 
 <div id="tag-addedmsg" style="display:none;"><venda_block label=32,mode=value,<venda_addedmsg msg=addedref>=notnull><venda_addedmsg msg=addedref></venda_block label=32></div>
+<!-- mp_trans_remove_start -->
 <div id="tag-codehttp" style="display:none;"><venda_codehttp></div>
+<!-- mp_trans_remove_end -->
+<!-- mp_trans_disable_start -->
+<!-- mp_trans_add="DE"
+<div id="tag-codehttp" style="display:none;">http://www.urbanoutfitters.de/bin/venda</div>
+-->
+<!-- mp_trans_add="FR"
+<div id="tag-codehttp" style="display:none;">http://www.urbanoutfitters.fr/bin/venda</div>
+-->
+<!-- mp_trans_disable_end -->
+
 <div id="tag-addtobaskettext" style="display:none;"><venda_text id=site.productdetail.adding_item_to_basket></div>
 <div id="tag-headertext" style="display:none;"><span><venda_text id=site.minicart.header.text></span></div>
 
 <div class="header-bg"></div>
 
 <div class="grid_7 clearfix">
-  <div class="grid_3 alpha">
+  <div class="grid_7 alpha omega">
     <venda_inctemplate name=regionLanguageSwitch,type=widgets>
-  </div>
-  <div class="grid_4 omega">
     <a href="<venda_dispview page=emailsignup>" title="Email sign up" class="emailsu">
       <span class="emailsu-copy">Email sign up</span>
     </a>

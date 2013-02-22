@@ -1,0 +1,10 @@
+	<div class="ui-block-c homeLink button_header">
+		<a href="<venda_dispview icat=womens>">Women's</a>
+	</div>
+	<div class="ui-block-c homeLink button_header">
+		<a href="<venda_dispview icat=mens>">Men's</a>
+	</div>
+	<div class="ui-block-c homeLink button_header">
+		<a href="<venda_dispview page=home>">Home</a>
+	</div>
+	

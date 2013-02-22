@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller','removeRefine');
 };
 
 // Utility method.
@@ -412,11 +412,11 @@ Venda.Search.Feature.perLine.prototype = {
     	jQuery(".fivePerLine").show();
     	jQuery(".onlineExLogo-underlay").show();
     		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_l1.jpg');
+    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_ca1.jpg');
     			jQuery(this).attr("src",ImageSrc);
     		});
     		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_l1.jpg');
+    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_ca1.jpg');
     			jQuery(this).data("setimage",SetImageSrc);
     		});
         jQuery("a.moredetail img").css({width:'244px',height:'366px'});
@@ -434,11 +434,11 @@ Venda.Search.Feature.perLine.prototype = {
     	jQuery(".fivePerLine").hide();
     	jQuery(".onlineExLogo-underlay").hide();
     		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_l1.jpg','_sm1.jpg');
+    			var ImageSrc = jQuery(this).attr("src").replace('_ca1.jpg','_sm1.jpg');
     			jQuery(this).attr("src",ImageSrc);
     		});
     		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_l1.jpg','_sm1.jpg');
+    			var SetImageSrc = jQuery(this).data("setimage").replace('_ca1.jpg','_sm1.jpg');
     			jQuery(this).data("setimage",SetImageSrc);
     		});
     	jQuery("a.moredetail img").css({width:'142px',height:'213px'});
@@ -538,25 +538,32 @@ Venda.Search.Feature.swatchHide.prototype = {
     	jQuery(".prodsFiveColumns li").each(function () {   
     		var swatch = jQuery(this).find("a.sw_image"),
     			swatchImg = jQuery(this).find("img.swatch"),
-    			n = jQuery(this).find(".sw_image").length;
-    		swatch.each(function () {
-    			swatchImg.error(function () {
-	    			jQuery(this).hide();
-	    		})
-	    	})
-    		if (n < 2) {
+    			n = swatchImg.length,
+    			mainImg = jQuery(this).find("a.moredetail img"),
+    			mediumImgKey = jQuery(this).find(".mediumImgKey").text().replace('_m1.jpg','_l1.jpg');;
+    		mainImg.error(function () {
+	    		jQuery(this).unbind("error").attr("src", mediumImgKey);
+	    	});
+	    	if (n < 2) {
     			var swatchCont = jQuery(this).find(".swatchContainer");
     			var swatchIcon = jQuery(this).find(".swatchIcon");
     			jQuery(swatchCont).html("");
     			jQuery(swatchCont).hide();
     			jQuery(swatchIcon).hide();
     		}
-    		if (n > 8) {
-    			jQuery(this).find(".arrowDown").show();
-	    		jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
-	    		jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
-	    		//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
-    		}
+    		swatch.each(function () {
+    			swatchImg.error(function () {
+	    			jQuery(this).closest('a').remove();
+	    		})
+	    	}).promise().done(function () {
+	    		z = swatchImg.length;
+		    	if (z > 8) {
+    				jQuery(this).find(".arrowDown").show();
+    				jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
+    				jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
+    				//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
+    			}
+	    	})
     	});
     }
 };
@@ -576,9 +583,9 @@ Venda.Search.Feature.swatchCase.prototype = {
 Venda.Search.Feature.uiSelectmenu = function() {};
 Venda.Search.Feature.uiSelectmenu.prototype = {
 	display: function() {
-		jQuery(".sort select").selectmenu({ style: 'dropdown' });
+		jQuery(".sort select").selectmenu({ style:'dropdown', maxHeight: 2000, positionOptions: { collision: 'none' } });
 		jQuery(".sortby").click(function(){
-			jQuery(".sort select").selectmenu({ style: 'dropdown' });
+			jQuery(".sort select").selectmenu({ style:'dropdown', maxHeight: 2000, positionOptions: { collision: 'none' } });
 		});
 		jQuery(".accordion_slice").each( function() {
 			jQuery(this).find(".viewScroll .collatedresult").css('height','auto');
@@ -669,6 +676,7 @@ Venda.Search.Feature.swatchScroller.prototype = {
 				jQuery(a[i]).attr("rel", [i]);
 			}			
         	$this.find(".arrowDown").bind('click', function() {
+        		$this.find(".arrowUp").show();
         		$this.find(".arrowUp").animate({opacity: 1}, 200);
         		$active = $this.find(".current").next();
         		if ($active.length === 0) {
@@ -707,5 +715,21 @@ Venda.Search.Feature.swatchScroller.prototype = {
         		}*/
 			})
 		})
+	}
+};
+
+Venda.Search.Feature.removeRefine = function() {};
+Venda.Search.Feature.removeRefine.prototype = {
+	display: function() {
+		var catRef = jQuery("#parentCatRef").text();
+		if (catRef == "valentine13") {
+			jQuery(".leftSidebar,.pagnContents,.boxSearchAlt").hide();
+			jQuery(".prodsFiveColumns a.moredetail img").css({'width':'236px','height':'354px','margin-bottom':'2px'});
+			jQuery(".prodsFiveColumns li").css('width','235px');
+			jQuery("#searchResults").toggleClass("grid_19 push_5").toggleClass("grid_24 pull_0 alpha").css('width','952px');
+			jQuery(".leftSidebar").toggleClass("grid_5 pull_19").toggleClass("grid_0 pull_24");
+			//jQuery(".prodsFiveColumns .productlistinfo").hide();
+			jQuery(".qb-large").css('width','234px');
+		};
 	}
 };

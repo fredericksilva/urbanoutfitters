@@ -1,0 +1,31 @@
+<h1>Add Products From Codes</h1>
+<!-- display any error messages where defined -->
+<venda_block label=30,errors=notnull>
+<p class="error"><venda_errors></p>
+</venda_block label=30>
+
+<!-- form with text area within which multiple products can be entered -->
+<venda_form>
+	<!-- build the form -->
+	
+
+		<!-- text area for scanned products -->
+<h2><label for="productdata">Product Codes</label></h2>
+	    
+<p>Please enter your product codes in the text area below and click 'add to list' to add them to the gift list.</p>
+
+<p><textarea name="productdata" id="productdata" rows="12" cols="60" wrap="virtual"><venda_productdata></textarea></p>
+     
+
+<!-- clear and submit buttons -->
+<p><a href='#' onClick='<venda_wizbutton step=glstproduct,param1=add,param2=,mode=process,callonly=yes> return false;'><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/bt_addtogiftlist.gif" alt="Add to Gift List" border="0"></a></p>
+			
+<!-- data processing settings -->
+<input type="hidden" name="search_field" value="suppliersku">
+<input type="hidden" name="format_definition" value="numeric">
+<input type="hidden" name="min_length" value="13">
+<input type="hidden" name="max_length" value="13">
+<!-- specificy any additional invt fields otherwise leave blank -->
+<input type="hidden" name="additional_fields" value="">
+
+</form>

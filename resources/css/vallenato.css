@@ -1,0 +1,222 @@
+img { border: none; }
+
+.fl { float: left; }
+
+.fr { float: right; }
+
+.cl { clear: both; }	
+
+.decription { text-indent: -9999px; }
+
+#accordion-container { font-size: 13px; padding: 5px 0px 10px 0px; width: 950px; margin: 0px auto; }
+
+.accordion-header { margin: -150px -10px 10px 0px; padding: 0px 20px; cursor: pointer; color: #666666; clear: both; width: 76px; height: 128px; float: right; }
+
+.accordion-content { display: none;  }
+
+.inactive-header { background: url('../images/spotlight/button-showhide_uk.png') no-repeat top; clear: both; margin: -165px -10px 10px 0px; } /*Minus button */
+
+.inactive-header:hover { background: url('../images/spotlight/button-showhide_uk.png') no-repeat top; }/*Minus button */
+
+.active-header { background: url('../images/spotlight/button-showhide_uk.png') no-repeat bottom; clear: both; width: 76px; height: 128px; float: right;  margin: -165px -10px 10px 0px; }/*plus button */
+
+.active-header:hover { background: url('../images/spotlight/button-showhide_uk.png') no-repeat bottom;  }
+
+.bio { clear: both; margin: 0px 0px 10px 0px; -webkit-box-shadow: 1px 1px 1px 1px #e3e3e3; -box-shadow: 1px 1px 1px 1px #e3e3e3; height: 430px; background-color: #fff;  }
+
+.bio h1 img {margin: 0px 0px 0px 55px;  }
+
+.bio-info { width: 250px; margin: 195px 144px 0px 85px !important; float: right; font-size: 14px;}
+
+.gallery { margin: 0px 0px 10px 0px; padding: 0px 0px 0px 0px; width: 950px;   }
+
+.gallery ul { margin: 0px; padding: 0px; }
+
+.gallery ul li { display: inline-block; margin: 0px; padding: 1px; }
+
+.gallery ul li a img { border: 1px solid #b9b9b9 !important; -webkit-box-shadow: 1px 1px 1px 1px #e3e3e3;  -box-shadow: 1px 1px 1px 1px #e3e3e3;  }
+
+/***Thumbnails hovers *****/
+
+
+/***first gallery ******/
+
+#first-gal-thumb1 { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_01_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb1:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb2  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_02_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb2:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb3  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_03_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb3:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb4  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_04_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb4:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb5  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_05_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb5:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb6  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_06_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb6:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb7  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_07_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb7:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb8  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_08_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb8:hover { background-position: 0 -310px; }
+
+
+#first-gal-thumb9  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/milly_09_uk.jpg');text-indent:-9999px; }
+
+#first-gal-thumb9:hover { background-position: 0 -310px; }
+
+#first-gal-blogbar  { display: block; width: 950px; height: 54px; background-image: url('../images/spotlight/milly-blog_uk.jpg'); }
+
+#first-gal-shopshoot  { display: block; width: 950px; height: 41px; background-image: url('../images/spotlight/shopshoot_uk.jpg'); }
+
+/***second gallery ******/
+
+#sec-gal-thumb1  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_01_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb1:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb2  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_02_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb2:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb3  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_03_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb3:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb4  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_04_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb4:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb5  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_05_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb5:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb6  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_06_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb6:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb7  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_07_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb7:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb8  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_08_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb8:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb9  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_09_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb9:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb10  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_10_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb10:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb11  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_11_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb11:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb12  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_12_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb12:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb13  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_13_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb13:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb14  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_14_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb14:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb15  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_15_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb15:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb16  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_16_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb16:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb17  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_17_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb17:hover { background-position: 0 -310px; }
+
+#sec-gal-thumb18  { display: block; width: 310px; height: 310px; background-image: url('../images/spotlight/lucy_18_uk.jpg');text-indent:-9999px; }
+
+#sec-gal-thumb18:hover { background-position: 0 -310px; }
+
+#sec-gal-blogbar  { display: block; width: 950px; height: 54px; background-image: url('../images/spotlight/lucy-blog_uk.jpg'); }
+
+#sec-gal-shopshoot  { display: block; width: 950px; height: 41px; background-image: url('../images/spotlight/shopshoot_uk.jpg'); }
+
+/****Backgrounds**********/
+
+#milly-bk { background: url('../images/spotlight/milly-colley.jpg'); display: block; width: 950px; height: 350px; }
+
+#lucy-bk { background: url('../images/spotlight/lucy-wilkinson.jpg'); display: block; width: 950px; height: 350px; }
+
+/****Backgrounds**********/
+
+#mosaic{ width: 948px; height: 501px; position: relative; margin: 0px 0px 10px 0px;  border: 1px solid #000;}
+
+#mosaic .tile{ z-index: 10; }
+
+#mosaic .gridY { position:absolute; left:0; height:1px; border-top: 1px solid #000; z-index: 100; }
+
+#mosaic .gridX { position:absolute; top:0; width:1px; border-left: 1px solid #000; z-index: 100; }
+
+/*** lightbox css ***/
+
+#jquery-overlay { position: absolute; top: 0; left: 0; z-index: 100; width: 100%; height: 500px; }
+
+#jquery-lightbox { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; text-align: center; line-height: 0; }
+
+#jquery-lightbox a img { border: none; }
+
+#lightbox-container-image-box { position: relative; background-color: #fff; width: 250px; height: 250px; margin: 0 auto; }
+
+#lightbox-container-image { padding: 10px; }
+
+#lightbox-loading { position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0; }
+
+#lightbox-nav { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10; }
+
+#lightbox-container-image-box > #lightbox-nav { left: 0; }
+
+#lightbox-nav a { outline: none;}
+
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext { width: 49%; height: 100%; zoom: 1; display: block;  }
+
+#lightbox-nav-btnPrev { left: 0;  float: left; }
+
+#lightbox-nav-btnNext { right: 0; float: right; }
+
+#lightbox-container-image-data-box { font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%; padding: 0 10px 0; }
+
+#lightbox-container-image-data { padding: 0 10px;  color: #666; }
+
+#lightbox-container-image-data #lightbox-image-details { width: 70%; float: left;  text-align: left;  }
+	
+#lightbox-image-details-caption { font-weight: bold; }
+
+#lightbox-image-details-currentNumber { display: block; clear: left; padding-bottom: 1.0em;	}
+			
+#lightbox-secNav-btnClose { background: url('../images/spotlight/lightbox-btn-close.gif') no-repeat; width: 17px; height: 22px; float: right; padding-bottom: 0.7em; }

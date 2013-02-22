@@ -1,0 +1,55 @@
+<div class="<venda_workflow> <venda_curstep>">
+<form method="post" name="<venda_curstep>form" id="<venda_curstep>form" action="<venda_codehttps>" data-ajax="false">
+	<venda_tpcomment><!-- Core parameters --></venda_tpcomment>
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="curstep" value="<venda_curstep>" /> 
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="mode" value="process" />
+	<input type="hidden" name="step" value="ordersummary" /> 
+	<input type="hidden" name="param2" value="" />
+	
+	
+<div class="checkoutmobile-wrapper">
+	<div class="checkoutmobile-content">
+		<div class="checkoutmobile-header">
+			<h1><venda_text id=mobile.heading.multiple_delivery_address></h1>
+			<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+		</div>
+		
+		
+	<venda_tpcomment><!-- Start: Multiple Delivery Address Table --></venda_tpcomment>
+	<venda_detblock>
+	<div class="multiaddr-content">
+		<input type="hidden" name="oirfnbr" value="<venda_oirfnbr>" />
+		<div class="productname">
+			<venda_oiivname> <venda_block label=1,oiatt1=notnull> (<venda_oiatt1><venda_block label=2,oiatt2=notnull>,&nbsp;<venda_oiatt2></venda_block label=2><venda_block label=3,oiatt3=notnull>,&nbsp;<venda_oiatt3></venda_block label=3><venda_block label=4,oiatt4=notnull>,&nbsp;<venda_oiatt4></venda_block label=4>)</venda_block label=1>
+		</div>		
+		<div data-role="fieldcontain" class="quantity">
+			<label for="formoiqty-<venda_oirfnbr>" data-inline="true"><venda_text id=mobile.info.qty></label>
+			<input type="number" data-inline="true" name="oiqty-<venda_oirfnbr>" id="formoiqty-<venda_oirfnbr>" size="3" maxlength="3" value="<venda_oiqty>">
+		</div>
+			
+		<div data-role="fieldcontain" class="address">
+			<label for="formoiabsel-<venda_oirfnbr>"><venda_text id=mobile.info.multiple_delivery_this_item></label>
+			<select name="oiabsel-<venda_oirfnbr>" id="formoiabsel-<venda_oirfnbr>"><venda_address template=address,selectaddr=<venda_oiabnbr>></select>
+		</div>
+	</div>
+	</venda_detblock>
+	<div>
+	<venda_detail>
+	</div>
+	<venda_tpcomment><!-- End: Multiple Delivery Address Table --></venda_tpcomment>
+	</div><!--end checkoutmobile-content -->
+</div><!--end checkoutmobile-wrapper -->
+	
+	<div class="submitButton">
+		<a href="#" onclick='jQuery("input[type=hidden][name=param2]").val("updated"); jQuery("input[type=hidden][name=step]").val("multipledeliveryaddresses"); jQuery("form[name=<venda_curstep>form]").submit();' data-role="button" class="middle"><venda_text id=mobile.button.update_Quantities></a>
+	</div>
+	<div class="submitButton"><input type="submit" value="<venda_text id=mobile.button.done>"></div>
+	<div class="submitButton"><a href="<venda_wizurl step=addressbookadd,param1=delivery,param2=add>" data-role="button"><venda_text id=mobile.button.add_new_address></a></div>	
+</form>
+</div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpxt mode=set,name=curstep,value=step4>

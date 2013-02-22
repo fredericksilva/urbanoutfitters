@@ -59,6 +59,10 @@ a.sw_image img {
 	line-height: 14px;
 	margin: 10px 0 0;
 }
+.prodsFiveColumns .productlistinfo .list-promo {
+	color: #009999;
+}
+
 
 .prodsFiveColumns .productlistinfo .price, .prodsFiveColumns .productlistinfo .wasprice, .prodsFiveColumns .productlistinfo .price {
 	margin: 3px 0;
@@ -160,7 +164,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 .threePerLine span:hover, .fivePerLine span:hover {
-	opacity:0.8;
 }
 
 .resultDetail .sort {
@@ -254,8 +257,17 @@ body.search_body .ui-selectmenu-menu li:hover {
 	padding-top:1px;
 }
 
-.pagnNumLast, .pagnNumFirst {
-	margin:0 8px;
+.pagnNumbers {
+  margin: 0 6px;
+  display: block;
+  float: left;
+}
+
+.pagnNumFirst {
+  margin-left: 8px;
+}
+.pagnNumLast {
+	margin-right: 8px;
 }
 
 .pagnEllipsis {
@@ -599,6 +611,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 	opacity:0;
 	filter: alpha(opacity=0);
 	margin:12px 0 0 3px;
+	display:none;
 }
 
 .swatchContainer .arrowUp:hover, .swatchContainer .arrowDown:hover {
@@ -825,6 +838,10 @@ a.quickBuyDetails {
 	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 	border:1px solid #ccc;
+}
+
+#bottomtab .accessoryProds {
+  z-index: 1;
 }
 
 .accessoryProds li.active {
@@ -1216,7 +1233,7 @@ a.quickBuyDetails {
 	width:90px;
 }
 .productdetailatt .ui-state-default, .productdetailatt .ui-widget-content .ui-state-default, .productdetailatt .ui-widget-header .ui-state-default {
-	background: url('../images/paper-background.jpg') 0px 0px repeat scroll #CFC5B6;
+	background-color: #fff;
 	color: #333;
 	box-shadow: #444 1px 2px 3px;
 	-webkit-box-shadow: #444 1px 2px 3px;
@@ -1666,3 +1683,174 @@ margin: 0 0 20px 0;
 .mm_ul > li > div > div > ul > li > a.mm_subviewallpromo, .mm_ul > li > div > div > ul > li > a.mm_submpromoviewall {
 	color: #009999;
 }
+
+/* Twitter feed for Valentines */
+
+/* The container for the module */
+#ValentinesTwitter {
+	background: #000;
+    width: 930px; /* Up to you but remember to change the div width below as well if you change it */
+    padding: 0 10px;
+    height:40px;
+    overflow: hidden; /* clearfix */
+}
+ #ValentinesTwitter h5 {
+    float: left; /* We'll make the heading sit on its own line next to the tweets */
+    width: 0; /* Might wanna change this depending on the text in the heading */
+    margin: 0;
+    padding: 13px 0; /* I'll set the top and bottom padding here rather than in the container so as not to cut off any text */
+    font-size: 14px;
+    color: #fff;
+    line-height: 1;
+}
+/* The marquee plug-in turns a marquee element into a div */
+#ValentinesTwitter p, #ValentinesTwitter marquee, #ValentinesTwitter div {
+    float: right;
+    width: 930px; /* Container width - heading width - 10px (for some right padding) */
+    margin: 0;
+    padding: 13px 0; /* Again we set the padding in here so as not to cut text */
+    line-height: 1;
+    color:#fff;
+    font-size:14px;
+    text-transform:uppercase;
+}
+/* All the tweets will be links pointing to your page on twitter */
+#ValentinesTwitter marquee a, #ValentinesTwitter div a {
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-decoration: none;
+    font-size:14px;
+    text-transform:uppercase;
+}
+/* The i is used to display the date of the tweet */
+#ValentinesTwitter marquee a i, #ValentinesTwitter div a i {
+    font-style: normal;
+    color: #ec208c;
+}
+
+#ValentinesTwitter marquee a b, #ValentinesTwitter div a b {
+    font-style: normal;
+    color: pink;
+}
+
+ul#mm_ul li.navsfdigibook {
+	display:none;
+}
+
+/* Homepage signup email popup NEW */
+#signupHeader-uk, #signupHeader-de, #signupHeader-fr {
+	position: absolute;
+	width: 100%;
+	height: 170px;
+	top: 0;
+	left: 0;
+}
+#signupHeader-uk {
+	background: url('../images/WT-assets/pop-up/msg_uk_6.png') no-repeat center; 
+}
+#signupHeader-de {
+	background: url('../images/WT-assets/pop-up/msg_de_6.png') no-repeat center;
+}
+#signupHeader-fr {
+	background: url('../images/WT-assets/pop-up/msg_fr_6.png') no-repeat center;
+}
+.signupForm {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:0;
+}
+.signupForm form fieldset label {
+	display:none;
+}
+.signupForm .input {
+	border: #333436 4px solid;
+	background: none;
+	font-size: 12px;
+	width: 265px;
+	padding: 5px;
+	border-image: initial;
+}
+.signupForm fieldset {
+	display:inline-block;
+	position:absolute;
+	top:-1px;
+	left:32px;
+}
+.signupForm form #guys {
+	position:absolute;
+	right:33px;
+}
+.signupForm form #gals {
+	position:absolute;
+	right:121px;
+}
+/*.signupForm .submit {
+	display:inline-block;
+}*/
+.signupPopupOverlay {
+	position: fixed !important;
+	width: 100%;
+	height: 100%;
+	z-index: 9500 !important;
+	zoom: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+	overflow: hidden !important;
+	background-color: black;
+	right: 0;
+	top: 0 !important;
+	display:none;
+}
+.signupPopup {
+	position: fixed;
+	left: 0;
+	top: 25%;
+	width: 100%;
+	z-index: 9501;
+	display:none;
+}
+.signupPopupOuter {
+	z-index: 9501 !important;
+	position: relative;
+	top: 0;
+	margin: auto;
+	width: 570px;
+	height: 340px;
+	/*background: url('../images/WT-assets/frame-short.png') no-repeat 0 0 transparent;*/
+}
+.signupPopupInner {
+	width: 524px;
+	position: relative;
+	background: url('../images/WT-assets/pop-up/background.png') no-repeat 0 0 transparent;
+	margin: 20px;
+	text-align: center;
+	height: 248px;
+}
+.signupPopupClose {
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 8px;
+	right: 11px;
+	padding: 0;
+	z-index:10;
+}
+.signupPopupSignup {
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	width: 100%;
+	padding: 0;
+	text-align: center;
+	height: 170px;
+	left:0;
+	top:0;
+	position: relative;
+}
+.signupPopupDelivery {
+	padding-top: 15px;
+	display:none;
+}
+/* end */

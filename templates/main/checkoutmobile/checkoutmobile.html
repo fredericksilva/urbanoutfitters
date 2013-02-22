@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><venda_setting type=ebiz,name=name></title>
+	<venda_inctemplate name=metatagsMobile,type=mainIncludes>
+	<venda_inctemplate name=js_coMobile,type=mainIncludes>
+	<venda_inctemplate name=cssMobile,type=mainIncludes>
+</head>
+
+<body> 
+	<venda_inctemplate name=regionLanguageSwitchMobile,type=widgets>
+	<div id="mobile" class="checkoutmobilelayout" data-role="page" data-theme="a">
+		<div data-role="header">
+			<venda_block label=normalheader,workflow!=checkoutmobile>
+				<venda_inctemplate name=headerMobile,type=mainIncludes>
+			</venda_block label=normalheader>
+			<venda_block label=coheader,workflow=checkoutmobile>
+				<venda_inctemplate name=checkoutHeaderMobile,type=mainIncludes>
+			</venda_block label=coheader>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+			<venda_content>		
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<venda_block label=normalheader,mode=value,<venda_tpxt mode=get,name=headertype>=normalheader>
+				<venda_inctemplate name=footerMobile,type=mainIncludes>
+			</venda_block label=normalheader>
+			<venda_block label=coheader,mode=value,<venda_tpxt mode=get,name=headertype>!=normalheader>
+				<venda_inctemplate name=checkoutFooterMobile,type=mainIncludes>
+			</venda_block label=coheader>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+
+	<venda_inctemplate name=bodyBottom,type=tracking/mobile/shared>
+</body>
+</html>

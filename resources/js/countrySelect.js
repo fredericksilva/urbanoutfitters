@@ -108,14 +108,22 @@ Venda.CountrySelect.Init = function() {
 		matchDiff = topCountries.length - matchDiff;
 		el.countrySelect.prepend(jQuery('select#cntrylist option').get(topCountries.length - matchDiff + 1));
 	}
-	
-	
+
 	if(jQuery('#venda_cntry').text().length > 0) {
 		Venda.CountrySelect.SetCountry(jQuery('#venda_cntry').text(), el);
 		jQuery("select#cntrylist option[value='" + jQuery('#venda_cntry').text() + "']").attr("selected","selected");
 	} else {
-		Venda.CountrySelect.SetCountry(null, el);
-		jQuery('select#cntrylist option').get(0).setAttribute("selected","selected");
+
+
+		if(jQuery('select#cntrylist').val() == ""){
+			Venda.CountrySelect.SetCountry(null, el);
+			jQuery('select#cntrylist option').get(0).setAttribute("selected","selected");
+		}else{
+			Venda.CountrySelect.SetCountry(jQuery('select#cntrylist').val(), el);
+			//jQuery('select#cntrylist option').get(0).setAttribute("selected","selected");
+		}
+
+
 	}
 	
 	el.countrySelect.change(function () { Venda.CountrySelect.SetCountry(jQuery(this).val(), el);	});
@@ -145,8 +153,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('show', el.countyInput);
 			el.countyLabel.text(jQuery('#user_details_label_us_state').text() + ':');
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_us_zip').text() + ':');
-			el.postcodeLookup.addClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_us_zip').text() + ': *');
+			el.postcodeLookup.hide();
 			isRequiredField = true;
 		break;
 	
@@ -159,8 +167,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('hide', el.countyInput);
 			el.countyLabel.text(jQuery('#user_details_label_uk_county').text() + ':');
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ':');
-			el.postcodeLookup.removeClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ': *');
+			el.postcodeLookup.show();
 			isRequiredField = false;
 		break;
 		
@@ -170,8 +178,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('hide', el.countyDiv);
 			Venda.CountrySelect.ShowHide('hide', el.countyDiv.next());
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ':');
-			el.postcodeLookup.addClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ': *');
+			el.postcodeLookup.hide();
 			isRequiredField = false;
 		break;
 		
@@ -181,8 +189,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('hide', el.countyDiv);
 			Venda.CountrySelect.ShowHide('hide', el.countyDiv.next());
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ':');
-			el.postcodeLookup.addClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ': *');
+			el.postcodeLookup.hide();			
 			isRequiredField = false;
 		break;
 		
@@ -195,8 +203,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('hide', el.countyInput);
 			el.countyLabel.text(jQuery('#user_details_label_non_us_uk_region').text() + ':');
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ':');
-			el.postcodeLookup.addClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ': *');
+			el.postcodeLookup.hide();
 			isRequiredField = false;
 		break;
 		
@@ -207,8 +215,8 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 			Venda.CountrySelect.ShowHide('hide', el.countyInput);
 			el.countyLabel.text(jQuery('#user_details_label_non_us_uk_region').text() + ':');
 			el.stateSelect.empty();
-			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ':');
-			el.postcodeLookup.addClass("hide");
+			el.zipLabel.text(jQuery('#user_details_label_non_us_postcode').text() + ': *');
+			el.postcodeLookup.hide();
 			isRequiredField = false;
 		break;
 	
@@ -222,12 +230,22 @@ Venda.CountrySelect.SetCountry = function(cntry, el) {
 				el.stateSelect.append("<option value='" + Venda.CountrySelect.countryAndData[cntry][i].split(':')[0] + "'>" + Venda.CountrySelect.countryAndData[cntry][i].split(':')[1] + "</option>");
 			}
 		}
- 		if(typeof Venda.CountrySelect.countryAndData[cntry][0] != 'undefined') {
-			el.countyText.val(Venda.CountrySelect.countryAndData[cntry][0].split(':')[0]);
+
+		
+		if(jQuery("select#statelist").is(":visible")){
+			if(typeof Venda.CountrySelect.countryAndData[cntry][0] != 'undefined') {
+				el.countyText.val(Venda.CountrySelect.countryAndData[cntry][0].split(':')[0]);
+			}
+			if(jQuery('#venda_state').text().length > 0) {
+				jQuery("select#statelist option[value='" + jQuery('#venda_state').text() + "']").attr("selected","selected");
+			}
+		}else{
+				if(jQuery('#venda_state').text().length > 0) {
+					el.countyText.val(jQuery('#venda_state').text());
+				}
 		}
-		if(jQuery('#venda_state').text().length > 0) {
-			jQuery("select#statelist option[value='" + jQuery('#venda_state').text() + "']").attr("selected","selected");
-		}
+
+
 	}
 
 };

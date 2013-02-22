@@ -1,8 +1,11 @@
 <venda_block label=45,invtpublish=1>
+<li>
+<form name="form<venda_ref>" action="<venda_codehttp>" method="get" id="addproduct<venda_ref>form">
 <venda_block label=78,invtref!=giftcert>
 <!-- &bklist= is needed for search product list -->
 <!-- Debug venda_bklist  : <venda_bklist> -->
 <!-- Debug venda_bklist1 : <venda_bklist1> -->
+<div class="mediumImgKey" style="display:none;"><!-- mp_trans_disable_start --><venda_media rec=invt,type=pict,key=medium,img=no><!-- mp_trans_disable_end --></div>
 <div class="imageUrl" style="display:none;"><!-- mp_trans_disable_start --><venda_entmediaadd>/ebiz/<venda_bsref>/invt/<!-- mp_trans_disable_end --></div>
 <div id="comp-image<venda_invtref>" class="image">
 	<a class="moredetail" href="<venda_dispview invt=<venda_invtref>>" id="<venda_invtref>" data-defaultImage="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg"><img src="" width="244px" height="366px"></a>
@@ -127,9 +130,14 @@
 <p>Multiple-buy savings</p>
 </venda_block label=104>
 </venda_block label=78>
+</form>
+</li>
 </venda_block label=45>
 
+
 <venda_block label=79,invtref=giftcert>
+<li>
+<form name="form<venda_ref>" action="<venda_codehttp>" method="get" id="addproduct<venda_ref>form">
 <a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>&bklist=icat,3,shop,home"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/noimage_sm.jpg" alt="<venda_invtname>" title="<venda_invtname>" border="0"></a>
 <div>
 	<p><strong><venda_invtname></strong></p>
@@ -138,4 +146,6 @@
 	    <venda_block label=36,invtatrminsubsell=0.00><venda_invtsymsell></venda_block label=36>
 	</p>
 </div>
+</form>
+</li>
 </venda_block label=79>

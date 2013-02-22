@@ -1,0 +1,117 @@
+<div class="<venda_workflow> giftvoucher">
+
+	<form method="post" enctype="multipart/form-data" name="giftvoucherform" action="<venda_codehttp>" data-ajax="false">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="step" value="shopcart" />
+	<input type="hidden" name="mode" value="process" />
+	<input type="hidden" name="param1" value="" />
+	<input type="hidden" name="param2" value="" />
+	<input type="hidden" name="param3" value="" />
+	<input type="hidden" name="check" value="" />
+	<input type="hidden" name="trrfnbr" value="" />
+	<input type="hidden" name="wizard" value="" />
+	<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+	<input type="hidden" name="curstep" value="giftvoucher" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="bsref" value="<venda_bsref>" />
+	<venda_block errors=null><input type="hidden" name="curlayout" value="mobile" /></venda_block>	
+	<input type="hidden" name="layout" value="mobile" />
+	<input type="hidden" name="textcount" value="" />
+
+		<div class="static-wrapper">
+			<div class="static-content">
+				<div class="static-header">
+					<h1><venda_text id=site.redeem_gift_certificate.heading></h1>
+					<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+				</div>
+
+				<div class="boxContent">
+				<p>To add a Gift Certificate to your basket you just need to complete the details below and click 'Continue'.</p>
+				<p>Please note that Gift Certificates are not redeemable for cash, non-transferable, are usually valid for only one year from the date of issue and are only redeemable at <venda_ebizname> or by telephone order on <a href="tel://<venda_ebizarea><venda_ebizphone>" title="<venda_text id=mobile.info.phone_information>"><venda_ebizarea> <venda_ebizphone></a>.</p>
+				</div>
+
+				<venda_tpcomment><!-- Start: Recipient Details --></venda_tpcomment>
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="to"><venda_text id=site.gift_certificates.label.recipient_name> </label> <input type="text" name="to" id="to" value="<venda_to>" maxlength="50" placeholder="<venda_text id=site.gift_certificates.label.recipient_name> <venda_text id=mobile.form.required>" required autofocus>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="email"><venda_text id=site.gift_certificates.label.recipient_email></label> <input type="email" name="email" id="email" value="<venda_email>" placeholder="<venda_text id=site.gift_certificates.label.recipient_email> <venda_text id=mobile.form.required>" maxlength="50" required>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<div class="giftInfo"><div class="contents">
+					<p><venda_inventory ref=giftcert,temp=giftcertpricing></p>
+					<p>Please check that you have correctly entered the recipient's email address as we cannot redirect or refund Gift Certificates which have been redeemed by the wrong person on your instructions.</p>
+				</div></div>
+				<label for="amount"><venda_text id=site.gift_certificates.label.amount></label> <input type="number" name="amount" id="amount" value="<venda_amount>" maxlength="3" placeholder="<venda_text id=site.gift_certificates.label.amount> <venda_text id=mobile.form.required>" required>
+				</div><venda_tpcomment><!-- End: Recipient Details --></venda_tpcomment>
+
+				<venda_tpcomment><!-- Start: Your Details --></venda_tpcomment>
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="comment"><venda_text id=site.gift_certificates.label.message></label> <textarea name="comment" id="comment" cols="25" rows="5" required placeholder="<venda_text id=site.gift_certificates.label.message> <venda_text id=mobile.form.required>" onKeyDown="textCounter(this,250);" onKeyUp="textCounter(this,250);"><venda_comment></textarea>
+				</div>
+				
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="from"><venda_text id=site.gift_certificates.label.from></label> <input type="text" name="from" id="from" value="<venda_from>" maxlength="50" placeholder="<venda_text id=site.gift_certificates.label.from> <venda_text id=mobile.form.required>" required>
+				</div>
+				<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>
+
+				<venda_tpcomment><!-- Start: Terms and Conditions --></venda_tpcomment>
+
+				<div data-role="fieldcontain">
+			   		<input type="hidden" name="giftcerttandc" id="giftcerttandc" value="1"> <label for="giftcerttandc"><venda_text id=site.gift_certificates.label.read_and_agree> <a href="<venda_dispview page=terms>" target="_blank" data-ajax="false"><venda_text id=site.gift_certificates.label.terms_and_conditions></a></label>
+				</div>
+			</div><!--end checkoutmobile-content -->
+		</div><!--end checkoutmobile-wrapper -->
+		<div class="submitButton">
+			<input type="submit" value="<venda_text id=site.button.continue>">
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+<venda_inventory ref=giftcert,temp=giftcertvariables>
+var maxP = maxprice.toString();
+var splitGiftcert = maxP.split(".");
+var maxlengthGiftcert = splitGiftcert[0].length;
+document.giftvoucherform.amount.maxLength = maxlengthGiftcert;
+document.giftvoucherform.amount.size = maxlengthGiftcert;
+
+var validator;
+jQuery(document).bind("pageinit", function(event) {
+
+validator = jQuery("form[name='giftvoucherform']").formValidator();
+validator.validateFields([{id: "to", rules:{
+												required: "<venda_text id=site.gift_certificates.js_validation.recipient_name>"
+												}},
+						{ id: "email", rules: {
+												required: "<venda_text id=site.gift_certificates.js_validation.recipient_email>",
+												email: "<venda_text id=site.gift_certificates.js_validation.valid_email>"
+												}},
+						{ id: "amount", rules: {
+												required: "<venda_text id=site.gift_certificates.js_validation.value>",
+												onlyNumber:"<venda_text id=site.gift_certificates.js_validation.valid_value>"
+												}},
+						{ id: "comment", rules: {
+												required: "<venda_text id=site.gift_certificates.js_validation.message>",
+												length: {min:0, max:250, msg:""}
+												}},
+						{ id: "from", rules: {
+												required: "<venda_text id=site.gift_certificates.js_validation.name>"
+												}}
+																	
+]);
+
+validator.validateCustom({ 
+	 amountid: "amount",
+	 maxprice : maxprice,
+	 minprice: minprice,
+	 validator: "amountValidator",
+	 msg : '<venda_text id=mobile.validation.giftcert_greater_than>'+minprice+' <venda_text id=mobile.validation.giftcert_less_than>'+maxprice
+	});
+});
+</script>
+
+<venda_tpcomment><!-- start: tag values used for inline validation --></venda_tpcomment>
+<venda_inctemplate name=defaultErrorMessages,type=includes>

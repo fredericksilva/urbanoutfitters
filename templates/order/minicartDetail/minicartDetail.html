@@ -7,7 +7,19 @@
 <venda_block label=119,invtref!=giftcert>
 <venda_tpcomment><!-- product --></venda_tpcomment>
 	<div class="image">
-  	<a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" alt="<venda_invtname>"></a>
+  	<a href="<venda_dispview invt=<venda_invtparef>>">
+  		<!-- mp_trans_remove_start-->
+			<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" alt="<venda_invtname>" />
+		<!-- mp_trans_remove_end-->
+		<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR"
+		    	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" />
+			-->
+			<!-- mp_trans_add="DE"
+				<img src="<venda_protocol>://dsa-www.urbanoutfitters.co.uk/content/ebiz/<venda_bsref>/invt/<venda_invtparef>/<venda_invtparef>_<venda_invtatt1>_t1.jpg" />
+			-->
+		<!-- mp_trans_disable_end-->
+  	</a>
 	</div>
 	<div class="details">
 	  <span class="price"><venda_currsym><venda_invtsell><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=site.minicart_detail.each></venda_block label=10></span>
