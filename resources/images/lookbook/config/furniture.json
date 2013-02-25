@@ -1,0 +1,177 @@
+{"lookbook": {
+    "title" : "IN DA HOUSE",
+    "numberofpages" : 12,
+    "pages": {
+    	"1": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_00.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_00.jpg",
+            "hotspots": [
+            	{"sku": "", "xcord": -9999, "ycord": -9999}
+            ]
+        },
+        "2": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_01.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_01.jpg",
+            "hotspots": [
+                {"sku": "5522443010014", "xcord": 124, "ycord": 43},
+                {"sku": "5536435380400", "xcord": 233, "ycord": 104},
+                {"sku": "5530444150001", "xcord": 170, "ycord": 278},
+                {"sku": "5520441640002", "xcord": 296, "ycord": 463},
+                {"sku": "5532443000009", "xcord": 431, "ycord": 187},
+				{"sku": "5532432371003", "xcord": 582, "ycord": 242},
+				{"sku": "5520402420003", "xcord": 833, "ycord": 169}
+            ]  
+        },
+        "3": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_02.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_02.jpg",
+            "hotspots": [
+                {"sku": "5522441830006", "xcord": 222, "ycord": 77},
+                {"sku": "5536439251122", "xcord": 249, "ycord": 143},
+                {"sku": "5520439590024", "xcord": 318, "ycord": 206},
+				{"sku": "5532443240001", "xcord": 308, "ycord": 356},
+				{"sku": "5520402420002", "xcord": 222, "ycord": 400},
+				{"sku": "5532400128230", "xcord": 537, "ycord": 362},
+				{"sku": "5532412920004", "xcord": 678, "ycord": 315},
+				{"sku": "5520439590025", "xcord": 750, "ycord": 237},
+				{"sku": "5520438070002", "xcord": 775, "ycord": 465},
+				{"sku": "5532400124245", "xcord": 880, "ycord": 509}
+            ]  
+        },
+        "4": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_03.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_03.jpg",
+            "hotspots": [
+                {"sku": "5527401090017", "xcord": 58, "ycord": 159},
+                {"sku": "5560443140008", "xcord": 191, "ycord": 281},
+                {"sku": "5520435980000", "xcord": 58, "ycord": 343},
+				{"sku": "5522404400001", "xcord": 339, "ycord": 113},
+				{"sku": "5520435380001", "xcord": 270, "ycord": 336},
+				{"sku": "5532400124237", "xcord": 269, "ycord": 488},
+				{"sku": "5520402420002", "xcord": 418, "ycord": 372},
+				{"sku": "5532443000002", "xcord": 506, "ycord": 278},
+				{"sku": "5532407740004", "xcord": 716, "ycord": 235},
+				{"sku": "5532412922010", "xcord": 731, "ycord": 340},
+				{"sku": "5520438070001", "xcord": 737, "ycord": 434},
+				{"sku": "5520404400010", "xcord": 838, "ycord": 301},
+				{"sku": "5536435380300", "xcord": 869, "ycord": 108},
+				{"sku": "5536435380400", "xcord": 828, "ycord": 199},
+				{"sku": "5522410210100", "xcord": 796, "ycord": 504}
+            ]  
+        },
+        "5": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_04.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_04.jpg",
+            "hotspots": [
+                {"sku": "5520441640001", "xcord": 99, "ycord": 485},
+                {"sku": "5527401093011", "xcord": 536, "ycord": 185},
+                {"sku": "5520404400016", "xcord": 646, "ycord": 85},
+                {"sku": "5520439590020", "xcord": 751, "ycord": 13},
+				{"sku": "5520438760002", "xcord": 610, "ycord": 428},
+				{"sku": "5520401090005", "xcord": 796, "ycord": 389},
+				{"sku": "5536404400005", "xcord": 911, "ycord": 322},
+				{"sku": "5520439590062", "xcord": 847, "ycord": 559}
+            ]  
+        },
+		"6": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_05.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_05.jpg",
+            "hotspots": [
+                {"sku": "5536439251117", "xcord": 261, "ycord": 32},
+                {"sku": "5536439251118", "xcord": 221, "ycord": 216},
+                {"sku": "5536435380900", "xcord": 319, "ycord": 258},
+				{"sku": "5520439590009", "xcord": 134, "ycord": 420},
+				{"sku": "5560410286560", "xcord": 468, "ycord": 248},
+				{"sku": "5522443010011", "xcord": 620, "ycord": 62},
+				{"sku": "5520439590700", "xcord": 636, "ycord": 305},
+				{"sku": "5560470010004", "xcord": 898, "ycord": 393},
+				{"sku": "5560443140008", "xcord": 457, "ycord": 538}
+            ]  
+        },
+		"7": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_06.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_06.jpg",
+            "hotspots": [
+                {"sku": "5527404400012", "xcord": 124, "ycord": 77},
+                {"sku": "5520439590007", "xcord": 189, "ycord": 268},
+                {"sku": "5520441640000", "xcord": 316, "ycord": 287},
+				{"sku": "5522443010010", "xcord": 387, "ycord": 199},
+				{"sku": "5527410210003", "xcord": 545, "ycord": 53},
+				{"sku": "5532400124248", "xcord": 320, "ycord": 568},
+				{"sku": "5520404400012", "xcord": 548, "ycord": 389},
+				{"sku": "5520401090005", "xcord": 887, "ycord": 357},
+				{"sku": "5620428640002", "xcord": 728, "ycord": 85}
+            ]  
+        },
+		"8": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_07.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_07.jpg",
+            "hotspots": [
+                {"sku": "5520441640000", "xcord": 79, "ycord": 379},
+                {"sku": "5522443010010", "xcord": 295, "ycord": 221},
+                {"sku": "5527410210003", "xcord": 561, "ycord": 76},
+				{"sku": "5527401090015", "xcord": 860, "ycord": 51},
+				{"sku": "5620428640002", "xcord": 270, "ycord": 441},
+				{"sku": "5620428640004", "xcord": 526, "ycord": 513},
+				{"sku": "5530440950011", "xcord": 609, "ycord": 406},
+				{"sku": "5620412920001", "xcord": 667, "ycord": 538},
+				{"sku": "5620410210525", "xcord": 876, "ycord": 455}
+            ]  
+        },
+		"9": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_08.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_08.jpg",
+            "hotspots": [
+                {"sku": "5522404400001", "xcord": 101, "ycord": 56},
+                {"sku": "5522410210100", "xcord": 144, "ycord": 485},
+                {"sku": "5522412920011", "xcord": 316, "ycord": 234},
+				{"sku": "5522443010013", "xcord": 375, "ycord": 336},
+				{"sku": "5520441640002", "xcord": 406, "ycord": 458},
+				{"sku": "5522443010014", "xcord": 526, "ycord": 84},
+				{"sku": "5522443010008", "xcord": 524, "ycord": 315},
+				{"sku": "5522443010011", "xcord": 731, "ycord": 236},
+				{"sku": "5522443010009", "xcord": 795, "ycord": 393}
+            ]  
+        },
+		"10": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_09.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_09.jpg",
+            "hotspots": [
+                {"sku": "5532038251524", "xcord": 82, "ycord": 326},
+                {"sku": "5532400128232", "xcord": 171, "ycord": 123},
+                {"sku": "5532407740006", "xcord": 750, "ycord": 460},
+				{"sku": "5560439350457", "xcord": 641, "ycord": 354},
+				{"sku": "5520401090011", "xcord": 786, "ycord": 165},
+				{"sku": "5527401093007", "xcord": 858, "ycord": 114},
+				{"sku": "5522443010008", "xcord": 818, "ycord": 25}
+            ]  
+        },
+		"11": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_10.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_10.jpg",
+            "hotspots": [
+                {"sku": "5532400124236", "xcord": 362, "ycord": 217},
+                {"sku": "5999440130014", "xcord": 201, "ycord": 355},
+                {"sku": "5999440130004", "xcord": 277, "ycord": 64}
+            ]  
+        },
+		"12": {
+            "image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/slides/slide_uk_11.jpg",
+            "thumbnail": "/content/ebiz/urbanoutfitters/resources/images/lookbook/thumbnails/furniture_thumbnails_uk_11.jpg",
+            "hotspots": [
+                {"sku": "5532412922010", "xcord": 212, "ycord": 83},
+                {"sku": "5532441920006", "xcord": 145, "ycord": 247},
+                {"sku": "5532432371003", "xcord": 82, "ycord": 369},
+				{"sku": "5532443240002", "xcord": 298, "ycord": 425},
+				{"sku": "5532443240001", "xcord": 365, "ycord": 176},
+				{"sku": "5532443000009", "xcord": 438, "ycord": 475},
+				{"sku": "5532443240007", "xcord": 582, "ycord": 372},
+				{"sku": "5532443000002", "xcord": 516, "ycord": 221},
+				{"sku": "5532441920006", "xcord": 788, "ycord": 91},
+				{"sku": "5532412922008", "xcord": 886, "ycord": 211},
+				{"sku": "5532412922009", "xcord": 705, "ycord": 380},
+				{"sku": "5532412920004", "xcord": 826, "ycord": 538}
+            ]  
+        }
+    }
+}} 

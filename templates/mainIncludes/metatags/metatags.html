@@ -63,6 +63,33 @@
     <meta property="og:description" content="<venda_invtname> from Urban Outfitters" />
     <meta property="og:site_name" content="<venda_setting type=ebiz,name=name>" />
 </venda_block label=invtdata>
+<venda_block label=pageog,rtype=page>
+	<!-- mp_trans_remove_start-->
+	<meta property="fb:app_id" content="446238198771503" />
+    <meta property="og:url" content="<venda_dispview page=<venda_pageref>>" />
+    <!-- mp_trans_remove_end-->
+    <!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="FR" <meta property="fb:app_id" content="463689540334521" />
+							   <meta property="og:url" content="http://www.urbanoutfitters.fr/page/<venda_pageref>" />
+		 -->
+		<!-- mp_trans_add="DE" <meta property="fb:app_id" content="499735593390258" />
+							   <meta property="og:url" content="http://www.urbanoutfitters.de/page/<venda_pageref>" />
+		-->
+	<!-- mp_trans_disable_end-->
+	<meta property="og:title" content="<venda_pagename> <venda_text id=site.title.at.page> <venda_setting type=ebiz,name=name>" />
+    <meta property="og:type" content="product" />
+    <venda_block label=lookbook,pageref=lookbookconcept>
+		<meta property="og:image" content="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/lookbook/slides/slide_uk_00.jpg" />
+	</venda_block label=lookbook>
+    <!-- mp_trans_remove_start-->
+    <meta property="og:description" content="<venda_pagename> <venda_text id=site.title.at.page> <venda_setting type=ebiz,name=name>" />
+    <!-- mp_trans_remove_end-->
+    <!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="FR" <meta property="og:description" content="<venda_pagename> - urbanoutfitters.fr" /> -->
+		<!-- mp_trans_add="DE" <meta property="og:description" content="<venda_pagename> - urbanoutfitters.de" /> -->
+	<!-- mp_trans_disable_end-->
+    <meta property="og:site_name" content="<venda_setting type=ebiz,name=name>" />
+</venda_block label=pageog>
 <venda_block label=hidestorypage,mode=value,rtype=home>
 <!-- IS STORY CATEGORY RECORD -->
 <venda_block label=scatdata,rtype=scat>
