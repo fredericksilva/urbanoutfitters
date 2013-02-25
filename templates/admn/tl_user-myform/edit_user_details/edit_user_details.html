@@ -63,7 +63,15 @@
 
 <div class="formSeparator"></div>
 <div><label for="phone"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.phone_number></label> <venda_phone field=text,size=18,maxlength=20,required=yes>
-<div class="smsMessage">If you would like to receive SMS updates on your delivery, please leave your mobile phone number.</div>
+<div class="smsMessage">
+	<!-- mp_trans_remove_start-->
+    If you would like to receive SMS updates on your delivery, please leave your mobile phone number.
+    <!-- mp_trans_remove_end-->
+    <!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="FR" Si vous souhaitez &ecirc;tre inform&eacute; par SMS sur votre livraison, veuillez svp nous communiquer votre num&eacute;ro de t&eacute;l&eacute;phone portable. -->
+		<!-- mp_trans_add="DE" Wenn du Updates &uuml;ber deinen Bestellstatus per SMS erhalten m&ouml;chtest, gib bitte deine Handynummer an. -->
+	<!-- mp_trans_disable_end-->
+</div>
 </div>
 <venda_block label=123,mode=value,<venda_setting type=ebiz,name=showfax>=1>
 <div class="formSeparator"></div>
