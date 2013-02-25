@@ -86,6 +86,9 @@ Venda.Widget.MinicartDetail.Create = function () {
 		if (jQuery(".admin").length > 0) {
 			Venda.Widget.MinicartDetail.settings.topPad += jQuery(".admin").outerHeight(true);
 		};
+		if (jQuery(".currency-status").length > 0) {
+			Venda.Widget.MinicartDetail.settings.topPad += jQuery(".currency-status").outerHeight(true);
+		};
 	};
 	
 };
@@ -553,13 +556,11 @@ Venda.Widget.MinicartDetail.AddProduct = function (formID) {
 			// reset form fields that were set by JS
 			document.getElementById(formID).layout.value = defaultLayout;
 			document.getElementById(formID).ex.value = defaultEx;
-			if (jQuery(".currencyConverter").length) {
 				if (jQuery('#tag-currencycode') && jQuery(this).pennies('get')!== null){
 						if(jQuery(this).pennies('get') != jQuery('#tag-currencycode').html()) {
-							jQuery('#updateTotal').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()}).delay(1000);
+							jQuery('#updateTotal,#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()}).delay(1000);
 						}
 					}
-			}
 			
 			// This code is about the 'product add' tracking : loading the 'trackingProdAdd' template from 'invt' folder
 			if (Venda.Widget.MinicartDetail.trackingProdAddEnable == true) {
@@ -696,7 +697,7 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 		jQuery(".minicart-viewer").after("<button id='scrollDown' class='basketScroll'><span class='down-arrow'></span></button>");
 		
 		var top = 0;
-		jQuery("#scrollUp").on("click", function () {
+		jQuery(".minicartDetail").on("click", "#scrollUp", function () {
 			if (step > 1) {
 				step -= 1;
 				top += maxHeight;
@@ -709,7 +710,7 @@ Venda.Widget.MinicartDetail.WrapBasket = function () {
 				jQuery(this).html("&nbsp;").addClass('scroll-subtle');
 			}
 		});
-		jQuery("#scrollDown").on("click", function () {
+		jQuery(".minicartDetail").on("click", "#scrollDown", function () {
 			if (step < pages) {
 				step += 1;
 				top -= maxHeight;
@@ -820,6 +821,10 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 						};
 					});
 					if(typeof(Venda.Ebiz.fixEuroSign) != "undefined"){Venda.Ebiz.fixEuroSign("#updateTotal, #minicartDetail .price, #minicartDetail");}
+      		// If you have currency converter include the following line
+      		if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+      			jQuery('#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()});
+      		}
 				});
 			} else {
 				if(Venda.Widget.MinicartDetail.mouseOver == false) {
@@ -854,13 +859,7 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 	window.onresize = function () {
 		SetPos()
 	};
-	
-	// If you have currency converter include the following line
-	if(jQuery(".currencyConverter").length) {
-		if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
-			jQuery('#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()});
-		}
-	}
+
 };
 
 /**
