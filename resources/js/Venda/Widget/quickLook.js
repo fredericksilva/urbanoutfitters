@@ -45,6 +45,10 @@ jQuery("a.lookbookQuick").live("mouseenter", function(e) {
 		jQuery("#quickLook").dialog("option", "position", { my: "left top", at: "left bottom", of: bottom } );
 	}
 	jQuery(".productInfo").load(URL, function(){
+		console.log(jQuery(this).html());
+		if (jQuery(this).html() === "This product is not available to view.") {
+			jQuery(this).html("Bummer, this isn't available right now - check out our other amazing bits...");
+		}
 		jQuery(".quickLook-Details").show();
 	});
 	return false;
