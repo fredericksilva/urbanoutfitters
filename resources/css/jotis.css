@@ -1854,3 +1854,117 @@ ul#mm_ul li.navsfdigibook {
 	display:none;
 }
 /* end */
+
+/* Furniture Lookbook start */
+#lookbook {
+	position:relative;
+	height:660px;
+}
+.uo-lookbook {
+    width: 950px;
+    height: 600px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0;
+}
+.uo-lookbook .slides li {
+    position: relative;
+    width: 950px !important;
+    height: 600px !important;
+    background: url('../images/Search/loadingsearch.gif') no-repeat center;
+	opacity: .30;
+	filter: alpha(opacity=30);
+	-moz-opacity: .30;
+}
+.uo-lookbook .slides li a {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+}
+.uo-lookbook .flex-control-nav {
+    display: block;
+    position:relative;
+    padding:10px 0;
+    width:950px;
+    text-align: center;
+}
+.uo-lookbook .flex-control-nav li:first-child {
+	margin: 0;
+}
+.uo-lookbook .flex-control-nav li {
+	margin: 0 0 0 2px;
+	display:inline-block;
+}
+.uo-lookbook .flex-control-nav li a {
+	width: 70px;
+	height: 40px;
+}
+.uo-lookbook .flex-control-nav li a:hover {
+	background-position: 0px -40px;
+}
+.uo-lookbook .flex-control-nav li a.flex-active {
+	background-position: 0px -40px;
+}
+.uo-lookbook .flex-direction-nav a {
+	width: 44px;
+	height: 45px;
+	margin: -15px 15px 0;
+	display: block;
+	background: url("../images/uo-png-sprite.png") no-repeat scroll -79px -224px transparent;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	z-index: 1000;
+	outline: none;
+}
+.uo-lookbook .flex-direction-nav .flex-next {
+	background-position: -126px -219px;
+	right: 0;
+}
+.uo-lookbook a.flex-next:hover {
+	background-position: -130px -215px;
+}
+.uo-lookbook .flex-direction-nav .flex-prev {
+	background-position: -80px -219px;
+	left: 0;
+}
+.uo-lookbook a.flex-prev:hover {
+	background-position: -76px -215px;
+}
+a.uo-hotspot {
+    position: absolute;
+    width: 21px;
+    height: 20px;
+    display: block;
+    background: url("../images/lookbook/furniture_hotspot.png") no-repeat;
+    top: 0;
+    left: 0;
+    padding: 0;
+}
+a.uo-hotspot:hover {
+    opacity: 0.5;
+}
+/*** Dialog css ***/
+.lookbookQuick {
+	background: url('../images/grid_tile.jpg');
+}
+.lookbookQuick .ui-dialog-titlebar {
+	display:none;
+}
+.lookbookQuick .quickLook-Details .productTitle {
+	display: inline-block;
+	padding-bottom:10px;
+}
+.lookbookQuick .quickLook-Details .productTitle h1 {
+	position:relative !important;
+	font-size:14px;
+}
+.lookbookQuick .quickLook-Details .priceDetails {
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size:14px;
+}
+.lookbookQuick .productInfo .loadingImg {
+	height: 120px;
+}
