@@ -5,7 +5,25 @@
 <venda_tpcomment><!-- End Scripts for UI DropDowns // Move to main JS when working --> </venda_tpcomment>
 <div id="content-search-body">
 <!-- PULL IN PRODUCT LIST EDITORIAL PAGE -->
-<div class="editorialPage"><venda_tpxt mode=get,name=categoryTopBanner></div>
+<div class="editorialPage">
+<venda_block label=notBrand,mode=value,<venda_cattree index=1,value=catref>!=branddirectory>
+		<venda_tpxt mode=get,name=categoryTopBanner>
+	</venda_block label=notBrand>
+	<venda_block label=isBrand,mode=value,<venda_cattree index=1,value=catref>=branddirectory>
+		<div class="brandBanner">
+			<p class="uospringFont">
+				<venda_tpxt mode=get,name=icatName>
+			</p>
+			<venda_block label=desc,mode=value,<venda_tpxt mode=get,name=icatDesc>!=>
+			<div class="brandDescBox">
+				<p class="brandDescFont">
+					<venda_tpxt mode=get,name=icatDesc>
+				</p>
+			</div>
+			</venda_block label=desc>
+		</div>
+	</venda_block label=isBrand>
+</div>
 <!-- PRODUCT LIST TOP BANNER -->
 <div id="height10"></div>
 <div class="icxthiderefine" style="display:none;"><venda_tpxt mode=get,name=icatHideRefine></div>
