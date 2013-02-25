@@ -26,7 +26,15 @@
 		<div class="formSeparator"></div><div><label for="mname"><venda_text id=site.contact_address.label.middle_name></label> <venda_mname field=text,size=25,maxlength=30></div>
 		</venda_block label=123>
 		<div class="formSeparator"></div><div><label for="lname"><venda_text id=site.edit_contact_address.label.last_name><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_lname field=text,size=25,maxlength=30,required=yes></div>
-		<div class="formSeparator"></div><div><label for="phone"><venda_text id=site.edit_contact_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_phone field=text,size=18,maxlength=20,required=yes></div>
+		<div class="formSeparator"></div><div><label for="phone"><venda_text id=site.edit_contact_address.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_phone field=text,size=18,maxlength=20,required=yes><div class="receiveMail">
+        <!-- mp_trans_remove_start-->
+        If you would like to receive SMS updates on your delivery, please leave your mobile phone number.
+        <!-- mp_trans_remove_end-->
+        <!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" Si vous souhaitez &ecirc;tre inform&eacute; par SMS sur votre livraison, veuillez svp nous communiquer votre num&eacute;ro de t&eacute;l&eacute;phone portable. -->
+			<!-- mp_trans_add="DE" Wenn du Updates &uuml;ber deinen Bestellstatus per SMS erhalten m&ouml;chtest, gib bitte deine Handynummer an. -->
+		<!-- mp_trans_disable_end-->
+	</div></div>
         <div class="order-summary-box-footer"></div>
         </fieldset>
 	<venda_tpcomment><!-- End: Personal Details --></venda_tpcomment>
