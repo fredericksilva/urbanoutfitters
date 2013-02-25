@@ -36,7 +36,7 @@ var dialogOpts = {
 };
 jQuery("body").append('<div id="quickBuy" class="quickBuy"><div class="productContent"></div></div>');
 
-jQuery(".quickLinkBox a,a.swatchIcon,a.lookbookQuick").live("click", function(e) {
+jQuery(".quickLinkBox a,a.swatchIcon,a.lookbookBuy").live("click", function(e) {
 	var dialogClass = jQuery(this).attr("class");
 	var reg = new RegExp('[?&]colour=([^&]+)');
 	var attColour = (jQuery(this).attr("href").match(reg)) ? jQuery(this).attr("href").match(reg)[1] : "";
@@ -44,6 +44,7 @@ jQuery(".quickLinkBox a,a.swatchIcon,a.lookbookQuick").live("click", function(e)
 	var isQuickDetails = jQuery(this).hasClass("quickBuyDetails");
 	Venda.Attributes.qbColour = jQuery(this).parent().siblings(".swatchContainer").find(".sw_selected").attr("data-color");
 	Venda.Attributes.attsArray = [];
+	jQuery("#quickLook").dialog("destroy");
 	jQuery("#quickBuy").dialog("destroy");
 	jQuery("#quickBuy").dialog(dialogOpts); 
 	jQuery(".productContent").html("<div class='loadingImg'></div>");
