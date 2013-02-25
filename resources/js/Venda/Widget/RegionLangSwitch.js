@@ -52,7 +52,7 @@ jQuery(function(){
 		return false;
 	});
 	jQuery(".regionLangSwitcher .region .curr-cont a").click(function() {	
-	  //jQuery('.price, #updateTotal').pennies('reset');
+	  jQuery('.price, #updateTotal').pennies('reset');
 		Venda.Widget.RegionLangSwitch.doURL("setlocn",this,currRegion);
 		Venda.Widget.RegionLangSwitch.conversionSwitch();
 		jQuery(".switcher-content").slideUp("fast"); 

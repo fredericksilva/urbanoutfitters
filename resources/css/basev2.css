@@ -1220,7 +1220,20 @@ ol.prods li {
     text-align: center;
     width: 100%;
 }
-
+.currency-status {
+    background-color: #666;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    font-size: 10px;
+    line-height: 10px;
+    min-width: 960px;
+    overflow: hidden;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .demo a {
     color: #B40F14;
     font-size: 12px;
