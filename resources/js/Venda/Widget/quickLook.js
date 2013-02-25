@@ -32,16 +32,16 @@ jQuery("a.lookbookQuick").live("mouseenter", function(e) {
 	jQuery(".productInfo").html("<div class='loadingImg'></div>");
 	jQuery(".ui-widget-overlay").remove();
 	jQuery("#quickLook").dialog("option", "dialogClass", dialogClass); 
-	if ((bottomPosition.left > 750) && (bottomPosition.top < 451)) {
+	if ((bottomPosition.left > 740) && (bottomPosition.top < 451)) {
 		jQuery("#quickLook").dialog("option", "position", { my: "right top", at: "right bottom", of: bottom } );
 	}
-	if ((bottomPosition.left > 750) && (bottomPosition.top > 450)) {
+	if ((bottomPosition.left > 740) && (bottomPosition.top > 450)) {
 		jQuery("#quickLook").dialog("option", "position", { my: "right bottom", at: "right top", of: bottom } );
 	}
-	if ((bottomPosition.left < 751) && (bottomPosition.top > 450)) {
+	if ((bottomPosition.left < 741) && (bottomPosition.top > 450)) {
 		jQuery("#quickLook").dialog("option", "position", { my: "left bottom", at: "left top", of: bottom } );
 	}
-	else if ((bottomPosition.left < 751) && (bottomPosition.top < 451)) {
+	else if ((bottomPosition.left < 741) && (bottomPosition.top < 451)) {
 		jQuery("#quickLook").dialog("option", "position", { my: "left top", at: "left bottom", of: bottom } );
 	}
 	jQuery(".productInfo").load(URL, function(){
