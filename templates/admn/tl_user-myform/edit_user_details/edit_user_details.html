@@ -62,7 +62,9 @@
 <div id="countryDiv"><label for="cntry" id="countryLabel"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.country><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <select name="cntry" class="admn_fieldsLarge" id="cntrylist"><option selected="selected" value="<venda_cntry>"><venda_cntry></option></select></div>
 
 <div class="formSeparator"></div>
-<div><label for="phone"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.phone_number><span class="hideScreenReaderSafe"> <venda_text id=site.accessible.label.required></span> <span class="required">*</span></label> <venda_phone field=text,size=18,maxlength=20,required=yes></div>
+<div><label for="phone"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.phone_number></label> <venda_phone field=text,size=18,maxlength=20,required=yes>
+<div class="smsMessage">If you would like to receive SMS updates on your delivery, please leave your mobile phone number.</div>
+</div>
 <venda_block label=123,mode=value,<venda_setting type=ebiz,name=showfax>=1>
 <div class="formSeparator"></div>
 <div><label for="fax"><venda_text id=site.contact_address.label.fax_number></label> <venda_fax field=text,size=18,maxlength=20></div>
@@ -128,10 +130,6 @@ function CheckFields(form1) {
         if (!Venda.Ebiz.europePostalCheck(document.form.cntry.value)){ return false; }
 		if (form1.cntry.value == "") {
                 alert("<venda_text id=site.my_account.edit_user_details.edit_contact_details.js_validation.cntry>");
-                return;
-        }
-        if (form1.phone.value == "") {
-                alert("<venda_text id=site.my_account.edit_user_details.edit_contact_details.js_validation.phone>");
                 return;
         }
 		
