@@ -309,11 +309,11 @@ body.search_body .ui-selectmenu-menu li:hover {
 	-o-appearance:none;
 	width: 13px;
 	height: 11px;
-	margin: 2px 10px 0 2px;
+	margin: 2px 2px 0 2px;
 	padding:0;
 	background:url("../images/uo-png-sprite.png") no-repeat;
 	background-position: -192px -96px;
-	float:left;
+	display:inline-block;
 }
 
 .termtext a.updatesearch:hover > div.checkboxIcon, .chosen a.updatesearch div.checkboxIcon {
