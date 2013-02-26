@@ -1,0 +1,11 @@
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+jQuery(function() {          
+    jQuery("img.lazy").lazyload({
+        event : "lookbook"
+    });
+});
+jQuery(window).bind("load", function() { 
+    var timeout = setTimeout(function() { jQuery("img.lazy").trigger("lookbook") }, 5000);
+});
+</script>
