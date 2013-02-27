@@ -1,3 +1,4 @@
+<venda_block pageref=spring_cat_test>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.lazyload.min.js"></script>
 <script type="text/javascript" src="http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript">
@@ -34,24 +35,69 @@ function scrollToAnchor(aid) {
         });
     }
 }
+function scrollPreAnchor(adi) {
+    if (adi !== undefined) {
+        jQuery(window).scrollTo(adi, 800, {
+            margin: true,
+            //offset: {top:-1}
+        });
+    }
+}
 jQuery(function() {
     var segments = jQuery('.segment'),
     	position = 0,
     	next = jQuery('.anchorLink-next'),
     	prev = jQuery('.anchorLink-prev').hide();
     next.click(function(evt) {
-        prev.show();
-        scrollToAnchor(segments[position += 1]);
-        if (position === segments.length - 1) {
-            next.hide();
-        }
+        scrollToAnchor(segments[position]);
     });
-    prev.click(function(evt) {
-        next.show();
-        scrollToAnchor(segments[position -= 1]);
-        if (position === 0) {
-            prev.hide();
-        }
-    });
+    /*prev.click(function(evt) {
+        scrollPreAnchor(segments[position]);
+    });*/
+    jQuery(window).scroll(function() {
+    	var scrollOffset = jQuery(".catalogue").offset(),
+    		scrolled = jQuery(window).scrollTop() - scrollOffset.top;
+    	if (position === 0) {
+    		prev.hide();
+	    }
+	    if (position === 0 && scrolled >= 0) {
+		    segments[position += 1];
+    	}
+    	if (position === 1 && scrolled < 0) {
+	    	segments[position -= 1];
+    	}
+    	if (position === 1 && scrolled >= 609) {
+    		prev.show();
+		    segments[position += 1];
+		    prev.click(function(evt) {
+			    scrollPreAnchor(segments[position - 2]);
+			});
+    	}
+    	if (position === 2 && scrolled < 609) {
+    		prev.hide();
+	    	segments[position -= 1];
+    	}
+    	if (position === 2 && scrolled >= 1218) {
+		    segments[position += 1];
+		    prev.click(function(evt) {
+			    scrollPreAnchor(segments[position - 2]);
+			});
+    	}
+    	if (position === 3 && scrolled < 1218) {
+	    	segments[position -= 1];
+    	}
+    	if (position === 3 && scrolled >= 1827) {
+    		next.hide();
+		    segments[position += 1];
+		    prev.click(function(evt) {
+			    scrollPreAnchor(segments[position - 2]);
+			});
+    	}
+    	if (position === 4 && scrolled < 1827) {
+    		next.show();
+	    	segments[position -= 1];
+    	}
+    })
 });
 </script>
+</venda_block>
