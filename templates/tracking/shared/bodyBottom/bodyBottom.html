@@ -1,4 +1,5 @@
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript">
 jQuery(function() {          
     jQuery("img.lazy").lazyload({
@@ -9,18 +10,48 @@ jQuery(window).bind("load", function() {
     var timeout = setTimeout(function() { 
     	jQuery("img.lazy").trigger("lookbook");
     	jQuery(window).scroll(function() {
-    		var scrollAmount = jQuery(window).scrollTop(),
-    			documentHeight = jQuery('body').height() - jQuery(window).height(),
+    		var offset = jQuery(".catalogue").offset(),
+    			offsetBottom = jQuery(document).height() - (offset.top + jQuery(".catalogue").height()),
+    			scrollAmount = jQuery(window).scrollTop() - offset.top,
+    			documentHeight = (jQuery(document).height() - offsetBottom - offset.top) - jQuery(window).height(),
     			scrollPercent = ((scrollAmount / documentHeight) * 100) / 3;
-    		jQuery(".percentage").val(scrollPercent.toFixed(0) + "%").show();
+    		if (scrollPercent.toFixed(0) <= 0) {
+	    		jQuery(".percentage").text("0%");
+    		}
+    		else if (scrollPercent.toFixed(0) > 33) {
+	    		jQuery(".percentage").text("33%");
+    		}
+    		else {
+	    		jQuery(".percentage").text(scrollPercent.toFixed(0) + "%").show();
+    		}
     	});
-    }, 5000);
+    }, 2000);
 });
-function scrollToAnchor(aid){
-	var dTag = jQuery("img[class='"+ aid +"']");
-	jQuery('html,body').animate({scrollTop: dTag.offset().top},'slow');
+function scrollToAnchor(aid) {
+    if (aid !== undefined) {
+        jQuery(window).scrollTo(aid, 800, {
+            margin: true
+        });
+    }
 }
-jQuery(".anchorLink").click(function() {
-	scrollToAnchor('segment');
+jQuery(function() {
+    var segments = jQuery('.segment'),
+    	position = 0,
+    	next = jQuery('.anchorLink-next'),
+    	prev = jQuery('.anchorLink-prev').hide();
+    next.click(function(evt) {
+        prev.show();
+        scrollToAnchor(segments[position += 1]);
+        if (position === segments.length - 1) {
+            next.hide();
+        }
+    });
+    prev.click(function(evt) {
+        next.show();
+        scrollToAnchor(segments[position -= 1]);
+        if (position === 0) {
+            prev.hide();
+        }
+    });
 });
 </script>
