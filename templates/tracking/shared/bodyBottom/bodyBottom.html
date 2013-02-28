@@ -2,26 +2,65 @@
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.lazyload.min.js"></script>
 <script type="text/javascript" src="http://demos.flesler.com/jquery/scrollTo/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript">
+jQuery(document).ready(function () {
+    superScrolling.init();
+});
+var offset = jQuery(".gameContents").offset(),
+	offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
+	superScrolling = {
+      options: {
+        $headerHeight: offset.top,
+        $footerHeight: jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
+        $controlHeight: jQuery(".controlBox").outerHeight(),
+        $docHeight: jQuery(document).outerHeight(),
+        $currentPage: "." + jQuery(".gameContents").attr("id"),
+        topPad: offset.top
+      },
+      init: function () {
+        this.stickyScroller();
+      },
+      stickyScroller: function () {
+        jQuery(".controlBox, .gameSticky").css('top',superScrolling.options.topPad);
+        jQuery(superScrolling.options.$currentPage).prevAll().addClass("fullyLoaded");
+        jQuery(window).bind( "scroll", function(e) {
+          /*var $fromTop = jQuery(window).scrollTop();
+          if($fromTop > superScrolling.options.$headerHeight + superScrolling.options.topPad) {
+            jQuery(".controlBox").css("top",  superScrolling.options.topPad + "px");
+            jQuery(".controlBox").addClass("fixMe");
+          }
+          if($fromTop < superScrolling.options.$headerHeight) {
+            jQuery(".controlBox").css("top",  superScrolling.options.topPad + "px");
+            jQuery(".controlBox").removeClass("fixMe");
+          }
+          if($fromTop > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - superScrolling.options.$controlHeight - superScrolling.options.topPad) {
+            jQuery(".controlBox").removeClass("fixMe");
+            jQuery(".controlBox").css("top",  superScrolling.options.$docHeight - superScrolling.options.$footerHeight - superScrolling.options.$headerHeight - superScrolling.options.$controlHeight - superScrolling.options.topPad + "px");
+          }*/
+          superScrolling.loadMeUp();
+        });
+      },
+      loadMeUp: function () {
+          var $sticklerPlace = jQuery(".controlBox").offset(),
+          	  $myWindow = jQuery(window).outerHeight(),
+              empty = superScrolling.options.$headerHeight,
+              fullUp = superScrolling.options.$docHeight - ($myWindow - offset.top),
+              progress = Math.round(($sticklerPlace.top - empty) / (fullUp - empty) * 100)
+              console.log(empty,fullUp,$sticklerPlace);
+          jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height", progress + "%");
+      }   
+    }
 jQuery(function() {          
     jQuery("img.lazy").lazyload({
         event : "lookbook"
     });
 });
 jQuery(window).bind("load", function() { 
-	var sticky = jQuery(".gameSticky"),
-		windowOffset = (document.body.clientWidth - 950) / 2,
-		stickyOffsetTop = jQuery(".gameContents").offset(),
-		stickyOffsetLeft = windowOffset + 950;
-	sticky.css({'position':'fixed','left':stickyOffsetLeft,'top':stickyOffsetTop.top});
-	
     var timeout = setTimeout(function() { 
     	jQuery("img.lazy").trigger("lookbook");
     	jQuery(window).scroll(function() {
     		var gameStage = jQuery(".gameStage").text(),
-    			offset = jQuery(".gameContents").offset(),
-    			offsetBottom = jQuery(document).height() - (offset.top + jQuery(".gameContents").height()),
     			scrollAmount = jQuery(window).scrollTop() - offset.top,
-    			documentHeight = (jQuery(document).height() - offsetBottom - offset.top) - jQuery(window).height(),
+    			documentHeight = (jQuery(document).outerHeight() - offsetBottom - offset.top) - jQuery(window).outerHeight(),
     			scrollPercent = ((scrollAmount / documentHeight) * 100) / 3;
     		if (gameStage === "1") {
 	    		if (scrollPercent.toFixed(0) <= 0) {
@@ -97,7 +136,7 @@ jQuery(function() {
     		scrolled = jQuery(window).scrollTop() - scrollOffset.top,
     		segmentOffset = jQuery(segments[position]).offset(),
     		segmentTop = segmentOffset.top - scrollOffset.top,
-    		segmentHeight = jQuery(".gameContents").height() / 4;
+    		segmentHeight = jQuery(".gameContents").outerHeight() / 4;
 	    if (st > lastScrollTop){
 		    if (scrolled >= segmentTop) {
 			    segments[position += 1];
