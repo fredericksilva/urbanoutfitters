@@ -8,25 +8,58 @@ jQuery(function() {
     });
 });
 jQuery(window).bind("load", function() { 
+	var sticky = jQuery(".gameSticky"),
+		windowOffset = (document.body.clientWidth - 950) / 2,
+		stickyOffsetTop = jQuery(".gameContents").offset(),
+		stickyOffsetLeft = windowOffset + 950;
+	sticky.css({'position':'fixed','left':stickyOffsetLeft,'top':stickyOffsetTop.top});
+	
     var timeout = setTimeout(function() { 
     	jQuery("img.lazy").trigger("lookbook");
     	jQuery(window).scroll(function() {
-    		var offset = jQuery(".catalogue").offset(),
-    			offsetBottom = jQuery(document).height() - (offset.top + jQuery(".catalogue").height()),
+    		var gameStage = jQuery(".gameStage").text(),
+    			offset = jQuery(".gameContents").offset(),
+    			offsetBottom = jQuery(document).height() - (offset.top + jQuery(".gameContents").height()),
     			scrollAmount = jQuery(window).scrollTop() - offset.top,
     			documentHeight = (jQuery(document).height() - offsetBottom - offset.top) - jQuery(window).height(),
     			scrollPercent = ((scrollAmount / documentHeight) * 100) / 3;
-    		if (scrollPercent.toFixed(0) <= 0) {
-	    		jQuery(".percentage").text("0%");
+    		if (gameStage === "1") {
+	    		if (scrollPercent.toFixed(0) <= 0) {
+	    			jQuery(".percentage").text("0%");
+	    		}
+	    		else if (scrollPercent.toFixed(0) > 33) {
+	    			jQuery(".percentage").text("33%");
+	    		}
+	    		else {
+	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
+	    		}
     		}
-    		else if (scrollPercent.toFixed(0) > 33) {
-	    		jQuery(".percentage").text("33%");
+    		if (gameStage === "2") {
+    			scrollPercent = scrollPercent + 33;
+	    		if (scrollPercent.toFixed(0) <= 33) {
+	    			jQuery(".percentage").text("33%");
+	    		}
+	    		else if (scrollPercent.toFixed(0) > 66) {
+	    			jQuery(".percentage").text("66%");
+	    		}
+	    		else {
+	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
+	    		}
     		}
-    		else {
-	    		jQuery(".percentage").text(scrollPercent.toFixed(0) + "%").show();
+    		if (gameStage === "3") {
+    			scrollPercent = scrollPercent + 66;
+	    		if (scrollPercent.toFixed(0) <= 66) {
+	    			jQuery(".percentage").text("66%");
+	    		}
+	    		else if (scrollPercent.toFixed(0) > 99) {
+	    			jQuery(".percentage").text("100%");
+	    		}
+	    		else {
+	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
+	    		}
     		}
     	});
-    }, 2000);
+    }, 0);
 });
 function scrollToAnchor(aid) {
     if (aid !== undefined) {
@@ -39,7 +72,7 @@ function scrollPreAnchor(adi) {
     if (adi !== undefined) {
         jQuery(window).scrollTo(adi, 800, {
             margin: true,
-            //offset: {top:-1}
+            offset: {top:+5}
         });
     }
 }
@@ -51,53 +84,47 @@ jQuery(function() {
     next.click(function(evt) {
         scrollToAnchor(segments[position]);
     });
-    /*prev.click(function(evt) {
-        scrollPreAnchor(segments[position]);
-    });*/
-    jQuery(window).scroll(function() {
-    	var scrollOffset = jQuery(".catalogue").offset(),
-    		scrolled = jQuery(window).scrollTop() - scrollOffset.top;
-    	if (position === 0) {
-    		prev.hide();
+    prev.click(function(evt) {
+	    scrollPreAnchor(segments[position - 2]);
+    });
+    jQuery(".toTop").click(function(evt) {
+		scrollPreAnchor(segments[0]);
+	});
+    var lastScrollTop = 0;
+    jQuery(window).scroll(function(event){
+	    var st = jQuery(this).scrollTop(),
+	    	scrollOffset = jQuery(".gameContents").offset(),
+    		scrolled = jQuery(window).scrollTop() - scrollOffset.top,
+    		segmentOffset = jQuery(segments[position]).offset(),
+    		segmentTop = segmentOffset.top - scrollOffset.top,
+    		segmentHeight = jQuery(".gameContents").height() / 4;
+	    if (st > lastScrollTop){
+		    if (scrolled >= segmentTop) {
+			    segments[position += 1];
+			}
+       	}
+       	else {
+       		if (position !== 0) {
+	       		if (scrolled <= (segmentTop - segmentHeight)) {
+			    	segments[position -= 1];
+			    }
+       		}
 	    }
-	    if (position === 0 && scrolled >= 0) {
-		    segments[position += 1];
-    	}
-    	if (position === 1 && scrolled < 0) {
-	    	segments[position -= 1];
-    	}
-    	if (position === 1 && scrolled >= 609) {
-    		prev.show();
-		    segments[position += 1];
-		    prev.click(function(evt) {
-			    scrollPreAnchor(segments[position - 2]);
-			});
-    	}
-    	if (position === 2 && scrolled < 609) {
-    		prev.hide();
-	    	segments[position -= 1];
-    	}
-    	if (position === 2 && scrolled >= 1218) {
-		    segments[position += 1];
-		    prev.click(function(evt) {
-			    scrollPreAnchor(segments[position - 2]);
-			});
-    	}
-    	if (position === 3 && scrolled < 1218) {
-	    	segments[position -= 1];
-    	}
-    	if (position === 3 && scrolled >= 1827) {
-    		next.hide();
-		    segments[position += 1];
-		    prev.click(function(evt) {
-			    scrollPreAnchor(segments[position - 2]);
-			});
-    	}
-    	if (position === 4 && scrolled < 1827) {
-    		next.show();
-	    	segments[position -= 1];
-    	}
-    })
+	    if (position <= 1) {
+		    prev.hide();
+	    }
+	    if (position > 1) {
+		    prev.show();
+	    }
+	    lastScrollTop = st;
+	});
 });
+var win = null;
+function NewWindow(mypage,myname,w,h,scroll){
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage,myname,settings)
+}
 </script>
 </venda_block>
