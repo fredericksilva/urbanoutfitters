@@ -39,7 +39,7 @@
         var mx,
             my; 
         var ctx = this, zw;
-        var loadingTxt = $(".loadingTxt").text();
+        var loadingTxt = $("#loadingTxt").text();
         // Display an image loading message. This message gets deleted when the images have loaded and the zoom init function is called.
         // We add a small delay before the message is displayed to avoid the message flicking on then off again virtually immediately if the
         // images load really fast, e.g. from the cache. 
