@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller','removeRefine');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller','removeRefine','currencyConvert');
 };
 
 // Utility method.
@@ -732,4 +732,10 @@ Venda.Search.Feature.removeRefine.prototype = {
 			jQuery(".qb-large").css('width','234px');
 		};
 	}
+};
+Venda.Search.Feature.currencyConvert = function() {};
+Venda.Search.Feature.currencyConvert.prototype = {
+  display: function() {
+    jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery('.price').pennies('get')});	
+  }
 };

@@ -108,7 +108,7 @@ var StartPennies = function() {
 								if (typeof $this.data('price') == 'undefined'){
 									$this.data('price',$this.text());
 								}
-
+								console.log(convertPrice($this.data('price'),o.from,o.to), $this.data('price'), o.from, o.to);
 								$this
 									.html(convertPrice($this.data('price'),o.from,o.to) + " / " + $this.data('price'))
 									.end()

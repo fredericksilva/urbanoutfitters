@@ -176,11 +176,9 @@ Venda.Attributes.Initialize = function() {
   	Venda.Attributes.DropdownBehaviour(attName, attText, uID);
   
   		// If you have currency converter include the following line
-  	if(jQuery(".currencyConverter").length) {
   		if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
-  			jQuery('.atributesPrice .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+  			jQuery('.atributesPrice .price, .atributesPrice #price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
   		}
-  	}
   
   });
   
@@ -778,6 +776,11 @@ Venda.Attributes.Price = function (uID){
 	else {
 		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
 		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+	}
+	console.log(Venda.Attributes.Get('atrsell'));
+	// If you have currency converter include the following line
+	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+		jQuery('.atributesPrice #price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
 	}
 };
 
