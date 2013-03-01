@@ -10,11 +10,12 @@ var offset = jQuery(".gameContents").offset(),
 	superScrolling = {
       options: {
         $headerHeight: offset.top,
-        $footerHeight: jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
-        $controlHeight: jQuery(".controlBox").outerHeight(),
+        $footerHeight: offsetBottom,
+        $controlHeight: jQuery(".gameSticky").outerHeight(),
         $docHeight: jQuery(document).outerHeight(),
         $currentPage: "." + jQuery(".gameContents").attr("id"),
-        topPad: offset.top
+        topPad: offset.top,
+        demoBar: jQuery(".demo").outerHeight()
       },
       init: function () {
         this.stickyScroller();
@@ -23,29 +24,35 @@ var offset = jQuery(".gameContents").offset(),
         jQuery(".controlBox, .gameSticky").css('top',superScrolling.options.topPad);
         jQuery(superScrolling.options.$currentPage).prevAll().addClass("fullyLoaded");
         jQuery(window).bind( "scroll", function(e) {
-          /*var $fromTop = jQuery(window).scrollTop();
-          if($fromTop > superScrolling.options.$headerHeight + superScrolling.options.topPad) {
-            jQuery(".controlBox").css("top",  superScrolling.options.topPad + "px");
-            jQuery(".controlBox").addClass("fixMe");
+          var $fromTop = jQuery(window).scrollTop(),
+          	  controlHeight = jQuery(".gameSticky").outerHeight();
+          if($fromTop > superScrolling.options.$headerHeight) {
+            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.demoBar + "px");
+            jQuery(".controlBox,.gameSticky").addClass("fixMe");
           }
           if($fromTop < superScrolling.options.$headerHeight) {
-            jQuery(".controlBox").css("top",  superScrolling.options.topPad + "px");
-            jQuery(".controlBox").removeClass("fixMe");
+            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.topPad + "px");
+            jQuery(".controlBox,.gameSticky").removeClass("fixMe");
           }
-          if($fromTop > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - superScrolling.options.$controlHeight - superScrolling.options.topPad) {
-            jQuery(".controlBox").removeClass("fixMe");
-            jQuery(".controlBox").css("top",  superScrolling.options.$docHeight - superScrolling.options.$footerHeight - superScrolling.options.$headerHeight - superScrolling.options.$controlHeight - superScrolling.options.topPad + "px");
-          }*/
+          if($fromTop > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - controlHeight - superScrolling.options.demoBar) {
+            jQuery(".controlBox,.gameSticky").removeClass("fixMe");
+            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.$docHeight - superScrolling.options.$footerHeight - controlHeight - superScrolling.options.demoBar + "px");
+          }
           superScrolling.loadMeUp();
         });
       },
       loadMeUp: function () {
           var $sticklerPlace = jQuery(".controlBox").offset(),
           	  $myWindow = jQuery(window).outerHeight(),
-              empty = superScrolling.options.$headerHeight,
-              fullUp = superScrolling.options.$docHeight - ($myWindow - offset.top),
+              empty = superScrolling.options.$headerHeight + superScrolling.options.topPad,
+              fullUp = superScrolling.options.$docHeight - ($myWindow + offsetBottom),
               progress = Math.round(($sticklerPlace.top - empty) / (fullUp - empty) * 100)
-              console.log(empty,fullUp,$sticklerPlace);
+          if (progress < 0) {
+	          progress = 0;
+          }
+          if (progress > 100) {
+	          progress = 100;
+          }
           jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height", progress + "%");
       }   
     }
@@ -58,11 +65,11 @@ jQuery(window).bind("load", function() {
     var timeout = setTimeout(function() { 
     	jQuery("img.lazy").trigger("lookbook");
     	jQuery(window).scroll(function() {
-    		var gameStage = jQuery(".gameStage").text(),
+    		var gameStage = jQuery(".gameContents").attr("id"),
     			scrollAmount = jQuery(window).scrollTop() - offset.top,
     			documentHeight = (jQuery(document).outerHeight() - offsetBottom - offset.top) - jQuery(window).outerHeight(),
     			scrollPercent = ((scrollAmount / documentHeight) * 100) / 3;
-    		if (gameStage === "1") {
+    		if (gameStage === "page1") {
 	    		if (scrollPercent.toFixed(0) <= 0) {
 	    			jQuery(".percentage").text("0%");
 	    		}
@@ -73,7 +80,7 @@ jQuery(window).bind("load", function() {
 	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
 	    		}
     		}
-    		if (gameStage === "2") {
+    		if (gameStage === "page2") {
     			scrollPercent = scrollPercent + 33;
 	    		if (scrollPercent.toFixed(0) <= 33) {
 	    			jQuery(".percentage").text("33%");
@@ -85,7 +92,7 @@ jQuery(window).bind("load", function() {
 	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
 	    		}
     		}
-    		if (gameStage === "3") {
+    		if (gameStage === "page3") {
     			scrollPercent = scrollPercent + 66;
 	    		if (scrollPercent.toFixed(0) <= 66) {
 	    			jQuery(".percentage").text("66%");
