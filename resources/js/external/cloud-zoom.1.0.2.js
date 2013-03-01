@@ -39,6 +39,7 @@
         var mx,
             my; 
         var ctx = this, zw;
+        var loadingTxt = $(".loadingTxt").text();
         // Display an image loading message. This message gets deleted when the images have loaded and the zoom init function is called.
         // We add a small delay before the message is displayed to avoid the message flicking on then off again virtually immediately if the
         // images load really fast, e.g. from the cache. 
@@ -47,7 +48,7 @@
             //						 <img src="/images/loading.gif"/>
             if ($mouseTrap === null) {
                 var w = jWin.width();
-                jWin.parent().append(format('<div style="width:%0px;position:absolute;top:75%;left:%1px;text-align:center" class="cloud-zoom-loading" >Loading...</div>', w / 3, (w / 2) - (w / 6))).find(':last').css('opacity', 0.5);
+                jWin.parent().append(format('<div style="width:%0px;position:absolute;top:75%;left:%1px;text-align:center" class="cloud-zoom-loading" >'+loadingTxt+'</div>', w / 3, (w / 2) - (w / 6))).find(':last').css('opacity', 0.5);
             }
         }, 200);
 
