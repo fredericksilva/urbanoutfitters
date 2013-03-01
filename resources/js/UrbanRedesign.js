@@ -7,8 +7,8 @@
 jQuery(document).ready(function () {
     urbanRedesign.init();
 });
-
-var urbanRedesign = {
+var htmlLang = jQuery("html").attr("lang"),
+	urbanRedesign = {
     init: function () {
         this.stickyBasket();
         this.basketCount();
@@ -19,12 +19,25 @@ var urbanRedesign = {
     populateDob: function () {
         var dobStr = jQuery('#usxtdobstr');
         if (dobStr.length > 0) {
-            var days = 31,
-                months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-                monthId = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
-                ageMin = 18, ageMax = 90, optDay = '<option>DD</option>', optMonth = '<option>MM</option>', optYear = '<option>YYYY</option>', selected,
-                day, month, year;
-
+            var days = 31;
+            if (htmlLang === "fr") {
+	            var months = ['Jan.', 'F\351v.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Ao\373t', 'Sept.', 'Oct.', 'Nov.', 'D\351c.'],
+	            	monthId = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+	            	ageMin = 18, ageMax = 90, optDay = '<option>JJ</option>', optMonth = '<option>MM</option>', optYear = '<option>AAAA</option>', selected,
+	            	day, month, year;
+	        }
+	        if (htmlLang === "de") {
+	            var months = ['Jan.', 'Febr.', 'M\344rz', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'],
+	            	monthId = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+	            	ageMin = 18, ageMax = 90, optDay = '<option>TT</option>', optMonth = '<option>MM</option>', optYear = '<option>JJJJ</option>', selected,
+	            	day, month, year;
+	        }
+	        else {
+		        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+		        	monthId = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+		        	ageMin = 18, ageMax = 90, optDay = '<option>DD</option>', optMonth = '<option>MM</option>', optYear = '<option>YYYY</option>', selected,
+	            	day, month, year;
+		    }
             string = dobStr.val().split('/');
             // populate days
             for (var i = 0; i < days; i++) {
@@ -82,21 +95,49 @@ var urbanRedesign = {
     basketCount: function () {
         // replace basket item title with Item[x]
         jQuery('.standarditem .name a').each(function (i) {
-            jQuery(this).text('Item ' + (i + 1));
+        	if (htmlLang === "fr") {
+            	jQuery(this).text('Article ' + (i + 1));
+            }
+            if (htmlLang === "de") {
+            	jQuery(this).text('Artikel ' + (i + 1));
+            }
+            else {
+            	jQuery(this).text('Item ' + (i + 1));
+            }
         })
     },
     customSelect: function () {
         // custom select on all browsers except opera (this has bugs)
         if (!jQuery.browser.opera) {
             jQuery('.myAccountTemplate select, .checkoutTemplate select').each(function () {
-                var val, title = 'Please Select...';
+            	if (htmlLang === "fr") {
+                	var val, title = 'S\351lectionner...';
+                }
+                if (htmlLang === "de") {
+                	var val, title = 'Bitte ausw\344hlen ...';
+                }
+                else {
+                	var val, title = 'Please Select...';
+                }
                 if (jQuery(this).attr('rel')) { title = jQuery(this).attr('rel') }
                 if (jQuery('option:selected', this).val() !== '') {
                     title = jQuery('option:selected', this).text();
                 }
                 if (jQuery(this).attr('id') == 'startmonth' || jQuery(this).attr('id') == 'startyear' || jQuery(this).attr('id') == 'month' || jQuery(this).attr('id') == 'year') {
-                    if (title == 'Please Select...') {
-                        title = ' ';
+                	if (htmlLang === "fr") {
+                    	if (title == 'S\351lectionner...') {
+                        	title = ' ';
+                        }
+                    }
+                    if (htmlLang === "de") {
+                    	if (title == 'Bitte ausw\344hlen ...') {
+                        	title = ' ';
+                        }
+                    }
+                    else {
+                    	if (title == 'Please Select...') {
+                        	title = ' ';
+                        }
                     }
                 }
                 if (jQuery(this).css('display') !== 'none' && jQuery(this).parent().is('div')) {
@@ -124,11 +165,26 @@ var urbanRedesign = {
                 el.each(function () {
                     elTitle = jQuery(this).children('.OrderSummaryHdr');
                     elTitleText = elTitle.text();
-
-                    if (elTitleText.indexOf("Items") !== -1) {
-                        elTitle.text('Special ' + elTitleText);
-                    } else {
-                        elTitle.text('Special Items ' + elTitleText);
+                    if (htmlLang === "fr") {
+                    	if (elTitleText.indexOf("Articles") !== -1) {
+                        	elTitle.text('Sp\351cial ' + elTitleText);
+                        } else {
+                        	elTitle.text('Articles sp\351ciaux ' + elTitleText);
+                        }
+                    }
+                    if (htmlLang === "de") {
+                    	if (elTitleText.indexOf("Artikel") !== -1) {
+                        	elTitle.text('Angebot ' + elTitleText);
+                        } else {
+                        	elTitle.text('Sonderposten ' + elTitleText);
+                        }
+                    }
+                    else {
+                    	if (elTitleText.indexOf("Items") !== -1) {
+                        	elTitle.text('Special ' + elTitleText);
+                        } else {
+                        	elTitle.text('Special Items ' + elTitleText);
+                        }
                     }
                 });
                 el.addClass('special');
