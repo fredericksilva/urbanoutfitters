@@ -5,9 +5,7 @@
 jQuery(document).ready(function () {
     superScrolling.init();
     scrollToPoint.init();
-    jQuery("img.lazy").lazyload({
-        event: "lookbook"
-    })
+    lazyLoadImages.init();
 });
 jQuery(window).scroll(function () {
     gameSticky.init()
@@ -54,18 +52,27 @@ var offset = jQuery(".gameContents").offset(),
                 e = superScrolling.options.$headerHeight + superScrolling.options.topPad,
                 a = superScrolling.options.$docHeight - (d + offsetBottom),
                 b = Math.round((c.top - e) / (a - e) * 100);
-            if (b < 0) {
-                b = 0
+            if (b < 1) {
+                b = 0;
             }
-            if (b > 100) {
-                b = 100
+            if (b > 99) {
+                b = 100;
             }
             jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height", b + "%")
+            if (jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height") > "0px") {
+	            jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").addClass("borderScroll")
+            }
+            else {
+	            jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").removeClass("borderScroll")
+            }
         }
-    }, lazyloadTimeout = setTimeout(function () {
-        jQuery("img.lazy").trigger("lookbook")
-    }, 2000),
-    gameSticky = {
+    }, lazyLoadImages = {
+	    init: function () {
+		    jQuery("img.lazy").lazyload({
+			    effect : "fadeIn"
+			})
+	    }
+    }, gameSticky = {
         options: {
             $gameStage: jQuery(".gameContents").attr("id")
         },
