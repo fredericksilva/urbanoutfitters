@@ -4,173 +4,176 @@
 <script type="text/javascript">
 jQuery(document).ready(function () {
     superScrolling.init();
+    scrollToPoint.init();
+    jQuery("img.lazy").lazyload({
+        event: "lookbook"
+    })
+});
+jQuery(window).scroll(function () {
+    gameSticky.init()
 });
 var offset = jQuery(".gameContents").offset(),
-	offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
-	superScrolling = {
-      options: {
-        $headerHeight: offset.top,
-        $footerHeight: offsetBottom,
-        $controlHeight: jQuery(".gameSticky").outerHeight(),
-        $docHeight: jQuery(document).outerHeight(),
-        $currentPage: "." + jQuery(".gameContents").attr("id"),
-        topPad: offset.top,
-        demoBar: jQuery(".demo").outerHeight()
-      },
-      init: function () {
-        this.stickyScroller();
-      },
-      stickyScroller: function () {
-        jQuery(".controlBox, .gameSticky").css('top',superScrolling.options.topPad);
-        jQuery(superScrolling.options.$currentPage).prevAll().addClass("fullyLoaded");
-        jQuery(window).bind( "scroll", function(e) {
-          var $fromTop = jQuery(window).scrollTop(),
-          	  controlHeight = jQuery(".gameSticky").outerHeight();
-          if($fromTop > superScrolling.options.$headerHeight) {
-            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.demoBar + "px");
-            jQuery(".controlBox,.gameSticky").addClass("fixMe");
-          }
-          if($fromTop < superScrolling.options.$headerHeight) {
-            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.topPad + "px");
-            jQuery(".controlBox,.gameSticky").removeClass("fixMe");
-          }
-          if($fromTop > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - controlHeight - superScrolling.options.demoBar) {
-            jQuery(".controlBox,.gameSticky").removeClass("fixMe");
-            jQuery(".controlBox,.gameSticky").css("top",  superScrolling.options.$docHeight - superScrolling.options.$footerHeight - controlHeight - superScrolling.options.demoBar + "px");
-          }
-          superScrolling.loadMeUp();
-        });
-      },
-      loadMeUp: function () {
-          var $sticklerPlace = jQuery(".controlBox").offset(),
-          	  $myWindow = jQuery(window).outerHeight(),
-              empty = superScrolling.options.$headerHeight + superScrolling.options.topPad,
-              fullUp = superScrolling.options.$docHeight - ($myWindow + offsetBottom),
-              progress = Math.round(($sticklerPlace.top - empty) / (fullUp - empty) * 100)
-          if (progress < 0) {
-	          progress = 0;
-          }
-          if (progress > 100) {
-	          progress = 100;
-          }
-          jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height", progress + "%");
-      }   
-    }
-jQuery(function() {          
-    jQuery("img.lazy").lazyload({
-        event : "lookbook"
-    });
-});
-jQuery(window).bind("load", function() { 
-    var timeout = setTimeout(function() { 
-    	jQuery("img.lazy").trigger("lookbook");
-    	jQuery(window).scroll(function() {
-    		var gameStage = jQuery(".gameContents").attr("id"),
-    			scrollAmount = jQuery(window).scrollTop() - offset.top,
-    			documentHeight = (jQuery(document).outerHeight() - offsetBottom - offset.top) - jQuery(window).outerHeight(),
-    			scrollPercent = ((scrollAmount / documentHeight) * 100) / 3;
-    		if (gameStage === "page1") {
-	    		if (scrollPercent.toFixed(0) <= 0) {
-	    			jQuery(".percentage").text("0%");
-	    		}
-	    		else if (scrollPercent.toFixed(0) > 33) {
-	    			jQuery(".percentage").text("33%");
-	    		}
-	    		else {
-	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
-	    		}
-    		}
-    		if (gameStage === "page2") {
-    			scrollPercent = scrollPercent + 33;
-	    		if (scrollPercent.toFixed(0) <= 33) {
-	    			jQuery(".percentage").text("33%");
-	    		}
-	    		else if (scrollPercent.toFixed(0) > 66) {
-	    			jQuery(".percentage").text("66%");
-	    		}
-	    		else {
-	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
-	    		}
-    		}
-    		if (gameStage === "page3") {
-    			scrollPercent = scrollPercent + 66;
-	    		if (scrollPercent.toFixed(0) <= 66) {
-	    			jQuery(".percentage").text("66%");
-	    		}
-	    		else if (scrollPercent.toFixed(0) > 99) {
-	    			jQuery(".percentage").text("100%");
-	    		}
-	    		else {
-	    			jQuery(".percentage").text(scrollPercent.toFixed(0) + "%");
-	    		}
-    		}
-    	});
-    }, 0);
-});
-function scrollToAnchor(aid) {
-    if (aid !== undefined) {
-        jQuery(window).scrollTo(aid, 800, {
-            margin: true
-        });
-    }
-}
-function scrollPreAnchor(adi) {
-    if (adi !== undefined) {
-        jQuery(window).scrollTo(adi, 800, {
-            margin: true,
-            offset: {top:+5}
-        });
-    }
-}
-jQuery(function() {
-    var segments = jQuery('.segment'),
-    	position = 0,
-    	next = jQuery('.anchorLink-next'),
-    	prev = jQuery('.anchorLink-prev').hide();
-    next.click(function(evt) {
-        scrollToAnchor(segments[position]);
-    });
-    prev.click(function(evt) {
-	    scrollPreAnchor(segments[position - 2]);
-    });
-    jQuery(".toTop").click(function(evt) {
-		scrollPreAnchor(segments[0]);
-	});
-    var lastScrollTop = 0;
-    jQuery(window).scroll(function(event){
-	    var st = jQuery(this).scrollTop(),
-	    	scrollOffset = jQuery(".gameContents").offset(),
-    		scrolled = jQuery(window).scrollTop() - scrollOffset.top,
-    		segmentOffset = jQuery(segments[position]).offset(),
-    		segmentTop = segmentOffset.top - scrollOffset.top,
-    		segmentHeight = jQuery(".gameContents").outerHeight() / 4;
-	    if (st > lastScrollTop){
-		    if (scrolled >= segmentTop) {
-			    segments[position += 1];
-			}
-       	}
-       	else {
-       		if (position !== 0) {
-	       		if (scrolled <= (segmentTop - segmentHeight)) {
-			    	segments[position -= 1];
-			    }
-       		}
-	    }
-	    if (position <= 1) {
-		    prev.hide();
-	    }
-	    if (position > 1) {
-		    prev.show();
-	    }
-	    lastScrollTop = st;
-	});
-});
-var win = null;
-function NewWindow(mypage,myname,w,h,scroll){
-	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-	settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-	win = window.open(mypage,myname,settings)
-}
+    offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
+    superScrolling = {
+        options: {
+            $headerHeight: offset.top,
+            $footerHeight: offsetBottom,
+            $controlHeight: jQuery(".gameSticky").outerHeight(),
+            $docHeight: jQuery(document).outerHeight(),
+            $currentPage: "." + jQuery(".gameContents").attr("id"),
+            topPad: offset.top,
+            demoBar: jQuery(".demo").outerHeight()
+        },
+        init: function () {
+            this.stickyScroller()
+        },
+        stickyScroller: function () {
+            jQuery(".controlBox, .gameSticky").css("top", superScrolling.options.topPad);
+            jQuery(superScrolling.options.$currentPage).prevAll().addClass("fullyLoaded");
+            jQuery(window).bind("scroll", function (b) {
+                var c = jQuery(window).scrollTop(),
+                    a = jQuery(".gameSticky").outerHeight();
+                if (c > superScrolling.options.$headerHeight) {
+                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.demoBar + "px");
+                    jQuery(".controlBox,.gameSticky").addClass("fixMe")
+                }
+                if (c < superScrolling.options.$headerHeight) {
+                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.topPad + "px");
+                    jQuery(".controlBox,.gameSticky").removeClass("fixMe")
+                }
+                if (c > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - a - superScrolling.options.demoBar) {
+                    jQuery(".controlBox,.gameSticky").removeClass("fixMe");
+                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.$docHeight - superScrolling.options.$footerHeight - a - superScrolling.options.demoBar + "px")
+                }
+                superScrolling.loadMeUp()
+            })
+        },
+        loadMeUp: function () {
+            var c = jQuery(".controlBox").offset(),
+                d = jQuery(window).outerHeight(),
+                e = superScrolling.options.$headerHeight + superScrolling.options.topPad,
+                a = superScrolling.options.$docHeight - (d + offsetBottom),
+                b = Math.round((c.top - e) / (a - e) * 100);
+            if (b < 0) {
+                b = 0
+            }
+            if (b > 100) {
+                b = 100
+            }
+            jQuery(".controlBox " + superScrolling.options.$currentPage + " .loadProgress").css("height", b + "%")
+        }
+    }, lazyloadTimeout = setTimeout(function () {
+        jQuery("img.lazy").trigger("lookbook")
+    }, 2000),
+    gameSticky = {
+        options: {
+            $gameStage: jQuery(".gameContents").attr("id")
+        },
+        init: function () {
+            this.percentage()
+        },
+        percentage: function () {
+            var a = (((jQuery(window).scrollTop() - offset.top) / ((jQuery(document).outerHeight() - offsetBottom - offset.top) - jQuery(window).outerHeight())) * 100) / 3;
+            if (gameSticky.options.$gameStage === "page1") {
+                if (a.toFixed(0) <= 0) {
+                    jQuery(".percentage").text("0%")
+                } else {
+                    if (a.toFixed(0) > 33) {
+                        jQuery(".percentage").text("33%")
+                    } else {
+                        jQuery(".percentage").text(a.toFixed(0) + "%")
+                    }
+                }
+            }
+            if (gameSticky.options.$gameStage === "page2") {
+                a = a + 33;
+                if (a.toFixed(0) <= 33) {
+                    jQuery(".percentage").text("33%")
+                } else {
+                    if (a.toFixed(0) > 66) {
+                        jQuery(".percentage").text("66%")
+                    } else {
+                        jQuery(".percentage").text(a.toFixed(0) + "%")
+                    }
+                }
+            }
+            if (gameSticky.options.$gameStage === "page3") {
+                a = a + 66;
+                if (a.toFixed(0) <= 66) {
+                    jQuery(".percentage").text("66%")
+                } else {
+                    if (a.toFixed(0) > 99) {
+                        jQuery(".percentage").text("100%")
+                    } else {
+                        jQuery(".percentage").text(a.toFixed(0) + "%")
+                    }
+                }
+            }
+        }
+    }, scrollToAnchor = {
+        init: function (a) {
+            if (a !== undefined) {
+                jQuery(window).scrollTo(a, 800, {
+                    margin: true,
+                    offset: {
+                        top: +5
+                    }
+                })
+            }
+        }
+    }, scrollToPoint = {
+        init: function () {
+            var b = jQuery(".segment"),
+                a = 0,
+                d = jQuery(".anchorLink-next"),
+                e = jQuery(".anchorLink-prev").hide(),
+                f = jQuery(".toTop");
+            d.click(function (g) {
+                scrollToAnchor.init(b[a])
+            });
+            e.click(function (g) {
+                scrollToAnchor.init(b[a - 2])
+            });
+            f.click(function (g) {
+                scrollToAnchor.init(b[0])
+            });
+            var c = 0;
+            jQuery(window).scroll(function (k) {
+                var i = jQuery(this).scrollTop(),
+                    h = jQuery(window).scrollTop() - offset.top,
+                    l = jQuery(b[a]).offset(),
+                    j = l.top - offset.top,
+                    g = jQuery(".gameContents").outerHeight() / 4;
+                if (i > c) {
+                    if (h >= j) {
+                        b[a += 1]
+                    }
+                } else {
+                    if (a !== 0) {
+                        if (h <= (j - g)) {
+                            b[a -= 1]
+                        }
+                    }
+                }
+                if (a <= 1) {
+                    e.hide()
+                }
+                if (a > 1) {
+                    e.show()
+                }
+                c = i
+            })
+        }
+    }, socialWindow = {
+        options: {
+            win: null
+        },
+        init: function (e, d, b, c, a) {
+            LeftPosition = (screen.width) ? (screen.width - b) / 2 : 0;
+            TopPosition = (screen.height) ? (screen.height - c) / 2 : 0;
+            settings = "height=" + c + ",width=" + b + ",top=" + TopPosition + ",left=" + LeftPosition + ",scrollbars=" + a + ",resizable";
+            socialWindow.options.win = window.open(e, d, settings)
+        }
+    };
 </script>
 </venda_block>
