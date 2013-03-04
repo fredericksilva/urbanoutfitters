@@ -53,7 +53,17 @@
     <div class="footer-details clearfix">
       <ul>
         <li><a href="<venda_dispview page=helpandinfo>">Help &amp; info</a></li>
+        <!-- mp_trans_remove_start-->
         <li><a href="<venda_dispview page=deliveryinformation>">Delivery information</a></li>
+        <!-- mp_trans_remove_end-->
+        <!-- mp_trans_disable_start -->
+			<!-- mp_trans_add="FR"
+				<li><a href="<venda_dispview page=deliveryinformation>">Infos livraison</a></li>
+        	-->
+        	<!-- mp_trans_add="DE"
+        		<li><a href="<venda_dispview page=deliveryinformation>">Versandinformationen</a></li>
+        	-->
+        <!-- mp_trans_disable_end -->
         <li><a href="<venda_dispview page=deliveryinformation>#ordertracking">Track order</a></li>
         <li><a href="<venda_dispview page=returns>">Return policy</a></li>
       </ul>
@@ -88,7 +98,7 @@
             --> 
         <!-- mp_trans_disable_end -->
         <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
-        <li><a href="<venda_dispview page=unidays>">Students! 10% Off</a></li>
+        <li><a href="<venda_dispview page=unidays>">Students! 20% Off</a></li>
         </venda_block label=1>
       </ul>
     </div>
