@@ -1971,27 +1971,30 @@ a.uo-hotspot:hover {
 
 /** UO Font-face **/
 @font-face {
-    font-family: "UO Spring Font";
-    src: url('../fonts/uospringbagtypeface-regular.ttf') format("truetype");
+    font-family: "UO Brand Font";
+    src: url('../fonts/ywft-absent-grotesque-bold.otf') format("truetype");
 }
 @font-face {
 	font-family: "UO Brand Description";
-	src: url('../fonts/ymft-hannah-regular.otf') format("truetype");
+	src: url('../fonts/ywft-absent-grotesque-medium.otf') format("truetype");
 }
 p.uospringFont { 
-    font-family: "UO Spring Font", Helvetica, Arial, sans-serif;
+    font-family: "UO Brand Font", Helvetica, Arial, sans-serif;
     text-align:center;
-    font-size:80px;
-    text-transform:uppercase;
-    line-height: 90px;
-    padding-top: 32px;
+    font-size: 78px;
+    text-transform: uppercase;
+    line-height: 65px;
+    padding: 20px 110px;
+    letter-spacing: -4px;
+    margin:0;
 }
 p.brandDescFont {
 	font-family: "UO Brand Description", Helvetica, Arial, sans-serif;
 	text-align:center;
 	text-transform:uppercase;
-	line-height: 18px;
-	font-size: 14px;
+	line-height: 19px;
+	font-size: 16px;
+	margin:0;
 }
 .brandBanner {
 	background:url('../images/font-background.png') repeat;
@@ -2005,9 +2008,9 @@ p.brandDescFont {
 }
 .brandDescBox {
 	background-color: #fff;
-	padding:10px;
-	width: 476px;
-	height:auto;
-	margin: 20px 0 0 233px;
-	border: 1px solid turquoise;	
+	padding: 10px 22px;
+	width: 626px;
+	height: auto;
+	margin: 0 140px 20px;
+	border: 1px solid #82e0d0;	
 }
