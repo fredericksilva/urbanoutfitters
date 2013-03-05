@@ -26,17 +26,17 @@ var offset = jQuery(".gameContents").offset(),
             this.stickyScroller()
         },
         stickyScroller: function () {
-            jQuery(".controlBox, .gameSticky").css("top", superScrolling.options.topPad);
+            jQuery(".controlBox, .gameSticky").css("top", superScrolling.options.topPad - superScrolling.options.demoBar);
             jQuery(superScrolling.options.$currentPage).prevAll().addClass("fullyLoaded");
             jQuery(window).bind("scroll", function (b) {
                 var c = jQuery(window).scrollTop(),
                     a = jQuery(".gameSticky").outerHeight();
                 if (c > superScrolling.options.$headerHeight) {
-                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.demoBar + "px");
+                    jQuery(".controlBox,.gameSticky").css("top", 0 + "px");
                     jQuery(".controlBox,.gameSticky").addClass("fixMe")
                 }
                 if (c < superScrolling.options.$headerHeight) {
-                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.topPad + "px");
+                    jQuery(".controlBox,.gameSticky").css("top", superScrolling.options.topPad - superScrolling.options.demoBar + "px");
                     jQuery(".controlBox,.gameSticky").removeClass("fixMe")
                 }
                 if (c > superScrolling.options.$docHeight - superScrolling.options.$footerHeight - a - superScrolling.options.demoBar) {
@@ -49,7 +49,7 @@ var offset = jQuery(".gameContents").offset(),
         loadMeUp: function () {
             var c = jQuery(".controlBox").offset(),
                 d = jQuery(window).outerHeight(),
-                e = superScrolling.options.$headerHeight + superScrolling.options.topPad,
+                e = superScrolling.options.$headerHeight + superScrolling.options.topPad - superScrolling.options.demoBar,
                 a = superScrolling.options.$docHeight - (d + offsetBottom),
                 b = Math.round((c.top - e) / (a - e) * 100);
             if (b < 1) {
@@ -134,7 +134,7 @@ var offset = jQuery(".gameContents").offset(),
                 a = 0,
                 d = jQuery(".anchorLink-next"),
                 e = jQuery(".anchorLink-prev").hide(),
-                f = jQuery(".toTop");
+                f = jQuery(".toTop").hide();
             d.click(function (g) {
                 scrollToAnchor.init(b[a])
             });
@@ -164,9 +164,11 @@ var offset = jQuery(".gameContents").offset(),
                 }
                 if (a <= 1) {
                     e.hide()
+                    f.hide()
                 }
                 if (a > 1) {
                     e.show()
+                    f.show()
                 }
                 c = i
             })
