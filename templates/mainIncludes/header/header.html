@@ -36,11 +36,8 @@
   </div>
 </div>
 
-<div class="grid_7">
-  <venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/uo-logo-1.png" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112>
-</div>
-<div class="grid_10 clearfix">
-  <div class="grid_10 alpha omega">
+<div class="grid_17 clearfix">
+  <venda_block label=111,pageref!=home><a href="<venda_dispview page=home>" title="<venda_ebizname>"></venda_block label=111><img id="logo" class="logo" src="" data-src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/uo-logo-" alt="<venda_ebizname>"><venda_block label=112,pageref!=home></a></venda_block label=112>
   	<div class="minicartStatic">
   		<venda_minicart template=itemsTotal>
   
@@ -59,10 +56,7 @@
     	<li class="login loginout"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>">Register</a></li>
     	</venda_block label=21>
     </ul>
-	</div>
-	<div class="grid_10 alpha omega">
 	  <venda_inctemplate name=solrSearch,type=includes>
-	</div>
 </div>
 
 <div class="grid_24">
@@ -88,3 +82,11 @@
 </div>
 
 <venda_tpcomment><!--  Configuration to show signin screen as popup. Please include the signinpoup template: <venda _ inctemplate name = signinPopup,type = widgets> --></venda_tpcomment>
+
+<script>
+var index = Math.floor(Math.random() * 9) + 1;
+jQuery(document).ready(function() {
+	var logoSrc = jQuery("img.logo").attr("data-src");
+	jQuery("img.logo").attr('src', logoSrc + index + '.png');
+});
+</script>
