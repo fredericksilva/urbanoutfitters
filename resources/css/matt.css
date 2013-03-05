@@ -2,9 +2,13 @@
 #solrsearch {
   float: right;
   height: 24px;
-  margin-top: 16px;
+  margin-bottom: 5px;
   position: relative;
   width: 200px;
+}
+.solr-search {
+  margin-top: 45px;
+  clear: both;
 }
 .solr-textfield {
   background: #fff;
@@ -30,7 +34,6 @@
   width: 12px;
   top:6px
 }
-
 
 /* Product detail */
 .product-details {

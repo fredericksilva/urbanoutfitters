@@ -5645,6 +5645,7 @@ ul#rvisitewidelist li a:hover div {
 /* Header */
 #logo {
     margin: 30px 0 0 0;
+    position:absolute;
 }
 .mainHeader p.location-text {
     margin: 8px 0;
