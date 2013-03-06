@@ -748,7 +748,7 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
 		if(Venda.Attributes.productArr[i].attSet.id == uID) {
 				
-			if (Venda.Attributes.productArr[i].attSet[attName].selected == attValue){
+			if (Venda.Attributes.productArr[i].attSet[attName].selected == attValue && attName !== "att3"){
 				Venda.Attributes.productArr[i].attSet[attName].selected = '';
 				Venda.Attributes.productArr[i].attSet[attName].selectedValue = '';
 				
