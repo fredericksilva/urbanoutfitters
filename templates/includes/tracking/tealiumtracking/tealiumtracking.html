@@ -197,16 +197,15 @@ product_list_price:"<venda_invtwas>"
 <venda_block label=1058,mode=value,<venda_tpxt mode=get,name=track>=orsc-screen>
 <!-- START TEALIUM - BASKET PAGE -->
 <script type="text/JavaScript">
-var productid=get_field(".tr-basket .invtref");
-var productname=get_field(".tr-basket .invtname");
-var productbrand=get_field(".tr-basket .invtbrand");
+var productid=get_field(".basketdetails .itemRef");
+var productname=get_field(".basketdetails .itemName");
+var productbrand=get_field(".basketdetails .itemBrand");
 var productcategory = [];
-jQuery(".tr-basket .invtref").each(function(){
+jQuery(".basketdetails .itemRef").each(function(){
 	productcategory.push(cookieVar.get(jQuery(this).html()));
 });
-var productsellprice=get_field(".tr-basket .sellprice");
-var productwasprice=get_field(".tr-basket .wasprice");
-var productqty = get_field(".tr-basket .invtqty");
+var productsellprice=get_field(".basketdetails .totalprice .itemPrice");
+var productwasprice=get_field(".basketdetails .totalprice .itemWas");
 var utag_data={
 site_region: ("<venda_sessionlocation>" === "restofworld")? "UK": "EURO",
 site_currency:"<venda_currencycode>",
@@ -217,8 +216,7 @@ product_name: productname,
 product_brand:productbrand,
 product_category:productcategory,
 product_unit_price:productsellprice,
-product_list_price:productwasprice,
-product_quantity:productqty
+product_list_price:productwasprice
 };
 </script>
 <!-- END TEALIUM -->
