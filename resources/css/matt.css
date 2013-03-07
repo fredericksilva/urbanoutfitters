@@ -567,6 +567,9 @@
   height: 14px;
   font-size: 12px;
 }
+.switcher-sel > a#language, .switcher-sel > a#currency {
+  display: inline-block;
+}
 .switcher-sel:first-child {
   margin-left: 0;
 }
@@ -613,7 +616,6 @@
   width: 63px;
 }
 .switcher-content {
-  display: none;
   position: absolute;
   width: 190px;
   padding: 12px 15px 15px;
@@ -624,6 +626,8 @@
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  filter: alpha(opacity=0);
+  opacity: 0;
 }
 .switcher-content a:hover {
   color: #808080;
