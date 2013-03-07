@@ -1219,6 +1219,7 @@ ol.prods li {
     padding: 5px 0;
     text-align: center;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .demo a {
