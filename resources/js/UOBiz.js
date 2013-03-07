@@ -1293,7 +1293,15 @@ Venda.Ebiz.colorSwatch.prototype = {
 
         });
         if(this.conf.selectFirstColor){
-	        jQuery('.swatchContainer div').find(" > a:first").click(); 
+        	jQuery('.swatchContainer div').find(" > a:first").click();
+        	jQuery('.swatchContainer div').find("a").each(function() {
+        		var defaultColour = jQuery(this).parent().data("default"),
+	        		swatchColour = jQuery(this).attr("title");
+	        	if (defaultColour.indexOf(swatchColour) >= 0) {
+	        		var sku = jQuery(this).find("img.swatch").attr("name");
+		        	jQuery(this).click().prependTo("#swatch"+sku);
+	        	}
+        	})
         }
     }
 };
