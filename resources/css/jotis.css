@@ -1984,14 +1984,13 @@ p.uospringFont {
     font-size: 78px;
     text-transform: uppercase;
     line-height: 65px;
-    padding: 20px 110px;
+    padding: 23px 110px 7px;
     letter-spacing: -4px;
     margin:0;
 }
 p.brandDescFont {
 	font-family: "UO Brand Description", Helvetica, Arial, sans-serif;
 	text-align:center;
-	text-transform:uppercase;
 	line-height: 19px;
 	font-size: 16px;
 	margin:0;
@@ -1999,7 +1998,7 @@ p.brandDescFont {
 .brandBanner {
 	background:url('../images/font-background.png') repeat;
 	width:948px;
-	height:283px;
+	height:auto;
 	margin: 0 0 15px;
 	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
