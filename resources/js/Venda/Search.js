@@ -405,7 +405,8 @@ Venda.Search.Feature.perLine = function() {
 		$quickBuy,
 		$prodImages,
 		$swatchImages,
-		prodColumn;
+		prodColumn,
+		icxtFive;
 };
 Venda.Search.Feature.perLine.prototype = {
 	threePerLine: function() {
@@ -477,14 +478,15 @@ Venda.Search.Feature.perLine.prototype = {
 		$quickBuy = jQuery(".quickLinkBox"),
 		$prodImages = jQuery("a.moredetail img"),
 		$swatchImages = jQuery(".sw_image"),
-		prodColumn = jQuery(".prodsFiveColumns li");
+		prodColumn = jQuery(".prodsFiveColumns li"),
+		icxtFive = jQuery(".icxt5perline").text();
 		jQuery('.threePerLineLink').on("click", jQuery.proxy(this, 'threeClick'))
 		jQuery('.fivePerLineLink').on("click", jQuery.proxy(this, 'fiveClick'))
 		if (document.location.href.indexOf('&perline=3') > -1 ) {
 			this.threePerLine();
 			this.threePerLineImg();
 		}
-		if (document.location.href.indexOf('&perline=5') > -1 ) {
+		if (document.location.href.indexOf('&perline=5') > -1 || (document.location.href.indexOf('&perline=3') < 0 && icxtFive === "1")) {
 			this.fivePerLine();
 			this.fivePerLineImg();
 		}
