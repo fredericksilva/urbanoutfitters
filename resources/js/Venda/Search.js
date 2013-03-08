@@ -396,75 +396,99 @@ Venda.Search.Feature.colorSwatch.prototype = {
 * each collate results, Hide swatchContainer if there are less than 2 swatches and jQuery UI dropdown styling
 * @author Jotis Moore <jmoore@urbanoutfitters.com>
 **/
-Venda.Search.Feature.perLine = function() {};
+Venda.Search.Feature.perLine = function() {
+	var $swatchIcon,
+		$swatchContainer,
+		$three,
+		$five,
+		$UOexcl,
+		$quickBuy,
+		$prodImages,
+		$swatchImages,
+		prodColumn;
+};
 Venda.Search.Feature.perLine.prototype = {
-    display: function() {
-    	var prodRef = jQuery(".prodRef").text();
-    if (document.location.href.indexOf('&perline=3') > -1 ) {
-    	jQuery(".quickLinkBox").each( function () {
-	    	jQuery(this).addClass("qb-large");
-	    	jQuery(this).removeClass("qb-small");
+	threePerLine: function() {
+		jQuery($quickBuy).each( function() {
+			jQuery(this).addClass("qb-large").removeClass("qb-small");
+		})
+		$swatchIcon.add($three).hide();
+		$swatchContainer.add($five).add($UOexcl).show();
+		jQuery(prodColumn).css('width','33%');
+	},
+	threePerLineImg: function() {
+		jQuery($prodImages).each(function () {
+    		var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_ca1.jpg');
+    		jQuery(this).attr("src",ImageSrc);
+    	})
+    	jQuery($swatchImages).each(function () {
+    		var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_ca1.jpg');
+    		jQuery(this).data("setimage",SetImageSrc);
     	});
-    	jQuery(".swatchIcon").hide();
-    	jQuery(".swatchContainer").show();
-    	jQuery(".prodsFiveColumns li").css('width','33%');
-        jQuery(".threePerLine").hide();
-    	jQuery(".fivePerLine").show();
-    	jQuery(".onlineExLogo-underlay").show();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_ca1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_ca1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-        jQuery("a.moredetail img").css({width:'244px',height:'366px'});
-
-    }
-    if (document.location.href.indexOf('&perline=5') > -1 ) {
-    	jQuery(".quickLinkBox").each( function () {
-	    	jQuery(this).addClass("qb-small");
-	    	jQuery(this).removeClass("qb-large");
-    	});
-    	jQuery(".swatchIcon").show();
-    	jQuery(".swatchContainer").hide();
-    	jQuery(".prodsFiveColumns li").css('width','19.5%');
-        jQuery(".threePerLine").show();
-    	jQuery(".fivePerLine").hide();
-    	jQuery(".onlineExLogo-underlay").hide();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_ca1.jpg','_sm1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_ca1.jpg','_sm1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-    	jQuery("a.moredetail img").css({width:'142px',height:'213px'});
+        jQuery($prodImages).css({width:'244px',height:'366px'});
+	},
+	threeClick: function() {
+		var href = jQuery('.threePerLineLink').attr('href');
+    	if (document.location.href.indexOf('perline=5') > -1 ) {
+    		var newHref = href.replace('perline=5', 'perline=3');
+    		jQuery('.threePerLineLink').attr('href', newHref);
     	}
-        jQuery('.threePerLineLink').click(function() {
-    		if ( document.location.href.indexOf('perline=5') > -1 ) {
-    			this.href = this.href.replace('perline=5', 'perline=3');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=3');
-        	}
-        	return true;
-        });
-        jQuery('.fivePerLineLink').click(function() {
-        	if ( document.location.href.indexOf('perline=3') > -1 ) {
-    			this.href = this.href.replace('perline=3', 'perline=5');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=5');
-        	}
-        	return true;
-        });
-        /*jQuery('img').error(function(){
-        	jQuery(this).attr('src', 'missing.png');
-        });*/
-    }
+    	else {
+        	jQuery('.threePerLineLink').attr('href', href + '&perline=3');
+        }
+        return true;
+	},
+	fivePerLine: function() {
+		jQuery($quickBuy).each( function() {
+			jQuery(this).removeClass("qb-large").addClass("qb-small");
+		})
+		$swatchIcon.add($three).show();
+		$swatchContainer.add($five).add($UOexcl).hide();
+		jQuery(prodColumn).css('width','19.5%');
+	},
+	fivePerLineImg: function() {
+		jQuery($prodImages).each(function () {
+    		var ImageSrc = jQuery(this).attr("src").replace('_ca1.jpg','_sm1.jpg');
+    		jQuery(this).attr("src",ImageSrc);
+    	})
+    	jQuery($swatchImages).each(function () {
+    		var SetImageSrc = jQuery(this).data("setimage").replace('_ca1.jpg','_sm1.jpg');
+    		jQuery(this).data("setimage",SetImageSrc);
+    	});
+        jQuery($prodImages).css({width:'142px',height:'213px'});
+	},
+	fiveClick: function() {
+		var href = jQuery('.fivePerLineLink').attr('href');
+    	if (document.location.href.indexOf('perline=3') > -1 ) {
+    		var newHref = href.replace('perline=3', 'perline=5');
+    		jQuery('.fivePerLineLink').attr('href', newHref);
+    	}
+    	else {
+        	jQuery('.fivePerLineLink').attr('href', href + '&perline=5');
+        }
+        return true;
+	},
+	display: function() {
+		$swatchIcon = jQuery(".swatchIcon"),
+		$swatchContainer = jQuery(".swatchContainer"),
+		$three = jQuery(".threePerLine"),
+		$five = jQuery(".fivePerLine"),
+		$UOexcl = jQuery(".onlineExLogo-underlay"),
+		$quickBuy = jQuery(".quickLinkBox"),
+		$prodImages = jQuery("a.moredetail img"),
+		$swatchImages = jQuery(".sw_image"),
+		prodColumn = jQuery(".prodsFiveColumns li");
+		jQuery('.threePerLineLink').on("click", jQuery.proxy(this, 'threeClick'))
+		jQuery('.fivePerLineLink').on("click", jQuery.proxy(this, 'fiveClick'))
+		if (document.location.href.indexOf('&perline=3') > -1 ) {
+			this.threePerLine();
+			this.threePerLineImg();
+		}
+		if (document.location.href.indexOf('&perline=5') > -1 ) {
+			this.fivePerLine();
+			this.fivePerLineImg();
+		}
+	}
 };
 
 Venda.Search.Feature.searchAccordion = function() {};
