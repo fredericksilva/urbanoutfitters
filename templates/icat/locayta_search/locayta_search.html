@@ -1,9 +1,23 @@
-<!-- Search zone: search results will be inserted inside div tag -->
-<div lmzone="search" facetdomid="Facets" filterdomid="Filters"></div>
+<div id="content-search-body">
+<div id="height10"></div>
+<venda_block label=151,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1><script type="text/javascript"><venda_inctemplate type=includes,name=powerreviewscripts></script></venda_block label=151>
+    <a id="content-top"></a>
+    <a name="content" id="content"></a>
+    <venda_block label=222,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="searchVBM"><venda_inctemplate type=vbm,name=searchResults></div><script type="text/javascript">var searchVBMstr = "<venda_primarysearchtext>";</script></venda_block label=222>
+
+<!-- Category zone: category results will be inserted inside div tag -->
+<div id="searchResults" class="grid_19 push_5">
+	<div class="box searchAlt searchContent" lmzone="search" facetdomid="collate" filterdomid="filters"></div>
+	<div id="filters" class="box boxSearchAlt"></div>
+</div>
 <!-- Facets zone: facets will be inserted inside div tag -->
-<div id="Facets"></div>
-<!-- Filters zone: filters will be inserted inside div tag -->
-<div id="Filters"></div>
+<div class="leftSidebar grid_5 pull_19 alpha">
+	<div class="refinelist" >
+		<div id="collate"></div>
+	</div>
+</div>
+
+</div>
 
 <div id="parentCatName" style="display:none;"><venda_icatname></div>
 <div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>
