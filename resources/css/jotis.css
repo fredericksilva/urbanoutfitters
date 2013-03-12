@@ -1968,3 +1968,240 @@ a.uo-hotspot:hover {
 .lookbookQuick .productInfo .loadingImg {
 	height: 120px;
 }
+
+/****** Spring Catalogue *******/
+.gameTitle {
+	overflow: hidden;
+}
+.fl {
+	float: left;
+}
+#content.fr { 
+	float: right;
+}
+.ml {
+	margin-left: 10px;
+}
+.mr {
+	margin-right: 10px;
+}
+
+.mb { 
+	margin-bottom: 20px; 
+}
+
+.L-R {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.cl {
+	clear: both;
+}
+.gameStartPaginator {
+	clear: both;
+	margin-bottom: 20px;
+        text-align: center;
+}
+.gameStartPaginator li { 
+	display: inline;
+}
+.video { 
+	margin: 0px 30px 20px 30px !important;
+}
+.gameButton span {
+	display: none;
+}
+.gameButton {
+	display: block;
+	width: 890px;
+	height: 185px;
+	background-image: url("/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/Womens/w_page1_ftr_rollover.gif"); 
+	margin-bottom: 20px;
+}
+.gameButton:hover {
+	display: block;
+	width: 890px;
+	height: 185px;
+	background-image: url("/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/Womens/w_page1_ftr_rollover.gif");
+	background-position: bottom;
+}
+@font-face {
+    font-family: "UO Square Font";
+    src: url('/content/ebiz/urbanoutfitters/resources/fonts/square.ttf') format("truetype");
+}
+.controlBox-holder {
+    float: right;
+    height: 100%;
+    width: 50px;
+}
+.controlBox {
+	margin-top:76px;
+    width: 12px;
+    height: 268px;
+    position: absolute;
+    border: 2px solid #fff;
+    background-color: #000;
+}
+.controlBox > div {
+	width: 12px;
+    height: 89px;
+    background: #000;
+}
+.controlBox > div .loadProgress {
+    background: #00ca47;
+    width: 14px;
+    margin-left: -1px;
+}
+.borderScroll {
+	border-bottom: 1px solid #00ca47;
+}
+.controlBox > div.fullyLoaded .loadProgress {
+    height: 100%;
+}
+.segment {
+	background: url('/content/ebiz/urbanoutfitters/resources/images/Search/loadingsearch.gif') no-repeat center;
+	margin : 0 0 20px 0;
+	width: 950px;
+	height: 600px;
+	position:relative;
+}
+.last {
+	height:0px;
+	margin:0;
+}
+.segment a.uo-hotspot {
+    position: absolute;
+    width: 21px;
+    height: 20px;
+    display: block;
+    background: url("/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/Womens/Hotspot.png") no-repeat;
+    top: 0;
+    left: 0;
+    padding: 0;
+}
+.segment a.uo-hotspot:hover {
+    opacity: 0.5;
+}
+.gameSticky {
+	width: 50px;
+	height: auto;
+	overflow: hidden;
+	position: absolute;
+}
+.fixMe {
+    position: fixed;
+}
+.anchorLink-next, .anchorLink-prev {
+	display:block;
+	text-indent: -9999px;
+	background-color: black;
+	border: 2px solid white;
+	width: 46px;
+	height: 46px;
+	cursor: pointer;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/spring-icons-sprite_uk.png') no-repeat center;
+}
+.anchorLink-next {
+	background-position: 0 0;
+}
+.anchorLink-prev {
+	background-position: 0 -92px;
+	border-bottom: 0;
+}
+.anchorLink-next:hover {
+	background-position: 0 -46px;
+}
+.anchorLink-prev:hover {
+	background-position: 0 -138px;
+}
+.percentage {
+	font-family: "UO Square Font", Helvetica, Arial, sans-serif;
+	background-color: black;
+	border: 2px solid white;
+	width: 38px;
+	height: 14px;
+	margin-top: -2px;
+	text-align: left;
+	color: white;
+	font-size: 16px;
+	padding: 4px;
+}
+.bottomLinks {
+	margin-top: 2px;
+}
+.toTop {
+	display:block;
+	text-indent: -9999px;
+	background-color: black;
+	border: 2px solid white;
+	width: 46px;
+	height: 22px;
+	cursor: pointer;
+	background: url('/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/spring-icons-sprite_uk.png') no-repeat center;
+	background-position: 0 -184px;
+}
+.toTop:hover {
+	background-position: 0 -206px;
+}
+.womensCatalogue {
+	margin-top: 2px;
+}
+.mensCatalogue a, .womensCatalogue a {
+	margin-left: 18px;
+	text-align: center;
+	display:block;
+	text-indent: -9999px;
+	width: 28px;
+	height: 88px;
+	background: url("/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/spring-icons-sprite_uk.png") no-repeat center;
+	border: 2px solid white;
+}
+.mensCatalogue a {
+	background-position: -0px -228px;
+}
+.mensCatalogue a:hover {
+	background-position: -0px -316px;
+}
+.womensCatalogue a {
+	background-position: -0px -404px;
+}
+.womensCatalogue a:hover {
+	background-position: -0px -492px;
+}
+.mensCatalogue, .tweetMe, .pinMe, .facebookMe {
+	margin-top: -2px;
+}
+.mens a {
+	background-position: -0px -316px;
+}
+.womens a {
+	background-position: -0px -492px;
+}
+a.tweetIt, a.pinIt, a.facebookIt {
+	margin-left: 18px;
+	text-align: center;
+	display:block;
+	text-indent: -9999px;
+	width: 28px;
+	height: 28px;
+	background: url("/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/spring-icons-sprite_uk.png") no-repeat center;
+	border: 2px solid white;
+}
+a.tweetIt {
+	background-position: -0px -580px;
+}
+a.tweetIt:hover {
+	background-position: -0px -608px;
+}
+a.pinIt {
+	background-position: -0px -636px;
+}
+a.pinIt:hover {
+	background-position: -0px -664px;
+}
+a.facebookIt {
+	background-position: -0px -692px;
+}
+a.facebookIt:hover {
+	background-position: -0px -720px;
+}
