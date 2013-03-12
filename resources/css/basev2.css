@@ -1632,9 +1632,9 @@ fieldset {
 }
 .mm_ul .uoblog-link a {
     display: block;
-    width: 60px;
-    height: 16px;
-    background: url("../images/uo-png-sprite.png") no-repeat scroll -124px -74px transparent;
+    width: 49px;
+    height: 23px;
+    background: url("../images/uo-png-sprite.png") no-repeat scroll -6px -193px transparent;
     padding: 0;
     border-bottom: none;
 }
