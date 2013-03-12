@@ -1968,3 +1968,29 @@ a.uo-hotspot:hover {
 .lookbookQuick .productInfo .loadingImg {
 	height: 120px;
 }
+
+/**** Brands Dropdown ****/
+.footerBrandsButton {
+	text-align: center;
+	padding-top: 20px;
+	clear: both;
+	font-weight: bold;
+	background: url('../images/uo-png-sprite.png') no-repeat -47px -193px;
+	width:24px;
+	height:23px;
+}
+.activeBrands {
+	background-position: -80px -193px;
+}
+.footerBrands {
+	opacity:0;
+	filter: alpha(opacity=0);
+}
+.footerBrands ul li {
+	width: 464px;
+	margin-left: 22px;
+	padding: 20px 0;
+}
+.footerBrands ul li:first-child {
+	margin-left: 0;
+}
