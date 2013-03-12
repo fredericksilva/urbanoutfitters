@@ -153,9 +153,9 @@ Venda.storeloc.Initialize = function(){
       center: new google.maps.LatLng(53.085364,-3.991528), // Default map location
       zoom: 2,
       scrollwheel:false,
-      mapTypeControl: true,
+      mapTypeControl: false,
       streetViewControl: false,
-      overviewMapControl: true,
+      overviewMapControl: false,
       mapTypeControlOptions: {
         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
       },
@@ -187,6 +187,9 @@ Venda.storeloc.updateMap = function(){
     // get the markers to all clear!
     Venda.storeloc.deleteOverlays();
     
+    // Add class on map show
+    jQuery('.Storelookup').attr('id','details-shown');
+        
     // This hides store options that are related to store location
     jQuery('.storeLocSelectHolder, .altStoreView').hide();
     jQuery('.loadingbar').addClass('active');

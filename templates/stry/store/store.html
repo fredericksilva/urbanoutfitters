@@ -1,68 +1,62 @@
 <venda_tpcomment><!-- this title will only display if user has arrived at store details via url like /stry/dummyproduct1 --></venda_tpcomment>
 <venda_block label=12,workflow=null>
 <div id="storelocatorresults" class="box mainAlt alpha">
-	<h1 class="header"><venda_stryname></h1>
 	<div class="storecontent" >
 </venda_block label=12>
 	
-	<div id="storeservices" class="grid_18 alpha">
+	<div id="storeservices" class="grid_12 alpha">
 		
-		<div class="storeimage grid_12 alpha">	
+		<div class="storeimage">	
 			<venda_media rec=stry,type=pict,key=image>
-		</div>
-		
-		<div class="grid_6 omega">
-			<div class="boxContent">
-				<h3><venda_text id=desktop.info.welcome_to> <venda_stryname></h3>
-				<p><venda_strydesc1></p>
-				<p><venda_strydesc2></p>
+  		<div class="boxContent">
+				<h2>Welcome to Urban Outfitters <br><span class="store-name"><venda_stryname></span></h2>
 			</diV>
 		</div>
-		
-		<div class="grid_18 alpha">
-				<ul>
-				<venda_block label=service1,stxtservice1=notnull>
-					<li class="grid_6 alpha basketPlaceholder"><a href="#">Service 1</a></li>
-				</venda_block label=service1>
-				<venda_block label=service2,stxtservice2=notnull>
-					<li class="grid_6 basketPlaceholder"><a href="#">Service 2</a></li>
-				</venda_block label=service2>
-				<venda_block label=service3,stxtservice3=notnull>
-					<li class="grid_6 omega basketPlaceholder"><a href="#">Service 3</a></li>
-				</venda_block label=service3>
-				</ul>
-		</div>
+
 	</div>
 	
 
-	<div id="storedetails" class="grid_6 omega" itemscope itemtype="http://schema.org/LocalBusiness">
+	<div id="storedetails" class="grid_12 omega" itemscope itemtype="http://schema.org/LocalBusiness">
+	<div class="boxed-in">
+  	<div class="address">
+  			<h3>Address</h3>
+  			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">		
+  				<venda_block label=20,stxtadd1=notnull><span itemprop="streetAddress"><venda_stxtadd1></span></venda_block label=20>
+  				<venda_block label=21,stxtadd2=notnull><br /><span itemprop="addressLocality"><venda_stxtadd2></span></venda_block label=21>
+  				<venda_block label=22,stxtadd3=notnull><br /><span itemprop="addressRegion"><venda_stxtadd3></span></venda_block label=22>
+  				<venda_block label=23,stxtadd4=notnull><br /><span itemprop="postalCode"><venda_stxtadd4></span></venda_block label=23>
+  				<venda_block label=24,stxtadd5=notnull><br /><span><venda_stxtadd5></span></venda_block label=24>
+  			</span>
+  				<venda_block label=9,stxtphone=notnull><br><br><h3>Telephone</h3><span itemprop="telephone"><venda_stxtphone></span></venda_block label=9>
+  	</div>
+  			
+  	<div class="opening">
+  			<h3<venda_block label=455,stxtmonday=null,stxttuesday=null,stxtwednesday=null,stxtthursday=null,stxtfriday=null,stxtsaturday=null,stxtsunday=null> class="hide"</venda_block label=455>>Opening Times</h3>
+  			<ul>
+  				<venda_block label=10,stxtmonday=notnull><li><div class="day"  itemprop="openingHours" content="Mon <venda_stxtmonday>">Monday </div><div class="time"><venda_stxtmonday></div></li></venda_block label=10>
+  				<venda_block label=31,stxttuesday=notnull><li><div class="day" itemprop="openingHours" content="Tue <venda_stxttuesday>">Tuesday </div><div class="time"><venda_stxttuesday></div></li></venda_block label=31>
+  				<venda_block label=32,stxtwednesday=notnull><li><div class="day" itemprop="openingHours" content="Wed <venda_stxtwednesday>">Wednesday </div><div class="time"><venda_stxtwednesday></div></li></venda_block label=32>
+  				<venda_block label=33,stxtthursday=notnull><li><div class="day" itemprop="openingHours" content="Thu <venda_stxtthursday>">Thursday </div><div class="time"><venda_stxtthursday></div></li></venda_block label=33>
+  				<venda_block label=34,stxtfriday=notnull><li><div class="day" itemprop="openingHours" content="Fri <venda_stxtfriday>">Friday </div><div class="time"><venda_stxtfriday></div></li></venda_block label=34>
+  				<venda_block label=35,stxtsaturday=notnull><li><div class="day" itemprop="openingHours" content="Sat <venda_stxtsaturday>">Saturday </div><div class="time"><venda_stxtsaturday></div></li></venda_block label=35>
+  				<venda_block label=36,stxtsunday=notnull><li><div class="day" itemprop="openingHours" content="Sun <venda_stxtsunday>">Sunday </div><div class="time"><venda_stxtsunday></div></li></venda_block label=36>
+  				<venda_block label=25,stryauthname=notnull><li>Manager <venda_stryauthname></li></venda_block label=25>
+  				<venda_block label=26,stryauthemail=notnull><li>Email</li></venda_block label=26>
+  			</ul>
+  	</div>
+  	
+  </div>
+  
+	<venda_block label=56,strydesc1=notnull>
+	<div class="quote">
+	  <div class="top-quote">"</div>
+    <p><venda_strydesc1></p>
+    <div class="bottom-quote">"</div>
+	</div>
+	</venda_block label=56>
 	
-	<div class="address grid_6">
-			<h4>Address</h4>
-			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">		
-				<venda_block label=20,stxtadd1=notnull><span itemprop="streetAddress"><venda_stxtadd1></span></venda_block label=20>
-				<venda_block label=21,stxtadd2=notnull><br /><span itemprop="addressLocality"><venda_stxtadd2></span></venda_block label=21>
-				<venda_block label=22,stxtadd3=notnull><br /><span itemprop="addressRegion"><venda_stxtadd3></span></venda_block label=22>
-				<venda_block label=23,stxtadd4=notnull><br /><span itemprop="postalCode"><venda_stxtadd4></span></venda_block label=23>
-				<venda_block label=24,stxtadd5=notnull><br /><span><venda_stxtadd5></span></venda_block label=24>
-			</span>
-				<venda_block label=9,stxtphone=notnull><br><br><h4><venda_text id=desktop.info.phone_number></h4><span itemprop="telephone"><venda_stxtphone></span></venda_block label=9>
-	</div>
-			
-	<div class="opening grid_6">
-			<h4<venda_block label=455,stxtmonday=null,stxttuesday=null,stxtwednesday=null,stxtthursday=null,stxtfriday=null,stxtsaturday=null,stxtsunday=null> class="hide"</venda_block label=455>><venda_text id=desktop.info.store.opening_times></h4>
-			<ul>
-				<venda_block label=10,stxtmonday=notnull><li><div class="day grid_3 alpha"  itemprop="openingHours" content="Mon <venda_stxtmonday>"><venda_text id=desktop.info.store.day_one></div><div class="time grid_3 omega"><venda_stxtmonday></div></li></venda_block label=10>
-				<venda_block label=31,stxttuesday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Tue <venda_stxttuesday>"><venda_text id=desktop.info.store.day_two></div><div class="time grid_3 omega"><venda_stxttuesday></div></li></venda_block label=31>
-				<venda_block label=32,stxtwednesday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Wed <venda_stxtwednesday>"><venda_text id=desktop.info.store.day_three></div><div class="time grid_3 omega"><venda_stxtwednesday></div></li></venda_block label=32>
-				<venda_block label=33,stxtthursday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Thu <venda_stxtthursday>"><venda_text id=desktop.info.store.day_four></div><div class="time grid_3 omega"><venda_stxtthursday></div></li></venda_block label=33>
-				<venda_block label=34,stxtfriday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Fri <venda_stxtfriday>"><venda_text id=desktop.info.store.day_five></div><div class="time grid_3 omega"><venda_stxtfriday></div></li></venda_block label=34>
-				<venda_block label=35,stxtsaturday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Sat <venda_stxtsaturday>"><venda_text id=desktop.info.store.day_six></div><div class="time grid_3 omega"><venda_stxtsaturday></div></li></venda_block label=35>
-				<venda_block label=36,stxtsunday=notnull><li><div class="day grid_3 alpha" itemprop="openingHours" content="Sun <venda_stxtsunday>"><venda_text id=desktop.info.store.day_seven></div><div class="time grid_3 omega"><venda_stxtsunday></div></li></venda_block label=36>
-				<venda_block label=25,stryauthname=notnull><li><venda_text id=desktop.info.store_manager><venda_stryauthname></li></venda_block label=25>
-				<venda_block label=26,stryauthemail=notnull><li><venda_text id=desktop.info.email_store></li></venda_block label=26>
-			</ul>
-	</div>
+	<a class="back-button button" href="<venda_dispview page=findastore>">Back</a>  
+	
 <venda_block label=789,workflow=null>
 	</div></div></div>
 
