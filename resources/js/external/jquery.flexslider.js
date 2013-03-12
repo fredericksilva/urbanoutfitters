@@ -636,6 +636,7 @@
           // clear out old clones
           if (type !== "init") slider.container.find('.clone').remove();
           slider.container.append(slider.slides.first().clone().addClass('clone')).prepend(slider.slides.last().clone().addClass('clone'));
+        slider.container.append(slider.slides.first().next().clone().addClass('clone'));
         }
         slider.newSlides = $(vars.selector, slider);
         
