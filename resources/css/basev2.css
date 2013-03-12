@@ -4580,23 +4580,72 @@ h4.ui-state-active {
     color: #2CA9E3;
 }
 
-.ui-state-active.storeItem {
-    border: 1px solid #2CA9E3;
-}
-
 #address_holder {
-    margin: 10px 75px;
-    height: 70px;
+    margin: 30px;
 }
-
+#address_holder h3 {
+    font-size: 20px;
+}
+#address_holder .storeLocSelectHolder p {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 18px 0;
+}
+#address_holder .altStoreView a {
+    font-weight: bold;
+    color: #333;
+}
 #address {
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0 40px 0 5px;
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    height: 50px;
+}
+.storeLocSelectHolder .ui-selectmenu {
+    border: 1px solid #333;
+    width: 300px !important;
+    height: 30px;
+}
+.storeLocSelectHolder .ui-selectmenu .ui-selectmenu-icon {
+    width: 8px;
+    height: 12px;
+    background: #fff url(../images/uo-png-sprite.png) no-repeat -158px -32px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.storeLocSelectHolder .ui-selectmenu-status {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+}
+#page_findastore .ui-selectmenu-menu li a {
+    text-transform: none;
+    font-weight: normal;
+}
+.Storelookup .storeLocSelect {
     width: 300px;
 }
-
-#storelocatorresults {
-    background-color: #F4F4F4;
+.location-submit {
+  position: relative;
+  height: 50px;
+  border: 1px solid #333;
+  margin: 20px 0 15px 0;
 }
-
+.location-submit #pcsubmit {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  width: 29px;
+  height: 29px;
+  border: none;
+  background: url(../images/store-locator-search-icon.gif) no-repeat;
+}
 #map_canvas {
     float: right;
 }
@@ -4607,17 +4656,23 @@ h4.ui-state-active {
     margin-right: 95px;
     padding: 5px 2px;
 }
-
-.Storelookup .storeItem {
-    border: 1px solid #CCC;
-}
-
 .Storelookup .inputs-list li {
     display: inline;
 }
 
 .Storelookup .storeItem {
-    border: 1px solid #CCC;
+    border-top: 2px solid #333;
+    padding: 6px 0;
+}
+.Storelookup .storeItem a {
+  font-size: 14px;
+  color: #666;
+}
+.Storelookup .accordion {
+  border-bottom: 2px solid #333;
+}
+.Storelookup .accordion .ui-state-active {
+    border-bottom: 1px solid #333;
 }
 
 .Storelookup .distance {
@@ -4626,19 +4681,35 @@ h4.ui-state-active {
 
 .Storelookup .nav {
     float: left;
-    width: 550px;
-    margin-top: 150px;
-/*30px*/
+    width: 480px;
+    height: 480px;
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
-
+#content .Storelookup .linkstore a {
+    width: 128px;
+    height: 30px;
+    background: url(../images/uo-png-sprite.png) no-repeat scroll -8px -477px transparent;
+    text-transform: uppercase;
+    text-align: center;  
+    line-height: 30px;
+    font-size: 11px;
+    padding: 0 !important;
+    margin: 0;
+}
+.altStoreView p {
+    margin-top: 15px;
+}
 .storecontent .address,.storecontent .storeimage,.storeListItem {
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
 .storeItemHolder {
-    height: 185px;
-    margin: 10px 10px 0;
+    margin: 20px 0;
 }
 
 .storedetails_images p {
@@ -4650,7 +4721,7 @@ h4.ui-state-active {
     position: absolute;
     right: 10px;
     top: 0;
-    width: 370px;
+    width: 320px;
 }
 
 .storedetails_address {
@@ -4658,6 +4729,14 @@ h4.ui-state-active {
     left: 0;
 }
 
+.storedetails_address h4 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.storedetails_address address {
+    font-style: normal;
+}
 .storedetails_address .tel {
     margin-top: 10px;
 }
@@ -4669,6 +4748,7 @@ h4.ui-state-active {
 .storedetails_hours {
     position: inherit;
     right: 0;
+    display: none;
 }
 
 .storedetails_hours table {
@@ -4680,7 +4760,7 @@ h4.ui-state-active {
 }
 
 .Storelookup .holder {
-    background: url(../images/map_inter.jpg) no-repeat scroll 650px 133px #F7F7F7;
+    background: url(../images/store-locator-globe.png) no-repeat scroll 570px 0;
     height: 465px;
 }
 
@@ -4694,7 +4774,7 @@ h4.ui-state-active {
 }
 
 .storeItemHolder .linkstore {
-    bottom: 10px;
+    bottom: 5px;
     position: absolute;
 }
 
