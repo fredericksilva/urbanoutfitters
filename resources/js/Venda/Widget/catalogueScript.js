@@ -119,6 +119,7 @@ var offset = jQuery(".gameContents").offset(),
     }, scrollToPoint = {
         init: function () {
             var b = jQuery(".segment"),
+            	t = b.length - 1,
                 a = 0,
                 d = jQuery(".anchorLink-next"),
                 e = jQuery(".anchorLink-prev").hide(),
@@ -138,7 +139,7 @@ var offset = jQuery(".gameContents").offset(),
                     h = jQuery(window).scrollTop() - offset.top,
                     l = jQuery(b[a]).offset(),
                     j = l.top - offset.top,
-                    g = jQuery(".gameContents").outerHeight() / 4;
+                    g = jQuery(".gameContents").outerHeight() / t;
                 if (i > c) {
                     if (h >= j) {
                         b[a += 1]
