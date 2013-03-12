@@ -1971,13 +1971,20 @@ a.uo-hotspot:hover {
 
 /**** Brands Dropdown ****/
 .footerBrandsButton {
-	text-align: center;
-	padding-top: 20px;
+	width: 420px;
 	clear: both;
+	padding-top: 20px;
+	float:right;
+}
+.footerBrandsButton a {
+	display: block;
+	text-align: center;
+	padding-top: 4px;
 	font-weight: bold;
-	background: url('../images/uo-png-sprite.png') no-repeat -47px -193px;
+	background: url('../images/uo-png-sprite.png') no-repeat -63px -193px;
 	width:24px;
 	height:23px;
+	text-indent: -195px;
 }
 .activeBrands {
 	background-position: -80px -193px;
@@ -1985,11 +1992,14 @@ a.uo-hotspot:hover {
 .footerBrands {
 	opacity:0;
 	filter: alpha(opacity=0);
+	height:0;
+	clear:both;
 }
 .footerBrands ul li {
 	width: 464px;
 	margin-left: 22px;
 	padding: 20px 0;
+	display:inline-block;
 }
 .footerBrands ul li:first-child {
 	margin-left: 0;
