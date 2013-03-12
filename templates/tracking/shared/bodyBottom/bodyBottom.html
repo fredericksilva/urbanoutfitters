@@ -1,0 +1,22 @@
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	var catalogue = jQuery(".catalogue").text();
+	if(catalogue === "1") {
+		jQuery.when(
+			jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.lazyload.min.js"),
+			jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery.scrollTo-min.js"),
+			jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/catalogueScript.js"),
+			jQuery.Deferred(function( deferred ){
+				jQuery( deferred.resolve );
+			})
+		).done(function(){
+			lazyLoadImages.init();
+			superScrolling.init();
+			scrollToPoint.init();
+			jQuery(window).scroll(function () {
+				gameSticky.init();
+			});
+    	});
+	}
+});
+</script>
