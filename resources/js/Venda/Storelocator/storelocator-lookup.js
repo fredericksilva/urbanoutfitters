@@ -24,7 +24,7 @@ jQuery(document).ready(function() {
     /**
     * Declares global vars
     */
-    Venda.storeloc.limit = 4;
+    Venda.storeloc.limit = 5;
     // Conversion rate for METERS to MILES 
     Venda.storeloc.METERS_TO_MILES_CONV = 0.000621371192;
     Venda.storeloc.geocoder;
@@ -42,6 +42,7 @@ jQuery(document).ready(function() {
     Venda.storeloc.URL = new Uri(window.location);
     Venda.storeloc.URI;
     Venda.storeloc.naved = false; // This setting is used by the back buttons to work out if it is navigated or not
+    Venda.storeloc.image = [];
 
     /**
     * Sets the marker images to use the desired image e.g. Venda Logo
@@ -49,18 +50,41 @@ jQuery(document).ready(function() {
     * Venda.storeloc.shadow - image shadow
     * Venda.storeloc.shape  - image shape
     */
-    Venda.storeloc.image = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly.png',
-      new google.maps.Size(100,22),
+    Venda.storeloc.image[0] = new google.maps.MarkerImage(
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-1.png',
+      new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,22)
+      new google.maps.Point(12,36)
     );
-
+    Venda.storeloc.image[1] = new google.maps.MarkerImage(
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-2.png',
+      new google.maps.Size(23,36),
+      new google.maps.Point(0,0),
+      new google.maps.Point(12,36)
+    );
+    Venda.storeloc.image[2] = new google.maps.MarkerImage(
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-3.png',
+      new google.maps.Size(23,36),
+      new google.maps.Point(0,0),
+      new google.maps.Point(12,36)
+    );
+    Venda.storeloc.image[3] = new google.maps.MarkerImage(
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-4.png',
+      new google.maps.Size(23,36),
+      new google.maps.Point(0,0),
+      new google.maps.Point(12,36)
+    );
+    Venda.storeloc.image[4] = new google.maps.MarkerImage(
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-5.png',
+      new google.maps.Size(23,36),
+      new google.maps.Point(0,0),
+      new google.maps.Point(12,36)
+    );
     Venda.storeloc.shadow = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-shadow.png',
-      new google.maps.Size(37,22),
+      new google.maps.Size(40,29),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,22)
+      new google.maps.Point(18,29)
     );
 
     Venda.storeloc.shape = {
@@ -253,7 +277,7 @@ Venda.storeloc.addMarker = function(point, i) {
     var marker = new google.maps.Marker({
         draggable: false,
         raiseOnDrag: false,
-        icon: Venda.storeloc.image,
+        icon: Venda.storeloc.image[i],
         shadow: Venda.storeloc.shadow,
         shape: Venda.storeloc.shape,
         animation: google.maps.Animation.DROP,
@@ -455,7 +479,7 @@ Venda.storeloc.loadStore = function(storeUrl){
     jQuery.get(storeUrl + '&layout=blank', function(data) {
 
         jQuery('.mainHolder').removeClass('loadingImg');
-        jQuery('.mainHolder').append('<div class="Storeview">' + data + '<p class="button buttonAlt2">'+ jQuery('#tag-back').text() +'</p></div>');
+        jQuery('.mainHolder').append('<div class="Storeview">' + data +'</div>');
 
         jQuery('.mainHolder .Storeview').animate({ opacity: 1 }, 1000 );
 
@@ -480,7 +504,7 @@ jQuery("#address_holder #pcsubmit").live("click", function(){
 });
 
 // Select quick store navigation
-jQuery("#page_storelocator .storeLocSelect").live("change", function(){
+jQuery(".Storelookup .storeLocSelect").live("change", function(){
     Venda.storeloc.loadStore(this.value);
 });
 

@@ -4703,7 +4703,7 @@ h4.ui-state-active {
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
-#content .Storelookup .linkstore a {
+#content .Storelookup .linkstore a, #content .storeListHolder .linkstore a {
     width: 128px;
     height: 30px;
     background: url(../images/uo-png-sprite.png) no-repeat scroll -8px -477px transparent;
@@ -4713,6 +4713,9 @@ h4.ui-state-active {
     font-size: 11px;
     padding: 0 !important;
     margin: 0;
+}
+.storeListHolder .linkstore {
+    margin-top: 10px; 
 }
 #content .Storelookup .storeloc-infowindow .linkstore a {
     background: url(../images/store-locator-arrow.gif) no-repeat scroll transparent; 
@@ -4724,7 +4727,7 @@ h4.ui-state-active {
     margin-top: 15px;
 }
 .storeListItem {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
 }
 #storedetails .boxed-in {
@@ -4966,11 +4969,10 @@ h4.ui-state-active {
     margin-top: 0;
 }
 
-.storeloc-infowindow .body,.storeloc-infowindow .linkstore,.storeListItem .linkstore {
+.storeloc-infowindow .body,.storeloc-infowindow .linkstore {
     bottom: 0;
     position: absolute;
 }
-
 .storeloc-infowindow .body p {
     left: 0;
     margin: 0 0 3px 5px;
@@ -6270,7 +6272,7 @@ input#qty {
 	border-bottom: 1px solid #333;
 }
 
-#accordion .ui-icon-triangle-1-s {
+#storelocatorresults .ui-icon-triangle-1-s, #accordion .ui-icon-triangle-1-s {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px 0 transparent;
 	width: 13px;
 	height: 5px;
@@ -6279,8 +6281,7 @@ input#qty {
 	cursor: pointer;
 	margin-top: 3px;
 }
-
-#accordion .ui-icon-triangle-1-e {
+#storelocatorresults .ui-icon-triangle-1-e, #accordion .ui-icon-triangle-1-e {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px -4px transparent;
 	width: 13px;
 	height: 13px;
@@ -6288,7 +6289,12 @@ input#qty {
 	float: right;
 	cursor: pointer;
 }
-
+#storelocatorresults .ui-icon-triangle-1-s {
+  margin-top: 6px;
+}
+#storelocatorresults .ui-icon-triangle-1-e {
+  margin-top: 2px;
+}
 .productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
 
 .tab3 h4 { margin-top: 10px; }
