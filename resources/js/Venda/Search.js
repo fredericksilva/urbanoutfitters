@@ -689,60 +689,40 @@ Venda.Search.Feature.refineColours3.prototype = {
 
 Venda.Search.Feature.swatchScroller = function() {};
 Venda.Search.Feature.swatchScroller.prototype = {
-	display: function() {
-		jQuery(".prodsFiveColumns li").each(function () {
-        	var $this = jQuery(this).find(".swatchContainer"),
-			 	a = $this.find("a.sw_image"),
-			 	aImg = $this.find("a.sw_image img"),
-			 	aImgHeight = 21,
-			 	aFirst = $this.find("a.sw_image:first"),
-			 	x = $this.find(".swatchInvtref");
-			aFirst.addClass("current");
-			for (var i = 0; i < a.length; i++) {
-				jQuery(a[i]).attr("rel", [i]);
-			}			
-        	$this.find(".arrowDown").bind('click', function() {
-        		$this.find(".arrowUp").show();
-        		$this.find(".arrowUp").animate({opacity: 1}, 200);
-        		$active = $this.find(".current").next();
-        		if ($active.length === 0) {
-        			$active = aFirst;
-        		}
-        		var c = (aImgHeight + 9) * $active.attr("rel"),
-        			contH = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 8)) + "px",
-        			contN = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 9)) + "px",
-        			intTop = x.css("top");
-        		console.log(contH + " " + intTop + " " + x.height() + " " + (aImgHeight + 9) * 8);
-        		if (intTop !== contH || intTop === "auto" || intTop === "0px") {
-					a.removeClass("current");
-					$active.addClass("current");
-					x.animate({top: -c}, 200);
-					//$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))));
-				}
-				/*if (intTop === contN) {
-					$this.find(".arrowDown").animate({opacity: 0}, 200);
-					$this.find(".swatchNumber").animate({opacity: 0}, 200);
-				}*/
-			})
-			$this.find(".arrowUp").bind('click', function() {
-				$active = $this.find(".current").prev();
-				if ($active.length === 0) {
-        			$active = aFirst;
-        		}
-				var c = (aImgHeight + 9) * $active.attr("rel");
-				a.removeClass("current");
-				$active.addClass("current");
-				x.animate({top: -c}, 200);
-				/*$this.find(".arrowDown").animate({opacity: 1}, 200);
-				$this.find(".swatchNumber").animate({opacity: 1}, 200);
-				$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))))
-				if (aFirst.hasClass('current')) {
-	        		$this.find(".arrowUp").animate({opacity: 0}, 200);
-        		}*/
-			})
-		})
-	}
-};
+	display: function () {
+    	jQuery(".swatchContainer").each(function () {
+    		var t = jQuery(this),
+				f = t.find('.swatchLayer'),
+				b = t.find('.swatchImage img.swatch'),
+				a = 0,
+				d = t.find('.arrowDown'),
+				e = t.find('.arrowUp').hide();
+    		function scrollToSwatch(s) {
+    			var z = jQuery(s).width();
+	    		if (z !== 0) {
+	    			console.log(s,z)
+		    		jQuery(f).scrollTo(s, 200, {
+			    		margin: true
+			    	})
+			    }
+			}
+			d.click(function (g) {
+            	e.show();
+            	scrollToSwatch(b[a += 1]);
+            	if (a === b.length -1) {
+	            	d.hide();
+	            }
+	        });
+	        e.click(function (g) {
+            	d.show();
+            	scrollToSwatch(b[a -= 1]);
+            	if (a === 0) {
+	            	e.hide();
+	            }
+	        })
+	    })
+    }
+}
 
 Venda.Search.Feature.removeRefine = function() {};
 Venda.Search.Feature.removeRefine.prototype = {
