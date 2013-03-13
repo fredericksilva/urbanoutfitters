@@ -50,14 +50,14 @@ jQuery(document).ready(function() {
     * Venda.storeloc.shape  - image shape
     */
     Venda.storeloc.image = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/image.png',
-      new google.maps.Size(23,22),
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly.png',
+      new google.maps.Size(100,22),
       new google.maps.Point(0,0),
       new google.maps.Point(12,22)
     );
 
     Venda.storeloc.shadow = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/shadow.png',
+      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-shadow.png',
       new google.maps.Size(37,22),
       new google.maps.Point(0,0),
       new google.maps.Point(12,22)
