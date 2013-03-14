@@ -577,12 +577,6 @@ Venda.Search.Feature.swatchHide.prototype = {
     			jQuery(swatchCont).hide();
     			jQuery(swatchIcon).hide();
     		}
-		    if (n > 8) {
-    			jQuery(this).find(".arrowDown").show();
-    			jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
-    			jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
-    			//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
-    		}
     	})
     }
 };
