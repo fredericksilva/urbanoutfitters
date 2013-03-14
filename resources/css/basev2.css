@@ -4703,6 +4703,16 @@ h4.ui-state-active {
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
+#page_findastore .ui-selectmenu-menu-dropdown {
+    overflow: auto;
+    min-height: 230px;
+}
+#page_findastore .styled-v-bar {
+    right: 6px !important;
+}
+#page_findastore .alt-scroll-content {
+    width: 100% !important;
+}
 #content .Storelookup .linkstore a, #content .storeListHolder .linkstore a {
     width: 128px;
     height: 30px;

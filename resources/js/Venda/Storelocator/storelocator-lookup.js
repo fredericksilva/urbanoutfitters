@@ -162,7 +162,8 @@ Venda.storeloc.ajaxGetStores = function(stryid) {
         jQuery('.storeLocSelect').html(options).show();
         
         Venda.storeloc.restoreState();
-        jQuery(".storeLocSelect").selectmenu({ style:'dropdown', maxHeight: 2000, positionOptions: { collision: 'none' } });
+        jQuery('.storeLocSelect').selectmenu({ style:'dropdown', maxHeight: 230 });
+        jQuery('#page_findastore .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
 
     });
 }
