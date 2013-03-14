@@ -577,20 +577,13 @@ Venda.Search.Feature.swatchHide.prototype = {
     			jQuery(swatchCont).hide();
     			jQuery(swatchIcon).hide();
     		}
-    		swatch.each(function () {
-    			swatchImg.error(function () {
-	    			jQuery(this).closest('a').remove();
-	    		})
-	    	}).promise().done(function () {
-	    		z = swatchImg.length;
-		    	if (z > 8) {
-    				jQuery(this).find(".arrowDown").show();
-    				jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
-    				jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
-    				//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
-    			}
-	    	})
-    	});
+		    if (n > 8) {
+    			jQuery(this).find(".arrowDown").show();
+    			jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
+    			jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
+    			//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
+    		}
+    	})
     }
 };
 
@@ -690,30 +683,40 @@ Venda.Search.Feature.refineColours3.prototype = {
 Venda.Search.Feature.swatchScroller = function() {};
 Venda.Search.Feature.swatchScroller.prototype = {
 	display: function () {
+		jQuery(".swatchContainer").each(function () {
+			var t = jQuery(this),
+				b = t.find('.swatchImage img.swatch'),
+				d = t.find('.arrowDown');
+			b.error(function () {
+	    		jQuery(this).removeClass('swatch').closest('a').detach();
+	    	})
+	    	if ((b.length - 8) < 9) {
+		    	d.hide();
+	    	}
+	    })
+		this.swatchPaginator()
+	}, swatchPaginator: function () {
     	jQuery(".swatchContainer").each(function () {
     		var t = jQuery(this),
 				f = t.find('.swatchLayer'),
-				b = t.find('.swatchImage img.swatch'),
 				a = 0,
 				d = t.find('.arrowDown'),
 				e = t.find('.arrowUp').hide();
     		function scrollToSwatch(s) {
-    			var z = jQuery(s).width();
-	    		if (z !== 0) {
-	    			console.log(s,z)
-		    		jQuery(f).scrollTo(s, 200, {
-			    		margin: true
-			    	})
-			    }
+		    	jQuery(f).scrollTo(s, 200, {
+			    	margin: true
+			    })
 			}
 			d.click(function (g) {
+				var b = t.find('.swatchImage img.swatch');
             	e.show();
             	scrollToSwatch(b[a += 1]);
-            	if (a === b.length -1) {
+            	if (a === b.length - 8) {
 	            	d.hide();
 	            }
 	        });
 	        e.click(function (g) {
+	        	var b = t.find('.swatchImage img.swatch');
             	d.show();
             	scrollToSwatch(b[a -= 1]);
             	if (a === 0) {
