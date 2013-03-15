@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller','removeRefine');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchScroller','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','removeRefine');
 };
 
 // Utility method.
@@ -562,21 +562,11 @@ Venda.Search.Feature.swatchHide = function() {};
 Venda.Search.Feature.swatchHide.prototype = {
 	display: function() {
     	jQuery(".prodsFiveColumns li").each(function () {   
-    		var swatch = jQuery(this).find("a.sw_image"),
-    			swatchImg = jQuery(this).find("img.swatch"),
-    			n = swatchImg.length,
-    			mainImg = jQuery(this).find("a.moredetail img"),
+    		var mainImg = jQuery(this).find("a.moredetail img"),
     			mediumImgKey = jQuery(this).find(".mediumImgKey").text().replace('_m1.jpg','_l1.jpg');;
     		mainImg.error(function () {
 	    		jQuery(this).unbind("error").attr("src", mediumImgKey);
 	    	});
-	    	if (n < 2) {
-    			var swatchCont = jQuery(this).find(".swatchContainer");
-    			var swatchIcon = jQuery(this).find(".swatchIcon");
-    			jQuery(swatchCont).html("");
-    			jQuery(swatchCont).hide();
-    			jQuery(swatchIcon).hide();
-    		}
     	})
     }
 };
@@ -677,13 +667,18 @@ Venda.Search.Feature.refineColours3.prototype = {
 Venda.Search.Feature.swatchScroller = function() {};
 Venda.Search.Feature.swatchScroller.prototype = {
 	display: function () {
-		jQuery(".swatchContainer").each(function () {
-			var t = jQuery(this),
+		jQuery(".prodsFiveColumns li").each(function () {
+			var t = jQuery(this).find(".swatchContainer"),
+				c = jQuery(this).find(".swatchIcon"),
 				b = t.find('.swatchImage img.swatch'),
 				d = t.find('.arrowDown');
 			b.error(function () {
 	    		jQuery(this).removeClass('swatch').closest('a').detach();
 	    	})
+	    	if (b.length < 2) {
+		    	t.html('').hide();
+		    	c.hide();
+	    	}
 	    	if ((b.length - 8) < 9) {
 		    	d.hide();
 	    	}
