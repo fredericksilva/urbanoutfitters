@@ -51,37 +51,37 @@ jQuery(document).ready(function() {
     * Venda.storeloc.shape  - image shape
     */
     Venda.storeloc.image[0] = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-1.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-1.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
       new google.maps.Point(6,36)
     );
     Venda.storeloc.image[1] = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-2.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-2.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
       new google.maps.Point(6,36)
     );
     Venda.storeloc.image[2] = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-3.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-3.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
       new google.maps.Point(6,36)
     );
     Venda.storeloc.image[3] = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-4.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-4.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
       new google.maps.Point(6,36)
     );
     Venda.storeloc.image[4] = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-5.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-5.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
       new google.maps.Point(6,36)
     );
     Venda.storeloc.shadow = new google.maps.MarkerImage(
-      '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-shadow.png',
+      Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-shadow.png',
       new google.maps.Size(40,29),
       new google.maps.Point(0,0),
       new google.maps.Point(0,29)
@@ -149,7 +149,7 @@ jQuery(document).ready(function() {
 **/
 Venda.storeloc.ajaxGetStores = function(stryid) {
 
-    jQuery.get( jQuery('#tag-ebizurl').text().replace('http:',window.location.protocol) + "/scat/" + stryid + "&temp=storesjson&layout=blank", function(dataString) {
+    jQuery.get( Venda.Widget.RegionLangSwitch.ebizURL.replace('http:',window.location.protocol) + "/scat/" + stryid + "&temp=storesjson&layout=blank", function(dataString) {
         Venda.storeloc.stores = jQuery.parseJSON('[' + dataString + ']');
 
         var options = '<option value="">' + jQuery('#tag-selectastore').text() + '</option>';

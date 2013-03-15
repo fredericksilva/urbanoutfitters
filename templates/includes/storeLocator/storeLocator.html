@@ -17,7 +17,10 @@
 <!-- Store locator script -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Storelocator/storelocator-lookup.js"></script>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/external/facescroll.js"></script>
-<!-- jQuery template -->	
+<!-- jQuery template -->
+
+
+<!-- mp_trans_remove_start-->
 <script id="store-tmpl" type="text/x-jquery-tmpl">
 
 	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
@@ -108,6 +111,195 @@
 	</div>
 
 </script>
+
+<!-- mp_trans_remove_end-->
+<!-- mp_trans_disable_start-->
+<!-- mp_trans_add="FR" 
+<script id="store-tmpl" type="text/x-jquery-tmpl">
+	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
+		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
+	</h3>
+		
+	<div id="storecontent" class="storecontent">
+		<div class="storeItemHolder">
+			<div class="storedetails_images">
+				{{if Thumb}}
+					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
+				{{else}}
+					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
+				{{/if}}
+
+				<p>${Des3}</p>
+			</div>
+			<div class="storedetails_info">
+				<div class="storedetails_address">
+					<h4>Address</h4>
+					<address>
+					{{if AddressName}}
+						${AddressName}<br/>
+					{{/if}}
+					{{if Address}}
+						${Address}<br/>
+					{{/if}}
+					{{if Address2}}
+						${Address2}<br/>
+					{{/if}}
+					{{if City}}
+						${City}<br/>
+					{{/if}}
+					{{if PostCode}}
+						${PostCode}<br/>
+					{{/if}}
+					</address>
+						{{if Phone}}
+						<div class="tel">
+							<h4>Telephone</h4>
+							<p>${Phone}</p>
+						</div>
+						{{/if}}
+				</div>
+				<div class="storedetails_hours">
+					<h4>Opening times</h4>
+					<table cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td class="day">Mon</td>
+							<td class="time">${Mon}</td>
+						</tr>
+						<tr>
+							<td class="day">Tue</td>
+							<td class="time">${Tue}</td>
+						</tr>
+						<tr>
+							<td class="day">Wed</td>
+							<td class="time">${Wed}</td>
+						</tr>
+						<tr>
+							<td class="day">Thu</td>
+							<td class="time">${Thu}</td>
+						</tr>
+						<tr>
+							<td class="day">Fri</td>
+							<td class="time">${Fri}</td>
+						</tr>
+						<tr>
+							<td class="day">Sat</td>
+							<td class="time">${Sat}</td>
+						</tr>
+						<tr>
+							<td class="day">Sun</td>
+							<td class="time">${Sun}</td>
+						</tr>							
+					</table>
+				
+				</div>
+			</div>
+
+			<venda_block label=2,param2!=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
+			</venda_block label=2>
+			<venda_block label=3,param2=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
+			</venda_block label=3>
+		</div>
+	</div>
+
+</script>
+
+-->
+<!-- mp_trans_add="DE" 	
+<script id="store-tmpl" type="text/x-jquery-tmpl">
+
+	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
+		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
+	</h3>
+		
+	<div id="storecontent" class="storecontent">
+		<div class="storeItemHolder">
+			<div class="storedetails_images">
+				{{if Thumb}}
+					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
+				{{else}}
+					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
+				{{/if}}
+
+				<p>${Des3}</p>
+			</div>
+			<div class="storedetails_info">
+				<div class="storedetails_address">
+					<h4>Address</h4>
+					<address>
+					{{if AddressName}}
+						${AddressName}<br/>
+					{{/if}}
+					{{if Address}}
+						${Address}<br/>
+					{{/if}}
+					{{if Address2}}
+						${Address2}<br/>
+					{{/if}}
+					{{if City}}
+						${City}<br/>
+					{{/if}}
+					{{if PostCode}}
+						${PostCode}<br/>
+					{{/if}}
+					</address>
+						{{if Phone}}
+						<div class="tel">
+							<h4>Telephone</h4>
+							<p>${Phone}</p>
+						</div>
+						{{/if}}
+				</div>
+				<div class="storedetails_hours">
+					<h4>Opening times</h4>
+					<table cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td class="day">Mon</td>
+							<td class="time">${Mon}</td>
+						</tr>
+						<tr>
+							<td class="day">Tue</td>
+							<td class="time">${Tue}</td>
+						</tr>
+						<tr>
+							<td class="day">Wed</td>
+							<td class="time">${Wed}</td>
+						</tr>
+						<tr>
+							<td class="day">Thu</td>
+							<td class="time">${Thu}</td>
+						</tr>
+						<tr>
+							<td class="day">Fri</td>
+							<td class="time">${Fri}</td>
+						</tr>
+						<tr>
+							<td class="day">Sat</td>
+							<td class="time">${Sat}</td>
+						</tr>
+						<tr>
+							<td class="day">Sun</td>
+							<td class="time">${Sun}</td>
+						</tr>							
+					</table>
+				
+				</div>
+			</div>
+
+			<venda_block label=2,param2!=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
+			</venda_block label=2>
+			<venda_block label=3,param2=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
+			</venda_block label=3>
+		</div>
+	</div>
+
+</script>
+
+-->
+<!-- mp_trans_disable_end-->	
 
 <div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
 <div id="tag-selectastore" style="display:none;">Select a store</div>
