@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchScroller','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','removeRefine');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatches','swatchHide','uiSelectmenu','removePrice','icxtHideRefine','removeRefine');
 };
 
 // Utility method.
@@ -493,6 +493,110 @@ Venda.Search.Feature.perLine.prototype = {
 	}
 };
 
+Venda.Search.Feature.swatches = function() {};
+Venda.Search.Feature.swatches.prototype = {
+	display: function () {
+		this.swatchBuilding();
+		this.swatchPaginator();
+		this.colourRefine();
+	}, swatchBuilding: function() {
+		jQuery(".prodsFiveColumns li").each(function () {
+			var t = jQuery(this).find(".swatchContainer"),
+				c = jQuery(this).find(".swatchIcon"),
+				u = jQuery(this).find(".imageUrl").text(),
+				b = t.find('.swatchImage img.swatch'),
+				d = t.find('.arrowDown');
+	    	if (b.length < 2) {
+		    	t.empty().hide();
+		    	c.hide();
+	    	}
+	    	if (b.length > 1) {
+		    	b.attr("src", function() {
+	    			return u+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
+	    		}).error(function () {
+	    			jQuery(this).removeClass('swatch').closest('a').detach();
+	    		})
+	    	}
+	    	if ((b.length - 8) < 9) {
+		    	d.hide();
+	    	}
+	    })
+	}, swatchPaginator: function () {
+    	jQuery(".swatchContainer").each(function () {
+    		var t = jQuery(this),
+				f = t.find('.swatchLayer'),
+				a = 0,
+				d = t.find('.arrowDown'),
+				e = t.find('.arrowUp').hide();
+    		function scrollToSwatch(s) {
+		    	jQuery(f).scrollTo(s, 200, {
+			    	margin: true
+			    })
+			}
+			d.click(function (g) {
+				var b = t.find('.swatchImage img.swatch');
+            	e.show();
+            	scrollToSwatch(b[a += 1]);
+            	if (a === b.length - 8) {
+	            	d.hide();
+	            }
+	        });
+	        e.click(function (g) {
+	        	var b = t.find('.swatchImage img.swatch');
+            	d.show();
+            	scrollToSwatch(b[a -= 1]);
+            	if (a === 0) {
+	            	e.hide();
+	            }
+	        })
+	    })
+    }, colourRefine: function () {
+    	var a = jQuery(".colourFacet ul > li"),
+        	c = jQuery(".colourFacet ul > li:last").text(),
+        	b = [];
+        a.each(function () {
+        	b.push(jQuery(this).text())
+        });
+        b.reverse();
+        jQuery(".prodsFiveColumns li").each(function () {
+        	var l = jQuery(this).find(".swatchContainer"),
+            	o = l.find("a"),
+            	n = jQuery(this).find(".att3value").text().split(","),
+            	h = jQuery(this).find(".productSku").text(),
+            	d = [];
+            jQuery.each(n, function (j, i) {
+            	if (jQuery.inArray(i, d) === -1) {
+                	d.push(i)
+                }
+            });
+            d = jQuery.map(d, jQuery.trim);
+            var g, f, m = [];
+            assignSwatch = function () {
+            	var i = [];
+            	l.find("a").each(function () {
+                	i.push(jQuery(this).data("color"))
+                });
+                for (f = 0; f < m.length; f++) {
+                	if (i.indexOf(m[f]) >= 0) {
+                    	l.find("a." + m[f]).click();
+                    	l.find("a." + m[f]).prependTo("#swatch" + h);
+                    	return false
+                    }
+                }
+            };
+            for (var e = 0; e < b.length; e++) {
+            	for (g = 0; g < d.length; g++) {
+                	attribute3val = jQuery.trim(d[g].split("=")[0]);
+                	if (b.indexOf(attribute3val) === e) {
+                    	m.push(jQuery.trim(escape(d[g].split("=")[1])))
+                    }
+                }
+            }
+            assignSwatch();
+        })
+    }
+}
+
 Venda.Search.Feature.searchAccordion = function() {};
 Venda.Search.Feature.searchAccordion.prototype = {
     display: function() {
@@ -571,18 +675,6 @@ Venda.Search.Feature.swatchHide.prototype = {
     }
 };
 
-Venda.Search.Feature.swatchCase = function() {};
-Venda.Search.Feature.swatchCase.prototype = {
-	display: function() {
-		jQuery(".prodsFiveColumns li").each(function () {  
-    		var imageUrl = jQuery(this).find(".imageUrl").text(); 
-    		jQuery(this).find(".sw_image img.swatch").attr("src", function() {
-	    		return imageUrl+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
-	    	});
-	    })
-	}
-};
-
 Venda.Search.Feature.uiSelectmenu = function() {};
 Venda.Search.Feature.uiSelectmenu.prototype = {
 	display: function() {
@@ -618,103 +710,6 @@ Venda.Search.Feature.icxtHideRefine.prototype= {
 		}
 	}
 };
-
-Venda.Search.Feature.refineColours3 = function() {};
-Venda.Search.Feature.refineColours3.prototype = {
-	display: function() {
-		var colourul = jQuery('.colourFacet ul > li'),
-			colourFacetLast = jQuery('.colourFacet ul > li:last').text(),
-			colourFacets = [];
-		colourul.each(function() { colourFacets.push(jQuery(this).text()) });
-		colourFacets.reverse();
-		jQuery(".prodsFiveColumns li").each( function() {
-			var $this = jQuery(this).find(".swatchContainer"),
-				a = $this.find("a"),
-				uniqueNames = jQuery(this).find(".att3value").text().split(","),
-				sku = jQuery(this).find('.productSku').text(),
-				att3Split = [];
-			jQuery.each(uniqueNames, function(d, el){
-				if(jQuery.inArray(el, att3Split) === -1) att3Split.push(el);
-			})
-			att3Split = jQuery.map(att3Split, jQuery.trim);
-			var i,
-				j,
-				attribute1val = [];
-			assignSwatch = function() {
-				var sCol = [];
-				$this.find("a").each(function() { sCol.push(jQuery(this).data("color")); });
-				for (j = 0; j < attribute1val.length; j++) {
-					if (sCol.indexOf(attribute1val[j]) >=0) {
-						$this.find("a."+attribute1val[j]).click();
-						$this.find("a."+attribute1val[j]).prependTo("#swatch"+sku);
-						return false;
-					}
-				}
-			}
-			for(var k = 0; k < colourFacets.length; k ++) {
-				for(i = 0; i < att3Split.length; i++) {
-					attribute3val = jQuery.trim(att3Split[i].split('=')[0]);
-					if (colourFacets.indexOf(attribute3val) === k) {
-						attribute1val.push(jQuery.trim(escape(att3Split[i].split('=')[1])));
-					}
-				}
-			}
-			assignSwatch();
-		})
-	}
-};
-
-Venda.Search.Feature.swatchScroller = function() {};
-Venda.Search.Feature.swatchScroller.prototype = {
-	display: function () {
-		jQuery(".prodsFiveColumns li").each(function () {
-			var t = jQuery(this).find(".swatchContainer"),
-				c = jQuery(this).find(".swatchIcon"),
-				b = t.find('.swatchImage img.swatch'),
-				d = t.find('.arrowDown');
-			b.error(function () {
-	    		jQuery(this).removeClass('swatch').closest('a').detach();
-	    	})
-	    	if (b.length < 2) {
-		    	t.html('').hide();
-		    	c.hide();
-	    	}
-	    	if ((b.length - 8) < 9) {
-		    	d.hide();
-	    	}
-	    })
-		this.swatchPaginator()
-	}, swatchPaginator: function () {
-    	jQuery(".swatchContainer").each(function () {
-    		var t = jQuery(this),
-				f = t.find('.swatchLayer'),
-				a = 0,
-				d = t.find('.arrowDown'),
-				e = t.find('.arrowUp').hide();
-    		function scrollToSwatch(s) {
-		    	jQuery(f).scrollTo(s, 200, {
-			    	margin: true
-			    })
-			}
-			d.click(function (g) {
-				var b = t.find('.swatchImage img.swatch');
-            	e.show();
-            	scrollToSwatch(b[a += 1]);
-            	if (a === b.length - 8) {
-	            	d.hide();
-	            }
-	        });
-	        e.click(function (g) {
-	        	var b = t.find('.swatchImage img.swatch');
-            	d.show();
-            	scrollToSwatch(b[a -= 1]);
-            	if (a === 0) {
-	            	e.hide();
-	            }
-	        })
-	    })
-    }
-}
 
 Venda.Search.Feature.removeRefine = function() {};
 Venda.Search.Feature.removeRefine.prototype = {
