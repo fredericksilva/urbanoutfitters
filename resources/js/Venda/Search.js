@@ -390,10 +390,8 @@ Venda.Search.Feature.colorSwatch.prototype = {
 };
 
 /**
-* The following scripts have been added to perform the following functionality on the 
-* productlist and categorylist templates.
-* Search perLine '3 or 5 products', Accordion toggle on Refine List, Clear button on
-* each collate results, Hide swatchContainer if there are less than 2 swatches and jQuery UI dropdown styling
+* Search perLine '3 or 5 products'
+* can be pre selected in the VCP or selected using paginator buttons
 * @author Jotis Moore <jmoore@urbanoutfitters.com>
 **/
 Venda.Search.Feature.perLine = function() {
@@ -493,6 +491,16 @@ Venda.Search.Feature.perLine.prototype = {
 	}
 };
 
+/**
+* Swatch functionality 
+* Swatch building creates the url link for the swatch image
+* Plus removes swatches depending on amount
+* Plus display swatch paginator if more than 8 swatches
+* Swatch Paginator functionality
+* Colour refine determines the att1 value of a swatch
+* based on the att3 selection then selects it
+* @author Jotis Moore <jmoore@urbanoutfitters.com>
+**/
 Venda.Search.Feature.swatches = function() {};
 Venda.Search.Feature.swatches.prototype = {
 	display: function () {
@@ -578,8 +586,7 @@ Venda.Search.Feature.swatches.prototype = {
                 });
                 for (f = 0; f < m.length; f++) {
                 	if (i.indexOf(m[f]) >= 0) {
-                    	l.find("a." + m[f]).click();
-                    	l.find("a." + m[f]).prependTo("#swatch" + h);
+                    	l.find("a." + m[f]).click().prependTo("#swatch" + h);
                     	return false
                     }
                 }
