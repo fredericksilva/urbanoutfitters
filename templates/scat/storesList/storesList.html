@@ -1,27 +1,31 @@
 <venda_detblock>
-	<div class="grid_8 store storeListItem alpha omega">
-		<h3 class="stroryname"><a href="<venda_dispview stry=<venda_stryref1>>"><venda_stryname1></a></h3>
-		<ul>
-			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">	
-				<venda_block label=20,stxtadd11=notnull><li><span itemprop="streetAddress"><venda_stxtadd11></li></venda_block label=20>
-				<venda_block label=21,stxtadd21=notnull><li><span itemprop="addressLocality"><venda_stxtadd21></li></venda_block label=21>
-				<venda_block label=22,stxtadd31=notnull><li><span itemprop="addressRegion"><venda_stxtadd31></li></venda_block label=22>
-				<venda_block label=23,stxtadd41=notnull><li><span itemprop="postalCode"><venda_stxtadd41></li></venda_block label=23>
-				<venda_block label=24,stxtadd51=notnull><li><venda_stxtadd51></li></venda_block label=24>
-			</span>
-			<venda_block label=25,stxtphone1=notnull><li><br><h4>Phone number</h4><span itemprop="telephone"><venda_stxtphone1></span></li></venda_block label=25>
-			
-		</ul>
-		
-		<div class="linkstore"><a class="button buttonAlt buttonArrow" href="<venda_dispview stry=<venda_stryref1>>">Store details</a></div>
+	<div class="storeListItem">
+	  <div class="alpha omega">
+		  <h3 class="stroryname"><venda_stryname1></h3>
+		</div>
+		<div class="storelistdets">
+		  <div class="storethumb">
+		    <venda_media rec=stry,type=pict,key=thumb>
+		  </div>
+		  <div class="storedets">
+		    <h4>Address</h4>
+    		<ul>
+    			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">	
+    				<venda_block label=20,stxtadd11=notnull><li><span itemprop="streetAddress"><venda_stxtadd11></li></venda_block label=20>
+    				<venda_block label=21,stxtadd21=notnull><li><span itemprop="addressLocality"><venda_stxtadd21></li></venda_block label=21>
+    				<venda_block label=22,stxtadd31=notnull><li><span itemprop="addressRegion"><venda_stxtadd31></li></venda_block label=22>
+    				<venda_block label=23,stxtadd41=notnull><li><span itemprop="postalCode"><venda_stxtadd41></li></venda_block label=23>
+    				<venda_block label=24,stxtadd51=notnull><li><venda_stxtadd51></li></venda_block label=24>
+    			</span>
+    			<venda_block label=25,stxtphone1=notnull><li><h4 class="phone-num">Phone number</h4><span itemprop="telephone"><venda_stxtphone1></span></li></venda_block label=25>
+    		</ul>
+  		</div>
+  		<div class="linkstore"><a class="button buttonAlt buttonArrow" href="<venda_dispview stry=<venda_stryref1>>">Store details</a></div>
+		</div>
 	</div>
 </venda_detblock>
 
-<div class="box mainAlt">
-	<h1 class="header">Stores</h1>
-	<div class="boxContent">
-		<div class="storeListHolder" class="grid_24 allukStores">
-			<venda_detail>
-		</div>
-	</div>
+
+<div class="storeListHolder allStores">
+	<venda_detail>
 </div>

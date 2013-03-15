@@ -54,37 +54,37 @@ jQuery(document).ready(function() {
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-1.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,36)
+      new google.maps.Point(6,36)
     );
     Venda.storeloc.image[1] = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-2.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,36)
+      new google.maps.Point(6,36)
     );
     Venda.storeloc.image[2] = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-3.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,36)
+      new google.maps.Point(6,36)
     );
     Venda.storeloc.image[3] = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-4.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,36)
+      new google.maps.Point(6,36)
     );
     Venda.storeloc.image[4] = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-lolly-5.png',
       new google.maps.Size(23,36),
       new google.maps.Point(0,0),
-      new google.maps.Point(12,36)
+      new google.maps.Point(6,36)
     );
     Venda.storeloc.shadow = new google.maps.MarkerImage(
       '/content/ebiz/urbanoutfitters/resources/images/marker-images/store-locator-shadow.png',
       new google.maps.Size(40,29),
       new google.maps.Point(0,0),
-      new google.maps.Point(18,29)
+      new google.maps.Point(0,29)
     );
 
     Venda.storeloc.shape = {
@@ -435,7 +435,7 @@ Venda.storeloc.fillForm = function(that){
             jQuery('input[name="addr1"]').val(Venda.storeloc.stores[i].Address).parent().find('span').html(Venda.storeloc.stores[i].Address);
             jQuery('input[name="addr2"]').val(Venda.storeloc.stores[i].Address2).parent().find('span').html(Venda.storeloc.stores[i].Address2);
             jQuery('input[name="city"]').val(Venda.storeloc.stores[i].City).parent().find('span').html(Venda.storeloc.stores[i].City);
-		    jQuery('input[name="cntry"]').val(Venda.storeloc.stores[i].Country).parent().find('span').html(Venda.storeloc.stores[i].Country);
+            jQuery('input[name="cntry"]').val(Venda.storeloc.stores[i].Country).parent().find('span').html(Venda.storeloc.stores[i].Country);
             jQuery('input[name="zipc"]').val(Venda.storeloc.stores[i].PostCode).parent().find('span').html(Venda.storeloc.stores[i].PostCode);
             jQuery('input[name="state"]').val(Venda.storeloc.stores[i].State).parent().find('span').html(Venda.storeloc.stores[i].State);
             // This sets 2 hidden inputs that are used in conditions on the order summary screen

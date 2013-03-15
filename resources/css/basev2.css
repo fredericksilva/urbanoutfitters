@@ -4939,6 +4939,86 @@ h4.ui-state-active {
 #details-shown .storedetails_info {
     right: 0;
 }
+.storeListHolder .regionname {
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 6px 0;
+    font-size: 16px;
+    margin-top: -1px;
+}
+.storeListHolder .usastores .regionname {
+    border-bottom: 2px solid #333;
+}
+.storeListHolder .statename {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 6px 0;
+    font-size: 14px;  
+}
+.storeListHolder .storethumb {
+    background: rgba(0,204,255,1);
+    width: 125px;
+    height: 125px;
+    padding: 0;
+    display: inline-block;
+}
+.storeListHolder .storedets {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+}
+.storeListHolder h4 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.storeListHolder h3.stroryname {
+    color: #666;
+    margin-top: 10px;
+}
+.storeListHolder .storeListItem {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 470px;
+    display: inline-block;
+}
+.storeListHolder h4.phone-num {
+    margin-top: 5px;
+}
+.storeListHolder .storeListItem {
+  position: relative;
+}
+.storeListHolder .linkstore {
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
+}
+.storeListHolder .storelistdets {
+  position: relative;
+  margin: 10px 0 0;
+}
+.storeListHolder .header {
+  margin-bottom: 15px;
+}
+.storeListHolder .usastores .regionname {
+  margin-bottom: -1px;
+}
+.storeListHolder .allStores {
+  margin: 10px 0 25px;
+}
+.storeListHolder .ui-state-active a {
+  color: #333;
+}
+.storeListHolder .header-block {
+  background: rgba(0,204,255,1);
+  margin-bottom: 20px;
+}
+.storeListHolder .header-copy {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px 25px;
+  background: #fff;
+}
 /****** Google maps styles - infowindow *****/
 .storeloc-logo {
     background: url(../images/store-locator-sm-icon.jpg) no-repeat scroll left top transparent;
@@ -6282,7 +6362,7 @@ input#qty {
 	border-bottom: 1px solid #333;
 }
 
-#storelocatorresults .ui-icon-triangle-1-s, #accordion .ui-icon-triangle-1-s {
+.storeListHolder .ui-icon-triangle-1-s, #storelocatorresults .ui-icon-triangle-1-s, #accordion .ui-icon-triangle-1-s {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px 0 transparent;
 	width: 13px;
 	height: 5px;
@@ -6291,7 +6371,7 @@ input#qty {
 	cursor: pointer;
 	margin-top: 3px;
 }
-#storelocatorresults .ui-icon-triangle-1-e, #accordion .ui-icon-triangle-1-e {
+.storeListHolder .ui-icon-triangle-1-e, #storelocatorresults .ui-icon-triangle-1-e, #accordion .ui-icon-triangle-1-e {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px -4px transparent;
 	width: 13px;
 	height: 13px;
@@ -6299,10 +6379,10 @@ input#qty {
 	float: right;
 	cursor: pointer;
 }
-#storelocatorresults .ui-icon-triangle-1-s {
+.storeListHolder .ui-icon-triangle-1-s, #storelocatorresults .ui-icon-triangle-1-s {
   margin-top: 6px;
 }
-#storelocatorresults .ui-icon-triangle-1-e {
+.storeListHolder .ui-icon-triangle-1-e, #storelocatorresults .ui-icon-triangle-1-e {
   margin-top: 2px;
 }
 .productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
