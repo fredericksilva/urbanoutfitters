@@ -1979,20 +1979,26 @@ a.uo-hotspot:hover {
 .footerBrandsButton a {
 	display: block;
 	text-align: center;
-	padding-top: 4px;
 	font-weight: bold;
 	background: url('../images/uo-png-sprite.png') no-repeat -63px -193px;
 	width:24px;
-	height:23px;
+	height:19px;
 	text-indent: -195px;
+	padding-top: 4px;
+}
+.footerBrandsButton a:hover {
+	background-position: -61px -191px;
+}
+.footerBrandsButton a.brandsActive {
+	background-position: -93px -193px;
+}
+.footerBrandsButton a.brandsActive:hover {
+	background-position: -91px -191px;
 }
 .activeBrands {
 	background-position: -80px -193px;
 }
 .footerBrands {
-	opacity:0;
-	filter: alpha(opacity=0);
-	height:0;
 	clear:both;
 }
 .footerBrands ul li {
@@ -2000,6 +2006,7 @@ a.uo-hotspot:hover {
 	margin-left: 22px;
 	padding: 20px 0;
 	display:inline-block;
+	vertical-align: top;
 }
 .footerBrands ul li:first-child {
 	margin-left: 0;
