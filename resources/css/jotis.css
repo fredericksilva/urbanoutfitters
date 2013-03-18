@@ -608,10 +608,7 @@ body.search_body .ui-selectmenu-menu li:hover {
 	background: url("../images/uo-png-sprite.png") no-repeat;
 	background-position: -80px -293px;
 	cursor:pointer;
-	opacity:0;
-	filter: alpha(opacity=0);
 	margin:12px 0 0 3px;
-	display:none;
 }
 
 .swatchContainer .arrowUp:hover, .swatchContainer .arrowDown:hover {
@@ -625,9 +622,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 	background: url("../images/uo-png-sprite.png") no-repeat;
 	background-position: -103px -293px;
 	cursor:pointer;
-	opacity:0;
-	filter: alpha(opacity=0);
-	display: none;
 	margin:7px 0 0 3px;
 }
 
