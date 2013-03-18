@@ -2683,16 +2683,3 @@ input#tandc {background: none;}
     }
 
 }
-
-/***** Billing address class details *****/
-
-.smsMessage {
-	width: 665px !important;
-	overflow: hidden;
-	padding: 5px 0 5px 5px;
-	margin: 10px 0;
-	background-color: #FFFEA4;
-	font-size: 11px;
-	font-style: italic;
-	letter-spacing: 0.1px;
-}
