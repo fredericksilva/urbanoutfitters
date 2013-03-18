@@ -2199,3 +2199,18 @@ a.facebookIt {
 a.facebookIt:hover {
 	background-position: -0px -720px;
 }
+
+/*** Bummer page ***/
+.bummerError {
+	font-size: 196px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 180px;
+	margin: 5px 0 5px -13px !important;
+	letter-spacing: -10px;
+	color: black;
+}
+.error404 {
+	font-size: 16px;
+	font-weight: bold;
+}
