@@ -38,13 +38,7 @@
 <!-- IS INVENTORY RECORD -->
 <venda_block label=invtdata,rtype=invt>
     <link rel="canonical" href="<venda_dispview invt=<venda_invtref>>" />
-    <!-- mp_trans_remove_start-->
     <meta name="Description" content="Shop <venda_invtname> from urbanoutfitters.co.uk">
-    <!-- mp_trans_remove_end-->
-    <!-- mp_trans_disable_start-->
-		<!-- mp_trans_add="FR" <meta name="Description" content="Shop <venda_invtname> from urbanoutfitters.fr"> -->
-		<!-- mp_trans_add="DE" <meta name="Description" content="Shop <venda_invtname> from urbanoutfitters.de"> -->
-	<!-- mp_trans_disable_end-->
 	<!-- mp_trans_remove_start-->
     <meta property="fb:app_id" content="446238198771503" />
     <meta property="og:url" content="<venda_dispview invt=<venda_invtref>>" />
@@ -57,10 +51,10 @@
 							   <meta property="og:url" content="http://www.urbanoutfitters.de/invt/<venda_invtref>" />
 		-->
 	<!-- mp_trans_disable_end-->
-    <meta property="og:title" content="<venda_invtname>" />
+    <meta property="og:title" content="<venda_invtname> <venda_text id=site.title.at> <venda_setting type=ebiz,name=name>" />
     <meta property="og:type" content="product" />
     <meta property="og:image" content="<venda_media rec=invt,type=pict,key=small,img=no>" />
-    <meta property="og:description" content="<venda_invtname> from Urban Outfitters" />
+    <meta property="og:description" content="Shop <venda_invtname> from urbanoutfitters.co.uk" />
     <meta property="og:site_name" content="<venda_setting type=ebiz,name=name>" />
 </venda_block label=invtdata>
 <venda_block label=pageog,rtype=page>
