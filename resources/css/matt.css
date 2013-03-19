@@ -667,7 +667,9 @@
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
-
+.liwrapper .productlistinfo .saleprice .price {
+  color: red;
+}
 
 .mm_ul {
   margin-top: 25px;
