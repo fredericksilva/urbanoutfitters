@@ -16,14 +16,11 @@
 */
 
 var StartPennies = function() {
-		// gets the latest rates and checks for a cookie
-		var currMessage = "Woah! Hold on a sec, " + jQuery('.price').pennies('get') + " prices should be used as a guide only and include VAT. You will still be charged in " + jQuery('#tag-currencycode').html() + ".";
+		var xmlloc = jQuery('#tag-xml').html();
+		jQuery('#tag-xml').html(Venda.Widget.RegionLangSwitch.ebizURL + xmlloc);
 		jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig')
 			.pennies('check',jQuery('#tag-xml')
 			.pennies('rates'));
-		if (jQuery('.price').pennies('get') !== "GBP" && jQuery('.price').pennies('get') !== "EUR") {
-  		jQuery('.wrapper').before("<div class='currency-status'>" + currMessage + "</div>");
-		}
 		
 	// Events
 
@@ -31,7 +28,6 @@ var StartPennies = function() {
 		jQuery('.loadcurrency').live('click',function () { 
 			jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery(this).attr('rel')});
 			Venda.Widget.RegionLangSwitch.conversionSwitch();
-			jQuery('.currency-status').length !== 0 ? jQuery('.currency-status').html(currMessage) : jQuery('.wrapper').before("<div class='currency-status'>" + currMessage + "</div>");
 			return false;
 		});
 		
@@ -162,12 +158,11 @@ var StartPennies = function() {
 					rates 	: function(url) {
 
 						var rate = { 'EUR' : 1 }; // Adding object with predefined EURO rate
-
 						jQuery.ajax({
 						   url: $(this).html(),
 						   dataType: "xml",
 						   success: function(o){
-
+  						   
 								jQuery(o).find('Cube').each(function(index, value){
 									var currencyXMLnode = jQuery(this).attr('currency');
 									var rateXMLnode = jQuery(this).attr('rate');
