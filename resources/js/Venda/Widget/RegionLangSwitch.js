@@ -14,6 +14,7 @@ Venda.Widget.RegionLangSwitch.ebizURL = "";
 Venda.Widget.RegionLangSwitch.isSearch = "";
   
 jQuery(function(){
+  jQuery(".switcher-content").hide().css({"opacity":"1","filter": "alpha(opacity=100)"});
   if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters5.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda") {
     currLang = {
   	"http://urbanoutfitters5.uat.venda.com" : "uk",
