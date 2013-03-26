@@ -1,0 +1,53 @@
+{"closeup": {
+    "title" : "Close Up Lookbook",
+    "products": {
+    	"1": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139467390003/5139467390003_Blue_ca1.jpg",
+            "sku": "5139467390003"
+        },
+        "2": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139409331555/5139409331555_Assort_ca1.jpg",
+            "sku": "5139409331555"
+        },
+        "3": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139400021008/5139400021008_Purple_ca1.jpg",
+            "sku": "5139400021008"
+        },
+        "4": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130438572214/5130438572214_Black_ca1.jpg",
+            "sku": "5130438572214"
+        },
+        "5": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130423192143/5130423192143_Black_ca1.jpg",
+            "sku": "5130423192143"
+        },
+        "6": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130461378811/5130461378811_Grey_ca1.jpg",
+            "sku": "5130461378811"
+        },
+        "7": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139467390003/5139467390003_Blue_ca1.jpg",
+            "sku": "5139467390003"
+        },
+        "8": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139409331555/5139409331555_Assort_ca1.jpg",
+            "sku": "5139409331555"
+        },
+        "9": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139400021008/5139400021008_Purple_ca1.jpg",
+            "sku": "5139400021008"
+        },
+        "10": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130438572214/5130438572214_Black_ca1.jpg",
+            "sku": "5130438572214"
+        },
+        "11": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130423192143/5130423192143_Black_ca1.jpg",
+            "sku": "5130423192143"
+        },
+        "12": {
+            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130461378811/5130461378811_Grey_ca1.jpg",
+            "sku": "5130461378811"
+        }
+    }
+}}
