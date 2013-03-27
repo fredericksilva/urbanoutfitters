@@ -522,7 +522,7 @@ Venda.Search.Feature.swatches.prototype = {
 		    	b.attr("src", function() {
 	    			return u+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
 	    		}).error(function () {
-	    			jQuery(this).removeClass('swatch').closest('a').detach();
+	    			jQuery(this).parents('a.sw_image').remove();
 	    		})
 	    	}
 	    	if ((b.length - 8) < 9) {
