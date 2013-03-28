@@ -21,9 +21,10 @@ var StartPennies = function() {
 		jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig')
 			.pennies('check',jQuery('#tag-xml')
 			.pennies('rates'));
-		
 	// Events
-
+	  jQuery('.price-info').live('click',function () {
+  	  jQuery('.price-expanded').slideToggle();
+	  });
 		// This sets the currency using the switcher widget
 		jQuery('.loadcurrency').live('click',function () { 
 			jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery(this).attr('rel')});
@@ -97,6 +98,7 @@ var StartPennies = function() {
 						$('.currently').html(o.to);
 
 						if (o.from !== o.to){
+						  $('.oneProduct .price-info').show();
 							return this.each(function() {
 
 								var $this = $(this);

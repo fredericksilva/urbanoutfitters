@@ -1983,6 +1983,16 @@ fieldset {
     margin: 14px 0 12px;
 }
 
+.oneProduct .price-info {
+    font-weight: bold;
+    margin: -10px 0 0;
+    cursor: pointer;
+    display: none;
+}
+.oneProduct .price-expanded {
+    display: none;
+    overflow: hidden;
+}
 .oneProduct .priceField .priceNow {
     font-weight: bold;
     font-size: 21px;
@@ -5658,6 +5668,7 @@ ul#rvisitewidelist li a:hover div {
 /* Header */
 #logo {
     margin: 30px 0 0 0;
+    position: absolute;
 }
 .mainHeader p.location-text {
     margin: 8px 0;
