@@ -16,9 +16,6 @@ function querySt(ji) {
 }}}
 	
 var vbmreccheck = querySt("vbmrec") || "<venda_htxt mode=get,name=vbm>";
-if(vbmreccheck){	
-	document.form.vbmrec.value=vbmreccheck; 
-}
 jQuery(function() {
 	Venda.Widget.VBM.populateProductRecs("vbmpd","<venda_addedmsg msg=addedref>",vbmreccheck);
 });
@@ -29,7 +26,7 @@ jQuery('#addtobasket,.buy,.preorder').click(function() {
 function trackToVBM() {
 var vbmLinks = (jQuery("#availUL a"));
 for (var i=0; i<vbmLinks.length; i++) {
-		vbmLinks[i].href = (vbmLinks[i].href+"?vbmrec=true");
+		vbmLinks[i].href = (vbmLinks[i].href+"&vbmrec=true");
 }};
 
 var timer;
