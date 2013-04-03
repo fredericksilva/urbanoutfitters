@@ -1,0 +1,140 @@
+<venda_detblock>
+<div class="festivals<venda_block label=20,stxtgenre1=notnull> <venda_stxtgenre1></venda_block label=20>" data-genre="<venda_block label=40,stxtgenre1=notnull><venda_stxtgenre1></venda_block label=40>" data-date="<venda_block label=41,stxtdate1=notnull><venda_stxtdate1></venda_block label=41>">
+<div class="festivalLink">
+	<div class="festivalDate">
+		<venda_block label=21,stxtdate1=notnull><venda_stxtdate1></venda_block label=21>
+	</div>
+	<div class="festivalName">
+		<venda_block label=26,stryname1=notnull><venda_stryname1></venda_block label=26>
+	</div>
+	<div class="festivalLocation">
+		<venda_block label=24,stxtlocation1=notnull><venda_stxtlocation1></venda_block label=24>, <venda_block label=22,stxtcountry1=notnull><venda_stxtcountry1></venda_block label=22>
+	</div>
+</div>
+<div class="festivalDropdown">
+	<div class="festivalImage">
+		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/stry/<venda_stryref1>/<venda_stryref1>.jpg" width="225" height="237" />
+	</div>
+	<div class="festivalDescription">
+		<venda_block label=27,strydesc11=notnull><p><venda_strydesc11></p></venda_block label=27>
+	</div>
+	<div class="festivalInfo">
+		<p>Info:</p>
+		<venda_block label=25,stxtdate1=notnull><p><venda_stxtdate1></p></venda_block label=25>
+		<venda_block label=23,stxttime1=notnull><p><venda_stxttime1></p></venda_block label=23>
+		<venda_block label=28,stxtlocation1=notnull><p><venda_stxtlocation1></p></venda_block label=28>
+	</div>
+	<venda_block label=29,stxtwomens1=1>
+		<div class="festivalWomensLink">Women's Festival Shop</div>
+	</venda_block label=29>
+	<venda_block label=30,stxtmens1=1>
+		<div class="festivalMensLink">Men's Festival Shop</div>
+	</venda_block label=30>
+</div>
+</div>
+</venda_detblock>
+<venda_detail>
+<script type="text/javascript">
+Venda.namespace('Festival');
+Venda.Festival = {
+	options: {
+		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open'
+	}, setMonth: function() {
+		var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+			d = new Date(),
+			n = d.getMonth(),
+			o = m[n];
+		jQuery('.'+Venda.Festival.options.m).each(function() {
+			var t = jQuery(this).data(Venda.Festival.options.d).split(".")[1] - 1,
+				s = m[t];
+			jQuery(this).text(s);
+			jQuery(this).attr('id', s);
+			if (o === s) {
+				Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+				jQuery(this).addClass('selected');
+				Venda.Festival.calculateMonth();
+			}
+		})
+		Venda.Festival.sortMonth();
+		Venda.Festival.removeDuplicates();
+	}, sortMonth: function() {
+		var a = [], d, e;
+		a = jQuery('.'+Venda.Festival.options.m).map(function() {
+			return jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+		}).get();
+		a.sort().reverse();
+		while (a.length) {
+			d = a.pop();
+			e = jQuery('.'+Venda.Festival.options.m).filter(function() {
+				return jQuery(this).data(Venda.Festival.options.d).split(".")[1] == d;
+			}).detach();
+			jQuery('.festivalMonth').append(e);
+		}
+	}, removeDuplicates: function() {
+		var c = {};
+		jQuery('.'+Venda.Festival.options.m+'[id],.'+Venda.Festival.options.g+'[id]').each (function () {
+			if (c.hasOwnProperty(this.id)) {
+				jQuery(this).remove();
+			} else {
+				c[this.id] = 'true';
+			}
+		});
+	}, slideOpen: function(a) {
+		var e = jQuery('.'+a);
+		if (jQuery(e).hasClass(Venda.Festival.options.o) === false) {
+			jQuery(e).slideDown().addClass(Venda.Festival.options.o);
+		}
+	}, init: function() {
+		jQuery(".festivalSlot").click(function() {
+			var b = jQuery(this).data(Venda.Festival.options.o);
+			jQuery('.'+Venda.Festival.options.o).slideUp().removeClass(Venda.Festival.options.o);
+			Venda.Festival.slideOpen(b);
+		});
+	}, festivalCalendar: function() {
+		jQuery('.'+Venda.Festival.options.h).each(function() { 
+			var d = jQuery(this).find('.'+Venda.Festival.options.fd);
+			jQuery(this).find('.festivalLink').click(function() {
+				if (jQuery(d).hasClass(Venda.Festival.options.o) === false) {
+					jQuery('.'+Venda.Festival.options.fd).slideUp().removeClass(Venda.Festival.options.o);
+				}
+				jQuery(d).slideToggle().toggleClass(Venda.Festival.options.o);
+			})
+		});
+		jQuery('.'+Venda.Festival.options.g).click(function() {
+			Venda.Festival.options.f = jQuery(this).data(Venda.Festival.options.g);
+			Venda.Festival.calculate();
+		});
+		jQuery('.'+Venda.Festival.options.m).click(function() {
+			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
+			jQuery('.'+Venda.Festival.options.fd).hide();
+			Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+			jQuery(this).addClass('selected');
+			Venda.Festival.calculateMonth();
+		});
+	}, calculate: function () {
+		jQuery('.'+Venda.Festival.options.h).each(function() {
+			var i = jQuery(this),
+				g = jQuery(this).data(Venda.Festival.options.g),
+				d = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+			if (Venda.Festival.options.f === g && Venda.Festival.options.e === d) {
+				i.show();
+			} else {
+				i.hide();
+			}
+		})
+	}, calculateMonth: function() {
+		jQuery('.'+Venda.Festival.options.h).each(function() {
+			var i = jQuery(this),
+				d = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+			if (Venda.Festival.options.e === d) {
+				i.show();
+			} else {
+				i.hide();
+			}
+		})
+	}
+}
+Venda.Festival.init();
+Venda.Festival.setMonth();
+Venda.Festival.festivalCalendar();
+</script>
