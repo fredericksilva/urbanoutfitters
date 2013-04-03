@@ -81,14 +81,15 @@ Venda.Festival = {
 		});
 	}, slideOpen: function(a) {
 		var e = jQuery('.'+a);
-		if (jQuery(e).hasClass(Venda.Festival.options.o) === false) {
-			jQuery(e).slideDown().addClass(Venda.Festival.options.o);
-		}
+		jQuery('.'+Venda.Festival.options.o).not(e).slideUp().removeClass(Venda.Festival.options.o);
+		jQuery(e).slideDown().addClass(Venda.Festival.options.o);
 	}, init: function() {
+		Venda.Festival.festivalCalendar();
 		jQuery(".festivalSlot").click(function() {
 			var b = jQuery(this).data(Venda.Festival.options.o);
-			jQuery('.'+Venda.Festival.options.o).slideUp().removeClass(Venda.Festival.options.o);
 			Venda.Festival.slideOpen(b);
+			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
+			Venda.Festival.setMonth();
 		});
 	}, festivalCalendar: function() {
 		jQuery('.'+Venda.Festival.options.h).each(function() { 
@@ -102,6 +103,7 @@ Venda.Festival = {
 		});
 		jQuery('.'+Venda.Festival.options.g).click(function() {
 			Venda.Festival.options.f = jQuery(this).data(Venda.Festival.options.g);
+			jQuery('.'+Venda.Festival.options.fd).hide();
 			Venda.Festival.calculate();
 		});
 		jQuery('.'+Venda.Festival.options.m).click(function() {
@@ -114,8 +116,8 @@ Venda.Festival = {
 	}, calculate: function () {
 		jQuery('.'+Venda.Festival.options.h).each(function() {
 			var i = jQuery(this),
-				g = jQuery(this).data(Venda.Festival.options.g),
-				d = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+				g = i.data(Venda.Festival.options.g),
+				d = i.data(Venda.Festival.options.d).split(".")[1];
 			if (Venda.Festival.options.f === g && Venda.Festival.options.e === d) {
 				i.show();
 			} else {
@@ -125,16 +127,22 @@ Venda.Festival = {
 	}, calculateMonth: function() {
 		jQuery('.'+Venda.Festival.options.h).each(function() {
 			var i = jQuery(this),
-				d = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+				d = i.data(Venda.Festival.options.d).split(".")[1];
 			if (Venda.Festival.options.e === d) {
 				i.show();
 			} else {
 				i.hide();
 			}
 		})
-	}
+	}, closeDropdown: function() {
+		jQuery('.'+Venda.Festival.options.o).slideUp().removeClass(Venda.Festival.options.o);
+	}, socialWindow: function (e, d, b, c, a) {
+		var w = null;
+        LeftPosition = (screen.width) ? (screen.width - b) / 2 : 0;
+        TopPosition = (screen.height) ? (screen.height - c) / 2 : 0;
+        settings = "height=" + c + ",width=" + b + ",top=" + TopPosition + ",left=" + LeftPosition + ",scrollbars=" + a + ",resizable";
+        w = window.open(e, d, settings)
+    }
 }
 Venda.Festival.init();
-Venda.Festival.setMonth();
-Venda.Festival.festivalCalendar();
 </script>
