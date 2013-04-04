@@ -1062,6 +1062,24 @@ a.quickBuyDetails {
     margin: -6px 0px 0px 20px;
 }
 
+.signup-img-fr {
+	background: url('../images/uo-png-sprite.png') no-repeat;
+	background-position: -8px -59px;
+	width: 115px;
+	height: 14px;
+    margin: -6px 0px 0px 20px;
+    position: absolute;
+}
+
+.signup-img-de {
+	background: url('../images/uo-png-sprite.png') no-repeat;
+	background-position: -8px -78px;
+	width: 97px;
+	height: 14px;
+    margin: -6px 0px 0px 20px;
+    position: absolute;
+}
+
 .signupFrame {
 	border:0;
 	margin-top:5px;
