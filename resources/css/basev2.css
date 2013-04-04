@@ -816,7 +816,21 @@ input.button:hover {
     clear: both;
     padding: 8px;
 }
-
+.storeimage .boxContent {
+    clear: both;
+    padding: 20px 25px;
+    margin: 20px;
+    display: inline-block;
+    width: 370px;
+    background: #fff;
+}
+.storeimage .boxContent h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+} 
+.storeimage .boxContent h2 .store-name {
+    color: #ff0000;
+}
 .boxNoBorder {
     border: none;
     margin-bottom: 10px;
@@ -4580,23 +4594,72 @@ h4.ui-state-active {
     color: #2CA9E3;
 }
 
-.ui-state-active.storeItem {
-    border: 1px solid #2CA9E3;
-}
-
 #address_holder {
-    margin: 10px 75px;
-    height: 70px;
+    margin: 30px;
 }
-
+#address_holder h3 {
+    font-size: 20px;
+}
+#address_holder .storeLocSelectHolder p {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 18px 0;
+}
+#address_holder .altStoreView a {
+    font-weight: bold;
+    color: #333;
+}
 #address {
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0 40px 0 5px;
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    height: 50px;
+}
+.storeLocSelectHolder .ui-selectmenu {
+    border: 1px solid #333;
+    width: 300px !important;
+    height: 30px;
+}
+.storeLocSelectHolder .ui-selectmenu .ui-selectmenu-icon {
+    width: 8px;
+    height: 12px;
+    background: #fff url(../images/uo-png-sprite.png) no-repeat -158px -32px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.storeLocSelectHolder .ui-selectmenu-status {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+}
+#page_findastore .ui-selectmenu-menu li a {
+    text-transform: none;
+    font-weight: normal;
+}
+.Storelookup .storeLocSelect {
     width: 300px;
 }
-
-#storelocatorresults {
-    background-color: #F4F4F4;
+.location-submit {
+  position: relative;
+  height: 50px;
+  border: 1px solid #333;
+  margin: 20px 0 15px 0;
 }
-
+.location-submit #pcsubmit {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  width: 29px;
+  height: 29px;
+  border: none;
+  background: url(../images/store-locator-search-icon.gif) no-repeat;
+}
 #map_canvas {
     float: right;
 }
@@ -4607,17 +4670,23 @@ h4.ui-state-active {
     margin-right: 95px;
     padding: 5px 2px;
 }
-
-.Storelookup .storeItem {
-    border: 1px solid #CCC;
-}
-
 .Storelookup .inputs-list li {
     display: inline;
 }
 
 .Storelookup .storeItem {
-    border: 1px solid #CCC;
+    border-top: 2px solid #333;
+    padding: 6px 0;
+}
+.Storelookup .storeItem a {
+  font-size: 14px;
+  color: #666;
+}
+.Storelookup .accordion {
+  border-bottom: 2px solid #333;
+}
+.Storelookup .accordion .ui-state-active {
+    border-bottom: 1px solid #333;
 }
 
 .Storelookup .distance {
@@ -4626,21 +4695,141 @@ h4.ui-state-active {
 
 .Storelookup .nav {
     float: left;
-    width: 550px;
-    margin-top: 150px;
-/*30px*/
+    width: 480px;
+    height: 480px;
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
-
-.storecontent .address,.storecontent .storeimage,.storeListItem {
-    margin-bottom: 10px;
+#page_findastore .ui-selectmenu-menu-dropdown {
+    overflow: auto;
+    min-height: 230px;
+}
+#page_findastore .styled-v-bar {
+    right: 6px !important;
+}
+#page_findastore .alt-scroll-content {
+    width: 100% !important;
+}
+#content .Storelookup .linkstore a, #content .storeListHolder .linkstore a {
+    width: 128px;
+    height: 30px;
+    background: url(../images/uo-png-sprite.png) no-repeat scroll -8px -477px transparent;
+    text-transform: uppercase;
+    text-align: center;  
+    line-height: 30px;
+    font-size: 11px;
+    padding: 0 !important;
+    margin: 0;
+}
+.storeListHolder .linkstore {
+    margin-top: 10px; 
+}
+#content .Storelookup .storeloc-infowindow .linkstore a {
+    background: url(../images/store-locator-arrow.gif) no-repeat scroll transparent; 
+    width: 15px;
+    height: 22px;
+    text-indent: -9999px;
+}
+.altStoreView p {
+    margin-top: 15px;
+}
+.storeListItem {
+    margin-bottom: 20px;
     margin-top: 10px;
 }
-
-.storeItemHolder {
-    height: 185px;
-    margin: 10px 10px 0;
+#storedetails .boxed-in {
+    background: #fff;
+    width: 400px;
+    overflow: hidden;
+    padding: 30px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);   
+    margin-left: 10px;
 }
-
+#storedetails .boxed-in h3 {
+    margin-bottom: 8px;
+    color: #666;
+}
+#storedetails .boxed-in li {
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+#storedetails .boxed-in li div {
+    display: inline-block;
+}
+#storedetails .boxed-in li .time {
+    float: right;
+}
+#storedetails .boxed-in .address {
+    float: left;
+}
+#storedetails .boxed-in .opening {
+    float: right;
+    width: 190px;
+    margin-right: 10px;
+}
+#storedetails .quote {
+    position: relative;
+    background: #fffea4;
+    width: 180px;
+    padding: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);   
+    float: left;
+}
+#storedetails .quote .top-quote, #storedetails .quote .bottom-quote {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: url(../images/store-locator-quotes.gif) no-repeat 0 0;
+    text-indent: -9999px;
+}
+#storedetails .quote .top-quote {
+    left: 16px;
+    top: 16px;;
+}
+#storedetails .quote .bottom-quote {
+    right: 16px;
+    bottom: 16px;
+    background-position: -20px 0;
+}
+#storedetails .back-button {
+    width: 128px;
+    height: 30px;
+    background: url(../images/uo-png-sprite.png) no-repeat scroll -8px -444px transparent;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 30px;
+    font-size: 11px;
+    padding: 0 !important;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+    float: left;
+    margin: 21px 0 0 20px;
+}
+.storecontent .storeimage {
+    width: 460px;
+    height: 480px;
+    position: relative;
+    background: rgba(0,204,255,1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);  
+}
+.storeItemHolder {
+    margin: 20px 0;
+}
 .storedetails_images p {
     margin-top: 30px;
     width: 370px;
@@ -4650,7 +4839,7 @@ h4.ui-state-active {
     position: absolute;
     right: 10px;
     top: 0;
-    width: 370px;
+    width: 320px;
 }
 
 .storedetails_address {
@@ -4658,6 +4847,14 @@ h4.ui-state-active {
     left: 0;
 }
 
+.storedetails_address h4 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.storedetails_address address {
+    font-style: normal;
+}
 .storedetails_address .tel {
     margin-top: 10px;
 }
@@ -4669,6 +4866,7 @@ h4.ui-state-active {
 .storedetails_hours {
     position: inherit;
     right: 0;
+    display: none;
 }
 
 .storedetails_hours table {
@@ -4680,10 +4878,9 @@ h4.ui-state-active {
 }
 
 .Storelookup .holder {
-    background: url(../images/map_inter.jpg) no-repeat scroll 650px 133px #F7F7F7;
+    background: url(../images/store-locator-globe.png) no-repeat scroll 570px 0;
     height: 465px;
 }
-
 #optionsCheckboxes,.Storeview .buttonAlt2 {
     cursor: pointer;
 }
@@ -4694,7 +4891,7 @@ h4.ui-state-active {
 }
 
 .storeItemHolder .linkstore {
-    bottom: 10px;
+    bottom: 5px;
     position: absolute;
 }
 
@@ -4710,12 +4907,123 @@ h4.ui-state-active {
     margin-right: 5px;
     margin-top: 5px;
 }
-
+#page_findastore .ui-autocomplete {
+    width: 404px !important;
+    border: 1px solid #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 12px !important;
+}
+#page_findastore .ui-autocomplete a:hover {
+    background: none !important;
+    color: #999 !important;
+}
+#details-shown .nav {
+    float: right;
+    background: none;
+    box-shadow: none;
+    -o-box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 460px;
+}
+#details-shown #map_canvas {
+    float: left;
+}
+#details-shown #address_holder {
+    display: none;
+}
+#details-shown .holder {
+    background: none;
+}
+#details-shown .storedetails_info {
+    right: 0;
+}
+.storeListHolder .regionname {
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 6px 0;
+    font-size: 16px;
+    margin-top: -1px;
+}
+.storeListHolder .usastores .regionname {
+    border-bottom: 2px solid #333;
+}
+.storeListHolder .statename {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 6px 0;
+    font-size: 14px;  
+}
+.storeListHolder .storethumb {
+    background: rgba(0,204,255,1);
+    width: 125px;
+    height: 125px;
+    padding: 0;
+    display: inline-block;
+}
+.storeListHolder .storedets {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+}
+.storeListHolder h4 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.storeListHolder h3.stroryname {
+    color: #666;
+    margin-top: 10px;
+}
+.storeListHolder .storeListItem {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 470px;
+    display: inline-block;
+}
+.storeListHolder h4.phone-num {
+    margin-top: 5px;
+}
+.storeListHolder .storeListItem {
+  position: relative;
+}
+.storeListHolder .linkstore {
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
+}
+.storeListHolder .storelistdets {
+  position: relative;
+  margin: 10px 0 0;
+}
+.storeListHolder .header {
+  margin-bottom: 15px;
+}
+.storeListHolder .usastores .regionname {
+  margin-bottom: -1px;
+}
+.storeListHolder .allStores {
+  margin: 10px 0 25px;
+}
+.storeListHolder .ui-state-active a {
+  color: #333;
+}
+.storeListHolder .header-block {
+  background: rgba(0,204,255,1);
+  margin-bottom: 20px;
+}
+.storeListHolder .header-copy {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px 25px;
+  background: #fff;
+}
 /****** Google maps styles - infowindow *****/
 .storeloc-logo {
-    background: url(../images/marker-images/image.png) no-repeat scroll left top transparent;
-    height: 22px;
-    width: 23px;
+    background: url(../images/store-locator-sm-icon.jpg) no-repeat scroll left top transparent;
+    height: 28px;
+    width: 28px;
     float: left;
 }
 
@@ -4751,11 +5059,10 @@ h4.ui-state-active {
     margin-top: 0;
 }
 
-.storeloc-infowindow .body,.storeloc-infowindow .linkstore,.storeListItem .linkstore {
+.storeloc-infowindow .body,.storeloc-infowindow .linkstore {
     bottom: 0;
     position: absolute;
 }
-
 .storeloc-infowindow .body p {
     left: 0;
     margin: 0 0 3px 5px;
@@ -6055,7 +6362,7 @@ input#qty {
 	border-bottom: 1px solid #333;
 }
 
-#accordion .ui-icon-triangle-1-s {
+.storeListHolder .ui-icon-triangle-1-s, #storelocatorresults .ui-icon-triangle-1-s, #accordion .ui-icon-triangle-1-s {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px 0 transparent;
 	width: 13px;
 	height: 5px;
@@ -6064,8 +6371,7 @@ input#qty {
 	cursor: pointer;
 	margin-top: 3px;
 }
-
-#accordion .ui-icon-triangle-1-e {
+.storeListHolder .ui-icon-triangle-1-e, #storelocatorresults .ui-icon-triangle-1-e, #accordion .ui-icon-triangle-1-e {
 	background: url("../images/uo-png-sprite.png") no-repeat scroll -62px -4px transparent;
 	width: 13px;
 	height: 13px;
@@ -6073,7 +6379,12 @@ input#qty {
 	float: right;
 	cursor: pointer;
 }
-
+.storeListHolder .ui-icon-triangle-1-s, #storelocatorresults .ui-icon-triangle-1-s {
+  margin-top: 6px;
+}
+.storeListHolder .ui-icon-triangle-1-e, #storelocatorresults .ui-icon-triangle-1-e {
+  margin-top: 2px;
+}
 .productDetailTabs .tab1, .productDetailTabs .tab2, .productDetailTabs .tab3, .productDetailTabs .tab4 { padding: 10px 0;}
 
 .tab3 h4 { margin-top: 10px; }
