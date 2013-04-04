@@ -2,52 +2,82 @@
     "title" : "Close Up Lookbook",
     "products": {
     	"1": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139467390003/5139467390003_Blue_ca1.jpg",
-            "sku": "5139467390003"
+            "image": "",
+            "sku": "5139467390003",
+            "orientation": "portrait",
+            "gender": "male"
         },
         "2": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139409331555/5139409331555_Assort_ca1.jpg",
-            "sku": "5139409331555"
+            "image": "",
+            "sku": "5139409331555",
+            "orientation": "portrait",
+            "gender": "female"
         },
         "3": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139400021008/5139400021008_Purple_ca1.jpg",
-            "sku": "5139400021008"
+            "image": "",
+            "sku": "5139400021008",
+            "orientation": "portrait",
+            "gender": "male"
         },
         "4": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130438572214/5130438572214_Black_ca1.jpg",
-            "sku": "5130438572214"
+            "image": "",
+            "sku": "5130438572214",
+            "orientation": "landscape",
+            "gender": "female"
         },
         "5": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130423192143/5130423192143_Black_ca1.jpg",
-            "sku": "5130423192143"
+            "image": "",
+            "sku": "5130423192143",
+            "orientation": "landscape",
+            "gender": "male"
         },
         "6": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130461378811/5130461378811_Grey_ca1.jpg",
-            "sku": "5130461378811"
+            "image": "",
+            "sku": "5130461378811",
+            "orientation": "portrait",
+            "gender": "female"
         },
         "7": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139467390003/5139467390003_Blue_ca1.jpg",
-            "sku": "5139467390003"
+            "image": "",
+            "sku": "5139467390003",
+            "orientation": "portrait",
+            "gender": "male"
         },
         "8": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139409331555/5139409331555_Assort_ca1.jpg",
-            "sku": "5139409331555"
+            "image": "",
+            "sku": "5139409331555",
+            "orientation": "portrait",
+            "gender": "female"
         },
         "9": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5139400021008/5139400021008_Purple_ca1.jpg",
-            "sku": "5139400021008"
+            "image": "",
+            "sku": "5139400021008",
+            "orientation": "landscape",
+            "gender": "male"
         },
         "10": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130438572214/5130438572214_Black_ca1.jpg",
-            "sku": "5130438572214"
+            "image": "",
+            "sku": "5130438572214",
+            "orientation": "landscape",
+            "gender": "female"
         },
         "11": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130423192143/5130423192143_Black_ca1.jpg",
-            "sku": "5130423192143"
+            "image": "",
+            "sku": "5130423192143",
+            "orientation": "portrait",
+            "gender": "male"
         },
         "12": {
-            "image": "http://www.urbanoutfitters.co.uk/content/ebiz/urbanoutfitters/invt/5130461378811/5130461378811_Grey_ca1.jpg",
-            "sku": "5130461378811"
+            "image": "",
+            "sku": "5130461378811",
+            "orientation": "portrait",
+            "gender": "female"
+        },
+        "13": {
+            "image": "",
+            "sku": "5130461378811",
+            "orientation": "portrait",
+            "gender": "male"
         }
     }
 }}
