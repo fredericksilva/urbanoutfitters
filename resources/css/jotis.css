@@ -912,7 +912,7 @@ a.quickBuyDetails {
 /* ORIGINAL STYLING BY FED ON PREV SITE */
 
 /* ** 2012 Category Headers Styles ** */
-#productlist.full div#banner.new, .editorialPage div#banner.new { 
+.editorialPage div#banner.new, .editorialPage div#banner.new { 
     position: relative;
     border: none;
     padding: 0;
@@ -920,12 +920,12 @@ a.quickBuyDetails {
     clear: both;
 }
 
-#productlist.full div#banner.new a, .editorialPage div#banner.new a { 
+.editorialPage div#banner.new a, .editorialPage div#banner.new a { 
  	color: #333;
  	text-decoration: none;
 }
 
-#productlist.full div#banner.new div.logo, .editorialPage div#banner.new div.logo {   
+.editorialPage div#banner.new div.logo, .editorialPage div#banner.new div.logo {   
     font-size: 24px;
     text-align: center;
 	margin-bottom: 10px;
@@ -938,7 +938,7 @@ a.quickBuyDetails {
 	width: 949px;
 }
 
-#productlist.full div#banner.new .logo span.banner-back, .editorialPage div#banner.new .logo span.banner-back {
+.editorialPage div#banner.new .logo span.banner-back, .editorialPage div#banner.new .logo span.banner-back {
     font-size: 14px;
 	display: block;
 	position: absolute;
@@ -946,7 +946,7 @@ a.quickBuyDetails {
     top: 1em;
 }
 
-#productlist.full div#banner.new div.copy, .editorialPage div#banner.new div.copy {
+.editorialPage div#banner.new div.copy, .editorialPage div#banner.new div.copy {
 	background: #fff;
 	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -962,33 +962,33 @@ a.quickBuyDetails {
 	display: inline;
 }
 
-#productlist.full div#banner.new div.copy a, .editorialPage div#banner.new div.copy a {
+.editorialPage div#banner.new div.copy a, .editorialPage div#banner.new div.copy a {
 	text-transform: capitalize;
 	padding: 10px;
 	margin: 0;
 }
 
-#productlist.full #banner.new .copy a:hover, .editorialPage #banner.new .copy a:hover {
+.editorialPage #banner.new .copy a:hover, .editorialPage #banner.new .copy a:hover {
 	background: #000;
 	color: #FFF;
 }
  
 /* 2012 Brand Header Style */
  
-#productlist.full div#banner.brand, .editorialPage div#banner.brand {
+.editorialPage div#banner.brand, .editorialPage div#banner.brand {
 	background: #FFF url('../images/catheader_bg.gif') no-repeat left top;
 }  
 
-#productlist.full div#banner.brand div.logo img, .editorialPage div#banner.brand div.logo img {
+.editorialPage div#banner.brand div.logo img, .editorialPage div#banner.brand div.logo img {
 	display: block;
 	margin: 10px;
 }
 
-#productlist.full div#banner.brand div.logo span, .editorialPage div#banner.brand div.logo span {
+.editorialPage div#banner.brand div.logo span, .editorialPage div#banner.brand div.logo span {
 	display: none;
 }  
 
-#productlist.full div#banner.brand div.copy, .editorialPage div#banner.brand div.copy {
+.editorialPage div#banner.brand div.copy, .editorialPage div#banner.brand div.copy {
 	margin-top: 10px;
 }
 /* @end New Brand Headers */
@@ -1611,7 +1611,7 @@ margin: 0 0 20px 0;
 
 /* ** productlist_full Layout ** */
 
-#productlist.full div#banner {
+.editorialPage div#banner {
     background: none;
     clear: both;
     float: left;
@@ -1622,11 +1622,11 @@ margin: 0 0 20px 0;
     clear: both;  
 }
 
-#productlist.full .brand {
+.editorialPage .brand {
 	border: 0 !important;
 }
 
-#productlist.full #banner div.logo { 
+.editorialPage #banner div.logo { 
     float: left;
     margin: 0 20px 0 0;    
     text-align: left;
@@ -1635,7 +1635,7 @@ margin: 0 0 20px 0;
 	width: 300px;
 }
 
-#productlist.full #banner div.logo img {
+.editorialPage #banner div.logo img {
 	display: none;
 	box-shadow:none;
 	-moz-box-shadow: none;
@@ -1643,31 +1643,31 @@ margin: 0 0 20px 0;
 	filter: none;
 }
 
-#productlist.full #banner div.logo span {
+.editorialPage #banner div.logo span {
 	display: block;
 }
 
 
-#productlist.full #banner div.copy {
+.editorialPage #banner div.copy {
 	float: left;
 	width:590px;
 	font-size: 12px;
 	line-height: 16px; 
 }
 
-#productlist.full #banner div.copy p { 
+.editorialPage #banner div.copy p { 
     margin-top: 0px;
     font-size: 12px; 
     line-height: 16px; 
 }
 
-#productlist.full div.copy a { 
+.editorialPage div.copy a { 
     padding-right: 10px;
     text-decoration: none;
     font-weight: bold
 }
 
-#productlist.full div.copy a:hover { color:#00ccff; }
+.editorialPage div.copy a:hover { color:#00ccff; }
 
 #banner div.copy ul li { display: inline; }
 
