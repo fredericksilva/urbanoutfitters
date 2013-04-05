@@ -1,6 +1,8 @@
 <venda_detblock>
 <div class="festivals<venda_block label=20,stxtgenre1=notnull> <venda_stxtgenre1></venda_block label=20>" data-genre="<venda_block label=40,stxtgenre1=notnull><venda_stxtgenre1></venda_block label=40>" data-date="<venda_block label=41,stxtdate1=notnull><venda_stxtdate1></venda_block label=41>">
 <div class="festivalLink">
+	<div class="festivalBlog hide"><venda_strydesc21></div>
+	<div class="festivalPast hide">Past Event</div>
 	<div class="festivalDate">
 		<venda_block label=21,stxtdate1=notnull><venda_stxtdate1></venda_block label=21>
 	</div>
@@ -33,19 +35,23 @@
 </div>
 </div>
 </venda_detblock>
-<venda_detail>
+<div class="festivalContainer">
+	<venda_detail>
+</div>
 <script type="text/javascript">
 Venda.namespace('Festival');
 Venda.Festival = {
 	options: {
-		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open'
+		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open', fv: 'festival', p: 'pastEvent'
 	}, setMonth: function() {
 		var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
 			d = new Date(),
 			n = d.getMonth(),
+			b = d.getDay(),
 			o = m[n];
 		jQuery('.'+Venda.Festival.options.m).each(function() {
 			var t = jQuery(this).data(Venda.Festival.options.d).split(".")[1] - 1,
+				u = jQuery(this).data(Venda.Festival.options.d).split(".")[0],
 				s = m[t];
 			jQuery(this).text(s);
 			jQuery(this).attr('id', s);
@@ -54,8 +60,14 @@ Venda.Festival = {
 				jQuery(this).addClass('selected');
 				Venda.Festival.calculateMonth();
 			}
+			if (t === n) {
+				if (u < b) {
+					Venda.Festival.pastEvent(jQuery(this).data(Venda.Festival.options.d));
+				}
+			}
 		})
 		Venda.Festival.sortMonth();
+		Venda.Festival.sortDay();
 		Venda.Festival.removeDuplicates();
 	}, sortMonth: function() {
 		var a = [], d, e;
@@ -68,7 +80,20 @@ Venda.Festival = {
 			e = jQuery('.'+Venda.Festival.options.m).filter(function() {
 				return jQuery(this).data(Venda.Festival.options.d).split(".")[1] == d;
 			}).detach();
-			jQuery('.festivalMonth').append(e);
+			jQuery('.'+Venda.Festival.options.fv+'Month').append(e);
+		}
+	}, sortDay: function() {
+		var a = [], d, e;
+		a = jQuery('.'+Venda.Festival.options.h).map(function() {
+			return jQuery(this).data(Venda.Festival.options.d).split(".")[0];
+		}).get();
+		a.sort().reverse();
+		while (a.length) {
+			d = a.pop();
+			e = jQuery('.'+Venda.Festival.options.h).filter(function() {
+				return jQuery(this).data(Venda.Festival.options.d).split(".")[0] == d;
+			}).detach();
+			jQuery('.'+Venda.Festival.options.fv+'Container').append(e);
 		}
 	}, removeDuplicates: function() {
 		var c = {};
@@ -85,7 +110,7 @@ Venda.Festival = {
 		jQuery(e).slideDown().addClass(Venda.Festival.options.o);
 	}, init: function() {
 		Venda.Festival.festivalCalendar();
-		jQuery(".festivalSlot").click(function() {
+		jQuery('.'+Venda.Festival.options.fv+'Slot').click(function() {
 			var b = jQuery(this).data(Venda.Festival.options.o);
 			Venda.Festival.slideOpen(b);
 			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
@@ -94,7 +119,7 @@ Venda.Festival = {
 	}, festivalCalendar: function() {
 		jQuery('.'+Venda.Festival.options.h).each(function() { 
 			var d = jQuery(this).find('.'+Venda.Festival.options.fd);
-			jQuery(this).find('.festivalLink').click(function() {
+			jQuery(this).find('.'+Venda.Festival.options.fv+'Link').click(function() {
 				if (jQuery(d).hasClass(Venda.Festival.options.o) === false) {
 					jQuery('.'+Venda.Festival.options.fd).slideUp().removeClass(Venda.Festival.options.o);
 				}
@@ -136,6 +161,19 @@ Venda.Festival = {
 		})
 	}, closeDropdown: function() {
 		jQuery('.'+Venda.Festival.options.o).slideUp().removeClass(Venda.Festival.options.o);
+	}, pastEvent: function(a) {
+		jQuery('.'+Venda.Festival.options.h).each(function() {
+			var b = jQuery(this).data(Venda.Festival.options.d);
+			if (a === b) {
+				var c = jQuery(this).find('.'+Venda.Festival.options.fv+'Past').text(),
+					d = jQuery(this).find('.'+Venda.Festival.options.fv+'Blog').text();
+				jQuery(this).addClass(Venda.Festival.options.p).find('.'+Venda.Festival.options.fv+'Date').text(c).end()
+					.find('.'+Venda.Festival.options.fd).remove();
+				if (d.length > 0) {
+					jQuery(this).find('.'+Venda.Festival.options.fv+'Location').html('<a href="'+d+'">Read the blog</a>');
+				}
+			}
+		})
 	}, socialWindow: function (e, d, b, c, a) {
 		var w = null;
         LeftPosition = (screen.width) ? (screen.width - b) / 2 : 0;
