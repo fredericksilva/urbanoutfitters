@@ -5,10 +5,11 @@
 //          3. toggle panel item (delivery instructions)
 
 jQuery(document).ready(function () {
-    urbanRedesign.init();
+    Venda.urbanRedesign.init();
 });
 
-var urbanRedesign = {
+Venda.namespace('urbanRedesign');
+Venda.urbanRedesign = {
     init: function () {
         this.stickyBasket();
         this.basketCount();
@@ -49,8 +50,31 @@ var urbanRedesign = {
             })
         
         }
-    },
+    }, 
     stickyBasket: function () {
+    	var offset = jQuery(".gameContents").offset(),
+            offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
+            $headerHeight = offset.top,
+            $footerHeight = offsetBottom,
+            $docHeight = jQuery(document).outerHeight(),
+            demoBar = jQuery(".demo").outerHeight();
+        jQuery(window).bind("scroll", function (b) {
+            var c = jQuery(window).scrollTop(),
+                a = jQuery(".summeryContainer").outerHeight();
+            if (c > 0) {
+                jQuery(".summeryContainer").addClass("fixMe")
+            }
+            if (c < 0) {
+                jQuery(".controlBox,.gameSticky").removeClass("fixMe")
+            }
+            if (c > $docHeight - $footerHeight - a - demoBar) {
+                jQuery(".controlBox,.gameSticky").removeClass("fixMe");
+                jQuery(".controlBox,.gameSticky").css("top", $docHeight - $footerHeight - a - demoBar + "px")
+            }
+        })
+    }
+    
+    /*stickyBasket: function () {
         this.basket = jQuery('#basket').position();
         if (this.basket) {
             jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
@@ -65,12 +89,12 @@ var urbanRedesign = {
         });
         //jQuery('#ordersummery').trigger('resize');
 
-    },
+    }*/,
     setMenuOffset: function () {
         this.header = document.getElementById('#summeryContainer');
         if (!this.header) { return; }
         this.currentOffset = document.documentElement.scrollTop || document.body.scrollTop; // body for Safari
-        this.startPos = parseInt(urbanRedesign.setMenuOffset.initialPos, 10) || 190;
+        this.startPos = parseInt(Venda.urbanRedesign.setMenuOffset.initialPos, 10) || 190;
         this.desiredOffset = this.startPos - this.currentOffset;
         if (this.desiredOffset < 75) {
             this.desiredOffset = 75;
