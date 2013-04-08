@@ -1,5 +1,4 @@
 <venda_tpcomment><!-- Venda Behavioural Merchandising currently uses Avail in ACE --></venda_tpcomment>
-<script type="text/javascript" src="<venda_protocol>://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script> 
 <div id="availsearch">
 <venda_block label=vbmtesting,mode=value,<venda_islive>!=1><div id="__avail_log__" style="display:none;"></div></venda_block label=vbmtesting>
 <div id="vbm-panel-vbmsrch" class="vbmsearchlist">
@@ -19,8 +18,11 @@ function querySt(ji) {
 }}}
 
 var vbmreccheck = querySt("vbmrec") || "<venda_htxt mode=get,name=vbm>";
+var invtref = document.getElementById('tag-invtref').innerHTML;
+jQuery(function() {
+	Venda.Widget.VBM.populateProductRecs("vbmpd","<venda_addedmsg msg=addedref>",vbmreccheck);
+});
 jQuery('.add,.buy,.preorder').click(function() {
-	var invtref = document.getElementById('tag-invtref').innerHTML;
 	Venda.Widget.VBM.populateProductRecs("vbmpd",invtref,vbmreccheck);
 });
 </script>
