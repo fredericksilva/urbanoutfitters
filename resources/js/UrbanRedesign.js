@@ -52,17 +52,15 @@ Venda.urbanRedesign = {
         }
     }, 
     stickyBasket: function () {
-    	var offset = jQuery("#basket").offset();
-        if (offset) {
-        	var offsetBottom = jQuery(document).innerHeight() - (offset.top + jQuery("#basket").outerHeight()),
-            	$headerHeight = offset.top,
-            	$docHeight = jQuery(document).innerHeight(),
-            	demoBar = jQuery(".demo").outerHeight();
-            jQuery(window).bind("scroll", function (b) {
-            	var c = jQuery(window).scrollTop(),
-                	a = jQuery(".summeryContainer").outerHeight(),
-                	d = jQuery(".summeryContainer").offset();
-                console.log(c,$docHeight - offsetBottom - a - offset.top,$docHeight - offsetBottom - a,$docHeight,offsetBottom,a)
+        jQuery(window).bind("scroll", function (b) {
+            var o = jQuery("#basket").offset();
+            if (o) {
+            	var	f = jQuery(document).innerHeight() - (o.top + jQuery("#basket").innerHeight() + 4),
+            		h = o.top,
+            		d = jQuery(document).innerHeight(),
+            		demoBar = jQuery(".demo").outerHeight(),
+            		c = jQuery(window).scrollTop(),
+                	a = jQuery(".summeryContainer").outerHeight();
                 if (c > 0) {
                 	jQuery(".summeryContainer").addClass("fixMe")
                 	jQuery(".summeryContainer").css("top", "auto")
@@ -70,17 +68,18 @@ Venda.urbanRedesign = {
                 if (c < 0) {
                 	jQuery(".summeryContainer").removeClass("fixMe")
                 }
-                if (c > $docHeight - offsetBottom - a - offset.top) {
+                if (c > d - f - a - h) {
                 	jQuery(".summeryContainer").removeClass("fixMe");
-                	if ($docHeight - offsetBottom - a - offset.top > 0) {
-                		jQuery(".summeryContainer").css("top", $docHeight - offsetBottom - a + demoBar + 2 + "px")
+                	if (d - f - a - h > 0) {
+                		console.log(d - f - a - h)
+                		jQuery(".summeryContainer").css("top", d - f - a - demoBar + "px")
                 	}
-                	if ($docHeight - offsetBottom - a - offset.top <= 0) {
-                		jQuery(".summeryContainer").css("top", offset.top + demoBar + 12 + "px")
+                	if (d - f - a - h <= 0) {
+                		jQuery(".summeryContainer").css("top", h + demoBar + 12 + "px")
                 	}
                 }
-            })
-        }
+            }
+        })
     }
     
     /*stickyBasket: function () {
