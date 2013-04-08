@@ -52,8 +52,8 @@ Venda.urbanRedesign = {
         }
     }, 
     stickyBasket: function () {
-    	var offset = jQuery(".gameContents").offset(),
-            offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery(".gameContents").outerHeight()),
+    	var offset = jQuery("#basket").offset(),
+            offsetBottom = jQuery(document).outerHeight() - (offset.top + jQuery("#basket").outerHeight()),
             $headerHeight = offset.top,
             $footerHeight = offsetBottom,
             $docHeight = jQuery(document).outerHeight(),
@@ -61,15 +61,17 @@ Venda.urbanRedesign = {
         jQuery(window).bind("scroll", function (b) {
             var c = jQuery(window).scrollTop(),
                 a = jQuery(".summeryContainer").outerHeight();
+            console.log(c,$docHeight - $footerHeight - a - demoBar - offset.top)
             if (c > 0) {
                 jQuery(".summeryContainer").addClass("fixMe")
+                jQuery(".summeryContainer").css("top", "auto")
             }
             if (c < 0) {
-                jQuery(".controlBox,.gameSticky").removeClass("fixMe")
+                jQuery(".summeryContainer").removeClass("fixMe")
             }
-            if (c > $docHeight - $footerHeight - a - demoBar) {
-                jQuery(".controlBox,.gameSticky").removeClass("fixMe");
-                jQuery(".controlBox,.gameSticky").css("top", $docHeight - $footerHeight - a - demoBar + "px")
+            if (c > $docHeight - $footerHeight - a - demoBar - offset.top) {
+                jQuery(".summeryContainer").removeClass("fixMe");
+                jQuery(".summeryContainer").css("top", $docHeight - $footerHeight - a - demoBar + "px")
             }
         })
     }
