@@ -218,8 +218,24 @@ Venda.Attributes.Initialize = function() {
 * on your needs
 */
 Venda.Attributes.Declare = function() {
+	var lowStock,
+		gender = jQuery("#attributes-gender").text();
+	if (gender) {
+		if (gender === 'w') {
+			lowStock = 10;
+		}
+		if (gender === 'm') {
+			lowStock = 3;
+		}
+		if (gender === 'h') {
+			lowStock = 5;
+		}
+	}
+	else {
+		lowStock = 10;
+	};
 	Venda.Attributes.Settings = {
-		lowStockThreshold:			10,
+		lowStockThreshold:			lowStock,
 		emailWhenOutOfStock:		false,
 		sourceFromAPI:				false,
 		priceRangeFormat:			"range",  // "range" = from - to; "from" = from only; "to" = to only;
@@ -228,7 +244,6 @@ Venda.Attributes.Declare = function() {
 		useSelectedArrow:			true,
 		useToolTip:					true
 	};
-	
 };
 
 
