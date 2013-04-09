@@ -117,6 +117,74 @@
 
 </script>
 
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-selectastore" style="display:none;">Select a store</div>
+<div id="tag-selectaregion" style="display:none;">Select a region</div>
+<div id="tag-selectthisstore" style="display:none;">Select this store</div>
+<div id="tag-storedetails" style="display:none;">Store details</div>
+<div id="tag-tel" style="display:none;">Phone: </div>
+<div id="tag-distance" style="display:none;">Distance: </div>
+<div id="tag-back" style="display:none;">Back</div>
+
+<div class="mainHolder">
+	<div class="Storelookup">
+		<div class="meter"><span class="loadingbar"></span></div>
+		<div class="holder">
+			<div class="nav">
+			
+				<div id="address_holder">
+  				<h3>UO stores</h3>
+  				<div class="location-submit">
+  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="search" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
+  					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
+  				</div>
+					<div class="clearfix optionsCheckboxes_holder">
+					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
+					<div class="input">
+					  <ul class="inputs-list">
+						<li>
+						  <label>
+							<input id="optionsCheckbox1" type="checkbox" name="optionsCheckbox1" value="selected">
+							<span>service 1</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox2" type="checkbox" name="optionsCheckbox2" value="selected">
+							<span>service 2</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox3" type="checkbox" name="optionsCheckbox3" value="selected">
+							<span>service 3</span>
+						  </label>
+						</li>
+					  </ul>
+					</div>
+				</div>
+				<div class="storeLocSelectHolder">
+					<p>Or</p>
+				
+
+					<div class="loadingImg"></div>
+					<select class="storeLocSelect"></select>
+
+				</div>
+				<venda_block label=1,param2!=storeadd>
+					<div class="boxContent altStoreView">
+						<p>Alternatively, you can view <a href="<venda_dispview scat=storelist>" title="All our stores around the globe" class="underline">ALL OUR STORES AROUND THE GLOBE ></a></p>  	
+					</div>
+				</venda_block label=1>
+			  	</div>
+				<div class="accordion" id="storelocatorresults"></div>
+			</div>
+			<div id="map_canvas" style="width:460px; height:480px"></div>
+			<div class="interstores"></div>
+		</div>
+	</div>
+</div>
+
 <!-- mp_trans_remove_end-->
 <!-- mp_trans_disable_start-->
 <!-- mp_trans_add="FR" 
@@ -209,6 +277,75 @@
 	</div>
 
 </script>
+
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-selectastore" style="display:none;">Sélectionner un magasin</div>
+<div id="tag-selectaregion" style="display:none;">Select a region</div>
+<div id="tag-selectthisstore" style="display:none;">Select this store</div>
+<div id="tag-storedetails" style="display:none;">Store details</div>
+<div id="tag-tel" style="display:none;">Phone: </div>
+<div id="tag-distance" style="display:none;">Distance: </div>
+<div id="tag-back" style="display:none;">Back</div>
+
+<div class="mainHolder">
+	<div class="Storelookup">
+		<div class="meter"><span class="loadingbar"></span></div>
+		<div class="holder">
+			<div class="nav">
+			
+				<div id="address_holder">
+  				<h3>Magasins UO</h3>
+  				<div class="location-submit">
+  					<input id="address" placeholder="Entrer votre ville" class="addressSearch textInput" type="search" value="Entrer votre ville" onfocus="if (this.value == 'Entrer votre ville') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Entrer votre ville';}">
+  					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
+  				</div>
+					<div class="clearfix optionsCheckboxes_holder">
+					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
+					<div class="input">
+					  <ul class="inputs-list">
+						<li>
+						  <label>
+							<input id="optionsCheckbox1" type="checkbox" name="optionsCheckbox1" value="selected">
+							<span>service 1</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox2" type="checkbox" name="optionsCheckbox2" value="selected">
+							<span>service 2</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox3" type="checkbox" name="optionsCheckbox3" value="selected">
+							<span>service 3</span>
+						  </label>
+						</li>
+					  </ul>
+					</div>
+				</div>
+				<div class="storeLocSelectHolder">
+					<p>Ou</p>
+				
+
+					<div class="loadingImg"></div>
+					<select class="storeLocSelect"></select>
+
+				</div>
+				<venda_block label=1,param2!=storeadd>
+					<div class="boxContent altStoreView">
+						<p>Vous pouvez également voir <a href="<venda_dispview scat=storelist>" title="TOUS NOS MAGASINS DANS LE MONDE" class="underline">TOUS NOS MAGASINS DANS LE MONDE ></a></p>  	
+					</div>
+				</venda_block label=1>
+			  	</div>
+				<div class="accordion" id="storelocatorresults"></div>
+			</div>
+			<div id="map_canvas" style="width:460px; height:480px"></div>
+			<div class="interstores"></div>
+		</div>
+	</div>
+</div>
+
 
 -->
 <!-- mp_trans_add="DE" 	
@@ -303,11 +440,8 @@
 
 </script>
 
--->
-<!-- mp_trans_disable_end-->	
-
 <div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
-<div id="tag-selectastore" style="display:none;">Select a store</div>
+<div id="tag-selectastore" style="display:none;">wähle einen Store aus</div>
 <div id="tag-selectaregion" style="display:none;">Select a region</div>
 <div id="tag-selectthisstore" style="display:none;">Select this store</div>
 <div id="tag-storedetails" style="display:none;">Store details</div>
@@ -324,10 +458,9 @@
 				<div id="address_holder">
   				<h3>UO stores</h3>
   				<div class="location-submit">
-  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="search" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
+  					<input id="address" placeholder="Gebe deinen Ort an" class="addressSearch textInput" type="search" value="Gebe deinen Ort an" onfocus="if (this.value == 'Gebe deinen Ort an') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Gebe deinen Ort an';}">
   					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
   				</div>
-					<!-- Refine options will be added as part of V.2 -->
 					<div class="clearfix optionsCheckboxes_holder">
 					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
 					<div class="input">
@@ -354,7 +487,7 @@
 					</div>
 				</div>
 				<div class="storeLocSelectHolder">
-					<p>Or</p>
+					<p>oder</p>
 				
 
 					<div class="loadingImg"></div>
@@ -363,7 +496,7 @@
 				</div>
 				<venda_block label=1,param2!=storeadd>
 					<div class="boxContent altStoreView">
-						<p>Alternatively, you can view <a href="<venda_dispview scat=storelist>" title="All our stores around the globe" class="underline">ALL OUR STORES AROUND THE GLOBE ></a></p>  	
+						<p>Du kannst auch <a href="<venda_dispview scat=storelist>" title="ALL UNSERE STORES" class="underline">ALL UNSERE STORES</a> auf einmal ansehen</p>  	
 					</div>
 				</venda_block label=1>
 			  	</div>
@@ -374,3 +507,6 @@
 		</div>
 	</div>
 </div>
+
+-->
+<!-- mp_trans_disable_end-->	
