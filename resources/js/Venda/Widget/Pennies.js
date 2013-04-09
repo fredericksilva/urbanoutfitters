@@ -29,6 +29,7 @@ var StartPennies = function() {
 		jQuery('.loadcurrency').live('click',function () { 
 			jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery(this).attr('rel')});
 			Venda.Widget.RegionLangSwitch.conversionSwitch();
+			jQuery('.region #restofworld, .region #eur').addClass('resetcurrency');
 			return false;
 		});
 		
