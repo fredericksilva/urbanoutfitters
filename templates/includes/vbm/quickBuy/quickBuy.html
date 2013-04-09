@@ -1,0 +1,28 @@
+<venda_tpcomment><!-- Venda Behavioural Merchandising currently uses Avail in ACE --></venda_tpcomment>
+<div id="availsearch">
+<venda_block label=vbmtesting,mode=value,<venda_islive>!=1><div id="__avail_log__" style="display:none;"></div></venda_block label=vbmtesting>
+<div id="vbm-panel-vbmsrch" class="vbmsearchlist">
+<div id="vbm-panel-loading" style="display:none;" class="loadingImg"><p><venda_text id=site.lightboxloadmessage></p></div>
+<venda_tpcomment><!-- ajax content will go here --></venda_tpcomment>
+</div>
+</div>
+<venda_tpcomment><!-- VBM function calls --></venda_tpcomment>
+<script type="text/javascript">
+function querySt(ji) {
+	hu = window.location.search.substring(1);
+	gy = hu.split("&");
+	for (i=0;i<gy.length;i++) {
+		ft = gy[i].split("=");
+		if (ft[0] == ji) {
+			return ft[1];
+}}}
+
+var vbmreccheck = querySt("vbmrec") || "<venda_htxt mode=get,name=vbm>";
+var invtref = document.getElementById('tag-invtref').innerHTML;
+jQuery(function() {
+	Venda.Widget.VBM.populateProductRecs("vbmpd","<venda_addedmsg msg=addedref>",vbmreccheck);
+});
+jQuery('.add,.buy,.preorder').click(function() {
+	Venda.Widget.VBM.populateProductRecs("vbmpd",invtref,vbmreccheck);
+});
+</script>
