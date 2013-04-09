@@ -47,7 +47,7 @@ Venda.Festival = {
 		var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
 			d = new Date(),
 			n = d.getMonth(),
-			b = d.getDay(),
+			b = d.getDate(),
 			o = m[n];
 		jQuery('.'+Venda.Festival.options.m).each(function() {
 			var t = jQuery(this).data(Venda.Festival.options.d).split(".")[1] - 1,
