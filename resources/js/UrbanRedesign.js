@@ -61,7 +61,6 @@ Venda.urbanRedesign = {
             		demoBar = jQuery(".demo").outerHeight(),
             		c = jQuery(window).scrollTop(),
                 	a = jQuery(".summeryContainer").outerHeight();
-                console.log(d - f - a - h,h - demoBar);
                 if (c > 0) {
                 	jQuery(".summeryContainer").addClass("fixMe")
                 	jQuery(".summeryContainer").css("top", "auto")
