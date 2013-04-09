@@ -1,19 +1,11 @@
 <!--Begin Avail-->
-<script type="text/javascript" src="<venda_protocol>://service.avail.net/2009-02-13/dynamic/5f1f75b4-e67b-11df-9878-12313b032222/emark.js"></script>
 <script type="text/javascript">
 var availUID ="<venda_userinfo><venda_sesusemail></venda_userinfo>";
 availUID = availUID.replace(/@/,"_AT_");
 availUID = availUID.replace(/\./g,"_DOT_");
-//alert(vbmParentTrack);
-var availProds = vbmParentTrack.substring(0, vbmParentTrack.length-1);
-var availProdsArray = availProds.split(",");
-var availPrices = vbmParentPrices.substring(0, vbmParentPrices.length-1);
-var availPicesArray = availPrices.split(",");
-var availOrderID = "<venda_ohordnum>";
-var availCur = "<venda_ohcur>";
 //alert(availProdsArray[0])
 var emark = new Emark();
-	emark.logPurchase(availUID,availProdsArray,availPicesArray,availOrderID,availCur);
+	emark.logPurchase(availUID,productid,productsellprice,orderid,utag_data.site_currency);
 	emark.commit();
 	//alert(availUID+','+availProdsArray+','+availPicesArray+','+availOrderID+','+availCur);
 </script>
