@@ -61,6 +61,7 @@ Venda.urbanRedesign = {
             		demoBar = jQuery(".demo").outerHeight(),
             		c = jQuery(window).scrollTop(),
                 	a = jQuery(".summeryContainer").outerHeight();
+                console.log(d - f - a - h,h - demoBar);
                 if (c > 0) {
                 	jQuery(".summeryContainer").addClass("fixMe")
                 	jQuery(".summeryContainer").css("top", "auto")
@@ -71,33 +72,15 @@ Venda.urbanRedesign = {
                 if (c > d - f - a - h) {
                 	jQuery(".summeryContainer").removeClass("fixMe");
                 	if (d - f - a - h > 0) {
-                		console.log(d - f - a - h)
-                		jQuery(".summeryContainer").css("top", d - f - a - demoBar + "px")
+                		jQuery(".summeryContainer").css("top", d - f - a - demoBar - 8 + "px")
                 	}
                 	if (d - f - a - h <= 0) {
-                		jQuery(".summeryContainer").css("top", h + demoBar + 12 + "px")
+                		jQuery(".summeryContainer").css("top", h - demoBar - 8 + "px")
                 	}
                 }
             }
         })
-    }
-    
-    /*stickyBasket: function () {
-        this.basket = jQuery('#basket').position();
-        if (this.basket) {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
-            //jQuery('.summeryContainer').css({ 'position': 'fixed' });
-            this.setMenuOffset.initialPos = this.basket.top;
-            window.onscroll = document.documentElement.onscroll = this.setMenuOffset;
-            this.setMenuOffset();
-        }
-        //#ajax-error
-        jQuery('.summeryContainer').bind('resize', function () {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
-        });
-        //jQuery('#ordersummery').trigger('resize');
-
-    }*/,
+    },
     setMenuOffset: function () {
         this.header = document.getElementById('#summeryContainer');
         if (!this.header) { return; }
