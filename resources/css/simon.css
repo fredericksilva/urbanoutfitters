@@ -1202,7 +1202,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     margin-top: 8px;
     width: 651px;
     float: left;
-    min-height: 340px;
+    min-height: 400px;
 }
 .summeryCol
 {
@@ -1215,13 +1215,16 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     margin:8px 0 0;
     right: -2px;
 }
+.fixMe {
+	position: fixed !important;
+}
 .summeryContainer {
-	position:fixed;
-	position: relative\9;
-	left:50%;
-	left: 0\9;
-	margin-left:193px;
-	margin-left: 0\9;
+	position:absolute;
+}
+.sumCont {
+	float: right;
+	height: 100%;
+	width: 280px;
 }
 #ordersummery
 {
@@ -1476,6 +1479,7 @@ table th, table th div
 }
 .basketButtons {
 	height: 65px;
+	clear: both;
 }
 .basketButtons input.button {
 	height:30px;
