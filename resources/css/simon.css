@@ -1215,9 +1215,6 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     margin:8px 0 0;
     right: -2px;
 }
-.fixMe {
-	position: fixed !important;
-}
 .summeryContainer {
 	position:absolute;
 }
