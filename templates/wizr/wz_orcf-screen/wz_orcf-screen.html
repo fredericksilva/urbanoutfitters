@@ -181,7 +181,7 @@ To do:
 					}
 					<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 				}, payDetailsCallback: function (){
-					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value;
+					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value.split('|')[1];
 					var cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
 					if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
 						document.wizform.orxtorderpaydetail.value = cardType + '|' + cardLast4; 
