@@ -1980,23 +1980,23 @@ a.uo-hotspot:hover {
 	display: block;
 	text-align: center;
 	font-weight: bold;
-	background: url('../images/uo-png-sprite.png') no-repeat -63px -193px;
+	background: url('../images/uo-png-sprite.png') no-repeat -63px -192px;
 	width:24px;
 	height:19px;
 	text-indent: -195px;
 	padding-top: 4px;
 }
 .footerBrandsButton a:hover {
-	background-position: -61px -191px;
+	background-position: -61px -190px;
 }
 .footerBrandsButton a.brandsActive {
-	background-position: -93px -193px;
+	background-position: -93px -192px;
 }
 .footerBrandsButton a.brandsActive:hover {
-	background-position: -91px -191px;
+	background-position: -91px -190px;
 }
 .activeBrands {
-	background-position: -80px -193px;
+	background-position: -80px -192px;
 }
 .footerBrands {
 	clear:both;
