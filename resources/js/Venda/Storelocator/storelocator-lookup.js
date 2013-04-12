@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 
 
     jQuery('.accordion').hide();
-    jQuery('#map_canvas').css('opacity',0);
+    jQuery('#map_canvas').hide();
 
     Venda.storeloc.ajaxGetStores('storefinder');
     Venda.storeloc.Initialize();
@@ -124,7 +124,7 @@ jQuery(document).ready(function() {
                 Venda.storeloc.updateMap();
             
                 jQuery('.accordion').show();
-                jQuery('#map_canvas').animate({ opacity: 1 }, 1000 );
+                jQuery('#map_canvas').show();
                 
 
                 Venda.storeloc.updateUriQueries('0');
@@ -371,7 +371,7 @@ Venda.storeloc.restoreState = function() {
             Venda.storeloc.updateMap();
         
             jQuery('.accordion').fadeIn();
-            jQuery('#map_canvas').animate({ opacity: 1 }, 1500 );
+            jQuery('#map_canvas').show();
 
                 if (activeTab > 0){
                     jQuery('.accordion').accordion( "activate" , activeTab);
@@ -454,7 +454,7 @@ Venda.storeloc.fillForm = function(that){
 // Deletes all markers in the array by removing references to them
 Venda.storeloc.deleteOverlays = function() {
   if (Venda.storeloc.storeMarkers) {
-    for (i in Venda.storeloc.storeMarkers) {
+    for (i=0; i < Venda.storeloc.storeMarkers.length; i++) {
       Venda.storeloc.storeMarkers[i].setMap(null);
     }
     Venda.storeloc.storeMarkers.length = 0;
