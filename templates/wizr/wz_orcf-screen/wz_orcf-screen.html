@@ -180,14 +180,21 @@ To do:
 					Venda.orderConf.payDetailsCallback();
 					<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 				}, tandcCheck: function () {
-					if (document.wizform.payment_id[0].checked && document.wizform.ohccnum.value == "") {
-						alert("Please enter a valid credit card number."); return;
+					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
+						alert("<venda_text id=cc_no_required>");
+						return;
 					}
-					if (document.wizform.payment_id[0].checked && document.wizform.ohccname.value == "") { 
-						alert("Please enter the name on the credit card."); return;
+					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccname.value == "") {
+						alert("<venda_text id=ccholder_required>");
+						return;
 					}
-					if (document.wizform.payment_id[0].checked == false && document.wizform.payment_id[1].checked == false) {
-						alert("Please select a payment type."); return;
+					if (document.wizform.ohpaytype[0].checked == false && document.wizform.ohpaytype[1].checked == false) {
+						alert("<venda_text id=paymenttype_required>");
+						return;
+					}
+					if (!document.wizform.tandc.checked) {
+						alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
+						return;
 					}
 				}, payDetailsCallback: function (){
 					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value.split('|')[1];
