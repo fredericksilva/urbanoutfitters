@@ -109,6 +109,7 @@ Venda.Festival = {
 		jQuery('.'+Venda.Festival.options.o).not(e).slideUp().removeClass(Venda.Festival.options.o);
 		jQuery(e).slideDown().addClass(Venda.Festival.options.o);
 	}, init: function() {
+		Venda.Festival.launchSlider();
 		Venda.Festival.festivalCalendar();
 		jQuery('.'+Venda.Festival.options.fv+'Slot').click(function() {
 			var b = jQuery(this).data(Venda.Festival.options.o);
@@ -116,6 +117,13 @@ Venda.Festival = {
 			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
 			Venda.Festival.setMonth();
 		});
+	}, launchSlider: function() {
+		jQuery('.flexslider').flexslider({
+			animation: "slide",
+			pauseOnHover: true
+		});
+		var flexWidth = (jQuery(".flex-control-paging").width() + 56) /2;
+		jQuery(".flex-control-paging").css('margin-left',-flexWidth);
 	}, festivalCalendar: function() {
 		jQuery('.'+Venda.Festival.options.h).each(function() { 
 			var d = jQuery(this).find('.'+Venda.Festival.options.fd);
@@ -182,5 +190,7 @@ Venda.Festival = {
         w = window.open(e, d, settings)
     }
 }
-Venda.Festival.init();
+jQuery(document).ready(function() {
+	Venda.Festival.init();
+});
 </script>
