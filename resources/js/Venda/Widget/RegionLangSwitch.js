@@ -53,7 +53,9 @@ jQuery(function(){
 		return false;
 	});
 	jQuery(".regionLangSwitcher .region .curr-cont a").click(function() {	
-	  jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('reset');
+    if(jQuery(this).hasClass("resetcurrency")){
+      jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('reset');
+    };
 		Venda.Widget.RegionLangSwitch.doURL("setlocn",this,currRegion);
 		Venda.Widget.RegionLangSwitch.conversionSwitch();
 		jQuery(".switcher-content").slideUp("fast"); 

@@ -1978,21 +1978,41 @@ fieldset {
     display: inline-block;
     margin-top: 10px;
 }
-
-.oneProduct .priceField {
-    margin: 14px 0 12px;
-}
-
 .oneProduct .price-info {
-    font-weight: bold;
-    margin: -10px 0 0;
     cursor: pointer;
     display: none;
+    padding: 6px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.oneProduct .price-info .signage {
+    background: url(http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png) -62px -4px no-repeat scroll transparent;
+    width: 13px;
+    height: 13px;
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin-top: 2px;
+}
+.oneProduct .open {
+    border-bottom: none;
+}
+.oneProduct .open .signage {
+    background: url(http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png) -62px 0 no-repeat scroll transparent;
+    height: 5px;
+    margin-top: 6px;
 }
 .oneProduct .price-expanded {
     display: none;
     overflow: hidden;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
+.oneProduct .priceField {
+    margin: 14px 0 12px;
+}
+
 .oneProduct .priceField .priceNow {
     font-weight: bold;
     font-size: 21px;

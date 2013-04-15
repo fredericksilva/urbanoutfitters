@@ -24,12 +24,12 @@ var StartPennies = function() {
 	// Events
 	  jQuery('.price-info').live('click',function () {
   	  jQuery('.price-expanded').slideToggle();
+  	  jQuery(this).toggleClass('open');
 	  });
 		// This sets the currency using the switcher widget
 		jQuery('.loadcurrency').live('click',function () { 
 			jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery(this).attr('rel')});
 			Venda.Widget.RegionLangSwitch.conversionSwitch();
-			jQuery('.region #restofworld, .region #eur').addClass('resetcurrency');
 			return false;
 		});
 		
@@ -97,9 +97,11 @@ var StartPennies = function() {
 							.addClass('setCurrency');
 
 						$('.currently').html(o.to);
-
-						if (o.from !== o.to){
-						  $('.oneProduct .price-info').show();
+						if (o.from !== o.to && o.to !== "EUR" && o.to != "GBP"){
+						  $('.region #restofworld, .region #eur').addClass('resetcurrency');
+						  if($('.price-info').length){
+  						  $('.price-info').show();
+						  }
 							return this.each(function() {
 
 								var $this = $(this);
