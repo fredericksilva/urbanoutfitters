@@ -173,38 +173,42 @@ To do:
 		<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
 	</div>
 	<script type="text/javascript">
-			Venda.namespace('orderConf');
-			Venda.orderConf = {
-				init: function () {
-					Venda.orderConf.tandcCheck();
-					Venda.orderConf.payDetailsCallback();
-					<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
-				}, tandcCheck: function () {
-					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
-						alert("<venda_text id=cc_no_required>");
-						return;
-					}
-					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccname.value == "") {
-						alert("<venda_text id=ccholder_required>");
-						return;
-					}
-					if (document.wizform.ohpaytype[0].checked == false && document.wizform.ohpaytype[1].checked == false) {
-						alert("<venda_text id=paymenttype_required>");
-						return;
-					}
-					if (!document.wizform.tandc.checked) {
-						alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
-						return;
-					}
-				}, payDetailsCallback: function (){
-					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value;
-					var cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
-					if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-						document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
-					}
-					//alert(document.wizform.orxorxtorderpaydetail.value);
-				}
+	Venda.namespace('orderConf');
+	Venda.orderConf = {
+		init: function () {
+			Venda.orderConf.tandcCheck();
+			Venda.orderConf.payDetailsCallback();
+			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
+		}, tandcCheck: function () {
+			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
+				alert("<venda_text id=cc_no_required>");
+				return;
 			}
+			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccname.value == "") {
+				alert("<venda_text id=ccholder_required>");
+				return;
+			}
+			if (document.wizform.ohpaytype[0].checked == false && document.wizform.ohpaytype[1].checked == false) {
+				alert("<venda_text id=paymenttype_required>");
+				return;
+			}
+			if (!document.wizform.tandc.checked) {
+				alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
+				return;
+			}
+		}, payDetailsCallback: function (){
+			if (document.documentElement.lang === "de") {
+				var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value;
+			}
+			else {
+				var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value;
+			}
+			var cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+			}
+		}
+	}
 	</script>
 	</div>
 </form>
