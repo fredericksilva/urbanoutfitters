@@ -197,12 +197,12 @@ To do:
 						return;
 					}
 				}, payDetailsCallback: function (){
-					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value.split('|')[1];
+					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value;
 					var cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
 					if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
 						document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
 					}
-					//alert(document.wizform.orxorxtorderpaydetail.value); return;
+					//alert(document.wizform.orxorxtorderpaydetail.value);
 				}
 			}
 	</script>
