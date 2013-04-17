@@ -72,9 +72,9 @@ Venda.Festival = {
 		Venda.Festival.festivalCalendar();
 		jQuery('.'+Venda.Festival.options.fv+'Slot').click(function() {
 			var b = jQuery(this).data(Venda.Festival.options.o);
-			Venda.Festival.slideOpen(b);
 			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
 			Venda.Festival.setMonth();
+			Venda.Festival.slideOpen(b);
 		});
 	}, launchSlider: function() {
 		jQuery('.festivalslides').flexslider({
