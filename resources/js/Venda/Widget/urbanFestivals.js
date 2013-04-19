@@ -1,7 +1,7 @@
 Venda.namespace('Festival');
 Venda.Festival = {
 	options: {
-		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open', fv: 'festival', p: 'pastEvent'
+		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open', fv: 'festival', p: 'pastEvent', i: 'instagram', instagramAPI: 'https://api.instagram.com/v1/tags/urbanoutfitters/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?'
 	}, setMonth: function() {
 		var l = document.documentElement.lang;
 		if (l === "en") {
@@ -161,23 +161,38 @@ Venda.Festival = {
     }, instagram: function () {
 		jQuery.ajax({
 			type: 'GET',
-			url: 'https://api.instagram.com/v1/tags/urbanoutfitters/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?',
+			url: Venda.Festival.options.instagramAPI,
 			dataType: 'json',
 			cache: true,
 			success: function(data) {
           		var h = "";
           		for (var i = 0; i < data.data.length; i++) {
-          			h += '<div class="image"><img src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
+          			h += '<div class="image"><img onclick="Venda.Festival.instagramZoom(this,400,400);" rel="' + data.data[i].images.standard_resolution.url + '"src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
           		}
           		var d = h.replace(/\n/g,'').replace(/((<div class="image">(.*?)<\/div>){6})/g,'<li>$1</li>')
           				.replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
-          		jQuery('ul.instagramImages').html(d).find('li:empty').remove();
-          		jQuery('.instagramSlides').flexslider({
+          		jQuery('ul.'+Venda.Festival.options.i+'Images').html(d).find('li:empty').remove();
+          		jQuery('.'+Venda.Festival.options.i+'Slides').flexslider({
 	          		animation: "slide",
 	          		pauseOnHover: true,
 	          		useCSS: false
 	          	});
 			}
 		});
+	}, instagramZoom: function(a,b,c) {
+		var t = (jQuery(window).height() - b) / 2 + jQuery(window).scrollTop() + "px",
+        	l = (jQuery(window).width() - c) / 2 + jQuery(window).scrollLeft() + "px";
+	    jQuery('.'+Venda.Festival.options.fv+'bg').css({"opacity" : "0.7"}).fadeIn("slow");
+	    jQuery('.'+Venda.Festival.options.i+'Large').html('<img width="'+ b +'" height="'+ c +'" src="'+jQuery(a).attr('rel')+'" />').fadeIn('slow').css({'top':t,'left':l});
+        jQuery(document).keypress(function(e){
+        	if(e.keyCode==27){
+            	jQuery('.'+Venda.Festival.options.fv+'bg').fadeOut('slow');
+            	jQuery('.'+Venda.Festival.options.i+'Large').fadeOut('slow');
+            }
+        });
+        jQuery('.'+Venda.Festival.options.fv+'bg').click(function(){
+        	jQuery('.'+Venda.Festival.options.fv+'bg').fadeOut('slow');
+        	jQuery('.'+Venda.Festival.options.i+'Large').fadeOut('slow');
+       });
 	}
 }
