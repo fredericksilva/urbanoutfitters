@@ -3,8 +3,17 @@ Venda.Festival = {
 	options: {
 		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open', fv: 'festival', p: 'pastEvent'
 	}, setMonth: function() {
-		var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
-			d = new Date(),
+		var l = document.documentElement.lang;
+		if (l === "en") {
+			var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+		}
+		if (l === "fr") {
+			var m = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ]
+		}
+		if (l === "de") {
+			var m = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ]
+		}
+		var	d = new Date(),
 			n = d.getMonth(),
 			b = d.getDate(),
 			o = m[n];
@@ -69,6 +78,7 @@ Venda.Festival = {
 		jQuery(e).slideDown().addClass(Venda.Festival.options.o);
 	}, init: function() {
 		Venda.Festival.launchSlider();
+		Venda.Festival.instagram();
 		Venda.Festival.festivalCalendar();
 		jQuery('.'+Venda.Festival.options.fv+'Slot').click(function() {
 			var b = jQuery(this).data(Venda.Festival.options.o);
@@ -133,19 +143,41 @@ Venda.Festival = {
 			var b = jQuery(this).data(Venda.Festival.options.d);
 			if (a === b) {
 				var c = jQuery(this).find('.'+Venda.Festival.options.fv+'Past').text(),
-					d = jQuery(this).find('.'+Venda.Festival.options.fv+'Blog').text();
+					d = jQuery(this).find('.'+Venda.Festival.options.fv+'Blog').text(),
+					e = jQuery(this).find('.'+Venda.Festival.options.fv+'BlogText').text();
 				jQuery(this).addClass(Venda.Festival.options.p).find('.'+Venda.Festival.options.fv+'Date').text(c).end()
 					.find('.'+Venda.Festival.options.fd).remove();
 				if (d.length > 0) {
-					jQuery(this).find('.'+Venda.Festival.options.fv+'Location').html('<a href="'+d+'">Read the blog</a>');
+					jQuery(this).find('.'+Venda.Festival.options.fv+'Location').html('<a href="'+d+'">'+e+'</a>');
 				}
 			}
 		})
 	}, socialWindow: function (e, d, b, c, a) {
 		var w = null;
-        LeftPosition = (screen.width) ? (screen.width - b) / 2 : 0;
-        TopPosition = (screen.height) ? (screen.height - c) / 2 : 0;
-        settings = "height=" + c + ",width=" + b + ",top=" + TopPosition + ",left=" + LeftPosition + ",scrollbars=" + a + ",resizable";
-        w = window.open(e, d, settings)
-    }
+        l = (screen.width) ? (screen.width - b) / 2 : 0;
+        t = (screen.height) ? (screen.height - c) / 2 : 0;
+        s = "height=" + c + ",width=" + b + ",top=" + t + ",left=" + l + ",scrollbars=" + a + ",resizable";
+        w = window.open(e, d, s)
+    }, instagram: function () {
+		jQuery.ajax({
+			type: 'GET',
+			url: 'https://api.instagram.com/v1/tags/urbanoutfitters/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?',
+			dataType: 'json',
+			cache: true,
+			success: function(data) {
+          		var h = "";
+          		for (var i = 0; i < data.data.length; i++) {
+          			h += '<div class="image"><img src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
+          		}
+          		var d = h.replace(/\n/g,'').replace(/((<div class="image">(.*?)<\/div>){6})/g,'<li>$1</li>')
+          				.replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
+          		jQuery('ul.instagramImages').html(d).find('li:empty').remove();
+          		jQuery('.instagramSlides').flexslider({
+	          		animation: "slide",
+	          		pauseOnHover: true,
+	          		useCSS: false
+	          	});
+			}
+		});
+	}
 }

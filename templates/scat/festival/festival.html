@@ -1,8 +1,9 @@
 <venda_detblock>
 <div class="festivals<venda_block label=20,stxtgenre1=notnull> <venda_stxtgenre1></venda_block label=20>" data-genre="<venda_block label=40,stxtgenre1=notnull><venda_stxtgenre1></venda_block label=40>" data-date="<venda_block label=41,stxtdate1=notnull><venda_stxtdate1></venda_block label=41>">
-<div class="festivalLink">
-	<div class="festivalBlog hide"><venda_strydesc21></div>
+<div class="festivalLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', '<venda_stryname1>']);">
+	<div class="festivalBlog hide"><venda_stxtbloglink1></div>
 	<div class="festivalPast hide">Past Event</div>
+	<div class="festivalBlogText hide">Read the Blog</div>
 	<div class="festivalDate">
 		<venda_block label=21,stxtdate1=notnull><venda_stxtdate1></venda_block label=21>
 	</div>
@@ -18,7 +19,17 @@
 		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/stry/<venda_stryref1>/<venda_stryref1>.jpg" width="225" height="237" />
 	</div>
 	<div class="festivalDescription">
+	<!-- mp_trans_remove_start-->
 		<venda_block label=27,strydesc11=notnull><p><venda_strydesc11></p></venda_block label=27>
+	<!-- mp_trans_remove_end-->
+	<!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="FR" 
+			<venda_block label=37,strydesc21=notnull><p><venda_strydesc21></p></venda_block label=37>
+		-->
+		<!-- mp_trans_add="DE" 	
+			<venda_block label=47,strydesc31=notnull><p><venda_strydesc31></p></venda_block label=47>
+		-->
+	<!-- mp_trans_disable_end-->
 	</div>
 	<div class="festivalInfo">
 		<p>Info:</p>
@@ -33,7 +44,7 @@
 		<div class="festivalMensLink">Men's Festival Shop</div>
 	</venda_block label=30>
 	<venda_block label=31,stxttickets1=1>
-		<div class="festivalTicketsLink">Win Tickets</div>
+		<div class="festivalTicketsLink"  onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Win Tickets']);">Win Tickets</div>
 	</venda_block label=31>
 </div>
 </div>
