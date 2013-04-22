@@ -4,15 +4,13 @@ Venda.Festival = {
 		f: '', e: '', m: 'month', g: 'genre', d: 'date', h: 'festivals', fd: 'festivalDropdown', o: 'open', fv: 'festival', p: 'pastEvent', i: 'instagram', instagramAPI: 'https://api.instagram.com/v1/tags/urbanoutfitters/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?'
 	}, setMonth: function() {
 		var l = document.documentElement.lang;
-		if (l === "en") {
-			var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
-		}
-		if (l === "fr") {
-			var m = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ]
-		}
-		if (l === "de") {
-			var m = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ]
-		}
+		switch (l) {
+			case 'fr': var m = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ];
+			break;
+			case 'de': var m = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ];
+			break;
+			default: var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+		};
 		var	d = new Date(),
 			n = d.getMonth(),
 			b = d.getDate(),
