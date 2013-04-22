@@ -167,17 +167,7 @@ To do:
 		<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
 			<div id="buttons" class="bottomButtons">
 			<venda_block label=1555,workflow!=instore><a class="button continue" href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><venda_text id=site.button.back_to_basket></a></venda_block label=1555>
-			<!-- mp_trans_remove_start-->
-			<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256>Venda.orderConf.payDetailsCallbackUk(); Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">
-			<!-- mp_trans_remove_end-->
-			<!-- mp_trans_disable_start-->
-				<!-- mp_trans_add="FR" 
-					<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256>Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">
-				-->
-				<!-- mp_trans_add="DE" 	
-					<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256>Venda.orderConf.payDetailsCallbackDe(); Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">
-				-->
-			<!-- mp_trans_disable_end-->	
+			<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256>Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">	
 			</div>
 			<p class="paymentInstructions"><venda_text id=site.order_confirmation.final_step></p>		
 		<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
@@ -187,6 +177,7 @@ To do:
 	Venda.orderConf = {
 		init: function () {
 			Venda.orderConf.tandcCheck();
+			Venda.orderConf.payDetailsCallback();
 			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}, tandcCheck: function () {
 			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
@@ -205,15 +196,15 @@ To do:
 				alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
 				return false;
 			}
-		}, payDetailsCallbackUk: function (){
-			var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
-				cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
-			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+		}, payDetailsCallback: function (){
+			var l = document.documentElement.lang;
+			switch (l) {
+				case 'de': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
+							   cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+				break;
+				default: var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
+						 	 cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
 			}
-		}, payDetailsCallbackDe: function (){
-			var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
-				cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
 			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
 				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
 			}
