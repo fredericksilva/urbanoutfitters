@@ -19,7 +19,7 @@ Venda.Festival = {
 			var t = jQuery(this).data(Venda.Festival.options.d).split(".")[1] - 1,
 				u = jQuery(this).data(Venda.Festival.options.d).split(".")[0],
 				s = m[t];
-			jQuery(this).text(s);
+			jQuery(this).text(s).attr('onclick', '_gaq.push([\'_trackEvent\', \'Festival\', \'Calendar\', \''+ s +'\']);');
 			jQuery(this).attr('id', s);
 			if (o === s) {
 				Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
@@ -155,7 +155,7 @@ Venda.Festival = {
 				jQuery(this).addClass(Venda.Festival.options.p).find('.'+Venda.Festival.options.fv+'Date').text(c).end()
 					.find('.'+Venda.Festival.options.fd).remove();
 				if (d.length > 0) {
-					jQuery(this).find('.'+Venda.Festival.options.fv+'Location').html('<a href="'+d+'">'+e+'</a>');
+					jQuery(this).find('.'+Venda.Festival.options.fv+'Location').html('<a onclick="_gaq.push([\'_trackEvent\', \'Festival\', \'Calendar\', \'Read The Blog\']);" href="'+d+'">'+e+'</a>');
 				}
 			}
 		})
@@ -181,7 +181,7 @@ Venda.Festival = {
 			success: function(data) {
           		var h = "";
           		for (var i = 0; i < data.data.length; i++) {
-          			h += '<div class="image"><img onclick="Venda.Festival.instagramZoom(this,400,400);" rel="' + data.data[i].images.standard_resolution.url + '"src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
+          			h += '<div class="image"><img onclick="Venda.Festival.instagramZoom(this,400,400); _gaq.push([\'_trackEvent\', \'Festival\', \'Instagram\', \'Instagram Image '+ data.data[i].link +'\']);" rel="' + data.data[i].images.standard_resolution.url + '"src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
           		}
           		var d = h.replace(/\n/g,'').replace(/((<div class="image">(.*?)<\/div>){6})/g,'<li>$1</li>')
           				.replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
