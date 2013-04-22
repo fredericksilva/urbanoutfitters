@@ -75,7 +75,10 @@ Venda.Festival = {
 	}, slideOpen: function(a) {
 		var e = jQuery('.'+a);
 		jQuery('.'+Venda.Festival.options.o).not(e).slideUp().removeClass(Venda.Festival.options.o);
-		jQuery(e).slideDown().addClass(Venda.Festival.options.o);
+		jQuery(e).addClass(Venda.Festival.options.o).slideDown(function () {
+			var h = jQuery(e).outerHeight();
+			Venda.Festival.addImages(h)
+		});
 	}, init: function() {
 		Venda.Festival.launchSlider();
 		Venda.Festival.instagram();
@@ -100,13 +103,17 @@ Venda.Festival = {
 				if (jQuery(d).hasClass(Venda.Festival.options.o) === false) {
 					jQuery('.'+Venda.Festival.options.fd).slideUp().removeClass(Venda.Festival.options.o);
 				}
-				jQuery(d).slideToggle().toggleClass(Venda.Festival.options.o);
+				jQuery(d).slideToggle(function() {
+					var h = jQuery('.'+Venda.Festival.options.fv+'Accordion-middle').outerHeight();
+					Venda.Festival.addImages(h)
+				}).toggleClass(Venda.Festival.options.o);
 			})
 		});
 		jQuery('.'+Venda.Festival.options.g).click(function() {
 			Venda.Festival.options.f = jQuery(this).data(Venda.Festival.options.g);
 			jQuery('.'+Venda.Festival.options.fd).hide();
 			Venda.Festival.calculate();
+			Venda.Festival.addImages('1');
 		});
 		jQuery('.'+Venda.Festival.options.m).click(function() {
 			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
@@ -114,6 +121,7 @@ Venda.Festival = {
 			Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
 			jQuery(this).addClass('selected');
 			Venda.Festival.calculateMonth();
+			Venda.Festival.addImages('1');
 		});
 	}, calculate: function () {
 		jQuery('.'+Venda.Festival.options.h).each(function() {
@@ -138,6 +146,7 @@ Venda.Festival = {
 		})
 	}, closeDropdown: function() {
 		jQuery('.'+Venda.Festival.options.o).slideUp().removeClass(Venda.Festival.options.o);
+		Venda.Festival.addImages('1');
 	}, pastEvent: function(a) {
 		jQuery('.'+Venda.Festival.options.h).each(function() {
 			var b = jQuery(this).data(Venda.Festival.options.d);
@@ -152,6 +161,13 @@ Venda.Festival = {
 				}
 			}
 		})
+	}, addImages: function (a) {
+		if (a >= 300) {
+			jQuery('.'+Venda.Festival.options.fv+'ImgVis').fadeIn('500');
+		}
+		if (a < 300) {
+			jQuery('.'+Venda.Festival.options.fv+'ImgVis').fadeOut('500');
+		}
 	}, socialWindow: function (e, d, b, c, a) {
 		var w = null;
         l = (screen.width) ? (screen.width - b) / 2 : 0;
