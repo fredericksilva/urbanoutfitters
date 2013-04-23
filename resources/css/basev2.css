@@ -657,7 +657,6 @@ body {
     background: url(../images/grid_tile.jpg) repeat scroll 0 0 #fff;
     position: relative;
     min-width:960px;
-    font-size: 12px;
 }
 /*.header-bg {
     background: url("../images/white_paint_large_sprite.gif") repeat-x scroll 0 0 transparent;
