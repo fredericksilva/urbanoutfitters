@@ -1,6 +1,6 @@
 <venda_detblock>
-<div class="festivals<venda_block label=20,stxtgenre1=notnull> <venda_stxtgenre1></venda_block label=20>" data-genre="<venda_block label=40,stxtgenre1=notnull><venda_stxtgenre1></venda_block label=40>" data-date="<venda_block label=41,stxtdate1=notnull><venda_stxtdate1></venda_block label=41>">
-<div class="festivalLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', '<venda_stryname1>']);">
+<div class="festivals<venda_block label=20,stxtgenre1=notnull> <venda_stxtgenre1>Colour</venda_block label=20>" data-genre="<venda_block label=40,stxtgenre1=notnull><venda_stxtgenre1></venda_block label=40>" data-date="<venda_block label=41,stxtdate1=notnull><venda_stxtdate1></venda_block label=41>">
+<div class="festivalLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', '<venda_stryref1>']);">
 	<div class="festivalBlog hide"><venda_stxtbloglink1></div>
 	<div class="festivalPast hide">Past Event</div>
 	<div class="festivalBlogText hide">Read the Blog</div>
@@ -32,19 +32,53 @@
 	<!-- mp_trans_disable_end-->
 	</div>
 	<div class="festivalInfo">
-		<p>Info:</p>
-		<venda_block label=25,stxtdate1=notnull><p><venda_stxtdate1></p></venda_block label=25>
+		<p><span>When?</span></p>
+		<venda_block label=25,stxtdate1=notnull><p><venda_stxtwhere1></p></venda_block label=25>
+		<p><span>Where?</span></p>
 		<venda_block label=23,stxttime1=notnull><p><venda_stxttime1></p></venda_block label=23>
 		<venda_block label=28,stxtlocation1=notnull><p><venda_stxtlocation1></p></venda_block label=28>
+		<venda_block label=32,stxtcomp1=notnull>
+		<p><span>Competition Code</span></p>
+		<p><venda_stxtcomp1></p>
+		</venda_block label=32>
 	</div>
+	<!-- mp_trans_remove_start-->
+		<venda_block label=33,stxtticketstext1=notnull>
+			<div class="festivalWinLogo">
+			</div>
+			<div class="festivalWinText">
+				<p><venda_stxtticketstext1></p>
+			</div>
+		</venda_block label=33>
+	<!-- mp_trans_remove_end-->
+	<!-- mp_trans_disable_start-->
+		<!-- mp_trans_add="FR" 
+			<venda_block label=43,stxtticketstextfr1=notnull>
+				<div class="festivalWinLogo">
+				</div>
+				<div class="festivalWinText">
+					<p><venda_stxtticketstextfr1></p>
+				</div>
+			</venda_block label=43>
+		-->
+		<!-- mp_trans_add="DE" 	
+			<venda_block label=53,stxtticketstextde1=notnull>
+				<div class="festivalWinLogo">
+				</div>
+				<div class="festivalWinText">
+					<p><venda_stxtticketstextde1></p>
+				</div>
+			</venda_block label=53>
+		-->
+	<!-- mp_trans_disable_end-->	
 	<venda_block label=29,stxtwomens1=1>
-		<div class="festivalWomensLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Womens Festival Shop']);">Women's Festival Shop</div>
+		<div class="festivalWomensLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Womens Festival Shop']);"><a href="<venda_dispview icat=wtops>">Shop Women's Festival >></a></div>
 	</venda_block label=29>
 	<venda_block label=30,stxtmens1=1>
-		<div class="festivalMensLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Mens Festival Shop']);">Men's Festival Shop</div>
+		<div class="festivalMensLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Mens Festival Shop']);"><a href="<venda_dispview icat=mtops>">Shop Men's Festival >></a></div>
 	</venda_block label=30>
 	<venda_block label=31,stxttickets1=1>
-		<div class="festivalTicketsLink"  onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Win Tickets']);">Win Tickets</div>
+		<div class="festivalTicketsLink"  onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Win Tickets']); Venda.Festival.slideOpen('festivalCompetition'); return false;">Win X2 Tickets ></div>
 	</venda_block label=31>
 </div>
 </div>

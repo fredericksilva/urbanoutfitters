@@ -5,11 +5,11 @@ Venda.Festival = {
 	}, setMonth: function() {
 		var l = document.documentElement.lang;
 		switch (l) {
-			case 'fr': var m = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ];
+			case 'fr': var m = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Sept", "Octobre", "Novembre", "Décembre" ];
 			break;
-			case 'de': var m = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ];
+			case 'de': var m = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "Aug", "Sept", "Oktober", "November", "Dezember" ];
 			break;
-			default: var m = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+			default: var m = [ "January", "February", "March", "April", "May", "June", "July", "Aug", "Sept", "October", "November", "December" ];
 		};
 		var	d = new Date(),
 			n = d.getMonth(),
@@ -74,6 +74,7 @@ Venda.Festival = {
 		var e = jQuery('.'+a);
 		jQuery('.'+Venda.Festival.options.o).not(e).slideUp().removeClass(Venda.Festival.options.o);
 		jQuery(e).addClass(Venda.Festival.options.o).slideDown(function () {
+			jQuery(window).scrollTo(this, 'slow');
 			var h = jQuery(e).outerHeight();
 			Venda.Festival.addImages(h)
 		});
