@@ -1055,31 +1055,55 @@ a.quickBuyDetails {
 /* Signup Iframe */
 
 .signup-img {
-	background: url('../images/uo-png-sprite.png') no-repeat;
+	background: url('../images/uo-png-sprite.png?v=3') no-repeat;
 	background-position: -168px -156px;
 	width: 70px;
 	height: 15px;
     margin: -6px 0px 0px 20px;
+    z-index: 5;
 }
-
+.signup-mask {
+	height: 4px;
+	width: 70px;
+	background-color: white;
+	margin: 3px 0px 0px 20px;
+	position: absolute;
+	z-index: 3;
+}
 .signup-img-fr {
-	background: url('../images/uo-png-sprite.png') no-repeat;
+	background: url('../images/uo-png-sprite.png?v=3') no-repeat;
 	background-position: -8px -59px;
 	width: 115px;
 	height: 14px;
     margin: -6px 0px 0px 20px;
     position: absolute;
+    z-index: 5;
 }
-
+.signup-mask-fr {
+	height: 4px;
+	width: 115px;
+	background-color: white;
+	margin: 3px 0px 0px 20px;
+	position: absolute;
+	z-index: 3;
+}
 .signup-img-de {
-	background: url('../images/uo-png-sprite.png') no-repeat;
+	background: url('../images/uo-png-sprite.png?v=3') no-repeat;
 	background-position: -8px -78px;
 	width: 97px;
 	height: 14px;
     margin: -6px 0px 0px 20px;
     position: absolute;
+    z-index: 5;
 }
-
+.signup-mask-de {
+	height: 4px;
+	width: 97px;
+	background-color: white;
+	margin: 3px 0px 0px 20px;
+	position: absolute;
+	z-index: 3;
+}
 .signupFrame {
 	border:0;
 	margin-top:5px;
