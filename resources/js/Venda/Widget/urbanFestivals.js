@@ -21,6 +21,13 @@ Venda.Festival = {
 				s = m[t];
 			jQuery(this).text(s).attr('onclick', '_gaq.push([\'_trackEvent\', \'Festival\', \'Calendar\', \''+ s +'\']);');
 			jQuery(this).attr('id', s);
+			//remove this as soon as we enter May
+			if (n === 3) {
+				Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+				jQuery('#May').addClass('selected');
+				Venda.Festival.calculateMonth();
+			}
+			// eo remove area
 			if (o === s) {
 				Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
 				jQuery(this).addClass('selected');
@@ -82,14 +89,13 @@ Venda.Festival = {
 		Venda.Festival.launchSlider();
 		Venda.Festival.instagram();
 		Venda.Festival.festivalCalendar();
-		jQuery('.'+Venda.Festival.options.fv+'Slot').click(function() {
-			var b = jQuery(this).data(Venda.Festival.options.o);
-			jQuery('.'+Venda.Festival.options.m).removeClass('selected');
-			Venda.Festival.setMonth();
-			Venda.Festival.slideOpen(b);
-		});
+	}, openCalendar: function(a) {
+		var b = jQuery(a).data(Venda.Festival.options.o);
+		jQuery('.'+Venda.Festival.options.m).removeClass('selected');
+		Venda.Festival.setMonth();
+		Venda.Festival.slideOpen(b);
 	}, launchSlider: function() {
-		jQuery('.festivalslides').flexslider({
+		jQuery('.'+Venda.Festival.options.fv+'slides').flexslider({
 			animation: "slide",
 			pauseOnHover: true
 		});

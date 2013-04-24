@@ -44,8 +44,12 @@
 	</div>
 	<!-- mp_trans_remove_start-->
 		<venda_block label=33,stxtticketstext1=notnull>
-			<div class="festivalWinLogo">
-			</div>
+			<venda_block label=61,stxtcompavail1=1>
+				<div class="festivalWinLogo"></div>
+			</venda_block label=61>
+			<venda_block label=62,stxtcompavail1!=1>
+				<div class="festivalWinLogo-soon"></div>
+			</venda_block label=62>
 			<div class="festivalWinText">
 				<p><venda_stxtticketstext1></p>
 			</div>
@@ -78,7 +82,12 @@
 		<div class="festivalMensLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Mens Festival Shop']);"><a href="<venda_dispview icat=mtops>">Shop Men's Festival >></a></div>
 	</venda_block label=30>
 	<venda_block label=31,stxttickets1=1>
-		<div class="festivalTicketsLink"  onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Win Tickets']); Venda.Festival.slideOpen('festivalCompetition'); return false;">Win X2 Tickets ></div>
+		<venda_block label=41,stxtcompavail1=1>
+		<div class="festivalTicketsLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Win Tickets']); Venda.Festival.slideOpen('festivalCompetition'); return false;">Win X2 Tickets ></div>
+		</venda_block label=41>
+		<venda_block label=42,stxtcompavail1!=1>
+		<div class="festivalTicketsLink" onclick="_gaq.push(['_trackEvent', 'Festival', 'Calendar', 'Email Signup']);"><a href="<venda_dispview page=emailsignup>">Keep Me Posted >></a></div>
+		</venda_block label=42>
 	</venda_block label=31>
 </div>
 </div>
