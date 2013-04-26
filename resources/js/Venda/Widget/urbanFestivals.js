@@ -252,7 +252,7 @@ Venda.Festival = {
             success: function (data) {
                 var h = "";
                 for (var i = 0; i < data.data.length; i++) {
-                    h += '<div class="image"><a href="' + data.data[i].link + '" target="_blank"><img onclick="_gaq.push([\'_trackEvent\', \'Festival\', \'Instagram\', \'Instagram Image ' + data.data[i].link + '\']);" rel="' + data.data[i].images.standard_resolution + '"src="' + data.data[i].images.low_resolution + '" alt="" /></a></div>';
+                    h += '<div class="image"><a href="' + data.data[i].link + '" target="_blank"><img onclick="_gaq.push([\'_trackEvent\', \'Festival\', \'Instagram\', \'Instagram Image ' + data.data[i].link + '\']);" rel="' + data.data[i].images.standard_resolution.url + '"src="' + data.data[i].images.low_resolution.url + '" alt="" /></a></div>';
                 }
                 var d = h.replace(/\n/g, '').replace(/((<div class="image">(.*?)<\/div>){6})/g, '<li>$1</li>')
                     .replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
