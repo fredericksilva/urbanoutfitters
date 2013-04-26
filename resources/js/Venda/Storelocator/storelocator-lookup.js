@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 
 
     jQuery('.accordion').hide();
-    jQuery('#map_canvas').hide();
+    jQuery('#map_canvas').css({ 'margin-left': '-6000px','float': 'none'});
 
     Venda.storeloc.ajaxGetStores('storefinder');
     Venda.storeloc.Initialize();
@@ -124,7 +124,8 @@ jQuery(document).ready(function() {
                 Venda.storeloc.updateMap();
             
                 jQuery('.accordion').show();
-                jQuery('#map_canvas').show();
+                jQuery('#map_canvas').css({ 'margin-left': '0','float': 'left'});
+
                 
 
                 Venda.storeloc.updateUriQueries('0');
@@ -191,7 +192,6 @@ Venda.storeloc.Initialize = function(){
       },
       mapTypeId: 'roadmap'
     });
-  
     //GEOCODER
     Venda.storeloc.geocoder = new google.maps.Geocoder();
 
@@ -234,7 +234,6 @@ Venda.storeloc.updateMap = function(){
     
     // This sorts by distance from point
     Venda.storeloc.stores = Venda.storeloc.stores.sort(function(a,b) { return parseFloat(a.Dist) - parseFloat(b.Dist) } );
-
     Venda.storeloc.populateMarkers();
     
     // Zoom to fit
@@ -371,7 +370,8 @@ Venda.storeloc.restoreState = function() {
             Venda.storeloc.updateMap();
         
             jQuery('.accordion').fadeIn();
-            jQuery('#map_canvas').show();
+            jQuery('#map_canvas').css({ 'margin-left': '0','float': 'left'});
+
 
                 if (activeTab > 0){
                     jQuery('.accordion').accordion( "activate" , activeTab);
