@@ -12,7 +12,7 @@ Venda.Festival = {
         fv: 'festival',
         p: 'pastEvent',
         i: 'instagram',
-        instagramAPI: 'https://api.instagram.com/v1/tags/urbanoutfitters/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?'
+        instagramAPI: 'https://api.instagram.com/v1/tags/uofest/media/recent?access_token=209854882.ddd6073.4813ec04484442bd9f0b808562d1161d&count=40&callback=?'
     },
     setMonth: function () {
         var l = document.documentElement.lang;
@@ -164,7 +164,10 @@ Venda.Festival = {
         jQuery('.' + Venda.Festival.options.g).click(function () {
             Venda.Festival.options.f = jQuery(this).data(Venda.Festival.options.g);
             jQuery('.' + Venda.Festival.options.fd).hide();
-            Venda.Festival.calculate();
+            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp( function() {
+	            Venda.Festival.calculate();
+	            jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
+            });
             Venda.Festival.addImages('1');
         });
         jQuery('.' + Venda.Festival.options.m).click(function () {
@@ -172,7 +175,10 @@ Venda.Festival = {
             jQuery('.' + Venda.Festival.options.fd).hide();
             Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
             jQuery(this).addClass('selected');
-            Venda.Festival.calculateMonth();
+            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp( function() {
+	            Venda.Festival.calculateMonth();
+	            jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
+            });
             Venda.Festival.addImages('1');
         });
     },
@@ -183,6 +189,10 @@ Venda.Festival = {
                 d = i.data(Venda.Festival.options.d).split(".")[1];
             if (Venda.Festival.options.f === g && Venda.Festival.options.e === d) {
                 i.show();
+            }
+            if (Venda.Festival.options.f === g && (Venda.Festival.options.e != d || Venda.Festival.options.e === d)) {
+	            jQuery('.' + Venda.Festival.options.m).removeClass('selected');
+	            i.show();
             } else {
                 i.hide();
             }
@@ -242,15 +252,27 @@ Venda.Festival = {
             success: function (data) {
                 var h = "";
                 for (var i = 0; i < data.data.length; i++) {
-                    h += '<div class="image"><img onclick="Venda.Festival.instagramZoom(this,400,400); _gaq.push([\'_trackEvent\', \'Festival\', \'Instagram\', \'Instagram Image ' + data.data[i].link + '\']);" rel="' + data.data[i].images.standard_resolution.url + '"src="' + data.data[i].images.low_resolution.url + '" alt="" /></div>';
+                    h += '<div class="image"><a href="' + data.data[i].link + '" target="_blank"><img onclick="_gaq.push([\'_trackEvent\', \'Festival\', \'Instagram\', \'Instagram Image ' + data.data[i].link + '\']);" rel="' + data.data[i].images.standard_resolution + '"src="' + data.data[i].images.low_resolution + '" alt="" /></a></div>';
                 }
                 var d = h.replace(/\n/g, '').replace(/((<div class="image">(.*?)<\/div>){6})/g, '<li>$1</li>')
                     .replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
                 jQuery('ul.' + Venda.Festival.options.i + 'Images').html(d).find('li:empty').remove();
+                jQuery('ul.' + Venda.Festival.options.i + 'Images img').error(function() {
+	                jQuery(this).parent().hide();
+                })
                 jQuery('.' + Venda.Festival.options.i + 'Slides').flexslider({
                     animation: "slide",
                     pauseOnHover: true,
-                    useCSS: false
+                    animationLoop: false, 
+                    useCSS: false,
+                    before: function(slider){
+                    	if ((slider.animatingTo + 1) === slider.count) {
+	                    	jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeOut('slow');
+                    	}
+	                    else {
+		                    jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeIn('slow');
+	                    }
+                    }
                 });
             }
         });
