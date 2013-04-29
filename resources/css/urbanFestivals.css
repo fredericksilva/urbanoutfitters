@@ -321,7 +321,7 @@ ul.instagramImages li .image img:hover {
 .festivalBg-1 {
 	width: 1536px;
 	height: 1640px;
-	background: url('../images/festival/Top_BG.gif') no-repeat transparent;
+	background: url('../images/festival/background.gif') no-repeat transparent;
 	margin: 0 auto;
 }
 .festivalSlot {
@@ -720,9 +720,6 @@ a.closeDropdown {
 .festivalImage {
 	width: 160px;
 	padding: 10px 30px 10px 10px;
-}
-.festivalImage img {
-	display:none;
 }
 .festivalDescription {
 	width: 350px;

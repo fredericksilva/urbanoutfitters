@@ -18,13 +18,13 @@ Venda.Festival = {
         var l = document.documentElement.lang;
         switch (l) {
         case 'fr':
-            var m = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Sept", "Octobre", "Novembre", "Décembre"];
+            var m = ["Jan", "Fév", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Sept", "Oct", "Nov", "Déc"];
             break;
         case 'de':
-            var m = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "Aug", "Sept", "Oktober", "November", "Dezember"];
+            var m = ["Jan", "Feb", "März", "April", "Mai", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dez"];
             break;
         default:
-            var m = ["January", "February", "March", "April", "May", "June", "July", "Aug", "Sept", "October", "November", "December"];
+            var m = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
         };
         var d = new Date(),
             n = d.getMonth(),
@@ -37,10 +37,10 @@ Venda.Festival = {
             jQuery(this).text(s).attr('onclick', '_gaq.push([\'_trackEvent\', \'Festival\', \'Calendar\', \'' + s + '\']);');
             jQuery(this).attr('id', s);
             //remove this as soon as we enter May
-            if (o === m[t-1]) {
-	            Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
-	            jQuery(this).addClass('selected');
-	            Venda.Festival.calculateMonth();
+            if (o === m[t - 1]) {
+                Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+                jQuery(this).addClass('selected');
+                Venda.Festival.calculateMonth();
             }
             // eo remove area
             /*if (o === s) {
@@ -108,26 +108,28 @@ Venda.Festival = {
         });
     },
     init: function () {
+        var f = jQuery('.facebookImg').text();
+        jQuery('head').append('<meta property="og:image" content="' + f + '" />');
         Venda.Festival.launchSlider();
         Venda.Festival.instagram();
         Venda.Festival.festivalCalendar();
-        var a = Venda.Platform.getUrlParam(window.location.href,'festival');
+        var a = Venda.Platform.getUrlParam(window.location.href, 'festival');
         switch (a) {
         case 'tickets':
-        	jQuery(window).bind('load', function() {
-            	Venda.Festival.slideOpen(Venda.Festival.options.fv+'Competition');
+            jQuery(window).bind('load', function () {
+                Venda.Festival.slideOpen(Venda.Festival.options.fv + 'Competition');
             })
             break;
         case 'calendar':
-        	jQuery(window).bind('load', function() {
-        		jQuery('.' + Venda.Festival.options.m).removeClass('selected');
-        		Venda.Festival.setMonth();
-            	Venda.Festival.slideOpen(Venda.Festival.options.fv+'Calendar');
+            jQuery(window).bind('load', function () {
+                jQuery('.' + Venda.Festival.options.m).removeClass('selected');
+                Venda.Festival.setMonth();
+                Venda.Festival.slideOpen(Venda.Festival.options.fv + 'Calendar');
             })
             break;
         case 'blog':
-        	jQuery(window).bind('load', function() {
-            	Venda.Festival.slideOpen(Venda.Festival.options.fv+'OfWeek');
+            jQuery(window).bind('load', function () {
+                Venda.Festival.slideOpen(Venda.Festival.options.fv + 'OfWeek');
             })
             break;
         default:
@@ -164,9 +166,9 @@ Venda.Festival = {
         jQuery('.' + Venda.Festival.options.g).click(function () {
             Venda.Festival.options.f = jQuery(this).data(Venda.Festival.options.g);
             jQuery('.' + Venda.Festival.options.fd).hide();
-            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp( function() {
-	            Venda.Festival.calculate();
-	            jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
+            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp(function () {
+                Venda.Festival.calculate();
+                jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
             });
             Venda.Festival.addImages('1');
         });
@@ -175,9 +177,9 @@ Venda.Festival = {
             jQuery('.' + Venda.Festival.options.fd).hide();
             Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
             jQuery(this).addClass('selected');
-            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp( function() {
-	            Venda.Festival.calculateMonth();
-	            jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
+            jQuery('.' + Venda.Festival.options.fv + 'Container').slideUp(function () {
+                Venda.Festival.calculateMonth();
+                jQuery('.' + Venda.Festival.options.fv + 'Container').slideDown();
             });
             Venda.Festival.addImages('1');
         });
@@ -191,8 +193,8 @@ Venda.Festival = {
                 i.show();
             }
             if (Venda.Festival.options.f === g && (Venda.Festival.options.e != d || Venda.Festival.options.e === d)) {
-	            jQuery('.' + Venda.Festival.options.m).removeClass('selected');
-	            i.show();
+                jQuery('.' + Venda.Festival.options.m).removeClass('selected');
+                i.show();
             } else {
                 i.hide();
             }
@@ -257,21 +259,20 @@ Venda.Festival = {
                 var d = h.replace(/\n/g, '').replace(/((<div class="image">(.*?)<\/div>){6})/g, '<li>$1</li>')
                     .replace(/(.*)<\/li>(.*)/, '$1</li><li>$2</li>');
                 jQuery('ul.' + Venda.Festival.options.i + 'Images').html(d).find('li:empty').remove();
-                jQuery('ul.' + Venda.Festival.options.i + 'Images img').error(function() {
-	                jQuery(this).parent().hide();
+                jQuery('ul.' + Venda.Festival.options.i + 'Images img').error(function () {
+                    jQuery(this).parent().hide();
                 })
                 jQuery('.' + Venda.Festival.options.i + 'Slides').flexslider({
                     animation: "slide",
                     pauseOnHover: true,
-                    animationLoop: false, 
+                    animationLoop: false,
                     useCSS: false,
-                    before: function(slider){
-                    	if ((slider.animatingTo + 1) === slider.count) {
-	                    	jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeOut('slow');
-                    	}
-	                    else {
-		                    jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeIn('slow');
-	                    }
+                    before: function (slider) {
+                        if ((slider.animatingTo + 1) === slider.count) {
+                            jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeOut('slow');
+                        } else {
+                            jQuery('.instagramSlides .flex-direction-nav li a.flex-next').fadeIn('slow');
+                        }
                     }
                 });
             }
