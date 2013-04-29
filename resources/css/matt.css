@@ -1,16 +1,16 @@
 /* Header */
-#solrsearch {
+#solrsearch, #locaytasearch {
   float: right;
   height: 24px;
   margin-bottom: 5px;
   position: relative;
   width: 200px;
 }
-.solr-search {
+.solr-search, .locayta-search {
   margin-top: 45px;
   clear: both;
 }
-.solr-textfield {
+.solr-textfield, .locayta-textfield {
   background: #fff;
   border: 1px solid #333333;
   color: #333;
@@ -22,7 +22,7 @@
   width: 160px;
   font-weight: bold;
 }
-.solr-submit {
+.solr-submit, .locayta-submit {
   background:url("../images/uo-png-sprite.png") no-repeat;
   background-position: -132px -32px;
   border: 0 none;
