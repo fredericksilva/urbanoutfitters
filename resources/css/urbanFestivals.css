@@ -6,22 +6,22 @@ body {
 	background-color: #C9A9D0;
 }
 @font-face {
-    font-family: "UO Festival Font";
-    src: url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-medium-webfont.eot');
-    src: url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-medium-webfont.woff') format('woff'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-medium-webfont.ttf') format('truetype'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-medium-webfont.svg#ywft_absent_grotesque_mediuMd') format('svg');
+    font-family: "UO Festival Font L";
+    src: url('../fonts/ywft-absent-grotesque-light-webfont.eot');
+    src: url('../fonts/ywft-absent-grotesque-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.woff') format('woff'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.ttf') format('truetype'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.svg#ywft_absent_grotesque_lightLt') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: "UO Festival Font Light";
-    src: url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-light-webfont.eot');
-    src: url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-light-webfont.woff') format('woff'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-light-webfont.ttf') format('truetype'),
-         url('/content/ebiz/urbanoutfitters/resources/fonts/ywft-absent-grotesque-light-webfont.svg#ywft_absent_grotesque_mediuMd') format('svg');
+    font-family: "UO Festival Font";
+    src: url('../fonts/ywft-absent-grotesque-medium-webfont.eot');
+    src: url('../fonts/ywft-absent-grotesque-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.woff') format('woff'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.ttf') format('truetype'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.svg#ywft_absent_grotesque_mediuMd') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -33,7 +33,7 @@ body {
 .festAcc-acc {
 	position:absolute;
 	z-index:41;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png');
+	background: url('../images/festival/festival_sprite_uk.png');
 }
 .accTallGrass {
 	width: 55px;
@@ -86,7 +86,7 @@ body {
 .festivalNav a {
 	width: 134px;
 	height: 50px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat;
 	display:inline-block;
 	vertical-align: top;
 	text-indent:-9999px;
@@ -136,17 +136,17 @@ body {
 	z-index: 60;
 }
 .festivalJump {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -1137px -2px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -1137px -2px;
 	width: 310px;
 	height: 355px;
 	top: -27px;
 	left: -285px;
 }
 .festivalDive {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -988px -1356px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -988px -1356px;
 	width:419px;
 	height:344px;
-	top: 125px;
+	top: 159px;
 	left: 787px;
 }
 .festivalbg {
@@ -178,7 +178,7 @@ body {
 	margin: 20px 38px 0 -38px;
 }
 .instagramSlides .flex-direction-nav li a {
-	background: url("/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png") no-repeat;
+	background: url("../images/festival/festival_sprite_uk.png") no-repeat;
 }
 .instagramSlides .flex-direction-nav li a.flex-prev {
 	top: 470px;
@@ -224,21 +224,21 @@ ul.instagramImages li .image img:hover {
 	z-index: 50;
 }
 .Base1 {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent 0 -1356px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 -1356px;
 	width: 317px;
 	height: 594px;
 	bottom: -222px;
 	left: -192px;
 }
 .Base2 {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -327px -1356px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -327px -1356px;
 	width:318px;
 	height:301px;
 	bottom: -149px;
 	left: 269px;
 }
 .Base3 {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -655px -1356px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -655px -1356px;
 	width:323px;
 	height:433px;
 	bottom: -203px;
@@ -251,7 +251,7 @@ ul.instagramImages li .image img:hover {
 	padding: 0;
 }
 .festivalInstagram {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/Instagram_4.gif') no-repeat transparent 0 0;
+	background: url('../images/festival/instagram_uk.gif') no-repeat transparent 0 0;
 	height: 1259px;
 	width: 1712px;
 	margin: 0 auto;
@@ -259,7 +259,7 @@ ul.instagramImages li .image img:hover {
 .festivalDivider {
 	width: 1490px;
 	height: 454px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent 0 -898px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 -898px;
 	position:absolute;
 	top: 1150px;
 	left: -196px;
@@ -268,7 +268,7 @@ ul.instagramImages li .image img:hover {
 .festivalStaticLinks {
 	width: 995px;
 	height: 447px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent 0 0;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 0;
 	position:absolute;
 	top: 773px;
 	left: -32px;
@@ -286,7 +286,7 @@ ul.instagramImages li .image img:hover {
 	cursor: pointer;
 }
 .festivalStaticLinks .staticWomens:hover {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -11px -510px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -11px -510px;
 }
 .festivalStaticLinks .staticMens {
 	width: 331px;
@@ -298,7 +298,7 @@ ul.instagramImages li .image img:hover {
 	cursor:pointer;
 }
 .festivalStaticLinks .staticMens:hover {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -315px -447px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -315px -447px;
 }
 .festivalStaticLinks .staticFestival {
 	width: 353px;
@@ -310,7 +310,7 @@ ul.instagramImages li .image img:hover {
 	cursor: pointer;
 }
 .festivalStaticLinks .staticFestival:hover {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent -633px -447px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -633px -447px;
 }
 #UOfestivals {
 	position: relative;
@@ -321,7 +321,7 @@ ul.instagramImages li .image img:hover {
 .festivalBg-1 {
 	width: 1536px;
 	height: 1640px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/Top_BG.gif') no-repeat transparent;
+	background: url('../images/festival/Top_BG.gif') no-repeat transparent;
 	margin: 0 auto;
 }
 .festivalSlot {
@@ -336,7 +336,7 @@ ul.instagramImages li .image img:hover {
 .openCalendar {
 	width: 333px;
 	height:479px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/animations_background_uk.gif') no-repeat transparent -110px 0;
+	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -110px 0;
 	position:absolute;
 	top: -239px;
 	left: -8px;
@@ -347,7 +347,7 @@ ul.instagramImages li .image img:hover {
 .openBlog {
 	width: 309px;
 	height: 479px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/animations_background_uk.gif') no-repeat transparent -443px 0;
+	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -443px 0;
 	position:absolute;
 	top: -239px;
 	left: 325px;
@@ -358,7 +358,7 @@ ul.instagramImages li .image img:hover {
 .openTickets {
 	width: 450px;
 	height: 479px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/animations_background_uk.gif') no-repeat transparent -749px 0;
+	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -749px 0;
 	position:absolute;
 	top: -239px;
 	left: 631px;
@@ -371,7 +371,7 @@ ul.instagramImages li .image img:hover {
 }
 a.tweetIt, div.pinIt, a.facebookIt, a.spotifyIt {
 	margin-left: 0px !important;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat;
 	width:63px;
 	height:63px;
 	border: none;
@@ -419,7 +419,7 @@ a.closeDropdown {
 	text-indent: -99999px;
 	width: 39px;
 	height: 39px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -144px -2235px ;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -144px -2235px ;
 	display:block;
 	cursor:pointer;
 }
@@ -503,7 +503,7 @@ a.closeDropdown {
 	padding: 4px 0px 5px;
 }
 .festival-slider .flex-control-nav li a {
-	background: url("/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png") no-repeat -157px -267px;
+	background: url("../images/uo-png-sprite.png") no-repeat -157px -267px;
 	width: 24px;
 	height: 24px;
 }
@@ -536,7 +536,7 @@ a.closeDropdown {
 	height: 45px;
 	margin: -23px 0 0;
 	display: block;
-	background: url("/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png") no-repeat 0 0;
+	background: url("../images/uo-png-sprite.png") no-repeat 0 0;
 	position: absolute;
 	top: 50%;
 	cursor: pointer;
@@ -579,7 +579,7 @@ a.closeDropdown {
 	padding: 0;
 }
 .festivalAccordion-top {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -1px -2313px ;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1px -2313px ;
 	height: 273px;
 	width: 1001px;
 }
@@ -588,7 +588,7 @@ a.closeDropdown {
 	width: 1001px;
 }
 .festivalAccordion-bottom {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -1px -2636px ;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1px -2636px ;
 	height: 273px;
 	width: 1001px;
 }
@@ -604,14 +604,14 @@ a.closeDropdown {
 .festivalGenre {
 	text-align: center;
 	width: 800px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -51px -2085px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -51px -2085px transparent;
 	margin-left: 49px;
 	height: 41px;
 }
 .festivalMonth {
 	text-align: center;
 	width: 900px;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat 0 -2126px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2126px transparent;
 	height: 73px;
 }
 .festivalOfWeek, .festivalCompetition {
@@ -632,7 +632,7 @@ a.closeDropdown {
 	border-bottom: 2px solid black;
 }
 .genre {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent;
 }
 .Uk {
 	background-position: 0 -2201px;
@@ -686,7 +686,7 @@ a.closeDropdown {
 	overflow: hidden;
 }
 .festivalDate, .festivalLocation {
-	font-family: "UO Festival Font Light", Helvetica, Arial, sans-serif;
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
 }
 .festivalDate {
 	width: 160px;
@@ -709,7 +709,7 @@ a.closeDropdown {
 	display: inline-block;
 	vertical-align: top;
 	height: 180px;
-	font-family: "UO Festival Font Light", Helvetica, Arial, sans-serif;
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
 .festivalInfo p span {
@@ -771,14 +771,14 @@ a.closeDropdown {
 	cursor:pointer;
 	font-size: 14px;
 	font-weight: bold;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -750px -2201px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -750px -2201px transparent;
 	font-size: 30px;
 }
 .month:hover {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat 0 -2235px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2235px transparent;
 }
 .selected {
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat 0 -2235px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2235px transparent;
 }
 .genre {
 	display: inline-block;
@@ -800,7 +800,7 @@ a.closeDropdown {
 	height: 120px;
 	display: inline-block;
 	vertical-align: top;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -1254px -2572px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1254px -2572px transparent;
 }
 .festivalWinLogo-soon {
 	width: 160px;
@@ -808,14 +808,19 @@ a.closeDropdown {
 	height: 120px;
 	display: inline-block;
 	vertical-align: top;
-	background: url('/content/ebiz/urbanoutfitters/resources/images/festival/festival_sprite-uk.png') no-repeat -1254px -2693px transparent;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1254px -2693px transparent;
+}
+.festivalWinLogo a {
+	display: block;
+	height: 100%;
+	text-indent: -9999px;
 }
 .festivalWinText {
 	width: 660px;
 	padding: 0 10px 0 0;
 	height: 120px;
 	display: inline-block;
-	font-family: "UO Festival Font Light", Helvetica, Arial, sans-serif;
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	vertical-align: top;
 }
