@@ -58,7 +58,6 @@ jQuery(function(){
     };
 		Venda.Widget.RegionLangSwitch.doURL("setlocn",this,currRegion);
 		Venda.Widget.RegionLangSwitch.conversionSwitch();
-		jQuery(".switcher-content").slideUp("fast"); 
 		return false;
 	});
 	jQuery(".regionLangSwitcher .lang a").click(function() {	
@@ -74,7 +73,7 @@ jQuery(function(){
 Venda.Widget.RegionLangSwitch.doURL = function(setType,selectedObj,currSelected){
 
 var redirectURL = "",
-    removeThese = [Venda.Widget.RegionLangSwitch.ebizURL, Venda.Widget.RegionLangSwitch.ebizURL.replace("http://","https://"), "&setlocn=eur", "&setlocn=restofworld", "http://", new RegExp("bin\/venda.*", "i"), new RegExp("^\/*", "i")],
+    removeThese = [Venda.Widget.RegionLangSwitch.ebizURL, Venda.Widget.RegionLangSwitch.ebizURL.replace("http://","https://"), "&setlocn=eur", "&setlocn=restofworld", "http://", "#", new RegExp("bin\/venda.*", "i"), new RegExp("^\/*", "i")],
     currentLoc = sURL,
     changeValue = jQuery(selectedObj).attr("id")
   if (Venda.Widget.RegionLangSwitch.ebizURL == "http://urbanoutfitters5.uat.venda.com" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.fr/sdurbanoutfitters5/sduat/dvenda" || Venda.Widget.RegionLangSwitch.ebizURL == "http://www.urbanoutfitters.de/sdurbanoutfitters5/sduat/dvenda") {
@@ -142,4 +141,5 @@ Venda.Widget.RegionLangSwitch.conversionSwitch = function(){
     jQuery(".region ." + convertCurr).parent().hide();
     jQuery(".region ." + actualCurr).parent().show();
   }
+  jQuery(".switcher-content").slideUp("fast"); 
 }

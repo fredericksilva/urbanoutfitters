@@ -556,6 +556,12 @@
 }
 
 /* CURRENCY SELCTOR */
+.product-details .price-converted {
+  color: #0033ff;
+}
+.price-converted {
+  font-style: normal;
+}
 .regionLangSwitcher {
   display: inline-block;
   margin-top: 7px;

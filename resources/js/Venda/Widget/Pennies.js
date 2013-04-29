@@ -110,7 +110,7 @@ var StartPennies = function() {
 									$this.data('price',$this.text());
 								}
 								$this
-									.html(convertPrice($this.data('price'),o.from,o.to) + " / " + $this.data('price'))
+									.html($this.data('price') + " / <em class='price-converted'>" + convertPrice($this.data('price'),o.from,o.to) + "</em>")
 									.end()
 									.addClass('convertedPrice');
 							});

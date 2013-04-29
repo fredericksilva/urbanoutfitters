@@ -108,7 +108,7 @@ jQuery(function(){
 				<meta itemprop="priceCurrency" content="<venda_currencycode>">
 				<venda_block label=onhand,invtonhand&gt;0><venda_block label=instock,invtpreorder!=1><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=preorder,invtpreorder=1><link itemprop="availability" href="http://schema.org/PreOrder"></venda_block label=preorder></venda_block label=onhand><venda_block label=outofstock,invtonhand&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
-				<p class="price-info">You will be charged in <strong>&pound;</strong><span class="signage"></span></p>
+				<p class="price-info">You will be charged in <strong><venda_currsym></strong><span class="signage"></span></p>
 				<div class="price-expanded"><p>Your local currency is for display purposes only and is calculated based on exchange rates that are updated daily.</p></div>
 			</div>
 			<div class="review-score">
@@ -142,7 +142,7 @@ jQuery(function(){
 				<meta itemprop="priceCurrency" content="<venda_currencycode>">
 				<venda_block label=instock,invtatrinstock&gt;0><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=outofstock,invtatrinstock&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
-				<p class="price-info">You will be charged in <strong>&pound;</strong><span class="signage"></span></p>
+				<p class="price-info">You will be charged in <strong><venda_currsym></strong><span class="signage"></span></p>
 				<div class="price-expanded"><p>Your local currency is for display purposes only and is calculated based on exchange rates that are updated daily.</p></div>
 			</div>
 		  <div class="review-score">

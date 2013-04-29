@@ -2006,8 +2006,11 @@ fieldset {
     display: none;
     overflow: hidden;
     border-bottom: 1px solid #333;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.oneProduct .price-expanded p {
+    margin: 0;
 }
 .oneProduct .priceField {
     margin: 14px 0 12px;
