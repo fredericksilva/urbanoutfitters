@@ -169,7 +169,7 @@ body {
 	min-width: 400px;
 }
 .instagramSlides {
-	padding-top: 320px;
+	padding-top: 390px;
 	width: 660px;
 	text-align: center;
 	margin:0 auto;
@@ -181,14 +181,14 @@ body {
 	background: url("../images/festival/festival_sprite_uk.png") no-repeat;
 }
 .instagramSlides .flex-direction-nav li a.flex-prev {
-	top: 470px;
+	top: 550px;
 	left: -40px;
 	background-position: -1226px -535px;
 	width: 133px;
 	height:121px;
 }
 .instagramSlides .flex-direction-nav li a.flex-next {
-	top: 480px;
+	top: 560px;
 	left: 785px;
 	width: 153px;
 	height: 99px;
