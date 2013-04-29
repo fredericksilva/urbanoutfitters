@@ -2,7 +2,7 @@ body {
 	background:none;
 	background-color: #C9A9D0;
 }
-.signup-mask {
+.signup-mask, .signup-mask-fr, .signup-mask-de {
 	background-color: #C9A9D0;
 }
 @font-face {
