@@ -1727,7 +1727,7 @@ margin: 0 0 20px 0;
     color: pink;
 }
 
-ul#mm_ul li.navsfdigibook {
+ul#mm_ul li.navsfdigibook, ul#mm_ul li.navuofestivals {
 	display:none;
 }
 

@@ -108,12 +108,10 @@ Venda.Festival = {
         });
     },
     init: function () {
-        var f = jQuery('.facebookImg').text();
-        jQuery('head').append('<meta property="og:image" content="' + f + '" />');
         Venda.Festival.launchSlider();
         Venda.Festival.instagram();
         Venda.Festival.festivalCalendar();
-        var a = Venda.Platform.getUrlParam(window.location.href, 'festival');
+        var a = Venda.Platform.getUrlParam(window.location.href, 'win');
         switch (a) {
         case 'tickets':
             jQuery(window).bind('load', function () {
