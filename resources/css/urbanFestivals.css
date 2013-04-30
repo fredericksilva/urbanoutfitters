@@ -358,13 +358,13 @@ ul.instagramImages li .image img:hover {
 .openTickets {
 	width: 450px;
 	height: 479px;
-	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -749px 0;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -752px 0;
 	position:absolute;
 	top: -239px;
-	left: 631px;
+	left: 634px;
 }
 .openTickets:hover {
-	background-position: -749px -480px;
+	background-position: -752px -480px;
 }
 .spotifyMe {
 	margin-top: -2px;
