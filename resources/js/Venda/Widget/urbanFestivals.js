@@ -70,21 +70,28 @@ Venda.Festival = {
             e = jQuery('.' + Venda.Festival.options.m).filter(function () {
                 return jQuery(this).data(Venda.Festival.options.d).split(".")[1] == d;
             }).detach();
+
             jQuery('.' + Venda.Festival.options.fv + 'Month').append(e);
         }
     },
     sortDay: function () {
         var a = [],
-            d, e;
+        	d, e;
         a = jQuery('.' + Venda.Festival.options.h).map(function () {
-            return jQuery(this).data(Venda.Festival.options.d).split(".")[0];
+            return "new Date("+jQuery(this).data(Venda.Festival.options.d).split(".").reverse().join(".")+")"
         }).get();
-        a.sort().reverse();
-        while (a.length) {
+	    var date_sort_asc = function (date1, date2) {
+		    if (date1 > date2) return 1;
+		    if (date1 < date2) return -1;
+		    return 0;
+		};
+		a.sort(date_sort_asc).reverse();
+		while (a.length) {
             d = a.pop();
             e = jQuery('.' + Venda.Festival.options.h).filter(function () {
-                return jQuery(this).data(Venda.Festival.options.d).split(".")[0] == d;
+                return "new Date("+jQuery(this).data(Venda.Festival.options.d).split(".").reverse().join(".")+")" == d;
             }).detach();
+
             jQuery('.' + Venda.Festival.options.fv + 'Container').append(e);
         }
     },

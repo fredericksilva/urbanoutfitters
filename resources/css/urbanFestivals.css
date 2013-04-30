@@ -336,7 +336,7 @@ ul.instagramImages li .image img:hover {
 .openCalendar {
 	width: 333px;
 	height:479px;
-	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -110px 0;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -110px 0;
 	position:absolute;
 	top: -239px;
 	left: -8px;
@@ -347,7 +347,7 @@ ul.instagramImages li .image img:hover {
 .openBlog {
 	width: 309px;
 	height: 479px;
-	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -443px 0;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -443px 0;
 	position:absolute;
 	top: -239px;
 	left: 325px;
@@ -358,7 +358,7 @@ ul.instagramImages li .image img:hover {
 .openTickets {
 	width: 450px;
 	height: 479px;
-	background: url('../images/festival/animations_background_uk.gif') no-repeat transparent -749px 0;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -749px 0;
 	position:absolute;
 	top: -239px;
 	left: 631px;
