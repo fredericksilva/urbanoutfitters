@@ -177,8 +177,6 @@ To do:
 	Venda.orderConf = {
 		init: function () {
 			Venda.orderConf.tandcCheck();
-			Venda.orderConf.payDetailsCallback();
-			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}, tandcCheck: function () {
 			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
 				alert("<venda_text id=cc_no_required>");
@@ -196,6 +194,7 @@ To do:
 				alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
 				return false;
 			}
+			Venda.orderConf.payDetailsCallback();
 		}, payDetailsCallback: function (){
 			var l = document.documentElement.lang;
 			switch (l) {
@@ -208,6 +207,7 @@ To do:
 			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
 				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
 			}
+			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}
 	}
 	</script>
