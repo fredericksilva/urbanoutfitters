@@ -218,7 +218,16 @@ Venda.Attributes.Initialize = function() {
 * on your needs
 */
 Venda.Attributes.Declare = function() {
-	var lowStock,gender=jQuery("#attributes-gender").text();if(gender){if(gender==="w"){lowStock=10}if(gender==="m"){lowStock=3}if(gender==="h"){lowStock=5}}else{lowStock=10};
+	var lowStock,
+		gender = jQuery("#attributes-gender").text();
+	switch(gender) {
+		case 'w': lowStock = 10;
+		break;
+		case 'm': lowStock = 3;
+		break;
+		case 'h': lowStock = 5;
+		default: lowStock = 10;
+	}
 	Venda.Attributes.Settings = {
 		lowStockThreshold:			lowStock,
 		emailWhenOutOfStock:		false,
