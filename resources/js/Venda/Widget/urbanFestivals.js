@@ -37,17 +37,17 @@ Venda.Festival = {
             jQuery(this).text(s).attr('onclick', '_gaq.push([\'_trackEvent\', \'Festival\', \'Calendar\', \'' + s + '\']);');
             jQuery(this).attr('id', s);
             //remove this as soon as we enter May
-            if (o === m[t - 1]) {
-                Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
-                jQuery(this).addClass('selected');
-                Venda.Festival.calculateMonth();
-            }
-            // eo remove area
-            /*if (o === s) {
+            /*if (o === m[t - 1]) {
                 Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
                 jQuery(this).addClass('selected');
                 Venda.Festival.calculateMonth();
             }*/
+            // eo remove area
+            if (o === s) {
+                Venda.Festival.options.e = jQuery(this).data(Venda.Festival.options.d).split(".")[1];
+                jQuery(this).addClass('selected');
+                Venda.Festival.calculateMonth();
+            }
             if (t === n) {
                 if (u < b) {
                     Venda.Festival.pastEvent(jQuery(this).data(Venda.Festival.options.d));

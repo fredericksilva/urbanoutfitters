@@ -5,6 +5,9 @@ body {
 .signup-mask, .signup-mask-fr, .signup-mask-de {
 	background-color: #C9A9D0;
 }
+.crumbtrail {
+	display: none;
+}
 @font-face {
     font-family: "UO Festival Font L";
     src: url('../fonts/ywft-absent-grotesque-light-webfont.eot');
