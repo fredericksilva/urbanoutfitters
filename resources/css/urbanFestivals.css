@@ -86,13 +86,14 @@ body {
 	top: 25px;
 	left: 50px;
 }
-.festivalNav a {
+.festivalNav a, .festivalNav div {
 	width: 134px;
 	height: 50px;
 	background: url('../images/festival/festival_sprite_uk.png') no-repeat;
 	display:inline-block;
 	vertical-align: top;
 	text-indent:-9999px;
+	cursor:pointer;
 }
 .festivalNav a.nav1 {
 	background-position: 0 -1970px;
@@ -112,10 +113,10 @@ body {
 .festivalNav a.nav3:hover {
 	background-position: -277px -2025px;
 }
-.festivalNav a.nav4 {
+.festivalNav div.nav4 {
 	background-position: -436px -1970px;
 }
-.festivalNav a.nav4:hover {
+.festivalNav div.nav4:hover {
 	background-position: -436px -2025px;
 }
 .festivalNav a.nav5 {
@@ -124,10 +125,10 @@ body {
 .festivalNav a.nav5:hover {
 	background-position: -575px -2025px;
 }
-.festivalNav a.nav6 {
+.festivalNav div.nav6 {
 	background-position: -713px -1970px;
 }
-.festivalNav a.nav6:hover {
+.festivalNav div.nav6:hover {
 	background-position: -713px -2025px;
 }
 .festivalNav a.nav3 {
