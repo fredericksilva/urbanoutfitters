@@ -773,14 +773,25 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 Venda.Attributes.Price = function (uID){
 	var currentCurrency = Venda.Ebiz.CookieJar.get("locn") || "restofworld";
 	if (currentCurrency == "eur") {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{ 
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else {
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
 	else {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
-	jQuery('.atributesPrice #price').data('price',jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell'));
+	jQuery('.atributesPrice #price').data('price',jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')); 
+	jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
 };
 
 /**

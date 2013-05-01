@@ -556,7 +556,7 @@
 }
 
 /* CURRENCY SELCTOR */
-.product-details .price-converted {
+.product-details .price-converted, #bottomtab .price-converted, .prods .price-converted {
   color: #0033ff;
 }
 .price-converted {
