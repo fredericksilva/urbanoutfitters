@@ -20,7 +20,6 @@ Venda.Widget.VBM.showVBMH2 = function(ref) {
 		aHeader.style.display='block';
 	} 
 };
-
 Venda.Widget.VBM.hideVBMContent = function(){
 	if(Venda.Widget.VBM.tabObj){
 		jQuery(Venda.Widget.VBM.tabObj.tabID +" .tabcontent .vbmTab").html("");
@@ -75,6 +74,9 @@ Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {
 						Venda.Widget.VBM.tabObj	= bottomtab;
 						Venda.Widget.VBM.hideVBMContent();
 					}
+        	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+        		jQuery('.price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+        	}	
 				});
 				Venda.Widget.VBM.showVBMH2(elref);
 			} else {
@@ -117,6 +119,9 @@ Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {
 						Venda.Widget.VBM.tabObj	= tabview;
 						Venda.Widget.VBM.hideVBMContent();	
 					}
+        	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+        		jQuery('.price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+        	}	
 				});
 				Venda.Widget.VBM.showVBMH2(elref);
 			} else {
@@ -167,6 +172,9 @@ Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {
 						Venda.Widget.VBM.tabObj	= bottomtab;
 						Venda.Widget.VBM.hideVBMContent();
 					}
+        	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+        		jQuery('.price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+        	}	
 				});
 				Venda.Widget.VBM.showVBMH2(elref);
 			} else {
@@ -202,6 +210,9 @@ Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {
 						Venda.Widget.VBM.tabObj	= bottomtab;
 						Venda.Widget.VBM.hideVBMContent();
 					}
+        	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+        		jQuery('.price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+        	}	
 				});
 				Venda.Widget.VBM.showVBMH2(elref);
 			} else {

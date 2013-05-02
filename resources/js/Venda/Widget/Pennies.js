@@ -16,19 +16,20 @@
 */
 
 var StartPennies = function() {
-		// gets the latest rates and checks for a cookie
+		var xmlloc = jQuery('#tag-xml').html();
+		jQuery('#tag-xml').html(Venda.Widget.RegionLangSwitch.ebizURL + xmlloc);
 		jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig')
 			.pennies('check',jQuery('#tag-xml')
 			.pennies('rates'));
-		
 	// Events
-
+	  jQuery('.price-info').live('click',function () {
+  	  jQuery('.price-expanded').slideToggle();
+  	  jQuery(this).toggleClass('open');
+	  });
 		// This sets the currency using the switcher widget
 		jQuery('.loadcurrency').live('click',function () { 
 			jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery(this).attr('rel')});
 			Venda.Widget.RegionLangSwitch.conversionSwitch();
-			jQuery(".switcher-content").slideUp("fast"); 
-			jQuery(this).find(".switcher-down").css("background-position", "-1px -32px");
 			return false;
 		});
 		
@@ -96,8 +97,11 @@ var StartPennies = function() {
 							.addClass('setCurrency');
 
 						$('.currently').html(o.to);
-
-						if (o.from !== o.to){
+						if (o.from !== o.to && o.to !== "EUR" && o.to != "GBP"){
+						  $('.region #restofworld, .region #eur').addClass('resetcurrency');
+						  if($('.price-info').length){
+  						  $('.price-info').show();
+						  }
 							return this.each(function() {
 
 								var $this = $(this);
@@ -105,9 +109,8 @@ var StartPennies = function() {
 								if (typeof $this.data('price') == 'undefined'){
 									$this.data('price',$this.text());
 								}
-
 								$this
-									.html(convertPrice($this.data('price'),o.from,o.to))
+									.html($this.data('price') + " / <em class='price-converted'>" + convertPrice($this.data('price'),o.from,o.to) + "</em>")
 									.end()
 									.addClass('convertedPrice');
 							});
@@ -159,12 +162,11 @@ var StartPennies = function() {
 					rates 	: function(url) {
 
 						var rate = { 'EUR' : 1 }; // Adding object with predefined EURO rate
-
 						jQuery.ajax({
 						   url: $(this).html(),
 						   dataType: "xml",
 						   success: function(o){
-
+  						   
 								jQuery(o).find('Cube').each(function(index, value){
 									var currencyXMLnode = jQuery(this).attr('currency');
 									var rateXMLnode = jQuery(this).attr('rate');
@@ -244,8 +246,6 @@ var StartPennies = function() {
 					else {
 						var price = 0;
 					}
-					
-
 
 					var currentRate	= exrates[from];
 					var newRate		= exrates[to];

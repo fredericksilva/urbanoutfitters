@@ -683,11 +683,19 @@ html > body*#col-two-order-summary-inside
 #orderdetail form a[onclick]
 {
 }
-#yourbasket #additionalservices, div.orscTotal, table.orderdetails
-{
+#yourbasket #additionalservices, div.orscTotal, table.orderdetails, .orderdetails .orderdet-row {
     margin: 0 13px;
     width: 250px;
     line-height: 37px;
+    overflow: hidden;
+}
+.orderdetails .hdrSubTotal {
+  float: left;
+  width: auto;
+}
+.orderdetails .subtotal {
+  float: right;
+  width: auto;
 }
 div.orscTotal {
     height: 54px;
@@ -708,7 +716,7 @@ div.orscTotal {
 .hdrSubTotal, .orscTotal span
 {
     text-align: left;
-    width: 189px;
+    float: left;
 }
 .hdrSubTotal, .orscTotal span, .hdrDiscount
 {
@@ -722,6 +730,7 @@ div.orscTotal {
     position: absolute;
     text-transform: lowercase;
     top: 18px;
+    width: 200px;
 }
 span.orscTotalFig
 {
@@ -729,9 +738,10 @@ span.orscTotalFig
 }
 .subtotal, .orscTotal span.orscTotalFig
 {
-    width: 57px;
     text-align: right;
     font-weight: bold;
+    float: right;
+    text-transform: none;
 }
 #yourbasket #additionalservices label, #yourbasket #additionalservices input
 {
@@ -1289,6 +1299,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 {
     height: 26px;
     vertical-align: bottom;
+    text-transform: uppercase;
 }
 .standarditem .itemName
 {
@@ -1303,6 +1314,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 .standarditem .totalprice
 {
     text-align: left;
+    text-transform: none;
 }
 .standarditem .quantity,
 .standarditem .totalprice 
