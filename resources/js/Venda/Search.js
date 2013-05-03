@@ -737,6 +737,5 @@ Venda.Search.Feature.currencyConvert = function() {};
 Venda.Search.Feature.currencyConvert.prototype = {
   display: function() {
     jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery('.price').pennies('get')});	
-    jQuery('.accordionprice').hide();
   }
 };

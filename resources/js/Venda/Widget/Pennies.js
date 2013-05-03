@@ -17,7 +17,11 @@
 
 var StartPennies = function() {
 		var xmlloc = jQuery('#tag-xml').html();
-		jQuery('#tag-xml').html(Venda.Widget.RegionLangSwitch.ebizURL + xmlloc);
+		if(window.location.protocol === "https:"){
+  		jQuery('#tag-xml').html((Venda.Widget.RegionLangSwitch.ebizURL + xmlloc).replace("http:","https:"));
+		} else {
+  		jQuery('#tag-xml').html(Venda.Widget.RegionLangSwitch.ebizURL + xmlloc);
+		}; 
 		jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig')
 			.pennies('check',jQuery('#tag-xml')
 			.pennies('rates'));
@@ -155,7 +159,9 @@ var StartPennies = function() {
 
 							return this.each(function() {
 								var $this = $(this);
-								$this.text($this.data('price')).removeClass('convertedPrice');
+								if($this.hasClass('convertedPrice')){
+								  $this.text($this.data('price')).removeClass('convertedPrice');
+								};  
 							});
 
 					},
