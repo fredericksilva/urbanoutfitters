@@ -24,7 +24,7 @@
 <venda_block label=10,invtatrtot&lt;1>
 <!-- if product doesn't have attributes -->
 	<venda_block label=11,invtsavingonwas=notnull,invtwas!=0.00,invtwas&gt;invtsell>
-		<p class="price"><span class="saleprice"><venda_currsym><venda_invtsell></span><span class="wasprice">(was <venda_currsym><venda_invtwas>)</span></p>
+		<p class="price1"><span class="saleprice price"><venda_currsym><venda_invtsell></span><span class="wasprice">(was <span class="price"><venda_currsym><venda_invtwas></span>)</span></p>
 	</venda_block label=11>
 	
 	<venda_block label=101,invtsavingonwas=null,invtwas1=0.00,invtwas&lt;=invtsell,operator=or>
@@ -38,20 +38,20 @@
 			<p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
 		</venda_block label=211>
 		<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
-			<p class="price"><venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell></p>
+			<p class="price1"><span class="price"><venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span></p>
 		</venda_block label=221>
 	</venda_block label=555>
 	<venda_block label=666,mode=value,<venda_invtatrmaxsubwas>&gt;0.00,<venda_invtatrmaxsubwas>&gt;<venda_invtatrmaxsubsell>,operator=and><!-- if product does have was price -->
-		<p class="price">
+		<p class="price1">
         <span class="saleprice">
 			<venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
-				<venda_currsym><venda_invtatrmaxsubsell>
+				<span class="price"><venda_currsym><venda_invtatrmaxsubsell></span>
 			</venda_block label=211>
 			<venda_block label=221,mode=value,<venda_invtatrmaxsubsell>&gt;<venda_invtatrminsubsell>>
-				<venda_currsym><venda_invtatrminsubsell> - <venda_currsym><venda_invtatrmaxsubsell>
+				<span class="price"><venda_currsym><venda_invtatrminsubsell></span> - <span class="price"><venda_currsym><venda_invtatrmaxsubsell></span>
 			</venda_block label=221>
 		</span>
-        <span class="wasprice">(was <venda_currsym><venda_invtatrmaxsubwas>)</span>
+        <span class="wasprice">(was <span class="price"><venda_currsym><venda_invtatrmaxsubwas></span>)</span>
 		</p>
 	</venda_block label=666>
 </venda_block label=20>

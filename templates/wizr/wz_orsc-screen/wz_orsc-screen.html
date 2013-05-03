@@ -52,24 +52,24 @@
                     </div>
 			           <div class="orscSummary grid_12 push_1 omega">						
 				           <div class="box">
-                           
-					           <table summary="<venda_text id=site.order_details_summary.table_summary>" title="<venda_text id=site.order_details_summary.table_title>" class="orderdetails" cellpadding="0" cellspacing="0">
-						           <tbody>
-							           <tr>
-   							           <th class="hdrSubTotal" scope="row"><div><venda_text id=site.basket.sub_total> (<venda_productqty>)</div></th>
-   								        <td colspan="1" class="subtotal"><div><venda_currsym><venda_extsub></div></td>
-   							        </tr>
-   							        <venda_block label=10,totaldisc&gt;0.00,totaldisc!=null>
-   							        <tr>
-   								        <th class="hdrDiscount" scope="row"><div><venda_text id=site.basket.discount></div></th>
-   								        <td colspan="1" class="discount"><div><venda_currsym><venda_totaldisc></div></td>
-   							        </tr>
-   							        </venda_block label=10>
-   						        </tbody>
-   					        </table>
-   					        <div class="orscTotal"><span><venda_text id=site.basket.total><span><venda_text id=site.basket.total.ex.delivery></span></span> <span class="orscTotalFig"><venda_currsym><venda_esttotal></span></div>
-   				        </div>
-   			        </div>
+					           <div class="orderdetails">
+					               <div class="orderdet-row">
+   							           <span class="hdrSubTotal"><venda_text id=site.basket.sub_total> (<venda_productqty>)</span>
+     							         <span class="subtotal price"><venda_currsym><venda_extsub></span>
+       							     </div>
+       							     <venda_block label=10,totaldisc&gt;0.00,totaldisc!=null>
+       							     <div class="orderdet-row discount-row">
+   								         <span class="hdrDiscount"><venda_text id=site.basket.discount></span>
+     								       <span class="discount price"><venda_currsym><venda_totaldisc></span>
+     								     </div>
+     								     </venda_block label=10>
+   						       </div>
+   					         <div class="orscTotal">
+   					             <span><venda_text id=site.basket.total><span><venda_text id=site.basket.total.ex.delivery></span></span> 
+   					             <span class="orscTotalFig"><venda_currsym><venda_esttotal></span>
+   					         </div>
+   					       </div>
+   			         </div>
 			        <venda_paymenttemplate template=paypal_express,templatetype=paytype/frontend,paymenttype=paypal>
 			        <venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
                     <venda_tpcomment><!-- Start: Promotions --></venda_tpcomment>

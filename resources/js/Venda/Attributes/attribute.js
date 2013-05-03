@@ -174,14 +174,9 @@ Venda.Attributes.Initialize = function() {
   		} 
   
   	Venda.Attributes.DropdownBehaviour(attName, attText, uID);
-  
-  		// If you have currency converter include the following line
-  	if(jQuery(".currencyConverter").length) {
-  		if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
-  			jQuery('.atributesPrice .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
-  		}
-  	}
-  
+  	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+			jQuery('.atributesPrice #price, .atributesPrice #atrwas').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+		}
   });
   
   jQuery('.qtyChange').click(function(){
@@ -210,6 +205,12 @@ Venda.Attributes.Initialize = function() {
 			alert(jQuery("#productstatus").text());
 		}
 	});
+
+	if(jQuery('.quickBuy-Details').length >= 1) { 
+  	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+			jQuery('.atributesPrice #price, .atributesPrice #atrwas').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+		}  	
+	}
 
 }
 
@@ -781,13 +782,25 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 Venda.Attributes.Price = function (uID){
 	var currentCurrency = Venda.Ebiz.CookieJar.get("locn") || "restofworld";
 	if (currentCurrency == "eur") {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{ 
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else {
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
 	else {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
+	jQuery('.atributesPrice #price').data('price',jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')); 
+	jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
 };
 
 /**

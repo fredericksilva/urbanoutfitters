@@ -556,6 +556,12 @@
 }
 
 /* CURRENCY SELCTOR */
+.product-details .price-converted, #bottomtab .price-converted, .prods .price-converted {
+  color: #0033ff;
+}
+.price-converted {
+  font-style: normal;
+}
 .regionLangSwitcher {
   display: inline-block;
   margin-top: 7px;
@@ -607,7 +613,20 @@
 .switcher-sel a .curr-copy {
   padding: 0 8px 5px 4px;
   font-weight: bold;
-  display: block;
+  display: inline-block;
+}
+.switcher-sel a .curr-strap {
+  font-size: 10px;
+  float: right;
+  padding-right: 5px;
+}
+.switcher-sel li.curr-pricing {
+  font-weight: bold;
+  text-align: center;
+  font-size: 10px;
+  line-height: 12px;
+  background: #999;
+  color: #fff;
 }
 .switcher-sel .switcher-content .lang-copy, .switcher-sel .switcher-content .curr-copy {
   padding-bottom: 0;
@@ -658,7 +677,9 @@
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
-
+.liwrapper .productlistinfo .saleprice .price {
+  color: red;
+}
 
 .mm_ul {
   margin-top: 25px;
