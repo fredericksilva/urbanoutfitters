@@ -118,23 +118,21 @@ Venda.Festival = {
         Venda.Festival.launchSlider();
         Venda.Festival.instagram();
         Venda.Festival.festivalCalendar();
-        var a = Venda.Platform.getUrlParam(window.location.href, 'win');
+        var a = Venda.Platform.getUrlParam(window.location.href, 'win'),
+        	b = Venda.Platform.getUrlParam(window.location.href, 'social')
         switch (a) {
         case 'tickets':
             jQuery(window).bind('load', function () {
                 Venda.Festival.slideOpen(Venda.Festival.options.fv + 'Competition');
             })
             break;
-        case 'calendar':
+        default:
+            //do nothing
+        };
+        switch (b) {
+        case 'Instagram':
             jQuery(window).bind('load', function () {
-                jQuery('.' + Venda.Festival.options.m).removeClass('selected');
-                Venda.Festival.setMonth();
-                Venda.Festival.slideOpen(Venda.Festival.options.fv + 'Calendar');
-            })
-            break;
-        case 'blog':
-            jQuery(window).bind('load', function () {
-                Venda.Festival.slideOpen(Venda.Festival.options.fv + 'OfWeek');
+                jQuery(window).scrollTo('.festivalInstagramCont', 'slow');
             })
             break;
         default:
