@@ -186,17 +186,47 @@
   </div>
 </div>
 
-<div class="footerBrandsButton">
-	<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Our most popular brands...</div>
+<div class="footerBrandsButton hide">
+	<!-- mp_trans_remove_start-->
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Our most popular brands...</div>
+	<!-- mp_trans_remove_end-->
+	<!-- mp_trans_disable_start-->
+	<!-- mp_trans_add="FR" 
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Nos marques les plus populaires </div>
+	-->
+	<!-- mp_trans_add="DE" 
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Unsere beliebtesten Marken </div>
+	-->
+	<!-- mp_trans_disable_end-->
 </div>
 <div class="footerBrands" style="display:none;">
 	<ul>
 		<li>
-			<h3>Women's Brands</h3>
+			<!-- mp_trans_remove_start-->
+				<h3>Women's Brands</h3>
+			<!-- mp_trans_remove_end-->
+			<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<h3>Marques Femme</h3>
+			-->
+			<!-- mp_trans_add="DE" 
+				<h3>Marken f&uuml;r Sie</h3>
+			-->
+			<!-- mp_trans_disable_end-->
 			<p><venda_page page=womens_brands></p>
 		</li>
 		<li>
-			<h3>Men's Brands</h3>
+			<!-- mp_trans_remove_start-->
+				<h3>Men's Brands</h3>
+			<!-- mp_trans_remove_end-->
+			<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<h3>Marques Homme</h3>
+			-->
+			<!-- mp_trans_add="DE" 
+				<h3>Marken f&uuml;r Ihn</h3>
+			-->
+			<!-- mp_trans_disable_end-->
 			<p><venda_page page=mens_brands></p>
 		</li>
 	</ul>
@@ -211,4 +241,3 @@ Venda.brandDropdown = {
 	}
 }
 </script>
-<a href="#" class='OUMusicPop' onclick="popup('http://music.urbanoutfitters.com/radio.php?auto=on&group=LSTN%20Europe&name=LSTN%20Europe%20%2310.html'); return false;"></a>

@@ -2267,10 +2267,10 @@ a.facebookIt:hover {
 	display: block;
 	text-align: center;
 	font-weight: bold;
-	background: url('../images/uo-png-sprite.png') no-repeat -63px -192px;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat -63px -192px;
 	width:24px;
 	height:19px;
-	text-indent: -195px;
+	text-indent: -222px;
 	padding-top: 4px;
 	cursor: pointer;
 }
@@ -2307,7 +2307,7 @@ a.facebookIt:hover {
 .homepage-social-header span {
 	height: 26px;
 	width: 91px;
-	background: url('../images/uo-png-sprite.png') no-repeat transparent -8px -513px;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat transparent -8px -513px;
 	display: block;
 	margin: 5px auto;
 }
@@ -2349,7 +2349,7 @@ form#commentForm input#email {
 }
 form#commentForm #guys, form#commentForm #gals {
 	position:absolute;
-	background: url('../images/uo-png-sprite.png') no-repeat;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat;
 	height:34px;
 	width:54px;
 	overflow:hidden;
