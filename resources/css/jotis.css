@@ -2262,7 +2262,7 @@ a.facebookIt:hover {
 	float:right;
 	font-size:12px;
 }
-.footerBrandsButton a {
+.footerBrandsButton div.footerBrandsBtn {
 	display: block;
 	text-align: center;
 	font-weight: bold;
@@ -2271,6 +2271,7 @@ a.facebookIt:hover {
 	height:19px;
 	text-indent: -195px;
 	padding-top: 4px;
+	cursor: pointer;
 }
 .footerBrandsButton a:hover {
 	background-position: -61px -191px;
