@@ -195,6 +195,7 @@ To do:
 				return false;
 			}
 			Venda.orderConf.payDetailsCallback();
+			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}, payDetailsCallback: function (){
 			var l = document.documentElement.lang;
 			switch (l) {
@@ -207,7 +208,6 @@ To do:
 			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
 				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
 			}
-			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}
 	}
 	</script>

@@ -2296,6 +2296,9 @@ a.facebookIt:hover {
 .footerBrands ul li:first-child {
 	margin-left: 0;
 }
+.footerBrands ul li a {
+	margin-right: 20px;
+}
 /****** New homepage layout *******/
 .homepage-social-header {
 	padding: 5px 0;
