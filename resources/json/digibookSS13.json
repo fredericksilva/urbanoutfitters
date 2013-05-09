@@ -1,0 +1,101 @@
+{"digibook": {
+    "slides": [
+    	{
+    		"spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_03.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+            	{"sku": "5522443010014", "xcord": 49, "ycord": 50}
+            ]
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_04.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5522443010014", "xcord": 124, "ycord": 43}
+            ]  
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_07.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5522441830006", "xcord": 222, "ycord": 77}
+            ]  
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_02.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5527401090017", "xcord": 58, "ycord": 159}
+            ]  
+        },
+        {
+            "spread": "oneSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_05.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5520441640001", "xcord": 99, "ycord": 485}
+            ]  
+        },
+		{
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_01.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5536439251117", "xcord": 261, "ycord": 32}
+            ]  
+        },
+		{
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_06.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5527404400012", "xcord": 124, "ycord": 77}
+            ]  
+        },
+		{
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_08.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+				{"sku": "5620410210525", "xcord": 376, "ycord": 455}
+            ]  
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_11.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5520441640000", "xcord": 79, "ycord": 379}
+
+            ]  
+        },
+        {
+            "spread": "oneSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_12.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+				{"sku": "5620410210525", "xcord": 276, "ycord": 455}
+            ]  
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_10.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5520441640000", "xcord": 79, "ycord": 379}
+            ]  
+        },
+        {
+            "spread": "twoSpread",
+            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_02.jpg",
+            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+            "hotspots": [
+                {"sku": "5520441640000", "xcord": 79, "ycord": 379}
+            ]  
+        }
+    ]
+}} 
