@@ -2293,4 +2293,21 @@ a.facebookIt:hover {
 }
 .footerBrands ul li:first-child {
 	margin-left: 0;
+/****** New homepage layout *******/
+.homepage-social-header {
+	text-align: center;
+	padding: 5px 0;
+}
+.homepage-social-header h2 {
+	font-size:24px;
+}
+.homepage-slots.homepage-social-slots-3 .slot {
+  	width: 302px; 
+}
+.homepage-slots.homepage-social-slots-2 .slot {
+  	width: 464px; 
+}
+.homepage-slots.homepage-social-slots-1 .slot {
+  	width: 950px; 
+  	margin-left: 0;
 }
