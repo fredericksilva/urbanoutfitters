@@ -119,7 +119,8 @@ Venda.Festival = {
         Venda.Festival.instagram();
         Venda.Festival.festivalCalendar();
         var a = Venda.Platform.getUrlParam(window.location.href, 'win'),
-        	b = Venda.Platform.getUrlParam(window.location.href, 'social')
+        	b = Venda.Platform.getUrlParam(window.location.href, 'social'),
+        	c = Venda.Platform.getUrlParam(window.location.href, 'festival');
         switch (a) {
         case 'tickets':
             jQuery(window).bind('load', function () {
@@ -134,6 +135,12 @@ Venda.Festival = {
             jQuery(window).bind('load', function () {
                 jQuery(window).scrollTo('.festivalInstagramCont', 'slow');
             })
+            break;
+        default:
+            //do nothing
+        };
+        switch (c) {
+        case 'calendar': Venda.Festival.openCalendar('.openCalendar');
             break;
         default:
             //do nothing
