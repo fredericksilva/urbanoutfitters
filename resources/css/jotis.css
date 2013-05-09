@@ -2254,6 +2254,7 @@ a.facebookIt:hover {
 .error404 {
 	font-size: 16px;
 	font-weight: bold;
+}
 /**** Brands Dropdown ****/
 .footerBrandsButton {
 	width: 420px;
@@ -2266,21 +2267,21 @@ a.facebookIt:hover {
 	display: block;
 	text-align: center;
 	font-weight: bold;
-	background: url('../images/uo-png-sprite.png') no-repeat -63px -193px;
+	background: url('../images/uo-png-sprite.png') no-repeat -63px -192px;
 	width:24px;
 	height:19px;
 	text-indent: -195px;
 	padding-top: 4px;
 	cursor: pointer;
 }
-.footerBrandsButton a:hover {
-	background-position: -61px -191px;
+.footerBrandsButton div.footerBrandsBtn:hover {
+	background-position: -61px -190px;
 }
-.footerBrandsButton a.brandsActive {
-	background-position: -93px -193px;
+.footerBrandsButton div.footerBrandsBtn.brandsActive {
+	background-position: -93px -192px;
 }
-.footerBrandsButton a.brandsActive:hover {
-	background-position: -91px -191px;
+.footerBrandsButton div.brandsActive:hover {
+	background-position: -91px -190px;
 }
 .footerBrands {
 	clear:both;
@@ -2294,13 +2295,18 @@ a.facebookIt:hover {
 }
 .footerBrands ul li:first-child {
 	margin-left: 0;
+}
 /****** New homepage layout *******/
 .homepage-social-header {
-	text-align: center;
 	padding: 5px 0;
+	clear: both;
 }
-.homepage-social-header h2 {
-	font-size:24px;
+.homepage-social-header span {
+	height: 26px;
+	width: 91px;
+	background: url('../images/uo-png-sprite.png') no-repeat transparent -8px -513px;
+	display: block;
+	margin: 5px auto;
 }
 .homepage-slots.homepage-social-slots-3 .slot {
   	width: 302px; 
