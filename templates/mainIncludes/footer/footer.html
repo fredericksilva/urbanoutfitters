@@ -36,17 +36,64 @@
   <!-- mp_trans_disable_end-->
             <div class="foot-signUp">
             <!-- mp_trans_remove_start-->
-            <iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=2068353000&n=2&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+            <div class="thanks" style="display:none;">Thank you for signing up!</div>
+            <form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            <input value="2068353000" name="aid" type="hidden">
+	            <input value="2" name="n" type="hidden">
+	            <input value="1" name="a" type="hidden">
+	            <input value="UK" name="COUNTRY" type="hidden">
+	            <input value="UK-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            <input value="" name="GENDER" type="hidden">
+	            <label>
+		            <span>E-Mail Address</span>
+		        </label>
+		        <input value="Enter your email address" name="email" data-email="Enter your email address" onblur="this.value=!this.value?'Enter your email address':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		        <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		    </form>
 			<!-- mp_trans_remove_end-->
 			<!-- mp_trans_disable_start-->
 			<!-- mp_trans_add="FR" 
-				<iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=1061210640&n=7&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+				<div class="thanks" style="display:none;">Merci!</div>
+				<form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            	<input value="1061210640"" name="aid" type="hidden">
+	            	<input value="7" name="n" type="hidden">
+	            	<input value="0" name="a" type="hidden">
+	            	<input value="FRANCE" name="COUNTRY" type="hidden">
+	            	<input value="FR-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            	<input value="" name="GENDER" type="hidden">
+	            	<label>
+	            		<span>Adresse e-mail</span>
+	            	</label>
+		            <input value="Entrer votre adresse email" name="email" data-email="Entrer votre adresse email" onblur="this.value=!this.value?'Entrer votre adresse email':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        </form>
 			-->
 			<!-- mp_trans_add="DE" 
-				<iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=2085808709&n=3&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+				<div class="thanks" style="display:none;">Vielen Dank f&uuml;r Ihre Anmeldung</div>
+				<form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            	<input value="2085808709" name="aid" type="hidden">
+	            	<input value="3" name="n" type="hidden">
+	            	<input value="1" name="a" type="hidden">
+	            	<input value="GERMANY" name="COUNTRY" type="hidden">
+	            	<input value="DE-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            	<input value="" name="GENDER" type="hidden">
+	            	<label>
+		            	<span>E-Mail Address</span>
+		            </label>
+		            <input value="Gib deine E-Mail-Adresse ein" name="email" data-email="Gib deine E-Mail-Adresse ein" onblur="this.value=!this.value?'Gib deine E-Mail-Adresse ein':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        </form>
 			-->
 			<!-- mp_trans_disable_end-->
             </div>
+            <script type="text/javascript">
+	            jQuery(document).ready(function() {
+		            Venda.quickSignup.init();
+		        });
+		    </script>
   </div>
 </div>
 
@@ -139,4 +186,29 @@
   </div>
 </div>
 
+<div class="footerBrandsButton">
+	<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Our most popular brands...</div>
+</div>
+<div class="footerBrands" style="display:none;">
+	<ul>
+		<li>
+			<h3>Women's Brands</h3>
+			<p><venda_page page=womens_brands></p>
+		</li>
+		<li>
+			<h3>Men's Brands</h3>
+			<p><venda_page page=mens_brands></p>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+Venda.namespace('brandDropdown');
+Venda.brandDropdown = {
+	init: function(a) {
+		jQuery('.footerBrands').slideToggle();
+		jQuery(a).toggleClass('brandsActive');
+	}
+}
+</script>
 <a href="#" class='OUMusicPop' onclick="popup('http://music.urbanoutfitters.com/radio.php?auto=on&group=LSTN%20Europe&name=LSTN%20Europe%20%2310.html'); return false;"></a>

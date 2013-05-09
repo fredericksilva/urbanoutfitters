@@ -167,44 +167,49 @@ To do:
 		<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
 			<div id="buttons" class="bottomButtons">
 			<venda_block label=1555,workflow!=instore><a class="button continue" href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22"><venda_text id=site.button.back_to_basket></a></venda_block label=1555>
-			<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256> Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">
+			<input type="submit" onClick='<venda_block label=256,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1>Venda.Widget.VBM.SetCheck(); </venda_block label=256>Venda.orderConf.init(); return false;' value="<venda_text id=site.button.place_order>" class="button placeOrder">	
 			</div>
 			<p class="paymentInstructions"><venda_text id=site.order_confirmation.final_step></p>		
 		<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
 	</div>
 	<script type="text/javascript">
-			Venda.namespace('orderConf');
-			Venda.orderConf = {
-				init: function () {
-					Venda.orderConf.tandcCheck();
-					Venda.orderConf.payDetailsCallback();
-					<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
-				}, tandcCheck: function () {
-					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
-						alert("<venda_text id=cc_no_required>");
-						return;
-					}
-					if (document.wizform.ohpaytype[0].checked && document.wizform.ohccname.value == "") {
-						alert("<venda_text id=ccholder_required>");
-						return;
-					}
-					if (document.wizform.ohpaytype[0].checked == false && document.wizform.ohpaytype[1].checked == false) {
-						alert("<venda_text id=paymenttype_required>");
-						return;
-					}
-					if (!document.wizform.tandc.checked) {
-						alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
-						return;
-					}
-				}, payDetailsCallback: function (){
-					var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value;
-					var cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
-					if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-						document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
-					}
-					//alert(document.wizform.orxorxtorderpaydetail.value);
-				}
+	Venda.namespace('orderConf');
+	Venda.orderConf = {
+		init: function () {
+			Venda.orderConf.tandcCheck();
+		}, tandcCheck: function () {
+			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccnum.value == "") {
+				alert("<venda_text id=cc_no_required>");
+				return false;
 			}
+			if (document.wizform.ohpaytype[0].checked && document.wizform.ohccname.value == "") {
+				alert("<venda_text id=ccholder_required>");
+				return false;
+			}
+			if (document.wizform.ohpaytype[0].checked == false && document.wizform.ohpaytype[1].checked == false) {
+				alert("<venda_text id=paymenttype_required>");
+				return false;
+			}
+			if (!document.wizform.tandc.checked) {
+				alert("<venda_text id=site.order_confirmation.terms_and_conditions.validation>");
+				return false;
+			}
+			Venda.orderConf.payDetailsCallback();
+		}, payDetailsCallback: function (){
+			var l = document.documentElement.lang;
+			switch (l) {
+				case 'de': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
+							   cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+				break;
+				default: var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
+						 	 cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
+			}
+			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+			}
+			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
+		}
+	}
 	</script>
 	</div>
 </form>
