@@ -139,4 +139,26 @@
   </div>
 </div>
 
+<div class="footerBrandsButton">
+	<a href='javascript:' class="footerBrandsBtn">Our most popular brands...</a>
+</div>
+<div class="footerBrands" style="display:none;">
+	<ul>
+		<li>
+			<h3>Women's Brands</h3>
+			<p><venda_page page=womens_brands></p>
+		</li>
+		<li>
+			<h3>Men's Brands</h3>
+			<p><venda_page page=mens_brands></p>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+jQuery('.footerBrandsButton a').click(function() {
+	jQuery('.footerBrands').slideToggle();
+	jQuery(this).toggleClass('brandsActive');
+})
+</script>
 <a href="#" class='OUMusicPop' onclick="popup('http://music.urbanoutfitters.com/radio.php?auto=on&group=LSTN%20Europe&name=LSTN%20Europe%20%2310.html'); return false;"></a>

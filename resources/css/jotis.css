@@ -2005,6 +2005,7 @@ a.uo-hotspot:hover {
 	height: 120px;
 }
 
+<<<<<<< HEAD
 /****** Spring Catalogue *******/
 .gameTitle {
 	overflow: hidden;
@@ -2255,4 +2256,43 @@ a.facebookIt:hover {
 .error404 {
 	font-size: 16px;
 	font-weight: bold;
+/**** Brands Dropdown ****/
+.footerBrandsButton {
+	width: 420px;
+	clear: both;
+	padding-top: 20px;
+	float:right;
+	font-size:12px;
+}
+.footerBrandsButton a {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	background: url('../images/uo-png-sprite.png') no-repeat -63px -193px;
+	width:24px;
+	height:19px;
+	text-indent: -195px;
+	padding-top: 4px;
+}
+.footerBrandsButton a:hover {
+	background-position: -61px -191px;
+}
+.footerBrandsButton a.brandsActive {
+	background-position: -93px -193px;
+}
+.footerBrandsButton a.brandsActive:hover {
+	background-position: -91px -191px;
+}
+.footerBrands {
+	clear:both;
+}
+.footerBrands ul li {
+	width: 464px;
+	margin-left: 22px;
+	padding: 20px 0;
+	display:inline-block;
+	vertical-align: top;
+}
+.footerBrands ul li:first-child {
+	margin-left: 0;
 }
