@@ -2004,7 +2004,6 @@ a.uo-hotspot:hover {
 .lookbookQuick .productInfo .loadingImg {
 	height: 120px;
 }
-
 /****** Spring Catalogue *******/
 .gameTitle {
 	overflow: hidden;
@@ -2255,4 +2254,120 @@ a.facebookIt:hover {
 .error404 {
 	font-size: 16px;
 	font-weight: bold;
+}
+/**** Brands Dropdown ****/
+.footerBrandsButton {
+	width: 420px;
+	clear: both;
+	padding-top: 20px;
+	float:right;
+	font-size:12px;
+}
+.footerBrandsButton div.footerBrandsBtn {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat -63px -192px;
+	width:24px;
+	height:19px;
+	text-indent: -222px;
+	padding-top: 4px;
+	cursor: pointer;
+}
+.footerBrandsButton div.footerBrandsBtn:hover {
+	background-position: -61px -190px;
+}
+.footerBrandsButton div.footerBrandsBtn.brandsActive {
+	background-position: -93px -192px;
+}
+.footerBrandsButton div.brandsActive:hover {
+	background-position: -91px -190px;
+}
+.footerBrands {
+	clear:both;
+}
+.footerBrands ul li {
+	width: 464px;
+	margin-left: 22px;
+	padding: 20px 0;
+	display:inline-block;
+	vertical-align: top;
+}
+.footerBrands ul li:first-child {
+	margin-left: 0;
+}
+.footerBrands ul li a {
+	margin-right: 20px;
+}
+/****** New homepage layout *******/
+.homepage-social-header {
+	padding: 5px 0;
+	clear: both;
+}
+.homepage-social-header span {
+	height: 26px;
+	width: 91px;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat transparent -8px -513px;
+	display: block;
+	margin: 5px auto;
+}
+.homepage-slots.homepage-social-slots-3 .slot {
+  	width: 302px; 
+}
+.homepage-slots.homepage-social-slots-2 .slot {
+  	width: 464px; 
+}
+.homepage-slots.homepage-social-slots-1 .slot {
+  	width: 950px; 
+  	margin-left: 0;
+}
+/**** quickSignup ****/
+.foot-signUp {
+	width: 330px;
+	position: relative;
+}
+.foot-signUp .thanks { 
+	color: #666;
+	font-weight: bold;
+	font-size:16px;
+	margin: 20px 0 0 0;
+}
+form#commentForm label span {
+    display:none;
+}
+form#commentForm {
+    margin-bottom:0;
+}
+form#commentForm input#email {
+    width: 176px;
+    height: 20px;
+    border:2px solid #4d4d4d;
+    padding-left:10px;
+    background: none;
+    float:left;
+    font-size:12px;
+}
+form#commentForm #guys, form#commentForm #gals {
+	position:absolute;
+	background: url('../images/uo-png-sprite.png?v=6') no-repeat;
+	height:34px;
+	width:54px;
+	overflow:hidden;
+	border:none;
+	-webkit-appearance: none;
+	cursor:pointer;
+}
+form#commentForm #guys {
+	right:18px;
+	background-position: -63px -153px;
+}
+form#commentForm #guys:hover {
+	background-position: -61px -151px;
+}
+form#commentForm #gals {
+	right:74px;
+	background-position: -7px -153px;
+}
+form#commentForm #gals:hover {
+	background-position: -5px -151px;
 }
