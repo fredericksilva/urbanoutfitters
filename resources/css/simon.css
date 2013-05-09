@@ -14,6 +14,9 @@
     padding: 0;
     text-transform: uppercase;
 }
+.box.Lmyacccontactdetails .last {
+	height: auto;
+}
 .myAccountTemplate h2,
 .checkoutTemplate h2  {
     font-size: 1.4em;
