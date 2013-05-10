@@ -4,7 +4,7 @@ Venda.digibook = {
         o: '',
         oB: '',
         d: 'digibook',
-        jn: '../content/ebiz/urbanoutfitters/resources/json/digibookSS13.json?v=6'
+        jn: '../content/ebiz/urbanoutfitters/resources/json/digibookSS13.json?v=9'
     },
     init: function () {
         Venda.digibook.options.o = jQuery('.' + Venda.digibook.options.d + 'Contents').offset();
@@ -18,19 +18,26 @@ Venda.digibook = {
             dataType: 'json',
             cache: true,
             success: function (data) {
+            	console.log(data,data.digibook.length);
                 var h = "";
-                for (var i = 0; i < data.digibook.slides.length; i++) {
-                    h += '<div class="section ' + data.digibook.slides[i].spread + '">';
-                    h += '<img src="/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/lazyLoader.png" data-original="' + data.digibook.slides[i].image + '" class="uo-loading lazy" />';
-                    for (var hs = 0; hs < data.digibook.slides[i].hotspots.length; hs++) {
-                        h += '<a href="/invt/' + data.digibook.slides[i].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook.slides[i].hotspots[hs].xcord + 'px; top: ' + data.digibook.slides[i].hotspots[hs].ycord + 'px;"></a>';
-                    };
-                    h += '<p class="digibookSectionText">' + data.digibook.slides[i].text + '</p>';
-                    h += '</div>';
-                }
-                jQuery('.' + Venda.digibook.options.d + 'Contents').html(h);
+                for (var i = 0; i < data.digibook.length; i++) {
+                	h += '<div class="' + Venda.digibook.options.d + 'Row">'
+                	for (var r = 0; r < data.digibook[i].row.length; r++) {
+                		for (var s = 0; s < data.digibook[i].row[r].slides.length; s++) {
+                			h += '<div class="section ' + data.digibook[i].row[r].slides[s].spread + '">';
+                			h += '<img src="/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/lazyLoader.png" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading lazy" />';
+                			for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
+	                			h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'DigibookSS13\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
+	                		};
+	                		h += '<p class="' + Venda.digibook.options.d + 'SectionText">' + data.digibook[i].row[r].slides[s].text + '</p>';
+	                		h += '</div>';
+	                	}
+	                }
+	            }
+                jQuery('.' + Venda.digibook.options.d + 'Contents').html(h + '<div class="' + Venda.digibook.options.d + 'Row last"></div>');
                 Venda.digibook.lazyload();
                 Venda.digibook.stickyScroller();
+                Venda.digibook.scrollToPoint();
                 Venda.digibook.parallax.p = new Venda.digibook.parallax();
             }
         });
@@ -46,7 +53,8 @@ Venda.digibook = {
         jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').css("top", hh);
         jQuery(window).bind('scroll', function () {
             var c = jQuery(window).scrollTop(),
-                a = jQuery('.' + Venda.digibook.options.d + 'Sticky').outerHeight();
+                a = jQuery('.' + Venda.digibook.options.d + 'Sticky').outerHeight(),
+                d = jQuery('.' + Venda.digibook.options.d + 'Contents').outerHeight();
             if (c > hh) {
                 jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').css("top", 0 + "px");
                 jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').addClass("fixMe");
@@ -55,9 +63,10 @@ Venda.digibook = {
                 jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').css("top", hh + "px");
                 jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').removeClass("fixMe");
             }
-            if (c > dh - Venda.digibook.options.oB - a) {
+            console.log(c,dh - Venda.digibook.options.oB,Venda.digibook.options.o.top,a,dh - Venda.digibook.options.oB - Venda.digibook.options.o.top,dh - Venda.digibook.options.oB - Venda.digibook.options.o.top - a,d + Venda.digibook.options.o.top - a)
+            if (c > d + Venda.digibook.options.o.top - a) {
                 jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').removeClass("fixMe");
-                jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').css("top", dh - Venda.digibook.options.oB - a + "px");
+                jQuery('.' + Venda.digibook.options.d + 'controlBox, .' + Venda.digibook.options.d + 'Sticky').css("top", d + Venda.digibook.options.o.top - a + "px");
             }
         Venda.digibook.loadMeUp();
         });
@@ -65,14 +74,11 @@ Venda.digibook = {
     loadMeUp: function () {
         var c = jQuery('.' + Venda.digibook.options.d + 'controlBox').offset(),
             d = jQuery(window).outerHeight(),
-            e = jQuery('.' + Venda.digibook.options.d + 'Contents').offset().top,
-            a = jQuery(document).outerHeight(),
-            b = Math.round((c.top) / (a) * 100);
-        if (b < 1) {
-            b = 0;
-        }
-        if (b > 99) {
-            b = 100;
+            e = Venda.digibook.options.o.top + Venda.digibook.options.oB,
+            a = jQuery(document).outerHeight() - (d + Venda.digibook.options.oB),
+            b = Math.round((c.top - e) / (a - e) * 200);
+        if (b < 10) {
+            b = 10;
         }
         jQuery('.' + Venda.digibook.options.d + 'controlBox .loadProgress').css("height", b + "%");
     },
@@ -156,5 +162,60 @@ Venda.digibook = {
                 }
             }
         }, 30);
+    },
+    scrollToAnchor: function(a,b) {
+        if (a !== undefined) {
+            jQuery(window).scrollTo(a, 800, {
+                margin: true,
+                offset: {
+                    top: + 5
+                }
+            })
+            console.log(b);
+        }
+    }, scrollToPoint: function() {
+        var b = jQuery('.' + Venda.digibook.options.d + 'Row'),
+            t = b.length - 1,
+            a = 0,
+            d = jQuery(".anchorLink-next"),
+            e = jQuery(".anchorLink-prev"),
+            f = jQuery(".toTop");
+        d.click(function (g) {
+            Venda.digibook.scrollToAnchor(b[a],a)
+        });
+        e.click(function (g) {
+            Venda.digibook.scrollToAnchor(b[a - 2],a)
+        });
+        f.click(function (g) {
+            Venda.digibook.scrollToAnchor(b[0],a)
+        });
+        var c = 0;
+        jQuery(window).scroll(function (k) {
+            var i = jQuery(this).scrollTop(),
+                h = jQuery(window).scrollTop() - Venda.digibook.options.o.top,
+                l = jQuery(b[a]).offset(),
+                j = l.top - Venda.digibook.options.o.top,
+                g = jQuery('.' + Venda.digibook.options.d + 'Contents').outerHeight() / t;
+            
+            if (i > c) {
+                if (h >= j) {
+                    b[a += 1]
+                }
+            } else {
+                if (a !== 0) {
+                   if (h <= (j - g)) {
+                        b[a -= 1]
+                    }
+                }
+            }
+            c = i
+            console.log(a);
+        })
+    }, socialWindow: function (e, d, b, c, a) {
+        var w = null;
+        l = (screen.width) ? (screen.width - b) / 2 : 0;
+        t = (screen.height) ? (screen.height - c) / 2 : 0;
+        s = "height=" + c + ",width=" + b + ",top=" + t + ",left=" + l + ",scrollbars=" + a + ",resizable";
+        w = window.open(e, d, s)
     }
 }
