@@ -823,6 +823,7 @@ input.button:hover {
     display: inline-block;
     width: 370px;
     background: #fff;
+    position: absolute;
 }
 .storeimage .boxContent h2 {
     font-size: 20px;
