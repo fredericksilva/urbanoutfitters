@@ -301,6 +301,7 @@ Venda.Search.Feature.multiRefine.prototype = {
 Venda.Search.Feature.indicateLoading = function() {};
 Venda.Search.Feature.indicateLoading.prototype = {
     clickHandler: function(evt) {
+    	jQuery("#quickBuy").dialog("destroy");
         jQuery('#loadingsearch').show();
         jQuery('.searchContent').hide();
         return false;
