@@ -35,6 +35,7 @@ Venda.digibook = {
                 }
                 jQuery('.' + Venda.digibook.options.d + 'Contents').html(h + '<div class="' + Venda.digibook.options.d + 'Row last"></div>');
                 Venda.digibook.lazyload();
+                Venda.digibook.stickyHola();
                 Venda.digibook.stickyScroller();
                 Venda.digibook.scrollToPoint();
                 Venda.digibook.parallax.p = new Venda.digibook.parallax();
@@ -45,6 +46,19 @@ Venda.digibook = {
         jQuery(".section img.lazy").lazyload({
             effect: "fadeIn"
         })
+    },
+    stickyHola: function () {
+	    jQuery(window).bind('scroll', function () {
+	    	var s = jQuery(window).scrollTop(),
+	    		w = (jQuery(window).outerHeight() / 2) - 147,
+	    		o = 495 - w;
+	    	if (s > o) {
+		    	jQuery('.' + Venda.digibook.options.d + 'StickySign').css({ 'top' : '50%','margin' : '-147px 0 0 -122px', 'position' : 'fixed' })
+	    	}
+	    	if (s < o) {
+		    	jQuery('.' + Venda.digibook.options.d + 'StickySign').css({ 'top' : '495px','margin' : '0 0 0 -122px', 'position' : 'absolute' })
+	    	}
+	    });
     },
     stickyScroller: function () {
         var hh = jQuery('.' + Venda.digibook.options.d + 'Contents').offset().top,
