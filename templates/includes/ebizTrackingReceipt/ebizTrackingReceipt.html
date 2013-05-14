@@ -1,2 +1,9 @@
 <!-- Use this template to add custom Order receipt tracking tags for a site -->
 <venda_inctemplate name=availOrderTracking,type=includes/tracking>
+<!-- ESP purchase tracking START -->
+<input type="hidden" data-esp-tracking="purchase-ordernumber" value="<venda_tracking type=order,definition=ordernum,delimiter=hat>" />
+<input type="hidden" data-esp-tracking="purchase-ordertotal" value="<venda_tracking type=order,definition=ordertotal,delimiter=hat>" />
+<input type="hidden" data-esp-tracking="purchase-skus" value="<venda_tracking type=product,definition=productref,delimiter=hat>" />
+<input type="hidden" data-esp-tracking="purchase-quantities" value="<venda_tracking type=product,definition=quantity,delimiter=hat>" />
+<input type="hidden" data-esp-tracking="purchase-lineprices" value="<venda_tracking type=product,definition=totalprice,delimiter=hat>" />
+<!-- ESP purchase tracking END -->
