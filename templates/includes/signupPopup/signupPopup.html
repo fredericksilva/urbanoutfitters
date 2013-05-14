@@ -14,7 +14,7 @@
 	<div class="signupPopupOuter">
 		<div class="signupPopupInner clearfix">
             <div class="signupPopupClose">
-            	<div class="signupPopupCloseLink" onclick="Venda.Widget.modalSignup.closePopup();" style="border:0;">
+            	<div class="signupPopupCloseLink" onclick="Venda.Widget.modalSignup.action.closePopup();" style="border:0;">
             		<img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0">
             	</div>
             </div>
@@ -42,8 +42,8 @@
 	            		<label>Email Address</label>
 	            		<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            	</fieldset>
-	            	<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_guys.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
-	            	<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_gals.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            	<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_guys.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
+	            	<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_gals.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
 	            	</form>
 				</div>
 	            <!-- mp_trans_remove_end-->
@@ -63,8 +63,8 @@
 	            				<label>Email Address</label>
 	            				<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            			</fieldset>
-	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
-	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
+	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
 	            			</form>
 	            		</div>
 	            	-->
@@ -83,8 +83,8 @@
 	            				<label>Email Address</label>
 	            				<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            			</fieldset>
-	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
-	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
+	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.action.genderFunction(this);">
 	            			</form>
 	            		</div>
 		            -->
@@ -101,7 +101,7 @@ jQuery(document).ready(function () {
 			jQuery( deferred.resolve );
 		})
 	).done(function(){
-		Venda.Widget.modalSignup.init();
+		Venda.Widget.modalSignup.action.init();
 	});
 });
 </script>
