@@ -14,16 +14,17 @@
 	<div class="signupPopupOuter">
 		<div class="signupPopupInner clearfix">
             <div class="signupPopupClose">
-            	<a class="signupPopupCloseLink" href="javascript:" style="border:0;">
+            	<div class="signupPopupCloseLink" onclick="Venda.Widget.modalSignup.closePopup();" style="border:0;">
             		<img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0">
-            	</a>
+            	</div>
             </div>
 
             <div class="signupPopupSignup">
             	<!-- mp_trans_remove_start-->
 	            <div id="signupHeader-uk"></div>
 	            <div id="signupForm" class="signupForm">
-	            	<form onsubmit="validateFields(this);return false;" action="https://ebm.cheetahmail.com/r/regf2" method="POST" id="signup">
+	            	<div class="thanks" style="display:none;">Thank you for signing up!</div>
+	            	<form id="modalSignup" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
 	            	<input type="hidden" name="aid" value="2068353000">
 	            	<input type="hidden" name="n" value="9">
 	            	<input type="hidden" name="a" value="1">
@@ -41,8 +42,8 @@
 	            		<label>Email Address</label>
 	            		<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            	</fieldset>
-	            	<input class="submitForm" id="guys" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_guys.png" alt="Submit" data-gender="M">
-	            	<input class="submitForm" id="gals" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_gals.png" alt="Submit" data-gender="F">
+	            	<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_guys.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            	<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_uk_gals.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
 	            	</form>
 				</div>
 	            <!-- mp_trans_remove_end-->
@@ -50,7 +51,8 @@
             	<!-- mp_trans_add="FR" 
 	            		<div id="signupHeader-fr"></div>
 	            		<div id="signupForm" class="signupForm">
-	            			<form onsubmit="validateFields(this);return false;" action="https://ebm.cheetahmail.com/r/regf2" method="POST" id="signup">
+	            			<div class="thanks" style="display:none;">Merci!</div>
+	            			<form id="modalSignup" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
 	            			<input type="hidden" name="aid" value="1061210640">
 	            			<input type="hidden" name="n" value="8">
 	            			<input type="hidden" name="a" value="1">
@@ -61,15 +63,16 @@
 	            				<label>Email Address</label>
 	            				<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            			</fieldset>
-	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_men.png" alt="Submit" data-gender="M">
-	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_women.png" alt="Submit" data-gender="F">
+	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_fr_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
 	            			</form>
 	            		</div>
 	            	-->
 	            	<!-- mp_trans_add="DE" 
 		            	<div id="signupHeader-de"></div>
 	            		<div id="signupForm" class="signupForm">
-	            			<form onsubmit="validateFields(this);return false;" action="https://ebm.cheetahmail.com/r/regf2" method="POST" id="signup">
+	            			<div class="thanks" style="display:none;">Vielen Dank f&uuml;r Ihre Anmeldung</div>
+	            			<form id="modalSignup" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
 	            			<input type="hidden" name="aid" value="2085808709">
 	            			<input type="hidden" name="n" value="5">
 	            			<input type="hidden" name="a" value="1">
@@ -80,22 +83,13 @@
 	            				<label>Email Address</label>
 	            				<input type="text" class="input" name="email" value="" style="background-position: 0px 3px;" />
 	            			</fieldset>
-	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_men.png" alt="Submit" data-gender="M">
-	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="submit" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_women.png" alt="Submit" data-gender="F">
+	            			<input class="submitForm" id="guys" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_men.png" alt="Submit" data-gender="M" onclick="Venda.Widget.modalSignup.genderFunction(this);">
+	            			<input class="submitForm" id="gals" type="image" border="0" name="submit" value="" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/btn_de_women.png" alt="Submit" data-gender="F" onclick="Venda.Widget.modalSignup.genderFunction(this);">
 	            			</form>
 	            		</div>
 		            -->
 		        <!-- mp_trans_disable_end-->
             </div>
-            <script>
-            	function addGender(gender){
-	            	jQuery('input[name=GENDER]').val(gender);
-	            	console.log(jQuery('input[name=GENDER]').val());
-	            }
-	            jQuery(".submitForm").click(function() {
-		            addGender(jQuery(this).data("gender"));
-		        });	
-            </script>
         </div>
     </div>
 </div>
