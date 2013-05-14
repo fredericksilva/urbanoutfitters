@@ -54,14 +54,14 @@ Venda.Widget.modalSignup.action = {
             jQuery(i).bind('error', function (a) {
                 jQuery(b).fadeOut('slow');
                 setTimeout(function () {
-                    jQuery(".thanks").fadeIn('slow');
+                    jQuery(".signupForm .thanks").fadeIn('slow');
                     fadeBackOut();
                 }, 1000);
 
                 function fadeBackOut() {
                     setTimeout(function () {
-                        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP).css('display', 'none');
-                        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP + 'Overlay').css('display', 'none');
+                        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP).fadeOut('slow');
+                        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP + 'Overlay').fadeOut('slow');
                     }, 3000);
                 }
             });
@@ -93,7 +93,7 @@ Venda.Widget.modalSignup.action = {
     closePopup: function () {
         Venda.Widget.modalSignup.popupCookieClose.put('closedPopup', Venda.Widget.modalSignup.Close);
         closedPopup = Venda.Widget.modalSignup.popupCookieClose.get('closedPopup');
-        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP).css('display', 'none');
-        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP + 'Overlay').css('display', 'none');
+        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP).fadeOut('slow');
+        jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP + 'Overlay').fadeOut('slow');
     }
 }
