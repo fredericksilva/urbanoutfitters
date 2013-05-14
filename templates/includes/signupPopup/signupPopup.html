@@ -93,3 +93,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	jQuery.when(
+		jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/modalSignup.js"),
+		jQuery.Deferred(function( deferred ){
+			jQuery( deferred.resolve );
+		})
+	).done(function(){
+		Venda.Widget.modalSignup.init();
+	});
+});
+</script>
