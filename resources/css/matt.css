@@ -385,9 +385,10 @@
     line-height: inherit;
     font-size: 10px;
     text-indent: inherit;
-    height:30px;
+    height:28px;
     width:127px;
     font-weight: bold;
+    margin-bottom: 2px;
 }
 .mm_sub:after {
   font-size: 0px; line-height: 0%; width: 100px;
