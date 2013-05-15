@@ -2285,16 +2285,13 @@ a.facebookIt:hover {
 }
 .footerBrands {
 	clear:both;
+	text-align: center;
+	padding-top: 15px;
 }
 .footerBrands ul li {
-	width: 464px;
-	margin-left: 22px;
-	padding: 20px 0;
-	display:inline-block;
+	width: 930px;
+	padding: 10px;
 	vertical-align: top;
-}
-.footerBrands ul li:first-child {
-	margin-left: 0;
 }
 .footerBrands ul li a {
 	margin-right: 20px;
