@@ -197,10 +197,10 @@ To do:
 			Venda.orderConf.payDetailsCallback();
 			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}, payDetailsCallback: function (){
-			var l = document.documentElement.lang;
+			var l = document.documentElement.lang + "<venda_sessionlocation>";
 			switch (l) {
-				case 'de': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
-							   cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+				case 'deeur': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
+							  cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
 				break;
 				default: var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
 						 	 cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
