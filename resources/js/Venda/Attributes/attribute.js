@@ -174,14 +174,9 @@ Venda.Attributes.Initialize = function() {
   		} 
   
   	Venda.Attributes.DropdownBehaviour(attName, attText, uID);
-  
-  		// If you have currency converter include the following line
-  	if(jQuery(".currencyConverter").length) {
-  		if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
-  			jQuery('.atributesPrice .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
-  		}
-  	}
-  
+  	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+			jQuery('.atributesPrice #price, .atributesPrice #atrwas').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+		}
   });
   
   jQuery('.qtyChange').click(function(){
@@ -211,6 +206,12 @@ Venda.Attributes.Initialize = function() {
 		}
 	});
 
+	if(jQuery('.quickBuy-Details').length >= 1) { 
+  	if (jQuery('#tag-currencycode') && (typeof jQuery().pennies !== 'undefined')){
+			jQuery('.atributesPrice #price, .atributesPrice #atrwas').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()})
+		}  	
+	}
+
 }
 
 /**
@@ -218,8 +219,18 @@ Venda.Attributes.Initialize = function() {
 * on your needs
 */
 Venda.Attributes.Declare = function() {
+	var lowStock,
+		gender = jQuery("#attributes-gender").text();
+	switch(gender) {
+		case 'w': lowStock = 10;
+		break;
+		case 'm': lowStock = 3;
+		break;
+		case 'h': lowStock = 5;
+		default: lowStock = 10;
+	}
 	Venda.Attributes.Settings = {
-		lowStockThreshold:			10,
+		lowStockThreshold:			lowStock,
 		emailWhenOutOfStock:		false,
 		sourceFromAPI:				false,
 		priceRangeFormat:			"range",  // "range" = from - to; "from" = from only; "to" = to only;
@@ -228,7 +239,6 @@ Venda.Attributes.Declare = function() {
 		useSelectedArrow:			true,
 		useToolTip:					true
 	};
-	
 };
 
 
@@ -748,7 +758,7 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
 		if(Venda.Attributes.productArr[i].attSet.id == uID) {
 				
-			if (Venda.Attributes.productArr[i].attSet[attName].selected == attValue){
+			if (Venda.Attributes.productArr[i].attSet[attName].selected == attValue && attName !== "att3"){
 				Venda.Attributes.productArr[i].attSet[attName].selected = '';
 				Venda.Attributes.productArr[i].attSet[attName].selectedValue = '';
 				
@@ -772,13 +782,25 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 Venda.Attributes.Price = function (uID){
 	var currentCurrency = Venda.Ebiz.CookieJar.get("locn") || "restofworld";
 	if (currentCurrency == "eur") {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{ 
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.Get('atrsell').replace(/\./g, ',') + " " + jQuery('#tag-currsym').text()).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else {
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
 	else {
-		if (Venda.Attributes.Get('atrsell') !== "  ")	jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint");
-		else	jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint");
+		if (Venda.Attributes.Get('atrsell') !== "  ")	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		} else	{
+		  jQuery('#oneProduct_' + uID + ' #price').hide().text(Venda.Attributes.GetPriceRange(uID)).addClass("Re-paint"); 
+		  jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
+		}
 	}
+	jQuery('.atributesPrice #price').data('price',jQuery('#tag-currsym').text() + Venda.Attributes.Get('atrsell')); 
+	jQuery('#oneProduct_' + uID + ' #price').nextAll().remove();
 };
 
 /**

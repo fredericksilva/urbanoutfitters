@@ -1,0 +1,832 @@
+body {
+	background:none;
+	background-color: #C9A9D0;
+}
+.signup-mask, .signup-mask-fr, .signup-mask-de {
+	background-color: #C9A9D0;
+}
+.crumbtrail {
+	display: none;
+}
+@font-face {
+    font-family: "UO Festival Font L";
+    src: url('../fonts/ywft-absent-grotesque-light-webfont.eot');
+    src: url('../fonts/ywft-absent-grotesque-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.woff') format('woff'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.ttf') format('truetype'),
+         url('../fonts/ywft-absent-grotesque-light-webfont.svg#ywft_absent_grotesque_lightLt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UO Festival Font";
+    src: url('../fonts/ywft-absent-grotesque-medium-webfont.eot');
+    src: url('../fonts/ywft-absent-grotesque-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.woff') format('woff'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.ttf') format('truetype'),
+         url('../fonts/ywft-absent-grotesque-medium-webfont.svg#ywft_absent_grotesque_mediuMd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.section3 {
+	margin-top: 173px;
+	z-index: 45;
+}
+/********* Festival Accessories **********/
+.festAcc-acc {
+	position:absolute;
+	z-index:41;
+	background: url('../images/festival/festival_sprite_uk.png');
+}
+.accTallGrass {
+	width: 55px;
+	height: 93px;
+	background-position: -1058px -1970px;
+}
+.accSmallGrass {
+	width: 42px;
+	height: 84px;
+	background-position: -1160px -1976px;
+}
+.accTallWeed {
+	width: 63px;
+	height: 114px;
+	background-position: -1057px -2079px;
+}
+.accSmallWeed {
+	width: 56px;
+	height: 87px;
+	background-position: -1150px -2094px;
+}
+.accCactus {
+	width: 124px;
+	height: 227px;
+	background-position: -1243px -1978px;
+}
+.accSpots {
+	width: 89px;
+	height: 59px;
+	background-position: -1374px -2144px;
+	z-index:40;
+}
+.accPalmLeft {
+	width: 171px;
+	height: 314px;
+	background-position: -1048px -2220px;
+}
+.accPalmRight {
+	width: 295px;
+	height: 169px;
+	background-position: -1254px -2231px;
+}
+/*****************************************/
+.festivalNav {
+	width:950px;
+	position: absolute;
+	top: 25px;
+	left: 50px;
+}
+.festivalNav a, .festivalNav div {
+	width: 134px;
+	height: 50px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat;
+	display:inline-block;
+	vertical-align: top;
+	text-indent:-9999px;
+	cursor:pointer;
+}
+.festivalNav a.nav1 {
+	background-position: 0 -1970px;
+}
+.festivalNav a.nav1:hover {
+	background-position: 0 -2025px;
+}
+.festivalNav a.nav2 {
+	background-position: -138px -1970px;
+}
+.festivalNav a.nav2:hover {
+	background-position: -138px -2025px;
+}
+.festivalNav a.nav3 {
+	background-position: -277px -1970px;
+}
+.festivalNav a.nav3:hover {
+	background-position: -277px -2025px;
+}
+.festivalNav div.nav4 {
+	background-position: -436px -1970px;
+}
+.festivalNav div.nav4:hover {
+	background-position: -436px -2025px;
+}
+.festivalNav a.nav5 {
+	background-position: -575px -1970px;
+}
+.festivalNav a.nav5:hover {
+	background-position: -575px -2025px;
+}
+.festivalNav div.nav6 {
+	background-position: -713px -1970px;
+}
+.festivalNav div.nav6:hover {
+	background-position: -713px -2025px;
+}
+.festivalNav a.nav3 {
+	margin-right: 30px;
+}
+.festivalImgVis {
+	display:none;
+	position:absolute;
+	z-index: 60;
+}
+.festivalJump {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -1137px -2px;
+	width: 310px;
+	height: 355px;
+	top: -27px;
+	left: -285px;
+}
+.festivalDive {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -988px -1356px;
+	width:419px;
+	height:344px;
+	top: 159px;
+	left: 787px;
+}
+.festivalbg {
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #808080;
+	z-index: 99;
+}
+.instagramLarge {
+	display: none;
+	position: absolute;
+	background: #FFFFFF;
+	padding: 5px;
+	z-index: 100;
+	min-height: 400px;
+	min-width: 400px;
+}
+.instagramSlides {
+	padding-top: 390px;
+	width: 660px;
+	text-align: center;
+	margin:0 auto;
+}
+.instagramSlides .flex-viewport {
+	margin: 20px 38px 0 -38px;
+}
+.instagramSlides .flex-direction-nav li a {
+	background: url("../images/festival/festival_sprite_uk.png") no-repeat;
+}
+.instagramSlides .flex-direction-nav li a.flex-prev {
+	top: 550px;
+	left: -40px;
+	background-position: -1226px -535px;
+	width: 133px;
+	height:121px;
+}
+.instagramSlides .flex-direction-nav li a.flex-next {
+	top: 560px;
+	left: 785px;
+	width: 153px;
+	height: 99px;
+	background-position: -1226px -426px;
+}
+ul.instagramImages {
+    width: 660px;
+    height: 540px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+}
+ul.instagramImages li {
+	width: 660px;
+	height: 540px;
+}
+ul.instagramImages li .image {
+	display: inline-block;
+}
+ul.instagramImages li .image img {
+	margin:5px;
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+	border: solid 5px #f47a3d;
+}
+ul.instagramImages li .image img:hover {
+	border: 5px solid #88cc9d;
+	margin:5px;
+}
+.festAcc {
+	position:absolute;
+	z-index: 50;
+}
+.Base1 {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 -1356px;
+	width: 317px;
+	height: 594px;
+	bottom: -222px;
+	left: -192px;
+}
+.Base2 {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -327px -1356px;
+	width:318px;
+	height:301px;
+	bottom: -149px;
+	left: 269px;
+}
+.Base3 {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -655px -1356px;
+	width:323px;
+	height:433px;
+	bottom: -203px;
+	left: 729px;
+}
+.festivalInstagramCont {
+	background-color: #C9A9D0;
+	width: 300%;
+	margin-left: -100%;
+	padding: 0;
+}
+.festivalInstagram {
+	background: url('../images/festival/instagram_uk.gif') no-repeat transparent 0 0;
+	height: 1259px;
+	width: 1712px;
+	margin: 0 auto;
+}
+.festivalDivider {
+	width: 1490px;
+	height: 454px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 -898px;
+	position:absolute;
+	top: 1150px;
+	left: -196px;
+	z-index:50;
+}
+.festivalStaticLinks {
+	width: 995px;
+	height: 447px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent 0 0;
+	position:absolute;
+	top: 773px;
+	left: -32px;
+}
+.festivalStaticLinks div {
+	position:relative;
+}
+.festivalStaticLinks .staticWomens {
+	width: 302px;
+	height: 278px;
+	display: block;
+	position: absolute;
+	top: 63px;
+	left: 11px;
+	cursor: pointer;
+}
+.festivalStaticLinks .staticWomens:hover {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -11px -510px;
+}
+.festivalStaticLinks .staticMens {
+	width: 331px;
+	height: 328px;
+	display:block;
+	position:absolute;
+	top: 0;
+	left: 315px;
+	cursor:pointer;
+}
+.festivalStaticLinks .staticMens:hover {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -315px -447px;
+}
+.festivalStaticLinks .staticFestival {
+	width: 353px;
+	height: 320px;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 633px;
+	cursor: pointer;
+}
+.festivalStaticLinks .staticFestival:hover {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent -633px -447px;
+}
+#UOfestivals {
+	position: relative;
+	height: 100%;
+	clear:both;
+	font-family: "UO Festival Font", Helvetica, Arial, sans-serif;
+}
+.festivalBg-1 {
+	width: 1536px;
+	height: 1640px;
+	background: url('../images/festival/background.gif') no-repeat transparent;
+	margin: 0 auto;
+}
+.festivalSlot {
+	z-index:51;
+	cursor:pointer;
+}
+.festivalSlot a {
+	display:block;
+	text-indent: -9999px;
+	height:100%;
+}
+.openCalendar {
+	width: 333px;
+	height:479px;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -110px 0;
+	position:absolute;
+	top: -239px;
+	left: -8px;
+}
+.openCalendar:hover {
+	background-position: -110px -480px;
+}
+.openBlog {
+	width: 309px;
+	height: 479px;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -443px 0;
+	position:absolute;
+	top: -239px;
+	left: 325px;
+}
+.openBlog:hover {
+	background-position: -443px -960px;
+}
+.openTickets {
+	width: 450px;
+	height: 479px;
+	background: url('../images/festival/animations_background_uk.gif?v=1') no-repeat transparent -752px 0;
+	position:absolute;
+	top: -239px;
+	left: 634px;
+}
+.openTickets:hover {
+	background-position: -752px -480px;
+}
+.spotifyMe {
+	margin-top: -2px;
+}
+a.tweetIt, div.pinIt, a.facebookIt, a.spotifyIt {
+	margin-left: 0px !important;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat;
+	width:63px;
+	height:63px;
+	border: none;
+	text-indent: -9999px;
+	margin:5px 0;
+	cursor:pointer;
+	display: block;
+}
+a.tweetIt {
+	background-position: -1047px -2542px;
+}
+a.tweetIt:hover {
+	background-position: -1117px -2542px;
+}
+div.pinIt {
+	background-position: -1047px -2608px;
+}
+div.pinIt:hover {
+	background-position: -1117px -2608px;
+}
+a.facebookIt {
+	background-position: -1047px -2676px;
+}
+a.facebookIt:hover {
+	background-position: -1117px -2676px;
+}
+a.spotifyIt {
+	background-position: -1047px -2746px;
+}
+a.spotifyIt:hover {
+	background-position: -1117px -2746px;
+}
+.festivalSocial {
+	top: 45%;
+	right: 4px;
+	position: fixed;
+	width: 63px;
+	height: 100px;
+	z-index:80;
+}
+a.closeDropdown {
+	position: absolute;
+	right: -48px;
+	top: -1px;
+	text-indent: -99999px;
+	width: 39px;
+	height: 39px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -144px -2235px ;
+	display:block;
+	cursor:pointer;
+}
+.festivalOfWeek, .festivalCompetition {
+	position:relative;
+}
+.festivalOfWeek a.closeDropdown, .festivalCompetition a.closeDropdown {
+	right: 140px;
+	top: 0;
+}
+.festivalAds {
+	position: absolute;
+	width: 100%;
+	height: 152px;
+	bottom: 50px;
+	left: 0;
+	text-align: center;
+}
+.festivalBoxAds {
+	width: 25%;
+	height: 100px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 0 20px;
+	background-color: lightgray;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 50px;
+}
+.festivalSlider {
+	background-color: #C9A9D0;
+	width: 300%;
+	margin-left: -100%;
+	padding: 0;
+}
+/***** Festival Slider CSS *****/
+.festivalslides {
+	width: 698px;
+	height: 388px;
+	position: absolute;
+	top: 331px;
+	left: 117px;
+	border: 3px solid #C9A9D0;
+	margin: 20px 0 25px 0;
+}
+.festivalslides .slides > li {
+	position: relative;
+}
+.festival-slider .festival-slide {
+	width: 698px;
+	height: 388px;
+}
+.fslide1 {
+	background-color: #e8e8e8 !important;
+}
+.festival-slider h2 {
+	letter-spacing: 0 !important;
+	color: #f44189 !important;
+	text-transform: uppercase;
+	width: 703px;
+	line-height:226px;
+	font-size: 24px;
+	text-align: center;
+}
+.festival-slider .flex-control-paging {
+	display: block;
+	float: left;
+	left: 50%;
+	position: absolute;
+	bottom: 3px;
+	width: auto;
+	background: none;
+	padding: 1px 28px;
+	margin-left: -83px;
+}
+.festival-slider .flex-control-paging li {
+	display: block;
+	float: left;
+	position: relative;
+	padding: 4px 0px 5px;
+}
+.festival-slider .flex-control-nav li a {
+	background: url("../images/uo-png-sprite.png") no-repeat -157px -267px;
+	width: 24px;
+	height: 24px;
+}
+.festival-slider .flex-control-nav li a:hover {
+	background-position: -155px -265px;
+}
+.festival-slider .flex-direction-nav {
+	display: block;
+	height: 0;
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.festival-slider .flex-direction-nav li:first-child {
+	right: auto;
+	left: 0;
+}
+.festival-slider .flex-direction-nav li {
+	display: block;
+	height: 388px;
+	position: absolute;
+	width: 140px;
+	right: 0;
+}
+.festival-slider .flex-direction-nav a {
+	-webkit-transition: opacity 0.4s ease-out;
+	-moz-transition: opacity 0.4s ease-out;
+	width: 44px;
+	height: 45px;
+	margin: -23px 0 0;
+	display: block;
+	background: url("../images/uo-png-sprite.png") no-repeat 0 0;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	opacity: 0;
+	z-index: 1000;
+	outline: none;
+}
+.festival-slider .flex-direction-nav .flex-prev {
+	background-position: -80px -220px;
+	left: 20px;
+}
+.festival-slider .flex-direction-nav a.flex-prev:hover {
+	background-position: -76px -215px;
+}
+.festival-slider .flex-direction-nav .flex-next {
+	background-position: -126px -220px;
+	right: 20px;
+}
+.festival-slider .flex-direction-nav a.flex-next:hover {
+	background-position: -130px -215px;
+}
+.festival-slider .flex-control-nav li a.flex-active {
+	opacity: 1;
+	background-position: -129px -267px;
+}
+.festival-slider .flex-direction-nav li:hover > a {
+	opacity: 1;
+}
+/***** Festival Slider CSS EO *****/
+.festivalContent {
+	width: 300%;
+	margin-left: -100%;
+	padding: 0;
+	background-color: #C9A9D0;
+}
+.festivalAccordion {
+	margin: 0 auto;
+	width: 1050px;
+	padding: 0;
+}
+.festivalAccordion-top {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1px -2313px ;
+	height: 273px;
+	width: 1001px;
+}
+.festivalAccordion-middle {
+	background-color: #fde9da;
+	width: 1001px;
+}
+.festivalAccordion-bottom {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1px -2636px ;
+	height: 273px;
+	width: 1001px;
+}
+.festivalCalendar {
+	clear: both;
+	width: 900px;
+	display: none;
+	margin: 0;
+	position: relative;
+	z-index:61;
+	margin: 0 auto;
+}
+.festivalGenre {
+	text-align: center;
+	width: 800px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -51px -2085px transparent;
+	margin-left: 49px;
+	height: 41px;
+}
+.festivalMonth {
+	text-align: center;
+	width: 900px;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2126px transparent;
+	height: 73px;
+}
+.festivalOfWeek, .festivalCompetition {
+	height:auto;
+	width:948px;
+	display:none;
+	z-index:60;
+	clear:both;
+	margin: 0 auto;
+}
+.festivals {
+	height:auto;
+	border-top: 1px solid #333;
+}
+.festivalLink {
+	height: 26px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid black;
+}
+.genre {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat transparent;
+}
+.Uk {
+	background-position: 0 -2201px;
+}
+.UkColour {
+	background-color: #8ae0a4;
+}
+.France {
+	background-position: -125px -2201px;
+}
+.FranceColour {
+	background-color: #9cdaec;
+}
+.Denmark {
+	background-position: -250px -2201px;
+}
+.DenmarkColour {
+	background-color: #dca0e9;
+}
+.Croatia {
+	background-position: -375px -2201px;
+}
+.CroatiaColour {
+	background-color: #e8ef7e;
+}
+.Germany {
+	background-position: -500px -2201px;
+}
+.GermanyColour {
+	background-color: #fd66ae;
+}
+.Sweden {
+	background-position: -625px -2201px;
+}
+.SwedenColour {
+	background-color: #a5efd6;
+}
+.pastEvent {
+	background-color: lightgray;
+}
+.festivalDate, .festivalName, .festivalLocation {
+	display: inline-block;
+	vertical-align: top;
+	padding: 12px 0 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.festivalDate, .festivalLocation {
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
+}
+.festivalDate {
+	width: 160px;
+	padding-right: 30px;
+	padding-left: 10px;
+}
+.festivalName {
+	width: 350px;
+	padding-right: 30px;
+}
+.festivalLocation {
+	width: 295px;
+	padding-right: 10px;
+}
+.festivalDropdown {
+	display:none;
+}
+.festivalImage, .festivalDescription, .festivalInfo {
+	padding: 10px 0;
+	display: inline-block;
+	vertical-align: top;
+	height: 180px;
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+.festivalInfo p span {
+	font-family: "UO Festival Font", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.festivalImage {
+	width: 160px;
+	padding: 10px 30px 10px 10px;
+}
+.festivalDescription {
+	width: 350px;
+	padding: 10px 30px 10px 0;
+}
+.festivalInfo {
+	text-align: left;
+	width: 190px;
+	padding: 10px 10px 10px 0;
+}
+.festivalWomensLink, .festivalMensLink, .festivalTicketsLink {
+	display: inline-block;
+	padding: 7px 10px 3px;
+	text-align: center;
+	width: 265px;
+	margin: 5px;
+	background-color: black;
+	text-transform: uppercase;
+	color: #f47a3e;
+	font-size:16px;
+	cursor: pointer;
+}
+.festivalTicketsLink {
+	border: 1px solid black;
+	background-color: #f47a3e;
+	color: black;
+	padding: 6px 10px 2px;
+	cursor: pointer;
+}
+.festivalWomensLink a, .festivalMensLink a {
+	display:block;
+	color: #f47a3e;
+}
+.festivalTicketsLink a {
+	display: block;
+	color: black;
+}
+.month {
+	display: inline-block;
+	padding: 28px 10px 10px;
+	text-align: center;
+	width: 124px;
+	height: 26px;
+	margin: 5px 1px;
+	text-transform: uppercase;
+	cursor:pointer;
+	font-size: 14px;
+	font-weight: bold;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -750px -2201px transparent;
+	font-size: 30px;
+}
+.month:hover {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2235px transparent;
+}
+.selected {
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat 0 -2235px transparent;
+}
+.genre {
+	display: inline-block;
+	padding: 11px 10px;
+	text-align: center;
+	width: 105px;
+	margin: 5px 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	height: 12px;
+	font-size: 16px;
+}
+.festivalContainer {
+	border:2px solid black;
+}
+.festivalWinLogo {
+	width: 160px;
+	padding: 0 30px 0 10px;
+	height: 120px;
+	display: inline-block;
+	vertical-align: top;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1254px -2572px transparent;
+}
+.festivalWinLogo-soon {
+	width: 160px;
+	padding: 0 30px 0 10px;
+	height: 120px;
+	display: inline-block;
+	vertical-align: top;
+	background: url('../images/festival/festival_sprite_uk.png') no-repeat -1254px -2693px transparent;
+}
+.festivalWinLogo a {
+	display: block;
+	height: 100%;
+	text-indent: -9999px;
+}
+.festivalWinText {
+	width: 660px;
+	padding: 0 10px 0 0;
+	height: 120px;
+	display: inline-block;
+	font-family: "UO Festival Font L", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	vertical-align: top;
+}
+.festivalWinText p span {
+	font-family: "UO Festival Font", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}

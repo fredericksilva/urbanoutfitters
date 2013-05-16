@@ -1,0 +1,38 @@
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/quickSignup.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	var catalogue = jQuery(".catalogue").text();
+	switch (catalogue) {
+		case '1': 
+		jQuery.when(
+			jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/catalogueScript.js"),
+			jQuery.Deferred(function( deferred ){
+				jQuery( deferred.resolve );
+			})
+		).done(function(){
+			lazyLoadImages.init();
+			superScrolling.init();
+			scrollToPoint.init();
+			jQuery(window).scroll(function () {
+				gameSticky.init();
+			});
+    	});
+    	break;
+    	case '2':
+    	jQuery.when(
+			jQuery.getScript("<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/digibookScript.js"),
+			jQuery.Deferred(function( deferred ){
+				jQuery( deferred.resolve );
+			})
+		).done(function(){
+			Venda.digibook.init();
+    	});
+    	break;
+    	default:
+    		//do nothing
+    	;
+	}
+});
+</script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/quickSignup.js"></script>
+

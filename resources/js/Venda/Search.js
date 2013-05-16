@@ -10,7 +10,7 @@ Venda.Search = function(options) {
     }, options);
 
     // showing all options
-    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatchHide','swatchCase','uiSelectmenu','removePrice','icxtHideRefine','refineColours3','swatchScroller','removeRefine');
+    this.features.push('priceSlider', 'viewMoreLess','indicateLoading','hideLoading','viewStyleSwitcher','colorSwatch','perLine','searchAccordion','swatches','swatchHide','uiSelectmenu','removePrice','icxtHideRefine','removeRefine','currencyConvert');
 };
 
 // Utility method.
@@ -301,6 +301,7 @@ Venda.Search.Feature.multiRefine.prototype = {
 Venda.Search.Feature.indicateLoading = function() {};
 Venda.Search.Feature.indicateLoading.prototype = {
     clickHandler: function(evt) {
+    	jQuery("#quickBuy").dialog("destroy");
         jQuery('#loadingsearch').show();
         jQuery('.searchContent').hide();
         return false;
@@ -390,82 +391,219 @@ Venda.Search.Feature.colorSwatch.prototype = {
 };
 
 /**
-* The following scripts have been added to perform the following functionality on the 
-* productlist and categorylist templates.
-* Search perLine '3 or 5 products', Accordion toggle on Refine List, Clear button on
-* each collate results, Hide swatchContainer if there are less than 2 swatches and jQuery UI dropdown styling
+* Search perLine '3 or 5 products'
+* can be pre selected in the VCP or selected using paginator buttons
 * @author Jotis Moore <jmoore@urbanoutfitters.com>
 **/
-Venda.Search.Feature.perLine = function() {};
-Venda.Search.Feature.perLine.prototype = {
-    display: function() {
-    	var prodRef = jQuery(".prodRef").text();
-    if (document.location.href.indexOf('&perline=3') > -1 ) {
-    	jQuery(".quickLinkBox").each( function () {
-	    	jQuery(this).addClass("qb-large");
-	    	jQuery(this).removeClass("qb-small");
-    	});
-    	jQuery(".swatchIcon").hide();
-    	jQuery(".swatchContainer").show();
-    	jQuery(".prodsFiveColumns li").css('width','33%');
-        jQuery(".threePerLine").hide();
-    	jQuery(".fivePerLine").show();
-    	jQuery(".onlineExLogo-underlay").show();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_ca1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_ca1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-        jQuery("a.moredetail img").css({width:'244px',height:'366px'});
-
-    }
-    if (document.location.href.indexOf('&perline=5') > -1 ) {
-    	jQuery(".quickLinkBox").each( function () {
-	    	jQuery(this).addClass("qb-small");
-	    	jQuery(this).removeClass("qb-large");
-    	});
-    	jQuery(".swatchIcon").show();
-    	jQuery(".swatchContainer").hide();
-    	jQuery(".prodsFiveColumns li").css('width','19.5%');
-        jQuery(".threePerLine").show();
-    	jQuery(".fivePerLine").hide();
-    	jQuery(".onlineExLogo-underlay").hide();
-    		jQuery("a.moredetail img").each(function () {
-    			var ImageSrc = jQuery(this).attr("src").replace('_ca1.jpg','_sm1.jpg');
-    			jQuery(this).attr("src",ImageSrc);
-    		});
-    		jQuery(".sw_image").each(function () {
-    			var SetImageSrc = jQuery(this).data("setimage").replace('_ca1.jpg','_sm1.jpg');
-    			jQuery(this).data("setimage",SetImageSrc);
-    		});
-    	jQuery("a.moredetail img").css({width:'142px',height:'213px'});
-    	}
-        jQuery('.threePerLineLink').click(function() {
-    		if ( document.location.href.indexOf('perline=5') > -1 ) {
-    			this.href = this.href.replace('perline=5', 'perline=3');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=3');
-        	}
-        	return true;
-        });
-        jQuery('.fivePerLineLink').click(function() {
-        	if ( document.location.href.indexOf('perline=3') > -1 ) {
-    			this.href = this.href.replace('perline=3', 'perline=5');
-    		}
-    		else {
-        	jQuery(this).attr('href', this.href + '&perline=5');
-        	}
-        	return true;
-        });
-        /*jQuery('img').error(function(){
-        	jQuery(this).attr('src', 'missing.png');
-        });*/
-    }
+Venda.Search.Feature.perLine = function() {
+	var $swatchIcon,
+		$swatchContainer,
+		$three,
+		$five,
+		$UOexcl,
+		$quickBuy,
+		$prodImages,
+		$swatchImages,
+		prodColumn,
+		icxtFive;
 };
+Venda.Search.Feature.perLine.prototype = {
+	threePerLine: function() {
+		jQuery($quickBuy).each( function() {
+			jQuery(this).addClass("qb-large").removeClass("qb-small");
+		})
+		$swatchIcon.add($three).hide();
+		$swatchContainer.add($five).add($UOexcl).show();
+		jQuery(prodColumn).css('width','33%');
+	},
+	threePerLineImg: function() {
+		jQuery($prodImages).each(function () {
+    		var ImageSrc = jQuery(this).attr("src").replace('_sm1.jpg','_ca1.jpg');
+    		jQuery(this).attr("src",ImageSrc);
+    	})
+    	jQuery($swatchImages).each(function () {
+    		var SetImageSrc = jQuery(this).data("setimage").replace('_sm1.jpg','_ca1.jpg');
+    		jQuery(this).data("setimage",SetImageSrc);
+    	});
+        jQuery($prodImages).css({width:'244px',height:'366px'});
+	},
+	threeClick: function() {
+		var href = jQuery('.threePerLineLink').attr('href');
+    	if (document.location.href.indexOf('perline=5') > -1 ) {
+    		var newHref = href.replace('perline=5', 'perline=3');
+    		jQuery('.threePerLineLink').attr('href', newHref);
+    	}
+    	else {
+        	jQuery('.threePerLineLink').attr('href', href + '&perline=3');
+        }
+        return true;
+	},
+	fivePerLine: function() {
+		jQuery($quickBuy).each( function() {
+			jQuery(this).removeClass("qb-large").addClass("qb-small");
+		})
+		$swatchIcon.add($three).show();
+		$swatchContainer.add($five).add($UOexcl).hide();
+		jQuery(prodColumn).css('width','19.5%');
+	},
+	fivePerLineImg: function() {
+		jQuery($prodImages).each(function () {
+    		var ImageSrc = jQuery(this).attr("src").replace('_ca1.jpg','_sm1.jpg');
+    		jQuery(this).attr("src",ImageSrc);
+    	})
+    	jQuery($swatchImages).each(function () {
+    		var SetImageSrc = jQuery(this).data("setimage").replace('_ca1.jpg','_sm1.jpg');
+    		jQuery(this).data("setimage",SetImageSrc);
+    	});
+        jQuery($prodImages).css({width:'142px',height:'213px'});
+	},
+	fiveClick: function() {
+		var href = jQuery('.fivePerLineLink').attr('href');
+    	if (document.location.href.indexOf('perline=3') > -1 ) {
+    		var newHref = href.replace('perline=3', 'perline=5');
+    		jQuery('.fivePerLineLink').attr('href', newHref);
+    	}
+    	else {
+        	jQuery('.fivePerLineLink').attr('href', href + '&perline=5');
+        }
+        return true;
+	},
+	display: function() {
+		$swatchIcon = jQuery(".swatchIcon"),
+		$swatchContainer = jQuery(".swatchContainer"),
+		$three = jQuery(".threePerLine"),
+		$five = jQuery(".fivePerLine"),
+		$UOexcl = jQuery(".onlineExLogo-underlay"),
+		$quickBuy = jQuery(".quickLinkBox"),
+		$prodImages = jQuery("a.moredetail img"),
+		$swatchImages = jQuery(".sw_image"),
+		prodColumn = jQuery(".prodsFiveColumns li"),
+		icxtFive = jQuery(".icxt5perline").text();
+		jQuery('.threePerLineLink').on("click", jQuery.proxy(this, 'threeClick'))
+		jQuery('.fivePerLineLink').on("click", jQuery.proxy(this, 'fiveClick'))
+		if (document.location.href.indexOf('&perline=3') > -1 ) {
+			this.threePerLine();
+			this.threePerLineImg();
+		}
+		if (document.location.href.indexOf('&perline=5') > -1 || (document.location.href.indexOf('&perline=3') < 0 && icxtFive === "1")) {
+			this.fivePerLine();
+			this.fivePerLineImg();
+		}
+	}
+};
+
+/**
+* Swatch functionality 
+* Swatch building creates the url link for the swatch image
+* Plus removes swatches depending on amount
+* Plus display swatch paginator if more than 8 swatches
+* Swatch Paginator functionality
+* Colour refine determines the att1 value of a swatch
+* based on the att3 selection then selects it
+* @author Jotis Moore <jmoore@urbanoutfitters.com>
+**/
+Venda.Search.Feature.swatches = function() {};
+Venda.Search.Feature.swatches.prototype = {
+	display: function () {
+		this.swatchBuilding();
+		this.swatchPaginator();
+		this.colourRefine();
+	}, swatchBuilding: function() {
+		jQuery(".prodsFiveColumns li").each(function () {
+			var t = jQuery(this).find(".swatchContainer"),
+				c = jQuery(this).find(".swatchIcon"),
+				u = jQuery(this).find(".imageUrl").text(),
+				b = t.find('.swatchImage img.swatch'),
+				d = t.find('.arrowDown');
+	    	if (b.length < 2) {
+		    	t.empty().hide();
+		    	c.hide();
+	    	}
+	    	if (b.length > 1) {
+		    	b.attr("src", function() {
+	    			return u+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
+	    		}).error(function () {
+	    			jQuery(this).parents('a.sw_image').remove();
+	    		})
+	    	}
+	    	if ((b.length - 8) < 9) {
+		    	d.hide();
+	    	}
+	    })
+	}, swatchPaginator: function () {
+    	jQuery(".swatchContainer").each(function () {
+    		var t = jQuery(this),
+				f = t.find('.swatchLayer'),
+				a = 0,
+				d = t.find('.arrowDown'),
+				e = t.find('.arrowUp').hide();
+    		function scrollToSwatch(s) {
+		    	jQuery(f).scrollTo(s, 200, {
+			    	margin: true
+			    })
+			}
+			d.click(function (g) {
+				var b = t.find('.swatchImage img.swatch');
+            	e.show();
+            	scrollToSwatch(b[a += 1]);
+            	if (a === b.length - 8) {
+	            	d.hide();
+	            }
+	        });
+	        e.click(function (g) {
+	        	var b = t.find('.swatchImage img.swatch');
+            	d.show();
+            	scrollToSwatch(b[a -= 1]);
+            	if (a === 0) {
+	            	e.hide();
+	            }
+	        })
+	    })
+    }, colourRefine: function () {
+    	var a = jQuery(".colourFacet ul > li"),
+        	c = jQuery(".colourFacet ul > li:last").text(),
+        	b = [];
+        a.each(function () {
+        	b.push(jQuery(this).text())
+        });
+        b.reverse();
+        jQuery(".prodsFiveColumns li").each(function () {
+        	var l = jQuery(this).find(".swatchContainer"),
+            	o = l.find("a"),
+            	n = jQuery(this).find(".att3value").text().split(","),
+            	h = jQuery(this).find(".productSku").text(),
+            	d = [];
+            jQuery.each(n, function (j, i) {
+            	if (jQuery.inArray(i, d) === -1) {
+                	d.push(i)
+                }
+            });
+            d = jQuery.map(d, jQuery.trim);
+            var g, f, m = [];
+            assignSwatch = function () {
+            	var i = [];
+            	l.find("a").each(function () {
+                	i.push(jQuery(this).data("color"))
+                });
+                for (f = 0; f < m.length; f++) {
+                	if (i.indexOf(m[f]) >= 0) {
+                    	l.find("a." + m[f]).click().prependTo("#swatch" + h);
+                    	return false
+                    }
+                }
+            };
+            for (var e = 0; e < b.length; e++) {
+            	for (g = 0; g < d.length; g++) {
+                	attribute3val = jQuery.trim(d[g].split("=")[0]);
+                	if (b.indexOf(attribute3val) === e) {
+                    	m.push(jQuery.trim(escape(d[g].split("=")[1])))
+                    }
+                }
+            }
+            assignSwatch();
+        })
+    }
+}
 
 Venda.Search.Feature.searchAccordion = function() {};
 Venda.Search.Feature.searchAccordion.prototype = {
@@ -536,48 +674,13 @@ Venda.Search.Feature.swatchHide = function() {};
 Venda.Search.Feature.swatchHide.prototype = {
 	display: function() {
     	jQuery(".prodsFiveColumns li").each(function () {   
-    		var swatch = jQuery(this).find("a.sw_image"),
-    			swatchImg = jQuery(this).find("img.swatch"),
-    			n = swatchImg.length,
-    			mainImg = jQuery(this).find("a.moredetail img"),
+    		var mainImg = jQuery(this).find("a.moredetail img"),
     			mediumImgKey = jQuery(this).find(".mediumImgKey").text().replace('_m1.jpg','_l1.jpg');;
     		mainImg.error(function () {
 	    		jQuery(this).unbind("error").attr("src", mediumImgKey);
 	    	});
-	    	if (n < 2) {
-    			var swatchCont = jQuery(this).find(".swatchContainer");
-    			var swatchIcon = jQuery(this).find(".swatchIcon");
-    			jQuery(swatchCont).html("");
-    			jQuery(swatchCont).hide();
-    			jQuery(swatchIcon).hide();
-    		}
-    		swatch.each(function () {
-    			swatchImg.error(function () {
-	    			jQuery(this).closest('a').remove();
-	    		})
-	    	}).promise().done(function () {
-	    		z = swatchImg.length;
-		    	if (z > 8) {
-    				jQuery(this).find(".arrowDown").show();
-    				jQuery(this).find(".arrowDown").animate({opacity: 1}, 200);
-    				jQuery(this).find(".arrowUp").animate({opacity: 1}, 200);
-    				//jQuery(this).find(".swatchNumber").html("+ "+(n-8));
-    			}
-	    	})
-    	});
+    	})
     }
-};
-
-Venda.Search.Feature.swatchCase = function() {};
-Venda.Search.Feature.swatchCase.prototype = {
-	display: function() {
-		jQuery(".prodsFiveColumns li").each(function () {  
-    		var imageUrl = jQuery(this).find(".imageUrl").text(); 
-    		jQuery(this).find(".sw_image img.swatch").attr("src", function() {
-	    		return imageUrl+this.name+'/'+this.name+'_'+this.title.toLowerCase()+'_sw.jpg'; 
-	    	});
-	    })
-	}
 };
 
 Venda.Search.Feature.uiSelectmenu = function() {};
@@ -616,108 +719,6 @@ Venda.Search.Feature.icxtHideRefine.prototype= {
 	}
 };
 
-Venda.Search.Feature.refineColours3 = function() {};
-Venda.Search.Feature.refineColours3.prototype = {
-	display: function() {
-		var colourul = jQuery('.colourFacet ul > li'),
-			colourFacetLast = jQuery('.colourFacet ul > li:last').text(),
-			colourFacets = [];
-		colourul.each(function() { colourFacets.push(jQuery(this).text()) });
-		colourFacets.reverse();
-		jQuery(".prodsFiveColumns li").each( function() {
-			var $this = jQuery(this).find(".swatchContainer"),
-				a = $this.find("a"),
-				uniqueNames = jQuery(this).find(".att3value").text().split(","),
-				sku = jQuery(this).find('.productSku').text(),
-				att3Split = [];
-			jQuery.each(uniqueNames, function(d, el){
-				if(jQuery.inArray(el, att3Split) === -1) att3Split.push(el);
-			})
-			att3Split = jQuery.map(att3Split, jQuery.trim);
-			var i,
-				j,
-				attribute1val = [];
-			assignSwatch = function() {
-				var sCol = [];
-				$this.find("a").each(function() { sCol.push(jQuery(this).data("color")); });
-				for (j = 0; j < attribute1val.length; j++) {
-					if (sCol.indexOf(attribute1val[j]) >=0) {
-						$this.find("a."+attribute1val[j]).click();
-						$this.find("a."+attribute1val[j]).prependTo("#swatch"+sku);
-						return false;
-					}
-				}
-			}
-			for(var k = 0; k < colourFacets.length; k ++) {
-				for(i = 0; i < att3Split.length; i++) {
-					attribute3val = jQuery.trim(att3Split[i].split('=')[0]);
-					if (colourFacets.indexOf(attribute3val) === k) {
-						attribute1val.push(jQuery.trim(escape(att3Split[i].split('=')[1])));
-					}
-				}
-			}
-			assignSwatch();
-		})
-	}
-};
-
-Venda.Search.Feature.swatchScroller = function() {};
-Venda.Search.Feature.swatchScroller.prototype = {
-	display: function() {
-		jQuery(".prodsFiveColumns li").each(function () {
-        	var $this = jQuery(this).find(".swatchContainer"),
-			 	a = $this.find("a.sw_image"),
-			 	aImg = $this.find("a.sw_image img"),
-			 	aImgHeight = 21,
-			 	aFirst = $this.find("a.sw_image:first"),
-			 	x = $this.find(".swatchInvtref");
-			aFirst.addClass("current");
-			for (var i = 0; i < a.length; i++) {
-				jQuery(a[i]).attr("rel", [i]);
-			}			
-        	$this.find(".arrowDown").bind('click', function() {
-        		$this.find(".arrowUp").show();
-        		$this.find(".arrowUp").animate({opacity: 1}, 200);
-        		$active = $this.find(".current").next();
-        		if ($active.length === 0) {
-        			$active = aFirst;
-        		}
-        		var c = (aImgHeight + 9) * $active.attr("rel"),
-        			contH = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 8)) + "px",
-        			contN = "-"+(((aImgHeight + 9) * a.length) - ((aImgHeight + 9) * 9)) + "px",
-        			intTop = x.css("top");
-        		console.log(contH + " " + intTop + " " + x.height() + " " + (aImgHeight + 9) * 8);
-        		if (intTop !== contH || intTop === "auto" || intTop === "0px") {
-					a.removeClass("current");
-					$active.addClass("current");
-					x.animate({top: -c}, 200);
-					//$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))));
-				}
-				/*if (intTop === contN) {
-					$this.find(".arrowDown").animate({opacity: 0}, 200);
-					$this.find(".swatchNumber").animate({opacity: 0}, 200);
-				}*/
-			})
-			$this.find(".arrowUp").bind('click', function() {
-				$active = $this.find(".current").prev();
-				if ($active.length === 0) {
-        			$active = aFirst;
-        		}
-				var c = (aImgHeight + 9) * $active.attr("rel");
-				a.removeClass("current");
-				$active.addClass("current");
-				x.animate({top: -c}, 200);
-				/*$this.find(".arrowDown").animate({opacity: 1}, 200);
-				$this.find(".swatchNumber").animate({opacity: 1}, 200);
-				$this.find(".swatchNumber").html("+ "+((a.length-8) - (1 * $active.attr("rel"))))
-				if (aFirst.hasClass('current')) {
-	        		$this.find(".arrowUp").animate({opacity: 0}, 200);
-        		}*/
-			})
-		})
-	}
-};
-
 Venda.Search.Feature.removeRefine = function() {};
 Venda.Search.Feature.removeRefine.prototype = {
 	display: function() {
@@ -732,4 +733,10 @@ Venda.Search.Feature.removeRefine.prototype = {
 			jQuery(".qb-large").css('width','234px');
 		};
 	}
+};
+Venda.Search.Feature.currencyConvert = function() {};
+Venda.Search.Feature.currencyConvert.prototype = {
+  display: function() {
+    jQuery('.price, #updateTotal, .pounds, .baskettotals .totalprice, .subtotal div, .orscTotalFig').pennies('convert',{to: jQuery('.price').pennies('get')});	
+  }
 };

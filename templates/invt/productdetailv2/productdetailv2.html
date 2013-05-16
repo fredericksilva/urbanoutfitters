@@ -24,21 +24,24 @@
 <div id="tag-currsym" style="display:none;"><venda_currsym></div>
 
 <venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
-<div id="attributes-stockNA" style="display:none;">Not available </div>
-<div id="attributes-stockOut" style="display:none;">Out of stock </div>
-<div id="attributes-productselected" style="display:none;">You have selected </div>
-<div id="attributes-productstatus" style="display:none;">Please select </div>
-<div id="attributes-only" style="display:none;"> only </div>
-<div id="attributes-left" style="display:none;"> left </div>
-<div id="attributes-optionDefault" style="display:none;">Select </div>
-<div id="attributes-tooltip" style="display:none;">is out of stock </div>
-<div id="attributes-backorder" style="display:none;">Backorder </div>
-<div id="attributes-preorder" style="display:none;">Preorder </div>
-<div id="attributes-quantity" style="display:none;">Enter quantity </div>
-<div id="attributes-chooseVariant" style="display:none;">Choose variant </div>
-<div id="attributes-addThisProduct" style="display:none;">Add this product </div>
-<div id="attributes-addAllProduct" style="display:none;">Add all products </div>
-<div id="attributes-noneChecked" style="display:none;">None checked </div>
+<div id="attributes-stockNA" style="display:none;">Not available&nbsp;</div>
+<div id="attributes-stockOut" style="display:none;">Out of stock&nbsp;</div>
+<div id="attributes-productselected" style="display:none;">You have selected&nbsp;</div>
+<div id="attributes-productstatus" style="display:none;">Please select&nbsp;</div>
+<div id="attributes-only" style="display:none;">&nbsp;only&nbsp;</div>
+<div id="attributes-left" style="display:none;">&nbsp;left&nbsp;</div>
+<div id="attributes-optionDefault" style="display:none;">Select&nbsp;</div>
+<div id="attributes-tooltip" style="display:none;">is out of stock&nbsp;</div>
+<div id="attributes-backorder" style="display:none;">Backorder&nbsp;</div>
+<div id="attributes-preorder" style="display:none;">Preorder&nbsp;</div>
+<div id="attributes-quantity" style="display:none;">Enter quantity&nbsp;</div>
+<div id="attributes-chooseVariant" style="display:none;">Choose variant&nbsp;</div>
+<div id="attributes-addThisProduct" style="display:none;">Add this product&nbsp;</div>
+<div id="attributes-addAllProduct" style="display:none;">Add all products&nbsp;</div>
+<div id="attributes-noneChecked" style="display:none;">None checked&nbsp;</div>
+<!-- mp_trans_disable_start-->
+<div id="attributes-gender" style="display:none;"><venda_pdxtsearchgender></div>
+<!-- mp_trans_disable_end-->
 
 <venda_tpcomment><!-- VCP switch settings required for attributes JS --></venda_tpcomment>
 <div id="OutOfStockThreshold" style="display: none;"><venda_setting type=ebiz,name=emailmebackthreshold></div><venda_tpcomment><!-- Out of Stock Threshold --></venda_tpcomment>
@@ -111,6 +114,7 @@ jQuery(function(){
 				<meta itemprop="priceCurrency" content="<venda_currencycode>">
 				<venda_block label=onhand,invtonhand&gt;0><venda_block label=instock,invtpreorder!=1><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=preorder,invtpreorder=1><link itemprop="availability" href="http://schema.org/PreOrder"></venda_block label=preorder></venda_block label=onhand><venda_block label=outofstock,invtonhand&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
+				<venda_page page=currencyconvertertext>
 			</div>
 			<div class="review-score">
 			  <!-- mp_trans_remove_start -->    
@@ -143,6 +147,7 @@ jQuery(function(){
 				<meta itemprop="priceCurrency" content="<venda_currencycode>">
 				<venda_block label=instock,invtatrinstock&gt;0><link itemprop="availability" href="http://schema.org/InStock"></venda_block label=instock><venda_block label=outofstock,invtatrinstock&lt;1><link itemprop="availability" href="http://schema.org/OutOfStock"></venda_block label=outofstock>
 				<venda_inctemplate type=includes,name=priceFormat>
+  		  <venda_page page=currencyconvertertext>
 			</div>
 		  <div class="review-score">
 			  <!-- mp_trans_remove_start -->    

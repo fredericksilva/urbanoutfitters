@@ -8,13 +8,13 @@
         	<div class="invalidEmail" style="display:none;">Veuillez entrer une adresse e-mail valide.</div>
         -->
         <!-- mp_trans_add="DE"
-	      	<div class="invalidEmail" style="display:none;">Bitte geben Sie eine galtige E-Mail-Adresse.</div>
+	      	<div class="invalidEmail" style="display:none;">Bitte geben Sie eine g&uuml;ltige E-Mail-Adresse ein.</div>
 	    -->
 	<!-- mp_trans_disable_end-->
 	<div class="signupPopupOuter">
 		<div class="signupPopupInner clearfix">
             <div class="signupPopupClose">
-            	<a class="signupPopupCloseLink" href="#null" style="border:0;">
+            	<a class="signupPopupCloseLink" href="javascript:" style="border:0;">
             		<img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0">
             	</a>
             </div>
@@ -27,8 +27,15 @@
 	            	<input type="hidden" name="aid" value="2068353000">
 	            	<input type="hidden" name="n" value="9">
 	            	<input type="hidden" name="a" value="1">
-	            	<input type="hidden" name="COUNTRY" value="UNITED KINGDOM">
-	            	<input type="hidden" name="SOURCE" value="UK-GBP-POPUP">
+	            	<venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
+		            	<input type="hidden" name="COUNTRY" value="UNITED KINGDOM">
+		            	<input type="hidden" name="SOURCE" value="UK-GBP-POPUP">
+		            </venda_block label=1>
+		            <venda_block label=2,mode=value,<venda_sessionlocation>!=restofworld>
+		            	<input type="hidden" name="COUNTRY" value="EUROPE">
+		            	<input type="hidden" name="SOURCE" value="UK-EURO-POPUP">
+					</venda_block label=2>
+	            	
 	            	<input type="hidden" name="GENDER" value="">
 	            	<fieldset>
 	            		<label>Email Address</label>

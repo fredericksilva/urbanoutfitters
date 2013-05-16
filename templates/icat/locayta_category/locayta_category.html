@@ -1,0 +1,33 @@
+<div id="content-search-body">
+<!-- PULL IN PRODUCT LIST EDITORIAL PAGE -->
+<div class="editorialPage"><venda_tpxt mode=get,name=categoryTopBanner></div>
+<!-- PRODUCT LIST TOP BANNER -->
+<div id="height10"></div>
+<div class="icxthiderefine" style="display:none;"><venda_tpxt mode=get,name=icatHideRefine></div>
+<venda_block label=151,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewsproddetail>=1><script type="text/javascript"><venda_inctemplate type=includes,name=powerreviewscripts></script></venda_block label=151>
+    <a id="content-top"></a>
+    <a name="content" id="content"></a>
+    <venda_block label=222,mode=value,<venda_setting type=ebiz,name=tracktagvbm>=1><div class="searchVBM"><venda_inctemplate type=vbm,name=searchResults></div><script type="text/javascript">var searchVBMstr = "<venda_primarysearchtext>";</script></venda_block label=222>
+
+<!-- Category zone: category results will be inserted inside div tag -->
+<div id="searchResults" class="grid_19 push_5">
+	<div class="box searchAlt searchContent" lmzone="category" facetdomid="collate" filterdomid="filters"></div>
+	<div id="filters" class="box boxSearchAlt"></div>
+</div>
+<!-- Facets zone: facets will be inserted inside div tag -->
+<div class="leftSidebar grid_5 pull_19 alpha">
+	<div class="refinelist" >
+		<div id="collate"></div>
+	</div>
+</div>
+
+</div>
+	
+<venda_tpxt mode=set,name=categoryTopBanner,value=<venda_page page=<venda_icxttopbannerlinkref>>>
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
+<venda_tpxt mode=set,name=icatHideRefine,value=<venda_icxthiderefine>>
+<venda_tpxt mode=set,name=icatSort,value=<venda_icatsort>>
+
+<div id="parentCatName" style="display:none;"><venda_icatname></div>
+<div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>
+<div id="parentCatRef" style="display:none;"><venda_icatref></div>

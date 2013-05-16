@@ -48,6 +48,8 @@
                         <tr class="basketdetails">
                             <td rowspan="2" class="item">
                                 <div class="itemName"><venda_invtname></div>
+                                <div class="itemRef" style="display:none;"><venda_invtref></div>
+                                <div class="itemBrand"  style="display:none;"><venda_invtbrand></div>
                                 <venda_block label=456,invtatt1=notnull> 
 		                            <div class="optionBox"><span class="optionLeft">Colour:</span> <span class="optionRight"><venda_invtatt1></span></div>
                                 </venda_block label=456>
@@ -78,6 +80,8 @@
                                 </div>
 		                    </td>
                             <td class="totalprice">
+                            	<span class="itemPrice" style="display:none;"><venda_invtatrmaxsubsell></span>
+								<span class="itemWas" style="display:none;"><venda_invtatrmaxsubwas></span>
 	                        	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
 	                                <venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
 		                                <p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>
@@ -175,6 +179,8 @@
                         <tr class="basketdetails">
                             <td rowspan="2" class="item">
                                 <div class="itemName"><venda_invtname></div>
+                                <div class="itemRef" style="display:none;"><venda_invtparef></div>
+                                <div class="itemBrand" style="display:none;"><venda_invtbrand></div>
                                 <venda_block label=456,invtatt1=notnull> 
 		                            <div class="optionBox"><span class="optionLeft">Colour:</span> <span class="optionRight"><venda_invtatt1></span></div>
                                 </venda_block label=456>
@@ -205,6 +211,8 @@
                                 </div>
 		                    </td>
                             <td class="totalprice">
+                            	<span class="itemPrice" style="display:none;"><venda_invtatrmaxsubsell></span>
+								<span class="itemWas" style="display:none;"><venda_invtatrmaxsubwas></span>
 	                        	<venda_block label=555,mode=value,<venda_invtatrmaxsubwas>=0.00,<venda_invtatrmaxsubwas>&lt;<venda_invtatrmaxsubsell>,<venda_invtatrmaxsubwas>=<venda_invtatrmaxsubsell>,operator=or><!-- if product doesn't have was price-->
 	                                <venda_block label=211,mode=value,<venda_invtatrmaxsubsell>=<venda_invtatrminsubsell>>
 		                                <p class="price"><venda_currsym><venda_invtatrmaxsubsell></p>

@@ -14,6 +14,9 @@
     padding: 0;
     text-transform: uppercase;
 }
+.box.Lmyacccontactdetails .last {
+	height: auto;
+}
 .myAccountTemplate h2,
 .checkoutTemplate h2  {
     font-size: 1.4em;
@@ -683,11 +686,19 @@ html > body*#col-two-order-summary-inside
 #orderdetail form a[onclick]
 {
 }
-#yourbasket #additionalservices, div.orscTotal, table.orderdetails
-{
+#yourbasket #additionalservices, div.orscTotal, table.orderdetails, .orderdetails .orderdet-row {
     margin: 0 13px;
     width: 250px;
     line-height: 37px;
+    overflow: hidden;
+}
+.orderdetails .hdrSubTotal {
+  float: left;
+  width: auto;
+}
+.orderdetails .subtotal {
+  float: right;
+  width: auto;
 }
 div.orscTotal {
     height: 54px;
@@ -708,7 +719,7 @@ div.orscTotal {
 .hdrSubTotal, .orscTotal span
 {
     text-align: left;
-    width: 189px;
+    float: left;
 }
 .hdrSubTotal, .orscTotal span, .hdrDiscount
 {
@@ -722,6 +733,7 @@ div.orscTotal {
     position: absolute;
     text-transform: lowercase;
     top: 18px;
+    width: 200px;
 }
 span.orscTotalFig
 {
@@ -729,9 +741,10 @@ span.orscTotalFig
 }
 .subtotal, .orscTotal span.orscTotalFig
 {
-    width: 57px;
     text-align: right;
     font-weight: bold;
+    float: right;
+    text-transform: none;
 }
 #yourbasket #additionalservices label, #yourbasket #additionalservices input
 {
@@ -1202,7 +1215,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     margin-top: 8px;
     width: 651px;
     float: left;
-    min-height: 340px;
+    min-height: 400px;
 }
 .summeryCol
 {
@@ -1216,12 +1229,12 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
     right: -2px;
 }
 .summeryContainer {
-	position:fixed;
-	position: relative\9;
-	left:50%;
-	left: 0\9;
-	margin-left:193px;
-	margin-left: 0\9;
+	position:absolute;
+}
+.sumCont {
+	float: right;
+	height: 100%;
+	width: 280px;
 }
 #ordersummery
 {
@@ -1289,6 +1302,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 {
     height: 26px;
     vertical-align: bottom;
+    text-transform: uppercase;
 }
 .standarditem .itemName
 {
@@ -1303,6 +1317,7 @@ a.button, .signinContent .expresscheckout .checkoutLoginAlR .button
 .standarditem .totalprice
 {
     text-align: left;
+    text-transform: none;
 }
 .standarditem .quantity,
 .standarditem .totalprice 
@@ -1476,6 +1491,7 @@ table th, table th div
 }
 .basketButtons {
 	height: 65px;
+	clear: both;
 }
 .basketButtons input.button {
 	height:30px;

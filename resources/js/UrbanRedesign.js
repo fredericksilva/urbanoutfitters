@@ -5,10 +5,12 @@
 //          3. toggle panel item (delivery instructions)
 
 jQuery(document).ready(function () {
-    urbanRedesign.init();
+    Venda.urbanRedesign.init();
 });
-var htmlLang = jQuery("html").attr("lang"),
-	urbanRedesign = {
+
+Venda.namespace('urbanRedesign');
+var htmlLang = jQuery("html").attr("lang");
+Venda.urbanRedesign = {
     init: function () {
         this.stickyBasket();
         this.basketCount();
@@ -62,28 +64,41 @@ var htmlLang = jQuery("html").attr("lang"),
             })
         
         }
-    },
+    }, 
     stickyBasket: function () {
-        this.basket = jQuery('#basket').position();
-        if (this.basket) {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
-            //jQuery('.summeryContainer').css({ 'position': 'fixed' });
-            this.setMenuOffset.initialPos = this.basket.top;
-            window.onscroll = document.documentElement.onscroll = this.setMenuOffset;
-            this.setMenuOffset();
-        }
-        //#ajax-error
-        jQuery('.summeryContainer').bind('resize', function () {
-            jQuery('#basket').css({ 'min-height': (parseInt(jQuery(".summeryContainer").height(), 10)) + 'px' })
-        });
-        //jQuery('#ordersummery').trigger('resize');
-
+        jQuery(window).bind("scroll", function (b) {
+            var o = jQuery("#basket").offset();
+            if (o) {
+            	var	f = jQuery(document).innerHeight() - (o.top + jQuery("#basket").innerHeight() + 4),
+            		h = o.top,
+            		d = jQuery(document).innerHeight(),
+            		demoBar = jQuery(".demo").outerHeight(),
+            		c = jQuery(window).scrollTop(),
+                	a = jQuery(".summeryContainer").outerHeight();
+                if (c > 0) {
+                	jQuery(".summeryContainer").addClass("fixMe")
+                	jQuery(".summeryContainer").css("top", "auto")
+                }
+                if (c < 0) {
+                	jQuery(".summeryContainer").removeClass("fixMe")
+                }
+                if (c > d - f - a - h) {
+                	jQuery(".summeryContainer").removeClass("fixMe");
+                	if (d - f - a - h > 0) {
+                		jQuery(".summeryContainer").css("top", d - f - a - demoBar - 8 + "px")
+                	}
+                	if (d - f - a - h <= 0) {
+                		jQuery(".summeryContainer").css("top", h - demoBar - 8 + "px")
+                	}
+                }
+            }
+        })
     },
     setMenuOffset: function () {
         this.header = document.getElementById('#summeryContainer');
         if (!this.header) { return; }
         this.currentOffset = document.documentElement.scrollTop || document.body.scrollTop; // body for Safari
-        this.startPos = parseInt(urbanRedesign.setMenuOffset.initialPos, 10) || 190;
+        this.startPos = parseInt(Venda.urbanRedesign.setMenuOffset.initialPos, 10) || 190;
         this.desiredOffset = this.startPos - this.currentOffset;
         if (this.desiredOffset < 75) {
             this.desiredOffset = 75;

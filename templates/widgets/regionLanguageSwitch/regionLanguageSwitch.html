@@ -1,14 +1,17 @@
+<div id="tag-xml" style="display:none;">/content/ebiz/<venda_bsref>/resources/euro_rates.xml</div>
+<div id="tag-currencycode" style="display:none;"><venda_currencycode></div>
+
 <div class="regionLangSwitcher">
 
   <div id="language-sel" class="switcher-sel">
-    <a href="#" id="language" class="<venda_sessionlanguage>"><span class="lang-copy"><venda_sessionlanguage></span></a>
+    <a href="" id="language" class="<venda_sessionlanguage>"><span class="lang-copy"><venda_sessionlanguage></span></a>
     <div id="language-content" class="switcher-content">
       <div class="lang">
       	<ul>
       	  <li class="cont-title">Country</li>
-        	<li><a href="#" id="uk" class="uk"><span class="lang-flag"></span><span class="lang-copy">United Kingdom</span></a></li>
-        	<li><a href="#" id="fr" class="fr"><span class="lang-flag"></span><span class="lang-copy">France</span></a></li>
-        	<li><a href="#" id="de" class="de"><span class="lang-flag"></span><span class="lang-copy">Deutschland</span></a></li>
+        	<li><a href="#" id="uk" class="resetcurrency uk"><span class="lang-flag"></span><span class="lang-copy">United Kingdom</span></a></li>
+        	<li><a href="#" id="de" class="resetcurrency de"><span class="lang-flag"></span><span class="lang-copy">Deutschland</span></a></li>
+        	<li><a href="#" id="fr" class="resetcurrency fr"><span class="lang-flag"></span><span class="lang-copy">France</span></a></li>
         	<li><a href="http://us.urbanoutfitters.com" id="us" class="us"><span class="lang-flag"></span><span class="lang-copy">USA</span></a></li>
       	</ul>
     	</div>
@@ -16,20 +19,21 @@
   </div>
   <venda_block label=notregged,ustype!=R>
   <div id="region-content" class="switcher-sel">
-    <a href="#" id="currency" class="<venda_sessionlocation>"><span class="curr-copy"><venda_currsym> <venda_currencycode></span></a>
+    <a href="" id="currency" class="<venda_sessionlocation>"><span class="curr-copy"><venda_currsym> <venda_currencycode></span></a>
     <div id="region-content" class="switcher-content">
     	<div class="region">
       	<ul>
       	  <li class="cont-title">Currency</li>
         	<li class="curr-cont"><a href="#" id="restofworld" class="restofworld"><span class="curr-copy">&pound; GBP</span></a></li>
         	<li class="curr-cont"><a href="#" id="eur" class="eur"><span class="curr-copy">&euro; EUR</span></a></li>
-        	<!-- <li class="curr-conv"><a rel="USD" href="#" class="loadcurrency USD"><span class="curr-copy">$ USD</span></a></li>
-					<li class="curr-conv"><a rel="HKD" href="#" class="loadcurrency HKD"><span class="curr-copy">$ HKD</span></a></li>
-					<li class="curr-conv"><a rel="SGD" href="#" class="loadcurrency SGD"><span class="curr-copy">$ SGD</span></a></li>
-					<li class="curr-conv"><a rel="AUD" href="#" class="loadcurrency AUD"><span class="curr-copy">$ AUD</span></a></li>
-					<li class="curr-conv"><a rel="DKK" href="#" class="loadcurrency DKK"><span class="curr-copy">kr DKK</span></a></li>
-					<li class="curr-conv"><a rel="SEK" href="#" class="loadcurrency SEK"><span class="curr-copy">kr SEK</span></a></li>
-					<li class="curr-conv"><a rel="NOK" href="#" class="loadcurrency NOK"><span class="curr-copy">kr NOK</span></a></li> -->
+        	<li class="curr-conv"><a rel="USD" href="#" class="loadcurrency USD"><span class="curr-copy">$ USD</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="HKD" href="#" class="loadcurrency HKD"><span class="curr-copy">$ HKD</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="SGD" href="#" class="loadcurrency SGD"><span class="curr-copy">$ SGD</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="AUD" href="#" class="loadcurrency AUD"><span class="curr-copy">$ AUD</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="DKK" href="#" class="loadcurrency DKK"><span class="curr-copy">kr DKK</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="SEK" href="#" class="loadcurrency SEK"><span class="curr-copy">kr SEK</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-conv"><a rel="NOK" href="#" class="loadcurrency NOK"><span class="curr-copy">kr NOK</span><span class="curr-strap">GUIDE PRICE</span></a></li>
+					<li class="curr-pricing">Non &pound; / &euro; prices shown to be used as a guide only</li>
       	</ul>
     	</div>
     </div>

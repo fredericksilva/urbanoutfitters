@@ -1,0 +1,25 @@
+<venda_detblock>
+	<div class="store storeCategoryItem alpha omega <venda_scatref1>">
+		<venda_block label=802,scatcatref01!=usastores><h3 class="regionname"><a href="#<venda_scatref1>"><venda_scatname1></a></h3></venda_block label=802>	
+		<venda_block label=803,scatcatref01=usastores><h3 class="statename"><venda_scatname1></h3></venda_block label=803>	
+		<div class="storename">
+  		<venda_category temp=storesList,ref=<venda_scatref1>,rec=scat>
+    </div>
+	</div>
+</venda_detblock>
+<div class="storeListHolder" class="allukStores alpha omega">
+  <venda_block label=801,scatref!=usastores>
+  <div class="header-block">
+    <div class="header-copy">
+      <h1 class="header"><venda_scatname></h1>
+    </div>
+  </div>
+  </venda_block label=801>
+	<venda_detail>
+</div>
+
+<script type="text/javascript">
+jQuery(function(){
+  jQuery( ".storeListHolder" ).accordion({ autoHeight: false, header: ".regionname", collapsible: true, navigation: true, active: false });
+});
+</script>

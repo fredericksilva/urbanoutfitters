@@ -22,28 +22,78 @@
   <div class="grid_8 omega">
   <!-- mp_trans_remove_start-->
   	<div class="signup-img"></div>
+  	<div class="signup-mask"></div>
   <!-- mp_trans_remove_end-->
   <!-- mp_trans_disable_start-->
 	<!-- mp_trans_add="FR" 
-		<div class="signup-img-fr"></div>		
+		<div class="signup-img-fr"></div>
+		<div class="signup-mask-fr"></div>		
 	-->
 	<!-- mp_trans_add="DE" 
 		<div class="signup-img-de"></div>
+		<div class="signup-mask-de"></div>
 	-->
   <!-- mp_trans_disable_end-->
             <div class="foot-signUp">
             <!-- mp_trans_remove_start-->
-            <iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=2068353000&n=2&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+            <div class="thanks" style="display:none;">Thank you for signing up!</div>
+            <form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            <input value="2068353000" name="aid" type="hidden">
+	            <input value="2" name="n" type="hidden">
+	            <input value="1" name="a" type="hidden">
+	            <input value="UK" name="COUNTRY" type="hidden">
+	            <input value="UK-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            <input value="" name="GENDER" type="hidden">
+	            <label>
+		            <span>E-Mail Address</span>
+		        </label>
+		        <input value="Enter your email address" name="email" data-email="Enter your email address" onblur="this.value=!this.value?'Enter your email address':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		        <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        <input alt="" src="" value="" name="submit" border="0" class="submitForm" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		    </form>
 			<!-- mp_trans_remove_end-->
 			<!-- mp_trans_disable_start-->
 			<!-- mp_trans_add="FR" 
-				<iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=1061210640&n=7&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+				<div class="thanks" style="display:none;">Merci!</div>
+				<form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            	<input value="1061210640"" name="aid" type="hidden">
+	            	<input value="7" name="n" type="hidden">
+	            	<input value="0" name="a" type="hidden">
+	            	<input value="FRANCE" name="COUNTRY" type="hidden">
+	            	<input value="FR-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            	<input value="" name="GENDER" type="hidden">
+	            	<label>
+	            		<span>Adresse e-mail</span>
+	            	</label>
+		            <input value="Entrer votre adresse email" name="email" data-email="Entrer votre adresse email" onblur="this.value=!this.value?'Entrer votre adresse email':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm submitFormFr" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm submitFormFr" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        </form>
 			-->
 			<!-- mp_trans_add="DE" 
-				<iframe class="signupFrame" src="//ebm.cheetahmail.com/r/regf2?aid=2085808709&n=3&a=0" width="330" height="45" frameborder="0" allowTransparency="allowTransparency"></iframe>
+				<div class="thanks" style="display:none;">Vielen Dank f&uuml;r Ihre Anmeldung</div>
+				<form id="commentForm" onsubmit="javascript:return false;" action="http://ebm.cheetahmail.com/r/regf2" method="GET">
+	            	<input value="2085808709" name="aid" type="hidden">
+	            	<input value="3" name="n" type="hidden">
+	            	<input value="1" name="a" type="hidden">
+	            	<input value="GERMANY" name="COUNTRY" type="hidden">
+	            	<input value="DE-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            	<input value="" name="GENDER" type="hidden">
+	            	<label>
+		            	<span>E-Mail Address</span>
+		            </label>
+		            <input value="Gib deine E-Mail-Adresse ein" name="email" data-email="Gib deine E-Mail-Adresse ein" onblur="this.value=!this.value?'Gib deine E-Mail-Adresse ein':this.value;" onfocus="this.select()" type="text" class="email" id="email" onclick="this.value='';">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm submitFormDe" data-gender="F" id="gals" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		            <input alt="" src="" value="" name="submit" border="0" class="submitForm submitFormDe" data-gender="M" id="guys" type="submit" onclick="Venda.quickSignup.genderFunction(this);">
+		        </form>
 			-->
 			<!-- mp_trans_disable_end-->
             </div>
+            <script type="text/javascript">
+	            jQuery(document).ready(function() {
+		            Venda.quickSignup.init();
+		        });
+		    </script>
   </div>
 </div>
 
@@ -53,7 +103,17 @@
     <div class="footer-details clearfix">
       <ul>
         <li><a href="<venda_dispview page=helpandinfo>">Help &amp; info</a></li>
+        <!-- mp_trans_remove_start-->
         <li><a href="<venda_dispview page=deliveryinformation>">Delivery information</a></li>
+        <!-- mp_trans_remove_end-->
+        <!-- mp_trans_disable_start -->
+			<!-- mp_trans_add="FR"
+				<li><a href="<venda_dispview page=deliveryinformation>">Infos livraison</a></li>
+        	-->
+        	<!-- mp_trans_add="DE"
+        		<li><a href="<venda_dispview page=deliveryinformation>">Versandinformationen</a></li>
+        	-->
+        <!-- mp_trans_disable_end -->
         <li><a href="<venda_dispview page=deliveryinformation>#ordertracking">Track order</a></li>
         <li><a href="<venda_dispview page=returns>">Return policy</a></li>
       </ul>
@@ -75,20 +135,19 @@
       </ul>
       
       <ul>
-        <li><a href="<venda_dispview page=emailsignup>">Email sign up</a><li>
         <!-- mp_trans_remove_start-->
-        <li><a href="<venda_dispview page=spring_signup>">Catalogue Sign Up</a></li>
+        <li><a href="<venda_dispview page=emailsignup>">Email sign up</a><li>
         <!-- mp_trans_remove_end-->
 		<!-- mp_trans_disable_start -->
 			<!-- mp_trans_add="FR"
-            <li><a href="<venda_dispview page=spring_signup>">Recevez notre catalogue</a></li>
+			<li><a href="<venda_dispview page=emailsignup>">S'abonner aux emails</a><li>
             -->
         	<!-- mp_trans_add="DE"
-            <li><a href="<venda_dispview page=spring_signup>">Katalog Anmeldung</a></li>
+        	<li><a href="<venda_dispview page=emailsignup>">Newsletter Anmeldung</a><li>
             --> 
         <!-- mp_trans_disable_end -->
         <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
-        <li><a href="<venda_dispview page=unidays>">Students! 10% Off</a></li>
+        <li><a href="<venda_dispview page=unidays>">Student Discount</a></li>
         </venda_block label=1>
       </ul>
     </div>
@@ -99,18 +158,20 @@
     	<ul class="getSocial">
       <li><a target="_blank" href="http://open.spotify.com/user/urbanoutfitterseurope/playlist/296jRH3W0cibUDnQIUTGRW" class="foot-sp"></a></li>
 			<li><a class="foot-blog" href="http://blog.urbanoutfitters.co.uk/" target="_blank"></a></li>
-			<li><a class="foot-uotv" href="<venda_dispview scat=community>&temp=community_archive#uotv"></a></li>	
-		  <li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>			
+			<li><a class="foot-uotv" href="<venda_dispview scat=community>&temp=community_archive#uotv"></a></li>				
     		<!-- mp_trans_remove_start-->
+    		<li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>
             <li><a target="_blank" href="http://twitter.com/uoeurope" class="foot-tw"></a></li>
 			<li><a target="_blank" href="http://www.facebook.com/urbanoutfitterseurope" class="foot-fb"></a></li>
 			<!-- mp_trans_remove_end-->
 			<!-- mp_trans_disable_start-->
 			<!-- mp_trans_add="FR" 
+				<li><a class="foot-comm-fr" href="<venda_dispview scat=community>"></a></li>
 				<li><a target="_blank" href="http://twitter.com/uofrance" class="foot-tw"></a></li>
 				<li><a target="_blank" href="https://www.facebook.com/urbanoutfittersfrance" class="foot-fb"></a></li>
 			-->
 			<!-- mp_trans_add="DE" 
+				<li><a class="foot-comm" href="<venda_dispview scat=community>"></a></li>
 				<li><a target="_blank" href="http://twitter.com/UODeutschland" class="foot-tw"></a></li>
 				<li><a target="_blank" href="https://www.facebook.com/UrbanOutfittersDeutschland" class="foot-fb"></a></li>
 			-->
@@ -125,4 +186,58 @@
   </div>
 </div>
 
-<a href="#" class='OUMusicPop' onclick="popup('http://music.urbanoutfitters.com/radio.php?auto=on&group=LSTN%20Europe&name=LSTN%20Europe%20%2310.html'); return false;"></a>
+<div class="footerBrandsButton hide">
+	<!-- mp_trans_remove_start-->
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Our most popular brands...</div>
+	<!-- mp_trans_remove_end-->
+	<!-- mp_trans_disable_start-->
+	<!-- mp_trans_add="FR" 
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Nos marques les plus populaires </div>
+	-->
+	<!-- mp_trans_add="DE" 
+		<div onClick="Venda.brandDropdown.init(this);" class="footerBrandsBtn">Unsere beliebtesten Marken </div>
+	-->
+	<!-- mp_trans_disable_end-->
+</div>
+<div class="footerBrands" style="display:none;">
+	<ul>
+		<li>
+			<!-- mp_trans_remove_start-->
+				<h3>Women's Brands</h3>
+			<!-- mp_trans_remove_end-->
+			<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<h3>Marques Femme</h3>
+			-->
+			<!-- mp_trans_add="DE" 
+				<h3>Marken f&uuml;r Sie</h3>
+			-->
+			<!-- mp_trans_disable_end-->
+			<p><venda_page page=womens_brands></p>
+		</li>
+		<li>
+			<!-- mp_trans_remove_start-->
+				<h3>Men's Brands</h3>
+			<!-- mp_trans_remove_end-->
+			<!-- mp_trans_disable_start-->
+			<!-- mp_trans_add="FR" 
+				<h3>Marques Homme</h3>
+			-->
+			<!-- mp_trans_add="DE" 
+				<h3>Marken f&uuml;r Ihn</h3>
+			-->
+			<!-- mp_trans_disable_end-->
+			<p><venda_page page=mens_brands></p>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+Venda.namespace('brandDropdown');
+Venda.brandDropdown = {
+	init: function(a) {
+		jQuery('.footerBrands').slideToggle();
+		jQuery(a).toggleClass('brandsActive');
+	}
+}
+</script>

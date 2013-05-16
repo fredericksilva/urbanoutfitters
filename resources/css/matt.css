@@ -1,12 +1,16 @@
 /* Header */
-#solrsearch {
+#solrsearch, #locaytasearch {
   float: right;
   height: 24px;
-  margin-top: 16px;
+  margin-bottom: 5px;
   position: relative;
   width: 200px;
 }
-.solr-textfield {
+.solr-search, .locayta-search {
+  margin-top: 45px;
+  clear: both;
+}
+.solr-textfield, .locayta-textfield {
   background: #fff;
   border: 1px solid #333333;
   color: #333;
@@ -18,7 +22,7 @@
   width: 160px;
   font-weight: bold;
 }
-.solr-submit {
+.solr-submit, .locayta-submit {
   background:url("../images/uo-png-sprite.png") no-repeat;
   background-position: -132px -32px;
   border: 0 none;
@@ -30,7 +34,6 @@
   width: 12px;
   top:6px
 }
-
 
 /* Product detail */
 .product-details {
@@ -382,9 +385,10 @@
     line-height: inherit;
     font-size: 10px;
     text-indent: inherit;
-    height:30px;
+    height:28px;
     width:127px;
     font-weight: bold;
+    margin-bottom: 2px;
 }
 .mm_sub:after {
   font-size: 0px; line-height: 0%; width: 100px;
@@ -553,6 +557,12 @@
 }
 
 /* CURRENCY SELCTOR */
+.product-details .price-converted, #bottomtab .price-converted, .prods .price-converted {
+  color: #0033ff;
+}
+.price-converted {
+  font-style: normal;
+}
 .regionLangSwitcher {
   display: inline-block;
   margin-top: 7px;
@@ -563,6 +573,9 @@
   display: inline-block;
   height: 14px;
   font-size: 12px;
+}
+.switcher-sel > a#language, .switcher-sel > a#currency {
+  display: inline-block;
 }
 .switcher-sel:first-child {
   margin-left: 0;
@@ -601,7 +614,20 @@
 .switcher-sel a .curr-copy {
   padding: 0 8px 5px 4px;
   font-weight: bold;
-  display: block;
+  display: inline-block;
+}
+.switcher-sel a .curr-strap {
+  font-size: 10px;
+  float: right;
+  padding-right: 5px;
+}
+.switcher-sel li.curr-pricing {
+  font-weight: bold;
+  text-align: center;
+  font-size: 10px;
+  line-height: 12px;
+  background: #999;
+  color: #fff;
 }
 .switcher-sel .switcher-content .lang-copy, .switcher-sel .switcher-content .curr-copy {
   padding-bottom: 0;
@@ -610,7 +636,6 @@
   width: 63px;
 }
 .switcher-content {
-  display: none;
   position: absolute;
   width: 190px;
   padding: 12px 15px 15px;
@@ -621,6 +646,8 @@
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  filter: alpha(opacity=0);
+  opacity: 0;
 }
 .switcher-content a:hover {
   color: #808080;
@@ -651,7 +678,9 @@
 /*//////////////////*/
 /*/AMENDS TO MERGE /*/
 /*//////////////////*/
-
+.liwrapper .productlistinfo .saleprice .price {
+  color: red;
+}
 
 .mm_ul {
   margin-top: 25px;

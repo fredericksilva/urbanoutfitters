@@ -153,7 +153,6 @@ $(function () {
 		//$('#loadingsearch').removeClass('hide');
 	});
 	/* end of EXTRA */
-		
 });
 
 

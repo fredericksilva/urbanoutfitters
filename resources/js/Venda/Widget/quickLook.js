@@ -45,9 +45,14 @@ jQuery("a.lookbookQuick").live("mouseenter", function(e) {
 		jQuery("#quickLook").dialog("option", "position", { my: "left top", at: "left bottom", of: bottom } );
 	}
 	jQuery(".productInfo").load(URL, function(){
-		console.log(jQuery(this).html());
 		if (jQuery(this).html() === "This product is not available to view.") {
 			jQuery(this).html("Bummer, this isn't available right now - check out our other amazing bits...");
+		}
+		if (jQuery(this).html() === "L'article ne peut pas être affiché.") {
+			jQuery(this).html("Pas de bol, cet article n'est plus disponible pour le moment. Jetez un &oelig;il aux articles du m&ecirc;me genre...");
+		}
+		if (jQuery(this).html() === "Leider ist derzeit keine Produktansicht möglich.") {
+			jQuery(this).html("Schade, das Produkt ist momentan ausverkauft - aber guck' dir unsere anderen tollen Sachen an...");
 		}
 		jQuery(".quickLook-Details").show();
 	});
