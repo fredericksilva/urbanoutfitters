@@ -2368,3 +2368,31 @@ form#commentForm #gals {
 form#commentForm #gals:hover {
 	background-position: -5px -151px;
 }
+form#commentForm #guys.submitFormFr {
+	right:18px;
+	background-position: -175px -115px;
+}
+form#commentForm #guys.submitFormFr:hover {
+	background-position: -173px -113px;
+}
+form#commentForm #gals.submitFormFr {
+	right:74px;
+	background-position: -119px -115px;
+}
+form#commentForm #gals.submitFormFr:hover {
+	background-position: -117px -113px;
+}
+form#commentForm #guys.submitFormDe {
+	right:18px;
+	background-position: -63px -115px;
+}
+form#commentForm #guys.submitFormDe:hover {
+	background-position: -61px -113px;
+}
+form#commentForm #gals.submitFormDe {
+	right:74px;
+	background-position: -7px -115px;
+}
+form#commentForm #gals.submitFormDe:hover {
+	background-position: -5px -113px;
+}
