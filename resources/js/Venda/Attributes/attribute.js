@@ -28,7 +28,7 @@ Venda.Attributes.firstObj 		= 	[];
 Venda.Attributes.attsArray 		= 	[];
 Venda.Attributes.SwatchURL 		= 	[];
 Venda.Attributes.productArr 	= 	[];
-
+Venda.Attributes.statusResults = {};
 /**
 * Runs when the page is ready
 * Sets the page up and loads in the set interface type e.g. swatch if there is no type set it will default to dropdown.
@@ -38,9 +38,13 @@ jQuery(function() {
 });
 
 Venda.Attributes.Initialize = function() {
-	
+	Venda.Attributes.statusResults.instock = jQuery("#attributes-stockIn").text();
+  Venda.Attributes.statusResults.preorder = jQuery("#attributes-preorder").text();
+  Venda.Attributes.statusResults.lowstock = jQuery("#attributes-stockLow").text();
+  Venda.Attributes.statusResults.outofstock = jQuery("#attributes-stockOut").text();
+  Venda.Attributes.statusResults.backorder = jQuery("#attributes-backorder").text();
+  Venda.Attributes.statusResults.stockna = jQuery("#attributes-stockNA").text();
   Venda.Attributes.UpdateDD = function (attName, uID) {
-  
   	for(var i = 0; i < Venda.Attributes.productArr.length; i++) {
   		if (Venda.Attributes.productArr[i].attSet.id == uID) {
   			var options = '<option value="">' + jQuery('#attributes-optionDefault').text() + Venda.Attributes.productArr[0].attSet[attName].name + '</option>';
@@ -354,11 +358,11 @@ Venda.Attributes.StockStatus = function(stockAmount,theIndex) {
 	var HasEtaDate = Venda.Attributes.HasEtaDate(theIndex); 
 	var HasReleaseDate = Venda.Attributes.HasReleaseDate(theIndex);
 	
-	if(stockAmount > Venda.Attributes.Settings.lowStockThreshold && !HasReleaseDate) return "In stock";
-	if(stockAmount > Venda.Attributes.Settings.lowStockThreshold && HasReleaseDate) return "Pre-order";
- 	if(stockAmount <= Venda.Attributes.Settings.lowStockThreshold && stockAmount > jQuery("#OutOfStockThreshold").text()) return "Stock is low";
-	if(stockAmount <= jQuery("#OutOfStockThreshold").text() && (jQuery("#DoNotBackorder").text() == 1) || (jQuery("#DoNotBackorder").text() != 1 && !HasEtaDate) ) return "Out of stock";
-	if(stockAmount <= jQuery("#OutOfStockThreshold").text() && (jQuery("#DoNotBackorder").text() != 1 && HasEtaDate)) return "Backorder";
+	if(stockAmount > Venda.Attributes.Settings.lowStockThreshold && !HasReleaseDate) return Venda.Attributes.statusResults.instock;
+	if(stockAmount > Venda.Attributes.Settings.lowStockThreshold && HasReleaseDate) return Venda.Attributes.statusResults.preorder;
+ 	if(stockAmount <= Venda.Attributes.Settings.lowStockThreshold && stockAmount > jQuery("#OutOfStockThreshold").text()) return Venda.Attributes.statusResults.lowstock;
+	if(stockAmount <= jQuery("#OutOfStockThreshold").text() && (jQuery("#DoNotBackorder").text() == 1) || (jQuery("#DoNotBackorder").text() != 1 && !HasEtaDate) ) return Venda.Attributes.statusResults.outofstock;
+	if(stockAmount <= jQuery("#OutOfStockThreshold").text() && (jQuery("#DoNotBackorder").text() != 1 && HasEtaDate)) return Venda.Attributes.statusResults.backorder;
 
 };
 
@@ -390,7 +394,7 @@ Venda.Attributes.GetAll = function(att1, att2, att3, att4, what, uID) {
 			if(typeof totalStock != "undefined"){
 				return Venda.Attributes.StockStatus(totalStock,theIndex);
 			}
-			else	return "Not Available";
+			else	return Venda.Attributes.statusResults.stockna;
 		break;
 	}
 };
@@ -554,14 +558,14 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 	
 	switch(stockstatus) {
 	
-		case "In stock":
+		case Venda.Attributes.statusResults.instock:
 			stockFeedbackBox.addClass("In_stock_box");
 			stockFeedbackBox.removeClass("lowStock");
 			addproductID.addClass("Re-paint");
 	
 		break;
 		
-		case "Stock is low":
+		case Venda.Attributes.statusResults.lowstock:
 			stockFeedbackBox.addClass("In_stock_box");
 			stockFeedbackBox.addClass("lowStock");
 			addproductID.addClass("Re-paint");
@@ -570,7 +574,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 			
 		break;
 		
-		case "Pre-order":
+		case Venda.Attributes.statusResults.preorder:
 			stockFeedbackBox.addClass("In_stock_box Pre-order_box");
 			stockFeedbackBox.removeClass("lowStock");
 			addproductID.addClass("Re-paint");
@@ -580,7 +584,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 			
 		break;
 	
-		case "Out of stock":
+		case Venda.Attributes.statusResults.outofstock:
 			
 			stockFeedbackBox.addClass("Out_of_stock_box");
 			stockFeedbackBox.removeClass("lowStock");
@@ -609,7 +613,7 @@ Venda.Attributes.drawOutputs = function(index, uID) {
 				}
 		break;
 		
-		case "Backorder":
+		case Venda.Attributes.statusResults.backorder:
 		
 			stockFeedbackBox.addClass("In_stock_box Backorder_box");
 			stockFeedbackBox.removeClass("lowStock");
@@ -1258,7 +1262,7 @@ Venda.Attributes.ImageSwap = function(att) {
 			obj = Venda.Attributes.storeImgsArr[i];
 			Venda.Attributes.imgParam = i;
 			if(obj.images.imgL.length == obj.images.imgM.length){
-  			jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ");'>FULL IMAGE</a>");
+  			jQuery("#productdetail-viewlarge").html("<a href='javascript: Venda.Attributes.ViewLargeImg(" + Venda.Attributes.imgParam + ");'>" + jQuery("#attributes-fullimage").text() + "</a>");
 			} else {
   			jQuery("#productdetail-viewlarge").html("");
 			}
