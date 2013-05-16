@@ -164,7 +164,7 @@ Venda.storeloc.ajaxGetStores = function(stryid) {
         
         Venda.storeloc.restoreState();
         jQuery('.storeLocSelect').selectmenu({ style:'dropdown', maxHeight: 230 });
-        jQuery('#page_findastore .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
+        jQuery('#page_sl17 .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
 
     });
 }
@@ -227,7 +227,7 @@ Venda.storeloc.updateMap = function(){
     Venda.storeloc.bounds = new google.maps.LatLngBounds();
 
     // This adds the point of the marker to the bounds of the view
-    var point = new google.maps.LatLng(Venda.storeloc.marker.getPosition().lat() , Venda.storeloc.marker.getPosition().lng());
+    var point = new google.maps.LatLng(Venda.storeloc.marker.getPosition().lat(), Venda.storeloc.marker.getPosition().lng());
     Venda.storeloc.bounds.extend(point);
     
     Venda.storeloc.cacluateDistance();

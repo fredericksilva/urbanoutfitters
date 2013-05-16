@@ -3,6 +3,7 @@
 <!-- jQuery templates -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery-tmpl-min.js"></script>
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.history.js"></script>
+
 <!-- Google API includes -->
 <script type="text/javascript" src="<venda_protocol>://www.google.com/jsapi"></script>
 
@@ -135,7 +136,7 @@
 				<div id="address_holder">
   				<h3>UO stores</h3>
   				<div class="location-submit">
-  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="search" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
+  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="text" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
   					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
   				</div>
 					<div class="clearfix optionsCheckboxes_holder">
@@ -206,7 +207,7 @@
 			</div>
 			<div class="storedetails_info">
 				<div class="storedetails_address">
-					<h4>Address</h4>
+					<h4>Adresse</h4>
 					<address>
 					{{if AddressName}}
 						${AddressName}<br/>
@@ -226,13 +227,13 @@
 					</address>
 						{{if Phone}}
 						<div class="tel">
-							<h4>Telephone</h4>
+							<h4>T&eacute;l&eacute;phone</h4>
 							<p>${Phone}</p>
 						</div>
 						{{/if}}
 				</div>
 				<div class="storedetails_hours">
-					<h4>Opening times</h4>
+					<h4>Horaires d'ouverture</h4>
 					<table cellspacing="0" cellpadding="0" border="0">
 						<tr>
 							<td class="day">Mon</td>
@@ -268,7 +269,7 @@
 			</div>
 
 			<venda_block label=2,param2!=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" style="font-size: 7px;" href="${optionValue}">Informations sur le magasin</a></div>
 			</venda_block label=2>
 			<venda_block label=3,param2=storeadd>
 				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
@@ -279,11 +280,11 @@
 </script>
 
 <div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
-<div id="tag-selectastore" style="display:none;">Sélectionner un magasin</div>
+<div id="tag-selectastore" style="display:none;">S&eacute;lectionner un magasin</div>
 <div id="tag-selectaregion" style="display:none;">Select a region</div>
 <div id="tag-selectthisstore" style="display:none;">Select this store</div>
-<div id="tag-storedetails" style="display:none;">Store details</div>
-<div id="tag-tel" style="display:none;">Phone: </div>
+<div id="tag-storedetails" style="display:none;">Informations sur le magasin</div>
+<div id="tag-tel" style="display:none;">T&eacute;l&eacute;phone: </div>
 <div id="tag-distance" style="display:none;">Distance: </div>
 <div id="tag-back" style="display:none;">Back</div>
 
@@ -296,7 +297,7 @@
 				<div id="address_holder">
   				<h3>Magasins UO</h3>
   				<div class="location-submit">
-  					<input id="address" placeholder="Entrer votre ville" class="addressSearch textInput" type="search" value="Entrer votre ville" onfocus="if (this.value == 'Entrer votre ville') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Entrer votre ville';}">
+  					<input id="address" placeholder="Entrer votre ville" class="addressSearch textInput" type="text" value="Entrer votre ville" onfocus="if (this.value == 'Entrer votre ville') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Entrer votre ville';}">
   					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
   				</div>
 					<div class="clearfix optionsCheckboxes_holder">
@@ -334,7 +335,7 @@
 				</div>
 				<venda_block label=1,param2!=storeadd>
 					<div class="boxContent altStoreView">
-						<p>Vous pouvez également voir <a href="<venda_dispview scat=storelist>" title="TOUS NOS MAGASINS DANS LE MONDE" class="underline">TOUS NOS MAGASINS DANS LE MONDE ></a></p>  	
+						<p>Vous pouvez &eacute;galement voir <a href="<venda_dispview scat=storelist>" title="TOUS NOS MAGASINS DANS LE MONDE" class="underline">TOUS NOS MAGASINS DANS LE MONDE ></a></p>  	
 					</div>
 				</venda_block label=1>
 			  	</div>
@@ -368,7 +369,7 @@
 			</div>
 			<div class="storedetails_info">
 				<div class="storedetails_address">
-					<h4>Address</h4>
+					<h4>Adresse</h4>
 					<address>
 					{{if AddressName}}
 						${AddressName}<br/>
@@ -388,13 +389,13 @@
 					</address>
 						{{if Phone}}
 						<div class="tel">
-							<h4>Telephone</h4>
+							<h4>Telefon</h4>
 							<p>${Phone}</p>
 						</div>
 						{{/if}}
 				</div>
 				<div class="storedetails_hours">
-					<h4>Opening times</h4>
+					<h4>&Ouml;ffnungszeiten</h4>
 					<table cellspacing="0" cellpadding="0" border="0">
 						<tr>
 							<td class="day">Mon</td>
@@ -430,7 +431,7 @@
 			</div>
 
 			<venda_block label=2,param2!=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store Infos</a></div>
 			</venda_block label=2>
 			<venda_block label=3,param2=storeadd>
 				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
@@ -441,11 +442,11 @@
 </script>
 
 <div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
-<div id="tag-selectastore" style="display:none;">wähle einen Store aus</div>
+<div id="tag-selectastore" style="display:none;">w&auml;hle einen Store aus</div>
 <div id="tag-selectaregion" style="display:none;">Select a region</div>
 <div id="tag-selectthisstore" style="display:none;">Select this store</div>
-<div id="tag-storedetails" style="display:none;">Store details</div>
-<div id="tag-tel" style="display:none;">Phone: </div>
+<div id="tag-storedetails" style="display:none;">Store Infos</div>
+<div id="tag-tel" style="display:none;">Telefon: </div>
 <div id="tag-distance" style="display:none;">Distance: </div>
 <div id="tag-back" style="display:none;">Back</div>
 
@@ -458,7 +459,7 @@
 				<div id="address_holder">
   				<h3>UO stores</h3>
   				<div class="location-submit">
-  					<input id="address" placeholder="Gebe deinen Ort an" class="addressSearch textInput" type="search" value="Gebe deinen Ort an" onfocus="if (this.value == 'Gebe deinen Ort an') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Gebe deinen Ort an';}">
+  					<input id="address" placeholder="Gebe deinen Ort an" class="addressSearch textInput" type="text" value="Gebe deinen Ort an" onfocus="if (this.value == 'Gebe deinen Ort an') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Gebe deinen Ort an';}">
   					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
   				</div>
 					<div class="clearfix optionsCheckboxes_holder">
