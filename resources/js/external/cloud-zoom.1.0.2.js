@@ -5,10 +5,8 @@
 //
 // Please retain this copyright header in all versions of the software
 //////////////////////////////////////////////////////////////////////////////////
-(function ($) {
-
-    $(document).ready(function () {
-        $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+    jQuery(document).ready(function () {
+        jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
     });
 
     function format(str) {
@@ -19,7 +17,7 @@
     }
 
     function CloudZoom(jWin, opts) {
-        var sImg = $('img', jWin);
+        var sImg = jQuery('img', jWin);
 		var	img1;
 		var	img2;
         var zoomDiv = null;
@@ -39,6 +37,7 @@
         var mx,
             my; 
         var ctx = this, zw;
+        var loadingTxt = jQuery("#loadingTxt").text();
         // Display an image loading message. This message gets deleted when the images have loaded and the zoom init function is called.
         // We add a small delay before the message is displayed to avoid the message flicking on then off again virtually immediately if the
         // images load really fast, e.g. from the cache. 
@@ -47,7 +46,7 @@
             //						 <img src="/images/loading.gif"/>
             if ($mouseTrap === null) {
                 var w = jWin.width();
-                jWin.parent().append(format('<div style="width:%0px;position:absolute;top:75%;left:%1px;text-align:center" class="cloud-zoom-loading" >Loading...</div>', w / 3, (w / 2) - (w / 6))).find(':last').css('opacity', 0.5);
+                jWin.parent().append(format('<div style="width:%0px;position:absolute;top:75%;left:%1px;text-align:center" class="cloud-zoom-loading" >'+loadingTxt+'</div>', w / 3, (w / 2) - (w / 6))).find(':last').css('opacity', 0.5);
             }
         }, 200);
 
@@ -77,7 +76,7 @@
             }
             ie6FixRemove();
 
-            $('.cloud-zoom-loading', jWin.parent()).remove();
+            jQuery('.cloud-zoom-loading', jWin.parent()).remove();
         };
 
 
@@ -162,7 +161,7 @@
         /* Init function start.  */
         this.init = function () {
             // Remove loading message (if present);
-            $('.cloud-zoom-loading', jWin.parent()).remove();
+            jQuery('.cloud-zoom-loading', jWin.parent()).remove();
 
 
 /* Add a box (mouseTrap) over the small image to trap mouse events.
@@ -215,7 +214,7 @@
                 if (opts.zoomHeight == 'auto') {
                     h = sih;
                 }
-                //$('#info').text( xPos + ' ' + yPos + ' ' + siw + ' ' + sih );
+                //jQuery('#info').text( xPos + ' ' + yPos + ' ' + siw + ' ' + sih );
                 var appendTo = jWin.parent(); // attach to the wrapper			
                 switch (opts.position) {
                 case 'top':
@@ -236,7 +235,7 @@
                     break;
                     // All other values, try and find an id in the dom to attach to.
                 default:
-                    appendTo = $('#' + opts.position);
+                    appendTo = jQuery('#' + opts.position);
                     // If dom element doesn't exit, just use 'right' position as default.
                     if (!appendTo.length) {
                         appendTo = jWin;
@@ -256,8 +255,8 @@
                 }
 
                 // Fix ie6 select elements wrong z-index bug. Placing an iFrame over the select element solves the issue...		
-                if ($.browser.msie && $.browser.version < 7) {
-                    $ie6Fix = $('<iframe frameborder="0" src="#"></iframe>').css({
+                if (jQuery.browser.msie && jQuery.browser.version < 7) {
+                    $ie6Fix = jQuery('<iframe frameborder="0" src="#"></iframe>').css({
                         position: "absolute",
                         left: xPos,
                         top: yPos,
@@ -314,19 +313,19 @@
         };
 
         img1 = new Image();
-        $(img1).load(function () {
+        jQuery(img1).load(function () {
             ctx.init2(this, 0);
         });
         img1.src = sImg.attr('src');
 
         img2 = new Image();
-        $(img2).load(function () {
+        jQuery(img2).load(function () {
             ctx.init2(this, 1);
         });
         img2.src = jWin.attr('href');
     }
 
-    $.fn.CloudZoom = function (options) {
+    jQuery.fn.CloudZoom = function (options) {
         // IE6 background image flicker fix
         try {
             document.execCommand("BackgroundImageCache", false, true);
@@ -334,38 +333,38 @@
         this.each(function () {
 			var	relOpts, opts;
 			// Hmm...eval...slap on wrist.
-			eval('var	a = {' + $(this).attr('rel') + '}');
+			eval('var	a = {' + jQuery(this).attr('rel') + '}');
 			relOpts = a;
-            if ($(this).is('.cloud-zoom')) {
-                $(this).css({
+            if (jQuery(this).is('.cloud-zoom')) {
+                jQuery(this).css({
                     'position': 'relative',
                     'display': 'block'
                 });
-                $('img', $(this)).css({
+                jQuery('img', jQuery(this)).css({
                     'display': 'block'
                 });
                 // Wrap an outer div around the link so we can attach things without them becoming part of the link.
                 // But not if wrap already exists.
-                if ($(this).parent().attr('id') != 'wrap') {
-                    $(this).wrap('<div id="wrap" style="top:0px;z-index:999;position:relative;"></div>');
+                if (jQuery(this).parent().attr('id') != 'wrap') {
+                    jQuery(this).wrap('<div id="wrap" style="top:0px;z-index:999;position:relative;"></div>');
                 }
-                opts = $.extend({}, $.fn.CloudZoom.defaults, options);
-                opts = $.extend({}, opts, relOpts);
-                $(this).data('zoom', new CloudZoom($(this), opts));
+                opts = jQuery.extend({}, jQuery.fn.CloudZoom.defaults, options);
+                opts = jQuery.extend({}, opts, relOpts);
+                jQuery(this).data('zoom', new CloudZoom(jQuery(this), opts));
 
-            } else if ($(this).is('.cloud-zoom-gallery')) {
-                opts = $.extend({}, relOpts, options);
-                $(this).data('relOpts', opts);
-                $(this).bind('click', $(this), function (event) {
+            } else if (jQuery(this).is('.cloud-zoom-gallery')) {
+                opts = jQuery.extend({}, relOpts, options);
+                jQuery(this).data('relOpts', opts);
+                jQuery(this).bind('click', jQuery(this), function (event) {
                     var data = event.data.data('relOpts');
                     // Destroy the previous zoom
-                    $('#' + data.useZoom).data('zoom').destroy();
+                    jQuery('#' + data.useZoom).data('zoom').destroy();
                     // Change the biglink to point to the new big image.
-                    $('#' + data.useZoom).attr('href', event.data.attr('href'));
+                    jQuery('#' + data.useZoom).attr('href', event.data.attr('href'));
                     // Change the small image to point to the new small image.
-                    $('#' + data.useZoom + ' img').attr('src', event.data.data('relOpts').smallImage);
+                    jQuery('#' + data.useZoom + ' img').attr('src', event.data.data('relOpts').smallImage);
                     // Init a new zoom with the new images.				
-                    $('#' + event.data.data('relOpts').useZoom).CloudZoom();
+                    jQuery('#' + event.data.data('relOpts').useZoom).CloudZoom();
                     return false;
                 });
             }
@@ -373,7 +372,7 @@
         return this;
     };
 
-    $.fn.CloudZoom.defaults = {
+    jQuery.fn.CloudZoom.defaults = {
         zoomWidth: 'auto',
         zoomHeight: 'auto',
         position: 'right',
@@ -387,5 +386,4 @@
         adjustX: 0,
         adjustY: 0
     };
-
-})(jQuery);
+(jQuery);
