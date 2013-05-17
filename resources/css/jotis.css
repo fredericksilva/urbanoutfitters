@@ -2304,7 +2304,7 @@ a.facebookIt:hover {
 .homepage-social-header span {
 	height: 26px;
 	width: 176px;
-	background: url('../images/uo-png-sprite.png?v=6') no-repeat transparent -8px -513px;
+	background: url('../images/uo-png-sprite.png?v=7') no-repeat transparent -8px -513px;
 	display: block;
 	margin: 5px auto;
 }
@@ -2346,7 +2346,7 @@ form#commentForm input#email {
 }
 form#commentForm #guys, form#commentForm #gals {
 	position:absolute;
-	background: url('../images/uo-png-sprite.png?v=6') no-repeat;
+	background: url('../images/uo-png-sprite.png?v=7') no-repeat;
 	height:34px;
 	width:54px;
 	overflow:hidden;

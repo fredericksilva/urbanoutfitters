@@ -5,7 +5,7 @@
                     		"number": "1",
                             "spread": "twoSpread",
                             "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_01.jpg",
-                            "text": "Add edge to Kimchi Blue’s pretty dresses with a Vintage Renewal denim jacket and colour-pop headphones.",
+                            "text": "Add edge to Kimchi Blue's pretty dresses with a Vintage Renewal denim jacket and colour-pop headphones.",
                             "hotspots": [{
                                     "sku": "5130433880101",
                                     "xcord": 237,
@@ -18,8 +18,8 @@
                                 },
 								{
                                     "sku": "5560439350046",
-                                    "xcord": 135,
-                                    "ycord": 203
+                                    "xcord": 130,
+                                    "ycord": 200
                                 }
                             ]
                         }, {
@@ -29,18 +29,13 @@
                             "text": "Growling leopard print and tiger striped camo; Worland and Anerkjendt deliver summer essentials with bite.",
                             "hotspots": [{
                                     "sku": "5859425480001",
-                                    "xcord": 269,
-                                    "ycord": 44
+                                    "xcord": 198,
+                                    "ycord": 48
                                 },
 								{
                                     "sku": "5214466497000",
                                     "xcord": 198,
                                     "ycord": 173
-                                },
-								{
-                                    "sku": "5216466495005",
-                                    "xcord": 210,
-                                    "ycord": 348
                                 },
 								{
                                     "sku": "5225434041009",
@@ -124,28 +119,18 @@
                             "text": "Guys blaze in bold colour bursts, as girls get set for a global gathering in loose layered prints, embroidery and ethnic jewellery.",
                             "hotspots": [{
                                     "sku": "5851444984444",
-                                    "xcord": 361,
-                                    "ycord": 27
+                                    "xcord": 344,
+                                    "ycord": 24
                                 },
 								{
                                     "sku": "5212424859991",
-                                    "xcord": 360,
-                                    "ycord": 79
-                                },
-								{
-                                    "sku": "5216466495002",
-                                    "xcord": 313,
-                                    "ycord": 118
+                                    "xcord": 349,
+                                    "ycord": 76
                                 },
 								{
                                     "sku": "5225424850011",
                                     "xcord": 300,
                                     "ycord": 260
-                                },
-								{
-                                    "sku": "5423417040028",
-                                    "xcord": 289,
-                                    "ycord": 318
                                 },
 								{
                                     "sku": "5326414414293",
@@ -159,17 +144,17 @@
                                 },
 								{
                                     "sku": "5139465061571",
-                                    "xcord": 574,
+                                    "xcord": 554,
                                     "ycord": 129
                                 },
 								{
                                     "sku": "5111424665891",
-                                    "xcord": 572,
-                                    "ycord": 174
+                                    "xcord": 520,
+                                    "ycord": 185
                                 },
 								{
                                     "sku": "5129465061574",
-                                    "xcord": 567,
+                                    "xcord": 541,
                                     "ycord": 254
                                 },
 								{
@@ -191,12 +176,12 @@
                             "text": "Blood Brother, Carhartt, Adidas and New Era deliver streetwear-inspired graphics with a sense of grit.",
                             "hotspots": [{
                                     "sku": "5851434145566",
-                                    "xcord": 267,
-                                    "ycord": 128
+                                    "xcord": 256,
+                                    "ycord": 121
                                 },
 								{
                                     "sku": "5850428340008",
-                                    "xcord": 216,
+                                    "xcord": 200,
                                     "ycord": 200
                                 },
 								{
@@ -206,8 +191,8 @@
                                 },
 								{
                                     "sku": "5214401900800",
-                                    "xcord": 321,
-                                    "ycord": 283
+                                    "xcord": 312,
+                                    "ycord": 288
                                 },
 								{
                                     "sku": "5225442650020",
@@ -232,28 +217,28 @@
                                 },
 								{
                                     "sku": "5520439593000",
-                                    "xcord": 326,
+                                    "xcord": 310,
                                     "ycord": 332
                                 },
 								{
                                     "sku": "5762417095588",
-                                    "xcord": 251,
-                                    "ycord": 221
+                                    "xcord": 239,
+                                    "ycord": 206
                                 },
 								{
                                     "sku": "5762438758552",
-                                    "xcord": 238,
-                                    "ycord": 214
+                                    "xcord": 246,
+                                    "ycord": 224
                                 },
 								{
                                     "sku": "5771431211212",
-                                    "xcord": 323,
+                                    "xcord": 318,
                                     "ycord": 375
                                 },
 								{
                                     "sku": "5741440650318",
-                                    "xcord": 134,
-                                    "ycord": 286
+                                    "xcord": 183,
+                                    "ycord": 325
                                 },
 								{
                                     "sku": "5123465541138",
@@ -274,23 +259,23 @@
                             "text": "Animal prints clash with bold colour bursts, as Anerkjendt and Vanishing Elephant signal brave new style.",
                             "hotspots": [{
                                     "sku": "5851440680003",
-                                    "xcord": 252,
-                                    "ycord": 124
+                                    "xcord": 239,
+                                    "ycord": 123
                                 },
 								{
                                     "sku": "5212401906992",
-                                    "xcord": 218,
+                                    "xcord": 201,
                                     "ycord": 174
                                 },
 								{
                                     "sku": "5214424858992",
-                                    "xcord": 205,
-                                    "ycord": 217
+                                    "xcord": 204,
+                                    "ycord": 258
                                 },
 								{
                                     "sku": "5225440701233",
-                                    "xcord": 210,
-                                    "ycord": 303
+                                    "xcord": 232,
+                                    "ycord": 262
                                 },
 								{
                                     "sku": "5326408129491",
@@ -302,7 +287,7 @@
                         	"number": "5",
                             "spread": "twoSpread",
                             "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_08.jpg",
-                            "text": "Nod to the ‘60s in Cooperative’s collar detail shirts, blocked separates and kitsch accessories.",
+                            "text": "Nod to the '60s in Cooperative's collar detail shirts, blocked separates and kitsch accessories.",
                             "hotspots": [{
                                     "sku": "5758425482011",
                                     "xcord": 119,
@@ -310,8 +295,8 @@
                                 },
 								{
                                     "sku": "5110466968795",
-                                    "xcord": 118,
-                                    "ycord": 205
+                                    "xcord": 109,
+                                    "ycord": 194
                                 },
 								{
                                     "sku": "5126433734555",
@@ -320,8 +305,8 @@
                                 },
 								{
                                     "sku": "5771463417688",
-                                    "xcord": 156,
-                                    "ycord": 502
+                                    "xcord": 162,
+                                    "ycord": 490
                                 }
                             ]
                         }
@@ -334,7 +319,7 @@
                     		"number": "6",
                             "spread": "twoSpread",
                             "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_10.jpg",
-                            "text": "Antipodium and Vanessa Bruno Athe’s directional shapes deliver a fresh interpretation of streetwear.",
+                            "text": "Antipodium and Vanessa Bruno Athe's directional shapes deliver a fresh interpretation of streetwear.",
                             "hotspots": [{
                                     "sku": "5139414900094",
                                     "xcord": 135,
@@ -342,8 +327,8 @@
                                 },
 								{
                                     "sku": "5741426400863",
-                                    "xcord": 200,
-                                    "ycord": 247
+                                    "xcord": 226,
+                                    "ycord": 239
                                 },
 								{
                                     "sku": "5129437166792",
@@ -358,27 +343,27 @@
                             "text": "Bold Worland sweats, smart Shore Leave shirts and slick Herschel backpacks offer up a sharp, ready-for-anything uniform.",
                             "hotspots": [{
                                     "sku": "5851444850003",
-                                    "xcord": 232,
+                                    "xcord": 223,
                                     "ycord": 126
                                 },
 								{
                                     "sku": "5212436311003",
-                                    "xcord": 233,
-                                    "ycord": 180
+                                    "xcord": 219,
+                                    "ycord": 195
                                 },
 								{
                                     "sku": "5850415246005",
-                                    "xcord": 256,
+                                    "xcord": 249,
                                     "ycord": 195
                                 },
 								{
                                     "sku": "5216466494444",
-                                    "xcord": 278,
+                                    "xcord": 269,
                                     "ycord": 229
                                 },
 								{
                                     "sku": "5225434041011",
-                                    "xcord": 263,
+                                    "xcord": 257,
                                     "ycord": 390
                                 }
                             ]
@@ -395,22 +380,22 @@
                             "text": "Rainbow rugs, tapestry throws and colour burst bistro chairs ensure your space is as eclectic as your wardrobe.",
                             "hotspots": [{
                                     "sku": "5417402154001",
-                                    "xcord": 484,
+                                    "xcord": 480,
                                     "ycord": 78
                                 },
 								{
                                     "sku": "5417439060013",
                                     "xcord": 496,
-                                    "ycord": 144
+                                    "ycord": 138
                                 },
 								{
                                     "sku": "5119437166787",
-                                    "xcord": 510,
+                                    "xcord": 502,
                                     "ycord": 189
                                 },
 								{
                                     "sku": "5745460924400",
-                                    "xcord": 512,
+                                    "xcord": 499,
                                     "ycord": 263
                                 },
 								{
@@ -456,7 +441,7 @@
 								{
                                     "sku": "5532038251513",
                                     "xcord": 366,
-                                    "ycord": 510
+                                    "ycord": 498
                                 },
 								{
                                     "sku": "5532038251509",
