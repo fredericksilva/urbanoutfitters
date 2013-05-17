@@ -62,7 +62,7 @@ Venda.Widget.modalSignup.action = {
                     setTimeout(function () {
                         jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP).fadeOut('slow');
                         jQuery('.' + Venda.Widget.modalSignup.action.options.w + ' .' + Venda.Widget.modalSignup.action.options.sP + 'Overlay').fadeOut('slow');
-                    }, 3000);
+                    }, 2000);
                 }
             });
             jQuery(i).prependTo(document.body);
