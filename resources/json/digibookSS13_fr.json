@@ -4,23 +4,43 @@
                     "slides": [{
                     		"number": "1",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_03.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_01.jpg",
+                            "text": "Cette saison, le vintage de Renewal se mixe aux petites robes girly.",
                             "hotspots": [{
-                                    "sku": "5522443010014",
-                                    "xcord": 49,
-                                    "ycord": 50
+                                    "sku": "5130433880101",
+                                    "xcord": 237,
+                                    "ycord": 370
+                                },
+								{
+                                    "sku": "5415465801005",
+                                    "xcord": 88,
+                                    "ycord": 246
+                                },
+								{
+                                    "sku": "5560439350046",
+                                    "xcord": 130,
+                                    "ycord": 200
                                 }
                             ]
                         }, {
                         	"number": "1",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_04.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_02.jpg",
+                            "text": "Imprim&eacute;s animaliers et attitude rebelle, montrez votre c&ocirc;t&eacute; sauvage.",
                             "hotspots": [{
-                                    "sku": "5522443010014",
-                                    "xcord": 124,
-                                    "ycord": 43
+                                    "sku": "5859425480001",
+                                    "xcord": 198,
+                                    "ycord": 48
+                                },
+								{
+                                    "sku": "5214466497000",
+                                    "xcord": 198,
+                                    "ycord": 173
+                                },
+								{
+                                    "sku": "5225434041009",
+                                    "xcord": 207,
+                                    "ycord": 444
                                 }
                             ]
                         }
@@ -32,23 +52,58 @@
                     "slides": [{
                     		"number": "2",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_07.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_03.jpg",
+                            "text": "L'&eacute;t&eacute; sera sport chic avec Sparkle &amp; Fade et BDG.",
                             "hotspots": [{
-                                    "sku": "5522441830006",
-                                    "xcord": 222,
-                                    "ycord": 77
+                                    "sku": "5113433475555",
+                                    "xcord": 174,
+                                    "ycord": 146
+                                },
+								{
+                                    "sku": "5112433682147",
+                                    "xcord": 220,
+                                    "ycord": 212
+                                },
+								{
+                                    "sku": "5126425823211",
+                                    "xcord": 159,
+                                    "ycord": 267
+                                },
+								{
+                                    "sku": "5771466595314",
+                                    "xcord": 134,
+                                    "ycord": 362
+                                },
+								{
+                                    "sku": "5319432524415",
+                                    "xcord": 192,
+                                    "ycord": 464
                                 }
                             ]
                         }, {
                         	"number": "2",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_02.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_04.jpg",
+                            "text": "Le jean reste &agrave; l'honneur. Osez le superposer dans diff&eacute;rentes teintes!",
                             "hotspots": [{
-                                    "sku": "5527401090017",
-                                    "xcord": 58,
-                                    "ycord": 159
+                                    "sku": "5212443092720",
+                                    "xcord": 220,
+                                    "ycord": 148
+                                },
+								{
+                                    "sku": "5214425117733",
+                                    "xcord": 216,
+                                    "ycord": 268
+                                },
+								{
+                                    "sku": "5222462116622",
+                                    "xcord": 221,
+                                    "ycord": 328
+                                },
+								{
+                                    "sku": "5326408124894",
+                                    "xcord": 225,
+                                    "ycord": 426
                                 }
                             ]
                         }
@@ -61,11 +116,51 @@
                     		"number": "3",
                             "spread": "oneSpread",
                             "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_05.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "text": "Fringues color&eacute;es pour les mecs et imprim&eacute;s ethniques pour les filles, l'&eacute;t&eacute; ne va pas &ecirc;tre ennuyeux!",
                             "hotspots": [{
-                                    "sku": "5520441640001",
-                                    "xcord": 99,
-                                    "ycord": 485
+                                    "sku": "5851444984444",
+                                    "xcord": 344,
+                                    "ycord": 24
+                                },
+								{
+                                    "sku": "5212424859991",
+                                    "xcord": 349,
+                                    "ycord": 76
+                                },
+								{
+                                    "sku": "5225424850011",
+                                    "xcord": 300,
+                                    "ycord": 260
+                                },
+								{
+                                    "sku": "5326414414293",
+                                    "xcord": 306,
+                                    "ycord": 493
+                                },
+								{
+                                    "sku": "5762417091521",
+                                    "xcord": 552,
+                                    "ycord": 90
+                                },
+								{
+                                    "sku": "5139465061571",
+                                    "xcord": 554,
+                                    "ycord": 129
+                                },
+								{
+                                    "sku": "5111424665891",
+                                    "xcord": 520,
+                                    "ycord": 185
+                                },
+								{
+                                    "sku": "5129465061574",
+                                    "xcord": 541,
+                                    "ycord": 254
+                                },
+								{
+                                    "sku": "5319414413002",
+                                    "xcord": 566,
+                                    "ycord": 451
                                 }
                             ]
                         }
@@ -77,23 +172,78 @@
                     "slides": [{
                     		"number": "4",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_01.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_06.jpg",
+                            "text": "L'esprit street et sportwear s'empare de la mode homme.",
                             "hotspots": [{
-                                    "sku": "5536439251117",
-                                    "xcord": 261,
-                                    "ycord": 32
+                                    "sku": "5851434145566",
+                                    "xcord": 256,
+                                    "ycord": 121
+                                },
+								{
+                                    "sku": "5850428340008",
+                                    "xcord": 200,
+                                    "ycord": 200
+                                },
+								{
+                                    "sku": "5216433968555",
+                                    "xcord": 233,
+                                    "ycord": 265
+                                },
+								{
+                                    "sku": "5214401900800",
+                                    "xcord": 312,
+                                    "ycord": 288
+                                },
+								{
+                                    "sku": "5225442650020",
+                                    "xcord": 222,
+                                    "ycord": 336
+                                },
+								{
+                                    "sku": "5326442650051",
+                                    "xcord": 216,
+                                    "ycord": 432
                                 }
                             ]
                         }, {
                         	"number": "4",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_06.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_07.jpg",
+                            "text": "Boh&egrave;me, la tendance Patagonia souffle un vent de libert&eacute; avec Staring at stars et Ecot&eacute;.",
                             "hotspots": [{
-                                    "sku": "5527404400012",
-                                    "xcord": 124,
-                                    "ycord": 77
+                                    "sku": "5115462179404",
+                                    "xcord": 291,
+                                    "ycord": 248
+                                },
+								{
+                                    "sku": "5520439593000",
+                                    "xcord": 310,
+                                    "ycord": 332
+                                },
+								{
+                                    "sku": "5762417095588",
+                                    "xcord": 239,
+                                    "ycord": 206
+                                },
+								{
+                                    "sku": "5762438758552",
+                                    "xcord": 246,
+                                    "ycord": 224
+                                },
+								{
+                                    "sku": "5771431211212",
+                                    "xcord": 318,
+                                    "ycord": 375
+                                },
+								{
+                                    "sku": "5741440650318",
+                                    "xcord": 183,
+                                    "ycord": 325
+                                },
+								{
+                                    "sku": "5123465541138",
+                                    "xcord": 148,
+                                    "ycord": 382
                                 }
                             ]
                         }
@@ -105,23 +255,58 @@
                     "slides": [{
                     		"number": "5",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_08.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_13.jpg",
+                            "text": "Carhartt, Farah ou Anerkjendt, passez votre garde-robe en mode couleurs et imprim&eacute;s.",
                             "hotspots": [{
-                                    "sku": "5620410210525",
-                                    "xcord": 376,
-                                    "ycord": 455
+                                    "sku": "5851440680003",
+                                    "xcord": 239,
+                                    "ycord": 123
+                                },
+								{
+                                    "sku": "5212401906992",
+                                    "xcord": 201,
+                                    "ycord": 174
+                                },
+								{
+                                    "sku": "5214424858992",
+                                    "xcord": 204,
+                                    "ycord": 258
+                                },
+								{
+                                    "sku": "5225440701233",
+                                    "xcord": 232,
+                                    "ycord": 262
+                                },
+								{
+                                    "sku": "5326408129491",
+                                    "xcord": 251,
+                                    "ycord": 385
                                 }
                             ]
                         }, {
                         	"number": "5",
                             "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_11.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_08.jpg",
+                            "text": "D&eacute;licieusement r&eacute;tro, la collection Soixante neuf donne une touche nostalgique &agrave; l'&eacute;t&eacute;.",
                             "hotspots": [{
-                                    "sku": "5520441640000",
-                                    "xcord": 79,
-                                    "ycord": 379
+                                    "sku": "5758425482011",
+                                    "xcord": 119,
+                                    "ycord": 130
+                                },
+								{
+                                    "sku": "5110466968795",
+                                    "xcord": 109,
+                                    "ycord": 194
+                                },
+								{
+                                    "sku": "5126433734555",
+                                    "xcord": 109,
+                                    "ycord": 404
+                                },
+								{
+                                    "sku": "5771463417688",
+                                    "xcord": 162,
+                                    "ycord": 490
                                 }
                             ]
                         }
@@ -132,13 +317,54 @@
             "row": [{
                     "slides": [{
                     		"number": "6",
-                            "spread": "oneSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_12.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "spread": "twoSpread",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_10.jpg",
+                            "text": "Adoptez un look cr&eacute;ateur et pointu avec Boutique.",
                             "hotspots": [{
-                                    "sku": "5620410210525",
-                                    "xcord": 276,
-                                    "ycord": 455
+                                    "sku": "5139414900094",
+                                    "xcord": 135,
+                                    "ycord": 244
+                                },
+								{
+                                    "sku": "5741426400863",
+                                    "xcord": 226,
+                                    "ycord": 239
+                                },
+								{
+                                    "sku": "5129437166792",
+                                    "xcord": 174,
+                                    "ycord": 379
+                                }
+                            ]
+                        },{
+                    		"number": "6",
+                            "spread": "twoSpread",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_11.jpg",
+                            "text": "De Maui &agrave; Tokyo, voguez et inspirez-vous avec Shore Leave.",
+                            "hotspots": [{
+                                    "sku": "5851444850003",
+                                    "xcord": 223,
+                                    "ycord": 126
+                                },
+								{
+                                    "sku": "5212436311003",
+                                    "xcord": 219,
+                                    "ycord": 195
+                                },
+								{
+                                    "sku": "5850415246005",
+                                    "xcord": 249,
+                                    "ycord": 195
+                                },
+								{
+                                    "sku": "5216466494444",
+                                    "xcord": 269,
+                                    "ycord": 229
+                                },
+								{
+                                    "sku": "5225434041011",
+                                    "xcord": 257,
+                                    "ycord": 390
                                 }
                             ]
                         }
@@ -147,26 +373,80 @@
             ]
         }, {
             "row": [{
-                    "slides": [{
-                    		"number": "7",
-                            "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_10.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
-                            "hotspots": [{
-                                    "sku": "5520441640000",
-                                    "xcord": 79,
-                                    "ycord": 379
-                                }
-                            ]
-                        }, {
+                    "slides": [{ 
                         	"number": "7",
-                            "spread": "twoSpread",
-                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_02.jpg",
-                            "text": "ewf wefwe few fewf ewf efew fef ewf ef ew fwef wef ew  fwefew few fewfewf ef ",
+                            "spread": "oneSpread",
+                            "image": "/content/ebiz/urbanoutfitters/resources/images/digibook-SS13/imgs/UO_12.jpg",
+                            "text": "Passez votre int&eacute;rieur &agrave; l'heure d'&eacute;t&eacute;. Tapis ethniques et meubles color&eacute;s, la d&eacute;co suit les tendances!",
                             "hotspots": [{
-                                    "sku": "5520441640000",
-                                    "xcord": 79,
-                                    "ycord": 379
+                                    "sku": "5417402154001",
+                                    "xcord": 480,
+                                    "ycord": 78
+                                },
+								{
+                                    "sku": "5417439060013",
+                                    "xcord": 496,
+                                    "ycord": 138
+                                },
+								{
+                                    "sku": "5119437166787",
+                                    "xcord": 502,
+                                    "ycord": 189
+                                },
+								{
+                                    "sku": "5745460924400",
+                                    "xcord": 499,
+                                    "ycord": 263
+                                },
+								{
+                                    "sku": "5319432524407",
+                                    "xcord": 451,
+                                    "ycord": 444
+                                },
+								{
+                                    "sku": "5859433200009",
+                                    "xcord": 312,
+                                    "ycord": 209
+                                },
+								{
+                                    "sku": "5423443630040",
+                                    "xcord": 307,
+                                    "ycord": 247
+                                },
+								{
+                                    "sku": "5214433472065",
+                                    "xcord": 365,
+                                    "ycord": 279
+                                },
+								{
+                                    "sku": "5225424850066",
+                                    "xcord": 372,
+                                    "ycord": 380
+                                },
+								{
+                                    "sku": "5326414413294",
+                                    "xcord": 535,
+                                    "ycord": 475
+                                },
+								{
+                                    "sku": "5520439594000",
+                                    "xcord": 306,
+                                    "ycord": 338
+                                },
+								{
+                                    "sku": "5520439593000",
+                                    "xcord": 272,
+                                    "ycord": 311
+                                },
+								{
+                                    "sku": "5532038251513",
+                                    "xcord": 366,
+                                    "ycord": 498
+                                },
+								{
+                                    "sku": "5532038251509",
+                                    "xcord": 207,
+                                    "ycord": 387
                                 }
                             ]
                         }
