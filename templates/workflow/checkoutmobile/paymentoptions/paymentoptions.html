@@ -43,7 +43,8 @@
 				<venda_tpcomment><!-- Specific to this step --></venda_tpcomment>
 				<input type="hidden" name="step" value="payment" />
 				<input type="hidden" name="exgroup" value="all" />
-				<input type="hidden" name="param1" value="process" /> <venda_tpcomment><!-- If set to process one last stock check is made --></venda_tpcomment>
+				<input type="hidden" name="param1" value="process" />
+				<input type="hidden" name="orxorxtorderpaydetail" value=""> <venda_tpcomment><!-- If set to process one last stock check is made --></venda_tpcomment>
 
 				<venda_tpcomment><!-- showpayments is null when the user has store credit that is greater than the value of the order total. In this case store credit (ohpaytype 4) will be the payment method used automatically and there will be no payment --></venda_tpcomment>
 				<venda_block label=11,showpayments=notnull>
@@ -266,7 +267,7 @@
 					  </div>
 					</venda_block label=43>					
 				</div><venda_tpcomment><!-- End: Order Totals --></venda_tpcomment>
-				<div class="submitButton placeOrder" ><input type="submit" value="<venda_text id=mobile.button.make_payment>" data-ajax="false"  data-icon="arrow-r" data-iconpos="right"></div>
+				<div class="submitButton placeOrder" ><input type="submit" onclick="payDetailsCallback();" value="<venda_text id=mobile.button.make_payment>" data-ajax="false"  data-icon="arrow-r" data-iconpos="right"></div>
 			</form>
 		</div><!--end checkoutmobile-content -->
 	</div><!--end checkoutmobile-wrapper -->
@@ -282,6 +283,13 @@ jQuery(document).bind("pageshow", function() {
 		if(jQuery(this).html()=="") jQuery(this).remove();
 	});
 });
+function payDetailsCallback (){
+	var cardType = document.paymentoptionsform.cardtype.options[document.paymentoptionsform.cardtype.selectedIndex].value,
+		cardLast4 = document.paymentoptionsform.ohccnum.value.substr(document.paymentoptionsform.ohccnum.value.length - 4);
+	if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+			document.paymentoptionsform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+	}
+}
 </script>
 <venda_inctemplate name=validationRulesScript,type=workflow/checkoutmobile>
 <venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
