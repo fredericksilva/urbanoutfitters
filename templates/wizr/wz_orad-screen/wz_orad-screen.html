@@ -100,6 +100,7 @@
 				</label>
 			</venda_block label=49>
 			<script>
+			//jquery fix for IE 8 as pseudo-element :checked is not supported
 			jQuery("input.addressRadio").click(function() {
 				jQuery('.addressLabel span').removeClass('checked');
 				jQuery(this).siblings().addClass('checked');
