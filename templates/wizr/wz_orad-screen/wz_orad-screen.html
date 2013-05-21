@@ -84,9 +84,27 @@
 		
 		<venda_block label=5,default1=0>
 		<div>
-			<input type="radio" name="update" id="<venda_abrfnbr1>" value="<venda_abrfnbr1>"<venda_block label=4,default1=1> checked="checked"</venda_block label=4>>
-			<venda_block label=48,workflow!=shopcart,workflow!=instore><label for="<venda_abrfnbr1>" class="dontFloat"><venda_text id=site.address_book.label.default_delivery_address></label></venda_block label=48>
-			<venda_block label=49,workflow=shopcart,workflow=instore,operator=or><label for="<venda_abrfnbr1>" class="dontFloat"><venda_text id=site.address_book.label.use_this_address></label></venda_block label=49>
+			<venda_block label=48,workflow!=shopcart,workflow!=instore>
+				<label for="<venda_abrfnbr1>" class="dontFloat addressLabel">
+					<input type="radio" name="update" id="<venda_abrfnbr1>" class="addressRadio" value="<venda_abrfnbr1>"<venda_block label=4,default1=1> checked="checked"</venda_block label=4>>
+					<span></span>
+					<venda_text id=site.address_book.label.default_delivery_address>
+				</label>
+			</venda_block label=48>
+			<venda_block label=49,workflow=shopcart,workflow=instore,operator=or>
+				<label for="<venda_abrfnbr1>" class="dontFloat addressLabel">
+					<label for="<venda_abrfnbr1>" class="dontFloat">
+					<input type="radio" name="update" id="<venda_abrfnbr1>" class="addressRadio" value="<venda_abrfnbr1>"<venda_block label=4,default1=1> checked="checked"</venda_block label=4>>
+					<span></span>
+					<venda_text id=site.address_book.label.use_this_address>
+				</label>
+			</venda_block label=49>
+			<script>
+			jQuery("input.addressRadio").click(function() {
+				jQuery('.addressLabel span').removeClass('checked');
+				jQuery(this).siblings().addClass('checked');
+			});
+			</script>
 		</div>
 		</venda_block label=5>
 		</div>
