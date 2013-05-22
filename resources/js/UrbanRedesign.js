@@ -115,7 +115,6 @@ Venda.urbanRedesign = {
 	            case 'fr':
             		jQuery(this).text('Article ' + (i + 1));
             	break;
-            	switch (htmlLang) {
 	            case 'de':
             		jQuery(this).text('Artikel ' + (i + 1));
             	break;
@@ -128,15 +127,16 @@ Venda.urbanRedesign = {
         // custom select on all browsers except opera (this has bugs)
         if (!jQuery.browser.opera) {
             jQuery('.myAccountTemplate select, .checkoutTemplate select').each(function () {
-            	if (htmlLang === "fr") {
-                	var val, title = 'S\351lectionner...';
-                }
-                if (htmlLang === "de") {
-                	var val, title = 'Bitte ausw\344hlen ...';
-                }
-                else {
-                	var val, title = 'Please Select...';
-                }
+            	switch (htmlLang) {
+	            	case 'fr':
+                		var val, title = 'S\351lectionner...';
+                	break;
+                	case 'de':
+                		var val, title = 'Bitte ausw\344hlen ...';
+                	break;
+                	default:
+                		var val, title = 'Please Select...';
+                };
                 if (jQuery(this).attr('rel')) { title = jQuery(this).attr('rel') }
                 if (jQuery('option:selected', this).val() !== '') {
                     title = jQuery('option:selected', this).text();
