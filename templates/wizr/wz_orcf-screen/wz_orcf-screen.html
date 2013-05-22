@@ -201,13 +201,19 @@ To do:
 			switch (l) {
 				case 'deeur': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
 							  cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+							  if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+								  document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+							  };
 				break;
-				default: var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
-						 	 cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
+				case 'enrestofworld': var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
+						 	 			  cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
+						 	 		  if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+							 	 		  document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+							 	 	  };
+				break;
+				default: //do nothing
 			}
-			if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-				document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
-			}
+			
 		}
 	}
 	</script>
