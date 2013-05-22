@@ -557,7 +557,7 @@ Venda.Widget.MinicartDetail.AddProduct = function (formID) {
 			document.getElementById(formID).layout.value = defaultLayout;
 			document.getElementById(formID).ex.value = defaultEx;
 				if (jQuery('#tag-currencycode') && jQuery(this).pennies('get')!== null){
-						if(jQuery(this).pennies('get') != jQuery('#tag-currencycode').html()) {
+						if(jQuery(this).pennies('get') != jQuery('#tag-currencycode').html() && jQuery(this).pennies('get') != "GBP" && jQuery(this).pennies('get') != "EUR") {
 							jQuery('#updateTotal,#minicartDetailWrapper .price').pennies('convert',{to:jQuery(this).pennies('get'),from: jQuery('#tag-currencycode').html()}).delay(1000);
 						}
 					}
