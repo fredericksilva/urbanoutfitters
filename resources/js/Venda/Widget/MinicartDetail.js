@@ -569,7 +569,7 @@ Venda.Widget.MinicartDetail.AddProduct = function (formID) {
 				}
 				//use trackingProdAdd url from input name=buy
 				if (typeof document.getElementById(formID).buy != 'undefined') {
-					Venda.Widget.MinicartDetail.trackingProdAddUrl = "/invt/" + document.getElementById(formID).buy.value;
+					Venda.Widget.MinicartDetail.trackingProdAddUrl = Venda.Widget.RegionLangSwitch.ebizURL + "/invt/" + document.getElementById(formID).buy.value;
 					jQuery.ajax({
 						url : Venda.Widget.MinicartDetail.trackingProdAddUrl + "&temp=trackingProdAdd&layout=noheaders",
 						success : function (html) {
@@ -794,7 +794,7 @@ Venda.Widget.MinicartDetail.OpenAnim = function (act) {
 		Venda.Widget.MinicartDetail.IsAnimInAction(false);
 		if (act != "addToBasket") {
 			if (!jQuery('#minicartDetail').length) {
-				jQuery('#minicartDetailWrapper').load('/page/home&layout=minicart', function () {
+				jQuery('#minicartDetailWrapper').load(Venda.Widget.RegionLangSwitch.ebizURL + '/page/home&layout=minicart', function () {
 					
 					Venda.Widget.MinicartDetail.WrapBasket();
 					
