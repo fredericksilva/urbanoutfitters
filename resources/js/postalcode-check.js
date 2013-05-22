@@ -66,12 +66,13 @@ Venda.Ebiz.europePostalCheck = function (country) {
   }),
   postalCode = jQuery('#zipc').val(),
   htmlLang = jQuery("html").attr("lang");
-  if (htmlLang === "fr") {
-  	pcInvalidMsg = jQuery('#pcode-msg').length ? jQuery('#pcode-msg').text() : 'Veuillez saisir un code postal valide pour le pays choisi, par exemple ';
-  }
-  else {
-  	pcInvalidMsg = jQuery('#pcode-msg').length ? jQuery('#pcode-msg').text() : 'Please enter a valid postcode for your selected country e.g. ';
-  }
+  switch (htmlLang) {
+  	case 'fr':
+  		pcInvalidMsg = jQuery('#pcode-msg').length ? jQuery('#pcode-msg').text() : 'Veuillez saisir un code postal valide pour le pays choisi, par exemple ';
+  	break;
+  	default:
+  		pcInvalidMsg = jQuery('#pcode-msg').length ? jQuery('#pcode-msg').text() : 'Please enter a valid postcode for your selected country e.g. ';
+  };
     if (countries[country] != null) {
 		  var	countryCache = (countries[country]), 
 				  validate = new RegExp(countryCache.regex.validate, "i"),
