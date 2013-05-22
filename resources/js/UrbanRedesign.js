@@ -3,6 +3,7 @@
 //          1. sticky menu
 //          2. special items purchased based on <venda_oishipname>'
 //          3. toggle panel item (delivery instructions)
+//			4. change
 
 jQuery(document).ready(function () {
     Venda.urbanRedesign.init();
