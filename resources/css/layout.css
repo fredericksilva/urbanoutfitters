@@ -2554,7 +2554,7 @@ p.payPalConf strong
 }
 .checkoutorcf #paymentdetails p
 {
-    display: none;
+    display: block;
 }
 .tickbox_container
 {
