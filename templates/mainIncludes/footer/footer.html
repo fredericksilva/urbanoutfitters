@@ -41,8 +41,14 @@
 	            <input value="2068353000" name="aid" type="hidden">
 	            <input value="2" name="n" type="hidden">
 	            <input value="1" name="a" type="hidden">
-	            <input value="UK" name="COUNTRY" type="hidden">
-	            <input value="UK-QUICKSIGNUP" name="SOURCE" type="hidden">
+	            <venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
+		            <input type="hidden" name="COUNTRY" value="UNITED KINGDOM">
+		            <input type="hidden" name="SOURCE" value="UK-QUICKSIGNUP">
+		        </venda_block label=1>
+		        <venda_block label=2,mode=value,<venda_sessionlocation>!=restofworld>
+		            <input type="hidden" name="COUNTRY" value="EUROPE">
+		            <input type="hidden" name="SOURCE" value="EU-QUICKSIGNUP">
+		        </venda_block label=2>
 	            <input value="" name="GENDER" type="hidden">
 	            <label>
 		            <span>E-Mail Address</span>
