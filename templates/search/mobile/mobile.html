@@ -1,6 +1,11 @@
 
 <div class="deliveryimg">
-	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/delivery.png" alt="Delivery" />
+	<venda_block label=1,mode=value,<venda_sessionlocation>=restofworld>
+    	<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/delivery.png" alt="Delivery" />
+    </venda_block label=1>
+    <venda_block label=2,mode=value,<venda_sessionlocation>!=restofworld>
+	    <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/delivery_eu.png" alt="Delivery" />
+    </venda_block label=2>
 </div>
 
 <div id="catname"><venda_tpxt mode=get,name=categoryName></div>
