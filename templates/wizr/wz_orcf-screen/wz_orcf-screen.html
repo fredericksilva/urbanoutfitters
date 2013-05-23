@@ -197,23 +197,19 @@ To do:
 			Venda.orderConf.payDetailsCallback();
 			<venda_wizbutton step=payment,mode=process,param1=process,check=yes,callonly=yes>
 		}, payDetailsCallback: function (){
-			var l = document.documentElement.lang + "<venda_sessionlocation>";
-			switch (l) {
-				case 'deeur': var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
-							  cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
-							  if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-								  document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
-							  };
-				break;
-				case 'enrestofworld': var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
-						 	 			  cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
-						 	 		  if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
-							 	 		  document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
-							 	 	  };
-				break;
-				default: //do nothing
+			if (jQuery('#dummycardtype').length) {
+				var cardType = document.wizform.dummycardtype.options[document.wizform.dummycardtype.selectedIndex].value,
+					cardLast4 = document.wizform.ohccnum[0].value.substr( document.wizform.ohccnum[0].value.length - 4 );
+				if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+					document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+				};
+			} else {
+				var cardType = document.wizform.cardtype.options[document.wizform.cardtype.selectedIndex].value,
+					cardLast4 = document.wizform.ohccnum.value.substr( document.wizform.ohccnum.value.length - 4 );
+				if( typeof cardType === 'string' && typeof cardLast4 === 'string' ) {
+					document.wizform.orxorxtorderpaydetail.value = cardType + '|' + cardLast4;
+				};
 			}
-			
 		}
 	}
 	</script>
