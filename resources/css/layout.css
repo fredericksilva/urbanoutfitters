@@ -2078,6 +2078,29 @@ div.usxtdob select:first-child,
 {
     width: auto;
 }
+.addressLabel > label > span {
+	width: 13px;
+	height: 11px;
+	margin: 2px 2px 0 2px;
+	padding: 0;
+	background: url("../images/uo-png-sprite.png") no-repeat;
+	background-position: -192px -96px;
+	display: inline-block;
+}		
+.addressLabel:hover > label > span, .addressLabel:active > label > span {
+	background-position: -208px -96px !important;
+}
+input.addressRadio:checked+span {
+	background-position: -208px -96px !important;
+}
+.addressLabel > label > span.checked {
+	background-position: -208px -96px !important;
+}
+.addressRadio {
+	opacity: 0;
+	filter:alpha(opacity=0);
+	float: right;
+}
 #myformcommoption label
 {
     text-align: left;
@@ -2145,13 +2168,14 @@ div.usxtdob select:first-child,
 .addressBookList fieldset div div
 {
     float: none;
-    padding: 5px;
+    padding: 5px 0;
 }
 .contentWrapper .addressBookList fieldset div div label
 {
     width: 200px;
-    margin-left: 10px;
+    margin-left: 0;
     width: auto;
+    cursor:pointer;
 }
 
 .addressBookList .boxContent p.default

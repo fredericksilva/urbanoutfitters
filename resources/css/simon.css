@@ -71,6 +71,7 @@
     margin-right: 9px;
     text-align: right;
     width: 160px;
+    cursor: pointer;
 }
 .myAccountTemplate label.dontFloat,
 .checkoutTemplate label.dontFloat {
@@ -1877,6 +1878,32 @@ a.previous
 {
     width: 359px;
 }
+.addressLabel > span {
+	width: 13px;
+	height: 11px;
+	margin: 2px 2px 0 2px;
+	padding: 0;
+	background: url("../images/uo-png-sprite.png") no-repeat;
+	background-position: -192px -96px;
+	display: inline-block;
+}		
+.addressLabel:hover > span, .addressLabel:active > span {
+	background-position: -208px -96px !important;
+}
+input.addressRadio:checked+span {
+	background-position: -208px -96px !important;
+}
+.addressLabel > span.checked {
+	background-position: -208px -96px !important;
+}
+.addressRadio {
+	opacity: 0;
+	filter:alpha(opacity=0);
+	float: right;
+}
+.boxContent li.last {
+	height: auto;
+}
 div.usxtdob select
 {
     width: 86px;
@@ -2085,12 +2112,12 @@ div.usxtdob select:first-child {
 #address_list fieldset div div
 {
     float: none;
-    padding: 5px;
+    padding: 5px 0;
 }
 #address_list fieldset div div label
 {
     width: 200px;
-    margin-left: 10px;
+    margin-left: 0;
     width: auto;
 }
 
