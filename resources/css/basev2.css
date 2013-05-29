@@ -5013,7 +5013,7 @@ h4.ui-state-active {
   color: #333;
 }
 .storeListHolder .header-block {
-  background: rgba(0,204,255,1);
+  background: url(../images/StoresBanner.jpg) no-repeat scroll left top transparent;
   margin-bottom: 20px;
 }
 .storeListHolder .header-copy {
