@@ -59,7 +59,26 @@ Venda.Widget.VBM.populateProductRecs = function(elref,recadded,vbmtrack) {
 			}	
 		}
 		var avaiInput = ["'ProductId:"+prodid+"'"];
-		var prodRecs = emark.getRecommendations('ProductDetailRecs', avaiInput);
+		 var prodRecs = "";
+		if (elref === "vbmpd") {
+  		var genderloc = jQuery("#attributes-gender").length ? jQuery("#attributes-gender").text() : "h";
+      switch (genderloc) {
+        case "w":
+          prodRecs = emark.getRecommendations('ProductDetailRecs_women', avaiInput);	
+          break;
+        case "m":
+          prodRecs = emark.getRecommendations('ProductDetailRecs_men', avaiInput);	
+          break;
+        case "h":
+          prodRecs = emark.getRecommendations('ProductDetailRecs', avaiInput);	
+          break;
+        default:
+          prodRecs = emark.getRecommendations('ProductDetailRecs', avaiInput);	
+          break;
+      }  		 
+		} else {
+  	  prodRecs = emark.getRecommendations('ProductDetailRecs', avaiInput);	
+		}
 		
 		//copy product recs from Avail to the vbmprods cookie
 		emark.commit(function() { 
