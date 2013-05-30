@@ -824,6 +824,8 @@ input.button:hover {
     width: 370px;
     background: #fff;
     position: absolute;
+    top: 0;
+    left: 0;
 }
 .storeimage .boxContent h2 {
     font-size: 20px;
