@@ -28,6 +28,11 @@ Venda.Widget.modalSignup.action = {
             Venda.Widget.modalSignup.action.options.eopts = a;
             Venda.Widget.modalSignup.action.modalSubmit(Venda.Widget.modalSignup.action.options.eopts, this);
         });
+        jQuery(document).bind('keydown', function(e) { 
+	        if (e.which == 27) {
+		        Venda.Widget.modalSignup.action.closePopup();
+    		}
+    	}); 
     },
     addGender: function (gender) {
         jQuery('input[name=GENDER]').val(gender);
