@@ -2324,7 +2324,7 @@ a.facebookIt:hover {
 	width: 330px;
 	position: relative;
 }
-.foot-signUp .thanks { 
+.foot-signUp .thanks, .signupForm .thanks { 
 	color: #666;
 	font-weight: bold;
 	font-size:16px;
