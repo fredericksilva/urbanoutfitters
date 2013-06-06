@@ -57,11 +57,11 @@ Venda.Widget.modalSignup.action = {
             i.src = "http://ebm.cheetahmail.com/r/regf2?aid=" + aid + "&n=" + n + "&a=" + m + "&email=" + e + "&GENDER=" + g + "&SOURCE=" + s + "&COUNTRY=" + c;
             i.style.display = 'none';
             jQuery(i).bind('error', function (a) {
-                jQuery(b).fadeOut('slow');
+                jQuery(b).fadeOut('fast');
                 setTimeout(function () {
                     jQuery(".signupForm .thanks").fadeIn('slow');
                     fadeBackOut();
-                }, 1000);
+                }, 100);
 
                 function fadeBackOut() {
                     setTimeout(function () {
