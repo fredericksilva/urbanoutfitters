@@ -61,7 +61,7 @@ Venda.Widget.modalSignup.action = {
                 setTimeout(function () {
                     jQuery(".signupForm .thanks").fadeIn('slow');
                     fadeBackOut();
-                }, 100);
+                }, 500);
 
                 function fadeBackOut() {
                     setTimeout(function () {
