@@ -1238,7 +1238,20 @@ ol.prods li {
     width: 100%;
     text-transform: uppercase;
 }
-
+.currency-status {
+    background-color: #666;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    font-size: 10px;
+    line-height: 10px;
+    min-width: 960px;
+    overflow: hidden;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .demo a {
     color: #B40F14;
     font-size: 12px;
@@ -1649,9 +1662,9 @@ fieldset {
 }
 .mm_ul .uoblog-link a {
     display: block;
-    width: 60px;
-    height: 16px;
-    background: url("../images/uo-png-sprite.png") no-repeat scroll -124px -74px transparent;
+    width: 49px;
+    height: 23px;
+    background: url("../images/uo-png-sprite.png") no-repeat scroll -6px -193px transparent;
     padding: 0;
     border-bottom: none;
 }
@@ -1983,7 +1996,40 @@ fieldset {
     display: inline-block;
     margin-top: 10px;
 }
-
+.oneProduct .price-info {
+    cursor: pointer;
+    display: none;
+    padding: 6px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.oneProduct .price-info .signage {
+    background: url(http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png) -62px -4px no-repeat scroll transparent;
+    width: 13px;
+    height: 13px;
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin-top: 2px;
+}
+.oneProduct .open {
+    border-bottom: none;
+}
+.oneProduct .open .signage {
+    background: url(http://urbanoutfitters.uat.venda.com/content/ebiz/urbanoutfitters/resources/images/uo-png-sprite.png) -62px 0 no-repeat scroll transparent;
+    height: 5px;
+    margin-top: 6px;
+}
+.oneProduct .price-expanded {
+    display: none;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.oneProduct .price-expanded p {
+    margin: 0;
+}
 .oneProduct .priceField {
     margin: 14px 0 12px;
 }
@@ -4643,7 +4689,7 @@ h4.ui-state-active {
     line-height: 30px;
     padding: 0 12px;
 }
-#page_findastore .ui-selectmenu-menu li a {
+#page_storelocator .ui-selectmenu-menu li a {
     text-transform: none;
     font-weight: normal;
 }
@@ -4708,14 +4754,14 @@ h4.ui-state-active {
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
-#page_findastore .ui-selectmenu-menu-dropdown {
+#page_storelocator .ui-selectmenu-menu-dropdown {
     overflow: auto;
     min-height: 230px;
 }
-#page_findastore .styled-v-bar {
+#page_storelocator .styled-v-bar {
     right: 6px !important;
 }
-#page_findastore .alt-scroll-content {
+#page_storelocator .alt-scroll-content {
     width: 100% !important;
 }
 #content .Storelookup .linkstore a, #content .storeListHolder .linkstore a {
@@ -4912,14 +4958,14 @@ h4.ui-state-active {
     margin-right: 5px;
     margin-top: 5px;
 }
-#page_findastore .ui-autocomplete {
+#page_storelocator.ui-autocomplete {
     width: 404px !important;
     border: 1px solid #333;
     font-size: 18px;
     font-weight: bold;
     padding-left: 12px !important;
 }
-#page_findastore .ui-autocomplete a:hover {
+#page_storelocator .ui-autocomplete a:hover {
     background: none !important;
     color: #999 !important;
 }
@@ -5295,7 +5341,7 @@ to {
     width: 153px;
 }
 
-.brandcollateresult .termtext a {
+.collatedresult .termtext a {
     display: block;
     padding: 0;
     width: 163px;
@@ -5958,7 +6004,7 @@ ul#rvisitewidelist li a:hover div {
 /* Header */
 #logo {
     margin: 30px 0 0 0;
-    position:absolute;
+    position: absolute;
 }
 .mainHeader p.location-text {
     margin: 8px 0;
@@ -6129,35 +6175,37 @@ text-indent: -9000px;
 	height:32px;
 	margin:5px 5px 0 0;
 	border:1px solid black;
-	background: url("../images/uo-png-sprite.png") no-repeat white;
+	background: url("../images/uo-png-sprite.png?v=3") no-repeat white;
 }
 .getSocial li a:hover {
 	border: 2px solid black;
 	width: 30px;
 	height: 30px;
 }
-.getSocial  li a.foot-fb { display: block;background-position:-40px -377px;}
-.getSocial  li a.foot-tw { display: block;background-position:-7px -377px;}
-.getSocial  li a.foot-pt { display: block;background-position:-73px -377px;}
-.getSocial  li a.foot-yt { display: block;background-position:-172px -377px;}
-.getSocial  li a.foot-fl { display: block;background-position:-139px -377px;}
-.getSocial  li a.foot-in { display: block;background-position:-106px -377px;}
-.getSocial  li a.foot-vm { display: block;background-position:-205px -377px;}
-.getSocial  li a.foot-fb:hover { display: block;background-position:-41px -378px;}
-.getSocial  li a.foot-tw:hover { display: block;background-position:-8px -378px;}
-.getSocial  li a.foot-pt:hover { display: block;background-position:-74px -378px;}
-.getSocial  li a.foot-yt:hover { display: block;background-position:-173px -378px;}
-.getSocial  li a.foot-fl:hover { display: block;background-position:-140px -378px;}
-.getSocial  li a.foot-in:hover { display: block;background-position:-107px -378px;}
-.getSocial  li a.foot-vm:hover { display: block;background-position:-206px -378px;}
-.getSocial  li a.foot-blog { display: block;background-position:-39px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #fffca3;}
-.getSocial  li a.foot-uotv { display: block;background-position:-110px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #bcffff;}
-.getSocial  li a.foot-comm { display: block;background-position:-181px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #ffc5ff;}
-.getSocial  li a.foot-sp { display: block;background-position:-181px -442px;width:71px;height:32px;margin:0 5px 0 0; background-color: #8ec449;}
-.getSocial  li a.foot-blog:hover { display: block;background-position:-40px -411px;width:69px;height:30px;}
-.getSocial  li a.foot-uotv:hover { display: block;background-position:-111px -411px;width:69px;height:30px;}
-.getSocial  li a.foot-comm:hover { display: block;background-position:-182px -411px;width:69px;height:30px;}
-.getSocial  li a.foot-sp:hover { display: block;background-position:-182px -443px;width:69px;height:30px;}
+.getSocial li a.foot-fb { display: block;background-position:-40px -377px;}
+.getSocial li a.foot-tw { display: block;background-position:-7px -377px;}
+.getSocial li a.foot-pt { display: block;background-position:-73px -377px;}
+.getSocial li a.foot-yt { display: block;background-position:-172px -377px;}
+.getSocial li a.foot-fl { display: block;background-position:-139px -377px;}
+.getSocial li a.foot-in { display: block;background-position:-106px -377px;}
+.getSocial li a.foot-vm { display: block;background-position:-205px -377px;}
+.getSocial li a.foot-fb:hover { display: block;background-position:-41px -378px;}
+.getSocial li a.foot-tw:hover { display: block;background-position:-8px -378px;}
+.getSocial li a.foot-pt:hover { display: block;background-position:-74px -378px;}
+.getSocial li a.foot-yt:hover { display: block;background-position:-173px -378px;}
+.getSocial li a.foot-fl:hover { display: block;background-position:-140px -378px;}
+.getSocial li a.foot-in:hover { display: block;background-position:-107px -378px;}
+.getSocial li a.foot-vm:hover { display: block;background-position:-206px -378px;}
+.getSocial li a.foot-blog { display: block;background-position:-39px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #fffca3;}
+.getSocial li a.foot-uotv { display: block;background-position:-110px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #bcffff;}
+.getSocial li a.foot-comm { display: block;background-position:-181px -410px;width:71px;height:32px;margin:0 5px 0 0; background-color: #ffc5ff;}
+.getSocial li a.foot-comm-fr { display: block;background-position:-181px -474px;width:71px;height:32px;margin:0 5px 0 0; background-color: #ffc5ff;}
+.getSocial li a.foot-sp { display: block;background-position:-181px -442px;width:71px;height:32px;margin:0 5px 0 0; background-color: #fff;}
+.getSocial li a.foot-blog:hover { display: block;background-position:-40px -411px;width:69px;height:30px;}
+.getSocial li a.foot-uotv:hover { display: block;background-position:-111px -411px;width:69px;height:30px;}
+.getSocial li a.foot-comm:hover { display: block;background-position:-182px -411px;width:69px;height:30px;}
+.getSocial li a.foot-comm-fr:hover { display: block;background-position:-182px -475px;width:69px;height:30px;}
+.getSocial li a.foot-sp:hover { display: block;background-position:-182px -443px;width:69px;height:30px;}
 .foot-devider { 
 	height: 2px; 
 	background: none;

@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 
 
     jQuery('.accordion').hide();
-    jQuery('#map_canvas').css({ 'margin-left': '-6000px','float': 'none'});
+    jQuery('#map_canvas').css({ 'margin-left': '6000px','float': 'none'});
 
     Venda.storeloc.ajaxGetStores('storefinder');
     Venda.storeloc.Initialize();
@@ -164,7 +164,7 @@ Venda.storeloc.ajaxGetStores = function(stryid) {
         
         Venda.storeloc.restoreState();
         jQuery('.storeLocSelect').selectmenu({ style:'dropdown', maxHeight: 230 });
-        jQuery('#page_sl17 .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
+        jQuery('#page_storelocator .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
 
     });
 }
@@ -530,7 +530,7 @@ jQuery(".accordion h3").live("click", function(){
 });
 
 /// General store locator store link
-jQuery("#page_storelocator .linkstore a").live("click", function(e){
+jQuery("#page_storelocators .linkstore a").live("click", function(e){
 
     e.preventDefault();    
 
