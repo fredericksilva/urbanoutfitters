@@ -823,6 +823,9 @@ input.button:hover {
     display: inline-block;
     width: 370px;
     background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .storeimage .boxContent h2 {
     font-size: 20px;
@@ -4656,15 +4659,17 @@ h4.ui-state-active {
     color: #333;
 }
 #address {
-    width: 100%;
+    width: 355px;
     -moz-appearance: none;
     -webkit-appearance: none;
     border: none;
-    padding: 0 40px 0 5px;
+    padding: 6px 53px 7px 10px;
     font-size: 32px;
     color: #333;
     font-weight: bold;
-    height: 50px;
+    height: auto;
+    background: none;
+    margin: 0;
 }
 .storeLocSelectHolder .ui-selectmenu {
     border: 1px solid #333;
@@ -4684,7 +4689,7 @@ h4.ui-state-active {
     line-height: 30px;
     padding: 0 12px;
 }
-#page_findastore .ui-selectmenu-menu li a {
+#page_storelocator .ui-selectmenu-menu li a {
     text-transform: none;
     font-weight: normal;
 }
@@ -4749,14 +4754,14 @@ h4.ui-state-active {
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);    
 }
-#page_findastore .ui-selectmenu-menu-dropdown {
+#page_storelocator .ui-selectmenu-menu-dropdown {
     overflow: auto;
     min-height: 230px;
 }
-#page_findastore .styled-v-bar {
+#page_storelocator .styled-v-bar {
     right: 6px !important;
 }
-#page_findastore .alt-scroll-content {
+#page_storelocator .alt-scroll-content {
     width: 100% !important;
 }
 #content .Storelookup .linkstore a, #content .storeListHolder .linkstore a {
@@ -4953,14 +4958,14 @@ h4.ui-state-active {
     margin-right: 5px;
     margin-top: 5px;
 }
-#page_findastore .ui-autocomplete {
+#page_storelocator.ui-autocomplete {
     width: 404px !important;
     border: 1px solid #333;
     font-size: 18px;
     font-weight: bold;
     padding-left: 12px !important;
 }
-#page_findastore .ui-autocomplete a:hover {
+#page_storelocator .ui-autocomplete a:hover {
     background: none !important;
     color: #999 !important;
 }
@@ -5056,7 +5061,7 @@ h4.ui-state-active {
   color: #333;
 }
 .storeListHolder .header-block {
-  background: rgba(0,204,255,1);
+  background: url(../images/StoresBanner.jpg) no-repeat scroll left top transparent;
   margin-bottom: 20px;
 }
 .storeListHolder .header-copy {
