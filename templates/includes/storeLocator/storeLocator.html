@@ -2,18 +2,24 @@
 
 <!-- jQuery templates -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery-tmpl-min.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/jquery.history.js"></script>
 
 <!-- Google API includes -->
 <script type="text/javascript" src="<venda_protocol>://www.google.com/jsapi"></script>
-<venda_block label=11,ebxtgapikey!=>
-	<!-- API KEY -->
-	<script type="text/javascript" src="<venda_protocol>://maps.googleapis.com/maps/api/js?key=<venda_ebxtgapikey>&libraries=geometry&sensor=true&language=fr&region=fr"></script>
-</venda_block label=11>
-<venda_block label=12,ebxtgapikey=>
-	<!-- NO API KEY -->
-	<script type="text/javascript" src="<venda_protocol>://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=true&language=fr&region=fr"></script>
-</venda_block label=12>
 
+	
+<!-- mp_trans_remove_start-->
+<script type="text/javascript" src="<venda_protocol>://maps.googleapis.com/maps/api/js?key=AIzaSyDshBFtBN0sg8VYjgU-yjLFEnBb3uy3dh8&libraries=geometry&sensor=true&language=en&region=gb"></script>
+<!-- mp_trans_remove_end-->
+<!-- mp_trans_disable_start-->
+<!-- mp_trans_add="FR" 
+<script type="text/javascript" src="<venda_protocol>://maps.googleapis.com/maps/api/js?key=AIzaSyDshBFtBN0sg8VYjgU-yjLFEnBb3uy3dh8&libraries=geometry&sensor=true&language=fr&region=fr"></script>
+-->
+<!-- mp_trans_add="DE" 	
+<script type="text/javascript" src="<venda_protocol>://maps.googleapis.com/maps/api/js?key=AIzaSyDshBFtBN0sg8VYjgU-yjLFEnBb3uy3dh8&libraries=geometry&sensor=true&language=de&region=de"></script>
+-->
+<!-- mp_trans_disable_end-->	
+	
 <!-- Store locator script -->
 <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Storelocator/storelocator-lookup.js"></script>
 <script type="text/javascript" src="/content/ebiz/urbanoutfitters/resources/js/external/facescroll.js"></script>
@@ -112,195 +118,6 @@
 
 </script>
 
-<!-- mp_trans_remove_end-->
-<!-- mp_trans_disable_start-->
-<!-- mp_trans_add="FR" 
-<script id="store-tmpl" type="text/x-jquery-tmpl">
-	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
-		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
-	</h3>
-		
-	<div id="storecontent" class="storecontent">
-		<div class="storeItemHolder">
-			<div class="storedetails_images">
-				{{if Thumb}}
-					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
-				{{else}}
-					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
-				{{/if}}
-
-				<p>${Des3}</p>
-			</div>
-			<div class="storedetails_info">
-				<div class="storedetails_address">
-					<h4>Address</h4>
-					<address>
-					{{if AddressName}}
-						${AddressName}<br/>
-					{{/if}}
-					{{if Address}}
-						${Address}<br/>
-					{{/if}}
-					{{if Address2}}
-						${Address2}<br/>
-					{{/if}}
-					{{if City}}
-						${City}<br/>
-					{{/if}}
-					{{if PostCode}}
-						${PostCode}<br/>
-					{{/if}}
-					</address>
-						{{if Phone}}
-						<div class="tel">
-							<h4>Telephone</h4>
-							<p>${Phone}</p>
-						</div>
-						{{/if}}
-				</div>
-				<div class="storedetails_hours">
-					<h4>Opening times</h4>
-					<table cellspacing="0" cellpadding="0" border="0">
-						<tr>
-							<td class="day">Mon</td>
-							<td class="time">${Mon}</td>
-						</tr>
-						<tr>
-							<td class="day">Tue</td>
-							<td class="time">${Tue}</td>
-						</tr>
-						<tr>
-							<td class="day">Wed</td>
-							<td class="time">${Wed}</td>
-						</tr>
-						<tr>
-							<td class="day">Thu</td>
-							<td class="time">${Thu}</td>
-						</tr>
-						<tr>
-							<td class="day">Fri</td>
-							<td class="time">${Fri}</td>
-						</tr>
-						<tr>
-							<td class="day">Sat</td>
-							<td class="time">${Sat}</td>
-						</tr>
-						<tr>
-							<td class="day">Sun</td>
-							<td class="time">${Sun}</td>
-						</tr>							
-					</table>
-				
-				</div>
-			</div>
-
-			<venda_block label=2,param2!=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
-			</venda_block label=2>
-			<venda_block label=3,param2=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
-			</venda_block label=3>
-		</div>
-	</div>
-
-</script>
-
--->
-<!-- mp_trans_add="DE" 	
-<script id="store-tmpl" type="text/x-jquery-tmpl">
-
-	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
-		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
-	</h3>
-		
-	<div id="storecontent" class="storecontent">
-		<div class="storeItemHolder">
-			<div class="storedetails_images">
-				{{if Thumb}}
-					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
-				{{else}}
-					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
-				{{/if}}
-
-				<p>${Des3}</p>
-			</div>
-			<div class="storedetails_info">
-				<div class="storedetails_address">
-					<h4>Address</h4>
-					<address>
-					{{if AddressName}}
-						${AddressName}<br/>
-					{{/if}}
-					{{if Address}}
-						${Address}<br/>
-					{{/if}}
-					{{if Address2}}
-						${Address2}<br/>
-					{{/if}}
-					{{if City}}
-						${City}<br/>
-					{{/if}}
-					{{if PostCode}}
-						${PostCode}<br/>
-					{{/if}}
-					</address>
-						{{if Phone}}
-						<div class="tel">
-							<h4>Telephone</h4>
-							<p>${Phone}</p>
-						</div>
-						{{/if}}
-				</div>
-				<div class="storedetails_hours">
-					<h4>Opening times</h4>
-					<table cellspacing="0" cellpadding="0" border="0">
-						<tr>
-							<td class="day">Mon</td>
-							<td class="time">${Mon}</td>
-						</tr>
-						<tr>
-							<td class="day">Tue</td>
-							<td class="time">${Tue}</td>
-						</tr>
-						<tr>
-							<td class="day">Wed</td>
-							<td class="time">${Wed}</td>
-						</tr>
-						<tr>
-							<td class="day">Thu</td>
-							<td class="time">${Thu}</td>
-						</tr>
-						<tr>
-							<td class="day">Fri</td>
-							<td class="time">${Fri}</td>
-						</tr>
-						<tr>
-							<td class="day">Sat</td>
-							<td class="time">${Sat}</td>
-						</tr>
-						<tr>
-							<td class="day">Sun</td>
-							<td class="time">${Sun}</td>
-						</tr>							
-					</table>
-				
-				</div>
-			</div>
-
-			<venda_block label=2,param2!=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store details</a></div>
-			</venda_block label=2>
-			<venda_block label=3,param2=storeadd>
-				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
-			</venda_block label=3>
-		</div>
-	</div>
-
-</script>
-
--->
-<!-- mp_trans_disable_end-->	
-
 <div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
 <div id="tag-selectastore" style="display:none;">Select a store</div>
 <div id="tag-selectaregion" style="display:none;">Select a region</div>
@@ -317,12 +134,11 @@
 			<div class="nav">
 			
 				<div id="address_holder">
-  				<h3>UO stores</h3>
+  				<h3>UO Stores</h3>
   				<div class="location-submit">
-  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="search" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
+  					<input id="address" placeholder="Enter your location" class="addressSearch textInput" type="text" value="Enter your location" onfocus="if (this.value == 'Enter your location') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your location';}">
   					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
   				</div>
-					<!-- Refine options will be added as part of V.2 -->
 					<div class="clearfix optionsCheckboxes_holder">
 					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
 					<div class="input">
@@ -369,3 +185,329 @@
 		</div>
 	</div>
 </div>
+
+<!-- mp_trans_remove_end-->
+<!-- mp_trans_disable_start-->
+<!-- mp_trans_add="FR" 
+<script id="store-tmpl" type="text/x-jquery-tmpl">
+	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
+		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
+	</h3>
+		
+	<div id="storecontent" class="storecontent">
+		<div class="storeItemHolder">
+			<div class="storedetails_images">
+				{{if Thumb}}
+					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
+				{{else}}
+					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
+				{{/if}}
+
+				<p>${Des3}</p>
+			</div>
+			<div class="storedetails_info">
+				<div class="storedetails_address">
+					<h4>Adresse</h4>
+					<address>
+					{{if AddressName}}
+						${AddressName}<br/>
+					{{/if}}
+					{{if Address}}
+						${Address}<br/>
+					{{/if}}
+					{{if Address2}}
+						${Address2}<br/>
+					{{/if}}
+					{{if City}}
+						${City}<br/>
+					{{/if}}
+					{{if PostCode}}
+						${PostCode}<br/>
+					{{/if}}
+					</address>
+						{{if Phone}}
+						<div class="tel">
+							<h4>T&eacute;l&eacute;phone</h4>
+							<p>${Phone}</p>
+						</div>
+						{{/if}}
+				</div>
+				<div class="storedetails_hours">
+					<h4>Horaires d'ouverture</h4>
+					<table cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td class="day">Mon</td>
+							<td class="time">${Mon}</td>
+						</tr>
+						<tr>
+							<td class="day">Tue</td>
+							<td class="time">${Tue}</td>
+						</tr>
+						<tr>
+							<td class="day">Wed</td>
+							<td class="time">${Wed}</td>
+						</tr>
+						<tr>
+							<td class="day">Thu</td>
+							<td class="time">${Thu}</td>
+						</tr>
+						<tr>
+							<td class="day">Fri</td>
+							<td class="time">${Fri}</td>
+						</tr>
+						<tr>
+							<td class="day">Sat</td>
+							<td class="time">${Sat}</td>
+						</tr>
+						<tr>
+							<td class="day">Sun</td>
+							<td class="time">${Sun}</td>
+						</tr>							
+					</table>
+				
+				</div>
+			</div>
+
+			<venda_block label=2,param2!=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" style="font-size: 7px;" href="${optionValue}">Informations sur le magasin</a></div>
+			</venda_block label=2>
+			<venda_block label=3,param2=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
+			</venda_block label=3>
+		</div>
+	</div>
+
+</script>
+
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-selectastore" style="display:none;">S&eacute;lectionner un magasin</div>
+<div id="tag-selectaregion" style="display:none;">Select a region</div>
+<div id="tag-selectthisstore" style="display:none;">Select this store</div>
+<div id="tag-storedetails" style="display:none;">Informations sur le magasin</div>
+<div id="tag-tel" style="display:none;">T&eacute;l&eacute;phone: </div>
+<div id="tag-distance" style="display:none;">Distance: </div>
+<div id="tag-back" style="display:none;">Back</div>
+
+<div class="mainHolder">
+	<div class="Storelookup">
+		<div class="meter"><span class="loadingbar"></span></div>
+		<div class="holder">
+			<div class="nav">
+			
+				<div id="address_holder">
+  				<h3>Magasins UO</h3>
+  				<div class="location-submit">
+  					<input id="address" placeholder="Entrer votre ville" class="addressSearch textInput" type="text" value="Entrer votre ville" onfocus="if (this.value == 'Entrer votre ville') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Entrer votre ville';}">
+  					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
+  				</div>
+					<div class="clearfix optionsCheckboxes_holder">
+					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
+					<div class="input">
+					  <ul class="inputs-list">
+						<li>
+						  <label>
+							<input id="optionsCheckbox1" type="checkbox" name="optionsCheckbox1" value="selected">
+							<span>service 1</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox2" type="checkbox" name="optionsCheckbox2" value="selected">
+							<span>service 2</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox3" type="checkbox" name="optionsCheckbox3" value="selected">
+							<span>service 3</span>
+						  </label>
+						</li>
+					  </ul>
+					</div>
+				</div>
+				<div class="storeLocSelectHolder">
+					<p>Ou</p>
+				
+
+					<div class="loadingImg"></div>
+					<select class="storeLocSelect"></select>
+
+				</div>
+				<venda_block label=1,param2!=storeadd>
+					<div class="boxContent altStoreView">
+						<p>Vous pouvez &eacute;galement voir <a href="<venda_dispview scat=storelist>" title="TOUS NOS MAGASINS DANS LE MONDE" class="underline">TOUS NOS MAGASINS DANS LE MONDE ></a></p>  	
+					</div>
+				</venda_block label=1>
+			  	</div>
+				<div class="accordion" id="storelocatorresults"></div>
+			</div>
+			<div id="map_canvas" style="width:460px; height:480px"></div>
+			<div class="interstores"></div>
+		</div>
+	</div>
+</div>
+
+
+-->
+<!-- mp_trans_add="DE" 	
+<script id="store-tmpl" type="text/x-jquery-tmpl">
+
+	<h3 id="${StoreID}" class="storeItem productDetailGradientBox">
+		<a href="#">${StoreName} <span class="distance">${Dist} ${Unit}</span></a>
+	</h3>
+		
+	<div id="storecontent" class="storecontent">
+		<div class="storeItemHolder">
+			<div class="storedetails_images">
+				{{if Thumb}}
+					<img width="125" height="125" src="${Thumb}" alt="${StoreName}">
+				{{else}}
+					<img width="125" height="125" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="No image">
+				{{/if}}
+
+				<p>${Des3}</p>
+			</div>
+			<div class="storedetails_info">
+				<div class="storedetails_address">
+					<h4>Adresse</h4>
+					<address>
+					{{if AddressName}}
+						${AddressName}<br/>
+					{{/if}}
+					{{if Address}}
+						${Address}<br/>
+					{{/if}}
+					{{if Address2}}
+						${Address2}<br/>
+					{{/if}}
+					{{if City}}
+						${City}<br/>
+					{{/if}}
+					{{if PostCode}}
+						${PostCode}<br/>
+					{{/if}}
+					</address>
+						{{if Phone}}
+						<div class="tel">
+							<h4>Telefon</h4>
+							<p>${Phone}</p>
+						</div>
+						{{/if}}
+				</div>
+				<div class="storedetails_hours">
+					<h4>&Ouml;ffnungszeiten</h4>
+					<table cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td class="day">Mon</td>
+							<td class="time">${Mon}</td>
+						</tr>
+						<tr>
+							<td class="day">Tue</td>
+							<td class="time">${Tue}</td>
+						</tr>
+						<tr>
+							<td class="day">Wed</td>
+							<td class="time">${Wed}</td>
+						</tr>
+						<tr>
+							<td class="day">Thu</td>
+							<td class="time">${Thu}</td>
+						</tr>
+						<tr>
+							<td class="day">Fri</td>
+							<td class="time">${Fri}</td>
+						</tr>
+						<tr>
+							<td class="day">Sat</td>
+							<td class="time">${Sat}</td>
+						</tr>
+						<tr>
+							<td class="day">Sun</td>
+							<td class="time">${Sun}</td>
+						</tr>							
+					</table>
+				
+				</div>
+			</div>
+
+			<venda_block label=2,param2!=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Store Infos</a></div>
+			</venda_block label=2>
+			<venda_block label=3,param2=storeadd>
+				<div class="linkstore"><a id="${StoreID}" class="button buttonAlt buttonArrow" href="${optionValue}">Select store</a></div>
+			</venda_block label=3>
+		</div>
+	</div>
+
+</script>
+
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-selectastore" style="display:none;">w&auml;hle einen Store aus</div>
+<div id="tag-selectaregion" style="display:none;">Select a region</div>
+<div id="tag-selectthisstore" style="display:none;">Select this store</div>
+<div id="tag-storedetails" style="display:none;">Store Infos</div>
+<div id="tag-tel" style="display:none;">Telefon: </div>
+<div id="tag-distance" style="display:none;">Entfernung: </div>
+<div id="tag-back" style="display:none;">Back</div>
+
+<div class="mainHolder">
+	<div class="Storelookup">
+		<div class="meter"><span class="loadingbar"></span></div>
+		<div class="holder">
+			<div class="nav">
+			
+				<div id="address_holder">
+  				<h3>UO Stores</h3>
+  				<div class="location-submit">
+  					<input id="address" placeholder="Gebe deinen Ort an" class="addressSearch textInput" type="text" value="Gebe deinen Ort an" onfocus="if (this.value == 'Gebe deinen Ort an') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Gebe deinen Ort an';}">
+  					<input type="submit" name="pcsubmit" id="pcsubmit" class="submit button buttonArrow" value="">
+  				</div>
+					<div class="clearfix optionsCheckboxes_holder">
+					<label id="optionsCheckboxes">Filter options<span class="arrowIcon"></span></label>
+					<div class="input">
+					  <ul class="inputs-list">
+						<li>
+						  <label>
+							<input id="optionsCheckbox1" type="checkbox" name="optionsCheckbox1" value="selected">
+							<span>service 1</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox2" type="checkbox" name="optionsCheckbox2" value="selected">
+							<span>service 2</span>
+						  </label>
+						</li>
+						<li>
+						  <label>
+							<input id="optionsCheckbox3" type="checkbox" name="optionsCheckbox3" value="selected">
+							<span>service 3</span>
+						  </label>
+						</li>
+					  </ul>
+					</div>
+				</div>
+				<div class="storeLocSelectHolder">
+					<p>oder</p>
+				
+
+					<div class="loadingImg"></div>
+					<select class="storeLocSelect"></select>
+
+				</div>
+				<venda_block label=1,param2!=storeadd>
+					<div class="boxContent altStoreView">
+						<p>Du kannst auch <a href="<venda_dispview scat=storelist>" title="ALL UNSERE STORES" class="underline">ALL UNSERE STORES</a> auf einmal ansehen</p>  	
+					</div>
+				</venda_block label=1>
+			  	</div>
+				<div class="accordion" id="storelocatorresults"></div>
+			</div>
+			<div id="map_canvas" style="width:460px; height:480px"></div>
+			<div class="interstores"></div>
+		</div>
+	</div>
+</div>
+
+-->
+<!-- mp_trans_disable_end-->	

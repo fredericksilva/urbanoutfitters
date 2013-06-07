@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 
 
     jQuery('.accordion').hide();
-    jQuery('#map_canvas').css('opacity',0);
+    jQuery('#map_canvas').css({ 'margin-left': '6000px','float': 'none'});
 
     Venda.storeloc.ajaxGetStores('storefinder');
     Venda.storeloc.Initialize();
@@ -124,7 +124,8 @@ jQuery(document).ready(function() {
                 Venda.storeloc.updateMap();
             
                 jQuery('.accordion').show();
-                jQuery('#map_canvas').animate({ opacity: 1 }, 1000 );
+                jQuery('#map_canvas').css({ 'margin-left': '0','float': 'left'});
+
                 
 
                 Venda.storeloc.updateUriQueries('0');
@@ -163,7 +164,7 @@ Venda.storeloc.ajaxGetStores = function(stryid) {
         
         Venda.storeloc.restoreState();
         jQuery('.storeLocSelect').selectmenu({ style:'dropdown', maxHeight: 230 });
-        jQuery('#page_findastore .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
+        jQuery('#page_storelocator .ui-selectmenu-menu-dropdown').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });
 
     });
 }
@@ -191,7 +192,6 @@ Venda.storeloc.Initialize = function(){
       },
       mapTypeId: 'roadmap'
     });
-  
     //GEOCODER
     Venda.storeloc.geocoder = new google.maps.Geocoder();
 
@@ -227,14 +227,13 @@ Venda.storeloc.updateMap = function(){
     Venda.storeloc.bounds = new google.maps.LatLngBounds();
 
     // This adds the point of the marker to the bounds of the view
-    var point = new google.maps.LatLng(Venda.storeloc.marker.getPosition().lat() , Venda.storeloc.marker.getPosition().lng());
+    var point = new google.maps.LatLng(Venda.storeloc.marker.getPosition().lat(), Venda.storeloc.marker.getPosition().lng());
     Venda.storeloc.bounds.extend(point);
     
     Venda.storeloc.cacluateDistance();
     
     // This sorts by distance from point
     Venda.storeloc.stores = Venda.storeloc.stores.sort(function(a,b) { return parseFloat(a.Dist) - parseFloat(b.Dist) } );
-
     Venda.storeloc.populateMarkers();
     
     // Zoom to fit
@@ -371,7 +370,8 @@ Venda.storeloc.restoreState = function() {
             Venda.storeloc.updateMap();
         
             jQuery('.accordion').fadeIn();
-            jQuery('#map_canvas').animate({ opacity: 1 }, 1500 );
+            jQuery('#map_canvas').css({ 'margin-left': '0','float': 'left'});
+
 
                 if (activeTab > 0){
                     jQuery('.accordion').accordion( "activate" , activeTab);
@@ -454,7 +454,7 @@ Venda.storeloc.fillForm = function(that){
 // Deletes all markers in the array by removing references to them
 Venda.storeloc.deleteOverlays = function() {
   if (Venda.storeloc.storeMarkers) {
-    for (i in Venda.storeloc.storeMarkers) {
+    for (i=0; i < Venda.storeloc.storeMarkers.length; i++) {
       Venda.storeloc.storeMarkers[i].setMap(null);
     }
     Venda.storeloc.storeMarkers.length = 0;
@@ -530,7 +530,7 @@ jQuery(".accordion h3").live("click", function(){
 });
 
 /// General store locator store link
-jQuery("#page_storelocator .linkstore a").live("click", function(e){
+jQuery("#page_storelocators .linkstore a").live("click", function(e){
 
     e.preventDefault();    
 
