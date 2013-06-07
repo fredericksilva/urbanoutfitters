@@ -732,7 +732,7 @@ div.orscTotal {
     font-size: 0.9em;
     left: 0;
     position: absolute;
-    text-transform: lowercase;
+    text-transform: none;
     top: 18px;
     width: 200px;
 }
