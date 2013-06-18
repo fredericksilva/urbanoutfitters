@@ -23,15 +23,15 @@
 
 <venda_inctemplate name=textEmailBodyCancel,type=includes/emailContents>
 
-<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>We apologise for any inconvenience this may have caused. If you have any questions regarding this order, please <a href="<venda_dispview page=contactus>"><b>email us</b></a> or ring us at <venda_ebizarea> <venda_ebizphone> 24 hours Mon-Fri, 9:00-18:00 Sat and Sun.
+<venda_block label=1031,ohusgrrf!=guest_de,ohusgrrf!=guest_fr>We apologise for any inconvenience this may have caused. If you have any questions regarding this order, please <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_cancelled-_-all"><b>email us</b></a> or ring us at <venda_ebizarea> <venda_ebizphone> 24 hours Mon-Fri, 9:00-18:00 Sat and Sun.
 
 
 Thank you for shopping at <venda_ebizurl>.</venda_block label=1031>
-<venda_block label=1032,ohusgrrf=guest_de>Wir entschuldigen uns für jegliche dadurch verursachte Unannehmlichkeiten. Bei Fragen zu dieser Bestellung, kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>"><b>schick uns eine e-mail</b></a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag, 09:00 Uhr bis 19:00 Uhr.
+<venda_block label=1032,ohusgrrf=guest_de>Wir entschuldigen uns für jegliche dadurch verursachte Unannehmlichkeiten. Bei Fragen zu dieser Bestellung, kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_cancelled-_-all"><b>schick uns eine e-mail</b></a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag, 09:00 Uhr bis 19:00 Uhr.
 
 
 Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de/.</venda_block label=1032>
-<venda_block label=1033,ohusgrrf=guest_fr>Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, <a href="<venda_dispview page=contactus>"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 19h00.
+<venda_block label=1033,ohusgrrf=guest_fr>Veuillez nous excuser pour tout inconvénient qui pourrait en découler. Pour toute question concernant cette commande, <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_cancelled-_-all"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 19h00.
 
 
 Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr/.

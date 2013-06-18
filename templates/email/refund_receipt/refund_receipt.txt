@@ -15,7 +15,7 @@ Your return from order <venda_ohordnum> was processed on <venda_nowdaymon>/<vend
 
 
 
-For questions related to your order, please <a href="<venda_dispview page=contactus>"><b>email us</b></a> or ring us at <venda_ebizphone> 24 hours a day Mon-Fri, 9:00 - 18:00 Sat and Sun.
+For questions related to your order, please <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_refunds-_-all"><b>email us</b></a> or ring us at <venda_ebizphone> 24 hours a day Mon-Fri, 9:00 - 18:00 Sat and Sun.
 
 
 
@@ -30,7 +30,7 @@ Die Rücksendung Ihrer Bestellung <venda_ohordnum> wurde am <venda_nowdaymon>/<ve
 Wenn Ihre Bestellung einen Werberabatt enthalten hat, haben wir dies berücksichtigt. Aus diesem Grund kann der Rückerstattungspreis der einzelnen Artikel vom ursprünglichen Verkaufspreis abweichen.
 
 
-Bei Fragen bezüglich Ihrer Bestellung, kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>"><b>schick uns eine e-mail</b></a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.
+Bei Fragen bezüglich Ihrer Bestellung, kontaktieren Sie uns bitte <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_refunds-_-all"><b>schick uns eine e-mail</b></a> oder rufen Sie uns an unter 06 93 80 78 93 39 Montag bis Freitag von 10:00 bis 18:00 Uhr.
 
 
 Vielen Dank für Ihren Einkauf bei http://www.urbanoutfitters.de
@@ -44,7 +44,7 @@ Le retour concernant votre commande <venda_ohordnum> a été traité le <venda_nowd
 Si votre commande initiale prenait en compte un code promotionnel, nous avons considéré ce détail, le prix de remboursement des articles par unité peut donc varier du prix de vente d'origine.
 
 
-Pour toute question concernant votre commande, <a href="<venda_dispview page=contactus>"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
+Pour toute question concernant votre commande, <a href="<venda_dispview page=contactus>&cm_mmc=service-_-all-_-all_refunds-_-all"><b>envoyez-nous un email</b></a> ou par téléphone au 01 57 32 44 22 du lun. au ven., de 9h00 à 18h00.
 
 
 Merci d'avoir fait vos achats sur http://www.urbanoutfitters.fr
