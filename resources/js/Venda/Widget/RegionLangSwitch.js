@@ -109,16 +109,35 @@ var redirectURL = "",
     } else {
       redirectURL = Venda.Widget.RegionLangSwitch.ebizURL + "/page/home" + "&setlocn=" + changeValue
     }
+    window.location.href = redirectURL;
+	try { 
+		var cur = Venda.Ebiz.CookieJar.get("locn");
+		switch (cur) {
+			case 'restofworld': cur = 'EUR';
+			break;
+			case 'eur': cur = 'GBP';
+			break;
+			default: ' ';
+		}
+		_gaq.push(['_trackEvent', 'Currency', cur]);
+	} catch(err){ };
+	return false;
   } else { 
       if (changeValue != "us") {
-        redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en) + "/" + currentLoc
+        redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en) + "/" + currentLoc;
+        window.location.href = redirectURL;
+        return false;
       } else {
-        redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en)
+        redirectURL = (langOptions[changeValue] ? langOptions[changeValue] : langOptions.en);
+        window.open(
+  			redirectURL,
+  			'_blank'
+  		);
+  		return false;
       }
   }
-	window.location.href = redirectURL;
-	return false;
 };
+
 
 Venda.Widget.RegionLangSwitch.conversionSwitch = function(){
   var convertCurr = Venda.Ebiz.CookieJar.get("setCurrency"),
