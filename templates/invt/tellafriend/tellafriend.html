@@ -16,11 +16,12 @@
 <input type="hidden" name="layout" value="">
 
 <div class="tellafriend">
-<h1><venda_text id=desktop.heading.tell_friend></h1>
+<h1>Share With A Friend</h1>
 <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
-<p><venda_text id=desktop.form.tell_friend_instructions> <strong><venda_invtname></strong>.</p>
+<p>If you've seen something you reckon your mate would like, use the form below to send a personal message and link to <strong><venda_invtname></strong>. We'll even give you a little preview of the email they'll receive!.</p>
 
 <fieldset>
+* Required Fields
 <div><label for="fname"><venda_text id=desktop.form.your_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> 
 <venda_userinfo>
 <venda_block label=102,ustype!=R><input name="fname" size="20" maxlength="50" value=""></venda_block label=102>
@@ -42,3 +43,25 @@
 <!-- tpxt used for crumbtrail -->
 <venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
 <venda_tpxt mode=set,name=track,value=tellafriend>
+
+<style>
+.tellafriendDialog {
+	background: url('<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/grid_tile.jpg') repeat scroll 0 0 #fff;
+	border: 2px solid #020202;
+}
+.tellafriendDialog .ui-dialog-titlebar {
+	display: none !important;
+}
+.tellafriendDialog .ui-dialog-content {
+	padding: 25px 42px;
+}
+.tellafriendDialog h1 {
+	position: relative;
+	font-size: 34px;
+	text-transform: uppercase;
+}
+.tellafriendDialog p {
+	font-size: 16px;
+	line-height: 22px;
+}
+</style>
