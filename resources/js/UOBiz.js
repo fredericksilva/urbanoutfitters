@@ -57,11 +57,10 @@ jQuery(function () {
 	}
 });
 
-
 // FROM ./templates/invt/productdetail/productdetail.html
 jQuery(function () {
 	Venda.Ebiz.initialDialog({
-		createDialogList : '.emwbisLink, #tellafriend_link, #writereview_link, #readreview_link',
+		createDialogList : '.emwbisLink, #tellafriend_link, #writereview_link, #readreview_link, .submitTellafriend',
 		closeDialogList : '#back_link',
 		settings : {
 			'width' : '500',
