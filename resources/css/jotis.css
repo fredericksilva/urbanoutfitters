@@ -2397,3 +2397,189 @@ form#commentForm #gals.submitFormDe {
 form#commentForm #gals.submitFormDe:hover {
 	background-position: -5px -113px;
 }
+
+/** Tellafriend **/
+#tellafriend_link {
+	box-shadow: rgba(0, 0, 0, 0.6) 2px 1px 2px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.6) 2px 1px 2px;
+	border: 1px solid rgb(204, 204, 204);
+	background-color: white;
+	width: 120px;
+	height: 15px;
+	display: block;
+	padding: 4px 8px 3px 0px;
+	text-align: right;
+	font-size: 11px;
+	font-weight: bold;
+	position:relative;
+}
+#tellafriend_link span {
+	background: url('../images/uo-png-sprite.png') no-repeat;
+	background-position: -191px -81px;
+	height: 9px;
+	width: 14px;
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: 9px;
+}
+.tellafriendDialog {
+	background: url('../images/grid_tile.jpg') repeat scroll 0 0 #fff;
+	border: 2px solid #020202;
+}
+.tellafriendDialog .ui-dialog-titlebar {
+	display: none !important;
+}
+.tellafriendDialog .ui-dialog-content {
+	padding: 25px 42px;
+}
+.tellafriendDialog h1 {
+	background: url('../images/tellafriend-sprite.png') no-repeat;
+	background-position: 0 0;
+	height: 35px;
+	width: 456px;
+	position: relative;
+}
+.tellafriendDialog p {
+	font-size: 16px;
+	line-height: 22px;
+}
+.tellafriendDialog fieldset {
+	width: 486px;
+	display: inline-block;
+	vertical-align: top;
+}
+.tellafriendDialog fieldset > div:first-of-type {
+	margin-top: -3px;
+}
+.tellafriendDialog label {
+	display:none;
+}
+.tellafriendDialog input.tellaInput {
+	width: 450px;
+	height: 23px;
+	padding: 5px;
+	border: 2px solid;
+	font-size: 16px;
+	color: #58595b;
+	background-color: #f7f7f7;
+}
+.tellafriendDialog textarea {
+	width: 450px;
+	height: 171px;
+	padding: 5px;
+	border: 2px solid;
+	font-size: 14px;
+	color: #58595b;
+	background-color: #f7f7f7;
+}
+.tellafriendDialog .tellafriendPIC {
+	display: inline-block;
+	position:relative;
+}
+.tellafriendDialog .tellafriendPI img {
+	width: 207px;
+	height: 313px;
+	border: 2px solid;
+	position: absolute;
+	top: -3px;
+	left: 4px;
+	z-index: 1;
+}
+.tellafriendDialog .tellafriendBG {
+	width: 211px;
+	height: 317px;
+	background-color: #333;
+	z-index: 0;
+}
+.tellafriendDialog .submit {
+	background: url('../images/uo-png-sprite.png') no-repeat;
+	background-position: -8px -547px;
+	width: 185px;
+	height: 38px;
+	border: 0;
+	float: left;
+}
+.tellafriendDialog .submit:hover {
+	background-position: -12px -543px;
+}
+.tellafriendthankyou {
+	width: 786px;
+	margin: 0 auto;
+	height:auto;
+	text-align: center;
+}
+.tellafriendthankyou h1 {
+	background: url('../images/tellafriend-sprite.png') no-repeat;
+	background-position: 0 -45px;
+	height: 81px;
+	width: 416px;
+	position: relative;
+	margin: 10px auto;
+}
+.tellafriendthankyou p {
+	font-size: 20px;
+}
+.tellafriendthankyou .dontStop {
+	background: url('../images/tellafriend-sprite.png') no-repeat;
+	background-position: 0 -136px;
+	width: 221px;
+	height: 36px;
+	display: block;
+	margin: 32px auto 0;
+}
+.tellafriendthankyou .keepGoing {
+	background: url('../images/tellafriend-sprite.png') no-repeat;
+	background-position: 0 -183px;
+	width: 168px;
+	height: 24px;
+	display: block;
+	margin: 43px auto 0;
+}
+.tellafriendthankyou a.shop {
+	background: url('../images/uo-png-sprite.png?v=4') no-repeat;
+	background-position: -8px -590px;
+	width: 185px;
+	height: 39px;
+	display: block;
+	margin: 10px auto;
+}
+.tellafriendthankyou a.shop:hover {
+	background-position: -12px -586px;
+}
+.tellafriendthankyou ul {
+	display: block;
+	list-style-type: none;
+	width: 312px;
+	margin: 8px auto;
+}
+.tellafriendthankyou li {
+	display: block;
+	float: left;
+}
+.tellafriendthankyou li a {
+	width:32px;
+	height:32px;
+	margin:0 5px 0 0;
+	border:1px solid black;
+	background: url("../images/uo-png-sprite.png?v=4") no-repeat white;
+}
+.tellafriendthankyou li a:hover {
+	border: 2px solid black;
+	width: 30px;
+	height: 30px;
+}
+.tellafriendthankyou li a.foot-fb { display: block;background-position:-40px -377px;}
+.tellafriendthankyou li a.foot-tw { display: block;background-position:-7px -377px;}
+.tellafriendthankyou li a.foot-pt { display: block;background-position:-73px -377px;}
+.tellafriendthankyou li a.foot-in { display: block;background-position:-106px -377px;}
+.tellafriendthankyou li a.foot-fb:hover { display: block;background-position:-41px -378px;}
+.tellafriendthankyou li a.foot-tw:hover { display: block;background-position:-8px -378px;}
+.tellafriendthankyou li a.foot-pt:hover { display: block;background-position:-74px -378px;}
+.tellafriendthankyou li a.foot-in:hover { display: block;background-position:-107px -378px;}
+.tellafriendthankyou li a.foot-blog { display: block;background-position:-39px -410px;width:71px;height:32px; background-color: #fffca3;}
+.tellafriendthankyou li a.foot-comm { display: block;background-position:-181px -410px;width:71px;height:32px; background-color: #ffc5ff;}
+.tellafriendthankyou li a.foot-comm-fr { display: block;background-position:-181px -474px;width:71px;height:32px; background-color: #ffc5ff;}
+.tellafriendthankyou li a.foot-blog:hover { display: block;background-position:-40px -411px;width:69px;height:30px;}
+.tellafriendthankyou li a.foot-comm:hover { display: block;background-position:-182px -411px;width:69px;height:30px;}
+.tellafriendthankyou li a.foot-comm-fr:hover { display: block;background-position:-182px -475px;width:69px;height:30px;}
