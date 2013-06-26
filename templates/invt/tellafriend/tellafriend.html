@@ -50,7 +50,22 @@
 <!-- tpxt used for crumbtrail -->
 <venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
 <venda_tpxt mode=set,name=track,value=tellafriend>
-
+<script>
+jQuery('#tellafriendform').submit(function () {
+	var v = true,
+        rEx = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-\+])+\.)+([a-zA-Z0-9]{2,4})+$/,
+        vfm = this;
+    e = ""
+    if (!vfm.email.value || !vfm.email.value.match(rEx)) {
+        v = false;
+        e += "Please enter a valid e-mail address.\n";
+    }
+    if (!v) {
+        alert(e);
+    }
+    return v;
+});
+</script>
 <style>
 @font-face {
     font-family: "UO Font";
