@@ -18,19 +18,20 @@
 <input type="hidden" name="layout" value="">
 
 <div class="tellafriend">
+<a href="<venda_dispview invt=<venda_invtref>>" class="closeLink"><img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0"></a>
 <h1></h1>
 <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
-<p>If you've seen something you reckon your mate would like, use the form below to send a personal message and link to <strong><venda_invtname></strong>. We'll even give you a little preview of the email they'll receive!.</p>
+<p>If you've seen something you reckon your mate would like, use the form below to send a personal message and link to <strong><venda_invtname></strong>.</p>
 
 <span style="display: block;margin: 10px 0;">* Required Fields</span>
 <fieldset>
 <div><label for="fname"><venda_text id=desktop.form.your_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> 
 <venda_userinfo>
-<venda_block label=102,ustype!=R><input class="tellaInput" name="fname" size="20" maxlength="50" value="* Your Name"></venda_block label=102>
+<venda_block label=102,ustype!=R><input class="tellaInput" name="fname" size="20" maxlength="50" value="* Your Name" onblur="this.value=!this.value?'* Your Name':this.value;" onclick="this.value='';"></venda_block label=102>
 <venda_block label=103,ustype=R><input class="tellaInput" name="fname" size="20" maxlength="50" value="<venda_fname>&nbsp;<venda_lname>" readonly="1"></venda_block label=103>
 </venda_userinfo></div>
-<div><label for="name"><venda_text id=desktop.form.friends_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="name" id="name" size="20" maxlength="50" value="* Your Friend's Name"></div>
-<div><label for="email"><venda_text id=desktop.form.friends_email><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="email" id="email" size="20" maxlength="150" value="* Your Friend's Email"></div>
+<div><label for="name"><venda_text id=desktop.form.friends_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="name" id="name" size="20" maxlength="50" value="* Your Friend's Name" onblur="this.value=!this.value?'* Your Friend\'s Name':this.value;" onclick="this.value='';"></div>
+<div><label for="email"><venda_text id=desktop.form.friends_email><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="email" id="email" size="20" maxlength="150" value="* Your Friend's Email" onblur="this.value=!this.value?'* Your Friend\'s Email':this.value;" onclick="this.value='';"></div>
 <div><label for="field1"><venda_text id=desktop.form.message><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <textarea cols="46" name="field1" id="field1" rows="3">Write your message here... (200 max.)</textarea></div>
 </fieldset>
 
@@ -39,10 +40,10 @@
 <div class="tellafriendBG"></div>
 </div>
 
-<span style="display: block;margin: 10px 0;">Your friend's email addresses won't be used for promotional purposes and won't be shared with 3rd parties.<br /><b><a href="<venda_dispview page=privacypolicy>">Read our privacy policy ></a></b></span>
+<span style="display: block;margin: 10px 0;">Your friend's email addresses won't be used for promotional purposes and won't be shared with 3rd parties.<br /><b><a href="<venda_dispview page=privacypolicy>" target="_blank">Read our privacy policy ></a></b></span>
 
 <div>
-<input type="submit" value="" class="button  buttonArrow right submit submitTellafriend">
+<input type="submit" value="" class="button  buttonArrow right submit submitTellafriend" onclick="_gaq.push(['_trackEvent', 'Email Friend', 'Share']);">
 </div>
 </div>
 </form>
@@ -62,6 +63,7 @@ jQuery('#tellafriendform').submit(function () {
     }
     if (!v) {
         alert(e);
+        vfm.email.focus();
     }
     return v;
 });

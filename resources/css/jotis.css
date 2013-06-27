@@ -2455,6 +2455,14 @@ form#commentForm #gals.submitFormDe:hover {
 .tellafriendDialog label {
 	display:none;
 }
+.tellafriendDialog .closeLink {
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: -10px;
+	right: -25px;
+	padding: 0;
+}
 .tellafriendDialog input.tellaInput {
 	width: 450px;
 	height: 23px;
@@ -2502,6 +2510,9 @@ form#commentForm #gals.submitFormDe:hover {
 }
 .tellafriendDialog .submit:hover {
 	background-position: -12px -543px;
+}
+.tellafriend {
+	position:relative;
 }
 .tellafriendthankyou {
 	width: 786px;
