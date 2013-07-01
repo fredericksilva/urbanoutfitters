@@ -1,5 +1,7 @@
 <script type="text/javascript">
     jQuery(function() {
+    	var pi = jQuery('.cloud-zoom').html();
+    	jQuery('.tellafriendPI').html(pi);
         jQuery("body").trigger("tellafriendform-loaded");
     });
 </script>
@@ -8,33 +10,40 @@
 <input type="hidden" name="ex" value="co_disp-referfr">
 <input type="hidden" name="bsref" value="<venda_bsref>">
 <input type="hidden" name="from" value="<venda_setting type=ebiz,name=email>">
-<input type="hidden" name="subject" value="<venda_text id=desktop.form.tell_friend_subject>">
+<input type="hidden" name="subject" value="Urban Outfitters Product Recommendation">
 <input type="hidden" name="invt" value="<venda_invtref>">
 <input type="hidden" name="label1" value="">
-<input type="hidden" name="temp" value="thankyou">
+<input type="hidden" name="temp" value="tellafriendthankyou">
 <input type="hidden" name="htxt" value="<venda_htxt mode=make,foo=tellafriend>">
 <input type="hidden" name="layout" value="">
 
 <div class="tellafriend">
-<h1><venda_text id=desktop.heading.tell_friend></h1>
+<a href="<venda_dispview invt=<venda_invtref>>" class="closeLink"><img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0"></a>
+<h1></h1>
 <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
-<p><venda_text id=desktop.form.tell_friend_instructions> <strong><venda_invtname></strong>.</p>
+<p>If you've seen something you reckon your mate would like, use the form below to send a personal message and link to <strong><venda_invtname></strong>.</p>
 
+<span style="display: block;margin: 10px 0;">* Required Fields</span>
 <fieldset>
 <div><label for="fname"><venda_text id=desktop.form.your_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> 
 <venda_userinfo>
-<venda_block label=102,ustype!=R><input name="fname" size="20" maxlength="50" value=""></venda_block label=102>
-<venda_block label=103,ustype=R><input name="fname" size="20" maxlength="50" value="<venda_fname>&nbsp;<venda_lname>" readonly="1"></venda_block label=103>
+<venda_block label=102,ustype!=R><input class="tellaInput" name="fname" size="20" maxlength="50" value="* Your Name" onblur="this.value=!this.value?'* Your Name':this.value;" onclick="this.value='';"></venda_block label=102>
+<venda_block label=103,ustype=R><input class="tellaInput" name="fname" size="20" maxlength="50" value="<venda_fname>&nbsp;<venda_lname>" readonly="1"></venda_block label=103>
 </venda_userinfo></div>
-<div><label for="name"><venda_text id=desktop.form.friends_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input name="name" id="name" size="20" maxlength="50"></div>
-<div><label for="email"><venda_text id=desktop.form.friends_email><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input name="email" id="email" size="20" maxlength="150"></div>
-<div><label for="field1"><venda_text id=desktop.form.message><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <textarea cols="46" name="field1" id="field1" rows="3"><venda_text id=desktop.form.tell_friend_message></textarea></div>
-<p class="charRemain"><span class="textMsgCount">200</span> <venda_text id=desktop.info.characters_remaining></p>
+<div><label for="name"><venda_text id=desktop.form.friends_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="name" id="name" size="20" maxlength="50" value="* Your Friend's Name" onblur="this.value=!this.value?'* Your Friend\'s Name':this.value;" onclick="this.value='';"></div>
+<div><label for="email"><venda_text id=desktop.form.friends_email><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="email" id="email" size="20" maxlength="150" value="* Your Friend's Email" onblur="this.value=!this.value?'* Your Friend\'s Email':this.value;" onclick="this.value='';"></div>
+<div><label for="field1"><venda_text id=desktop.form.message><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <textarea cols="46" name="field1" id="field1" rows="3">Write your message here... (200 max.)</textarea></div>
 </fieldset>
 
+<div class="tellafriendPIC">
+<div class="tellafriendPI"></div>
+<div class="tellafriendBG"></div>
+</div>
+
+<span style="display: block;margin: 10px 0;">Your friend's email addresses won't be used for promotional purposes and won't be shared with 3rd parties.<br /><b><a href="<venda_dispview page=privacypolicy>" target="_blank">Read our privacy policy ></a></b></span>
+
 <div>
-<a href="<venda_dispview invt=<venda_invtref>>" id="back_link" class="button left"><venda_text id=desktop.button.previous></a>
-<input type="submit" value="<venda_text id=desktop.button.continue>" class="button  buttonArrow right submit submitTellafriend">
+<input type="submit" value="" class="button  buttonArrow right submit submitTellafriend" onclick="_gaq.push(['_trackEvent', 'Email Friend', 'Share']);">
 </div>
 </div>
 </form>
@@ -42,3 +51,20 @@
 <!-- tpxt used for crumbtrail -->
 <venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
 <venda_tpxt mode=set,name=track,value=tellafriend>
+<script>
+jQuery('#tellafriendform').submit(function () {
+	var v = true,
+        rEx = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-\+])+\.)+([a-zA-Z0-9]{2,4})+$/,
+        vfm = this;
+    e = ""
+    if (!vfm.email.value || !vfm.email.value.match(rEx)) {
+        v = false;
+        e += "Please enter a valid e-mail address.\n";
+    }
+    if (!v) {
+        alert(e);
+        vfm.email.focus();
+    }
+    return v;
+});
+</script>

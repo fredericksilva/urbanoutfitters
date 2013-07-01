@@ -57,11 +57,10 @@ jQuery(function () {
 	}
 });
 
-
 // FROM ./templates/invt/productdetail/productdetail.html
 jQuery(function () {
 	Venda.Ebiz.initialDialog({
-		createDialogList : '.emwbisLink, #tellafriend_link, #writereview_link, #readreview_link',
+		createDialogList : '.emwbisLink, #tellafriend_link, #writereview_link, #readreview_link, .submitTellafriend',
 		closeDialogList : '#back_link',
 		settings : {
 			'width' : '500',
@@ -790,7 +789,7 @@ Venda.Ebiz.initialDialog = function(dialogList){
 Venda.Ebiz.dialogObject = '';
 jQuery.fn.createDialog = function(selector, settings, closePopupId, dialogClassName , anchorName){
 	dialogClassName = dialogClassName+"Dialog";
-	var dialogOpts = {autoOpen: false, closeOnEscape:true,resizable: false, width: 'auto', modal: true,dialogClass:dialogClassName, close: function() {dialogObj.dialog( "destroy" ); dialogObj.remove(); }}
+	var dialogOpts = {autoOpen: false, closeOnEscape:true,resizable: false, width: 'auto', modal: true, zIndex : '1003', dialogClass:dialogClassName, close: function() {dialogObj.dialog( "destroy" ); dialogObj.remove(); }}
 	var H=jQuery(window).height();	
 	divObj = jQuery("<div>").attr("id",selector).appendTo("body");
 	dialogObj = jQuery(divObj);/* popup object */
