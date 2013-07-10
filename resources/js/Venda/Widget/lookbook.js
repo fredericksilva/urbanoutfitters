@@ -66,9 +66,9 @@ Venda.Lookbook.Widgets = {
 					for (var r = 0; r < data.digibook[i].row.length; r++) {
 						for (var s = 0; s < data.digibook[i].row[r].slides.length; s++) {
 							h += '<div class="section ' + data.digibook[i].row[r].slides[s].spread + '">';
-							h += '<img src="/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/lazyLoader.png" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading ' + Venda.Lookbook.Widgets.options.lazy + '" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.split("_").pop() + '\']);" />';
+							h += '<img src="/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/lazyLoader.png" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading ' + Venda.Lookbook.Widgets.options.lazy + '" />';
 							for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
-								h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.split("_").pop() + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
+								h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;"></a>';
 							};
 							h += '<p class="' + Venda.Lookbook.Widgets.options.lookbook + 'SectionText">' + data.digibook[i].row[r].slides[s].text + '</p>';
 							h += '</div>';
