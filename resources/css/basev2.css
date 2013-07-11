@@ -5038,6 +5038,7 @@ h4.ui-state-active {
 }
 .storeListHolder .storeListItem {
   position: relative;
+  height: 180px;
 }
 .storeListHolder .linkstore {
   position: absolute;
