@@ -4,7 +4,8 @@
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0;}
 * {text-shadow: none !important; -webkit-text-shadow: none !important;font-family: ComfortaaRegular !important;}
 .menubox{background: white;}
-.header, .ui-content, .ui-footer, .ui-header.ui-bar-a {background: url("../../images/mobile/001_background_tile.png") !important;}
+#mobile { background: url("../../images/turq_spots50.png") #ffffff !important; }
+.header, .ui-content, .ui-footer, .ui-header.ui-bar-a { background: none !important; }
 p, div, h1, h2, h3, h4, h5, h6 {line-height: 1.2em;}
 span{line-height:1.4em;}
 body {font-family: 'ComfortaaRegular'; width:100%;}
