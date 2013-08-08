@@ -773,8 +773,10 @@ Venda.Attributes.setSelectedJSON = function (attName,attValue, uID){
 			}
 		}
 	}
-	if(Venda.Attributes.productArr[0].attSet[attName]) {
-	 Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+	if(Venda.Attributes.productArr[0]) {
+		if(Venda.Attributes.productArr[0].attSet[attName]) {
+			Venda.Attributes.productArr[0].attSet[attName].imageRef = Venda.Attributes.getValueRef(attName,attValue);
+		}
 	}
 };
 
