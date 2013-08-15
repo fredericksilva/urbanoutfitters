@@ -1,0 +1,325 @@
+{
+	"digibook": [{
+		"row": [{
+			"slides": [{
+				"number": "1",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/slide_01_uk.jpg",
+				"text": "Add edge to Kimchi Blue's pretty dresses with a Vintage Renewal denim jacket and colour-pop headphones.",
+				"hotspots": [{
+					"sku": "5114438884498",
+					"xcord": 150,
+					"ycord": 117
+				}, {
+					"sku": "5126466610054",
+					"xcord": 310,
+					"ycord": 277
+				}, {
+					"sku": "5110422960117",
+					"xcord": 282,
+					"ycord": 71
+				}, {
+					"sku": "5314466127469",
+					"xcord": 309,
+					"ycord": 277
+				}, {
+					"sku": "5771463418850",
+					"xcord": 152,
+					"ycord": 270
+				}, {
+					"sku": "5743421960581",
+					"xcord": 198,
+					"ycord": 460
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "2",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/slide_02_uk.jpg",
+				"text": "Add edge to Kimchi Blue's pretty dresses with a Vintage Renewal denim jacket and colour-pop headphones.",
+				"hotspots": [{
+					"sku": "5222462111227",
+					"xcord": 616,
+					"ycord": 357
+				}, {
+					"sku": "5324428571575",
+					"xcord": 594,
+					"ycord": 474
+				}, {
+					"sku": "5212438048872",
+					"xcord": 631,
+					"ycord": 278
+				}, {
+					"sku": "5232462119000",
+					"xcord": 781,
+					"ycord": 117
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "3",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/models_2.jpg",
+				"text": "Growling leopard print and tiger striped camo; Worland and Anerkjendt deliver summer essentials with bite.",
+				"hotspots": [{
+					"sku": "5214466490700",
+					"xcord": 124,
+					"ycord": 203
+				}, {
+					"sku": "5221466491004",
+					"xcord": 291,
+					"ycord": 349
+				}, {
+					"sku": "5326408129432",
+					"xcord": 311,
+					"ycord": 487
+				}, {
+					"sku": "5851434143345",
+					"xcord": 281,
+					"ycord": 108
+				}, {
+					"sku": "5130438571333",
+					"xcord": 599,
+					"ycord": 257
+				}, {
+					"sku": "5114423196933",
+					"xcord": 599,
+					"ycord": 165
+				}, {
+					"sku": "5771445702788",
+					"xcord": 797,
+					"ycord": 433
+				}, {
+					"sku": "5319428570850",
+					"xcord": 610,
+					"ycord": 468
+				}, {
+					"sku": "5752432264563",
+					"xcord": 629,
+					"ycord": 26
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "4",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/models_3.jpg",
+				"text": "Sporty accessories and simple Scandinavian silhouettes nod to a new wave of style.",
+				"hotspots": [{
+					"sku": "5122433739090",
+					"xcord": 337,
+					"ycord": 268
+				}, {
+					"sku": "5116433472844",
+					"xcord": 302,
+					"ycord": 77
+				}, {
+					"sku": "5319455531233",
+					"xcord": 322,
+					"ycord": 460
+				}, {
+					"sku": "5114444416692",
+					"xcord": 177,
+					"ycord": 217
+				}, {
+					"sku": "5222434897711",
+					"xcord": 589,
+					"ycord": 331
+				}, {
+					"sku": "5324444268492",
+					"xcord": 720,
+					"ycord": 499
+				}, {
+					"sku": "5212405458833",
+					"xcord": 757,
+					"ycord": 259
+				}, {
+					"sku": "5851469060002",
+					"xcord": 740,
+					"ycord": 23
+				}, {
+					"sku": "5232405458899",
+					"xcord": 600,
+					"ycord": 127
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "5",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/models_4.jpg",
+				"text": "Gritty, down-to-earth styling gives denim a street-smart overhaul.",
+				"hotspots": [{
+					"sku": "5212436314001",
+					"xcord": 166,
+					"ycord": 127
+				}, {
+					"sku": "5222440021506",
+					"xcord": 161,
+					"ycord": 365
+				}, {
+					"sku": "5324461297482",
+					"xcord": 147,
+					"ycord": 508
+				}, {
+					"sku": "5119468800240",
+					"xcord": 576,
+					"ycord": 181
+				}, {
+					"sku": "5119468800241",
+					"xcord": 740,
+					"ycord": 249
+				}, {
+					"sku": "5319432524411",
+					"xcord": 610,
+					"ycord": 460
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "6",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/models_5.jpg",
+				"text": "Guys blaze in bold colour bursts, as girls get set for a global gathering in loose layered prints, embroidery and ethnic jewellery.",
+				"hotspots": [{
+					"sku": "5120423190351",
+					"xcord": 144,
+					"ycord": 306
+				}, {
+					"sku": "5113445831834",
+					"xcord": 312,
+					"ycord": 116
+				}, {
+					"sku": "5319408124573",
+					"xcord": 145,
+					"ycord": 471
+				}, {
+					"sku": "5221433962007",
+					"xcord": 597,
+					"ycord": 413
+				}, {
+					"sku": "5214433961188",
+					"xcord": 602,
+					"ycord": 275
+				}, {
+					"sku": "5232445389100",
+					"xcord": 740,
+					"ycord": 85
+				}, {
+					"sku": "5326408121162",
+					"xcord": 552,
+					"ycord": 492
+				}, {
+					"sku": "5851444985555",
+					"xcord": 697,
+					"ycord": 39
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "7",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/models_6.jpg",
+				"text": "Blood Brother, Carhartt, Adidas and New Era deliver streetwear-inspired graphics with a sense of grit.",
+				"hotspots": [{
+					"sku": "5520443560013",
+					"xcord": 255,
+					"ycord": 236
+				}, {
+					"sku": "5520443560016",
+					"xcord": 843,
+					"ycord": 154
+				}, {
+					"sku": "5520441640013",
+					"xcord": 390,
+					"ycord": 322
+				}, {
+					"sku": "55220443010035",
+					"xcord": 51,
+					"ycord": 38
+				}, {
+					"sku": "5532400124000",
+					"xcord": 218,
+					"ycord": 505
+				}, {
+					"sku": "5532443240011",
+					"xcord": 576,
+					"ycord": 259
+				}, {
+					"sku": "5532443240014",
+					"xcord": 520,
+					"ycord": 216
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "8",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/slide_08_uk.jpg",
+				"text": "Ride out the summer in loose printed layers, rich bursts of colour and ethnic jewellery.",
+				"hotspots": [{
+					"sku": "5532400121219",
+					"xcord": 403,
+					"ycord": 189
+				}, {
+					"sku": "5532429200020",
+					"xcord": 771,
+					"ycord": 397
+				}, {
+					"sku": "5532400121222",
+					"xcord": 136,
+					"ycord": 212
+				}]
+			}]
+		}]
+	}, {
+		"row": [{
+			"slides": [{
+				"number": "9",
+				"spread": "oneSpread",
+				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/slide_09_uk.jpg",
+				"text": "Rainbow rugs, tapestry throws and colour burst bistro chairs ensure your space is as eclectic as your wardrobe.",
+				"hotspots": [{
+					"sku": "5560434390066",
+					"xcord": 141,
+					"ycord": 234
+				}, {
+					"sku": "5560402680001",
+					"xcord": 219,
+					"ycord": 222
+				}, {
+					"sku": "5560439350057",
+					"xcord": 720,
+					"ycord": 154
+				}, {
+					"sku": "5560438020344",
+					"xcord": 233,
+					"ycord": 284
+				}, {
+					"sku": "5560435980046",
+					"xcord": 534,
+					"ycord": 86
+				}, {
+					"sku": "5520441640010",
+					"xcord": 103,
+					"ycord": 369
+				}]
+			}]
+		}]
+	}]
+}
