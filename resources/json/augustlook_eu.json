@@ -242,22 +242,6 @@
 				"image": "/content/ebiz/urbanoutfitters/resources/images/lookbook/august-images/slide_07_uk.jpg",
 				"text": "Blood Brother, Carhartt, Adidas and New Era deliver streetwear-inspired graphics with a sense of grit.",
 				"hotspots": [{
-					"sku": "5520443560013",
-					"xcord": 255,
-					"ycord": 236
-				}, {
-					"sku": "5520443560016",
-					"xcord": 843,
-					"ycord": 154
-				}, {
-					"sku": "5520441640013",
-					"xcord": 390,
-					"ycord": 322
-				}, {
-					"sku": "5522443010035",
-					"xcord": 51,
-					"ycord": 38
-				}, {
 					"sku": "5532400124000",
 					"xcord": 218,
 					"ycord": 505
@@ -316,22 +300,18 @@
 					"xcord": 720,
 					"ycord": 154
 				}, {
+					"sku": "5560435980456",
+					"xcord": 135,
+					"ycord": 51
+				}, {
 					"sku": "5560438020344",
 					"xcord": 233,
 					"ycord": 284
 				}, {
-					"sku": "5560435980046",
+					"sku": "5560435980044",
 					"xcord": 534,
 					"ycord": 86
-				}, {
-					"sku": "5560435980454",
-					"xcord": 135,
-					"ycord": 51
-				}, {
-					"sku": "5520441640010",
-					"xcord": 103,
-					"ycord": 369
-				}]
+				} ]
 			}]
 		}]
 	}]
