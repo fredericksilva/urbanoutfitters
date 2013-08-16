@@ -49,6 +49,9 @@ Venda.Lookbook.Widgets = {
 			Venda.Lookbook.Widgets.parallax();
 			Venda.Lookbook.Widgets.scrollToPoint();
 		}
+		if (Venda.Lookbook.Widgets.options.vars.slideshow && Venda.Lookbook.Widgets.options.vars.json) {
+			alert("please select either json slideshow or json scroll, currently both are set to true");
+		}
 	},
 	// json load ajax - load in content asynchronously through ajax
 	jsonLoad: function () {
@@ -66,9 +69,17 @@ Venda.Lookbook.Widgets = {
 					for (var r = 0; r < data.digibook[i].row.length; r++) {
 						for (var s = 0; s < data.digibook[i].row[r].slides.length; s++) {
 							h += '<div class="section ' + data.digibook[i].row[r].slides[s].spread + '">';
-							h += '<img src="/content/ebiz/urbanoutfitters/resources/images/spring-lookbook/lazyLoader.png" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading ' + Venda.Lookbook.Widgets.options.lazy + '" />';
-							for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
-								h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;"></a>';
+							if (data.digibook[i].row[r].slides[s].lazy === data.digibook[i].row[r].slides[s].image) {
+								h += '<img src="' + data.digibook[i].row[r].slides[s].lazy + '" class="uo-loading" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\']);" />';
+								for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
+									h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
+								};
+							}
+							else {
+								h += '<img src="' + data.digibook[i].row[r].slides[s].lazy + '" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading ' + Venda.Lookbook.Widgets.options.lazy + '" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\']);" />';
+								for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
+									h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
+								}
 							};
 							h += '<p class="' + Venda.Lookbook.Widgets.options.lookbook + 'SectionText">' + data.digibook[i].row[r].slides[s].text + '</p>';
 							h += '</div>';
@@ -94,12 +105,13 @@ Venda.Lookbook.Widgets = {
 			dataType: 'json',
 			cache: true,
 			success: function (data) {
-				var html = '';
-				// on success populate content into variable h
+				// on success populate content into variable html
+				var html = '',
+					startPage = Venda.Platform.getUrlParam(window.location.href,"page") ? parseInt(Venda.Platform.getUrlParam(window.location.href,"page"), 10) - 1 : 0;
 				jQuery.each(data.lookbook.pages, function (index, value) {
 					html += '<li><img src="' + value.image + '" />';
 					for (var i = 0; i < value.hotspots.length; i++) {
-						html += '<a href="/invt/' + value.hotspots[i].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + value.hotspots[i].xcord + 'px; top: ' + value.hotspots[i].ycord + 'px;"></a>';
+						html += '<a href="/invt/' + value.hotspots[i].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + value.hotspots[i].xcord + 'px; top: ' + value.hotspots[i].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + value.image.match(/_([^ ]*)/)[1] + '\', \'' + value.hotspots[i].sku + '\']);"></a>';
 					};
 					html += '</li>';
 				});
@@ -108,11 +120,19 @@ Venda.Lookbook.Widgets = {
 				jQuery('.flexslider').flexslider({
 					animation: "slide",
 					slideshow: true,
+					useCSS: false,
+					startAt: startPage,
 					start: function (slider) {
 						var flexNav = jQuery(".flex-control-nav li a");
 						for (var i in data.lookbook.pages) {
 							jQuery(flexNav[i - 1]).css('background-image', 'url(' + data.lookbook.pages[i].thumbnail + ')');
+							jQuery(flexNav[i]).on("click", function (event) {
+								_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Slideshow Thumbnail', 'Thumbnail Image ' + jQuery(this).css('background-image').match(/_([^)]*)/)[1]]);
+							});
 						}
+					},
+					after: function (slider) {
+						_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Slideshow', 'Slide Number ' + slider.currentSlide]);
 					}
 				});
 			}
@@ -139,16 +159,13 @@ Venda.Lookbook.Widgets = {
 					a = jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').outerHeight(),
 					d = jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').outerHeight();
 				if (c > hh) {
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').css("top", 0 + "px");
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').addClass("fixMe");
+					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').css("top", 0 + "px").addClass("fixMe");
 				}
 				if (c < hh) {
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').css("top", hh + "px");
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').removeClass("fixMe");
+					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').css("top", hh + "px").removeClass("fixMe");
 				}
 				if (c > d + Venda.Lookbook.Widgets.options.offset.top - a) {
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').removeClass("fixMe");
-					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').css("top", d + Venda.digibook.options.o.top - a + "px");
+					jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'controlBox, .' + Venda.Lookbook.Widgets.options.lookbook + 'Sticky').removeClass("fixMe").css("top", d + Venda.Lookbook.Widgets.options.offset.top - a + "px");
 				}
 				// initiate load progress bar
 				if (Venda.Lookbook.Widgets.options.vars.progressBar) {
@@ -286,11 +303,12 @@ Venda.Lookbook.Widgets = {
 					l = jQuery(b[a]).offset(),
 					j = l.top - Venda.Lookbook.Widgets.options.offset.top,
 					g = jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').outerHeight() / t;
-				if (i > c) {
+				if (i > c && a < t) {
 					if (h >= j) {
 						b[a += 1]
 					}
-				} else {
+				}
+				else {
 					if (a !== 0) {
 						if (h <= (j - g)) {
 							b[a -= 1]
@@ -307,8 +325,24 @@ Venda.Lookbook.Widgets = {
 		}, 'slow');
 		return false;
 	},
+	accordion: function(a) {
+		var d = jQuery('.' + a),
+			o = 'open';
+		if (jQuery(d).hasClass(o) === false) {
+			jQuery('.'+o).slideUp().removeClass(o);
+		}
+		jQuery(d).slideToggle('slow').toggleClass(o);
+		jQuery(d).promise().done(function() {
+			jQuery(window).scrollTo(d, 'slow', {
+				offset: {
+					top: 0
+				}
+			});
+		});
+    },
 	socialWindow: function (e, d, b, c, a) {
 		// enable social buttons to load in a new small window
+		_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Social', d]);
 		var w = null;
 		l = (screen.width) ? (screen.width - b) / 2 : 0;
 		t = (screen.height) ? (screen.height - c) / 2 : 0;
