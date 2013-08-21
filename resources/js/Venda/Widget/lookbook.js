@@ -71,15 +71,12 @@ Venda.Lookbook.Widgets = {
 							h += '<div class="section ' + data.digibook[i].row[r].slides[s].spread + '">';
 							if (data.digibook[i].row[r].slides[s].lazy === data.digibook[i].row[r].slides[s].image) {
 								h += '<img src="' + data.digibook[i].row[r].slides[s].lazy + '" class="uo-loading" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\']);" />';
-								for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
-									h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
-								};
 							}
 							else {
 								h += '<img src="' + data.digibook[i].row[r].slides[s].lazy + '" data-original="' + data.digibook[i].row[r].slides[s].image + '" class="uo-loading ' + Venda.Lookbook.Widgets.options.lazy + '" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'Row Number ' + data.digibook[i].row[r].slides[s].number + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\']);" />';
-								for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
-									h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
-								}
+							}
+							for (var hs = 0; hs < data.digibook[i].row[r].slides[s].hotspots.length; hs++) {
+								h += '<a href="/invt/' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '/&temp=quickLook&layout=noheaders" ' + 'class="uo-hotspot lookbookQuick" style="left: ' + data.digibook[i].row[r].slides[s].hotspots[hs].xcord + 'px; top: ' + data.digibook[i].row[r].slides[s].hotspots[hs].ycord + 'px;" onmouseover="_gaq.push([\'_trackEvent\', \'' + Venda.Lookbook.Widgets.options.lookbook + '\', \'UO_' + data.digibook[i].row[r].slides[s].image.match(/_([^ ]*)/)[1] + '\', \'' + data.digibook[i].row[r].slides[s].hotspots[hs].sku + '\']);"></a>';
 							};
 							h += '<p class="' + Venda.Lookbook.Widgets.options.lookbook + 'SectionText">' + data.digibook[i].row[r].slides[s].text + '</p>';
 							h += '</div>';
@@ -107,7 +104,7 @@ Venda.Lookbook.Widgets = {
 			success: function (data) {
 				// on success populate content into variable html
 				var html = '',
-					startPage = Venda.Platform.getUrlParam(window.location.href,"page") ? parseInt(Venda.Platform.getUrlParam(window.location.href,"page"), 10) - 1 : 0;
+					startPage = Venda.Platform.getUrlParam(window.location.href, "page") ? parseInt(Venda.Platform.getUrlParam(window.location.href, "page"), 10) - 1 : 0;
 				jQuery.each(data.lookbook.pages, function (index, value) {
 					html += '<li><img src="' + value.image + '" />';
 					for (var i = 0; i < value.hotspots.length; i++) {
@@ -119,6 +116,7 @@ Venda.Lookbook.Widgets = {
 				// once loaded call the other lookbook functions
 				jQuery('.flexslider').flexslider({
 					animation: "slide",
+					slideshowSpeed: 2000, 
 					slideshow: true,
 					useCSS: false,
 					startAt: startPage,
@@ -133,6 +131,8 @@ Venda.Lookbook.Widgets = {
 					},
 					after: function (slider) {
 						_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Slideshow', 'Slide Number ' + slider.currentSlide]);
+						clearInterval(slider.animatedSlides); 
+						slider.animatedSlides = setInterval(slider.animateSlides,'7000');
 					}
 				});
 			}
@@ -325,21 +325,21 @@ Venda.Lookbook.Widgets = {
 		}, 'slow');
 		return false;
 	},
-	accordion: function(a) {
+	accordion: function (a) {
 		var d = jQuery('.' + a),
 			o = 'open';
 		if (jQuery(d).hasClass(o) === false) {
-			jQuery('.'+o).slideUp().removeClass(o);
+			jQuery('.' + o).slideUp().removeClass(o);
 		}
 		jQuery(d).slideToggle('slow').toggleClass(o);
-		jQuery(d).promise().done(function() {
+		jQuery(d).promise().done(function () {
 			jQuery(window).scrollTo(d, 'slow', {
 				offset: {
 					top: 0
 				}
 			});
 		});
-    },
+	},
 	socialWindow: function (e, d, b, c, a) {
 		// enable social buttons to load in a new small window
 		_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Social', d]);
