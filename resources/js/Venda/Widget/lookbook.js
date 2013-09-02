@@ -116,7 +116,7 @@ Venda.Lookbook.Widgets = {
 				// once loaded call the other lookbook functions
 				jQuery('.flexslider').flexslider({
 					animation: "slide",
-					slideshowSpeed: 2000, 
+					slideshowSpeed: 3000,
 					slideshow: true,
 					useCSS: false,
 					startAt: startPage,
@@ -130,9 +130,10 @@ Venda.Lookbook.Widgets = {
 						}
 					},
 					after: function (slider) {
+						slider.pause()
 						_gaq.push(['_trackEvent', Venda.Lookbook.Widgets.options.lookbook, 'Slideshow', 'Slide Number ' + slider.currentSlide]);
-						clearInterval(slider.animatedSlides); 
-						slider.animatedSlides = setInterval(slider.animateSlides,'7000');
+						//clearInterval(slider.animatedSlides); 
+						//slider.animatedSlides = setInterval(slider.animateSlides,'7000');
 					}
 				});
 			}
@@ -325,15 +326,20 @@ Venda.Lookbook.Widgets = {
 		}, 'slow');
 		return false;
 	},
-	accordion: function (a) {
+	accordion: function (a, b, c) {
 		var d = jQuery('.' + a),
 			o = 'open';
+		switch (b) {
+			case 'id': var e = jQuery('#' + c);
+			break;
+			default: var e = jQuery('.' + c);
+		};
 		if (jQuery(d).hasClass(o) === false) {
 			jQuery('.' + o).slideUp().removeClass(o);
 		}
 		jQuery(d).slideToggle('slow').toggleClass(o);
 		jQuery(d).promise().done(function () {
-			jQuery(window).scrollTo(d, 'slow', {
+			jQuery(window).scrollTo(e, 'slow', {
 				offset: {
 					top: 0
 				}
