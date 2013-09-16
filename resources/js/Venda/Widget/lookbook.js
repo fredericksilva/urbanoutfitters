@@ -346,8 +346,10 @@ Venda.Lookbook.Widgets = {
 		};
 		if (jQuery(d).hasClass(o) === false) {
 			jQuery('.' + o).slideUp().removeClass(o);
+			jQuery('.activated').removeClass("activated");
 		}
 		jQuery(d).slideToggle('slow').toggleClass(o);
+		jQuery(e).toggleClass("activated");
 		jQuery(d).promise().done(function () {
 			jQuery(window).scrollTo(e, 'slow', {
 				offset: {
