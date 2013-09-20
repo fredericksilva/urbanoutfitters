@@ -5399,7 +5399,7 @@ input#qty {
 }
 .homepage-slider .homepage-slide {
 	width: 950px;
-	height: 500px;
+	height: auto;
 }
 .homepage-slider .hpslide1 {
 	background: #fff;
