@@ -1110,3 +1110,12 @@ hr.mtop0 {margin-top:0;}
 #sortby .ui-select .ui-btn-inner span.ui-btn-text{line-height:23px; font-size:14px;}
 #productdetailWrapper .prodContents #attributeNames{clear:both;}
 #mobile .ui-input-text.ui-focus, .ui-input-search.ui-focus{box-shadow: 0 0 12px gray, inset 0 0 3px #bbb !important; -moz-box-shadow: 0 0 12px gray, inset 0 0 3px #bbb !important; -webkit-box-shadow: 0 0 12px gray, inset 0 0 3px #bbb !important;}
+.footer-links {height:100px;text-align:center;width:100%;}
+.footer-links p {color:#343434;font-size:14px;}
+.newslettersubmit {width:242px;padding:6px 0;margin:10px auto 25px;display:block;background-color:#343434;color:white !important;}
+.footer-social {width:242px;margin:0 auto;}
+.footer-social a {height:34px;width:34px;display:inline-block;background:url('../../images/mobile/mbl-social-btns_2.png') no-repeat 0 0;text-indent:-99999px;}
+.footer-social a.fb {background-position: -34px 0;margin: 0 0 0 4px;}
+.footer-social a.pi {background-position: -68px 0;margin: 0 0 0 4px;}
+.footer-social a.in {background-position: -102px 0;margin: 0 0 0 4px;}
+.footer-social a.blog {background-position: -136px 0;margin: 0 0 0 4px;width: 74px;}

@@ -2441,23 +2441,10 @@ ul#moreideas li a
     text-decoration: none;
     border-bottom: 1px solid #00CCFF;
 }
-#static2 ul
-{
-    color: #333;
-    margin: 5px 0 5px 30px;
-    list-style: disc;
-    line-height: 18px;
-}
 #static2 ul li
 {
     line-height: 18px;
     color: #666;
-}
-#static2 p
-{
-    margin: 0 0 20px 0;
-    color: #666;
-    line-height: 18px;
 }
 #static2 h2
 {

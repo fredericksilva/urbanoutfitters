@@ -123,10 +123,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 	width: 728px;
 }
 
-.box {
-	border: none;
-}
-
 .resultDetail .resultMsg {
 	padding-top: 4px;
 	padding-left: 12px;
@@ -213,17 +209,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 /* pagn numbers and links */
-.pagnLinkNavigate {
-	float: right;
-	line-height: 16px;
-	height: auto;
-	padding-top: 2px;
-	margin-right: 12px;
-}
-
-.pagnNumList {
-	margin:0;
-}
 
 .pagnPrev-off, .pagnNext-off {
 	color:#918d82;
@@ -423,16 +408,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 	overflow: hidden;
 }
 
-#collate h3.collateheading {
-	background: none;
-	padding:8px 0 0 !important;
-	margin:1px 0 0 !important;
-	position: relative; /* to improve alignment of + and - accordion backgrounds */
-	white-space: nowrap;
-	overflow: hidden;
-	border-top: 2px solid black;
-}
-
 #collate h3.collateheading span.collateText {
 	background: none;
 	border-bottom:1px solid #000;
@@ -449,15 +424,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 .pricecollateresult {
 	padding-left: 0;
 	width: auto;
-}
-
-#loadingsearch {
-	opacity: .30 !important;
-	filter: alpha(opacity=30) !important;
-	-moz-opacity: .30 !important;
-	top: -10px;
-	padding: 0 0 10px;
-	z-index:1003;
 }
 
 /* css for search accordion */
@@ -517,25 +483,11 @@ body.search_body .ui-selectmenu-menu li:hover {
 }
 
 /* search product list css overwrites */
-.prods li {
-	float:none !important;
-}
-
 .pagn {
 	width:auto !important;
 }
 
-.prods li {
-	text-align:left;
-}
-
 /* search setswatch and swatchContainer css */
-.swatchContainer {
-	width: 25px !important;
-	position: absolute;
-	top: 7px;
-	left: 10px;
-}
 
 .image .swatchIcon {
 	display:none;
@@ -658,14 +610,6 @@ body.search_body .ui-selectmenu-menu li:hover {
 /* # QUICK BUY # */
 
 /* Produc List Styles */
-.quickLinkBox {
-	position: absolute;
-	text-align: center;
-	bottom: 0;
-	left: 0;
-	visibility: hidden;
-	border: 1px solid #000;
-}
 
 .qb-large {
 	background: #fff;
@@ -689,22 +633,12 @@ a.quickBuyDetails {
 	-webkit-box-shadow: 0px 0px 0px black;
 }
 
-.quickLinkBox a {
-	border-radius: 0;
-	background: none;
-	border: none;
-}
-
 .quickBuyDetails {
 	background: url(../images/turq_spots50.png) repeat scroll 0 0 white;
 	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	border:1px solid #777;
-}
-
-.quickBuyDetails .productContent {
-	width: 790px !important;
 }
 
 .quickBuy-Details .prodDesc {
@@ -772,12 +706,6 @@ a.quickBuyDetails {
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	border:1px solid #999 \9;
 	height:
-}
-
-.ui-selectmenu-open {
-	border-right:1px solid #999 \9;
-	border-bottom:1px solid #999 \9;
-	border-left:1px solid #999 \9;
 }
 
 .quickBuyQty #qtybox input#qty {
@@ -1053,15 +981,6 @@ a.quickBuyDetails {
 }
 
 /* Signup Iframe */
-
-.signup-img {
-	background: url('../images/uo-png-sprite.png?v=3') no-repeat;
-	background-position: -168px -156px;
-	width: 70px;
-	height: 15px;
-    margin: -6px 0px 0px 20px;
-    z-index: 5;
-}
 .signup-mask {
 	height: 4px;
 	width: 70px;

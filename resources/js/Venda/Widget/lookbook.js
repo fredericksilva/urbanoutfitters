@@ -30,27 +30,34 @@ Venda.Lookbook.Widgets = {
 		lazy: jQuery('.lazyImage').text(),
 		sliderjson: jQuery('.sliderjsonUrl').text()
 	},
+	varsFalse: function(obj) {
+		for(var o in obj)
+			if(obj[o]) return false;
+		return true;
+	},
 	init: function (el) {
 		Venda.Lookbook.Widgets.options.vars = jQuery.extend({}, Venda.Lookbook.Widgets.defaults, el);
-		// Set offset top and bottom of contents to be used later on in the script
-		Venda.Lookbook.Widgets.options.offset = jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').offset();
-		Venda.Lookbook.Widgets.options.offsetBottom = jQuery(document).outerHeight() - (Venda.Lookbook.Widgets.options.offset.top + jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').outerHeight());
-		// determine if content is loaded through a json
-		// if no - call the other functions
-		if (Venda.Lookbook.Widgets.options.vars.json) {
-			Venda.Lookbook.Widgets.jsonLoad();
-		}
-		if (Venda.Lookbook.Widgets.options.vars.slideshow) {
-			Venda.Lookbook.Widgets.sliderjsonLoad();
-		}
-		if (!Venda.Lookbook.Widgets.options.vars.slideshow && !Venda.Lookbook.Widgets.options.vars.json) {
-			Venda.Lookbook.Widgets.lazyloading();
-			Venda.Lookbook.Widgets.stickyScroller();
-			Venda.Lookbook.Widgets.parallax();
-			Venda.Lookbook.Widgets.scrollToPoint();
-		}
-		if (Venda.Lookbook.Widgets.options.vars.slideshow && Venda.Lookbook.Widgets.options.vars.json) {
-			alert("please select either json slideshow or json scroll, currently both are set to true");
+		if(!Venda.Lookbook.Widgets.varsFalse(Venda.Lookbook.Widgets.options.vars)) {
+			// Set offset top and bottom of contents to be used later on in the script
+			Venda.Lookbook.Widgets.options.offset = jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').offset();
+			Venda.Lookbook.Widgets.options.offsetBottom = jQuery(document).outerHeight() - (Venda.Lookbook.Widgets.options.offset.top + jQuery('.' + Venda.Lookbook.Widgets.options.lookbook + 'Contents').outerHeight());
+			// determine if content is loaded through a json
+			// if no - call the other functions
+			if (Venda.Lookbook.Widgets.options.vars.json) {
+				Venda.Lookbook.Widgets.jsonLoad();
+			}
+			if (Venda.Lookbook.Widgets.options.vars.slideshow) {
+				Venda.Lookbook.Widgets.sliderjsonLoad();
+			}
+			if (!Venda.Lookbook.Widgets.options.vars.slideshow && !Venda.Lookbook.Widgets.options.vars.json) {
+				Venda.Lookbook.Widgets.lazyloading();
+				Venda.Lookbook.Widgets.stickyScroller();
+				Venda.Lookbook.Widgets.parallax();
+				Venda.Lookbook.Widgets.scrollToPoint();
+			}
+			if (Venda.Lookbook.Widgets.options.vars.slideshow && Venda.Lookbook.Widgets.options.vars.json) {
+				alert("please select either json slideshow or json scroll, currently both are set to true");
+			}
 		}
 	},
 	// json load ajax - load in content asynchronously through ajax
@@ -326,9 +333,12 @@ Venda.Lookbook.Widgets = {
 		}, 'slow');
 		return false;
 	},
-	accordion: function (a, b, c) {
-		var d = jQuery('.' + a),
-			o = 'open';
+	accordion: function (a, b, c, f) {
+		var d = jQuery('.' + a);
+		if (f) {
+			var o = f;
+		}
+		else { var o = 'open' }
 		switch (b) {
 			case 'id': var e = jQuery('#' + c);
 			break;
@@ -336,8 +346,10 @@ Venda.Lookbook.Widgets = {
 		};
 		if (jQuery(d).hasClass(o) === false) {
 			jQuery('.' + o).slideUp().removeClass(o);
+			jQuery('.activated').removeClass("activated");
 		}
 		jQuery(d).slideToggle('slow').toggleClass(o);
+		jQuery(e).toggleClass("activated");
 		jQuery(d).promise().done(function () {
 			jQuery(window).scrollTo(e, 'slow', {
 				offset: {
