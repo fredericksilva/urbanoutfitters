@@ -692,6 +692,7 @@ ol.prods {
 	overflow: visible;
 	vertical-align: top;
 	text-align: left;
+	position: relative;
 }
 ol.prods li {
 	display: list-item;
@@ -5640,6 +5641,19 @@ button::-moz-focus-inner {
 }
 .waitMsg img {
 	display: none !important;
+}
+.badge-overlay {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    background: url("../images/roundel_sprite.png") -54px -14px no-repeat;
+    right: 70px;
+    text-align: center;
+    line-height: 72px;
+    z-index: 11;
+}
+.prods .badge-overlay {
+    right: 10px;
 }
 /* GATEWAY FIX */
 .wrapper .gw-container {

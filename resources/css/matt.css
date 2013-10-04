@@ -728,6 +728,16 @@ button::-moz-focus-inner {
 .waitMsg img {
   display: none !important;
 }
+.badge-overlay {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    background: url("../images/roundel_sprite.png") 10px 12px no-repeat;
+    right: 70px;
+    text-align: center;
+    line-height: 72px;
+    z-index: 11;
+}
 /* GATEWAY FIX */
 .wrapper .gw-container * { }
 .wrapper .gw-container {margin:0;padding:0;color:#333;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
