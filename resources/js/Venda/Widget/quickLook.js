@@ -44,15 +44,17 @@ jQuery("a.lookbookQuick").live("mouseenter", function(e) {
 	else if ((bottomPosition.left < 741) && (bottomPosition.top < 451)) {
 		jQuery("#quickLook").dialog("option", "position", { my: "left top", at: "left bottom", of: bottom } );
 	}
+	var errorTextDE = new RegExp('\Leider([^.]*)'),
+		errorTextFR = new RegExp("\L'article([^.]*)");
 	jQuery(".productInfo").load(URL, function(){
 		if (jQuery(this).html() === "This product is not available to view.") {
-			jQuery(this).html("Bummer, this isn't available right now - check out our other amazing bits...");
+			jQuery(this).html("COMING SOON!<br />Don't you worry; this one will be dropping shortly...");
 		}
-		if (jQuery(this).html() === "L'article ne peut pas être affiché.") {
-			jQuery(this).html("Pas de bol, cet article n'est plus disponible pour le moment. Jetez un &oelig;il aux articles du m&ecirc;me genre...");
+		if (jQuery(this).html().match(errorTextDE)) {
+			jQuery(this).html("COMING SOON!<br />Nicht verzweifeln, der Artikel kommt schon sehr bald...");
 		}
-		if (jQuery(this).html() === "Leider ist derzeit keine Produktansicht möglich.") {
-			jQuery(this).html("Schade, das Produkt ist momentan ausverkauft - aber guck' dir unsere anderen tollen Sachen an...");
+		if (jQuery(this).html().match(errorTextFR)) {
+			jQuery(this).html("PROCHAINEMENT EN STOCK !<br />Pas d'inqui&eacute;tudes, cet article arrive bient&ocirc;t...");
 		}
 		jQuery(".quickLook-Details").show();
 	});
