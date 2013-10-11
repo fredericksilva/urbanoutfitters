@@ -5666,6 +5666,24 @@ button::-moz-focus-inner {
 .prods .badge-overlay {
     right: 10px;
 }
+.fivePerline .badge-overlay {
+	background-position: -153px -14px;
+	width: 41px;
+	line-height: 50px;
+	top: 0;
+}
+.fivePerline .badge-currency {
+	font-size: 16px;
+}
+.fivePerline .badge-price {
+	font-size: 20px;
+}
+.badge-overlay.contentFR {
+	background-position: -54px -90px;
+}
+.badge-overlay.contentDE {
+	background-position: -54px -182px;
+}
 /* GATEWAY FIX */
 .wrapper .gw-container {
 	margin:0;
