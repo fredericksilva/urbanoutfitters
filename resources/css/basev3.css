@@ -7669,7 +7669,7 @@ ul.anchorlist a:hover {
 .mm_ul li a.mm_icatsale {
 	color: #cc0000;
 }
-.mm_ul > li > div > div > ul > li > a.mm_subviewallpromo, .mm_ul > li > div > div > ul > li > a.mm_submpromoviewall {
+.mm_ul > li > div > div > ul > li > a.mm_subviewallpromo, .mm_ul > li > div > div > ul > li > a.mm_submpromoviewall, .mm_ul > li > div > div > ul > li > a.mm_subhpromoviewall {
 	color: #009999;
 }
 /* Twitter feed for Valentines */
@@ -8406,6 +8406,7 @@ form#commentForm #gals.submitFormDe:hover {
 	padding: 0;
 	width: 20px;
 	height: 20px;
+	cursor: pointer;
 }
 .tellafriendDialog input.tellaInput {
 	padding: 5px;
