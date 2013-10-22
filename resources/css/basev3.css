@@ -5644,9 +5644,9 @@ button::-moz-focus-inner {
 }
 .badge-overlay {
     width: 72px;
-    height: 68px;
+    height: 62px;
     position: absolute;
-    background: url("../images/roundel_sprite.png") -54px -14px no-repeat;
+    background: url("../images/roundel_sprite_updated.png") -3px -5px no-repeat;
     right: 70px;
     text-align: center;
     line-height: 72px;
@@ -5655,6 +5655,9 @@ button::-moz-focus-inner {
     color: #f39d6d;
     padding-top: 4px;
     font-weight: bold;
+}
+.product-data .badge-overlay {
+	right: 80px;
 }
 .badge-currency {
     font-size: 20px;
@@ -5666,23 +5669,23 @@ button::-moz-focus-inner {
 .prods .badge-overlay {
     right: 10px;
 }
-.fivePerline .badge-overlay {
-	background-position: -153px -14px;
-	width: 41px;
+.fivePer .badge-overlay {
+	background-position: -75px -4px;
+	width: 43px;
 	line-height: 50px;
 	top: 0;
 }
-.fivePerline .badge-currency {
+.fivePer .badge-currency {
 	font-size: 16px;
 }
-.fivePerline .badge-price {
+.fivePer .badge-price {
 	font-size: 20px;
 }
 .badge-overlay.contentFR {
-	background-position: -54px -90px;
+	background-position: -5px -75px;
 }
 .badge-overlay.contentDE {
-	background-position: -54px -182px;
+	background-position: -4px -143px;
 }
 /* GATEWAY FIX */
 .wrapper .gw-container {
