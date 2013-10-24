@@ -3,6 +3,7 @@
 <div class="boxContent">
 	<venda_userinfo>
 	<ul>
+		<!-- mp_trans_disable_start -->
 		<li class="first"><span class="addrName"><venda_sestitle> <venda_sesfname> <venda_seslname></span></li>
         <venda_block label=1000,mode=value,<venda_setting type=ebiz,name=showcompany>=1>
         <venda_block label=1001,sescompany=notnull><li><venda_sescompany></li></venda_block label=1001>
@@ -23,6 +24,7 @@
 
 		<li><venda_sescntry></li>
         <venda_block label=10,sesarea=notnull,sesphone=notnull,operator=or><li><span class="addrPhone"><venda_block label=100,mode=value,<venda_setting type=ebiz,name=hidearea>!=1><venda_block label=11,sesarea=notnull><venda_sesarea>&nbsp;</venda_block label=11></venda_block label=100><venda_block label=12,sesphone=notnull><venda_sesphone></venda_block label=12></span></li></venda_block label=10>
+        <!-- mp_trans_disable_end -->
 		<li class="last"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>"><venda_text id=site.contactdetails.edit.link></a></li>
 	</ul>
 	</venda_userinfo>
