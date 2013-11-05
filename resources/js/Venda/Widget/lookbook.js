@@ -123,8 +123,8 @@ Venda.Lookbook.Widgets = {
 				// once loaded call the other lookbook functions
 				jQuery('.flexslider').flexslider({
 					animation: "slide",
-					slideshowSpeed: 3000,
-					slideshow: true,
+					//slideshowSpeed: 3000,
+					slideshow: false,
 					useCSS: false,
 					startAt: startPage,
 					start: function (slider) {
