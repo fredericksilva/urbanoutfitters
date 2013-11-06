@@ -5644,9 +5644,9 @@ button::-moz-focus-inner {
 }
 .badge-overlay {
     width: 72px;
-    height: 68px;
+    height: 62px;
     position: absolute;
-    background: url("../images/roundel_sprite.png") -54px -14px no-repeat;
+    background: url("../images/roundel_sprite_updated.png") -3px -5px no-repeat;
     right: 70px;
     text-align: center;
     line-height: 72px;
@@ -5656,15 +5656,39 @@ button::-moz-focus-inner {
     padding-top: 4px;
     font-weight: bold;
 }
+.product-data .badge-overlay {
+	right: 80px;
+}
 .badge-currency {
     font-size: 20px;
     padding-right: 2px;
 }
 .badge-price {
-    font-size: 28px;
+    font-size: 25px;
 }
 .prods .badge-overlay {
     right: 10px;
+}
+.fivePer .badge-overlay {
+	background-position: -75px -4px;
+	width: 43px;
+	line-height: 50px;
+	top: 0;
+}
+.fivePer .badge-currency {
+	font-size: 16px;
+}
+.fivePer .badge-price {
+	font-size: 20px;
+}
+.badge-overlay.contentFR {
+	background-position: -5px -75px;
+}
+.fivePer .badge-overlay.contentFR, .fivePer .badge-overlay.contentDE {
+	background-position: -76px -4px;
+}
+.badge-overlay.contentDE {
+	background-position: -4px -143px;
 }
 /* GATEWAY FIX */
 .wrapper .gw-container {
@@ -7651,7 +7675,7 @@ ul.anchorlist a:hover {
 .mm_ul li a.mm_icatsale {
 	color: #cc0000;
 }
-.mm_ul > li > div > div > ul > li > a.mm_subviewallpromo, .mm_ul > li > div > div > ul > li > a.mm_submpromoviewall {
+.mm_ul > li > div > div > ul > li > a.mm_subviewallpromo, .mm_ul > li > div > div > ul > li > a.mm_submpromoviewall, .mm_ul > li > div > div > ul > li > a.mm_subhpromoviewall {
 	color: #009999;
 }
 /* Twitter feed for Valentines */
@@ -8388,6 +8412,7 @@ form#commentForm #gals.submitFormDe:hover {
 	padding: 0;
 	width: 20px;
 	height: 20px;
+	cursor: pointer;
 }
 .tellafriendDialog input.tellaInput {
 	padding: 5px;
@@ -10715,3 +10740,40 @@ p.brandDescFont {
   	height:auto;
   	border: 1px solid #ccc;  
  }
+ /*****job page ****/
+nav.jobpage-main-nav { 
+	width: 948px;
+	margin-bottom: 20px;
+	border: 1px solid #000;
+	padding: 15px 0px;
+	line-height: 1.5;
+	background-color: #000;
+}
+nav.jobpage-main-nav li {
+	display: inline;
+}
+nav.jobpage-main-nav li a {
+	font-size: 20px; 
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+} 
+nav.jobpage-main-nav li a:hover {
+	color: #fd96b4;
+}
+nav.jobpage-main-nav li.career-home {
+	padding: 24px 9px 21px 10px;
+	margin: 0px 35px 0px 0px;
+}
+nav.jobpage-main-nav li.vacancies-nav {
+	padding: 24px 72px 22px 60px;
+}
+nav.jobpage-main-nav li.about-nav {
+	padding: 24px 83px 21px 58px;
+	margin: 0px 0px 0px -3px;
+}
+nav.jobpage-main-nav li.area-nav {
+	padding: 24px 50px 21px 40px;
+	margin: 0px 0px 0px -4px;
+}

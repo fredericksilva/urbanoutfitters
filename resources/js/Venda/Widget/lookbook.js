@@ -123,8 +123,8 @@ Venda.Lookbook.Widgets = {
 				// once loaded call the other lookbook functions
 				jQuery('.flexslider').flexslider({
 					animation: "slide",
-					slideshowSpeed: 3000,
-					slideshow: true,
+					//slideshowSpeed: 3000,
+					slideshow: false,
 					useCSS: false,
 					startAt: startPage,
 					start: function (slider) {
@@ -143,6 +143,10 @@ Venda.Lookbook.Widgets = {
 						//slider.animatedSlides = setInterval(slider.animateSlides,'7000');
 					}
 				});
+				Venda.Lookbook.Widgets.lazyloading();
+				Venda.Lookbook.Widgets.stickyScroller();
+				Venda.Lookbook.Widgets.parallax();
+				Venda.Lookbook.Widgets.scrollToPoint();
 			}
 		})
 	},

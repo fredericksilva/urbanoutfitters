@@ -18,7 +18,7 @@
 <input type="hidden" name="layout" value="">
 
 <div class="tellafriend">
-<a href="<venda_dispview invt=<venda_invtref>>" class="closeLink"><img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0"></a>
+<div onclick="dialogObj.dialog('close');" class="closeLink"><img style="float: right;" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/WT-assets/pop-up/close.png" border="0"></div>
 <h1></h1>
 <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
 <p>If you've seen something you reckon your mate would like, use the form below to send a personal message and link to <strong><venda_invtname></strong>.</p>
@@ -32,7 +32,8 @@
 </venda_userinfo></div>
 <div><label for="name"><venda_text id=desktop.form.friends_name><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="name" id="name" size="20" maxlength="50" value="* Your Friend's Name" onblur="this.value=!this.value?'* Your Friend\'s Name':this.value;" onclick="this.value='';"></div>
 <div><label for="email"><venda_text id=desktop.form.friends_email><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label> <input class="tellaInput" name="email" id="email" size="20" maxlength="150" value="* Your Friend's Email" onblur="this.value=!this.value?'* Your Friend\'s Email':this.value;" onclick="this.value='';"></div>
-<div><label for="field1"><venda_text id=desktop.form.message><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label><!-- mp_trans_disable_start --><textarea cols="46" name="field1" id="field1" rows="3">Write your message here... (200 max.)</textarea><!-- mp_trans_disable_end --></div>
+<span style="display: block;margin: 10px 0;">Write your message here... (200 max.)</span>
+<div><label for="field1"><venda_text id=desktop.form.message><span class="hideScreenReaderSafe"> <venda_text id=desktop.form.required></span> <span class="required">*</span></label><!-- mp_trans_disable_start --><textarea cols="46" name="field1" id="field1" rows="3"></textarea><!-- mp_trans_disable_end --></div>
 </fieldset>
 
 <div class="tellafriendPIC">
