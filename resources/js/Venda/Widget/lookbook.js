@@ -143,6 +143,10 @@ Venda.Lookbook.Widgets = {
 						//slider.animatedSlides = setInterval(slider.animateSlides,'7000');
 					}
 				});
+				Venda.Lookbook.Widgets.lazyloading();
+				Venda.Lookbook.Widgets.stickyScroller();
+				Venda.Lookbook.Widgets.parallax();
+				Venda.Lookbook.Widgets.scrollToPoint();
 			}
 		})
 	},
